@@ -1651,12 +1651,11 @@ function renderTicker(items) {
   // Two copies for seamless loop
   for (let copy = 0; copy < 2; copy++) {
     items.forEach(item => {
-      const style = item.badge_style.includes(':') ? `style="${item.badge_style}"` : `class="ls-badge ${item.badge_style}"`;
-      // Fix: if badge_style starts with "background", it's inline style
-      if (item.badge_style.startsWith('background')) {
-        html += `<span class="ls-badge" style="${item.badge_style}">${item.badge}</span>`;
+      const bs = item.badge_style || '';
+      if (bs.startsWith('background')) {
+        html += `<span class="ls-badge" style="${bs}">${item.badge || ''}</span>`;
       } else {
-        html += `<span class="ls-badge ${item.badge_style}">${item.badge}</span>`;
+        html += `<span class="ls-badge ${bs}">${item.badge || ''}</span>`;
       }
       html += `<span class="ls-text">${item.text}</span>`;
       html += `<span class="ls-dot">&middot;</span>`;
@@ -1789,7 +1788,7 @@ function renderTeam(key, t) {
   if (knEl && t.key_numbers) {
     let html = '';
     t.key_numbers.forEach(kn => {
-      html += `<div class="kn"><div class="kn-num" style="color:var(--${key})">${kn.num}</div><div class="kn-label">${kn.label}</div><div class="kn-note">${kn.note}</div></div>`;
+      html += `<div class="kn"><div class="kn-num" style="color:var(--${key})">${kn.number}</div><div class="kn-label">${kn.label}</div><div class="kn-note">${kn.note}</div></div>`;
     });
     knEl.innerHTML = html;
   }
