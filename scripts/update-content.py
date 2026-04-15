@@ -310,11 +310,12 @@ FORMATTING:
 - Bold the forward-looking detail at the end with <strong> tags.
 - Use HTML entities: &mdash; for em dashes, &ndash; for en dashes, &rsquo; for apostrophes.
 - Do NOT use markdown. No asterisks, no bullet points.
+- Do NOT include citation numbers like [1], [2], etc. Write clean prose with no reference markers.
 - Do NOT exceed 200 words."""
 
-    prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of {today_str}.
+    prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of the morning of {today_str}.
 
-Search for the most recent {cfg['full_name']} news from the last 48 hours: game results, scores, standings, injuries, trades, and the upcoming schedule. Then write a single paragraph that synthesizes where this team stands RIGHT NOW.
+Search for the very latest {cfg['full_name']} news ‚Äî especially any games played yesterday or last night. Include the most recent game score, result, and key performances. Also check current standings, injuries, trades, and today's/tomorrow's schedule. Synthesize where this team stands RIGHT NOW as of this morning.
 
 Your paragraph must include:
 1. An opening that captures the team's current narrative arc ‚Äî not "The [Team] are..." but something with edge and voice
@@ -331,6 +332,10 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
         result = result.strip()
         result = re.sub(r'^\*\*.*?\*\*\s*\n*', '', result)  # Remove bold headers
         result = result.replace("**", "<strong>").replace("**", "</strong>")  # Convert markdown bold
+        # Remove Perplexity citation markers like [1], [2], [1][2], [3][4][5], etc.
+        result = re.sub(r'\[\d+\]', '', result)
+        # Clean up any double spaces left behind after removing citations
+        result = re.sub(r'  +', ' ', result)
         # Fix any unclosed strong tags
         open_count = result.count("<strong>")
         close_count = result.count("</strong>")
@@ -343,7 +348,7 @@ def generate_featured_and_stories():
     """Use Perplexity to identify the top 3-4 stories across all four teams."""
     today_str = NOW.strftime("%B %d, %Y")
 
-    prompt = f"""As of {today_str}, identify the TOP 3-4 most important sports stories across these four teams:
+    prompt = f"""As of the morning of {today_str}, identify the TOP 3-4 most important sports stories across these four teams. Focus on what happened YESTERDAY and LAST NIGHT ‚Äî game results from last night take priority:
 1. Toronto Maple Leafs (NHL)
 2. Toronto Blue Jays (MLB)
 3. Toronto Raptors (NBA)
@@ -363,7 +368,7 @@ For each story, provide in this EXACT JSON format (no markdown, just raw JSON):
   ]
 }}
 
-The FIRST story should be the biggest ‚Äî playoff games, major trades, dramatic results. Use HTML entities (&mdash; &ndash; &middot;) not unicode. Include real, verified URLs."""
+The FIRST story should be the biggest ‚Äî playoff games, major trades, dramatic results. Use HTML entities (&mdash; &ndash; &middot;) not unicode. Include real, verified URLs. Do NOT include citation numbers like [1], [2] in any text fields."""
 
     result = perplexity_search(prompt)
     if not result:
@@ -371,10 +376,17 @@ The FIRST story should be the biggest ‚Äî playoff games, major trades, drama
 
     # Try to extract JSON from the response
     try:
-        # Find JSON in the response
-        json_match = re.search(r'\{[\s\S]*"stories"[\s\S]*\}', result)
+        # Remove citation markers before parsing JSON
+        cleaned = re.sub(r'\[\d+\]', '', result)
+        json_match = re.search(r'\{[\s\S]*"stories"[\s\S]*\}', cleaned)
         if json_match:
-            return json.loads(json_match.group())
+            data = json.loads(json_match.group())
+            # Clean up any double spaces in text fields
+            for story in data.get("stories", []):
+                for field in ("headline", "dek", "kicker"):
+                    if field in story:
+                        story[field] = re.sub(r'  +', ' ', story[field]).strip()
+            return data
     except json.JSONDecodeError:
         print("  WARNING: Could not parse stories JSON from Perplexity")
     return None
@@ -408,7 +420,7 @@ def find_news_articles(team_key):
     cfg = TEAMS[team_key]
     today_str = NOW.strftime("%B %d, %Y")
 
-    prompt = f"""Find the 3 most recent and important news articles about the {cfg['full_name']} as of {today_str}.
+    prompt = f"""Find the 3 most recent and important news articles about the {cfg['full_name']} as of the morning of {today_str}. Prioritize articles from yesterday and last night ‚Äî especially game recaps from any games played last night.
 
 Return in this EXACT JSON format (no markdown, just raw JSON):
 {{
@@ -427,6 +439,7 @@ Return in this EXACT JSON format (no markdown, just raw JSON):
 Prefer Tier 1 sources: league official sites, ESPN, TSN, Sportsnet, The Athletic.
 Include a mix: game recaps, analysis, injury/roster news.
 Use HTML entities (&mdash; &ndash;) not unicode characters.
+Do NOT include citation numbers like [1], [2] in any text fields.
 All URLs must be real and currently accessible."""
 
     result = perplexity_search(prompt)
@@ -434,9 +447,17 @@ All URLs must be real and currently accessible."""
         return None
 
     try:
-        json_match = re.search(r'\{[\s\S]*"articles"[\s\S]*\}', result)
+        # Remove citation markers before parsing JSON
+        cleaned = re.sub(r'\[\d+\]', '', result)
+        json_match = re.search(r'\{[\s\S]*"articles"[\s\S]*\}', cleaned)
         if json_match:
-            return json.loads(json_match.group())
+            data = json.loads(json_match.group())
+            # Clean up any double spaces in text fields
+            for article in data.get("articles", []):
+                for field in ("headline", "dek"):
+                    if field in article:
+                        article[field] = re.sub(r'  +', ' ', article[field]).strip()
+            return data
     except json.JSONDecodeError:
         print(f"  WARNING: Could not parse articles JSON for {team_key}")
     return None
