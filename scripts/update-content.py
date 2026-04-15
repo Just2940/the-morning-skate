@@ -33,7 +33,7 @@ TEAMS = {
         "sport": "hockey",
         "espn_sport": "hockey",
         "espn_league": "nhl",
-        "espn_team_id": "17",  # Toronto Maple Leafs
+        "espn_team_id": "21",  # Toronto Maple Leafs (verified: 17=Colorado Avalanche)
         "espn_abbr": "TOR",
         "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
         "youtube_channel": "@NHL",
@@ -103,6 +103,20 @@ def sanitize_entry(entry):
     elif isinstance(entry, str):
         return sanitize_ascii(entry)
     return entry
+
+
+# === HELPER FUNCTIONS ===
+
+def is_recent_enough(recent_games, max_days=30):
+    """Check if the most recent game is within max_days. Used to suppress stale offseason data."""
+    if not recent_games:
+        return False
+    try:
+        last_game_date = datetime.strptime(recent_games[0].get("game_date", ""), "%Y-%m-%d")
+        days_since = (NOW.replace(tzinfo=None) - last_game_date).days
+        return days_since <= max_days
+    except:
+        return True  # If we can't parse the date, assume it's recent
 
 
 # === ESPN API HELPERS ===
@@ -489,15 +503,33 @@ def generate_ticker(all_team_facts):
         upcoming = facts_dict.get("upcoming", [])
         record = team_info.get("record", "")
 
-        # Most recent game result
+        # Determine if team is in-season: has a recent game within 14 days OR upcoming games
+        is_in_season = bool(upcoming)
         if recent:
-            g = recent[0]
-            result_word = "beat" if g["result"] == "W" else "fell to"
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}"
-            })
+            try:
+                last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
+                days_since = (NOW.replace(tzinfo=None) - last_game_date).days
+                if days_since <= 14:
+                    is_in_season = True
+            except:
+                pass
+
+        # Most recent game result ‚Äî only if game was within the last 14 days
+        if recent and is_in_season:
+            try:
+                last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
+                days_since = (NOW.replace(tzinfo=None) - last_game_date).days
+            except:
+                days_since = 999
+
+            if days_since <= 14:
+                g = recent[0]
+                result_word = "beat" if g["result"] == "W" else "fell to"
+                ticker_items.append({
+                    "badge": league,
+                    "badge_style": badge_style,
+                    "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}"
+                })
 
         # Record + standing
         standing = team_info.get("standing_summary", "")
@@ -513,8 +545,15 @@ def generate_ticker(all_team_facts):
                 "badge_style": badge_style,
                 "text": f"{team_name} record: {record}"
             })
+        elif not is_in_season:
+            # Offseason ‚Äî show a forward-looking note instead
+            ticker_items.append({
+                "badge": league,
+                "badge_style": badge_style,
+                "text": f"{team_name} &mdash; Offseason"
+            })
 
-        # Next game
+        # Next game (only if in-season / has upcoming)
         if upcoming:
             ng = upcoming[0]
             ticker_items.append({
@@ -876,21 +915,30 @@ def build_data():
         articles_data = find_news_articles(team_key)
         articles = articles_data.get("articles", []) if articles_data else []
 
-        # Find highlight video (if team played recently)
+        # Find highlight video (only if team played within last 48 hours)
         highlights = {"available": False}
         if recent:
             last_game = recent[0]
-            print(f"  Finding highlight video for vs {last_game['opp_name']}...")
-            hl_url = find_highlight_url(team_key, last_game["opp_name"])
-            result_badge = f"{'W' if last_game['result'] == 'W' else 'L'} {last_game['team_score']}-{last_game['opp_score']}"
-            highlights = {
-                "available": True,
-                "title": f"{last_game['opp_name']} vs. {cfg['full_name'].split()[-1]} &mdash; Full Highlights",
-                "subtitle": f"{cfg['league']} &middot; {last_game['date']}, {NOW.year}",
-                "result_badge": result_badge,
-                "result_class": "w" if last_game["result"] == "W" else "l",
-                "url": hl_url,
-            }
+            try:
+                last_game_date = datetime.strptime(last_game.get("game_date", ""), "%Y-%m-%d")
+                days_since_game = (NOW.replace(tzinfo=None) - last_game_date).days
+            except:
+                days_since_game = 999
+
+            if days_since_game <= 2:
+                print(f"  Finding highlight video for vs {last_game['opp_name']}...")
+                hl_url = find_highlight_url(team_key, last_game["opp_name"])
+                result_badge = f"{'W' if last_game['result'] == 'W' else 'L'} {last_game['team_score']}-{last_game['opp_score']}"
+                highlights = {
+                    "available": True,
+                    "title": f"{last_game['opp_name']} vs. {cfg['full_name'].split()[-1]} &mdash; Full Highlights",
+                    "subtitle": f"{cfg['league']} &middot; {last_game['date']}, {NOW.year}",
+                    "result_badge": result_badge,
+                    "result_class": "w" if last_game["result"] == "W" else "l",
+                    "url": hl_url,
+                }
+            else:
+                print(f"  Skipping highlights ‚Äî last game was {days_since_game} days ago")
 
         # Build key numbers from ESPN data
         key_numbers = build_key_numbers(team_key, team_info, standings, recent)
@@ -914,7 +962,7 @@ def build_data():
                 "updated": f"Updated {TODAY_DISPLAY}",
             },
             "key_numbers": key_numbers if key_numbers else existing_team.get("key_numbers", []),
-            "recent_results": recent if recent else existing_team.get("recent_results", []),
+            "recent_results": recent if (recent and is_recent_enough(recent)) else [],
             "last_game_highlights": highlights if highlights.get("available") else existing_team.get("last_game_highlights", {"available": False}),
             "the_latest": articles if articles else existing_team.get("the_latest", []),
             "standings": existing_team.get("standings", {}),
@@ -994,28 +1042,40 @@ def build_data():
         facts = all_team_facts.get(team_key, {})
         ti = facts.get("team_info", {})
         recent = facts.get("recent", [])
+        upcoming = facts.get("upcoming", [])
         standings_info = facts.get("standings", {})
         record = ti.get("record", "")
         standing = ti.get("standing_summary", "")
 
+        # Determine if team is in-season (recent game within 30 days or upcoming games)
+        team_in_season = bool(upcoming) or is_recent_enough(recent, max_days=30)
+
         # Build a smart status line
         status = standing or ""
         status_class = "muted"
-        if recent:
+        if team_in_season and recent:
             g = recent[0]
             if g["result"] == "W":
                 status_class = "green"
             else:
                 status_class = "red"
+        elif not team_in_season:
+            status = standing or "Offseason"
 
         # Build a key stat
         stat = ""
         streak = standings_info.get("streak", "")
-        if streak:
+        if streak and team_in_season:
             stat = f"Streak: {streak}"
-        elif recent:
+        elif recent and team_in_season:
+            # Calculate consecutive streak (not total)
             streak_type = recent[0]["result"]
-            streak_count = sum(1 for g in recent if g["result"] == streak_type)
+            streak_count = 0
+            for g in recent:
+                if g["result"] == streak_type:
+                    streak_count += 1
+                else:
+                    break
             stat = f"{'W' if streak_type == 'W' else 'L'}{streak_count}"
 
         db["at_a_glance"].append({
