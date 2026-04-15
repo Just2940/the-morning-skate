@@ -409,9 +409,14 @@ def build_key_numbers(team_key, team_info, standings, recent):
                 wp_fmt = wp
             numbers.append({"number": wp_fmt, "label": "Win Pct", "note": standing_summary or ""})
     elif league == "NBA":
-        gb = standings.get("gamesBehind", "")
-        if gb:
-            numbers.append({"number": str(gb), "label": "Games Behind", "note": standing_summary or ""})
+        # Use playoff seed if available, else conference rank
+        seed = standings.get("playoffSeed", "")
+        if seed and str(seed) != "0":
+            numbers.append({"number": f"#{seed}", "label": "Playoff Seed", "note": standing_summary or ""})
+        else:
+            ppg = standings.get("avgPointsFor", "")
+            if ppg:
+                numbers.append({"number": str(ppg), "label": "PPG", "note": "Points per game"})
     elif league == "NFL":
         wp = record_stats.get("winPercent_display", "")
         if wp:
@@ -433,15 +438,18 @@ def build_key_numbers(team_key, team_info, standings, recent):
         streak_str = f"{'W' if streak_type == 'W' else 'L'}{streak_count}"
         numbers.append({"number": streak_str, "label": "Streak", "note": f"{'Won' if streak_type == 'W' else 'Lost'} last {streak_count}"})
 
-    # Number 4: Games back or division rank
+    # Number 4: Games back or recent form
+    is_first = standing_summary.startswith("1st") if standing_summary else False
     gb = standings.get("gamesBack", standings.get("gamesBehind", ""))
-    if gb and gb != "0" and gb != "-":
+    if gb and gb != "0" and gb != "-" and not is_first:
+        # Only show "Games Back" for teams NOT in 1st place
         numbers.append({"number": str(gb), "label": "Games Back", "note": standing_summary or "In division"})
-    elif standing_summary:
-        # Extract rank number from "4th in Atlantic Division"
-        rank_match = re.match(r'(\d+)\w+ in (.+)', standing_summary)
-        if rank_match:
-            numbers.append({"number": rank_match.group(1), "label": f"In {rank_match.group(2)}", "note": standing_summary})
+    elif recent:
+        # For 1st-place teams or when GB unavailable, show Last 4 record
+        last_n = recent[:4]
+        w = sum(1 for g in last_n if g["result"] == "W")
+        l = len(last_n) - w
+        numbers.append({"number": f"{w}-{l}", "label": "Last 4", "note": "Recent form"})
 
     # Pad to 4 if we don't have enough
     while len(numbers) < 4:
