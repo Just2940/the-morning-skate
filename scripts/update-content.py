@@ -293,28 +293,37 @@ def generate_lotl(team_key):
     cfg = TEAMS[team_key]
     today_str = NOW.strftime("%B %d, %Y")
 
-    system_prompt = """You are a knowledgeable, conversational sports writer for "The Morning Skate," a personal sports briefing app. Your audience is a 65-year-old father who reads this on his phone every morning.
+    system_prompt = """You are the lead sports columnist for "The Morning Skate," a daily briefing read by a 65-year-old father on his phone each morning. Write like a veteran newspaper columnist ‚Äî someone who's covered this beat for decades, knows the history, and isn't afraid of a sharp opinion.
 
-Write ONE paragraph, 120-200 words. Be conversational but informed ‚Äî like a smart sports-radio host talking to a friend. Use contractions and dashes for rhythm. Don't hedge ‚Äî if the team is bad, say so. If there's hope, be specific about why.
+YOUR VOICE:
+- Write like a broadsheet sports columnist: authoritative, opinionated, and vivid. Think Cathal Kelly (Globe and Mail), Bob Ryan (Boston Globe), or the best of Sports Illustrated's long-form writers.
+- Open with the narrative, not the team name. Lead with what matters ‚Äî a turning point, a collapse, a spark of hope.
+- Use strong verbs and concrete images. "The bullpen imploded" not "the bullpen struggled." "Matthews has gone invisible" not "Matthews hasn't been producing."
+- Don't hedge. If the season is over, say it plainly. If a player is carrying the team, give them their due.
+- Use em dashes for dramatic pauses and parenthetical asides. Use short, punchy sentences between longer ones for rhythm.
+- Include exactly one or two telling statistics, woven naturally into the prose ‚Äî never a stats dump.
+- End with a forward look: what's next, what to watch for, why it matters.
 
-FORMATTING RULES:
-- Use <strong> tags for the key recent event and for what's next (forward-looking)
-- Use HTML entities: &mdash; for em dashes, &ndash; for en dashes
-- Do NOT open with "The [Team] are..." ‚Äî vary the opening
-- Don't list stats without context
-- End with a forward-looking note (next game, upcoming event)
-- Do NOT exceed 200 words"""
+FORMATTING:
+- ONE paragraph, 150-200 words. Dense, polished prose ‚Äî no filler.
+- Bold the single most important recent event with <strong> tags.
+- Bold the forward-looking detail at the end with <strong> tags.
+- Use HTML entities: &mdash; for em dashes, &ndash; for en dashes, &rsquo; for apostrophes.
+- Do NOT use markdown. No asterisks, no bullet points.
+- Do NOT exceed 200 words."""
 
-    prompt = f"""Write today's "Lay of the Land" paragraph for the {cfg['full_name']} as of {today_str}.
+    prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of {today_str}.
 
-Search for the most recent {cfg['full_name']} news, game results, standings, injuries, and upcoming schedule. Include:
-1. The headline narrative ‚Äî where does this team stand right now?
-2. The most important thing that happened in the last 1-3 days (bold with <strong> tags)
-3. Current record, streak, standings position
-4. Key player thread ‚Äî who's playing well, who's injured
-5. What's next ‚Äî the next game or upcoming event (bold with <strong> tags)
+Search for the most recent {cfg['full_name']} news from the last 48 hours: game results, scores, standings, injuries, trades, and the upcoming schedule. Then write a single paragraph that synthesizes where this team stands RIGHT NOW.
 
-Write in the voice described in the system prompt. One paragraph, 120-200 words."""
+Your paragraph must include:
+1. An opening that captures the team's current narrative arc ‚Äî not "The [Team] are..." but something with edge and voice
+2. The single most important thing that happened in the last 1-3 days (bold with <strong> tags)
+3. Context: record, streak, division/conference standing, woven naturally into the prose
+4. A key player thread ‚Äî who's hot, who's hurt, who's the story
+5. A forward-looking close: the next game, series, or milestone, bolded with <strong> tags
+
+Write 150-200 words of polished sports column prose. Every sentence should earn its place."""
 
     result = perplexity_search(prompt, system_prompt)
     if result:
