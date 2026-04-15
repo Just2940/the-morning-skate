@@ -1,0 +1,35 @@
+name: Daily Morning Skate Update
+on:
+  schedule:
+    - cron: "0 9 * * *"  # 9 AM UTC = 4 AM EST
+  workflow_dispatch:       # Manual trigger from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run update script
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        run: python scripts/update-content.py
+
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet data.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "Morning Skate Bot"
+          git config user.email "morning-skate-bot@themorningskate.com"
+          git add data.json
+          git commit -m "Daily update: $(TZ='America/New_York' date +'%B %d, %Y') morning briefing"
+          git push
