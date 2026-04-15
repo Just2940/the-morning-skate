@@ -458,12 +458,23 @@ def build_key_numbers(team_key, team_info, standings, recent):
 
 
 def generate_ticker(all_team_facts):
-    """Generate ticker items from verified ESPN data ‚Äî no AI needed."""
+    """Generate ticker items from verified ESPN data ‚Äî no AI needed.
+    Each item must have: badge, badge_style, text (matching index.html renderTicker)."""
     ticker_items = []
+
+    # Badge styles per team (CSS variable colors)
+    BADGE_STYLES = {
+        "leafs": "background:var(--leafs);color:#fff",
+        "jays": "background:var(--jays);color:#fff",
+        "raptors": "background:var(--raptors);color:#fff",
+        "commanders": "background:var(--commanders);color:#fff",
+    }
+
     for team_key, facts_dict in all_team_facts.items():
         cfg = TEAMS[team_key]
         team_name = cfg["full_name"].split()[-1]
         league = cfg["league"]
+        badge_style = BADGE_STYLES.get(team_key, "muted")
 
         recent = facts_dict.get("recent", [])
         team_info = facts_dict.get("team_info", {})
@@ -475,7 +486,8 @@ def generate_ticker(all_team_facts):
             g = recent[0]
             result_word = "beat" if g["result"] == "W" else "fell to"
             ticker_items.append({
-                "team": team_key,
+                "badge": league,
+                "badge_style": badge_style,
                 "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}"
             })
 
@@ -483,12 +495,14 @@ def generate_ticker(all_team_facts):
         standing = team_info.get("standing_summary", "")
         if record and standing:
             ticker_items.append({
-                "team": team_key,
+                "badge": league,
+                "badge_style": badge_style,
                 "text": f"{team_name} ({record}) &mdash; {standing}"
             })
         elif record:
             ticker_items.append({
-                "team": team_key,
+                "badge": league,
+                "badge_style": badge_style,
                 "text": f"{team_name} record: {record}"
             })
 
@@ -496,7 +510,8 @@ def generate_ticker(all_team_facts):
         if upcoming:
             ng = upcoming[0]
             ticker_items.append({
-                "team": team_key,
+                "badge": league,
+                "badge_style": badge_style,
                 "text": f"Next: {team_name} {ng['opp']} &mdash; {ng['day']} {ng['time']}"
             })
 
