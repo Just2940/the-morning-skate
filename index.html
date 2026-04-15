@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Morning Skate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   THE MORNING SKATE
+   A personal sports briefing ‚Äî built with love.
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+
+:root {
+  --cream: #FAF7F2;
+  --warm-white: #FFFFFF;
+  --ink: #1C1917;
+  --ink-soft: #44403C;
+  --ink-muted: #78716C;
+  --ink-faint: #A8A29E;
+  --rule: #E7E5E4;
+  --rule-dark: #D6D3D1;
+
+  --leafs: #00205B;
+  --leafs-light: #EEF2F9;
+  --jays: #134A8E;
+  --jays-light: #EDF2FA;
+  --raptors: #CE1141;
+  --raptors-light: #FDF0F3;
+  --commanders: #773141;
+  --commanders-gold: #FFB612;
+  --commanders-light: #FAF0EC;
+
+  --green: #15803D;
+  --green-bg: #F0FDF4;
+  --red: #B91C1C;
+  --red-bg: #FEF2F2;
+
+  --serif: 'Playfair Display', 'Georgia', serif;
+  --body-serif: 'Source Serif 4', 'Georgia', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Menlo', monospace;
+
+  --r: 10px;
+  --r-lg: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+img { display: block; }
+
+/* Noise overlay for organic texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   MASTHEAD
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.masthead {
+  text-align: center;
+  padding: 32px 24px 0;
+  border-bottom: 3px double var(--rule-dark);
+  background: var(--warm-white);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  overflow: hidden;
+}
+.masthead-emblem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 10px 0 8px;
+}
+.masthead-emblem::before,
+.masthead-emblem::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: var(--rule-dark);
+}
+.masthead-tower {
+  height: 70px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.35;
+}
+.masthead-tower path {
+  fill: var(--ink);
+}
+.masthead-date {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--ink-soft);
+  margin-bottom: 0;
+  display: inline-block;
+}
+.masthead-title {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.masthead-tagline {
+  font-family: var(--body-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-bottom: 16px;
+}
+
+/* ‚îÄ‚îÄ TEAM NAV ‚îÄ‚îÄ */
+.team-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  position: sticky;
+  top: 97px;
+  z-index: 199;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--ink-muted);
+  transition: color 0.2s, box-shadow 0.2s;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.nav-btn:hover { color: var(--ink-soft); }
+.nav-btn img { width: 22px; height: 22px; object-fit: contain; }
+.nav-btn.active { color: var(--ink); }
+.nav-btn[data-t="home"].active { border-bottom-color: var(--ink); }
+.nav-btn[data-t="leafs"].active { border-bottom-color: var(--leafs); }
+.nav-btn[data-t="jays"].active { border-bottom-color: var(--jays); }
+.nav-btn[data-t="raptors"].active { border-bottom-color: var(--raptors); }
+.nav-btn[data-t="commanders"].active { border-bottom-color: var(--commanders); }
+
+@media (max-width: 580px) {
+  .masthead { position: relative; }
+  .masthead-tower { height: 50px; }
+  .masthead-emblem::before, .masthead-emblem::after { max-width: 60px; }
+  .masthead-title { font-size: 32px; }
+  .team-nav { top: 0; }
+  .nav-btn span.lbl { display: none; }
+  .nav-btn img { width: 26px; height: 26px; }
+  .nav-btn { padding: 12px 16px; }
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   MAIN
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.panel { display: none; }
+.panel.on { display: block; animation: fadeUp 0.35s ease; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   HOME ‚Äî EDITORIAL LAYOUT
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+
+/* ‚îÄ‚îÄ Live strip (infinite ticker) ‚îÄ‚îÄ */
+.live-strip {
+  overflow: hidden;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-top: 20px;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+.ls-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: tickerScroll var(--ticker-duration, 30s) linear infinite;
+}
+.live-strip:hover .ls-track {
+  animation-play-state: paused;
+}
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ls-badge {
+  flex-shrink: 0;
+  padding: 5px 14px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}
+.ls-badge.playoff { background: var(--raptors); animation: livePulse 2.5s ease-in-out infinite; }
+.ls-badge.draft { background: var(--ink); }
+@keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.65} }
+.ls-text {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.ls-dot {
+  color: var(--rule-dark);
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+/* ‚îÄ‚îÄ Featured story (big) ‚îÄ‚îÄ */
+.featured {
+  margin-top: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.featured:hover { transform: translateY(-2px); }
+.featured-kicker {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.featured-kicker.raptors { color: var(--raptors); }
+.featured-hl {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+.featured-dek {
+  font-family: var(--body-serif);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin-bottom: 8px;
+}
+.featured-meta {
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+.featured-rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 28px 0;
+}
+
+/* ‚îÄ‚îÄ Two-up editorial grid ‚îÄ‚îÄ */
+.two-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 28px;
+}
+@media (max-width: 600px) { .two-up { grid-template-columns: 1fr; gap: 24px; } }
+
+.story {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.story:hover { transform: translateY(-2px); }
+.story-kicker {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+.story-kicker.leafs { color: var(--leafs); }
+.story-kicker.jays { color: var(--jays); }
+.story-kicker.commanders { color: var(--commanders); }
+.story-hl {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.story-dek {
+  font-family: var(--body-serif);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.story-meta {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ‚îÄ‚îÄ Team glance cards ‚îÄ‚îÄ */
+.glance-header {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+}
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 0;
+}
+@media (max-width: 700px) { .glance-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .glance-grid { grid-template-columns: 1fr; } }
+
+.glance {
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 18px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  position: relative;
+}
+.glance:hover {
+  border-color: var(--rule-dark);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transform: translateY(-3px);
+}
+.glance-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+.glance-name {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+.glance-record {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+.glance-status {
+  font-size: 11px;
+  font-weight: 600;
+}
+.glance-status.green { color: var(--green); }
+.glance-status.red { color: var(--red); }
+.glance-status.gold { color: #B45309; }
+.glance-status.muted { color: var(--ink-faint); }
+.glance-stat {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  line-height: 1.4;
+}
+.glance-stat strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* TODAY'S SLATE */
+.slate {
+  margin-bottom: 32px;
+}
+.slate-header {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.slate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.slate-card {
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.slate-card.off {
+  opacity: 0.55;
+}
+.slate-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.slate-info {
+  flex: 1;
+  min-width: 0;
+}
+.slate-matchup {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.slate-detail {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+.slate-channel {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+/* WEEK AHEAD */
+.week-ahead {
+  margin-bottom: 32px;
+}
+.week-header {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.week-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+.week-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--ink-faint);
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--rule-dark);
+}
+.week-table td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  vertical-align: middle;
+}
+.week-table tr:last-child td {
+  border-bottom: none;
+}
+.week-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.week-team img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.week-day {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.week-opp {
+  white-space: nowrap;
+}
+.week-time {
+  font-family: var(--mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.week-tv {
+  font-size: 11px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .slate-grid { grid-template-columns: 1fr; }
+  .week-table { font-size: 12px; }
+  .week-table th, .week-table td { padding: 8px 6px; }
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   TEAM PANELS
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+
+/* ‚îÄ‚îÄ Team Header ‚îÄ‚îÄ */
+.team-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 32px 0 24px;
+  border-bottom: 3px double var(--rule-dark);
+  margin-bottom: 0;
+}
+.th-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.th-info h2 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.th-record {
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-top: 2px;
+}
+.th-detail {
+  font-family: var(--body-serif);
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 520px) {
+  .th-logo { width: 56px; height: 56px; }
+  .th-info h2 { font-size: 26px; }
+  .th-record { font-size: 24px; }
+}
+
+/* ‚îÄ‚îÄ Quick links row ‚îÄ‚îÄ */
+.links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.link-pill {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--rule);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: all 0.15s;
+  background: var(--warm-white);
+}
+.link-pill:hover { border-color: var(--ink-muted); color: var(--ink); }
+
+/* ‚îÄ‚îÄ Section dividers ‚îÄ‚îÄ */
+.sec {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 28px;
+  padding-bottom: 12px;
+}
+.sec-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+.sec-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+/* ‚îÄ‚îÄ Key Numbers ‚îÄ‚îÄ */
+.key-nums {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 4px;
+}
+@media (max-width: 700px) {
+  .key-nums { grid-template-columns: repeat(2, 1fr); }
+}
+.kn {
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 20px 16px 16px;
+  text-align: center;
+}
+.kn-num {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.kn-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+.kn-note {
+  font-family: var(--body-serif);
+  font-size: 13px;
+  color: var(--ink-faint);
+  line-height: 1.4;
+}
+
+/* ‚îÄ‚îÄ Scoreboard ‚îÄ‚îÄ */
+.sb-wrap {
+  position: relative;
+}
+.sb-wrap .sb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background: var(--warm-white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--ink-muted);
+  transition: all 0.15s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sb-wrap:hover .sb-arrow.vis { opacity: 1; pointer-events: auto; }
+.sb-arrow:hover { border-color: var(--ink-muted); color: var(--ink); box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
+.sb-arrow.left { left: -6px; }
+.sb-arrow.right { right: -6px; }
+
+.scoreboard {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 0 12px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.scoreboard::-webkit-scrollbar { display: none; }
+
+/* ‚îÄ‚îÄ Lay of the Land ‚îÄ‚îÄ */
+.lotl {
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  padding: 28px 28px 24px;
+  margin-bottom: 4px;
+}
+.lotl-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lotl-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lotl.leafs .lotl-label::before { background: var(--leafs); }
+.lotl.jays .lotl-label::before { background: var(--jays); }
+.lotl.raptors .lotl-label::before { background: var(--raptors); }
+.lotl.commanders .lotl-label::before { background: var(--commanders); }
+.lotl-body {
+  font-family: var(--body-serif);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.lotl-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.lotl-updated {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 14px;
+  font-style: italic;
+}
+
+.sb-game {
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  min-width: 220px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.sb-game:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.sb-date {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sb-pill {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.sb-pill.w { background: var(--green-bg); color: var(--green); }
+.sb-pill.l { background: var(--red-bg); color: var(--red); }
+.sb-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+.sb-row img { width: 20px; height: 20px; object-fit: contain; }
+.sb-row-name {
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+}
+.sb-row-score {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+}
+.sb-row.w .sb-row-name, .sb-row.w .sb-row-score { color: var(--ink); }
+.sb-row.l .sb-row-name, .sb-row.l .sb-row-score { color: var(--ink-faint); }
+.sb-divider { height: 1px; background: var(--rule); margin: 2px 28px; }
+
+/* ‚îÄ‚îÄ News ‚îÄ‚îÄ */
+.news-stack { }
+.ni {
+  display: block;
+  text-decoration: none;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+  transition: padding-left 0.2s;
+}
+.ni:last-child { border-bottom: none; }
+.ni:hover { padding-left: 8px; }
+.ni-source {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 4px;
+}
+.ni-source.tsn { color: #2563EB; }
+.ni-source.sportsnet { color: #4F46E5; }
+.ni-source.athletic { color: #C2410C; }
+.ni-source.espn { color: #DC2626; }
+.ni-source.nba { color: #4338CA; }
+.ni-source.mlb { color: #1E40AF; }
+.ni-source.nfl { color: #1E3A5F; }
+.ni-source.cbs { color: #15803D; }
+.ni-source.hogs { color: var(--commanders); }
+.ni-source.web { color: var(--ink-muted); }
+
+.ni-hl {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+.ni-dek {
+  font-family: var(--body-serif);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.ni-time {
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
+
+/* ‚îÄ‚îÄ Podcasts ‚îÄ‚îÄ */
+.pod-list { }
+.pod {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: flex-start;
+}
+.pod:last-child { border-bottom: none; }
+.pod-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--ink-faint);
+  line-height: 1;
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pod-body { flex: 1; }
+.pod-name {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.pod-host {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+.pod-desc {
+  font-family: var(--body-serif);
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.pod-links { display: flex; gap: 6px; flex-wrap: wrap; }
+.pod-link {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.3px;
+  transition: opacity 0.15s;
+}
+.pod-link:hover { opacity: 0.8; }
+.pod-link.sp { background: #1DB954; }
+.pod-link.ap { background: #8B5CF6; }
+.pod-link.wb { background: var(--ink-faint); }
+.pod-link.yt { background: #DC2626; }
+
+/* ‚îÄ‚îÄ Video / Watch Links ‚îÄ‚îÄ */
+.watch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 600px) { .watch-grid { grid-template-columns: 1fr; } }
+
+.watch-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+.watch-card:hover {
+  border-color: var(--rule-dark);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.watch-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+.watch-play.yt { background: #FF0000; color: white; }
+.watch-play.tv { background: var(--ink); color: white; }
+.watch-body {}
+.watch-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+.watch-sub {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+/* ‚îÄ‚îÄ Last Game Highlights ‚îÄ‚îÄ */
+.highlights-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  background: var(--warm-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.highlights-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+  background: #FF0000;
+}
+.highlights-card:hover {
+  border-color: var(--rule-dark);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.hl-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #FF0000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+}
+.hl-body {
+  flex: 1;
+  min-width: 0;
+}
+.hl-title {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.hl-sub {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.hl-badge {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+}
+.hl-badge.w { background: var(--green-bg); color: var(--green); }
+.hl-badge.l { background: var(--red-bg); color: var(--red); }
+
+@media (max-width: 480px) {
+  .highlights-card { padding: 16px 18px; gap: 14px; }
+  .hl-play { width: 48px; height: 48px; font-size: 20px; border-radius: 12px; }
+  .hl-title { font-size: 15px; }
+  .hl-badge { font-size: 13px; padding: 5px 10px; }
+}
+@media (max-width: 360px) {
+  .highlights-card { padding: 14px 16px; gap: 12px; }
+  .hl-play { width: 42px; height: 42px; font-size: 18px; }
+  .hl-title { font-size: 14px; }
+}
+
+/* ‚îÄ‚îÄ Standings ‚îÄ‚îÄ */
+.tbl-wrap {
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--warm-white);
+}
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.tbl th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-faint);
+  border-bottom: 1px solid var(--rule);
+  background: var(--cream);
+}
+.tbl th:not(:first-child) { text-align: center; }
+.tbl td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.tbl td:not(:first-child) {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr.you { background: #FEFCE8; }
+.tbl tr.you td { color: var(--ink); font-weight: 600; }
+.tbl .tc {
+  display: flex; align-items: center; gap: 8px; font-weight: 600;
+}
+.tbl .tc img { width: 20px; height: 20px; object-fit: contain; }
+
+/* ‚îÄ‚îÄ Draft table ‚îÄ‚îÄ */
+.draft-tbl td.pk {
+  font-family: var(--mono);
+  font-weight: 700;
+}
+.draft-tbl tr.rd1 { background: #FFFBEB; }
+.draft-tbl tr.rd1 td { font-weight: 600; }
+.draft-tbl .gone { color: var(--ink-faint); font-style: italic; }
+
+/* ‚îÄ‚îÄ Standings Tabs ‚îÄ‚îÄ */
+.standings-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.standings-tab {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.standings-tab:hover { border-color: var(--rule-dark); color: var(--ink-soft); }
+.standings-tab.active {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+.standings-pane { display: none; }
+.standings-pane.active { display: block; }
+.tbl .playoff-in td:first-child { border-left: 3px solid var(--green); }
+.tbl .playoff-out td:first-child { border-left: 3px solid var(--red); }
+.tbl .wc-line td { border-bottom: 2px dashed var(--rule-dark); }
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   MOBILE ‚Äî COMPREHENSIVE (375px target)
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+@media (max-width: 480px) {
+  /* Masthead: compress for small screens */
+  .masthead { padding: 20px 16px 0; }
+  .masthead-date { font-size: 10px; letter-spacing: 2px; }
+  .masthead-tagline { font-size: 13px; margin-bottom: 12px; }
+
+  /* Nav: smaller top offset for compressed masthead */
+  .team-nav { top: 78px; }
+
+  /* Main content padding */
+  .main { padding: 0 16px 60px; }
+
+  /* Home featured story */
+  .featured-hl { font-size: 28px; }
+  .featured-dek { font-size: 16px; }
+
+  /* LOTL ‚Äî tighter padding */
+  .lotl { padding: 20px 18px 18px; }
+  .lotl-body { font-size: 16px; line-height: 1.65; }
+
+  /* News headlines slightly smaller */
+  .ni-hl { font-size: 18px; }
+  .ni-dek { font-size: 14px; }
+
+  /* Tables ‚Äî tighter cells for narrow screens */
+  .tbl { font-size: 13px; }
+  .tbl th { padding: 8px 8px; font-size: 9px; }
+  .tbl td { padding: 8px 8px; }
+  .tbl td:not(:first-child) { font-size: 12px; }
+  .tbl .tc img { width: 16px; height: 16px; }
+  .tbl .tc { gap: 6px; font-size: 13px; }
+
+  /* Standings tabs ‚Äî bigger touch targets */
+  .standings-tab { padding: 8px 12px; font-size: 11px; }
+
+  /* Key numbers */
+  .kn-num { font-size: 26px; }
+  .kn { padding: 16px 12px 14px; }
+
+  /* Podcasts */
+  .pod-num { font-size: 22px; width: 22px; }
+  .pod { gap: 12px; }
+  .pod-name { font-size: 15px; }
+
+  /* Watch cards */
+  .watch-card { padding: 14px 16px; gap: 12px; }
+
+  /* Section dividers */
+  .sec { padding-top: 22px; padding-bottom: 10px; }
+
+  /* Footer */
+  .footer { padding: 32px 16px 24px; }
+
+  /* Scoreboard cards */
+  .sb-game { min-width: 200px; padding: 12px 14px; }
+
+  /* Draft table */
+  .draft-tbl td, .draft-tbl th { font-size: 12px; }
+}
+
+/* Extra small ‚Äî iPhone SE and similar (320-360px) */
+@media (max-width: 360px) {
+  .masthead-title { font-size: 28px; }
+  .masthead-tower { height: 40px; }
+  .masthead-emblem::before, .masthead-emblem::after { max-width: 40px; }
+  .team-nav { top: 72px; }
+  .nav-btn { padding: 10px 12px; }
+  .nav-btn img { width: 24px; height: 24px; }
+  .featured-hl { font-size: 24px; }
+  .th-info h2 { font-size: 22px; }
+  .th-record { font-size: 20px; }
+  .th-logo { width: 48px; height: 48px; }
+  .tbl th { padding: 6px 6px; }
+  .tbl td { padding: 6px 6px; }
+  .key-nums { gap: 8px; }
+}
+
+/* ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+   FOOTER
+   ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê */
+.footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 32px;
+  text-align: center;
+  border-top: 3px double var(--rule-dark);
+}
+.footer-main {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-muted);
+}
+.footer-sub {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
+</style>
+
+
+<body>
+
+<header class="masthead">
+  <h1 class="masthead-title">The Morning Skate</h1>
+  <p class="masthead-date" id="mDate"></p>
+  <p class="masthead-tagline">Your daily sports briefing &mdash; four teams, one page, every morning.</p>
+</header>
+
+<nav class="team-nav" id="nav">
+  <button class="nav-btn active" data-t="home" onclick="go('home')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span class="lbl">Today</span>
+  </button>
+  <button class="nav-btn" data-t="leafs" onclick="go('leafs')">
+    <img src="https://a.espncdn.com/i/teamlogos/nhl/500/tor.png" alt="">
+    <span class="lbl">Maple Leafs</span>
+  </button>
+  <button class="nav-btn" data-t="jays" onclick="go('jays')">
+    <img src="https://a.espncdn.com/i/teamlogos/mlb/500/tor.png" alt="">
+    <span class="lbl">Blue Jays</span>
+  </button>
+  <button class="nav-btn" data-t="raptors" onclick="go('raptors')">
+    <img src="https://a.espncdn.com/i/teamlogos/nba/500/tor.png" alt="">
+    <span class="lbl">Raptors</span>
+  </button>
+  <button class="nav-btn" data-t="commanders" onclick="go('commanders')">
+    <img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="">
+    <span class="lbl">Commanders</span>
+  </button>
+</nav>
+
+<main class="main">
+
+<!-- ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+     TODAY
+     ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê -->
+<div class="panel on" id="p-home">
+
+  <div class="live-strip" id="ticker"></div>
+
+  <!-- FEATURED STORY -->
+  <div id="featured"></div>
+
+  <hr class="featured-rule">
+
+  <!-- TWO-UP STORIES -->
+  <div class="two-up" id="two-up"></div>
+
+  <!-- EXTRA STORY -->
+  <div id="extra-story"></div>
+
+  <!-- AT A GLANCE -->
+  <div class="glance-header">At a Glance</div>
+  <div class="glance-grid" id="at-a-glance"></div>
+
+  <!-- TODAY'S SLATE -->
+  <div class="slate">
+    <div class="sec"><span class="sec-label">Today's Slate</span><span class="sec-line"></span></div>
+    <div class="slate-grid" id="today-slate"></div>
+  </div>
+
+  <!-- WEEK AHEAD -->
+  <div class="week-ahead">
+    <div class="sec"><span class="sec-label">The Week Ahead</span><span class="sec-line"></span></div>
+    <table class="week-table">
+      <thead>
+        <tr><th>Day</th><th>Team</th><th>Matchup</th><th>Time</th><th>TV</th></tr>
+      </thead>
+      <tbody id="week-ahead-body"></tbody>
+    </table>
+    <div id="week-ahead-note" style="font-family:var(--sans);font-size:11px;color:var(--ink-faint);margin-top:10px;font-style:italic"></div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     MAPLE LEAFS
+     ============================================================ -->
+<div class="panel" id="p-leafs">
+  <div class="team-header" style="background: var(--leafs-light)">
+    <div class="th-inner">
+      <h2 id="leafs-name"></h2>
+      <div class="th-record" id="leafs-record" style="color:var(--leafs)"></div>
+      <div class="th-detail" id="leafs-detail"></div>
+    </div>
+  </div>
+
+  <div id="leafs-live-strip-wrap"></div>
+
+  <div class="links-row">
+    <a href="https://www.nhl.com/mapleleafs/" target="_blank" class="link-pill">NHL.com</a>
+    <a href="https://www.espn.com/nhl/team/_/name/tor/toronto-maple-leafs" target="_blank" class="link-pill">ESPN</a>
+    <a href="https://www.tsn.ca/nhl/team/toronto-maple-leafs" target="_blank" class="link-pill">TSN</a>
+    <a href="https://www.sportsnet.ca/hockey/nhl/teams/toronto-maple-leafs/" target="_blank" class="link-pill">Sportsnet</a>
+    <a href="https://theathletic.com/nhl/team/maple-leafs/" target="_blank" class="link-pill">The Athletic</a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">The Lay of the Land</span><span class="sec-line"></span></div>
+  <div class="lotl leafs">
+    <div class="lotl-label" id="leafs-lotl-label"></div>
+    <div class="lotl-body" id="leafs-lotl-body"></div>
+    <div class="lotl-updated" id="leafs-lotl-updated"></div>
+  </div>
+
+  <div class="sec"><span class="sec-label">Key Numbers</span><span class="sec-line"></span></div>
+  <div class="key-nums" id="leafs-key-nums"></div>
+
+  <div id="leafs-recent-results-wrap"></div>
+
+  <div id="leafs-highlights-wrap"></div>
+
+  <div class="sec"><span class="sec-label">The Latest</span><span class="sec-line"></span></div>
+  <div class="news-stack" id="leafs-news"></div>
+
+  <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
+  <div class="pod-list">
+    <div class="pod"><div class="pod-num">1</div><div class="pod-body"><div class="pod-name">The Leaf Report</div><div class="pod-host">Jonas Siegel &amp; James Mirtle &middot; The Athletic</div><div class="pod-desc">The definitive weekly Leafs podcast. In-depth coverage from two of the best hockey writers in the business.</div><div class="pod-links"><a href="https://open.spotify.com/show/51DDqFbzT3PWmTEQTJiLql" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/the-leaf-report-a-show-about-the-toronto-maple-leafs/id974288930" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">2</div><div class="pod-body"><div class="pod-name">Locked On Leafs</div><div class="pod-host">Mike DiStefano &amp; David Morassutti</div><div class="pod-desc">Daily episodes with expert analysis, local insight, and full franchise coverage.</div><div class="pod-links"><a href="https://open.spotify.com/show/2HpV4o7npI9dDIiBzFWRid" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/locked-on-leafs/id1367328411" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">3</div><div class="pod-body"><div class="pod-name">Real Kyper &amp; Bourne</div><div class="pod-host">Nick Kypreos &amp; Justin Bourne &middot; Sportsnet 590 The FAN</div><div class="pod-desc">All things Leafs and NHL. Live weekdays 4&ndash;6 PM ET &mdash; smart, opinionated, well-connected.</div><div class="pod-links"><a href="https://open.spotify.com/show/65ktMVWTKM8VBy3JD975iN" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/ca/podcast/real-kyper-bourne/id1588452517" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">4</div><div class="pod-body"><div class="pod-name">Leafs Talk</div><div class="pod-host">JD Bunkis, Sam McKee &amp; Justin Bourne</div><div class="pod-desc">Post-game breakdowns after every Maple Leafs game.</div><div class="pod-links"><a href="https://open.spotify.com/show/04DMTaW2TnGTMBmNU3p3Nk" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/ca/podcast/leafs-talk/id1649418471" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
+  <div class="watch-grid">
+    <a href="https://www.youtube.com/results?search_query=Toronto+Maple+Leafs+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Latest Leafs Highlights</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Steve+Dangle+LFR+Maple+Leafs" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Steve Dangle &mdash; LFR Reactions</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Maple+Leafs+offseason+rebuild" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Leafs Offseason &amp; Rebuild Talk</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Auston+Matthews+injury+update" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Matthews Injury Updates</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Standings</span><span class="sec-line"></span></div>
+  <div class="standings-wrap" id="leafs-standings"></div>
+
+</div>
+
+<!-- ============================================================
+     BLUE JAYS
+     ============================================================ -->
+<div class="panel" id="p-jays">
+  <div class="team-header" style="background: var(--jays-light)">
+    <div class="th-inner">
+      <h2 id="jays-name"></h2>
+      <div class="th-record" id="jays-record" style="color:var(--jays)"></div>
+      <div class="th-detail" id="jays-detail"></div>
+    </div>
+  </div>
+
+  <div id="jays-live-strip-wrap"></div>
+
+  <div class="links-row">
+    <a href="https://www.mlb.com/bluejays" target="_blank" class="link-pill">MLB.com</a>
+    <a href="https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays" target="_blank" class="link-pill">ESPN</a>
+    <a href="https://www.sportsnet.ca/baseball/mlb/teams/toronto-blue-jays/" target="_blank" class="link-pill">Sportsnet</a>
+    <a href="https://www.mlb.com/bluejays/schedule/fullseason" target="_blank" class="link-pill">Schedule</a>
+    <a href="https://theathletic.com/mlb/team/blue-jays/" target="_blank" class="link-pill">The Athletic</a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">The Lay of the Land</span><span class="sec-line"></span></div>
+  <div class="lotl jays">
+    <div class="lotl-label" id="jays-lotl-label"></div>
+    <div class="lotl-body" id="jays-lotl-body"></div>
+    <div class="lotl-updated" id="jays-lotl-updated"></div>
+  </div>
+
+  <div class="sec"><span class="sec-label">Key Numbers</span><span class="sec-line"></span></div>
+  <div class="key-nums" id="jays-key-nums"></div>
+
+  <div id="jays-recent-results-wrap"></div>
+
+  <div id="jays-highlights-wrap"></div>
+
+  <div class="sec"><span class="sec-label">The Latest</span><span class="sec-line"></span></div>
+  <div class="news-stack" id="jays-news"></div>
+
+  <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
+  <div class="pod-list">
+    <div class="pod"><div class="pod-num">1</div><div class="pod-body"><div class="pod-name">At The Letters</div><div class="pod-host">Ben Nicholson-Smith &amp; Arden Zwelling &middot; Sportsnet</div><div class="pod-desc">The most in-depth Blue Jays podcast out there. Expert coverage, player interviews, front-office insights.</div><div class="pod-links"><a href="https://open.spotify.com/show/4qDVNDRRFU3voSTRDZGSdU" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/ca/podcast/at-the-letters/id980581194" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">2</div><div class="pod-body"><div class="pod-name">Locked On Blue Jays</div><div class="pod-host">Brayden Ewasko &amp; Carter Fuerst</div><div class="pod-desc">Daily Blue Jays fix. Local analysis, game recaps, trade rumours &mdash; everything a Jays fan needs.</div><div class="pod-links"><a href="https://open.spotify.com/show/5SFlBTECwLiOSM414Ufp4z" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/locked-on-blue-jays-daily-podcast-on-the-toronto-blue-jays/id1367328411" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">3</div><div class="pod-body"><div class="pod-name">Deep Left Field</div><div class="pod-host">Mike Wilner</div><div class="pod-desc">Longtime Blue Jays radio voice with decades of insider knowledge.</div><div class="pod-links"><a href="https://open.spotify.com/show/6S54ngKuhCzEk8GObrwhYS" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-left-field-with-mike-wilner/id1556958144" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">4</div><div class="pod-body"><div class="pod-name">Blue Jays Talk</div><div class="pod-host">Jeff Blair, Kevin Barker &amp; Sho Alli</div><div class="pod-desc">Post-game recaps after every game. Listener calls and expert reaction.</div><div class="pod-links"><a href="https://open.spotify.com/show/5UKnNdU1gIlzm5iKpw6hw3" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/ca/podcast/blue-jays-talk/id430621876" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
+  <div class="watch-grid">
+    <a href="https://www.youtube.com/results?search_query=Toronto+Blue+Jays+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Latest Blue Jays Highlights</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Blue+Jays+game+recap" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Game Recaps</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Blue+Jays+analysis" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Blue Jays Analysis</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=George+Springer+injury+Blue+Jays" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Springer Injury Coverage</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Standings</span><span class="sec-line"></span></div>
+  <div class="standings-wrap" id="jays-standings"></div>
+
+</div>
+
+<!-- ============================================================
+     RAPTORS
+     ============================================================ -->
+<div class="panel" id="p-raptors">
+  <div class="team-header" style="background: var(--raptors-light)">
+    <div class="th-inner">
+      <h2 id="raptors-name"></h2>
+      <div class="th-record" id="raptors-record" style="color:var(--raptors)"></div>
+      <div class="th-detail" id="raptors-detail"></div>
+    </div>
+  </div>
+
+  <div id="raptors-live-strip-wrap"></div>
+
+  <div class="links-row">
+    <a href="https://www.nba.com/team/1610612761" target="_blank" class="link-pill">NBA.com</a>
+    <a href="https://www.espn.com/nba/team/_/name/tor/toronto-raptors" target="_blank" class="link-pill">ESPN</a>
+    <a href="https://www.tsn.ca/nba/team/toronto-raptors" target="_blank" class="link-pill">TSN</a>
+    <a href="https://www.sportsnet.ca/basketball/nba/teams/toronto-raptors/" target="_blank" class="link-pill">Sportsnet</a>
+    <a href="https://www.raptorsrepublic.com/" target="_blank" class="link-pill">Raptors Republic</a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">The Lay of the Land</span><span class="sec-line"></span></div>
+  <div class="lotl raptors">
+    <div class="lotl-label" id="raptors-lotl-label"></div>
+    <div class="lotl-body" id="raptors-lotl-body"></div>
+    <div class="lotl-updated" id="raptors-lotl-updated"></div>
+  </div>
+
+  <div class="sec"><span class="sec-label">Key Numbers</span><span class="sec-line"></span></div>
+  <div class="key-nums" id="raptors-key-nums"></div>
+
+  <div id="raptors-recent-results-wrap"></div>
+
+  <div id="raptors-highlights-wrap"></div>
+
+  <div class="sec"><span class="sec-label">The Latest</span><span class="sec-line"></span></div>
+  <div class="news-stack" id="raptors-news"></div>
+
+  <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
+  <div class="pod-list">
+    <div class="pod"><div class="pod-num">1</div><div class="pod-body"><div class="pod-name">The Raptors Show</div><div class="pod-host">Blake Murphy &amp; Matt Bonner &middot; Sportsnet 590 The FAN</div><div class="pod-desc">2x NBA champ Matt Bonner and top basketball journalist Blake Murphy. Live 11am&ndash;12pm ET.</div><div class="pod-links"><a href="https://open.spotify.com/show/6wt378We5vvepSwT6K5RUM" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/the-raptors-show/id1588453456" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">2</div><div class="pod-body"><div class="pod-name">Locked On Raptors</div><div class="pod-host">Sean Woodley</div><div class="pod-desc">Daily coverage &mdash; news, analysis, game recaps, opponent scouting. First to know.</div><div class="pod-links"><a href="https://open.spotify.com/show/2HpV4o7npI9dDIiBzFWRid" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/locked-on-raptors-daily-podcast-on-the-toronto-raptors/id1171754319" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">3</div><div class="pod-body"><div class="pod-name">The Rapcast</div><div class="pod-host">Raptors Republic</div><div class="pod-desc">The original Raptors podcast. Post-game reactions, player interviews, deep analysis.</div><div class="pod-links"><a href="https://open.spotify.com/show/7HU8JkxqCq3A0fykGQmd48" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/the-rapcast/id736333342" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">4</div><div class="pod-body"><div class="pod-name">Raptors Digest</div><div class="pod-host">Samson Folk &amp; Alex Smale</div><div class="pod-desc">News, trades, rumours, highlights, and strategy breakdowns from Raptors Republic.</div><div class="pod-links"><a href="https://open.spotify.com/show/4ORnSKNYVjbf1Lfdxj4JnL" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/raptors-digest/id1547455459" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
+  <div class="watch-grid">
+    <a href="https://www.youtube.com/results?search_query=Toronto+Raptors+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Latest Raptors Highlights</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Raptors+playoffs" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Raptors Playoffs Coverage</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Scottie+Barnes+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Scottie Barnes Highlights</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Cavaliers+vs+Raptors+preview" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Cavaliers vs Raptors Preview</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Standings</span><span class="sec-line"></span></div>
+  <div class="standings-wrap" id="raptors-standings"></div>
+
+</div>
+
+<!-- ============================================================
+     COMMANDERS
+     ============================================================ -->
+<div class="panel" id="p-commanders">
+  <div class="team-header" style="background: var(--commanders-light)">
+    <div class="th-inner">
+      <h2 id="commanders-name"></h2>
+      <div class="th-record" id="commanders-record" style="color:var(--commanders)"></div>
+      <div class="th-detail" id="commanders-detail"></div>
+    </div>
+  </div>
+
+  <div id="commanders-live-strip-wrap"></div>
+
+  <div class="links-row">
+    <a href="https://www.commanders.com/" target="_blank" class="link-pill">Commanders.com</a>
+    <a href="https://www.espn.com/nfl/team/_/name/wsh/washington-commanders" target="_blank" class="link-pill">ESPN</a>
+    <a href="https://www.nfl.com/teams/washington-commanders/" target="_blank" class="link-pill">NFL.com</a>
+    <a href="https://www.hogshaven.com/" target="_blank" class="link-pill">Hogs Haven</a>
+    <a href="https://riggosrag.com/" target="_blank" class="link-pill">Riggo's Rag</a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">The Lay of the Land</span><span class="sec-line"></span></div>
+  <div class="lotl commanders">
+    <div class="lotl-label" id="commanders-lotl-label"></div>
+    <div class="lotl-body" id="commanders-lotl-body"></div>
+    <div class="lotl-updated" id="commanders-lotl-updated"></div>
+  </div>
+
+  <div class="sec"><span class="sec-label">Key Numbers</span><span class="sec-line"></span></div>
+  <div class="key-nums" id="commanders-key-nums"></div>
+
+  <div id="commanders-recent-results-wrap"></div>
+
+  <div id="commanders-highlights-wrap"></div>
+
+  <div class="sec"><span class="sec-label">Offseason Intel</span><span class="sec-line"></span></div>
+  <div class="news-stack" id="commanders-news"></div>
+
+  <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
+  <div class="pod-list">
+    <div class="pod"><div class="pod-num">1</div><div class="pod-body"><div class="pod-name">Locked On Commanders</div><div class="pod-host">David Harrison &middot; Sports Illustrated</div><div class="pod-desc">Daily coverage &mdash; training camp, free agency, the draft, and everything in between.</div><div class="pod-links"><a href="https://open.spotify.com/show/4F9T8e4JLYDZrvOAW0MPrf" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/locked-on-commanders-daily-podcast-on-the-washington/id1144183096" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">2</div><div class="pod-body"><div class="pod-name">Take Command</div><div class="pod-host">Craig Hoffman &amp; Logan Paulsen &middot; Audacy</div><div class="pod-desc">Smart, in-depth talk from a veteran broadcaster and a former NFL tight end who played for Washington.</div><div class="pod-links"><a href="https://open.spotify.com/show/4UWnlDoiK5HIlWnvQq0Fam" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/take-command/id1622889919" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">3</div><div class="pod-body"><div class="pod-name">Bleav in Commanders</div><div class="pod-host">Anthony Armstrong &amp; Scott Jackson</div><div class="pod-desc">Former Washington WR and veteran DC broadcaster &mdash; unfiltered insight on the Burgundy &amp; Gold.</div><div class="pod-links"><a href="https://open.spotify.com/show/0Y24iYkTzUEe0wotOPRCkM" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/bleav-in-commanders/id1462329354" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+    <div class="pod"><div class="pod-num">4</div><div class="pod-body"><div class="pod-name">JP Finlay Podcast</div><div class="pod-host">JP Finlay &middot; NBC Sports Washington</div><div class="pod-desc">The preeminent Commanders insider. Inside scoop, hot takes, coach and player interviews.</div><div class="pod-links"><a href="https://open.spotify.com/show/22i7ICQcsQ0symIoBr7P6X" target="_blank" class="pod-link sp">Spotify</a><a href="https://podcasts.apple.com/us/podcast/all-ears-nbcs-washington-commanders-podcast-with-jp-finlay/id1790896157" target="_blank" class="pod-link ap">Apple</a></div></div></div>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
+  <div class="watch-grid">
+    <a href="https://www.youtube.com/results?search_query=Washington+Commanders+NFL+Draft+preview" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Commanders Draft Preview</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Washington+Commanders+offseason" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Offseason Moves &amp; Analysis</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Jayden+Daniels+Commanders" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Jayden Daniels Updates</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+    <a href="https://www.youtube.com/results?search_query=Commanders+mock+draft+pick+7" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Mock Draft: Pick #7 Scenarios</div><div class="watch-sub">YouTube &middot; Search Results</div></div></a>
+  </div>
+
+
+  <div class="sec"><span class="sec-label">Standings</span><span class="sec-line"></span></div>
+  <div class="standings-wrap" id="commanders-standings"></div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-main">Made with love, for Dad.</div>
+  <div class="footer-sub">Open this page every morning for your sports briefing. Bookmark it.</div>
+</footer>
+<script>
+// === NAVIGATION ===
+document.getElementById('mDate').textContent = new Date()
+  .toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
+
+function go(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('p-'+id).classList.add('on');
+  document.querySelector('[data-t="'+id+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function stab(btn) {
+  const wrap = btn.closest('.standings-wrap');
+  const idx = [...wrap.querySelectorAll('.standings-tab')].indexOf(btn);
+  wrap.querySelectorAll('.standings-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  wrap.querySelectorAll('.standings-pane').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+
+document.addEventListener('keydown', e => {
+  const t = ['home','leafs','jays','raptors','commanders'];
+  const c = t.findIndex(x => document.getElementById('p-'+x).classList.contains('on'));
+  if(e.key==='ArrowRight' && c<t.length-1) go(t[c+1]);
+  if(e.key==='ArrowLeft' && c>0) go(t[c-1]);
+});
+
+function initScrollArrows() {
+  document.querySelectorAll('.sb-wrap').forEach(wrap => {
+    const sb = wrap.querySelector('.scoreboard');
+    if (!sb) return;
+    const left = wrap.querySelector('.sb-arrow.left');
+    const right = wrap.querySelector('.sb-arrow.right');
+    function update() {
+      left.classList.toggle('vis', sb.scrollLeft > 8);
+      right.classList.toggle('vis', sb.scrollLeft < sb.scrollWidth - sb.clientWidth - 8);
+    }
+    sb.addEventListener('scroll', update);
+    new ResizeObserver(update).observe(sb);
+    update();
+  });
+}
+
+// === LOGO URL HELPER ===
+function logoUrl(abbr, league) {
+  return `https://a.espncdn.com/i/teamlogos/${league}/500/${abbr}.png`;
+}
+
+// === RENDER FUNCTIONS ===
+
+function renderTicker(items) {
+  if (!items || !items.length) return;
+  let html = '<div class="ls-track">';
+  // Two copies for seamless loop
+  for (let copy = 0; copy < 2; copy++) {
+    items.forEach(item => {
+      const style = item.badge_style.includes(':') ? `style="${item.badge_style}"` : `class="ls-badge ${item.badge_style}"`;
+      // Fix: if badge_style starts with "background", it's inline style
+      if (item.badge_style.startsWith('background')) {
+        html += `<span class="ls-badge" style="${item.badge_style}">${item.badge}</span>`;
+      } else {
+        html += `<span class="ls-badge ${item.badge_style}">${item.badge}</span>`;
+      }
+      html += `<span class="ls-text">${item.text}</span>`;
+      html += `<span class="ls-dot">&middot;</span>`;
+    });
+  }
+  html += '</div>';
+  document.getElementById('ticker').innerHTML = html;
+}
+
+function renderFeatured(f) {
+  if (!f || !f.headline) return;
+  document.getElementById('featured').innerHTML = `
+    <a href="${f.link}" target="_blank" class="featured" style="text-decoration:none;color:inherit;display:block">
+      <div class="featured-kicker ${f.team}">${f.kicker}</div>
+      <h2 class="featured-hl">${f.headline}</h2>
+      <p class="featured-dek">${f.dek}</p>
+      <div class="featured-meta">${f.source} &middot; ${f.date}</div>
+    </a>`;
+}
+
+function renderTwoUp(stories) {
+  if (!stories || !stories.length) return;
+  let html = '';
+  stories.forEach(s => {
+    html += `<a href="${s.link}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block">
+      <div class="story-kicker ${s.team}">${s.kicker}</div>
+      <h3 class="story-hl">${s.headline}</h3>
+      <p class="story-dek">${s.dek}</p>
+      <div class="story-meta">${s.source} &middot; ${s.date}</div>
+    </a>`;
+  });
+  document.getElementById('two-up').innerHTML = html;
+}
+
+function renderExtraStory(s) {
+  if (!s || !s.headline) { document.getElementById('extra-story').innerHTML = ''; return; }
+  document.getElementById('extra-story').innerHTML = `
+    <a href="${s.link}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:28px">
+      <div class="story-kicker ${s.team}">${s.kicker}</div>
+      <h3 class="story-hl">${s.headline}</h3>
+      <p class="story-dek">${s.dek}</p>
+      <div class="story-meta">${s.source} &middot; ${s.date}</div>
+    </a>`;
+}
+
+function renderAtAGlance(items) {
+  if (!items) return;
+  let html = '';
+  items.forEach(g => {
+    html += `<div class="glance" onclick="go('${g.team}')">
+      <img class="glance-logo" src="${g.logo}" alt="">
+      <div class="glance-name">${g.name}</div>
+      <div class="glance-record">${g.record}</div>
+      <div class="glance-status ${g.status_class}">${g.status}</div>
+      <div class="glance-stat">${g.stat}</div>
+    </div>`;
+  });
+  document.getElementById('at-a-glance').innerHTML = html;
+}
+
+function renderTodaySlate(items) {
+  if (!items) return;
+  let html = '';
+  items.forEach(s => {
+    html += `<div class="slate-card${s.off ? ' off' : ''}">
+      <img class="slate-logo" src="${s.logo}" alt="">
+      <div class="slate-info">
+        <div class="slate-matchup">${s.matchup}</div>
+        <div class="slate-detail">${s.detail}</div>
+      </div>
+      ${s.channel ? `<div class="slate-channel">${s.channel}</div>` : ''}
+    </div>`;
+  });
+  document.getElementById('today-slate').innerHTML = html;
+}
+
+function renderWeekAhead(wa) {
+  if (!wa) return;
+  let html = '';
+  (wa.games || []).forEach(g => {
+    html += `<tr>
+      <td class="week-day">${g.day}</td>
+      <td><div class="week-team"><img src="${g.logo}" alt="">${g.name}</div></td>
+      <td class="week-opp">${g.opp}</td>
+      <td class="week-time">${g.time}</td>
+      <td class="week-tv">${g.tv}</td>
+    </tr>`;
+  });
+  document.getElementById('week-ahead-body').innerHTML = html;
+  if (wa.note) document.getElementById('week-ahead-note').innerHTML = wa.note;
+}
+
+// === TEAM PANEL RENDERER ===
+
+function renderTeam(key, t) {
+  if (!t) return;
+
+  // Header
+  const nameEl = document.getElementById(key + '-name');
+  const recEl = document.getElementById(key + '-record');
+  const detEl = document.getElementById(key + '-detail');
+  if (nameEl) nameEl.textContent = t.full_name || '';
+  if (recEl) recEl.innerHTML = t.record || '';
+  if (detEl) detEl.innerHTML = t.detail || '';
+
+  // Live strip
+  const lsWrap = document.getElementById(key + '-live-strip-wrap');
+  if (lsWrap) {
+    if (t.live_strip) {
+      lsWrap.innerHTML = `<div class="live-strip" style="margin-top:0;border-top:none">
+        <span class="ls-badge ${t.live_strip.badge_class || ''}">${t.live_strip.badge}</span>
+        <span class="ls-text">${t.live_strip.text}</span>
+      </div>`;
+    } else {
+      lsWrap.innerHTML = '';
+    }
+  }
+
+  // LOTL
+  const lotl = t.lotl || {};
+  const lblEl = document.getElementById(key + '-lotl-label');
+  const bodyEl = document.getElementById(key + '-lotl-body');
+  const updEl = document.getElementById(key + '-lotl-updated');
+  if (lblEl) lblEl.textContent = lotl.label || '';
+  if (bodyEl) bodyEl.innerHTML = lotl.body || '';
+  if (updEl) updEl.textContent = lotl.updated || '';
+
+  // Key Numbers
+  const knEl = document.getElementById(key + '-key-nums');
+  if (knEl && t.key_numbers) {
+    let html = '';
+    t.key_numbers.forEach(kn => {
+      html += `<div class="kn"><div class="kn-num" style="color:var(--${key})">${kn.num}</div><div class="kn-label">${kn.label}</div><div class="kn-note">${kn.note}</div></div>`;
+    });
+    knEl.innerHTML = html;
+  }
+
+  // Recent Results
+  const rrWrap = document.getElementById(key + '-recent-results-wrap');
+  if (rrWrap && t.recent_results && t.recent_results.length > 0) {
+    let html = '<div class="sec"><span class="sec-label">Recent Results</span><span class="sec-line"></span></div>';
+    html += '<div class="sb-wrap"><button class="sb-arrow left" onclick="this.nextElementSibling.scrollBy({left:-240,behavior:\'smooth\'})">&#8249;</button><div class="scoreboard">';
+    t.recent_results.forEach(g => {
+      const wl = g.result.toLowerCase();
+      const tLogo = logoUrl(key === 'commanders' ? 'wsh' : 'tor', g.league);
+      const oLogo = logoUrl(g.opp_logo, g.league);
+      const tName = key === 'commanders' ? 'Washington' : 'Toronto';
+      html += `<div class="sb-game"><div class="sb-date">${g.date} <span class="sb-pill ${wl}">${g.result}</span></div>`;
+      html += `<div class="sb-row ${wl}"><img src="${tLogo}"><span class="sb-row-name">${tName}</span><span class="sb-row-score">${g.team_score}</span></div>`;
+      html += `<div class="sb-divider"></div>`;
+      html += `<div class="sb-row ${wl === 'w' ? 'l' : 'w'}"><img src="${oLogo}"><span class="sb-row-name">${g.opp_name}</span><span class="sb-row-score">${g.opp_score}</span></div></div>`;
+    });
+    html += '</div><button class="sb-arrow right" onclick="this.previousElementSibling.scrollBy({left:240,behavior:\'smooth\'})">&#8250;</button></div>';
+    rrWrap.innerHTML = html;
+  } else if (rrWrap) {
+    rrWrap.innerHTML = '';
+  }
+
+  // Last Game Highlights
+  const hlWrap = document.getElementById(key + '-highlights-wrap');
+  if (hlWrap) {
+    const hl = t.last_game_highlights || {};
+    if (hl.available) {
+      hlWrap.innerHTML = `<div class="sec"><span class="sec-label">Last Game Highlights</span><span class="sec-line"></span></div>
+        <a href="${hl.url}" target="_blank" class="highlights-card" style="--accent:var(--${key})">
+          <div class="hl-play">&#9654;</div>
+          <div class="hl-body">
+            <div class="hl-title">${hl.title}</div>
+            <div class="hl-sub">${hl.subtitle}</div>
+          </div>
+          <div class="hl-badge ${hl.result_class}">${hl.result_badge}</div>
+        </a>`;
+    } else {
+      hlWrap.innerHTML = '';
+    }
+  }
+
+  // The Latest / News
+  const newsEl = document.getElementById(key + '-news');
+  if (newsEl && t.the_latest) {
+    let html = '';
+    t.the_latest.forEach(n => {
+      html += `<a href="${n.link}" target="_blank" class="ni"><div class="ni-source ${n.source_class}">${n.source}</div><div class="ni-hl">${n.headline}</div><div class="ni-dek">${n.dek}</div><div class="ni-time">${n.date}</div></a>`;
+    });
+    newsEl.innerHTML = html;
+  }
+
+  // Standings
+  const stEl = document.getElementById(key + '-standings');
+  if (stEl && t.standings && t.standings.tabs) {
+    let html = '<div class="standings-tabs">';
+    t.standings.tabs.forEach((tab, i) => {
+      html += `<button class="standings-tab${i === 0 ? ' active' : ''}" onclick="stab(this)">${tab}</button>`;
+    });
+    html += '</div>';
+
+    (t.standings.panes || []).forEach((pane, pi) => {
+      html += `<div class="standings-pane${pi === 0 ? ' active' : ''}"><div class="tbl-wrap"><table class="tbl"><thead><tr>`;
+      (pane.headers || []).forEach(h => { html += `<th>${h}</th>`; });
+      html += '</tr></thead><tbody>';
+
+      if (pane.bracket) {
+        // Bracket-style display
+        (pane.rows || []).forEach(r => {
+          html += `<tr${r.you ? ' class="you"' : ''}><td>${r.matchup}</td><td>${r.series}</td></tr>`;
+        });
+      } else {
+        (pane.rows || []).forEach(r => {
+          let cls = [];
+          if (r.you) cls.push('you');
+          if (r.playoff_in) cls.push('playoff-in');
+          if (r.playoff_out) cls.push('playoff-out');
+          if (r.wc_line) cls.push('wc-line');
+          const clsStr = cls.length ? ` class="${cls.join(' ')}"` : '';
+
+          html += `<tr${clsStr}>`;
+          if (pane.has_seed_col) {
+            const seedStyle = r.seed_style === 'green' ? 'color:var(--green);font-weight:700' : r.seed_style === 'red' ? 'color:var(--red)' : 'color:var(--ink-faint)';
+            html += `<td style="font-size:9px;${seedStyle}">${r.seed || ''}</td>`;
+          }
+          html += `<td><div class="tc"><img src="${logoUrl(r.logo, r.league)}">${r.team}</div></td>`;
+          (r.vals || []).forEach(v => { html += `<td>${v}</td>`; });
+          html += '</tr>';
+        });
+      }
+
+      html += '</tbody></table></div></div>';
+    });
+
+    stEl.innerHTML = html;
+  }
+}
+
+// === LOAD DATA ===
+fetch('data.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    // Homepage
+    renderTicker(data.ticker);
+    renderFeatured(data.featured);
+    renderTwoUp(data.two_up);
+    renderExtraStory(data.extra_story);
+    renderAtAGlance(data.at_a_glance);
+    renderTodaySlate(data.today_slate);
+    renderWeekAhead(data.week_ahead);
+
+    // Team panels
+    ['leafs', 'jays', 'raptors', 'commanders'].forEach(key => {
+      renderTeam(key, data.teams ? data.teams[key] : null);
+    });
+
+    // Re-init scroll arrows after dynamic content loads
+    setTimeout(initScrollArrows, 100);
+  })
+  .catch(err => {
+    console.error('Failed to load data.json:', err);
+    document.getElementById('featured').innerHTML = '<p style="padding:40px;text-align:center;color:var(--ink-muted)">Loading today\'s briefing...</p>';
+  });
+</script>
+
+</body>
+</html>
