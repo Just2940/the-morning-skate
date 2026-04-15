@@ -119,6 +119,376 @@ def is_recent_enough(recent_games, max_days=30):
         return True  # If we can't parse the date, assume it's recent
 
 
+def detect_season_phase(team_key, recent, upcoming):
+    """Detect what phase of the season a team is in, based on schedule data and calendar.
+    Returns a dict with 'phase', 'label', 'editorial_direction', and 'recency_days'."""
+    cfg = TEAMS[team_key]
+    league = cfg["league"]
+    month = NOW.month
+    day = NOW.day
+
+    has_upcoming = bool(upcoming)
+    has_recent_game = is_recent_enough(recent, max_days=14)
+    last_game_days_ago = 999
+    if recent:
+        try:
+            last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
+            last_game_days_ago = (NOW.replace(tzinfo=None) - last_game_date).days
+        except:
+            pass
+
+    # Check for playoff indicators from ESPN (clinch status, playoff seed)
+    # These will be passed in later; for now use schedule heuristics
+
+    if league == "NHL":
+        if has_upcoming and has_recent_game:
+            if month >= 4 and month <= 6 and not has_upcoming:
+                return _phase("eliminated", league, cfg)
+            # Check if it's mid-April+ (playoff time)
+            if month == 4 and day >= 12:
+                # If team still has games, could be playoffs or end of regular season
+                if has_upcoming:
+                    return _phase("regular_season_late", league, cfg)
+            return _phase("regular_season", league, cfg)
+        elif has_recent_game and not has_upcoming:
+            # Season just ended
+            return _phase("season_ended", league, cfg)
+        elif month >= 6 and month <= 7:
+            return _phase("draft_free_agency", league, cfg)
+        elif month >= 7 and month <= 9:
+            return _phase("deep_offseason", league, cfg)
+        elif month >= 9 and month <= 10 and not has_upcoming:
+            return _phase("preseason", league, cfg)
+        else:
+            return _phase("offseason", league, cfg)
+
+    elif league == "MLB":
+        if has_upcoming and has_recent_game:
+            return _phase("regular_season", league, cfg)
+        elif month >= 2 and month <= 3:
+            return _phase("spring_training", league, cfg)
+        elif month >= 10 and month <= 11:
+            return _phase("postseason_offseason", league, cfg)
+        else:
+            return _phase("offseason", league, cfg)
+
+    elif league == "NBA":
+        if has_upcoming and has_recent_game:
+            if month >= 4 and month <= 6:
+                return _phase("playoffs", league, cfg)
+            return _phase("regular_season", league, cfg)
+        elif has_recent_game and not has_upcoming:
+            if month >= 4:
+                return _phase("season_ended", league, cfg)
+            return _phase("regular_season", league, cfg)
+        elif month >= 6 and month <= 7:
+            return _phase("draft_free_agency", league, cfg)
+        elif month >= 7 and month <= 10:
+            return _phase("deep_offseason", league, cfg)
+        else:
+            return _phase("offseason", league, cfg)
+
+    elif league == "NFL":
+        if has_upcoming and has_recent_game:
+            if month == 1 or month == 2:
+                return _phase("playoffs", league, cfg)
+            return _phase("regular_season", league, cfg)
+        elif month >= 2 and month <= 3:
+            return _phase("combine_free_agency", league, cfg)
+        elif month == 4:
+            return _phase("pre_draft", league, cfg)
+        elif month >= 5 and month <= 6:
+            return _phase("otas", league, cfg)
+        elif month >= 7 and month <= 8:
+            return _phase("training_camp", league, cfg)
+        else:
+            return _phase("offseason", league, cfg)
+
+    return _phase("unknown", league, cfg)
+
+
+def _phase(phase_id, league, cfg):
+    """Build the phase context dict with editorial direction for Perplexity prompts."""
+    team_name = cfg["full_name"]
+    today_str = NOW.strftime("%B %d, %Y")
+
+    PHASE_MAP = {
+        # === IN-SEASON PHASES ===
+        "regular_season": {
+            "label": "Regular Season",
+            "recency_days": 3,
+            "editorial_direction": (
+                f"The {team_name} are in their regular season. "
+                f"Focus on: last night's game result (if they played), current win/loss trajectory, "
+                f"key player performances, injury updates, and the next upcoming game. "
+                f"The tone should match where they are in the standings ‚Äî contender energy if they're in the hunt, "
+                f"honest assessment if they're struggling."
+            ),
+        },
+        "regular_season_late": {
+            "label": "Late Regular Season / Playoff Push",
+            "recency_days": 2,
+            "editorial_direction": (
+                f"The {team_name} are in the final stretch of the regular season. "
+                f"Focus on: playoff implications of every game, magic numbers or elimination scenarios, "
+                f"last night's result and what it means for standings, and the next game's stakes. "
+                f"Urgency should be HIGH ‚Äî every game matters now."
+            ),
+        },
+        "playoffs": {
+            "label": "Playoffs",
+            "recency_days": 2,
+            "editorial_direction": (
+                f"The {team_name} are in the PLAYOFFS. This is the highest-urgency content mode. "
+                f"Focus on: last game result and series score, key player performances, "
+                f"what went right/wrong, and when the next game is. "
+                f"The tone should be electric ‚Äî this is what the whole season was building toward."
+            ),
+        },
+        # === OFFSEASON PHASES ===
+        "season_ended": {
+            "label": "Season Over",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name}'s season has just ended. "
+                f"Focus on: season recap and assessment, what went wrong or right, "
+                f"key decisions ahead (coaching changes, free agency, draft positioning), "
+                f"and the overall outlook. Do NOT write about individual game results as if they just happened ‚Äî "
+                f"the season is OVER. Look forward, not backward."
+            ),
+        },
+        "eliminated": {
+            "label": "Eliminated / Season Over",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name} have been eliminated or their season is over. "
+                f"Focus on: what went wrong, offseason priorities, draft positioning, "
+                f"coaching/GM job security, and upcoming roster decisions. "
+                f"Do NOT recap old game results. The page has turned ‚Äî write about what comes next."
+            ),
+        },
+        "draft_free_agency": {
+            "label": "Draft & Free Agency",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name} are in draft and free agency season. "
+                f"Focus on: draft picks and analysis, free agent signings and departures, "
+                f"roster construction, cap space moves, and how the offseason is reshaping the team. "
+                f"Do NOT reference regular season game results ‚Äî that was months ago."
+            ),
+        },
+        "deep_offseason": {
+            "label": "Deep Offseason",
+            "recency_days": 14,
+            "editorial_direction": (
+                f"The {team_name} are in the deep offseason ‚Äî it's quiet. "
+                f"Focus on: any recent news (trades, signings, injuries), training camp timelines, "
+                f"roster projections, or feature-style content about the team's direction. "
+                f"Keep it brief and forward-looking. It's OK if there isn't much to say ‚Äî "
+                f"a short, honest paragraph is better than padding with stale content."
+            ),
+        },
+        "offseason": {
+            "label": "Offseason",
+            "recency_days": 10,
+            "editorial_direction": (
+                f"The {team_name} are in the offseason. "
+                f"Focus on: the most recent offseason moves, upcoming events (draft, free agency, camp), "
+                f"roster outlook, and what fans should be watching for. "
+                f"Do NOT write about regular season game results ‚Äî the season ended months ago. "
+                f"Every sentence should be about the present or future, never the past season's games."
+            ),
+        },
+        # === NFL-SPECIFIC PHASES ===
+        "pre_draft": {
+            "label": "Pre-Draft",
+            "recency_days": 5,
+            "editorial_direction": (
+                f"The NFL Draft is approaching (late April). The {team_name} are in pre-draft mode. "
+                f"Today's date is {today_str}. "
+                f"Focus on: mock draft analysis, the team's draft position and needs, "
+                f"potential trade scenarios, free agency moves already made, "
+                f"and what positions the team is targeting. "
+                f"Do NOT write about regular season game results ‚Äî the NFL season ended in January. "
+                f"This is entirely about the draft and roster building for next season."
+            ),
+        },
+        "combine_free_agency": {
+            "label": "Combine & Free Agency",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name} are in the NFL Combine and free agency period. "
+                f"Focus on: free agent signings and departures, combine standouts, "
+                f"cap space management, and early draft board positioning. "
+                f"Do NOT reference game results from the previous season."
+            ),
+        },
+        "otas": {
+            "label": "OTAs & Minicamp",
+            "recency_days": 10,
+            "editorial_direction": (
+                f"The {team_name} are in OTAs and minicamp. "
+                f"Focus on: roster battles, new player integration, scheme changes, "
+                f"draft pick development, and early-season storylines forming. "
+                f"Do NOT reference game results from the previous season."
+            ),
+        },
+        "training_camp": {
+            "label": "Training Camp",
+            "recency_days": 5,
+            "editorial_direction": (
+                f"The {team_name} are in training camp. "
+                f"Focus on: position battles, injury updates, rookie performances, "
+                f"depth chart projections, and storylines heading into the preseason. "
+                f"Do NOT reference game results from the previous season."
+            ),
+        },
+        # === OTHER ===
+        "spring_training": {
+            "label": "Spring Training",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name} are in Spring Training. "
+                f"Focus on: roster battles, new acquisitions getting reps, "
+                f"injury updates, and storylines heading into Opening Day."
+            ),
+        },
+        "preseason": {
+            "label": "Preseason",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name} are in preseason. "
+                f"Focus on: roster cuts, lineup projections, new player integration, "
+                f"and storylines heading into the regular season."
+            ),
+        },
+        "postseason_offseason": {
+            "label": "Postseason / Early Offseason",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The {team_name}'s season is over. "
+                f"Focus on: season assessment, offseason priorities, "
+                f"front office moves, and what needs to change for next year. "
+                f"Do NOT write about regular season game results as current news."
+            ),
+        },
+        "unknown": {
+            "label": "Unknown Phase",
+            "recency_days": 7,
+            "editorial_direction": f"Write about the {team_name}'s current situation with recent, relevant news.",
+        },
+    }
+
+    phase_data = PHASE_MAP.get(phase_id, PHASE_MAP["unknown"])
+    return {
+        "phase": phase_id,
+        "label": phase_data["label"],
+        "recency_days": phase_data["recency_days"],
+        "editorial_direction": phase_data["editorial_direction"],
+    }
+
+
+def validate_url(url, timeout=10):
+    """Check if a URL returns HTTP 200. Returns True if valid, False otherwise."""
+    if not url or not url.startswith("http"):
+        return False
+    try:
+        req = Request(url, method="HEAD", headers={"User-Agent": "TheMorningSkate/1.0"})
+        with urlopen(req, timeout=timeout) as resp:
+            return resp.status == 200
+    except:
+        # Some servers block HEAD, try GET with minimal download
+        try:
+            req = Request(url, headers={"User-Agent": "TheMorningSkate/1.0"})
+            with urlopen(req, timeout=timeout) as resp:
+                resp.read(1024)  # Only read first 1KB
+                return resp.status == 200
+        except:
+            return False
+
+
+def is_perplexity_failure(text):
+    """Detect when Perplexity returned an apology/failure instead of real content."""
+    if not text:
+        return True
+    failure_phrases = [
+        "i don't have sufficient",
+        "i cannot find",
+        "i'm unable to",
+        "i couldn't find",
+        "no relevant search results",
+        "i was unable to find",
+        "insufficient information",
+        "i don't have enough",
+        "based on the search results provided",
+        "the search results do not",
+        "i cannot write this column",
+        "i need more information",
+        "to write a proper",
+        "the single result provided",
+    ]
+    text_lower = text.lower()
+    for phrase in failure_phrases:
+        if phrase in text_lower:
+            return True
+    # Also catch if it's way too short (less than 80 chars of actual content)
+    clean = re.sub(r'<[^>]+>', '', text).strip()
+    if len(clean) < 80:
+        return True
+    return False
+
+
+def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_info):
+    """Generate a basic LOTL paragraph from ESPN facts alone when Perplexity fails.
+    Not as colorful as AI-generated content, but always accurate and never empty."""
+    cfg = TEAMS[team_key]
+    name = cfg["full_name"]
+    short = name.split()[-1]  # "Leafs", "Jays", etc.
+    record = team_info.get("record", "")
+    standing = team_info.get("standing_summary", "")
+    phase = phase_info.get("label", "")
+
+    parts = []
+
+    # Opening based on phase
+    if "offseason" in phase_info["phase"].lower() or "draft" in phase_info["phase"].lower() or "ended" in phase_info["phase"].lower():
+        parts.append(f"The {short} ({record}) finished {standing.lower() if standing else 'their season'}.")
+        if phase_info["phase"] == "pre_draft":
+            parts.append(f"With the NFL Draft approaching, all eyes turn to roster building and draft strategy.")
+        else:
+            parts.append(f"The offseason is underway, and the front office is mapping out what comes next.")
+    elif recent:
+        g = recent[0]
+        result_word = "beat" if g["result"] == "W" else "fell to"
+        parts.append(f"<strong>The {short} {result_word} the {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}</strong>, moving to {record} on the season.")
+        if standing:
+            parts.append(f"They sit {standing.lower()}.")
+    else:
+        parts.append(f"The {short} sit at {record}, {standing.lower() if standing else ''}.")
+
+    # Streak info
+    if recent and len(recent) >= 2:
+        streak_type = recent[0]["result"]
+        streak_count = 0
+        for g in recent:
+            if g["result"] == streak_type:
+                streak_count += 1
+            else:
+                break
+        if streak_count >= 2:
+            word = "wins" if streak_type == "W" else "losses"
+            parts.append(f"That&rsquo;s {streak_count} straight {word}.")
+
+    # Next game
+    if upcoming:
+        ng = upcoming[0]
+        parts.append(f"<strong>Next up: {ng['opp']} on {ng['day']} at {ng['time']}.</strong>")
+    elif "offseason" in phase_info["phase"].lower() or "draft" in phase_info["phase"].lower():
+        parts.append(f"<strong>Stay tuned as the offseason develops.</strong>")
+
+    return " ".join(parts)
+
+
 # === ESPN API HELPERS ===
 
 def espn_fetch(url):
@@ -327,13 +697,20 @@ def get_standings(team_key):
     return {}
 
 
-def build_verified_facts(team_key, team_info, standings, recent, upcoming):
+def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase_info=None):
     """Build a verified facts block from ESPN data to inject into AI prompts.
     This prevents Perplexity from hallucinating records, standings, or results."""
     cfg = TEAMS[team_key]
+    today_str = NOW.strftime("%B %d, %Y")
     facts = []
 
     facts.append(f"TEAM: {cfg['full_name']} ({cfg['league']})")
+    facts.append(f"TODAY'S DATE: {today_str}")
+
+    # Season phase ‚Äî this is CRITICAL for editorial direction
+    if phase_info:
+        facts.append(f"SEASON PHASE: {phase_info['label']}")
+        facts.append(f"EDITORIAL DIRECTION: {phase_info['editorial_direction']}")
 
     # Record
     record = team_info.get("record", "")
@@ -360,27 +737,40 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming):
         if "playoffSeed" in standings:
             facts.append(f"PLAYOFF SEED: {standings['playoffSeed']}")
 
-    # Recent results
+    # Recent results ‚Äî only include if they're actually recent
     if recent:
-        facts.append("RECENT RESULTS (most recent first):")
-        for g in recent[:4]:
-            facts.append(f"  {g['date']}: {g['result']} {g['team_score']}-{g['opp_score']} vs {g['opp_name']}")
+        last_game_days = 999
+        try:
+            last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
+            last_game_days = (NOW.replace(tzinfo=None) - last_game_date).days
+        except:
+            pass
 
-        # Calculate recent streak from results
-        if len(recent) >= 2:
-            streak_type = recent[0]["result"]
-            streak_count = 0
-            for g in recent:
-                if g["result"] == streak_type:
-                    streak_count += 1
-                else:
-                    break
-            facts.append(f"CURRENT RUN: {streak_count} game {'win' if streak_type == 'W' else 'loss'} streak (from recent results)")
+        if last_game_days <= 14:
+            facts.append(f"RECENT RESULTS (most recent first, last game was {last_game_days} day(s) ago):")
+            for g in recent[:4]:
+                facts.append(f"  {g['date']}: {g['result']} {g['team_score']}-{g['opp_score']} vs {g['opp_name']}")
+
+            # Calculate recent streak from results
+            if len(recent) >= 2:
+                streak_type = recent[0]["result"]
+                streak_count = 0
+                for g in recent:
+                    if g["result"] == streak_type:
+                        streak_count += 1
+                    else:
+                        break
+                facts.append(f"CURRENT RUN: {streak_count} game {'win' if streak_type == 'W' else 'loss'} streak")
+        else:
+            facts.append(f"LAST GAME: {last_game_days} days ago ‚Äî this team is NOT currently playing regular season games.")
+            facts.append(f"DO NOT write about old game results as if they are current news.")
 
     # Upcoming
     if upcoming:
         next_game = upcoming[0]
         facts.append(f"NEXT GAME: {next_game['day']} {next_game['opp']} at {next_game['time']}")
+    elif phase_info and ("offseason" in phase_info["phase"] or "draft" in phase_info["phase"] or "ended" in phase_info["phase"]):
+        facts.append(f"NO UPCOMING GAMES ‚Äî this team is in the {phase_info['label']} phase.")
 
     # Season status indicators
     record_stats = team_info.get("record_stats", {})
@@ -606,29 +996,41 @@ def perplexity_search(prompt, system_prompt=""):
         return None
 
 
-def generate_lotl(team_key, verified_facts=""):
+def generate_lotl(team_key, verified_facts="", phase_info=None, team_info=None, recent=None, upcoming=None):
     """Generate a Lay of the Land paragraph using Perplexity.
-    verified_facts: pre-built string of ESPN-verified data that MUST be used for stats."""
+    verified_facts: pre-built string of ESPN-verified data that MUST be used for stats.
+    phase_info: season phase context from detect_season_phase().
+    Falls back to ESPN-only content if Perplexity fails or returns garbage."""
     cfg = TEAMS[team_key]
     today_str = NOW.strftime("%B %d, %Y")
+    phase_label = phase_info["label"] if phase_info else "Unknown"
+    editorial_dir = phase_info["editorial_direction"] if phase_info else ""
 
-    system_prompt = """You are the lead sports columnist for "The Morning Skate," a daily briefing read by a 65-year-old father on his phone each morning. Write like a veteran newspaper columnist ‚Äî someone who's covered this beat for decades, knows the history, and isn't afraid of a sharp opinion.
+    system_prompt = f"""You are the lead sports columnist for "The Morning Skate," a daily briefing read by a 65-year-old father on his phone each morning. Write like a veteran newspaper columnist ‚Äî someone who's covered this beat for decades, knows the history, and isn't afraid of a sharp opinion.
+
+TODAY IS: {today_str}
+TEAM SEASON PHASE: {phase_label}
 
 YOUR VOICE:
-- Write like a broadsheet sports columnist: authoritative, opinionated, and vivid. Think Cathal Kelly (Globe and Mail), Bob Ryan (Boston Globe), or the best of Sports Illustrated's long-form writers.
-- Open with the narrative, not the team name. Lead with what matters ‚Äî a turning point, a collapse, a spark of hope.
-- Use strong verbs and concrete images. "The bullpen imploded" not "the bullpen struggled." "Matthews has gone invisible" not "Matthews hasn't been producing."
+- Write like a broadsheet sports columnist: authoritative, opinionated, and vivid.
+- Open with the narrative, not the team name. Lead with what matters.
+- Use strong verbs and concrete images. "The bullpen imploded" not "the bullpen struggled."
 - Don't hedge. If the season is over, say it plainly. If a player is carrying the team, give them their due.
-- Use em dashes for dramatic pauses and parenthetical asides. Use short, punchy sentences between longer ones for rhythm.
-- Include exactly one or two telling statistics, woven naturally into the prose ‚Äî never a stats dump.
+- Use em dashes for dramatic pauses. Use short, punchy sentences between longer ones for rhythm.
+- Include one or two telling statistics, woven naturally into the prose ‚Äî never a stats dump.
 - End with a forward look: what's next, what to watch for, why it matters.
 
 CRITICAL ACCURACY RULES:
-- You will be given VERIFIED FACTS below. These are pulled directly from ESPN and are CORRECT.
-- You MUST use the exact record, scores, and standings from the VERIFIED FACTS. Do NOT guess or recall different numbers.
-- If the verified facts say the record is "32-36-14", you MUST use "32-36-14" ‚Äî not a different number.
-- If the verified facts show game results, use those exact scores.
-- You may search for additional COLOR and NARRATIVE details (player performances, quotes, storylines), but ALL statistics (record, scores, standings, streaks) MUST come from the VERIFIED FACTS section.
+- You will be given VERIFIED FACTS below from ESPN. These are CORRECT. Use these EXACT numbers.
+- You MUST use the exact record, scores, and standings from the VERIFIED FACTS. Do NOT guess different numbers.
+- You may search for additional COLOR and NARRATIVE details (player performances, quotes, storylines), but ALL statistics MUST come from the VERIFIED FACTS section.
+- If the VERIFIED FACTS say the team is in the offseason, DO NOT write about old game results as current news.
+
+CRITICAL CONTENT RULES:
+- You MUST produce a finished column paragraph. Do NOT explain what you would need to write the column.
+- Do NOT say "I don't have sufficient search results" or anything similar. Write the column with the facts you have.
+- If your web search returns limited results, write the column using the VERIFIED FACTS provided ‚Äî they are more than enough.
+- A column based on verified facts alone is infinitely better than no column at all.
 
 FORMATTING:
 - ONE paragraph, 150-200 words. Dense, polished prose ‚Äî no filler.
@@ -650,41 +1052,57 @@ FORMATTING:
 """
 
     prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of the morning of {today_str}.
+
+SEASON PHASE: {phase_label}
+EDITORIAL DIRECTION: {editorial_dir}
 {facts_block}
-Search for additional {cfg['full_name']} narrative details ‚Äî key player performances, quotes, storylines, injuries, trades. But for ALL statistics (record, standings, scores, streaks), use ONLY the verified facts above. Do NOT invent or recall different numbers.
+Search for the LATEST {cfg['full_name']} news ‚Äî key player performances, quotes, storylines, injuries, trades, or offseason moves from the LAST 48 HOURS. But for ALL statistics (record, standings, scores, streaks), use ONLY the verified facts above.
 
 Your paragraph must include:
-1. An opening that captures the team's current narrative arc ‚Äî not "The [Team] are..." but something with edge and voice
-2. The single most important thing that happened in the last 1-3 days (bold with <strong> tags)
-3. Context: record, streak, division/conference standing from the VERIFIED FACTS, woven naturally into the prose
-4. A key player thread ‚Äî who's hot, who's hurt, who's the story
-5. A forward-looking close: the next game, series, or milestone, bolded with <strong> tags
+1. An opening that captures the team's CURRENT narrative arc ‚Äî not "The [Team] are..." but something with edge and voice
+2. The most important RECENT development (bold with <strong> tags) ‚Äî this must be something from the last 1-3 days, NOT old news
+3. Context: record, standings from the VERIFIED FACTS, woven naturally into the prose
+4. A key player thread ‚Äî who's hot, who's hurt, who's the story RIGHT NOW
+5. A forward-looking close bolded with <strong> tags ‚Äî next game, next milestone, or what to watch for
+
+IMPORTANT: Every fact you cite must be CURRENT as of {today_str}. Do not reference game results from weeks or months ago as if they just happened.
 
 Write 150-200 words of polished sports column prose. Every sentence should earn its place."""
 
     result = perplexity_search(prompt, system_prompt)
-    if result:
-        # Clean up any markdown that Perplexity might add
-        result = result.strip()
-        result = re.sub(r'^\*\*.*?\*\*\s*\n*', '', result)  # Remove bold headers
-        # Convert markdown bold **text** to <strong>text</strong>
-        import itertools
-        parts = result.split("**")
-        if len(parts) > 1:
-            rebuilt = parts[0]
-            for i, part in enumerate(parts[1:], 1):
-                tag = "<strong>" if i % 2 == 1 else "</strong>"
-                rebuilt += tag + part
-            result = rebuilt
-        # Remove Perplexity citation markers like [1], [2], [1][2], [3][4][5], etc.
-        result = re.sub(r'\[\d+\]', '', result)
-        # Clean up any double spaces left behind after removing citations
-        result = re.sub(r'  +', ' ', result)
-        # Fix any unclosed strong tags
-        open_count = result.count("<strong>")
-        close_count = result.count("</strong>")
-        if open_count > close_count:
-            result += "</strong>" * (open_count - close_count)
+    result = _clean_perplexity_prose(result)
+
+    # === GARBAGE FILTER ===
+    if is_perplexity_failure(result):
+        print(f"  WARNING: Perplexity returned garbage for {team_key} LOTL ‚Äî using ESPN fallback")
+        result = generate_espn_fallback_lotl(team_key, team_info or {}, recent or [], upcoming or [], phase_info or {"phase": "unknown", "label": "Unknown"})
+
+    return result
+
+
+def _clean_perplexity_prose(result):
+    """Clean up Perplexity prose output ‚Äî remove markdown, citations, fix tags."""
+    if not result:
+        return result
+    result = result.strip()
+    result = re.sub(r'^\*\*.*?\*\*\s*\n*', '', result)  # Remove bold headers
+    # Convert markdown bold **text** to <strong>text</strong>
+    parts = result.split("**")
+    if len(parts) > 1:
+        rebuilt = parts[0]
+        for i, part in enumerate(parts[1:], 1):
+            tag = "<strong>" if i % 2 == 1 else "</strong>"
+            rebuilt += tag + part
+        result = rebuilt
+    # Remove Perplexity citation markers like [1], [2], [1][2], etc.
+    result = re.sub(r'\[\d+\]', '', result)
+    # Clean up double spaces
+    result = re.sub(r'  +', ' ', result)
+    # Fix unclosed strong tags
+    open_count = result.count("<strong>")
+    close_count = result.count("</strong>")
+    if open_count > close_count:
+        result += "</strong>" * (open_count - close_count)
     return result
 
 
@@ -692,8 +1110,9 @@ def generate_featured_and_stories(all_team_facts):
     """Use Perplexity to identify the top 3-4 stories across all four teams.
     all_team_facts: dict of verified ESPN data per team to prevent hallucination."""
     today_str = NOW.strftime("%B %d, %Y")
+    yesterday = (NOW - timedelta(days=1)).strftime("%B %d, %Y")
 
-    # Build a summary of verified facts for all teams
+    # Build a detailed summary of verified facts for all teams, including phase
     facts_summary = []
     for team_key in ["leafs", "jays", "raptors", "commanders"]:
         fd = all_team_facts.get(team_key, {})
@@ -701,14 +1120,30 @@ def generate_featured_and_stories(all_team_facts):
         ti = fd.get("team_info", {})
         recent = fd.get("recent", [])
         upcoming = fd.get("upcoming", [])
+        phase = fd.get("phase_info", {})
+        phase_label = phase.get("label", "Unknown")
 
-        line = f"- {cfg['full_name']} ({cfg['league']}): Record {ti.get('record', 'N/A')}, {ti.get('standing_summary', 'N/A')}"
+        line = f"- {cfg['full_name']} ({cfg['league']}) ‚Äî PHASE: {phase_label} ‚Äî Record: {ti.get('record', 'N/A')}, {ti.get('standing_summary', 'N/A')}"
+
+        # Only include game results if recent (within 3 days)
         if recent:
-            g = recent[0]
-            line += f". Last game: {'W' if g['result'] == 'W' else 'L'} {g['team_score']}-{g['opp_score']} vs {g['opp_name']} ({g['date']})"
+            try:
+                last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
+                days_ago = (NOW.replace(tzinfo=None) - last_game_date).days
+            except:
+                days_ago = 999
+            if days_ago <= 3:
+                g = recent[0]
+                line += f". Last game ({days_ago}d ago): {'W' if g['result'] == 'W' else 'L'} {g['team_score']}-{g['opp_score']} vs {g['opp_name']}"
+            else:
+                line += f". Last game was {days_ago} days ago ‚Äî DO NOT feature old game results"
+
         if upcoming:
             ng = upcoming[0]
             line += f". Next: {ng['opp']} {ng['day']}"
+        elif "offseason" in phase.get("phase", "") or "draft" in phase.get("phase", ""):
+            line += f". No upcoming games (offseason). Story angle: {phase.get('editorial_direction', '')[:100]}"
+
         facts_summary.append(line)
 
     facts_block = "\n".join(facts_summary)
@@ -719,7 +1154,12 @@ def generate_featured_and_stories(all_team_facts):
 {facts_block}
 === END VERIFIED STATUS ===
 
-Focus on what happened YESTERDAY and LAST NIGHT ‚Äî game results from last night take priority. Use the EXACT scores and records from the verified status above. Search for additional narrative details (player performances, context, storylines).
+CRITICAL RECENCY RULES:
+- Today is {today_str}. Yesterday was {yesterday}.
+- For IN-SEASON teams: stories MUST be from the last 24-48 hours. Last night's game results are top priority.
+- For OFFSEASON teams: stories must be about CURRENT offseason activity (draft, trades, signings, coaching changes). Do NOT write headlines about old game results from weeks or months ago.
+- Headlines must reflect the team's CURRENT record (use the verified records above). If the Jays are 7-9, the headline must say 7-9, NOT an older record.
+- Every headline and dek must pass this test: "Would this make sense as a newspaper headline printed on {today_str}?"
 
 For each story, provide in this EXACT JSON format (no markdown, just raw JSON):
 {{
@@ -730,12 +1170,18 @@ For each story, provide in this EXACT JSON format (no markdown, just raw JSON):
       "headline": "10-18 word punchy headline with &mdash; for drama",
       "dek": "2-3 sentences, 40-60 words with context and forward-looking detail",
       "source": "Source name like ESPN or NHL.com",
-      "link": "Real URL to the best article covering this story"
+      "link": "Real, currently accessible URL to the best article covering this story"
     }}
   ]
 }}
 
-The FIRST story should be the biggest ‚Äî playoff games, major trades, dramatic results. Use HTML entities (&mdash; &ndash; &middot;) not unicode. Include real, verified URLs. Do NOT include citation numbers like [1], [2] in any text fields."""
+STORY SELECTION PRIORITY:
+1. Playoff games played last night (highest priority)
+2. Regular season games played last night with dramatic storylines
+3. Major breaking news (trades, injuries, firings) from last 24 hours
+4. Offseason team's most significant current storyline (draft, free agency, etc.)
+
+Use HTML entities (&mdash; &ndash; &middot;) not unicode. All URLs must be real ‚Äî search for real articles published in the last 48 hours. Do NOT fabricate URLs. Do NOT include citation numbers like [1], [2] in any text fields."""
 
     result = perplexity_search(prompt)
     if not result:
@@ -743,12 +1189,10 @@ The FIRST story should be the biggest ‚Äî playoff games, major trades, drama
 
     # Try to extract JSON from the response
     try:
-        # Remove citation markers before parsing JSON
         cleaned = re.sub(r'\[\d+\]', '', result)
         json_match = re.search(r'\{[\s\S]*"stories"[\s\S]*\}', cleaned)
         if json_match:
             data = json.loads(json_match.group())
-            # Clean up any double spaces in text fields
             for story in data.get("stories", []):
                 for field in ("headline", "dek", "kicker"):
                     if field in story:
@@ -782,12 +1226,35 @@ Nothing else ‚Äî just the URL."""
     return f"https://www.youtube.com/{cfg['youtube_channel']}/search?query={search_name}+{opp_name.replace(' ', '+')}+highlights"
 
 
-def find_news_articles(team_key):
-    """Use Perplexity to find the 3 most recent news articles."""
+def find_news_articles(team_key, phase_info=None):
+    """Use Perplexity to find the 3 most recent news articles.
+    Includes URL validation ‚Äî drops any article with a broken link."""
     cfg = TEAMS[team_key]
     today_str = NOW.strftime("%B %d, %Y")
+    yesterday = (NOW - timedelta(days=1)).strftime("%B %d, %Y")
+    phase_label = phase_info["label"] if phase_info else "Unknown"
+    recency_days = phase_info["recency_days"] if phase_info else 3
+    editorial_dir = phase_info["editorial_direction"] if phase_info else ""
 
-    prompt = f"""Find the 3 most recent and important news articles about the {cfg['full_name']} as of the morning of {today_str}. Prioritize articles from yesterday and last night ‚Äî especially game recaps from any games played last night.
+    # Build recency guidance based on phase
+    if recency_days <= 3:
+        recency_guidance = f"Articles must be from the last {recency_days} days ({yesterday} or {today_str}). Game recaps from last night take highest priority."
+    elif recency_days <= 7:
+        recency_guidance = f"Articles should be from the last {recency_days} days. Prefer the most recent available."
+    else:
+        recency_guidance = f"Articles can be up to {recency_days} days old, but prefer the most recent available. Feature-length and analysis pieces are acceptable."
+
+    prompt = f"""Find the 3 most recent and important news articles about the {cfg['full_name']} as of the morning of {today_str}.
+
+TEAM PHASE: {phase_label}
+EDITORIAL CONTEXT: {editorial_dir}
+
+RECENCY REQUIREMENT: {recency_guidance}
+
+CRITICAL: Every article must be CURRENTLY RELEVANT. The question to ask for each article: "Would a reader on {today_str} find this article timely and useful?"
+- For in-season teams: game recaps from last night, injury updates, roster moves
+- For offseason teams: draft analysis, free agency news, coaching changes, roster outlook
+- NEVER include articles about game results from weeks or months ago
 
 Return in this EXACT JSON format (no markdown, just raw JSON):
 {{
@@ -797,37 +1264,74 @@ Return in this EXACT JSON format (no markdown, just raw JSON):
       "source_class": "espn|nba|tsn|web|nfl|hogs",
       "headline": "A compelling headline in 10-20 words",
       "dek": "1-2 sentence summary, 20-40 words",
-      "date": "Month Day, Year format",
-      "link": "The real, verified URL to the article"
+      "date": "Month Day, Year format ‚Äî must be within last {recency_days} days",
+      "link": "The real, currently accessible URL to the article"
     }}
   ]
 }}
 
-Prefer Tier 1 sources: league official sites, ESPN, TSN, Sportsnet, The Athletic.
-Include a mix: game recaps, analysis, injury/roster news.
-Use HTML entities (&mdash; &ndash;) not unicode characters.
+Prefer Tier 1 sources: league official sites, ESPN, TSN, Sportsnet, The Athletic, CBS Sports, NBC Sports.
+Include a mix of content types: recaps, analysis, roster/injury news.
+Use HTML entities (&mdash; &ndash;) not unicode.
 Do NOT include citation numbers like [1], [2] in any text fields.
-All URLs must be real and currently accessible."""
+ALL URLs must be real and currently accessible ‚Äî do NOT guess or fabricate URLs."""
 
     result = perplexity_search(prompt)
     if not result:
         return None
 
     try:
-        # Remove citation markers before parsing JSON
         cleaned = re.sub(r'\[\d+\]', '', result)
         json_match = re.search(r'\{[\s\S]*"articles"[\s\S]*\}', cleaned)
         if json_match:
             data = json.loads(json_match.group())
-            # Clean up any double spaces in text fields
-            for article in data.get("articles", []):
+            articles = data.get("articles", [])
+
+            # Clean up text fields
+            for article in articles:
                 for field in ("headline", "dek"):
                     if field in article:
                         article[field] = re.sub(r'  +', ' ', article[field]).strip()
+
+            # === URL VALIDATION ===
+            validated_articles = []
+            for article in articles:
+                url = article.get("link", "")
+                if validate_url(url):
+                    validated_articles.append(article)
+                    print(f"    URL OK: {url[:80]}")
+                else:
+                    print(f"    URL DEAD ‚Äî dropping: {url[:80]}")
+                    # Try to salvage with a known-good fallback URL for the source
+                    fallback = _get_fallback_url(team_key, article.get("source", ""))
+                    if fallback:
+                        article["link"] = fallback
+                        article["headline"] = article.get("headline", cfg["full_name"] + " News")
+                        validated_articles.append(article)
+                        print(f"    Replaced with fallback: {fallback[:80]}")
+
+            data["articles"] = validated_articles
             return data
     except json.JSONDecodeError:
         print(f"  WARNING: Could not parse articles JSON for {team_key}")
     return None
+
+
+def _get_fallback_url(team_key, source_name=""):
+    """Return a known-good URL for a team's news page as a fallback when Perplexity gives a bad link."""
+    cfg = TEAMS[team_key]
+    league = cfg["league"]
+    abbr = cfg["espn_abbr"].lower()
+
+    # League-specific fallbacks
+    fallbacks = {
+        "NHL": f"https://www.espn.com/nhl/team/_/name/{abbr}/toronto-maple-leafs",
+        "MLB": f"https://www.espn.com/mlb/team/_/name/{abbr}/toronto-blue-jays",
+        "NBA": f"https://www.espn.com/nba/team/_/name/{abbr}/toronto-raptors",
+        "NFL": f"https://www.espn.com/nfl/team/_/name/{abbr}/washington-commanders",
+    }
+
+    return fallbacks.get(league, "")
 
 
 # === MAIN BUILD FUNCTION ===
@@ -881,8 +1385,12 @@ def build_data():
         if upcoming:
             print(f"  Upcoming: {len(upcoming)} games")
 
-        # Build verified facts string
-        verified_facts = build_verified_facts(team_key, team_info, standings, recent, upcoming)
+        # Detect season phase
+        phase_info = detect_season_phase(team_key, recent, upcoming)
+        print(f"  Season phase: {phase_info['label']} (recency: {phase_info['recency_days']}d)")
+
+        # Build verified facts string (now includes phase context)
+        verified_facts = build_verified_facts(team_key, team_info, standings, recent, upcoming, phase_info)
         print(f"  Verified facts block: {len(verified_facts)} chars")
 
         # Store all facts for later use
@@ -892,6 +1400,7 @@ def build_data():
             "recent": recent,
             "upcoming": upcoming,
             "verified_facts": verified_facts,
+            "phase_info": phase_info,
         }
 
     # === PHASE 2: GENERATE AI CONTENT (with verified facts injected) ===
@@ -905,14 +1414,15 @@ def build_data():
         recent = facts["recent"]
         upcoming = facts["upcoming"]
         verified_facts = facts["verified_facts"]
+        phase_info = facts["phase_info"]
 
-        # Generate LOTL via Perplexity WITH verified facts
-        print(f"  Generating Lay of the Land (with ESPN facts)...")
-        lotl_text = generate_lotl(team_key, verified_facts)
+        # Generate LOTL via Perplexity WITH verified facts AND phase context
+        print(f"  Generating Lay of the Land (phase: {phase_info['label']})...")
+        lotl_text = generate_lotl(team_key, verified_facts, phase_info, team_info, recent, upcoming)
 
-        # Find news articles
-        print(f"  Finding news articles...")
-        articles_data = find_news_articles(team_key)
+        # Find news articles (with phase-aware recency and URL validation)
+        print(f"  Finding news articles (recency: {phase_info['recency_days']}d)...")
+        articles_data = find_news_articles(team_key, phase_info)
         articles = articles_data.get("articles", []) if articles_data else []
 
         # Find highlight video (only if team played within last 48 hours)
@@ -983,6 +1493,21 @@ def build_data():
     stories_data = generate_featured_and_stories(all_team_facts)
     if stories_data and stories_data.get("stories"):
         stories = stories_data["stories"]
+
+        # Validate story URLs before publishing
+        print("  Validating story URLs...")
+        for story in stories:
+            url = story.get("link", "")
+            if url and url != "#" and not validate_url(url):
+                print(f"    DEAD URL ‚Äî replacing: {url[:80]}")
+                team = story.get("team", "")
+                if team and team in TEAMS:
+                    story["link"] = _get_fallback_url(team, story.get("source", ""))
+                else:
+                    story["link"] = "#"
+            elif url and url != "#":
+                print(f"    URL OK: {url[:80]}")
+
         if len(stories) >= 1:
             s = stories[0]
             db["featured"] = {
