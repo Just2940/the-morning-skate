@@ -178,7 +178,13 @@ def detect_season_phase(team_key, recent, upcoming):
                 return _phase("playoffs", league, cfg)
             return _phase("regular_season", league, cfg)
         elif has_recent_game and not has_upcoming:
-            if month >= 4:
+            # NBA play-in / early playoffs: if it's April-June and last game was
+            # within 7 days, the team is likely between play-in and Round 1 start,
+            # or waiting for the next playoff game to appear in the schedule feed.
+            # Treat as playoffs, not season_ended.
+            if month >= 4 and month <= 6 and last_game_days_ago <= 7:
+                return _phase("playoffs", league, cfg)
+            elif month >= 4:
                 return _phase("season_ended", league, cfg)
             return _phase("regular_season", league, cfg)
         elif month >= 6 and month <= 7:
@@ -1334,6 +1340,49 @@ def _get_fallback_url(team_key, source_name=""):
     return fallbacks.get(league, "")
 
 
+def _resolve_highlights(fresh, existing_team, recent):
+    """Decide which highlights object to use.
+    - If we just found fresh highlights, use them.
+    - If not, check the existing highlights ‚Äî only keep them if the game_date is
+      within 14 days. Stale highlights from months ago (e.g., NFL offseason)
+      should be hidden, not shown indefinitely.
+    """
+    if fresh.get("available"):
+        return fresh
+
+    existing_hl = existing_team.get("last_game_highlights", {"available": False})
+    if not existing_hl.get("available"):
+        return {"available": False}
+
+    # Check if the existing highlight's game is still reasonably recent
+    game_date_str = existing_hl.get("game_date", "")
+    if game_date_str:
+        try:
+            gd = datetime.strptime(game_date_str, "%Y-%m-%d")
+            days_old = (NOW.replace(tzinfo=None) - gd).days
+            if days_old > 14:
+                print(f"    Dropping stale highlights from {game_date_str} ({days_old}d old)")
+                return {"available": False}
+        except:
+            pass
+
+    # Also check against the most recent game in the schedule
+    if recent:
+        try:
+            last_gd = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
+            days_since_last = (NOW.replace(tzinfo=None) - last_gd).days
+            if days_since_last > 14:
+                return {"available": False}
+        except:
+            pass
+    else:
+        # No recent games at all ‚Äî team is deep in offseason, don't show stale highlights
+        print(f"    No recent games ‚Äî hiding existing highlights")
+        return {"available": False}
+
+    return existing_hl
+
+
 # === MAIN BUILD FUNCTION ===
 
 def build_data():
@@ -1446,6 +1495,7 @@ def build_data():
                     "result_badge": result_badge,
                     "result_class": "w" if last_game["result"] == "W" else "l",
                     "url": hl_url,
+                    "game_date": last_game.get("game_date", ""),
                 }
             else:
                 print(f"  Skipping highlights ‚Äî last game was {days_since_game} days ago")
@@ -1473,7 +1523,7 @@ def build_data():
             },
             "key_numbers": key_numbers if key_numbers else existing_team.get("key_numbers", []),
             "recent_results": recent if (recent and is_recent_enough(recent)) else [],
-            "last_game_highlights": highlights if highlights.get("available") else existing_team.get("last_game_highlights", {"available": False}),
+            "last_game_highlights": _resolve_highlights(highlights, existing_team, recent),
             "the_latest": articles if articles else existing_team.get("the_latest", []),
             "standings": existing_team.get("standings", {}),
         }
@@ -1493,6 +1543,41 @@ def build_data():
     stories_data = generate_featured_and_stories(all_team_facts)
     if stories_data and stories_data.get("stories"):
         stories = stories_data["stories"]
+
+        # Fix stale records in headlines/deks ‚Äî Perplexity sometimes uses old records
+        print("  Validating records in headlines/deks...")
+        for story in stories:
+            team_key = story.get("team", "")
+            if team_key and team_key in all_team_facts:
+                correct_record = all_team_facts[team_key].get("team_info", {}).get("record", "")
+                if correct_record:
+                    # Look for W-L style records in headlines that don't match
+                    for field in ("headline", "dek"):
+                        text = story.get(field, "")
+                        if not text:
+                            continue
+                        # Match patterns like "6-9", "6&ndash;9" etc that look like records
+                        # but don't match the verified record
+                        record_pattern = re.findall(r'\d{1,3}[-&][n]?[d]?[a]?[s]?[h]?[;]?\d{1,3}', text)
+                        for found_rec in record_pattern:
+                            # Normalize to compare: strip HTML entities
+                            clean_found = re.sub(r'&[a-z]+;', '-', found_rec)
+                            # Check if this looks like a team record (not a score)
+                            parts = clean_found.split('-')
+                            if len(parts) == 2:
+                                try:
+                                    w, l = int(parts[0]), int(parts[1])
+                                    cparts = correct_record.split('-')
+                                    cw, cl = int(cparts[0]), int(cparts[1][:2].strip())
+                                    # If found record is close to correct but wrong, fix it
+                                    if abs(w - cw) <= 3 and abs(l - cl) <= 3 and clean_found != correct_record.replace('-', '-'):
+                                        # Check it's not a game score (scores usually have one side > 10 for baseball)
+                                        if w + l > 10:  # looks like a season record, not a score
+                                            html_record = correct_record.replace('-', '&ndash;')
+                                            story[field] = text.replace(found_rec, html_record)
+                                            print(f"    Fixed stale record in {field}: {found_rec} ‚Üí {html_record}")
+                                except (ValueError, IndexError):
+                                    pass
 
         # Validate story URLs before publishing
         print("  Validating story URLs...")
