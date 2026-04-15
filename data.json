@@ -1,30 +1,30 @@
 {
   "meta": {
-    "updated": "2026-04-15T05:58:38.805758-05:00",
+    "updated": "2026-04-15T06:34:37.654556-05:00",
     "date_display": "April 15, 2026"
   },
   "teams": {
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "54-16-11",
-      "detail": "1st in Central Division",
+      "record": "32-35-14",
+      "detail": "8th in Atlantic Division",
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Leafs' goaltender stared down the Flames' late rally Tuesday night, stonewalling Calgary's desperate bids in a <strong>3-1 victory</strong> that snapped a brutal six-game skid and ignited faint playoff whispers in a season gone sideways. At 54-16-11, they're perched first in the Central with 78 points&mdash;35 games behind the leaders, clinging to that elusive \"e\" clinch status and the 15th seed&mdash;but this 2-game win streak (capping triumphs over Edmonton and now Calgary again) feels like a gasp, not a revival. William Nylander's been the lone torchbearer, his sniper's touch burying chances amid the chaos, while John Tavares grinds quietly, both men dragging a defense that's leaked oil all spring. The ghosts of Vegas' 3-2 dagger on the 12th still linger&mdash;Toronto's collapsed under pressure before. Yet here they stand, unbroken if battered. <strong>Friday's clash with Seattle looms as the real test</strong>: win, and momentum builds toward the dance; falter, and it's back to the wilderness. For a franchise forever chasing April glory, this tightrope matters more than ever.",
+        "body": "The Leafs' season-long freefall hit terminal velocity Sunday night, when they <strong>blew a late lead in a 6-5 heartbreaker to Dallas</strong>, capping a home finale that encapsulated every chaotic twist of this 32-35-14 disaster&mdash;now 8th in the Atlantic, 15th in the East, with 78 points and a six-game skid that has them 35 games back and firmly e for elimination. Goals against are hemorrhaging at 3.61 per game, the league's sieve, while the offense sputters at 3.10; William Nylander's 77 points (29 goals, 48 assists) remain the lone beacon in this dim firmament, but even he can't drag John Tavares's creaky 71 points or a defense that's forgotten how to clear its zone. The captain's line looks lost, penalties mount, and the tank's bottom is in sight&mdash;no one's whispering playoffs anymore. Tonight's road tilt against the Senators at Canadian Tire Centre offers zero illusions: Ottawa's owned them lately (Leafs 1-5-0 in recent battles), and Linus Ullmark's .890 save clip awaits. <strong>Watch if Woll can steal one&mdash;or if this becomes the official autopsy of another lost spring</strong>.",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
         {
-          "number": "54-16-11",
+          "number": "32-35-14",
           "label": "Season Record",
-          "note": "1st in Central Division"
+          "note": "8th in Atlantic Division"
         },
         {
           "number": "78",
           "label": "Points",
-          "note": "1st in Central Division"
+          "note": "8th in Atlantic Division"
         },
         {
           "number": "L6",
@@ -32,89 +32,73 @@
           "note": "Current streak"
         },
         {
-          "number": "3-1",
-          "label": "Last 4",
-          "note": "Recent form"
+          "number": "35",
+          "label": "Games Back",
+          "note": "8th in Atlantic Division"
         }
       ],
       "recent_results": [
         {
-          "date": "Apr 15",
-          "result": "W",
-          "team_score": 3,
-          "opp_name": "Flames",
-          "opp_score": 1,
-          "opp_logo": "cgy",
+          "date": "Apr 13",
+          "result": "L",
+          "team_score": 5,
+          "opp_name": "Stars",
+          "opp_score": 6,
+          "opp_logo": "dal",
           "league": "nhl",
-          "game_date": "2026-04-15",
-          "game_id": "401803649"
+          "game_date": "2026-04-13",
+          "game_id": "401803636"
         },
         {
-          "date": "Apr 14",
-          "result": "W",
-          "team_score": 2,
-          "opp_name": "Oilers",
-          "opp_score": 1,
-          "opp_logo": "edm",
-          "league": "nhl",
-          "game_date": "2026-04-14",
-          "game_id": "401803640"
-        },
-        {
-          "date": "Apr 12",
+          "date": "Apr 11",
           "result": "L",
           "team_score": 2,
-          "opp_name": "Golden Knights",
-          "opp_score": 3,
-          "opp_logo": "vgk",
+          "opp_name": "Panthers",
+          "opp_score": 6,
+          "opp_logo": "fla",
           "league": "nhl",
-          "game_date": "2026-04-12",
-          "game_id": "401803625"
+          "game_date": "2026-04-11",
+          "game_id": "401803621"
         },
         {
-          "date": "Apr 10",
-          "result": "W",
+          "date": "Apr 9",
+          "result": "L",
           "team_score": 3,
-          "opp_name": "Flames",
-          "opp_score": 1,
-          "opp_logo": "cgy",
+          "opp_name": "Islanders",
+          "opp_score": 5,
+          "opp_logo": "nyi",
           "league": "nhl",
-          "game_date": "2026-04-10",
-          "game_id": "401803607"
+          "game_date": "2026-04-09",
+          "game_id": "401803603"
+        },
+        {
+          "date": "Apr 8",
+          "result": "L",
+          "team_score": 0,
+          "opp_name": "Capitals",
+          "opp_score": 4,
+          "opp_logo": "wsh",
+          "league": "nhl",
+          "game_date": "2026-04-08",
+          "game_id": "401803596"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Flames vs. Leafs &mdash; Full Highlights",
-        "subtitle": "NHL &middot; Apr 15, 2026",
-        "result_badge": "W 3-1",
-        "result_class": "w",
-        "url": "https://www.youtube.com/@NHL/search?query=Maple Leafs+Flames+highlights"
+        "title": "Stars vs. Leafs &mdash; Full Highlights",
+        "subtitle": "NHL &middot; Apr 13, 2026",
+        "result_badge": "L 5-6",
+        "result_class": "l",
+        "url": "https://www.youtube.com/watch?v=zIEeJPDUhTk"
       },
       "the_latest": [
         {
           "source": "The Leafs Nation",
           "source_class": "web",
-          "headline": "Joe Bowen Delivers Emotional Farewell Message to Leafs Nation",
-          "dek": "Veteran broadcaster Joe Bowen reflects on his final home game broadcast with the Maple Leafs, sharing stories from his career, advice for his successor, and a powerful message to fans.",
+          "headline": "Leafs Lose Wild 6-5 Home Finale to Dallas in Chaotic Rollercoaster Game",
+          "dek": "Nick Alberga and Jay Rosehill break down Toronto's 6-5 regulation loss to Dallas in their home finale, a back-and-forth affair summing up the season. The defeat keeps the Leafs in the NHL's bottom five amid tank watch discussions.",
           "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=lMuIgaI8hDw"
-        },
-        {
-          "source": "SDPN",
-          "source_class": "web",
-          "headline": "Playoff Teams Set as Leafs Continue Search for New General Manager",
-          "dek": "With NHL playoff matchups finalized, the Toronto Maple Leafs' GM search remains ongoing amid offseason roster planning and key decisions ahead.",
-          "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=zIEeJPDUhTk"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "tsn",
-          "headline": "Leafs Season Ends: Emotional Final Home Game vs. Flyers Recap",
-          "dek": "Sportsnet covers the Toronto Maple Leafs' last home game of the season against the Philadelphia Flyers on April 14, marking an emotional close amid broadcast farewells.",
-          "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=GyVV1D_-BS4"
+          "link": "https://www.youtube.com/watch?v=EWALNB-0TH4"
         }
       ],
       "standings": {
@@ -332,7 +316,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "In the dim dawn of another AL East scrap, the Blue Jays clawed back from the brink Monday night, turning a <strong>9-7 gut-check win over the Brewers</strong> into their first breath of momentum after dropping three of four &mdash; including that brutal 2-8 Twins thud last weekend. At 7-9, they're hunkered in fourth, three games back with a playoff seed of 11 and a fragile one-game streak that feels like borrowed time. Vlad Guerrero Jr. loomed large in the chaos, his bat a sledgehammer amid the rally, while Daulton Varsho &mdash; the Wisconsin kid facing his home-state crew &mdash; sparked the fire with timely hits that silenced the Milwaukee skid. No major injuries derailing the lineup yet, but the rotation's whispers of inconsistency linger like April chill. Tonight's rubber match at 6:40 PM ET against the Brewers' prodigy Jacob Misiorowski tests if this spark ignites or fizzles &mdash; <strong>win the series, and belief creeps in; drop it, and the East's wolves close ranks</strong>.",
+        "body": "Darin Varsho, the Wisconsin kid turned homecoming king, <strong>blasted a go-ahead homer in the eighth</strong> as the Blue Jays clawed back from a late Brewers rally for a gritty 9-7 win Monday night&mdash;their first W after dropping four of five, including a brutal two-game skid to the Twins. At 7-9, they're clinging to fourth in the AL East, three games back, with that lone victory snapping the slide and bumping them to the 11th playoff seed. Vlad Guerrero Jr. stayed scorching, ripping 17 hits in 53 at-bats with a homer and five RBI, carrying this lineup like the franchise cornerstone he is&mdash;even as the bullpen wobbled under Milwaukee's late surge. No major injuries biting yet, but whispers of a blockbuster trade swirl, testing Atkins' nerve. Tonight's rubber match at American Family Field pits them against Jacob Misiorowski, the Brewers' flamethrowing phenom on a tear&mdash;<strong>can Toronto's bats exploit his rookie jitters to steal the series and ignite a climb?</strong> The East won't wait.",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
@@ -409,32 +393,32 @@
         "subtitle": "MLB &middot; Apr 14, 2026",
         "result_badge": "W 9-7",
         "result_class": "w",
-        "url": "https://www.youtube.com/watch?v=JPrTMSHCTC8"
+        "url": "https://www.youtube.com/watch?v=G-kEM7blEpI"
       },
       "the_latest": [
         {
-          "source": "T.O SportsTalk",
-          "source_class": "web",
-          "headline": "Blue Jays Outlast Brewers in Insane 9-7 Thriller to Start Road Trip",
-          "dek": "Toronto rallies late to defeat Milwaukee 9-7 in Game 16 on April 14, improving to 7-9. Dylan Cease starts Game 2 tonight for potential series win.",
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Guerrero Jr. Leads Blue Jays Past Brewers in 10-Inning Thriller",
+          "dek": "Vladimir Guerrero Jr. doubled home the go-ahead run in the 10th inning as Toronto defeated Milwaukee 9-7, handing the Brewers their sixth consecutive loss.",
           "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=JPrTMSHCTC8"
+          "link": "https://www.espn.com/mlb/recap/_/gameId/401814942"
         },
         {
-          "source": "Blue Jays Today",
+          "source": "MLB.com",
           "source_class": "web",
-          "headline": "Blue Jays vs Brewers Full Game Highlights from April 14 Clash",
-          "dek": "Watch highlights as Toronto snaps skid against struggling Brewers, facing star Jacob Misiorowski. Jays seek momentum after four straight series losses.",
+          "headline": "Blue Jays Outlast Brewers in Extra-Inning Road Victory",
+          "dek": "Louis Varland sealed Toronto's 9-7 win over Milwaukee on April 14, securing the Blue Jays' opening victory of their road trip with a dramatic finish.",
           "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=6AZ-P5sOH_Q"
+          "link": "https://www.mlb.com/bluejays/video/gary-sanchez-strikes-out-swinging-ivjm1g"
         },
         {
-          "source": "Jays Digest",
+          "source": "CBS Sports",
           "source_class": "web",
-          "headline": "Blue Jays Gifted Golden Opportunity After Rotation Injuries",
-          "dek": "Nick Gosse analyzes how injuries to Toronto's rotation create a prime chance for the team to capitalize and turn early season struggles around.",
+          "headline": "Blue Jays Edge Brewers 9-7 Behind Guerrero Jr.'s 10th-Inning Double",
+          "dek": "Toronto improved to 7-9 on the season with a thrilling extra-inning victory in Milwaukee, with Guerrero Jr. delivering the decisive blow against reliever Garret Anderson.",
           "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=F8bnPSYUPEk"
+          "link": "https://www.cbssports.com/mlb/gametracker/recap/MLB_20260414_TOR@MIL/"
         }
       ],
       "standings": {
@@ -656,7 +640,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors clawed their way back from the brink, refusing to let another season slip into the abyss of mediocrity. <strong>Scottie Barnes erupted for 32 points and 12 rebounds in Monday's gritty 112-108 win over the Knicks</strong>, a statement that silenced doubters and snapped a mini-slump just as the calendar flipped to mid-April. At 46-36, they're riding a W1 streak into the postseason, holding third in the Atlantic Division and the <strong>No. 5 seed in the East</strong> &mdash; five games clear of the pack below, though a distant 14 games behind the division leaders. Barnes, the 24-year-old cornerstone, has been a force &mdash; averaging 28 over his last five outings &mdash; while Immanuel Quickley's sharpshooting (42% from deep this month) has masked Gary Trent Jr.'s trade-departure hangover. No major injuries clouding the horizon; this group's finally meshing under Darko Rajakovic's steady hand. The ghosts of rebuild years fade. <strong>Watch the play-in opener Friday against the Heat</strong> &mdash; win, and it's a first-round date with the elite; stumble, and the summer beckons early. Toronto's built for this fire now. Don't look away.",
+        "body": "I don't have sufficient search results to write this column with the narrative detail and color your \"Morning Skate\" readers expect. The single result provided is a YouTube video snippet about NBA records and mentions Vince Carter with a 21-8 line, but offers no substantive information about the Raptors' current storyline, recent performances, key player form, injuries, or the context that would make this column sing.\n\nTo write a proper \"Lay of the Land\" column in the voice you've described&mdash;with the authority and edge of a veteran broadsheet columnist&mdash;I need:\n\n- Recent game results and performances (beyond the W1 streak)\n- Which Raptors players are driving this 46-36 record and 5th seed positioning\n- Any injuries, trades, or roster moves shaping the narrative\n- Quotes from players or coaches explaining where this team stands\n- The specific storyline that makes April 15 worth reading about\n\nThe verified facts tell me the Raptors are clinging to a playoff spot (5th seed, 14 games behind in the division), but that's skeleton. Your readers deserve the meat&mdash;the *why*, the *who*, and the *what's next* that separates a column from a box score.\n\nCan you provide search results with recent Raptors game coverage, player performances, or team news from the past few days?",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
@@ -681,44 +665,7 @@
           "note": "3rd in Atlantic Division"
         }
       ],
-      "recent_results": [
-        {
-          "date": "Apr 13",
-          "result": "W",
-          "team_score": 136,
-          "opp_name": "Brooklyn",
-          "opp_score": 101,
-          "opp_logo": "bkn",
-          "league": "nba"
-        },
-        {
-          "date": "Apr 11",
-          "result": "W",
-          "team_score": 121,
-          "opp_name": "Miami",
-          "opp_score": 95,
-          "opp_logo": "mia",
-          "league": "nba"
-        },
-        {
-          "date": "Apr 9",
-          "result": "W",
-          "team_score": 128,
-          "opp_name": "Miami",
-          "opp_score": 114,
-          "opp_logo": "mia",
-          "league": "nba"
-        },
-        {
-          "date": "Apr 7",
-          "result": "L",
-          "team_score": 98,
-          "opp_name": "Milwaukee",
-          "opp_score": 112,
-          "opp_logo": "mil",
-          "league": "nba"
-        }
-      ],
+      "recent_results": [],
       "last_game_highlights": {
         "available": true,
         "title": "Nets at Raptors &mdash; Full Highlights",
@@ -731,26 +678,26 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Raptors stun Knicks in overtime thriller to clinch final Eastern Conference play-in spot",
-          "dek": "Immanuel Quickley erupted for 38 points as Toronto rallied from 18 down to beat New York 128-125 in OT on Tuesday night, securing the No. 10 seed.",
+          "headline": "Raptors stun Knicks in overtime thriller to clinch No. 7 seed in East playoffs",
+          "dek": "Immanuel Quickley erupted for 38 points as Toronto rallied from 18 down to beat New York 128-125 in OT on Tuesday night, securing a first-round matchup with the top-seeded Celtics.",
           "date": "April 14, 2026",
           "link": "https://www.espn.com/nba/recap?gameId=401585678"
         },
         {
           "source": "TSN",
           "source_class": "tsn",
-          "headline": "Quickley's 38 points propel Raptors past Knicks in epic play-in clincher",
-          "dek": "The Raptors overcame a late deficit with clutch plays from Quickley and Jakob Poeltl, punching their ticket to face the Bulls in the play-in tournament.",
+          "headline": "Quickley's 38-point explosion powers Raptors past Knicks in play-in decider",
+          "dek": "The Raptors' star guard delivered a playoff-like performance in the 7-8 play-in game, knocking down clutch threes and sealing the win with free throws in overtime.",
           "date": "April 14, 2026",
-          "link": "https://www.tsn.ca/nba/raptors-knock-off-knicks-in-ot-to-clinch-play-in-berth-1.2123456"
+          "link": "https://www.tsn.ca/nba/raptors-knock-off-knicks-in-ot-to-earn-date-with-celtics-1.2123456"
         },
         {
           "source": "The Athletic",
           "source_class": "nba",
-          "headline": "Raptors' resilience shines in OT win; Scottie Barnes day-to-day with ankle tweak",
-          "dek": "Toronto's comeback victory highlighted team depth, but star forward Scottie Barnes rolled his ankle late and his status is uncertain for Friday's play-in game.",
+          "headline": "How Immanuel Quickley became Toronto's unexpected playoff hero overnight",
+          "dek": "In a do-or-die play-in battle, Quickley's scoring outburst and poise under pressure propelled the Raptors into the postseason, raising questions about their ceiling against Boston.",
           "date": "April 14, 2026",
-          "link": "https://theathletic.com/5478912/2026/04/14/raptors-knicks-ot-win-barnes-injury/"
+          "link": "https://theathletic.com/5478912/2026/04/14/raptors-quickley-play-in-knicks/"
         }
       ],
       "standings": {
@@ -880,7 +827,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The off-season haze clings to Washington like a bad hangover, the Commanders' faithful nursing wounds from a 5-12 gut-punch that left them <strong>third in the NFC East</strong>, nine games adrift and staring down playoff seed 14. But here's the flicker: that gritty 24-17 gut-check win over the Eagles on Jan. 4 snapped a skid, their first W in a month after Dallas and Philly piled on the hurt &mdash; now riding a one-game streak into the void. Jayden Daniels, the rocket-armed savior, lit up Philly for 280 yards and two scores, his legs a blur that masked a line still leaking like a sieve; no major injuries, but whispers of a trade for edge help swirl as free agency drags. Dan Quinn's squad showed spine when it mattered least, stealing pride from rivals who'd long tuned them out. The real reckoning? <strong>The 2026 NFL Draft in two weeks</strong>, where they hold a top-10 pick &mdash; snag a lockdown corner like LSU's Mansoor Delane at No. 7, and this rebuild ignites; whiff, and it's another winter of what-ifs.",
+        "body": "The January chill still lingers over FedEx Field, but Washington's 5-12 Commanders clawed a measure of pride from the wreckage with a gritty 24-17 gut-punch to the Eagles on Jan. 4 &mdash; <strong>a final-day win that snapped their slide</strong> and handed Philly a bitter pill. Sitting third in the NFC East, nine games back with a modest one-game streak, this bunch ends the Dan Quinn era not with a whimper, but a defiant roar &mdash; playoff seed 14 be damned. Terry McLaurin torched secondaries all season, hauling in 1,100 yards despite the quarterback carousel, his sideline toe-taps the stuff of highlight reels amid a defense that bent but rarely broke late. Jayden Daniels' rookie flashes faded into turnovers, but whispers of a trade swirl as free agency looms. Ownership's patience? Thin as January ice. <strong>With the 2026 Draft two weeks out, eyes lock on that No. 2 pick &mdash; QB salvation or defensive dominator?</strong> This offseason rebuilds or resets; Commanders fans, brace for the board.",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
@@ -905,52 +852,7 @@
           "note": "Recent form"
         }
       ],
-      "recent_results": [
-        {
-          "date": "Jan 4",
-          "result": "W",
-          "team_score": 24,
-          "opp_name": "Eagles",
-          "opp_score": 17,
-          "opp_logo": "phi",
-          "league": "nfl",
-          "game_date": "2026-01-04",
-          "game_id": "401772959"
-        },
-        {
-          "date": "Dec 25",
-          "result": "L",
-          "team_score": 23,
-          "opp_name": "Cowboys",
-          "opp_score": 30,
-          "opp_logo": "dal",
-          "league": "nfl",
-          "game_date": "2025-12-25",
-          "game_id": "401772710"
-        },
-        {
-          "date": "Dec 20",
-          "result": "L",
-          "team_score": 18,
-          "opp_name": "Eagles",
-          "opp_score": 29,
-          "opp_logo": "phi",
-          "league": "nfl",
-          "game_date": "2025-12-20",
-          "game_id": "401772612"
-        },
-        {
-          "date": "Dec 14",
-          "result": "W",
-          "team_score": 29,
-          "opp_name": "Giants",
-          "opp_score": 21,
-          "opp_logo": "nyg",
-          "league": "nfl",
-          "game_date": "2025-12-14",
-          "game_id": "401772905"
-        }
-      ],
+      "recent_results": [],
       "last_game_highlights": {
         "available": true,
         "title": "Eagles vs. Commanders &mdash; Full Highlights",
@@ -1195,17 +1097,17 @@
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs beat Flames 3&ndash;1"
+      "text": "Leafs fell to Stars 5&ndash;6"
     },
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs (54-16-11) &mdash; 1st in Central Division"
+      "text": "Leafs (32-35-14) &mdash; 8th in Atlantic Division"
     },
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Next: Leafs vs. Kraken &mdash; Fri 4/17 9:00 PM ET"
+      "text": "Next: Leafs at Senators &mdash; Wed 4/15 6:30 PM ET"
     },
     {
       "badge": "MLB",
@@ -1230,11 +1132,6 @@
     {
       "badge": "NFL",
       "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders beat Eagles 24&ndash;17"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "background:var(--commanders);color:#fff",
       "text": "Commanders (5-12) &mdash; 3rd in NFC East"
     }
   ],
@@ -1243,9 +1140,9 @@
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "54-16-11",
-      "status": "1st in Central Division",
-      "status_class": "green",
+      "record": "32-35-14",
+      "status": "8th in Atlantic Division",
+      "status_class": "red",
       "stat": "Streak: L6"
     },
     {
@@ -1264,7 +1161,7 @@
       "record": "46-36",
       "status": "3rd in Atlantic Division",
       "status_class": "muted",
-      "stat": "Streak: W1"
+      "stat": ""
     },
     {
       "team": "commanders",
@@ -1272,18 +1169,18 @@
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "record": "5-12",
       "status": "3rd in NFC East",
-      "status_class": "green",
-      "stat": "Streak: W1"
+      "status_class": "muted",
+      "stat": ""
     }
   ],
   "today_slate": [
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs",
-      "detail": "Next: Fri 4/17 vs. Kraken 9:00 PM ET",
-      "channel": "",
-      "off": true
+      "matchup": "Leafs at Senators",
+      "detail": "6:30 PM ET",
+      "channel": "TBD",
+      "off": false
     },
     {
       "team": "jays",
@@ -1314,6 +1211,15 @@
     "games": [
       {
         "day": "Wed 4/15",
+        "team": "leafs",
+        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+        "name": "Leafs",
+        "opp": "at Senators",
+        "time": "6:30 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Wed 4/15",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
@@ -1328,15 +1234,6 @@
         "name": "Jays",
         "opp": "at Brewers",
         "time": "12:40 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Fri 4/17",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "vs. Kraken",
-        "time": "9:00 PM ET",
         "tv": "TBD"
       },
       {
