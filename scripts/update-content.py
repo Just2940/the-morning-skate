@@ -118,6 +118,37 @@ def espn_fetch(url):
         return None
 
 
+def get_team_info(team_key):
+    """Fetch team record and standing summary from ESPN team endpoint.
+    Returns dict with 'record', 'standing_summary', and raw 'record_stats'."""
+    cfg = TEAMS[team_key]
+    url = f"https://site.api.espn.com/apis/site/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}"
+    data = espn_fetch(url)
+    if not data:
+        return {}
+
+    team = data.get("team", {})
+    result = {}
+
+    # Extract record summary (e.g., "32-36-14" for NHL, "8-5" for MLB)
+    record_items = team.get("record", {}).get("items", [])
+    for item in record_items:
+        if item.get("type") == "total":
+            result["record"] = item.get("summary", "")
+            # Extract individual stats
+            stats = {}
+            for s in item.get("stats", []):
+                stats[s.get("name", "")] = s.get("value", "")
+                stats[s.get("name", "") + "_display"] = s.get("displayValue", "")
+            result["record_stats"] = stats
+            break
+
+    # Standing summary (e.g., "4th in Atlantic Division")
+    result["standing_summary"] = team.get("standingSummary", "")
+
+    return result
+
+
 def get_team_schedule(team_key):
     """Get recent and upcoming games from ESPN."""
     cfg = TEAMS[team_key]
@@ -199,7 +230,6 @@ def get_team_schedule(team_key):
 
                 # Parse game time
                 try:
-                    from datetime import datetime as dt
                     game_dt = datetime.fromisoformat(game_date_str.replace("Z", "+00:00")).astimezone(EST)
                     time_str = game_dt.strftime("%-I:%M %p").replace("AM", "AM").replace("PM", "PM")
                 except:
@@ -238,13 +268,239 @@ def get_team_schedule(team_key):
 
 
 def get_standings(team_key):
-    """Get standings from ESPN."""
+    """Get standings from ESPN and extract this team's entry."""
     cfg = TEAMS[team_key]
     url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings"
     data = espn_fetch(url)
     if not data:
-        return None
-    return data  # Return raw ‚Äî we'll process per-team in the main function
+        return {}
+
+    team_id = cfg["espn_team_id"]
+    team_abbr = cfg["espn_abbr"]
+
+    # Navigate the standings structure: children > standings > entries
+    for group in data.get("children", []):
+        group_name = group.get("name", "")
+        for subgroup in group.get("standings", {}).get("entries", []):
+            entry_team = subgroup.get("team", {})
+            entry_id = str(entry_team.get("id", ""))
+            entry_abbr = entry_team.get("abbreviation", "")
+
+            if entry_id == team_id or entry_abbr == team_abbr:
+                # Found our team ‚Äî extract all stats into a dict
+                stats = {}
+                for s in subgroup.get("stats", []):
+                    name = s.get("name", "")
+                    if name:
+                        stats[name] = s.get("displayValue", s.get("value", ""))
+                stats["_group_name"] = group_name
+                return stats
+
+    # Try alternate structure (some leagues use a flat list)
+    for entry in data.get("standings", {}).get("entries", []):
+        entry_team = entry.get("team", {})
+        entry_id = str(entry_team.get("id", ""))
+        entry_abbr = entry_team.get("abbreviation", "")
+
+        if entry_id == team_id or entry_abbr == team_abbr:
+            stats = {}
+            for s in entry.get("stats", []):
+                name = s.get("name", "")
+                if name:
+                    stats[name] = s.get("displayValue", s.get("value", ""))
+            return stats
+
+    return {}
+
+
+def build_verified_facts(team_key, team_info, standings, recent, upcoming):
+    """Build a verified facts block from ESPN data to inject into AI prompts.
+    This prevents Perplexity from hallucinating records, standings, or results."""
+    cfg = TEAMS[team_key]
+    facts = []
+
+    facts.append(f"TEAM: {cfg['full_name']} ({cfg['league']})")
+
+    # Record
+    record = team_info.get("record", "")
+    if record:
+        facts.append(f"CURRENT RECORD: {record}")
+
+    # Standing summary
+    standing = team_info.get("standing_summary", "")
+    if standing:
+        facts.append(f"STANDING: {standing}")
+
+    # Standings details
+    if standings:
+        if "streak" in standings:
+            facts.append(f"STREAK: {standings['streak']}")
+        if "points" in standings:
+            facts.append(f"POINTS: {standings['points']}")
+        if "gamesBack" in standings:
+            facts.append(f"GAMES BACK: {standings['gamesBack']}")
+        if "gamesBehind" in standings:
+            facts.append(f"GAMES BEHIND: {standings['gamesBehind']}")
+        if "clincher" in standings:
+            facts.append(f"CLINCH STATUS: {standings['clincher']}")
+        if "playoffSeed" in standings:
+            facts.append(f"PLAYOFF SEED: {standings['playoffSeed']}")
+
+    # Recent results
+    if recent:
+        facts.append("RECENT RESULTS (most recent first):")
+        for g in recent[:4]:
+            facts.append(f"  {g['date']}: {g['result']} {g['team_score']}-{g['opp_score']} vs {g['opp_name']}")
+
+        # Calculate recent streak from results
+        if len(recent) >= 2:
+            streak_type = recent[0]["result"]
+            streak_count = 0
+            for g in recent:
+                if g["result"] == streak_type:
+                    streak_count += 1
+                else:
+                    break
+            facts.append(f"CURRENT RUN: {streak_count} game {'win' if streak_type == 'W' else 'loss'} streak (from recent results)")
+
+    # Upcoming
+    if upcoming:
+        next_game = upcoming[0]
+        facts.append(f"NEXT GAME: {next_game['day']} {next_game['opp']} at {next_game['time']}")
+
+    # Season status indicators
+    record_stats = team_info.get("record_stats", {})
+    if record_stats:
+        # Check for playoff elimination or clinch
+        if record_stats.get("playoffSeed"):
+            facts.append(f"PLAYOFF SEED: {record_stats['playoffSeed']}")
+
+    return "\n".join(facts)
+
+
+def build_key_numbers(team_key, team_info, standings, recent):
+    """Generate 4 key numbers from verified ESPN data."""
+    cfg = TEAMS[team_key]
+    league = cfg["league"]
+    numbers = []
+    record = team_info.get("record", "")
+    record_stats = team_info.get("record_stats", {})
+    standing_summary = team_info.get("standing_summary", "")
+
+    # Number 1: Record
+    if record:
+        numbers.append({
+            "number": record,
+            "label": "Season Record",
+            "note": standing_summary or f"{cfg['league']} {NOW.year} season",
+        })
+
+    # Number 2: League-specific key stat
+    if league == "NHL":
+        pts = standings.get("points", record_stats.get("points_display", ""))
+        if pts:
+            numbers.append({"number": str(pts), "label": "Points", "note": standing_summary or ""})
+    elif league == "MLB":
+        wp = record_stats.get("winPercent_display", record_stats.get("winPercent", ""))
+        if wp:
+            try:
+                wp_fmt = f".{int(float(wp)*1000):03d}" if float(wp) < 1 else wp
+            except:
+                wp_fmt = wp
+            numbers.append({"number": wp_fmt, "label": "Win Pct", "note": standing_summary or ""})
+    elif league == "NBA":
+        gb = standings.get("gamesBehind", "")
+        if gb:
+            numbers.append({"number": str(gb), "label": "Games Behind", "note": standing_summary or ""})
+    elif league == "NFL":
+        wp = record_stats.get("winPercent_display", "")
+        if wp:
+            numbers.append({"number": wp, "label": "Win Pct", "note": standing_summary or ""})
+
+    # Number 3: Streak
+    streak = standings.get("streak", "")
+    if streak:
+        numbers.append({"number": streak, "label": "Streak", "note": "Current streak"})
+    elif recent:
+        # Calculate from recent results
+        streak_type = recent[0]["result"]
+        streak_count = 0
+        for g in recent:
+            if g["result"] == streak_type:
+                streak_count += 1
+            else:
+                break
+        streak_str = f"{'W' if streak_type == 'W' else 'L'}{streak_count}"
+        numbers.append({"number": streak_str, "label": "Streak", "note": f"{'Won' if streak_type == 'W' else 'Lost'} last {streak_count}"})
+
+    # Number 4: Games back or division rank
+    gb = standings.get("gamesBack", standings.get("gamesBehind", ""))
+    if gb and gb != "0" and gb != "-":
+        numbers.append({"number": str(gb), "label": "Games Back", "note": standing_summary or "In division"})
+    elif standing_summary:
+        # Extract rank number from "4th in Atlantic Division"
+        rank_match = re.match(r'(\d+)\w+ in (.+)', standing_summary)
+        if rank_match:
+            numbers.append({"number": rank_match.group(1), "label": f"In {rank_match.group(2)}", "note": standing_summary})
+
+    # Pad to 4 if we don't have enough
+    while len(numbers) < 4:
+        if recent and len(numbers) < 4:
+            # Last 10 record
+            last_10 = recent[:10]
+            w = sum(1 for g in last_10 if g["result"] == "W")
+            l = len(last_10) - w
+            numbers.append({"number": f"{w}-{l}", "label": f"Last {len(last_10)}", "note": "Recent form"})
+        else:
+            break
+
+    return numbers[:4]
+
+
+def generate_ticker(all_team_facts):
+    """Generate ticker items from verified ESPN data ‚Äî no AI needed."""
+    ticker_items = []
+    for team_key, facts_dict in all_team_facts.items():
+        cfg = TEAMS[team_key]
+        team_name = cfg["full_name"].split()[-1]
+        league = cfg["league"]
+
+        recent = facts_dict.get("recent", [])
+        team_info = facts_dict.get("team_info", {})
+        upcoming = facts_dict.get("upcoming", [])
+        record = team_info.get("record", "")
+
+        # Most recent game result
+        if recent:
+            g = recent[0]
+            result_word = "beat" if g["result"] == "W" else "fell to"
+            ticker_items.append({
+                "team": team_key,
+                "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}"
+            })
+
+        # Record + standing
+        standing = team_info.get("standing_summary", "")
+        if record and standing:
+            ticker_items.append({
+                "team": team_key,
+                "text": f"{team_name} ({record}) &mdash; {standing}"
+            })
+        elif record:
+            ticker_items.append({
+                "team": team_key,
+                "text": f"{team_name} record: {record}"
+            })
+
+        # Next game
+        if upcoming:
+            ng = upcoming[0]
+            ticker_items.append({
+                "team": team_key,
+                "text": f"Next: {team_name} {ng['opp']} &mdash; {ng['day']} {ng['time']}"
+            })
+
+    return ticker_items
 
 
 # === PERPLEXITY API ===
@@ -288,8 +544,9 @@ def perplexity_search(prompt, system_prompt=""):
         return None
 
 
-def generate_lotl(team_key):
-    """Generate a Lay of the Land paragraph using Perplexity."""
+def generate_lotl(team_key, verified_facts=""):
+    """Generate a Lay of the Land paragraph using Perplexity.
+    verified_facts: pre-built string of ESPN-verified data that MUST be used for stats."""
     cfg = TEAMS[team_key]
     today_str = NOW.strftime("%B %d, %Y")
 
@@ -304,6 +561,13 @@ YOUR VOICE:
 - Include exactly one or two telling statistics, woven naturally into the prose ‚Äî never a stats dump.
 - End with a forward look: what's next, what to watch for, why it matters.
 
+CRITICAL ACCURACY RULES:
+- You will be given VERIFIED FACTS below. These are pulled directly from ESPN and are CORRECT.
+- You MUST use the exact record, scores, and standings from the VERIFIED FACTS. Do NOT guess or recall different numbers.
+- If the verified facts say the record is "32-36-14", you MUST use "32-36-14" ‚Äî not a different number.
+- If the verified facts show game results, use those exact scores.
+- You may search for additional COLOR and NARRATIVE details (player performances, quotes, storylines), but ALL statistics (record, scores, standings, streaks) MUST come from the VERIFIED FACTS section.
+
 FORMATTING:
 - ONE paragraph, 150-200 words. Dense, polished prose ‚Äî no filler.
 - Bold the single most important recent event with <strong> tags.
@@ -313,14 +577,24 @@ FORMATTING:
 - Do NOT include citation numbers like [1], [2], etc. Write clean prose with no reference markers.
 - Do NOT exceed 200 words."""
 
-    prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of the morning of {today_str}.
+    facts_block = ""
+    if verified_facts:
+        facts_block = f"""
 
-Search for the very latest {cfg['full_name']} news ‚Äî especially any games played yesterday or last night. Include the most recent game score, result, and key performances. Also check current standings, injuries, trades, and today's/tomorrow's schedule. Synthesize where this team stands RIGHT NOW as of this morning.
+=== VERIFIED FACTS (from ESPN ‚Äî use these EXACT numbers) ===
+{verified_facts}
+=== END VERIFIED FACTS ===
+
+"""
+
+    prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of the morning of {today_str}.
+{facts_block}
+Search for additional {cfg['full_name']} narrative details ‚Äî key player performances, quotes, storylines, injuries, trades. But for ALL statistics (record, standings, scores, streaks), use ONLY the verified facts above. Do NOT invent or recall different numbers.
 
 Your paragraph must include:
 1. An opening that captures the team's current narrative arc ‚Äî not "The [Team] are..." but something with edge and voice
 2. The single most important thing that happened in the last 1-3 days (bold with <strong> tags)
-3. Context: record, streak, division/conference standing, woven naturally into the prose
+3. Context: record, streak, division/conference standing from the VERIFIED FACTS, woven naturally into the prose
 4. A key player thread ‚Äî who's hot, who's hurt, who's the story
 5. A forward-looking close: the next game, series, or milestone, bolded with <strong> tags
 
@@ -331,7 +605,15 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
         # Clean up any markdown that Perplexity might add
         result = result.strip()
         result = re.sub(r'^\*\*.*?\*\*\s*\n*', '', result)  # Remove bold headers
-        result = result.replace("**", "<strong>").replace("**", "</strong>")  # Convert markdown bold
+        # Convert markdown bold **text** to <strong>text</strong>
+        import itertools
+        parts = result.split("**")
+        if len(parts) > 1:
+            rebuilt = parts[0]
+            for i, part in enumerate(parts[1:], 1):
+                tag = "<strong>" if i % 2 == 1 else "</strong>"
+                rebuilt += tag + part
+            result = rebuilt
         # Remove Perplexity citation markers like [1], [2], [1][2], [3][4][5], etc.
         result = re.sub(r'\[\d+\]', '', result)
         # Clean up any double spaces left behind after removing citations
@@ -344,15 +626,38 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
     return result
 
 
-def generate_featured_and_stories():
-    """Use Perplexity to identify the top 3-4 stories across all four teams."""
+def generate_featured_and_stories(all_team_facts):
+    """Use Perplexity to identify the top 3-4 stories across all four teams.
+    all_team_facts: dict of verified ESPN data per team to prevent hallucination."""
     today_str = NOW.strftime("%B %d, %Y")
 
-    prompt = f"""As of the morning of {today_str}, identify the TOP 3-4 most important sports stories across these four teams. Focus on what happened YESTERDAY and LAST NIGHT ‚Äî game results from last night take priority:
-1. Toronto Maple Leafs (NHL)
-2. Toronto Blue Jays (MLB)
-3. Toronto Raptors (NBA)
-4. Washington Commanders (NFL)
+    # Build a summary of verified facts for all teams
+    facts_summary = []
+    for team_key in ["leafs", "jays", "raptors", "commanders"]:
+        fd = all_team_facts.get(team_key, {})
+        cfg = TEAMS[team_key]
+        ti = fd.get("team_info", {})
+        recent = fd.get("recent", [])
+        upcoming = fd.get("upcoming", [])
+
+        line = f"- {cfg['full_name']} ({cfg['league']}): Record {ti.get('record', 'N/A')}, {ti.get('standing_summary', 'N/A')}"
+        if recent:
+            g = recent[0]
+            line += f". Last game: {'W' if g['result'] == 'W' else 'L'} {g['team_score']}-{g['opp_score']} vs {g['opp_name']} ({g['date']})"
+        if upcoming:
+            ng = upcoming[0]
+            line += f". Next: {ng['opp']} {ng['day']}"
+        facts_summary.append(line)
+
+    facts_block = "\n".join(facts_summary)
+
+    prompt = f"""As of the morning of {today_str}, identify the TOP 3-4 most important sports stories across these four teams.
+
+=== VERIFIED TEAM STATUS (from ESPN ‚Äî use these exact records and scores) ===
+{facts_block}
+=== END VERIFIED STATUS ===
+
+Focus on what happened YESTERDAY and LAST NIGHT ‚Äî game results from last night take priority. Use the EXACT scores and records from the verified status above. Search for additional narrative details (player performances, context, storylines).
 
 For each story, provide in this EXACT JSON format (no markdown, just raw JSON):
 {{
@@ -484,24 +789,64 @@ def build_data():
         },
     }
 
-    # === TEAM DATA ===
+    # === PHASE 1: FETCH ALL ESPN DATA (verified, factual) ===
     all_upcoming = []
-    teams_data = {}
+    all_team_facts = {}  # Collected verified facts for each team
 
     for team_key, cfg in TEAMS.items():
-        print(f"\n--- {cfg['full_name']} ---")
+        print(f"\n--- {cfg['full_name']} [ESPN Data] ---")
+
+        # Get team info (record, standing summary) from ESPN
+        print(f"  Fetching team info...")
+        team_info = get_team_info(team_key)
+        if team_info.get("record"):
+            print(f"  Record: {team_info['record']}")
+        if team_info.get("standing_summary"):
+            print(f"  Standing: {team_info['standing_summary']}")
+
+        # Get standings details from ESPN
+        print(f"  Fetching standings...")
+        standings = get_standings(team_key)
+        if standings:
+            print(f"  Standings data: {len(standings)} fields")
 
         # Get schedule/results from ESPN
         print(f"  Fetching schedule...")
         recent, upcoming = get_team_schedule(team_key)
         all_upcoming.extend(upcoming)
+        if recent:
+            print(f"  Recent: {len(recent)} games (last: {recent[0]['result']} {recent[0]['team_score']}-{recent[0]['opp_score']} vs {recent[0]['opp_name']})")
+        if upcoming:
+            print(f"  Upcoming: {len(upcoming)} games")
 
-        # Get record from most recent data
-        # (We'll derive this from ESPN standings or schedule data)
+        # Build verified facts string
+        verified_facts = build_verified_facts(team_key, team_info, standings, recent, upcoming)
+        print(f"  Verified facts block: {len(verified_facts)} chars")
 
-        # Generate LOTL via Perplexity
-        print(f"  Generating Lay of the Land...")
-        lotl_text = generate_lotl(team_key)
+        # Store all facts for later use
+        all_team_facts[team_key] = {
+            "team_info": team_info,
+            "standings": standings,
+            "recent": recent,
+            "upcoming": upcoming,
+            "verified_facts": verified_facts,
+        }
+
+    # === PHASE 2: GENERATE AI CONTENT (with verified facts injected) ===
+    teams_data = {}
+
+    for team_key, cfg in TEAMS.items():
+        print(f"\n--- {cfg['full_name']} [AI Content] ---")
+        facts = all_team_facts[team_key]
+        team_info = facts["team_info"]
+        standings = facts["standings"]
+        recent = facts["recent"]
+        upcoming = facts["upcoming"]
+        verified_facts = facts["verified_facts"]
+
+        # Generate LOTL via Perplexity WITH verified facts
+        print(f"  Generating Lay of the Land (with ESPN facts)...")
+        lotl_text = generate_lotl(team_key, verified_facts)
 
         # Find news articles
         print(f"  Finding news articles...")
@@ -524,21 +869,28 @@ def build_data():
                 "url": hl_url,
             }
 
-        # Use existing data as fallback for fields we couldn't fetch
+        # Build key numbers from ESPN data
+        key_numbers = build_key_numbers(team_key, team_info, standings, recent)
+
+        # Use existing data as fallback ONLY for fields ESPN couldn't provide
         existing_team = existing.get("teams", {}).get(team_key, {})
+
+        # Record comes from ESPN now, not fallback
+        record = team_info.get("record", existing_team.get("record", ""))
+        standing_summary = team_info.get("standing_summary", existing_team.get("detail", ""))
 
         team_entry = {
             "full_name": cfg["full_name"],
             "league": cfg["league"],
-            "record": existing_team.get("record", ""),
-            "detail": existing_team.get("detail", ""),
-            "live_strip": existing_team.get("live_strip"),
+            "record": record,
+            "detail": standing_summary,
+            "live_strip": None,  # Will be set from ticker generation
             "lotl": {
                 "label": f"What's Going On With the {cfg['full_name'].split()[-1]}",
                 "body": lotl_text or existing_team.get("lotl", {}).get("body", ""),
                 "updated": f"Updated {TODAY_DISPLAY}",
             },
-            "key_numbers": existing_team.get("key_numbers", []),
+            "key_numbers": key_numbers if key_numbers else existing_team.get("key_numbers", []),
             "recent_results": recent if recent else existing_team.get("recent_results", []),
             "last_game_highlights": highlights if highlights.get("available") else existing_team.get("last_game_highlights", {"available": False}),
             "the_latest": articles if articles else existing_team.get("the_latest", []),
@@ -553,11 +905,11 @@ def build_data():
 
     db["teams"] = teams_data
 
-    # === HOMEPAGE CONTENT ===
+    # === PHASE 3: HOMEPAGE CONTENT ===
 
-    # Featured story + two-up stories
-    print("\n--- Generating homepage stories ---")
-    stories_data = generate_featured_and_stories()
+    # Featured story + two-up stories (with verified facts)
+    print("\n--- Generating homepage stories (with ESPN facts) ---")
+    stories_data = generate_featured_and_stories(all_team_facts)
     if stories_data and stories_data.get("stories"):
         stories = stories_data["stories"]
         if len(stories) >= 1:
@@ -608,26 +960,49 @@ def build_data():
         db["two_up"] = existing.get("two_up", [])
         db["extra_story"] = existing.get("extra_story", {})
 
-    # Ticker (generated from today's key stories)
-    db["ticker"] = existing.get("ticker", [])  # Keep existing ticker as baseline
+    # Ticker ‚Äî generated from REAL ESPN data now, not stale fallback
+    print("\n--- Generating ticker from ESPN data ---")
+    db["ticker"] = generate_ticker(all_team_facts)
+    print(f"  Generated {len(db['ticker'])} ticker items")
 
-    # At a Glance ‚Äî build from team data
+    # At a Glance ‚Äî build from REAL ESPN team data
     db["at_a_glance"] = []
     for team_key in ["leafs", "jays", "raptors", "commanders"]:
-        existing_glance = {}
-        for eg in existing.get("at_a_glance", []):
-            if eg.get("team") == team_key:
-                existing_glance = eg
-                break
-        td = teams_data.get(team_key, {})
+        facts = all_team_facts.get(team_key, {})
+        ti = facts.get("team_info", {})
+        recent = facts.get("recent", [])
+        standings_info = facts.get("standings", {})
+        record = ti.get("record", "")
+        standing = ti.get("standing_summary", "")
+
+        # Build a smart status line
+        status = standing or ""
+        status_class = "muted"
+        if recent:
+            g = recent[0]
+            if g["result"] == "W":
+                status_class = "green"
+            else:
+                status_class = "red"
+
+        # Build a key stat
+        stat = ""
+        streak = standings_info.get("streak", "")
+        if streak:
+            stat = f"Streak: {streak}"
+        elif recent:
+            streak_type = recent[0]["result"]
+            streak_count = sum(1 for g in recent if g["result"] == streak_type)
+            stat = f"{'W' if streak_type == 'W' else 'L'}{streak_count}"
+
         db["at_a_glance"].append({
             "team": team_key,
             "name": TEAMS[team_key]["full_name"].split()[-1],
             "logo": TEAMS[team_key]["logo"],
-            "record": td.get("record", existing_glance.get("record", "")),
-            "status": existing_glance.get("status", ""),
-            "status_class": existing_glance.get("status_class", "muted"),
-            "stat": existing_glance.get("stat", ""),
+            "record": record,
+            "status": status,
+            "status_class": status_class,
+            "stat": stat,
         })
 
     # Today's Slate ‚Äî build from upcoming games
@@ -659,11 +1034,15 @@ def build_data():
                     "off": True,
                 })
             else:
-                # Use existing
-                for es in existing.get("today_slate", []):
-                    if es.get("team") == team_key:
-                        db["today_slate"].append(es)
-                        break
+                # Offseason ‚Äî show status
+                db["today_slate"].append({
+                    "team": team_key,
+                    "logo": cfg["logo"],
+                    "matchup": cfg["full_name"].split()[-1],
+                    "detail": "Offseason",
+                    "channel": "",
+                    "off": True,
+                })
 
     # Week Ahead ‚Äî combine all upcoming games for next 7 days
     all_upcoming.sort(key=lambda x: x.get("game_date", ""))
@@ -672,7 +1051,7 @@ def build_data():
             {k: v for k, v in g.items() if k != "game_date"}
             for g in all_upcoming
         ],
-        "note": existing.get("week_ahead", {}).get("note", ""),
+        "note": "",
     }
 
     return db
