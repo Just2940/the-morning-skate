@@ -144,20 +144,36 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
     # Check for playoff indicators from ESPN standings
     has_playoff_seed = False
     has_clinched = False
+    is_eliminated = False
     if standings:
         seed = standings.get("playoffSeed", "")
         clincher = standings.get("clincher", "")
+        # NOTE: ESPN's playoffSeed is a RANKING assigned to ALL teams, not just
+        # playoff qualifiers. A team 14th in the conference still gets a playoffSeed.
+        # The CLINCHER field is the authoritative signal:
+        #   "e" = eliminated, "x" = clinched berth, "y" = clinched division, "z" = best record
+        if clincher:
+            cl = str(clincher).lower().strip()
+            if "e" in cl:
+                is_eliminated = True
+            else:
+                # Positive clinch indicator (x, y, z, etc.)
+                has_clinched = True
         if seed and str(seed) not in ("", "0"):
             has_playoff_seed = True
-        if clincher:
-            has_clinched = True
+            # Override: eliminated teams' playoff seeds are just rankings, not berths
+            if is_eliminated:
+                has_playoff_seed = False
+        print(f"    Phase inputs: playoffSeed={seed}, clincher='{clincher}', "
+              f"has_clinched={has_clinched}, is_eliminated={is_eliminated}, "
+              f"has_playoff_seed={has_playoff_seed}")
 
     if league == "NHL":
         if month >= 4 and month <= 6:
             # April-June: NHL playoff window.
             # CRITICAL: Only tag as "playoffs" if the team ACTUALLY qualified.
-            # Teams that missed the playoffs still play late-April regular season games.
-            if has_playoff_seed or has_clinched:
+            # Use the clincher field as the definitive signal, NOT playoffSeed alone.
+            if has_clinched:
                 return _phase("playoffs", league, cfg)
             elif has_upcoming and has_recent_game:
                 # Has games but no playoff seed ‚Äî still in late regular season
@@ -195,12 +211,11 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
             return _phase("offseason", league, cfg)
 
     elif league == "NBA":
-        # NBA playoff detection: use standings data (playoffSeed, clincher) as
-        # the authoritative signal. CRITICAL: Only tag as "playoffs" if the team
-        # actually has a playoff seed or clinched. Teams that missed the playoffs
-        # should NOT be tagged as playoff teams even during April-June.
+        # NBA playoff detection: use the clincher field as the authoritative signal.
+        # CRITICAL: playoffSeed is a RANKING for all teams, not a qualification flag.
+        # Only use has_clinched (positive clinch indicator) to determine playoff status.
         if month >= 4 and month <= 6:
-            if has_playoff_seed or has_clinched:
+            if has_clinched:
                 # Team qualified ‚Äî they're in the playoffs
                 return _phase("playoffs", league, cfg)
             elif has_upcoming and has_recent_game:
