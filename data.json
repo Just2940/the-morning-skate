@@ -128,7 +128,7 @@
       "matchup": "Season Over",
       "detail": "Draft Lottery: May 5",
       "channel": "",
-      "is_off": true
+      "off": true
     },
     {
       "team": "jays",
@@ -136,7 +136,7 @@
       "matchup": "Blue Jays at Brewers",
       "detail": "1:40 PM ET &middot; American Family Field",
       "channel": "SNET",
-      "is_off": false
+      "off": false
     },
     {
       "team": "raptors",
@@ -144,7 +144,7 @@
       "matchup": "Playoff Practice",
       "detail": "Game 1 vs. Cavaliers: Sat Apr 18 at 1 PM",
       "channel": "",
-      "is_off": true
+      "off": true
     },
     {
       "team": "commanders",
@@ -152,83 +152,85 @@
       "matchup": "Offseason",
       "detail": "NFL Draft: Apr 23-25 in Pittsburgh",
       "channel": "",
-      "is_off": true
+      "off": true
     }
   ],
-  "week_ahead": [
-    {
-      "day": "Thu 4/16",
-      "team": "jays",
-      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "opponent": "at Milwaukee Brewers",
-      "time": "1:40 PM",
-      "tv": "SNET"
-    },
-    {
-      "day": "Fri 4/17",
-      "team": "jays",
-      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "opponent": "vs. Tampa Bay Rays",
-      "time": "7:07 PM",
-      "tv": "SNET"
-    },
-    {
-      "day": "Sat 4/18",
-      "team": "raptors",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "opponent": "at Cleveland (Game 1)",
-      "time": "1:00 PM",
-      "tv": "ESPN / SNET"
-    },
-    {
-      "day": "Sat 4/18",
-      "team": "jays",
-      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "opponent": "vs. Tampa Bay Rays",
-      "time": "3:07 PM",
-      "tv": "SNET"
-    },
-    {
-      "day": "Sun 4/19",
-      "team": "jays",
-      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "opponent": "vs. Tampa Bay Rays",
-      "time": "1:37 PM",
-      "tv": "SNET"
-    },
-    {
-      "day": "Mon 4/20",
-      "team": "raptors",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "opponent": "at Cleveland (Game 2)",
-      "time": "7:00 PM",
-      "tv": "TNT / SNET"
-    },
-    {
-      "day": "Wed 4/22",
-      "team": "jays",
-      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "opponent": "vs. Chicago Cubs",
-      "time": "7:07 PM",
-      "tv": "SNET"
-    },
-    {
-      "day": "Wed 4/23",
-      "team": "raptors",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "opponent": "vs. Cleveland (Game 3)",
-      "time": "8:00 PM",
-      "tv": "SNET"
-    },
-    {
-      "day": "Wed 4/23",
-      "team": "commanders",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "opponent": "NFL Draft Round 1",
-      "time": "8:00 PM",
-      "tv": "ABC / ESPN"
-    }
-  ],
+  "week_ahead": {
+    "games": [
+      {
+        "day": "Thu 4/16",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Blue Jays",
+        "opp": "at Milwaukee Brewers",
+        "time": "1:40 PM",
+        "tv": "SNET"
+      },
+      {
+        "day": "Fri 4/17",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Blue Jays",
+        "opp": "vs. Tampa Bay Rays",
+        "time": "7:07 PM",
+        "tv": "SNET"
+      },
+      {
+        "day": "Sat 4/18",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Cleveland (Game 1)",
+        "time": "1:00 PM",
+        "tv": "ESPN / SNET"
+      },
+      {
+        "day": "Sat 4/18",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Blue Jays",
+        "opp": "vs. Tampa Bay Rays",
+        "time": "3:07 PM",
+        "tv": "SNET"
+      },
+      {
+        "day": "Sun 4/19",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Blue Jays",
+        "opp": "vs. Tampa Bay Rays",
+        "time": "1:37 PM",
+        "tv": "SNET"
+      },
+      {
+        "day": "Mon 4/20",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Cleveland (Game 2)",
+        "time": "7:00 PM",
+        "tv": "TNT / SNET"
+      },
+      {
+        "day": "Wed 4/22",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Blue Jays",
+        "opp": "vs. Chicago Cubs",
+        "time": "7:07 PM",
+        "tv": "SNET"
+      },
+      {
+        "day": "Wed 4/23",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "vs. Cleveland (Game 3)",
+        "time": "8:00 PM",
+        "tv": "SNET"
+      },
+      {
+        "day": "Wed 4/23",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+        "name": "Commanders",
+        "opp": "NFL Draft Round 1",
+        "time": "8:00 PM",
+        "tv": "ABC / ESPN"
+      }
+    ]
+  },
   "teams": {
     "leafs": {
       "full_name": "Toronto Maple Leafs",
@@ -293,37 +295,37 @@
           "date": "Apr 15",
           "result": "L",
           "team_score": 1,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-          "opponent": "Ottawa",
-          "opponent_score": 3,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/ott.png"
+          "opp_name": "Ottawa",
+          "opp_score": 3,
+          "opp_logo": "ott",
+          "league": "nhl"
         },
         {
           "date": "Apr 13",
           "result": "L",
           "team_score": 5,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-          "opponent": "Dallas",
-          "opponent_score": 6,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/dal.png"
+          "opp_name": "Dallas",
+          "opp_score": 6,
+          "opp_logo": "dal",
+          "league": "nhl"
         },
         {
           "date": "Apr 11",
           "result": "L",
           "team_score": 2,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-          "opponent": "Florida",
-          "opponent_score": 6,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/fla.png"
+          "opp_name": "Florida",
+          "opp_score": 6,
+          "opp_logo": "fla",
+          "league": "nhl"
         },
         {
           "date": "Apr 10",
           "result": "L",
           "team_score": 1,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-          "opponent": "Tampa Bay",
-          "opponent_score": 4,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tb.png"
+          "opp_name": "Tampa Bay",
+          "opp_score": 4,
+          "opp_logo": "tb",
+          "league": "nhl"
         }
       ],
       "last_game_highlights": {
@@ -428,9 +430,11 @@
       ],
       "standings": {
         "tabs": [
+          "Atlantic Division"
+        ],
+        "panes": [
           {
-            "label": "Atlantic Division",
-            "columns": [
+            "headers": [
               "Team",
               "W",
               "L",
@@ -439,26 +443,34 @@
             ],
             "rows": [
               {
-                "cells": [
-                  "Florida",
+                "team": "Florida",
+                "logo": "fla",
+                "league": "nhl",
+                "vals": [
                   52,
                   20,
                   6,
                   110
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/fla.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "Toronto",
+                "team": "Toronto",
+                "logo": "tor",
+                "league": "nhl",
+                "vals": [
                   32,
                   36,
                   14,
                   78
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-                "classes": "you playoff-out"
+                "you": true,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
               }
             ]
           }
@@ -528,37 +540,37 @@
           "date": "Apr 15",
           "result": "L",
           "team_score": 1,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-          "opponent": "Milwaukee",
-          "opponent_score": 2,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/mil.png"
+          "opp_name": "Milwaukee",
+          "opp_score": 2,
+          "opp_logo": "mil",
+          "league": "mlb"
         },
         {
           "date": "Apr 14",
           "result": "W",
           "team_score": 9,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-          "opponent": "Milwaukee",
-          "opponent_score": 7,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/mil.png"
+          "opp_name": "Milwaukee",
+          "opp_score": 7,
+          "opp_logo": "mil",
+          "league": "mlb"
         },
         {
           "date": "Apr 12",
           "result": "W",
           "team_score": 10,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-          "opponent": "Minnesota",
-          "opponent_score": 4,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/min.png"
+          "opp_name": "Minnesota",
+          "opp_score": 4,
+          "opp_logo": "min",
+          "league": "mlb"
         },
         {
           "date": "Apr 11",
           "result": "L",
           "team_score": 3,
-          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-          "opponent": "Minnesota",
-          "opponent_score": 5,
-          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/min.png"
+          "opp_name": "Minnesota",
+          "opp_score": 5,
+          "opp_logo": "min",
+          "league": "mlb"
         }
       ],
       "last_game_highlights": {
@@ -655,9 +667,11 @@
       ],
       "standings": {
         "tabs": [
+          "AL East"
+        ],
+        "panes": [
           {
-            "label": "AL East",
-            "columns": [
+            "headers": [
               "Team",
               "W",
               "L",
@@ -666,59 +680,79 @@
             ],
             "rows": [
               {
-                "cells": [
-                  "Baltimore",
+                "team": "Baltimore",
+                "logo": "bal",
+                "league": "mlb",
+                "vals": [
                   11,
                   5,
                   ".688",
                   "-"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bal.png",
-                "classes": ""
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "New York",
+                "team": "New York",
+                "logo": "nyy",
+                "league": "mlb",
+                "vals": [
                   10,
                   7,
                   ".588",
                   "1.5"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
-                "classes": ""
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "Boston",
+                "team": "Boston",
+                "logo": "bos",
+                "league": "mlb",
+                "vals": [
                   9,
                   8,
                   ".529",
                   "2.5"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
-                "classes": ""
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "Toronto",
+                "team": "Toronto",
+                "logo": "tor",
+                "league": "mlb",
+                "vals": [
                   7,
                   10,
                   ".412",
                   "4.5"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-                "classes": "you"
+                "you": true,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "Tampa Bay",
+                "team": "Tampa Bay",
+                "logo": "tb",
+                "league": "mlb",
+                "vals": [
                   6,
                   11,
                   ".353",
                   "5.5"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tb.png",
-                "classes": ""
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
               }
             ]
           }
@@ -886,96 +920,138 @@
       ],
       "standings": {
         "tabs": [
+          "Eastern Playoffs"
+        ],
+        "panes": [
           {
-            "label": "Eastern Playoffs",
-            "columns": [
-              "Seed",
+            "headers": [
               "Team",
               "W",
               "L"
             ],
             "rows": [
               {
-                "cells": [
-                  "1",
-                  "Boston",
+                "team": "Boston",
+                "logo": "bos",
+                "league": "nba",
+                "vals": [
                   58,
                   24
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "1",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "2",
-                  "Milwaukee",
+                "team": "Milwaukee",
+                "logo": "mil",
+                "league": "nba",
+                "vals": [
                   52,
                   30
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "2",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "3",
-                  "New York",
+                "team": "New York",
+                "logo": "ny",
+                "league": "nba",
+                "vals": [
                   50,
                   32
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "3",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "4",
-                  "Cleveland",
+                "team": "Cleveland",
+                "logo": "cle",
+                "league": "nba",
+                "vals": [
                   48,
                   34
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "4",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "5",
-                  "Toronto",
+                "team": "Toronto",
+                "logo": "tor",
+                "league": "nba",
+                "vals": [
                   46,
                   36
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-                "classes": "you playoff-in"
+                "you": true,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "5",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "6",
-                  "Indiana",
+                "team": "Indiana",
+                "logo": "ind",
+                "league": "nba",
+                "vals": [
                   45,
                   37
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "6",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "7",
-                  "Miami",
+                "team": "Miami",
+                "logo": "mia",
+                "league": "nba",
+                "vals": [
                   43,
                   39
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "7",
+                "seed_style": "green"
               },
               {
-                "cells": [
-                  "8",
-                  "Philadelphia",
+                "team": "Philadelphia",
+                "logo": "phi",
+                "league": "nba",
+                "vals": [
                   42,
                   40
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
-                "classes": "playoff-in wc-line"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": true,
+                "seed": "8",
+                "seed_style": "green"
               }
-            ]
+            ],
+            "has_seed_col": true
           }
         ]
       }
@@ -1141,9 +1217,11 @@
       ],
       "standings": {
         "tabs": [
+          "NFC East"
+        ],
+        "panes": [
           {
-            "label": "NFC East",
-            "columns": [
+            "headers": [
               "Team",
               "W",
               "L",
@@ -1151,44 +1229,60 @@
             ],
             "rows": [
               {
-                "cells": [
-                  "Philadelphia",
+                "team": "Philadelphia",
+                "logo": "phi",
+                "league": "nfl",
+                "vals": [
                   12,
                   5,
                   ".706"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-                "classes": "playoff-in"
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "Dallas",
+                "team": "Dallas",
+                "logo": "dal",
+                "league": "nfl",
+                "vals": [
                   8,
                   9,
                   ".471"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-                "classes": "playoff-out"
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "Washington",
+                "team": "Washington",
+                "logo": "wsh",
+                "league": "nfl",
+                "vals": [
                   5,
                   12,
                   ".294"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-                "classes": "you playoff-out"
+                "you": true,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
               },
               {
-                "cells": [
-                  "N.Y. Giants",
+                "team": "N.Y. Giants",
+                "logo": "nyg",
+                "league": "nfl",
+                "vals": [
                   4,
                   13,
                   ".235"
                 ],
-                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-                "classes": "playoff-out"
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
               }
             ]
           }
