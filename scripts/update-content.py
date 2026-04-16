@@ -993,8 +993,7 @@ def build_full_standings(team_key):
         # AL/NL Wild Card
         tab2_name = f"{our_conference} Wild Card" if our_conference else "Wild Card"
         conf_groups = {gn: es for gn, es in all_groups.items()
-                       if our_conference and our_conference.lower() in gn.lower()
-                       or (our_conference == "AL" and "American" in gn)
+                       if (our_conference == "AL" and "American" in gn)
                        or (our_conference == "NL" and "National" in gn)}
 
         wc_rows = []
@@ -1121,25 +1120,21 @@ def build_full_standings(team_key):
                     "detail": f"Sat Apr 18"  # Placeholder ‚Äî ideally from schedule
                 })
 
-        pane_wc = {"headers": ["Matchup", "Series"],
-                   "has_seed_col": True,
-                   "rows": []}
+        bracket_display_rows = []
         for i in range(0, min(8, len(conf_entries_sorted)), 2):
             if i + 1 < len(conf_entries_sorted):
                 t1 = conf_entries_sorted[i]
                 t2 = conf_entries_sorted[i + 1]
                 row1, _ = build_row(t1, league_key)
                 row2, _ = build_row(t2, league_key)
-                pane_wc["rows"].append({
-                    "seed": f"({i+1}) {row1['team']} vs. ({i+2}) {row2['team']}",
-                    "team": f"({i+1}) {row1['team']} vs. ({i+2}) {row2['team']}",
-                    "logo": "",
-                    "league": league_key,
-                    "vals": [f"Sat Apr 18"],
+                bracket_display_rows.append({
+                    "matchup": f"({i+1}) {row1['team']} vs. ({i+2}) {row2['team']}",
+                    "series": "Sat Apr 18",
                     "you": row1["you"] or row2["you"],
                 })
 
-        pane_wc = {"headers": ["Matchup", "Series"], "rows": pane_wc["rows"]}
+        pane_wc = {"headers": ["Matchup", "Series"], "bracket": True,
+                   "rows": bracket_display_rows}
 
     elif league == "NFL":
         # NFC/AFC Division + Playoff Picture
@@ -2131,6 +2126,22 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                 "badge_style": badge_style,
                 "text": f"{team_name} &mdash; NFL Draft Apr 23&ndash;25"
             })
+
+    # Deduplicate ticker items by text content (keep first occurrence)
+    seen_texts = set()
+    deduped = []
+    for item in ticker_items:
+        if item["text"] not in seen_texts:
+            seen_texts.add(item["text"])
+            deduped.append(item)
+    if len(deduped) < len(ticker_items):
+        print(f"  Ticker dedup: removed {len(ticker_items) - len(deduped)} duplicate(s)")
+    ticker_items = deduped
+
+    # Cap all ticker item texts at 70 chars for readability
+    for item in ticker_items:
+        if len(item["text"]) > 70:
+            item["text"] = item["text"][:67].rsplit(" ", 1)[0] + "..."
 
     return ticker_items
 
