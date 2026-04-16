@@ -1,23 +1,23 @@
 {
   "meta": {
-    "updated": "2026-04-15T08:23:01.509144-05:00",
+    "updated": "2026-04-15T22:23:00.985679-05:00",
     "date_display": "April 15, 2026"
   },
   "teams": {
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "32-35-14",
+      "record": "32-36-14",
       "detail": "8th in Atlantic Division",
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Leafs' playoff pulse flatlined another night in Dallas&mdash;<strong>a gut-wrenching 5-6 overtime loss</strong> on Apr. 13 that capped their home finale with fireworks but no finish, blowing two leads in a season that's slipped into the abyss at 32-35-14, eighth in the Atlantic, 35 games back with 78 points and an L6 streak carving deeper scars. John Tavares rallied with a goal and assist in the chaos, but the core&mdash;Mitch Marner long gone, Auston Matthews and William Nylander shouldering a fading dream&mdash;couldn't stem the bleed from defensive lapses and goaltending woes that have torpedoed this Original Six hope machine. What went right? Bursts of offense, sure, 5 goals against a 32&ndash;35&ndash;14-12 Stars juggernaut. What cratered? Everything else, as this 15th-seed wild-card lock claws for dignity heading into Ottawa. Tonight's the hour&mdash;<strong>6:30 PM ET at the Senators</strong>, where a spark could salvage pride or seal the tomb before Hurricanes hell awaits.",
+        "body": "The Leafs' faithful are staring down the barrel of another gut-wrenching spring, their playoff dreams long since cremated in a bonfire of blown leads and bitter defeats. <strong>Last night's 1-3 thud in Ottawa</strong> &mdash; the regular-season finale against a Senators squad tuning up for the real dance &mdash; capped a 32-36-14 nightmare, eighth in the Atlantic and 35 games back, mired in a seven-game skid that feels like an autopsy on a corpse. They squandered a 3-0 edge Monday versus Dallas, coughed up a two-goal third-period lead, and now it's all over but the packing of sticks; eliminated weeks ago, they're lottery bait, clinging to 78 points and a 15th seed in the draft pecking order. William Nylander's lone tally in Ottawa was a flicker in the dark, but the power play sputtered, the defense leaked oil, and goaltending turned sieve &mdash; this group's core looks gassed, questioning if the emperor has any clothes left. The urgency that fueled 82 games? Vanished. <strong>Now comes the real reckoning: draft lottery odds sharpen if they slot bottom-five, and a summer of hard choices awaits Shanahan's war room</strong>. Toronto sports another lost season &mdash; will they finally rebuild, or just retool the excuses?",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
         {
-          "number": "32-35-14",
+          "number": "32-36-14",
           "label": "Season Record",
           "note": "8th in Atlantic Division"
         },
@@ -27,7 +27,7 @@
           "note": "8th in Atlantic Division"
         },
         {
-          "number": "L6",
+          "number": "L7",
           "label": "Streak",
           "note": "Current streak"
         },
@@ -38,6 +38,17 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Apr 15",
+          "result": "L",
+          "team_score": 1,
+          "opp_name": "Senators",
+          "opp_score": 3,
+          "opp_logo": "ott",
+          "league": "nhl",
+          "game_date": "2026-04-15",
+          "game_id": "401803655"
+        },
         {
           "date": "Apr 13",
           "result": "L",
@@ -70,52 +81,49 @@
           "league": "nhl",
           "game_date": "2026-04-09",
           "game_id": "401803603"
-        },
-        {
-          "date": "Apr 8",
-          "result": "L",
-          "team_score": 0,
-          "opp_name": "Capitals",
-          "opp_score": 4,
-          "opp_logo": "wsh",
-          "league": "nhl",
-          "game_date": "2026-04-08",
-          "game_id": "401803596"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Stars vs. Leafs &mdash; Full Highlights",
-        "subtitle": "NHL &middot; Apr 13, 2026",
-        "result_badge": "L 5-6",
+        "title": "Senators vs. Leafs &mdash; Full Highlights",
+        "subtitle": "NHL &middot; Apr 15, 2026",
+        "result_badge": "L 1-3",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=8kO4Eh2gUCk",
-        "game_date": "2026-04-13"
+        "url": "https://www.youtube.com/watch?v=jTs70-2rQxE",
+        "game_date": "2026-04-15"
       },
       "the_latest": [
         {
-          "source": "Sporting News",
-          "source_class": "web",
-          "headline": "Maple Leafs fans are going to love Toronto's newest signing",
-          "dek": "The Toronto Maple Leafs signed forward Landon Sim to a two-year entry-level contract. The 21-year-old has played with the AHL's Toronto Marlies this season and brings a style fans will appreciate.",
-          "date": "April 14, 2026",
-          "link": "https://www.sportingnews.com/us/nhl/toronto-maple-leafs/news/maple-leafs-fans-love-toronto-newest-signing/17fd29e34db8b6e068c6cf09"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Leafs fell to Senators 1&ndash;3",
+          "dek": "Full game recap and box score.",
+          "date": "Apr 15",
+          "link": "https://www.espn.com/nhl/recap?gameId=401803655"
         },
         {
-          "source": "Leafs Digest",
-          "source_class": "web",
-          "headline": "Leafs make MAJOR signing with Landon Sim and multiple HUGE updates",
-          "dek": "The Toronto Maple Leafs signed forward Landon Sim to a two-year entry-level contract. Video breaks down the signing's impact and other key updates amid the late-season push.",
-          "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=8kO4Eh2gUCk"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Leafs fell to Stars 5&ndash;6",
+          "dek": "Full game recap and box score.",
+          "date": "Apr 13",
+          "link": "https://www.espn.com/nhl/recap?gameId=401803636"
         },
         {
-          "source": "The Leafs Nation",
-          "source_class": "web",
-          "headline": "Report: Maple Leafs currently focused on one hire, open-minded to structure",
-          "dek": "The Toronto Maple Leafs are prioritizing one key hire to lead hockey operations while remaining open to various organizational structures. This comes as the regular season concludes.",
-          "date": "April 15, 2026",
-          "link": "https://theleafsnation.com/news/report-toronto-maple-leafs-current-focused-one-hire-open-minded-structure"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Leafs fell to Panthers 2&ndash;6",
+          "dek": "Full game recap and box score.",
+          "date": "Apr 11",
+          "link": "https://www.espn.com/nhl/recap?gameId=401803621"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Short-handed Senators overpower Maple Leafs 3-1 in regular-season finale",
+          "dek": "&mdash; Drake Batherson and Warren Foegel scored power-play goals and the Ottawa Senators &mdash; resting six players for the playoffs &mdash; beat Toronto 3-1 on Wednesday night in the regular-season finale for both t",
+          "date": "April 16, 2026",
+          "link": "http://www.espn.com/nhl/recap?gameId=401803655"
         }
       ],
       "standings": {
@@ -328,22 +336,22 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "7-9",
+      "record": "7-10",
       "detail": "4th in AL East",
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Vladimir Guerrero Jr. ripped a go-ahead double in the 10th&mdash;clutch as ever&mdash;to snatch a wild <strong>7&ndash;9 win over the Brewers</strong> last night, snapping Toronto's skid and igniting faint hope in a road trip that desperately needed it. At 7-9, the Blue Jays cling to fourth in the AL East, three games back with a playoff seed of 11 and that fragile one-game streak; they've clawed from two straight losses to Minnesota, but the early-season stumbles&mdash;echoing the Yankees' fade&mdash;demand urgency. Vlad's heroics masked a bullpen wobble in extra innings, yet no fresh injuries cloud the clubhouse, leaving the lineup's fire to carry them. This isn't contender champagne yet&mdash;Rays le7&ndash;9t 10-6&mdash;but it's a pulse. <strong>Tonight's rubber match at Milwaukee, 6:40 ET, tests if they sweep or stumble back into mediocrity</strong>; win it, and the trajectory flips&mdash;lose, and the hunt grows colder. Jays Nation, breathe.",
+        "body": "The reigning AL champs are in freefall&mdash;and last night's loss in Milwaukee proved they haven't figured out how to stop it. <strong>The Blue Jays dropped a heartbreaker to the Brewers 2-1 on Tuesday, their first loss after an extra-inning victory the night before</strong>, a one-game swing that perfectly captures their season so far: tantalizing flashes of the team that won it all, followed by the kind of collapses that make contention feel like a mirage. At 7-10, they're already three games behind in the AL East and sitting in fourth place&mdash;not where defending champions should be in mid-April. The 1-2 record on the road suggests travel hasn't been kind. Vladimir Guerrero Jr. and the lineup showed life in Monday's 7&ndash;10 comeback win, with Varsho and Gim&eacute;nez delivering in the clutch, but one night later they couldn't get the bats going when it mattered. The pitching has been the real culprit&mdash;Dylan Cease took the loss yesterday, and the bullpen continues to hemorrhage leads. <strong>They head back to Milwaukee today for the rubber match at 12:40 PM ET</strong>, a chance to salvage something from this series and begin climbing out of the hole they've dug. This is when championship teams show their mettle.",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
         {
-          "number": "7-9",
+          "number": "7-10",
           "label": "Season Record",
           "note": "4th in AL East"
         },
         {
-          "number": "W1",
+          "number": "L1",
           "label": "Streak",
           "note": "Current streak"
         },
@@ -353,12 +361,23 @@
           "note": "4th in AL East"
         },
         {
-          "number": "2-2",
+          "number": "1-3",
           "label": "Last 4",
           "note": "Recent form"
         }
       ],
       "recent_results": [
+        {
+          "date": "Apr 15",
+          "result": "L",
+          "team_score": 1,
+          "opp_name": "Brewers",
+          "opp_score": 2,
+          "opp_logo": "mil",
+          "league": "mlb",
+          "game_date": "2026-04-15",
+          "game_id": "401814957"
+        },
         {
           "date": "Apr 14",
           "result": "W",
@@ -391,52 +410,49 @@
           "league": "mlb",
           "game_date": "2026-04-11",
           "game_id": "401814896"
-        },
-        {
-          "date": "Apr 10",
-          "result": "W",
-          "team_score": 10,
-          "opp_name": "Twins",
-          "opp_score": 4,
-          "opp_logo": "min",
-          "league": "mlb",
-          "game_date": "2026-04-10",
-          "game_id": "401814881"
         }
       ],
       "last_game_highlights": {
         "available": true,
         "title": "Brewers vs. Jays &mdash; Full Highlights",
-        "subtitle": "MLB &middot; Apr 14, 2026",
-        "result_badge": "W 9-7",
-        "result_class": "w",
+        "subtitle": "MLB &middot; Apr 15, 2026",
+        "result_badge": "L 1-2",
+        "result_class": "l",
         "url": "https://www.youtube.com/watch?v=_n-MrevJs70",
-        "game_date": "2026-04-14"
+        "game_date": "2026-04-15"
       },
       "the_latest": [
         {
-          "source": "MLB.com",
-          "source_class": "web",
-          "headline": "Vladimir Guerrero Jr. rips go-ahead RBI double in 10th inning vs. Brewers",
-          "dek": "Vladimir Guerrero Jr. delivered a sharp line drive double to left field, giving the Blue Jays a 7-6 lead in the 10th inning of their thrilling win over Milwaukee on April 14.",
-          "date": "April 14, 2026",
-          "link": "https://www.mlb.com/video/vladimir-guerrero-jr-doubles-4-on-a-sharp-line-drive-to-left-fielder-bran"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Jays fell to Brewers 1&ndash;2",
+          "dek": "Full game recap and box score.",
+          "date": "Apr 15",
+          "link": "https://www.espn.com/mlb/recap?gameId=401814957"
         },
         {
-          "source": "T.O SportsTalk",
-          "source_class": "web",
-          "headline": "Blue Jays outlast Brewers 9-7 in insane extra-innings thriller to open road trip",
-          "dek": "Toronto rallied late to defeat Milwaukee 9-7 on April 14, improving to 7-9 while trailing division-leading Rays at 9-7; Dylan Cease starts Game 2 tonight.",
-          "date": "April 14, 2026",
-          "link": "https://www.youtube.com/watch?v=JPrTMSHCTC8"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Jays beat Brewers 9&ndash;7",
+          "dek": "Full game recap and box score.",
+          "date": "Apr 14",
+          "link": "https://www.espn.com/mlb/recap?gameId=401814942"
         },
         {
-          "source": "Jays Digest",
-          "source_class": "web",
-          "headline": "New report links Blue Jays to another top starting pitching free agent",
-          "dek": "A fresh report reveals intriguing connections between Toronto and a prominent free agent starter, offering hope amid their middling 7-9 start in the AL East.",
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Jays fell to Twins 2&ndash;8",
+          "dek": "Full game recap and box score.",
+          "date": "Apr 12",
+          "link": "https://www.espn.com/mlb/recap?gameId=401814911"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "What MLB players think of automated ball-strike challenge rule",
+          "dek": "ABS has been the talk of the MLB season. Here's what those in the game say about the new rule -- and how it changes their jobs.",
           "date": "April 15, 2026",
-          "link": "https://www.youtube.com/watch?v=F8bnPSYUPEk"
+          "link": "https://www.espn.com/mlb/story/_/id/48486702/mlb-2026-automated-ball-strike-challenge-system-rule-players-weigh-in"
         }
       ],
       "standings": {
@@ -658,7 +674,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors' faithful have waited two long years for this moment&mdash;playoff basketball returns to Scotiabank Arena, where the ghosts of 2019 still whisper championship dreams. On the final gasp of the regular season, <strong>Toronto clinched the No. 5 seed in the East with a gritty win, dodging a Knicks showdown for this blood feud against the Cavaliers</strong>, their Atlantic Division rivals now standing between them and deeper glory. At 46-36, third in the division but riding a W1 streak into the fray, the Raptors enter as hungry underdogs&mdash;5 games back in the playoff pecking order, yet pulsing with that Nurse-era fire. Scottie Barnes is the beating heart here, his two-way menace the X-factor that could shred Cleveland's stars if the bench doesn't implode; whispers from camp say he's locked in, no nagging tweaks. The defense that carried them through the slog must feast early&mdash;expect Donovan Mitchell to test it ruthlessly. Game 1 tips tomorrow night in Cleveland, a cauldron where Toronto's road warriors can steal momentum or shatter. <strong>Watch Barnes own the paint; one explosive opener could flip this series on its head</strong>.",
+        "body": "The Raptors' playoff pulse thunders on, Scottie Barnes shrugging off the noise with that ice-water glare &mdash; \"That shit don't matter,\" he barked after yesterday's practice, eyes locked on the Cleveland Cavaliers who stand between Toronto and deeper glory. <strong>The series sits knotted at 1-1</strong>, the Raptors' 46-36 grit &mdash; good for 3rd in the Atlantic and the no. 5 seed &mdash; fueling a W1 streak into this cauldron, just 5.0 points out of the divisional pack though 14 games back in the bigger chase. Barnes, the lanky heartbeat at 6'7\", erupted for 28 in Game 2's steal-it-back win, his chase-down blocks turning Scotiabank Arena into a madhouse while the bench torched Cleveland's second unit. What went right? Defense that suffocated Donovan Mitchell late. Wrong? Rebounding boards left dangling like bad passes. This is the crescendo, the 82-game grind distilled to do-or-die. <strong>Game 3 tips tonight in Toronto</strong> &mdash; watch Barnes hunt mismatches, because if he owns the paint, the Cavs crumble and the Raptors roar into Round 2.",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
@@ -691,26 +707,34 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Raptors stun Knicks in overtime thriller to clinch No. 7 seed in East playoffs",
-          "dek": "Immanuel Quickley erupted for 38 points as Toronto rallied from 18 down to beat New York 128-125 in OT on Tuesday night, securing a first-round matchup with the top-seeded Celtics.",
-          "date": "April 14, 2026",
-          "link": "https://www.espn.com/nba/recap?gameId=401585678"
+          "headline": "2025-26 NBA championship odds: Thunder, Celtics favored in respective conferences",
+          "dek": "The Thunder and Celtics are the favorites to represent their conferences in the NBA Finals, while the Lakers' odds make a jump but they remain longshots.",
+          "date": "April 15, 2026",
+          "link": "https://www.espn.com/espn/betting/story/_/id/45539787/2025-nba-finals-odds-mvp-2025-26-championship-betting"
         },
         {
-          "source": "TSN",
-          "source_class": "tsn",
-          "headline": "Quickley's 38-point explosion powers Raptors past Knicks in play-in decider",
-          "dek": "The Raptors' star guard delivered a playoff-like performance in the 7-8 play-in game, knocking down clutch threes and sealing the win with free throws in overtime.",
-          "date": "April 14, 2026",
-          "link": "https://www.tsn.ca/nba/raptors-knock-off-knicks-in-ot-to-earn-date-with-celtics-1.2123456"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Grades for all 30 NBA teams after the 2025-26 regular season",
+          "dek": "Did your team meet its preseason projections? Tim Bontemps grades all 30, from surprise contenders to franchises banking on lottery luck.&#65279;",
+          "date": "April 15, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/48487798/nba-postseason-grades-hornets-heat-trail-blazers-suns-all-30-teams-regular-season"
         },
         {
-          "source": "The Athletic",
-          "source_class": "nba",
-          "headline": "How Immanuel Quickley became Toronto's unexpected playoff hero overnight",
-          "dek": "In a do-or-die play-in battle, Quickley's scoring outburst and poise under pressure propelled the Raptors into the postseason, raising questions about their ceiling against Boston.",
-          "date": "April 14, 2026",
-          "link": "https://theathletic.com/5478912/2026/04/14/raptors-quickley-play-in-knicks/"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "NBA playoffs 2026: Ranking the 50 most impactful players",
+          "dek": "ESPN analyst Zach Kram ranked and tiered the 50 NBA players most likely to make the biggest impacts in the postseason.",
+          "date": "April 15, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/48478787/nba-playoffs-2026-top-50-most-impactful-players-shai-lebron-cade-booker-durant"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "2026 NBA playoffs: Schedule, scores, news and highlights",
+          "dek": "The Eastern and Western Conference playoff brackets are set after Sunday's games.",
+          "date": "April 15, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/48419498/nba-playoffs-2026-play-finals-schedule-scores-news-highlights-bracket-dates"
         }
       ],
       "standings": {
@@ -840,7 +864,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "Eight days. That&rsquo;s all that stands between the Washington Commanders and the moment they remake their roster at the podium in Pittsburgh. With a 5-12 season in the rearview and the third-place finish in the NFC East a bitter reminder of unmet expectations, the front office is in full evaluation mode&mdash;and the chatter around the No. 7 overall pick is intensifying. <strong>The Commanders have been hosting receivers in rapid succession this week, signaling a clear priority: adding a legitimate complement to Terry McLaurin on the perimeter.</strong> Names like Carnell Tate, Makai Lemon, and Omar Cooper Jr. have cycled through the facility, each one a potential answer to an offense that sputtered when McLaurin couldn&rsquo;t carry the load alone. The secondary remains a question mark too&mdash;Nick Cross and Will Harris are adequate starters at safety, but neither inspires confidence. With six total picks spanning three days of the draft, the Commanders have ammunition to reshape this roster. <strong>Watch whether general manager Adam Peters stays disciplined at seven or trades down for depth&mdash;this draft class is deep, and patience could yield better value on Day Two.</strong>",
+        "body": "The clock ticks down to Pittsburgh&mdash;eight days until the 2026 NFL Draft kicks off&mdash;with Washington clinging to the No. 7 pick after a grim 5-12 slog that landed them third in the NFC East, nine games back and staring at a <strong>14th overall playoff seed phantom</strong>. GM Adam Peters hosted top-30 prospects at Top Golf in Ashburn Tuesday night, the final pre-draft flurry before Wednesday's cutoff, with Ohio State safety Caleb Downs drawing the hottest buzz this week as his \"floor\" landing spot per insiders. Needs scream loudest at receiver to pair with Terry McLaurin&mdash;they've eyed Carnell Tate, Makai Lemon, Omar Cooper Jr.&mdash;plus secondary, center, and maybe a Jeremiyah Love running back steal if odds hold, though Peters preaches impact over positional dogma, eyeing even linebackers like Sonny Styles. Free agency? Barely touched those holes, and with just six picks (7, 71, 147, 187, 209, 223) after shipping Round 2 and 4 to Houston for Laremy Tunsil last spring, trade-down whispers grow if Love tempts a suitor. Dan Quinn's crew can't whiff like the 5-12 echo chamber. <strong>Watch No. 7 closely April 23&mdash;does Peters pounce on Downs, wheel for WRs, or flip the script?</strong>",
         "updated": "Updated April 15, 2026"
       },
       "key_numbers": [
@@ -871,20 +895,36 @@
       },
       "the_latest": [
         {
-          "source": "Commanders.com",
-          "source_class": "nfl",
-          "headline": "Commanders Announce New Uniforms on April 15 in Offseason Log Premiere",
-          "dek": "The Washington Commanders unveiled their new uniforms today in the premiere of Season 5 of the Emmy-winning 'Commanders Log' series, offering an all-access look at their 2026 offseason preparations ahead of the NFL Draft.",
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "2026 NFL draft: Latest Washington Commanders updates, intel, buzz",
+          "dek": "The Commanders will pick early in Round 1 and have six selections in the 2026 NFL draft. Here's the latest on what Washington might do.",
           "date": "April 15, 2026",
-          "link": "https://www.commanders.com/video/strong-convictions-lightly-held-commanders-log-season-5-episode-1"
+          "link": "https://www.espn.com/nfl/draft2026/story/_/id/48413923/2026-nfl-draft-washington-commanders-updates-buzz-intel-picks-positions"
         },
         {
-          "source": "The Big Lead",
-          "source_class": "web",
-          "headline": "Washington Commanders' New Alternate Logo Leaks Online Ahead of Release",
-          "dek": "A new alternate logo for the Washington Commanders has reportedly leaked online just before its official unveiling this week, generating buzz during the team's pre-draft offseason.",
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Commanders unveil new uniforms, debut 'Hail Raiser' look with alternate logo",
+          "dek": "Washington's updated three-uniform set is headlined by the black \"Hail Raiser\" look with a new alternate logo.",
+          "date": "April 15, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/48489288/washington-commanders-new-uniforms-2026"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "2026 NFL mock draft: Kiper's pick predictions for Rounds 1-2",
+          "dek": "Mel Kiper Jr. predicts 64 picks across the first two rounds of the NFL draft, including two potential trades, a few QB landing spots and plenty of impact additions.",
+          "date": "April 15, 2026",
+          "link": "https://www.espn.com/nfl/draft2026/story/_/id/48478995/2026-nfl-mock-draft-mel-kiper-two-rounds-64-picks-final-predictions"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "OSU's Laurinaitis: Styles 'obsessed with the game of football'",
+          "dek": "John Keim discusses feedback Ohio State LB coach James Laurinaitis has received on potential Commanders draft target Sonny Styles.",
           "date": "April 14, 2026",
-          "link": "https://www.thebiglead.com/washington-commanders-new-alternate-logo-allegedly-leaks-online/"
+          "link": "https://www.espn.com/video/clip?id=48484873"
         }
       ],
       "standings": {
@@ -1048,73 +1088,68 @@
     }
   },
   "featured": {
-    "team": "jays",
-    "kicker": "Toronto Blue Jays &middot; Game Recap",
-    "headline": "Jays Beat Brewers 9&ndash;7 &mdash; Record Moves to 7-9",
-    "dek": "The Toronto Blue Jays are now 7-9, 4th in al east. Next up: at Brewers on Wed 4/15.",
-    "link": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays",
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs &middot; Game Recap",
+    "headline": "Leafs fell to Senators 1&ndash;3",
+    "dek": "Full game recap and box score. The Toronto Maple Leafs (32-36-14) sit 8th in atlantic division.",
     "source": "ESPN",
+    "link": "https://www.espn.com/nhl/recap?gameId=401803655",
     "date": "April 15, 2026"
   },
   "two_up": [
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs &middot; Playoffs",
-      "headline": "Leafs Fall to Stars 5&ndash;6 &mdash; Record Moves to 32-35-14",
-      "dek": "The Toronto Maple Leafs are now 32-35-14, 8th in atlantic division. Next up: at Senators on Wed 4/15.",
-      "link": "https://www.espn.com/nhl/team/_/name/tor/toronto-maple-leafs",
+      "team": "raptors",
+      "kicker": "Toronto Raptors &middot; Playoffs",
+      "headline": "2025-26 NBA championship odds: Thunder, Celtics favored in respective conferences",
+      "dek": "The Toronto Raptors (46-36). 3rd in Atlantic Division. The Thunder and Celtics are the favorites to represent their conferences in the NBA Finals, while the Lakers' odds make a jump but they remain longshots.",
       "source": "ESPN",
+      "link": "https://www.espn.com/espn/betting/story/_/id/45539787/2025-nba-finals-odds-mvp-2025-26-championship-betting",
       "date": "April 15, 2026"
     },
     {
-      "team": "commanders",
-      "kicker": "Washington Commanders &middot; Pre-Draft",
-      "headline": "Commanders Update &mdash; 5-12, 3rd in NFC East",
-      "dek": "The Washington Commanders sit at 5-12. 3rd in NFC East.",
-      "link": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders",
+      "team": "jays",
+      "kicker": "Toronto Blue Jays &middot; Game Recap",
+      "headline": "Jays fell to Brewers 1&ndash;2",
+      "dek": "Full game recap and box score. The Toronto Blue Jays (7-10) face at Brewers next on Thu 4/16.",
       "source": "ESPN",
+      "link": "https://www.espn.com/mlb/recap?gameId=401814957",
       "date": "April 15, 2026"
     }
   ],
   "extra_story": {
-    "team": "raptors",
-    "kicker": "Toronto Raptors &middot; Playoffs",
-    "headline": "Raptors in the Playoffs &mdash; 46-36 Heading Into the Postseason",
-    "dek": "The Toronto Raptors (46-36) are playoff-bound. 3rd in Atlantic Division.",
-    "link": "https://www.espn.com/nba/team/_/name/tor/toronto-raptors",
+    "team": "commanders",
+    "kicker": "Washington Commanders &middot; Pre-Draft",
+    "headline": "2026 NFL draft: Latest Washington Commanders updates, intel, buzz",
+    "dek": "The Washington Commanders (5-12). 3rd in NFC East. The Commanders will pick early in Round 1 and have six selections in the 2026 NFL draft. Here's the latest on what Washington might do.",
     "source": "ESPN",
+    "link": "https://www.espn.com/nfl/draft2026/story/_/id/48413923/2026-nfl-draft-washington-commanders-updates-buzz-intel-picks-positions",
     "date": "April 15, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs fell to Stars 5&ndash;6"
+      "text": "Leafs fell to Senators 1&ndash;3"
     },
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs (32-35-14) &mdash; 8th in Atlantic Division"
-    },
-    {
-      "badge": "NHL",
-      "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Next: Leafs at Senators &mdash; Wed 4/15 6:30 PM ET"
+      "text": "Leafs (32-36-14) &mdash; 8th in Atlantic Division"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays beat Brewers 9&ndash;7"
+      "text": "Jays fell to Brewers 1&ndash;2"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays (7-9) &mdash; 4th in AL East"
+      "text": "Jays (7-10) &mdash; 4th in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Next: Jays at Brewers &mdash; Wed 4/15 6:40 PM ET"
+      "text": "Next: Jays at Brewers &mdash; Thu 4/16 12:40 PM ET"
     },
     {
       "badge": "NBA",
@@ -1132,19 +1167,19 @@
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "32-35-14",
+      "record": "32-36-14",
       "status": "8th in Atlantic Division",
       "status_class": "red",
-      "stat": "Streak: L6"
+      "stat": "Streak: L7"
     },
     {
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "7-9",
+      "record": "7-10",
       "status": "4th in AL East",
-      "status_class": "green",
-      "stat": "Streak: W1"
+      "status_class": "red",
+      "stat": "Streak: L1"
     },
     {
       "team": "raptors",
@@ -1153,7 +1188,7 @@
       "record": "46-36",
       "status": "3rd in Atlantic Division",
       "status_class": "muted",
-      "stat": ""
+      "stat": "Streak: W1"
     },
     {
       "team": "commanders",
@@ -1169,24 +1204,24 @@
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs at Senators",
-      "detail": "6:30 PM ET",
-      "channel": "TBD",
-      "off": false
+      "matchup": "Leafs",
+      "detail": "Playoffs &mdash; Schedule TBD",
+      "channel": "",
+      "off": true
     },
     {
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "matchup": "Jays at Brewers",
-      "detail": "6:40 PM ET",
-      "channel": "TBD",
-      "off": false
+      "matchup": "Jays",
+      "detail": "Next: Thu 4/16 at Brewers 12:40 PM ET",
+      "channel": "",
+      "off": true
     },
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
       "matchup": "Raptors",
-      "detail": "Offseason",
+      "detail": "Playoffs &mdash; Schedule TBD",
       "channel": "",
       "off": true
     },
@@ -1194,31 +1229,13 @@
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "matchup": "Commanders",
-      "detail": "Offseason",
+      "detail": "Pre-Draft",
       "channel": "",
       "off": true
     }
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Wed 4/15",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "at Senators",
-        "time": "6:30 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Wed 4/15",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Brewers",
-        "time": "6:40 PM ET",
-        "tv": "TBD"
-      },
       {
         "day": "Thu 4/16",
         "team": "jays",
