@@ -222,7 +222,7 @@ body::before {
   align-items: center;
   gap: 14px;
   width: max-content;
-  animation: tickerScroll var(--ticker-duration, 30s) linear infinite;
+  animation: tickerScroll var(--ticker-duration, 60s) linear infinite;
 }
 .live-strip:hover .ls-track {
   animation-play-state: paused;
@@ -1662,7 +1662,7 @@ function renderTicker(items) {
     });
   }
   html += '</div>';
-  document.getElementById('ticker').innerHTML = html;
+  document.getElementById('ticker').innerHTML = html;var dur=Math.max(30,items.length*5);document.getElementById('ticker').style.setProperty('--ticker-duration',dur+'s');
 }
 
 function renderFeatured(f) {
