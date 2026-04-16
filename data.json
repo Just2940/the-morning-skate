@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-16T03:44:29.143638-05:00",
+    "updated": "2026-04-16T05:09:26.507531-05:00",
     "date_display": "April 16, 2026"
   },
   "teams": {
@@ -12,7 +12,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Toronto Maple Leafs' season didn't just end &mdash; it <strong>slammed shut with a 1-3 thud against the Senators on Tuesday</strong>, capping a grim 32-36-14 slide that left them 8th in the Atlantic, 35 games behind the leaders with a measly 78 points and an \"e\" for eliminated etched in stone. What went wrong? A seven-game losing streak exposed the core's fatigue, defensive lapses that turned elite talent into also-rans, and a power play that fizzled when it mattered most. Now the real drama brews: whispers of a GM search swirl amid reports of slashed spending, putting Brendan Shanahan's empire on thin ice while Craig Berube's coaching hot seat smolders. Auston Matthews carried the load with 69 goals, but without wing support or goaltending depth, it's the same old story &mdash; big names, bigger heartbreak. Offseason priorities scream for a defensive rebuild and cap creativity. <strong>Watch the draft lottery on May 6</strong> &mdash; that 15th-worst seed could snag a franchise cornerstone and finally flip the script.",
+        "body": "The Leafs' season didn't end with a bang &mdash; it sputtered out in a Kanata downpour, <strong>dropped 3-1 by the surging Senators in their finale</strong>, capping a brutal seven-game skid that left them at 32-36-14, dead last in the Atlantic and 35 points adrift. Coach Craig Berube called it straight: \"disappointing,\" and that's putting it mildly after plummeting from 108 points and a division crown to this 78-point nadir, the franchise's most humiliating nosedive in 109 years. William Nylander's lone tally couldn't mask the outshooting nightmare &mdash; 38-20 Wednesday, the 17th time in 19 games &mdash; while vet John Tavares quietly authored another 30-goal, 70-point masterpiece on a steal of a cap hit, proving value amid the wreckage. Now the page turns hard: Craig Berube's seat scorches under this collapse, GM Treliving faces heat to retool a core that's aged into irrelevance, and with bottom-five odds locked, <strong>the draft lottery ping-pong ball ritual looms as their lone summer thrill</strong>.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -89,7 +89,7 @@
         "subtitle": "NHL &middot; Apr 15, 2026",
         "result_badge": "L 1-3",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=MbmXHW-IIFI",
+        "url": "https://www.youtube.com/watch?v=jTs70-2rQxE",
         "game_date": "2026-04-15"
       },
       "the_latest": [
@@ -579,7 +579,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays' early-season grit flickered then faded in Milwaukee, where they clawed back from deficits only to stumble in the clutch. <strong>Their 1-2 heartbreaker to the Brewers on Tuesday night</strong>&mdash;a sac fly from Jesus S&#225;nchez plating Dalton Varsho in the first for the lone run, Dylan Cease carving through five scoreless frames, then Milwaukee's bizarre eighth-inning babble snapping a six-game skid&mdash;dropped Toronto to 7-10, fourth in the AL East, 3 games back at this tender age. It's an honest slog, not the contender blaze hoped for, with a one-game skid underscoring shaky bats beyond Varsho's pop. Vladimir Guerrero Jr. remains the steady pulse, doubling in extras during Monday's 7&ndash;10 thriller, but the lineup must ignite beyond cameos&mdash;no major injuries biting yet, just momentum's cruel tease. At 7-10, trajectory bends toward mediocrity unless the bats roar. <strong>Patrick Corbin takes the hill this afternoon at 12:40 PM ET for the series rubber match</strong>&mdash;win it, steady the ship; fold, and the East's wolves close in.",
+        "body": "The Blue Jays' early-season grit flickered then faded in Milwaukee&mdash;<strong>a gut-punch 1-2 loss to the Brewers last night</strong>, where Dylan Cease carved through five scoreless innings before Milwaukee's eighth-inning voodoo flipped the script on Toronto's one-run lead, courtesy of a sac fly from Jesus Sanchez in the first that plated Dalton Varsho. Sitting at 7-10, fourth in the AL East and three games back, they're nursing a one-game skid after splitting the set, the bats sputtering with just five hits in defeat despite the promise of Vladimir Guerrero Jr.'s steady presence amid a lineup that's yet to ignite consistently. No major injuries derailing the roster, but the offense's anemia&mdash;stranded chances, babbed fates&mdash;has them chasing contention rather than dictating it. This isn't panic territory, but the trajectory demands urgency; they've dropped three of four, and the AL's pack won't wait. <strong>Patrick Corbin takes the hill at 12:40 PM today for the rubber game&mdash;win it, salvage momentum, or risk a sour road trip hangover that tests Atkins' faith in this core</strong>.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -656,7 +656,7 @@
         "subtitle": "MLB &middot; Apr 15, 2026",
         "result_badge": "L 1-2",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=7TWdV5SOJoBc",
+        "url": "https://www.youtube.com/watch?v=7TWd5SOJoBc",
         "game_date": "2026-04-15"
       },
       "the_latest": [
@@ -916,79 +916,11 @@
                 ]
               },
               {
-                "team": "LA Dodgers",
-                "logo": "lad",
-                "league": "mlb",
-                "you": false,
-                "seed": "DIV",
-                "seed_style": "faint",
-                "vals": [
-                  "14",
-                  "4",
-                  ".778",
-                  "&mdash;"
-                ]
-              },
-              {
-                "team": "Padres",
-                "logo": "sd",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC1",
-                "vals": [
-                  "12",
-                  "6",
-                  ".667",
-                  "2"
-                ]
-              },
-              {
-                "team": "Braves",
-                "logo": "atl",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC2",
-                "vals": [
-                  "12",
-                  "7",
-                  ".632",
-                  "2.5"
-                ]
-              },
-              {
-                "team": "Pirates",
-                "logo": "pit",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC3",
-                "vals": [
-                  "11",
-                  "7",
-                  ".611",
-                  "3"
-                ]
-              },
-              {
-                "team": "Reds",
-                "logo": "cin",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "11",
-                  "7",
-                  ".611",
-                  "3"
-                ]
-              },
-              {
                 "team": "Twins",
                 "logo": "min",
                 "league": "mlb",
                 "you": false,
-                "seed": "",
-                "seed_style": "faint",
+                "seed": "WC1",
                 "vals": [
                   "11",
                   "8",
@@ -997,26 +929,11 @@
                 ]
               },
               {
-                "team": "Diamondbacks",
-                "logo": "ari",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "11",
-                  "8",
-                  ".579",
-                  "3.5"
-                ]
-              },
-              {
                 "team": "Athletics",
                 "logo": "ath",
                 "league": "mlb",
                 "you": false,
-                "seed": "",
-                "seed_style": "faint",
+                "seed": "WC2",
                 "vals": [
                   "10",
                   "8",
@@ -1029,41 +946,12 @@
                 "logo": "nyy",
                 "league": "mlb",
                 "you": false,
-                "seed": "",
-                "seed_style": "faint",
+                "seed": "WC3",
                 "vals": [
                   "10",
                   "8",
                   ".556",
                   "0.5"
-                ]
-              },
-              {
-                "team": "Cardinals",
-                "logo": "stl",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "10",
-                  "8",
-                  ".556",
-                  "4"
-                ]
-              },
-              {
-                "team": "Brewers",
-                "logo": "mil",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "8",
-                  ".529",
-                  "4.5"
                 ]
               },
               {
@@ -1123,20 +1011,6 @@
                 ]
               },
               {
-                "team": "Cubs",
-                "logo": "chc",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "5"
-                ]
-              },
-              {
                 "team": "LA Angels",
                 "logo": "laa",
                 "league": "mlb",
@@ -1148,48 +1022,6 @@
                   "10",
                   ".474",
                   "2"
-                ]
-              },
-              {
-                "team": "Marlins",
-                "logo": "mia",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "10",
-                  ".474",
-                  "5.5"
-                ]
-              },
-              {
-                "team": "Phillies",
-                "logo": "phi",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "8",
-                  "10",
-                  ".444",
-                  "6"
-                ]
-              },
-              {
-                "team": "Nationals",
-                "logo": "wsh",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "8",
-                  "10",
-                  ".444",
-                  "6"
                 ]
               },
               {
@@ -1248,7 +1080,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The air crackles in Toronto&mdash;four long years since the Raptors last danced in the playoffs, and now they're primed to storm Cleveland's castle as the No. 5 seed with a gritty <strong>46-36 record, third in the Atlantic, riding a fresh W1 streak into this do-or-die first-round clash</strong>. No games yet, but the stakes couldn't be higher: a 4-5 showdown against the Cavaliers, where Toronto's No. 5-ranked defense&mdash;forged in regular-season fire&mdash;collides with Cleveland's No. 6 offense, led by the wily James Harden, who's \"here for a reason,\" as insiders whisper. Scottie Barnes has been the heartbeat, carrying the load with poise beyond his years, while the bench's depth turned heads in that final regular-season push. History stings&mdash;2-12 all-time against the Cavs, including those brutal '17 and '18 sweeps&mdash;but this crew's built different, no LeBron shadow looming. The Jurickson Profar of the East? Nah, they're hunting upset glory. <strong>Game 1 tips Saturday at 1 p.m. ET in Cleveland&mdash;watch if Toronto's clamps can muzzle Harden early, or if the Cavs dictate tempo from jump.</strong> This is what 82 games were for. Strap in.",
+        "body": "The air crackles in Toronto&mdash;playoff fever's gripped the city, with the Raptors' 46-36 squad, third in the Atlantic and locked as the East's No. 5 seed, staring down their first-round dance. No games yet, but <strong>Scottie Barnes lit the fuse yesterday</strong>, shrugging off the Cavaliers matchup after practice with a steely \"That shit don't matter,\" his voice pure edge as the fifth-year forward eyes dragging this hungry group past Cleveland's No. 4 wall. What went right all regular season? A balanced attack&mdash;5.0 points out of the division, one-win streak humming&mdash;that's primed to exploit the Cavs' questions at the five, per every preview buzzing from coast to coast. The offense, built for April warfare, revolves around Barnes' versatility; if he imposes his length and shot-making, Toronto flips the script on a Cleveland defense that's no juggernaut. Darke Darke steadied the ship late, but injuries nipped at the wings&mdash;no excuses now. The whole 82 games distilled to this: survive and advance. <strong>Game 1 tips Saturday at 12:30 Eastern in Cleveland&mdash;watch Barnes bully the paint, or the Raptors' dream dies early</strong>. This is why we bleed red.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -1454,45 +1286,26 @@
               "Matchup",
               "Series"
             ],
+            "bracket": true,
             "rows": [
               {
-                "seed": "(1) Pistons vs. (2) Celtics",
-                "team": "(1) Pistons vs. (2) Celtics",
-                "logo": "",
-                "league": "nba",
-                "vals": [
-                  "Sat Apr 18"
-                ],
+                "matchup": "(1) Pistons vs. (2) Celtics",
+                "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "seed": "(3) New York vs. (4) Cavaliers",
-                "team": "(3) New York vs. (4) Cavaliers",
-                "logo": "",
-                "league": "nba",
-                "vals": [
-                  "Sat Apr 18"
-                ],
+                "matchup": "(3) New York vs. (4) Cavaliers",
+                "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "seed": "(5) Hawks vs. (6) Raptors",
-                "team": "(5) Hawks vs. (6) Raptors",
-                "logo": "",
-                "league": "nba",
-                "vals": [
-                  "Sat Apr 18"
-                ],
+                "matchup": "(5) Hawks vs. (6) Raptors",
+                "series": "Sat Apr 18",
                 "you": true
               },
               {
-                "seed": "(7) 76ers vs. (8) Magic",
-                "team": "(7) 76ers vs. (8) Magic",
-                "logo": "",
-                "league": "nba",
-                "vals": [
-                  "Sat Apr 18"
-                ],
+                "matchup": "(7) 76ers vs. (8) Magic",
+                "series": "Sat Apr 18",
                 "you": false
               }
             ]
@@ -1509,7 +1322,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft room hums with possibility in Ashburn, where a 5-12 stumble to third in the NFC East handed the Commanders the No. 7 pick&mdash;a slot ripe for reinvention after free agency patched few holes. GM Adam Peters preaches flexibility, eyeing impact over positional dogma, with odds-makers tilting toward Notre Dame running back Jeremiyah Love despite glaring voids at receiver opposite Terry McLaurin and a leaky secondary.<strong>Yesterday's buzz lit up Caleb Downs</strong>, the Ohio State safety whose Top Golf visit and \"floor\" landing spot here signals Dan Quinn's push to fortify the back end&mdash;teams above whisper he could slide no lower. Whispers swirl of trading down from seven, swapping for extra ammo after shipping Day 2 picks to Houston for Laremy Tunsil last spring, while wideouts like Carnell Tate and Omar Cooper Jr. parade through for looks. Peters won't pigeonhole; a linebacker like Sonny Styles tempts too. This isn't rebuilding&mdash;it's reloading a roster nine games adrift but hungry.<strong>With the Pittsburgh clock ticking to April 23, watch if No. 7 nets a steal or sparks a slide down the board.</strong>",
+        "body": "The draft smoke is thickest now in Ashburn, where a 5-12 outfit that clawed to third in the NFC East&mdash;nine games back but ending on a fleeting win streak&mdash;hunts for the pieces to vault Jayden Daniels' crew into contender status. General manager Adam Peters, ever the chess master, hosted Ohio State safety <strong>Caleb Downs this week</strong> on a top-30 visit, fueling buzz that the shutdown defender&mdash;68 tackles, two picks last season&mdash;could be their No. 7 overall prize in Pittsburgh next week, or even earlier if the board falls right. Wideouts like Indiana's Omar Cooper Jr. paraded through too, hinting at trades down the Jets' way for extra picks to pair opposite Terry McLaurin, while Notre Dame RB Jeremiyah Love tempts as a Croskey-Merritt upgrade despite the rookie's 805-yard breakout. Peters preaches impact over positional dogma&mdash;linebackers, safeties, even runners in the top 10&mdash;amid whispers of Day 2 wheeling for edge like David Bailey. With six picks total, from 7 to 223, this is roster alchemy. <strong>Watch if Downs slides to seven&mdash;or if Peters flips the script Thursday night</strong>, igniting Washington's reload.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -1540,20 +1353,12 @@
       },
       "the_latest": [
         {
-          "source": "Washington Commanders",
-          "source_class": "web",
-          "headline": "Commanders unveil 2026 uniform closet inspired by franchise history",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ0NmVW5VSkhpRTJ6Y05CZFNnVC1UeGlpbEwxX1I3c0Q0cWR4Ri15OUI0VTN2RUV5N2ZIbWpJNFZxX2pwMXFvTzBLTFM5VFVfdmdQbnJ1VEI3VjhmcW1SVmNWallJdnBYZ0dDRGxxaUNxbGZuOWh3c0JJRDJOV2FZaWNOSEFjb08tQ0E?oc=5"
-        },
-        {
           "source": "Commanders Wire",
           "source_class": "web",
-          "headline": "Commanders land offensive help in Dane Brugler's 7-round mock draft",
+          "headline": "Commanders would reportedly pass on Ohio State star if he falls",
           "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUk1RNnpNTmVUcTYzMzRSd0trM0RqQ3VoUG14bU5qWk93QkN1OXd2cTdkVkxUbENHTWM4c194LUdKNUhNcG5zd2MySXVrUkpMU1RydlVnb0hqQ1lJa05ZOUlQTTc2LVhoZVNDck81ZWtGRXVRejE2QTVING9fallSQ1BlVGFubVpqaW9uckFtME9oeDZXYklYMU5mNVJBVDF3cWgtYW5TNXNPc3B3VkVrdV9jZURsUXJRRklGOWZLQVFuakdvNm9WN2hvS3VKS21ZUXB6OGVJWGwyTlh5THBIblZ3bnRZZw?oc=5"
+          "date": "April 16, 2026",
+          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdlcwY3hyWFRESVVSRDA1UEx0QUpvd1JyVWlXMU9LeXdTVmxsN0NqbGY4QnZvdkVKSHJsN0pnVmNDbmpSU1VmV2tEZG9WZGNxRjJwMU1UZElBdk9neXdXTG1tNE1nQnNXamJQeXRtWmJOX3ZLbF84UGVscHlPYjg2LWtRU29hcGZUeDhqU3V3VVpVdHVULWM1LVRLVmVHSDRkNjZKVnQyT3VaZW1mYXQ4VkFxb29JUjNMN0xKdEc0cURnNkRoUmJkb1FqekJfWmV6Y1FzeE1Jc05HQ0ZQR0xPa0lmckotQXhiWGhxWWNNQQ?oc=5"
         },
         {
           "source": "WJLA",
@@ -1562,6 +1367,14 @@
           "dek": "",
           "date": "April 16, 2026",
           "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNQWFsYTVxZEtVOGIyamltc0N6aEpyM3BCOENEVU5ZLVdfeEVlZExsaXNuVncxUFRUZERhd0FlbjdLaEJfNFNWS3E0VTVZMFVsV2NDMkVvS1o0LTVzejdROTRRdTBVS2NvWEotQVQyWWtKdlZFYldIcThzRG84ZWMxOW1YZXk4S2JmVGJtTFJTQzhFWGFBbE4xYmphRW4wQ0VTM2Y5WU1lbW9HOFM3RHlQdjctWEVHbmJaV0dmTEFjNUJmSGgzYS1QQUFDZWYyRGpZT2JfcHRkUmJ3akNUTlV6X3lINmc3ckplSjFZa1BnM2VsQ0ppZ2puZjY5Tm85Um5xZzd5QUZBa0RxZWtGZXRadm52Q1VLNDM1UnpETms2UHVyeUk2c1FaNUljSFhoZw?oc=5"
+        },
+        {
+          "source": "Washington Commanders",
+          "source_class": "web",
+          "headline": "Commanders unveil 2026 uniform closet inspired by franchise history",
+          "dek": "",
+          "date": "April 15, 2026",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ0NmVW5VSkhpRTJ6Y05CZFNnVC1UeGlpbEwxX1I3c0Q0cWR4Ri15OUI0VTN2RUV5N2ZIbWpJNFZxX2pwMXFvTzBLTFM5VFVfdmdQbnJ1VEI3VjhmcW1SVmNWallJdnBYZ0dDRGxxaUNxbGZuOWh3c0JJRDJOV2FZaWNOSEFjb08tQ0E?oc=5"
         },
         {
           "source": "The Washington Post",
@@ -1817,10 +1630,10 @@
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders &middot; Pre-Draft",
-    "headline": "Commanders unveil 2026 uniform closet inspired by franchise history",
+    "headline": "Commanders would reportedly pass on Ohio State star if he falls",
     "dek": "The Washington Commanders (5-12). 3rd in NFC East. ",
-    "source": "Washington Commanders",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ0NmVW5VSkhpRTJ6Y05CZFNnVC1UeGlpbEwxX1I3c0Q0cWR4Ri15OUI0VTN2RUV5N2ZIbWpJNFZxX2pwMXFvTzBLTFM5VFVfdmdQbnJ1VEI3VjhmcW1SVmNWallJdnBYZ0dDRGxxaUNxbGZuOWh3c0JJRDJOV2FZaWNOSEFjb08tQ0E?oc=5",
+    "source": "Commanders Wire",
+    "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdlcwY3hyWFRESVVSRDA1UEx0QUpvd1JyVWlXMU9LeXdTVmxsN0NqbGY4QnZvdkVKSHJsN0pnVmNDbmpSU1VmV2tEZG9WZGNxRjJwMU1UZElBdk9neXdXTG1tNE1nQnNXamJQeXRtWmJOX3ZLbF84UGVscHlPYjg2LWtRU29hcGZUeDhqU3V3VVpVdHVULWM1LVRLVmVHSDRkNjZKVnQyT3VaZW1mYXQ4VkFxb29JUjNMN0xKdEc0cURnNkRoUmJkb1FqekJfWmV6Y1FzeE1Jc05HQ0ZQR0xPa0lmckotQXhiWGhxWWNNQQ?oc=5",
     "date": "April 16, 2026"
   },
   "ticker": [
@@ -1833,11 +1646,6 @@
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
       "text": "Leafs (32-36-14) &mdash; 8th in Atlantic Division"
-    },
-    {
-      "badge": "NHL",
-      "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs fell to Senators 1&ndash;3"
     },
     {
       "badge": "NHL",
@@ -1858,11 +1666,6 @@
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
       "text": "Next: Jays at Brewers &mdash; Thu 4/16 12:40 PM ET"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays fell to Brewers 1&ndash;2"
     },
     {
       "badge": "NBA",
@@ -1887,7 +1690,7 @@
     {
       "badge": "NFL",
       "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders unveil 2026 uniform closet inspired by..."
+      "text": "Commanders would reportedly pass on Ohio State star..."
     },
     {
       "badge": "NFL",
