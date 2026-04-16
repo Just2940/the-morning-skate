@@ -1,1712 +1,97 @@
 {
   "meta": {
-    "updated": "2026-04-16T05:13:14.013215-05:00",
-    "date_display": "April 16, 2026"
-  },
-  "teams": {
-    "leafs": {
-      "full_name": "Toronto Maple Leafs",
-      "league": "NHL",
-      "record": "32-36-14",
-      "detail": "8th in Atlantic Division",
-      "live_strip": null,
-      "lotl": {
-        "label": "What's Going On With the Leafs",
-        "body": "<strong>The Leafs fell to the Senators 1&ndash;3</strong>, moving to 32-36-14 on the season. They sit 8th in atlantic division. That&rsquo;s 4 straight losses.",
-        "updated": "Updated April 16, 2026"
-      },
-      "key_numbers": [
-        {
-          "number": "32-36-14",
-          "label": "Season Record",
-          "note": "8th in Atlantic Division"
-        },
-        {
-          "number": "78",
-          "label": "Points",
-          "note": "8th in Atlantic Division"
-        },
-        {
-          "number": "L7",
-          "label": "Streak",
-          "note": "Current streak"
-        },
-        {
-          "number": "35",
-          "label": "Games Back",
-          "note": "8th in Atlantic Division"
-        }
-      ],
-      "recent_results": [
-        {
-          "date": "Apr 15",
-          "result": "L",
-          "team_score": 1,
-          "opp_name": "Senators",
-          "opp_score": 3,
-          "opp_logo": "ott",
-          "league": "nhl",
-          "game_date": "2026-04-15",
-          "game_id": "401803655"
-        },
-        {
-          "date": "Apr 13",
-          "result": "L",
-          "team_score": 5,
-          "opp_name": "Stars",
-          "opp_score": 6,
-          "opp_logo": "dal",
-          "league": "nhl",
-          "game_date": "2026-04-13",
-          "game_id": "401803636"
-        },
-        {
-          "date": "Apr 11",
-          "result": "L",
-          "team_score": 2,
-          "opp_name": "Panthers",
-          "opp_score": 6,
-          "opp_logo": "fla",
-          "league": "nhl",
-          "game_date": "2026-04-11",
-          "game_id": "401803621"
-        },
-        {
-          "date": "Apr 9",
-          "result": "L",
-          "team_score": 3,
-          "opp_name": "Islanders",
-          "opp_score": 5,
-          "opp_logo": "nyi",
-          "league": "nhl",
-          "game_date": "2026-04-09",
-          "game_id": "401803603"
-        }
-      ],
-      "last_game_highlights": {
-        "available": true,
-        "title": "Senators vs. Leafs &mdash; Full Highlights",
-        "subtitle": "NHL &middot; Apr 15, 2026",
-        "result_badge": "L 1-3",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=jTs70-2rQxE",
-        "game_date": "2026-04-15"
-      },
-      "the_latest": [
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Leafs fell to Senators 1&ndash;3",
-          "dek": "Full game recap and box score.",
-          "date": "Apr 15",
-          "link": "https://www.espn.com/nhl/recap?gameId=401803655"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "&lsquo;Kinda relieved&rsquo;: Maple Leafs&rsquo; most disappointing season ends with a shrug",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbXdXcUk0TjZKSG9ORklJaUNkNmJaelBMTTVuaVk5ck01ckJRZGpjcmEyZXNwQnBFcGt4NkUwMThHMjUyR2tNNWgyQzdnalNsUi1rMzBpRE1oOGJLT1FydXl4NzFvcmgyZnc2Y0xDVHROektVR3djaXBIZk9iYW1mQTFVRlFGc2hkbS1YYVIwa3pOaDVCOHlaN3NPVWgzU1hVdV9SQkpxNkZqR0R6?oc=5"
-        },
-        {
-          "source": "The Hockey News",
-          "source_class": "web",
-          "headline": "Toronto Maple Leafs' Draft Dream Is Still Alive In A Nightmare Season",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPekNQNGlubkFSSDFQeF8xWWx6bGU2WTl2SmZWRkh6TGFzUmVpaE9vRzZDNC1hdTVpYjVlUnA5aTlZQVg0dzZFTFhKM3ZrV2RsSlZIU0lrN25xNmxuWjFRWVB4U0IyNTlONUREMEtuTFhleGFiMTdhR3hQU3R1WEY2aV9JNUJVVkVINzBELUZBd21xN2pETHB5WTA0YkJHbUtEYTh1bzJyYUs2RkktLUl6ZA?oc=5"
-        },
-        {
-          "source": "Maple Leaf Hot Stove",
-          "source_class": "web",
-          "headline": "Craig Berube, on the final day of the season, on what it's meant to coach the Maple Leafs: \"I love Toronto, and I love the Leafs\"",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOY0poMlRmbUd5MndQTVBYRG54ZDg0cXJ2b3hHMjNOT1pWVDluVWFnbEFCVlNZS2VpOHpZTTVUQjAxVk50MVRyNDQwa1UtQ2Z0X052cnFpQnVqdWFkQlJmMDl5cmVZalVINy1kckxvWjc2YV9oQ1Rpal9nTkw5aXRoY19uc2tSdnBwNVJtaXI0c1lNbm9PTGRVMVFzcDlJcjlnNEk3bC0ya3VTczUxQ2lBQ2Q2eGRpZFdidHNIYlUycE43aURHaTV0RA?oc=5"
-        }
-      ],
-      "standings": {
-        "tabs": [
-          "Eastern Conference",
-          "Eastern Wild Card"
-        ],
-        "panes": [
-          {
-            "headers": [
-              "Team",
-              "W",
-              "L",
-              "OTL",
-              "PTS"
-            ],
-            "rows": [
-              {
-                "team": "Hurricanes",
-                "logo": "car",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "53",
-                  "22",
-                  "7",
-                  "113"
-                ]
-              },
-              {
-                "team": "Sabres",
-                "logo": "buf",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "50",
-                  "23",
-                  "9",
-                  "109"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "50",
-                  "26",
-                  "6",
-                  "106"
-                ]
-              },
-              {
-                "team": "Canadiens",
-                "logo": "mtl",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "48",
-                  "24",
-                  "10",
-                  "106"
-                ]
-              },
-              {
-                "team": "Bruins",
-                "logo": "bos",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "45",
-                  "27",
-                  "10",
-                  "100"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "44",
-                  "27",
-                  "11",
-                  "99"
-                ]
-              },
-              {
-                "team": "Penguins",
-                "logo": "pit",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "41",
-                  "25",
-                  "16",
-                  "98"
-                ]
-              },
-              {
-                "team": "Flyers",
-                "logo": "phi",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "43",
-                  "27",
-                  "12",
-                  "98"
-                ]
-              },
-              {
-                "team": "Capitals",
-                "logo": "wsh",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "43",
-                  "30",
-                  "9",
-                  "95"
-                ]
-              },
-              {
-                "team": "Wings",
-                "logo": "det",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "41",
-                  "31",
-                  "10",
-                  "92"
-                ]
-              },
-              {
-                "team": "Jackets",
-                "logo": "cbj",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "40",
-                  "30",
-                  "12",
-                  "92"
-                ]
-              },
-              {
-                "team": "NY Islanders",
-                "logo": "nyi",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "43",
-                  "34",
-                  "5",
-                  "91"
-                ]
-              },
-              {
-                "team": "Devils",
-                "logo": "nj",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "42",
-                  "37",
-                  "3",
-                  "87"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "fla",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "40",
-                  "38",
-                  "4",
-                  "84"
-                ]
-              },
-              {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "vals": [
-                  "32",
-                  "36",
-                  "14",
-                  "78"
-                ]
-              },
-              {
-                "team": "NY Rangers",
-                "logo": "nyr",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "34",
-                  "39",
-                  "9",
-                  "77"
-                ]
-              }
-            ]
-          },
-          {
-            "headers": [
-              "",
-              "Team",
-              "W",
-              "L",
-              "OTL",
-              "PTS"
-            ],
-            "has_seed_col": true,
-            "rows": [
-              {
-                "team": "Hurricanes",
-                "logo": "car",
-                "league": "nhl",
-                "you": false,
-                "seed": "E1",
-                "vals": [
-                  "53",
-                  "22",
-                  "7",
-                  "113"
-                ]
-              },
-              {
-                "team": "Sabres",
-                "logo": "buf",
-                "league": "nhl",
-                "you": false,
-                "seed": "E2",
-                "vals": [
-                  "50",
-                  "23",
-                  "9",
-                  "109"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nhl",
-                "you": false,
-                "seed": "E3",
-                "vals": [
-                  "50",
-                  "26",
-                  "6",
-                  "106"
-                ]
-              },
-              {
-                "team": "Canadiens",
-                "logo": "mtl",
-                "league": "nhl",
-                "you": false,
-                "seed": "WC1",
-                "vals": [
-                  "48",
-                  "24",
-                  "10",
-                  "106"
-                ]
-              },
-              {
-                "team": "Bruins",
-                "logo": "bos",
-                "league": "nhl",
-                "you": false,
-                "seed": "WC2",
-                "vals": [
-                  "45",
-                  "27",
-                  "10",
-                  "100"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "44",
-                  "27",
-                  "11",
-                  "99"
-                ]
-              },
-              {
-                "team": "Penguins",
-                "logo": "pit",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "41",
-                  "25",
-                  "16",
-                  "98"
-                ]
-              },
-              {
-                "team": "Flyers",
-                "logo": "phi",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "43",
-                  "27",
-                  "12",
-                  "98"
-                ]
-              },
-              {
-                "team": "Capitals",
-                "logo": "wsh",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "43",
-                  "30",
-                  "9",
-                  "95"
-                ]
-              },
-              {
-                "team": "Wings",
-                "logo": "det",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "41",
-                  "31",
-                  "10",
-                  "92"
-                ]
-              },
-              {
-                "team": "Jackets",
-                "logo": "cbj",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "40",
-                  "30",
-                  "12",
-                  "92"
-                ]
-              },
-              {
-                "team": "NY Islanders",
-                "logo": "nyi",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "43",
-                  "34",
-                  "5",
-                  "91"
-                ]
-              },
-              {
-                "team": "Devils",
-                "logo": "nj",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "42",
-                  "37",
-                  "3",
-                  "87"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "fla",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "40",
-                  "38",
-                  "4",
-                  "84"
-                ]
-              },
-              {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "32",
-                  "36",
-                  "14",
-                  "78"
-                ]
-              },
-              {
-                "team": "NY Rangers",
-                "logo": "nyr",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "34",
-                  "39",
-                  "9",
-                  "77"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "the_latest_label": "Offseason Intel"
-    },
-    "jays": {
-      "full_name": "Toronto Blue Jays",
-      "league": "MLB",
-      "record": "7-10",
-      "detail": "4th in AL East",
-      "live_strip": null,
-      "lotl": {
-        "label": "What's Going On With the Jays",
-        "body": "The Blue Jays' early-season grit flickered then faded in Milwaukee, where <strong>Dylan Cease's gem went for naught in a cruel 1-2 heartbreaker</strong> against the Brewers on Tuesday night&mdash;Jesus Sanchez's sac fly scoring Dalton Varsho in the first the lone bright spot before Milwaukee's eighth-inning babble baseball snatched victory. Now sitting at 7-10, fourth in the AL East and 3 games back, Toronto's slipped into a one-game skid after splitting the set, their bats sputtering despite the promise of Vladimir Guerrero Jr.'s steady presence amid whispers of lineup tweaks. No major injuries biting yet, but the offense's anemia&mdash;stranded chances, squandered rallies&mdash;has this contender-in-waiting staring down a .412 winning percentage that screams urgency. Kevin Gausman's mates can't afford more Milwaukee misfires. <strong>Patrick Corbin takes the hill this afternoon at 12:40 for the series rubber match</strong>&mdash;win it, steady the ship; drop it, and the AL East wolves close in fast.",
-        "updated": "Updated April 16, 2026"
-      },
-      "key_numbers": [
-        {
-          "number": "7-10",
-          "label": "Season Record",
-          "note": "4th in AL East"
-        },
-        {
-          "number": "L1",
-          "label": "Streak",
-          "note": "Current streak"
-        },
-        {
-          "number": "3",
-          "label": "Games Back",
-          "note": "4th in AL East"
-        },
-        {
-          "number": "1-3",
-          "label": "Last 4",
-          "note": "Recent form"
-        }
-      ],
-      "recent_results": [
-        {
-          "date": "Apr 15",
-          "result": "L",
-          "team_score": 1,
-          "opp_name": "Brewers",
-          "opp_score": 2,
-          "opp_logo": "mil",
-          "league": "mlb",
-          "game_date": "2026-04-15",
-          "game_id": "401814957"
-        },
-        {
-          "date": "Apr 14",
-          "result": "W",
-          "team_score": 9,
-          "opp_name": "Brewers",
-          "opp_score": 7,
-          "opp_logo": "mil",
-          "league": "mlb",
-          "game_date": "2026-04-14",
-          "game_id": "401814942"
-        },
-        {
-          "date": "Apr 12",
-          "result": "L",
-          "team_score": 2,
-          "opp_name": "Twins",
-          "opp_score": 8,
-          "opp_logo": "min",
-          "league": "mlb",
-          "game_date": "2026-04-12",
-          "game_id": "401814911"
-        },
-        {
-          "date": "Apr 11",
-          "result": "L",
-          "team_score": 4,
-          "opp_name": "Twins",
-          "opp_score": 7,
-          "opp_logo": "min",
-          "league": "mlb",
-          "game_date": "2026-04-11",
-          "game_id": "401814896"
-        }
-      ],
-      "last_game_highlights": {
-        "available": true,
-        "title": "Brewers vs. Jays &mdash; Full Highlights",
-        "subtitle": "MLB &middot; Apr 15, 2026",
-        "result_badge": "L 1-2",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=7TWd5SOJoBc",
-        "game_date": "2026-04-15"
-      },
-      "the_latest": [
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Jays fell to Brewers 1&ndash;2",
-          "dek": "Full game recap and box score.",
-          "date": "Apr 15",
-          "link": "https://www.espn.com/mlb/recap?gameId=401814957"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "Cease&rsquo;s gem goes to waste as quiet bats, nightmare eighth sink Blue Jays",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbE91M2d6SkJ5bk0yM3ptMVR6cHIyODZxTUhVSmdOTmZ1V0pTR0lrRzlVSGo3LUFBLUNQRHc4VkNkSEdRc2RwS0hzdzQyM1p1UDJfZDlTb1NyX3R0clNFSTBTUGdhRHJnVkxCelFZS1Z3LW5mdDBOTU1sdVU1ZkpUZk5jSi1TMzl0SjFCUjJhUjJTT3ItYklhN3FYNW1YNzhqX051alYzUGx1a2Fl?oc=5"
-        },
-        {
-          "source": "MLB.com",
-          "source_class": "web",
-          "headline": "Toronto Blue Jays at Milwaukee Brewers Game Story, Scores/Highlights - 04/15/2026",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBVb09zLXN5S1ZieGk1ZU1YNzFmWlRma1J4ZVEwTTJjNmM5dUdJV2pGSFdRTHpQMC1PMGQ2MlhQeFp4V3lUTHlBWE5uY01iQ3lQ0gFQQVVfeXFMUFVvT3Mtc3lLVmJ4aTVlTVg3MWZaVGZrUnhlUTBNMmM2Yzl1R0lXakZIV1FMelAwLU8wZDYyWFB4WnhXeVRMeUFYTm5jTWJDeVA?oc=5"
-        },
-        {
-          "source": "USA Today",
-          "source_class": "web",
-          "headline": "Where to watch Toronto Blue Jays vs Milwaukee Brewers: TV channel, start time, streaming for Apr. 15",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOUUpsMk10aUVBeHdwdV8tSE9WVENndzd0NHZUOUN3YjNoZ2JxbUZEcUlraXdyMDRGR2NjdmcxNW5jQjNBR191WkxMZ2hHZUtSRHVlOEdjdlBnQTc0OUNralUwaDdudHl1aTNsSmVDc0RYYUNvVVdxMFcybGpHWGEwUTJjQVpxRl82WG5QTWlORG5JeEp3bTN2UGFSQmxHWDhMbTJOV0dldmxZbmx0RG0wdExfVnZEQUxVc1NxeWxjQmItT1VETzA0UzlrYm5faERD?oc=5"
-        }
-      ],
-      "standings": {
-        "tabs": [
-          "American League",
-          "AL Wild Card"
-        ],
-        "panes": [
-          {
-            "headers": [
-              "Team",
-              "W",
-              "L",
-              "PCT",
-              "GB"
-            ],
-            "rows": [
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "10",
-                  "7",
-                  ".588",
-                  "-"
-                ]
-              },
-              {
-                "team": "Twins",
-                "logo": "min",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "11",
-                  "8",
-                  ".579",
-                  "-"
-                ]
-              },
-              {
-                "team": "Athletics",
-                "logo": "ath",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "10",
-                  "8",
-                  ".556",
-                  "0.5"
-                ]
-              },
-              {
-                "team": "NY Yankees",
-                "logo": "nyy",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "10",
-                  "8",
-                  ".556",
-                  "0.5"
-                ]
-              },
-              {
-                "team": "Guardians",
-                "logo": "cle",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "10",
-                  "9",
-                  ".526",
-                  "1"
-                ]
-              },
-              {
-                "team": "Rangers",
-                "logo": "tex",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Tigers",
-                "logo": "det",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Orioles",
-                "logo": "bal",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "LA Angels",
-                "logo": "laa",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "9",
-                  "10",
-                  ".474",
-                  "2"
-                ]
-              },
-              {
-                "team": "Mariners",
-                "logo": "sea",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "8",
-                  "11",
-                  ".421",
-                  "3"
-                ]
-              },
-              {
-                "team": "Astros",
-                "logo": "hou",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "8",
-                  "11",
-                  ".421",
-                  "3"
-                ]
-              },
-              {
-                "team": "Jays",
-                "logo": "tor",
-                "league": "mlb",
-                "you": true,
-                "vals": [
-                  "7",
-                  "10",
-                  ".412",
-                  "3"
-                ]
-              },
-              {
-                "team": "Royals",
-                "logo": "kc",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "7",
-                  "11",
-                  ".389",
-                  "3.5"
-                ]
-              },
-              {
-                "team": "Sox",
-                "logo": "bos",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "7",
-                  "11",
-                  ".389",
-                  "3.5"
-                ]
-              },
-              {
-                "team": "Chi White Sox",
-                "logo": "chw",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "6",
-                  "12",
-                  ".333",
-                  "4.5"
-                ]
-              }
-            ]
-          },
-          {
-            "headers": [
-              "",
-              "Team",
-              "W",
-              "L",
-              "PCT",
-              "WCGB"
-            ],
-            "has_seed_col": true,
-            "rows": [
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "mlb",
-                "you": false,
-                "seed": "DIV",
-                "seed_style": "faint",
-                "vals": [
-                  "10",
-                  "7",
-                  ".588",
-                  "&mdash;"
-                ]
-              },
-              {
-                "team": "Twins",
-                "logo": "min",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC1",
-                "vals": [
-                  "11",
-                  "8",
-                  ".579",
-                  "-"
-                ]
-              },
-              {
-                "team": "Athletics",
-                "logo": "ath",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC2",
-                "vals": [
-                  "10",
-                  "8",
-                  ".556",
-                  "0.5"
-                ]
-              },
-              {
-                "team": "NY Yankees",
-                "logo": "nyy",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC3",
-                "vals": [
-                  "10",
-                  "8",
-                  ".556",
-                  "0.5"
-                ]
-              },
-              {
-                "team": "Guardians",
-                "logo": "cle",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "10",
-                  "9",
-                  ".526",
-                  "1"
-                ]
-              },
-              {
-                "team": "Rangers",
-                "logo": "tex",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Tigers",
-                "logo": "det",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Orioles",
-                "logo": "bal",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "9",
-                  ".500",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "LA Angels",
-                "logo": "laa",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "10",
-                  ".474",
-                  "2"
-                ]
-              },
-              {
-                "team": "Mariners",
-                "logo": "sea",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "8",
-                  "11",
-                  ".421",
-                  "3"
-                ]
-              },
-              {
-                "team": "Astros",
-                "logo": "hou",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "8",
-                  "11",
-                  ".421",
-                  "3"
-                ]
-              },
-              {
-                "team": "Jays",
-                "logo": "tor",
-                "league": "mlb",
-                "you": true,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "7",
-                  "10",
-                  ".412",
-                  "3"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "the_latest_label": "The Latest"
-    },
-    "raptors": {
-      "full_name": "Toronto Raptors",
-      "league": "NBA",
-      "record": "46-36",
-      "detail": "3rd in Atlantic Division",
-      "live_strip": null,
-      "lotl": {
-        "label": "What's Going On With the Raptors",
-        "body": "The Raptors have arrived at the moment they&rsquo;ve chased all season&mdash;the fifth seed in the Eastern Conference playoffs, a 46-36 record that whispers of survival more than dominance, but survival counts in April. <strong>Scottie Barnes delivered the message yesterday: none of the noise matters now.</strong> The Raptors face the fourth-seeded Cleveland Cavaliers in a first-round matchup that begins Saturday at 1 p.m. Eastern, and Barnes&rsquo;s dismissal of the chatter&mdash;&ldquo;that shit don&rsquo;t matter&rdquo;&mdash;captures the only mindset that works in a best-of-seven. Toronto clawed its way here from third in the Atlantic, a team that refused to fold despite the weight of expectations. The Cavaliers will test everything the Raptors built: their defense, their depth, their ability to execute when the margin for error vanishes. <strong>Watch for Game Two on Monday to define the series&mdash;split the first two in Cleveland, and the Raptors return home with momentum; lose both, and the climb becomes vertical.</strong> This is what they earned. Now they have to keep it.",
-        "updated": "Updated April 16, 2026"
-      },
-      "key_numbers": [
-        {
-          "number": "46-36",
-          "label": "Season Record",
-          "note": "3rd in Atlantic Division"
-        },
-        {
-          "number": "#5",
-          "label": "Playoff Seed",
-          "note": "3rd in Atlantic Division"
-        },
-        {
-          "number": "W1",
-          "label": "Streak",
-          "note": "Current streak"
-        },
-        {
-          "number": "14",
-          "label": "Games Back",
-          "note": "3rd in Atlantic Division"
-        }
-      ],
-      "recent_results": [],
-      "last_game_highlights": {
-        "available": false
-      },
-      "the_latest": [
-        {
-          "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "Raptors vs. Cavaliers: Sportsnet announces first-round NBA playoff schedule",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNR1MxdjVKY19MbW1MQ1lnajdOT1hWTHg5RG9XaGdPYVNjV3BnbG1Jb2swanBSOTcyWTQ4TTBYUkVEN2lhY1VzOXZYQW00cGwwN1U3bm1HMzY1OGJmbGduWk1ndTNUTHJmWTU1cDdydHhBM0lkWlAxU3hXUDFXUUE0TFVlM3ZfS1ZhaXpwbTQ5RFZCeGtDdW9RZkJIWXhxLWlWR2JaOEloV0JjdW01MW5yOA?oc=5"
-        },
-        {
-          "source": "blogTO",
-          "source_class": "web",
-          "headline": "RJ Barrett has blunt response to Toronto Raptors doubters",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYWM3eEs5X0E4UzRQSEJvZXBBVlVkbWh2aWhZbk1yUEphOXF5OC1PZlZWazF5QzV0Q0ZfTXdTc05ySmxZbGZJS3hSeW9ULURzeXVKQ2JVVW5pSTRaRUtPU0RvSk1lT3g0cGJtUlktUWFuQXZPYTdjbk9RdHF3NzZFb2wycVlfcHE3b2hsMUFrbkF2QQ?oc=5"
-        },
-        {
-          "source": "Sports Illustrated",
-          "source_class": "web",
-          "headline": "Raptors vs. Cavaliers: Full First Round 2026 Playoff Schedule and Series Preview",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSVFCaEN2dk1IbDFVR1o4STlYc2Q4S1k1WmF2S1RzdFFockpjSllDSmJXVWJSb2luemYzNTVSMWtMTVNjalR5UkNtRFhqbzQwajhWUHFHNlBOcHNqNENzOHdxNGdtQlJtWWt2Wm14WWdzSXVpRHNoQ2Y3MUxVWXBoX0VHYU1DdkxydUtHdUFYMWRNM3BvcmpzMkxnekFHbGJrZmRYZjB5anJaei1aNE4zNTdFME1hM3I3aWRvSFlZVm8yaUpSVXZMT1p6WEI?oc=5"
-        },
-        {
-          "source": "NBA",
-          "source_class": "web",
-          "headline": "Toronto Raptors Full Media Availability | Playoff Practice | April 15, 2026",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNkdSbVpLeXg4V0w5MHlqR1Q4Sm5nUWFRZjgtcWsxblNMT3NOWVBQTVlLai1JT29yaGh6ZTJLUDF6cGpxSndmaWVIMVBhVVprRWdwT3lvY3Z4NndhMFhBOUp1RDlBWEdXSE4xdTFHbzk0dDZvazdBa3BFcTc1cGFSQzlILVRzbHYtZDZlYU5wWUZka3NVWUJ1REUxU2pOOS1vaWRWZ1U5c0w?oc=5"
-        }
-      ],
-      "standings": {
-        "tabs": [
-          "Eastern Conference",
-          "Playoff Bracket"
-        ],
-        "panes": [
-          {
-            "headers": [
-              "Seed",
-              "Team",
-              "W",
-              "L",
-              "PCT"
-            ],
-            "has_seed_col": true,
-            "rows": [
-              {
-                "team": "Pistons",
-                "logo": "det",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "60",
-                  "22",
-                  ".732"
-                ],
-                "seed": "1"
-              },
-              {
-                "team": "Celtics",
-                "logo": "bos",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "56",
-                  "26",
-                  ".683"
-                ],
-                "seed": "2"
-              },
-              {
-                "team": "New York",
-                "logo": "ny",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "53",
-                  "29",
-                  ".646"
-                ],
-                "seed": "3"
-              },
-              {
-                "team": "Cavaliers",
-                "logo": "cle",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "52",
-                  "30",
-                  ".634"
-                ],
-                "seed": "4"
-              },
-              {
-                "team": "Hawks",
-                "logo": "atl",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "46",
-                  "36",
-                  ".561"
-                ],
-                "seed": "5"
-              },
-              {
-                "team": "Raptors",
-                "logo": "tor",
-                "league": "nba",
-                "you": true,
-                "vals": [
-                  "46",
-                  "36",
-                  ".561"
-                ],
-                "seed": "6"
-              },
-              {
-                "team": "76ers",
-                "logo": "phi",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "45",
-                  "37",
-                  ".549"
-                ],
-                "seed": "7"
-              },
-              {
-                "team": "Magic",
-                "logo": "orl",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "45",
-                  "37",
-                  ".549"
-                ],
-                "seed": "8"
-              },
-              {
-                "team": "Hornets",
-                "logo": "cha",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "44",
-                  "38",
-                  ".537"
-                ],
-                "seed": "9"
-              },
-              {
-                "team": "Heat",
-                "logo": "mia",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "43",
-                  "39",
-                  ".524"
-                ],
-                "seed": "10"
-              }
-            ]
-          },
-          {
-            "headers": [
-              "Matchup",
-              "Series"
-            ],
-            "bracket": true,
-            "rows": [
-              {
-                "matchup": "(1) Pistons vs. (2) Celtics",
-                "series": "Sat Apr 18",
-                "you": false
-              },
-              {
-                "matchup": "(3) New York vs. (4) Cavaliers",
-                "series": "Sat Apr 18",
-                "you": false
-              },
-              {
-                "matchup": "(5) Hawks vs. (6) Raptors",
-                "series": "Sat Apr 18",
-                "you": true
-              },
-              {
-                "matchup": "(7) 76ers vs. (8) Magic",
-                "series": "Sat Apr 18",
-                "you": false
-              }
-            ]
-          }
-        ]
-      },
-      "the_latest_label": "The Latest"
-    },
-    "commanders": {
-      "full_name": "Washington Commanders",
-      "league": "NFL",
-      "record": "5-12",
-      "detail": "3rd in NFC East",
-      "live_strip": null,
-      "lotl": {
-        "label": "What's Going On With the Commanders",
-        "body": "The draft room hums with possibility in Ashburn, where a 5-12 stumble&mdash;third in the NFC East, nine games back&mdash;handed Washington the No. 7 pick and six selections to rebuild around Jayden Daniels. <strong>Ohio State safety Caleb Downs' pre-draft visit this week lit up the wires</strong>, with insiders pegging the versatile ballhawk&mdash;68 tackles, two picks last season&mdash;as their \"floor\" at seven, a plug-and-play fit for Dan Quinn's defense that bled 26.5 points a game. GM Adam Peters plays it flexible, eyeing impact over positional value: middle linebacker Sonny Styles, RB Jeremiyah Love, or Downs himself, while WR visits from Carnell Tate, Makai Lemon, and Omar Cooper Jr. scream receiver hunger opposite Terry McLaurin. Free agency patched edges, but trade-down buzz swirls if elite tackles slide or edge rushers like David Bailey beckon later. Peters' TopGolf summit for top-30 prospects Tuesday underscored the hunt. <strong>With Pittsburgh looming April 23, watch if they pounce on Downs or wheel for volume&mdash; this pick could ignite Daniels' rise or doom another rebuild.</strong>",
-        "updated": "Updated April 16, 2026"
-      },
-      "key_numbers": [
-        {
-          "number": "5-12",
-          "label": "Season Record",
-          "note": "3rd in NFC East"
-        },
-        {
-          "number": "W1",
-          "label": "Streak",
-          "note": "Current streak"
-        },
-        {
-          "number": "9",
-          "label": "Games Back",
-          "note": "3rd in NFC East"
-        },
-        {
-          "number": "2-2",
-          "label": "Last 4",
-          "note": "Recent form"
-        }
-      ],
-      "recent_results": [],
-      "last_game_highlights": {
-        "available": false
-      },
-      "the_latest": [
-        {
-          "source": "Commanders Wire",
-          "source_class": "web",
-          "headline": "Commanders would reportedly pass on Ohio State star if he falls",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdlcwY3hyWFRESVVSRDA1UEx0QUpvd1JyVWlXMU9LeXdTVmxsN0NqbGY4QnZvdkVKSHJsN0pnVmNDbmpSU1VmV2tEZG9WZGNxRjJwMU1UZElBdk9neXdXTG1tNE1nQnNXamJQeXRtWmJOX3ZLbF84UGVscHlPYjg2LWtRU29hcGZUeDhqU3V3VVpVdHVULWM1LVRLVmVHSDRkNjZKVnQyT3VaZW1mYXQ4VkFxb29JUjNMN0xKdEc0cURnNkRoUmJkb1FqekJfWmV6Y1FzeE1Jc05HQ0ZQR0xPa0lmckotQXhiWGhxWWNNQQ?oc=5"
-        },
-        {
-          "source": "WJLA",
-          "source_class": "web",
-          "headline": "TAKE A LOOK! Commanders unveil new uniforms, debut 'Hail Raiser' alternate",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNQWFsYTVxZEtVOGIyamltc0N6aEpyM3BCOENEVU5ZLVdfeEVlZExsaXNuVncxUFRUZERhd0FlbjdLaEJfNFNWS3E0VTVZMFVsV2NDMkVvS1o0LTVzejdROTRRdTBVS2NvWEotQVQyWWtKdlZFYldIcThzRG84ZWMxOW1YZXk4S2JmVGJtTFJTQzhFWGFBbE4xYmphRW4wQ0VTM2Y5WU1lbW9HOFM3RHlQdjctWEVHbmJaV0dmTEFjNUJmSGgzYS1QQUFDZWYyRGpZT2JfcHRkUmJ3akNUTlV6X3lINmc3ckplSjFZa1BnM2VsQ0ppZ2puZjY5Tm85Um5xZzd5QUZBa0RxZWtGZXRadm52Q1VLNDM1UnpETms2UHVyeUk2c1FaNUljSFhoZw?oc=5"
-        },
-        {
-          "source": "Washington Commanders",
-          "source_class": "web",
-          "headline": "Commanders unveil 2026 uniform closet inspired by franchise history",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ0NmVW5VSkhpRTJ6Y05CZFNnVC1UeGlpbEwxX1I3c0Q0cWR4Ri15OUI0VTN2RUV5N2ZIbWpJNFZxX2pwMXFvTzBLTFM5VFVfdmdQbnJ1VEI3VjhmcW1SVmNWallJdnBYZ0dDRGxxaUNxbGZuOWh3c0JJRDJOV2FZaWNOSEFjb08tQ0E?oc=5"
-        },
-        {
-          "source": "The Washington Post",
-          "source_class": "web",
-          "headline": "A new Washington Commanders uniform has spear on helmet in nod to former name",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYWp0TFhuVUs0a1ljSEFCemM3SkowQkwtUnFKcmVncERDNl9TSEk2Qlc1eGtkX01NY1lNYzJrYUloak96NHBOSGxwNHBFS2dmOWM3WjZtUjdvc2dhMV9fMS0xODdCUWF6QnAzb2lZZ210Rmp4MXp4dkF1Tk1EOWNSQ1pIaUphTXZhQUVJMkxXV0tKMERfQnF1YkhCTQ?oc=5"
-        }
-      ],
-      "standings": {
-        "tabs": [
-          "National Football Conference"
-        ],
-        "panes": [
-          {
-            "headers": [
-              "Team",
-              "W",
-              "L",
-              "PCT",
-              "DIV"
-            ],
-            "rows": [
-              {
-                "team": "Seahawks",
-                "logo": "sea",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "14",
-                  "3",
-                  ".824",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "LA Rams",
-                "logo": "lar",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "12",
-                  "5",
-                  ".706",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "San Francisco",
-                "logo": "sf",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "12",
-                  "5",
-                  ".706",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Bears",
-                "logo": "chi",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "11",
-                  "6",
-                  ".647",
-                  "2-4"
-                ]
-              },
-              {
-                "team": "Eagles",
-                "logo": "phi",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "11",
-                  "6",
-                  ".647",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Packers",
-                "logo": "gb",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "9",
-                  "7",
-                  ".559",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Vikings",
-                "logo": "min",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "9",
-                  "8",
-                  ".529",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Lions",
-                "logo": "det",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "9",
-                  "8",
-                  ".529",
-                  "2-4"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "car",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "9",
-                  ".471",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "9",
-                  ".471",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Falcons",
-                "logo": "atl",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "9",
-                  ".471",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Cowboys",
-                "logo": "dal",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "7",
-                  "9",
-                  ".441",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Saints",
-                "logo": "no",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "6",
-                  "11",
-                  ".353",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Commanders",
-                "logo": "wsh",
-                "league": "nfl",
-                "you": true,
-                "vals": [
-                  "5",
-                  "12",
-                  ".294",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "NY Giants",
-                "logo": "nyg",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "4",
-                  "13",
-                  ".235",
-                  "2-4"
-                ]
-              },
-              {
-                "team": "Cardinals",
-                "logo": "ari",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "3",
-                  "14",
-                  ".176",
-                  "0-6"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "the_latest_label": "Offseason Intel"
-    }
-  },
-  "featured": {
-    "team": "raptors",
-    "kicker": "Toronto Raptors &middot; Playoffs",
-    "headline": "Raptors vs. Cavaliers: Sportsnet announces first-round NBA playoff schedule",
-    "dek": "The Toronto Raptors (46-36). 3rd in Atlantic Division. ",
-    "source": "Sportsnet",
-    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNR1MxdjVKY19MbW1MQ1lnajdOT1hWTHg5RG9XaGdPYVNjV3BnbG1Jb2swanBSOTcyWTQ4TTBYUkVEN2lhY1VzOXZYQW00cGwwN1U3bm1HMzY1OGJmbGduWk1ndTNUTHJmWTU1cDdydHhBM0lkWlAxU3hXUDFXUUE0TFVlM3ZfS1ZhaXpwbTQ5RFZCeGtDdW9RZkJIWXhxLWlWR2JaOEloV0JjdW01MW5yOA?oc=5",
-    "date": "April 16, 2026"
-  },
-  "two_up": [
-    {
-      "team": "jays",
-      "kicker": "Toronto Blue Jays &middot; Regular Season",
-      "headline": "Cease&rsquo;s gem goes to waste as quiet bats, nightmare eighth sink Blue Jays",
-      "dek": "The Toronto Blue Jays (7-10) face at Brewers next on Thu 4/16.",
-      "source": "Sportsnet",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbE91M2d6SkJ5bk0yM3ptMVR6cHIyODZxTUhVSmdOTmZ1V0pTR0lrRzlVSGo3LUFBLUNQRHc4VkNkSEdRc2RwS0hzdzQyM1p1UDJfZDlTb1NyX3R0clNFSTBTUGdhRHJnVkxCelFZS1Z3LW5mdDBOTU1sdVU1ZkpUZk5jSi1TMzl0SjFCUjJhUjJTT3ItYklhN3FYNW1YNzhqX051alYzUGx1a2Fl?oc=5",
-      "date": "April 16, 2026"
-    },
-    {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs &middot; Eliminated / Season Over",
-      "headline": "&lsquo;Kinda relieved&rsquo;: Maple Leafs&rsquo; most disappointing season ends with a shrug",
-      "dek": "The Toronto Maple Leafs (32-36-14) sit 8th in atlantic division.",
-      "source": "Sportsnet",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbXdXcUk0TjZKSG9ORklJaUNkNmJaelBMTTVuaVk5ck01ckJRZGpjcmEyZXNwQnBFcGt4NkUwMThHMjUyR2tNNWgyQzdnalNsUi1rMzBpRE1oOGJLT1FydXl4NzFvcmgyZnc2Y0xDVHROektVR3djaXBIZk9iYW1mQTFVRlFGc2hkbS1YYVIwa3pOaDVCOHlaN3NPVWgzU1hVdV9SQkpxNkZqR0R6?oc=5",
-      "date": "April 16, 2026"
-    }
-  ],
-  "extra_story": {
-    "team": "commanders",
-    "kicker": "Washington Commanders &middot; Pre-Draft",
-    "headline": "Commanders would reportedly pass on Ohio State star if he falls",
-    "dek": "The Washington Commanders (5-12). 3rd in NFC East. ",
-    "source": "Commanders Wire",
-    "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdlcwY3hyWFRESVVSRDA1UEx0QUpvd1JyVWlXMU9LeXdTVmxsN0NqbGY4QnZvdkVKSHJsN0pnVmNDbmpSU1VmV2tEZG9WZGNxRjJwMU1UZElBdk9neXdXTG1tNE1nQnNXamJQeXRtWmJOX3ZLbF84UGVscHlPYjg2LWtRU29hcGZUeDhqU3V3VVpVdHVULWM1LVRLVmVHSDRkNjZKVnQyT3VaZW1mYXQ4VkFxb29JUjNMN0xKdEc0cURnNkRoUmJkb1FqekJfWmV6Y1FzeE1Jc05HQ0ZQR0xPa0lmckotQXhiWGhxWWNNQQ?oc=5",
-    "date": "April 16, 2026"
+    "updated_at": "2026-04-16T09:00:00-04:00",
+    "date_display": "Thursday, April 16, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs fell to Senators 1&ndash;3"
+      "text": "Leafs season ends with 3-1 loss to Ottawa"
     },
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs (32-36-14) &mdash; 8th in Atlantic Division"
-    },
-    {
-      "badge": "NHL",
-      "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs season over &mdash; lottery watch begins"
+      "text": "Draft Lottery May 5: Leafs hold 5th spot"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays fell to Brewers 1&ndash;2"
+      "text": "Jays (7-10) at Brewers today, 1:40 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays (7-10) &mdash; 4th in AL East"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "background:var(--jays);color:#fff",
-      "text": "Next: Jays at Brewers &mdash; Thu 4/16 12:40 PM ET"
+      "text": "Cease dazzles but bats go cold in 2-1 loss"
     },
     {
       "badge": "NBA",
       "badge_style": "background:var(--raptors);color:#fff",
-      "text": "Raptors (46-36) &mdash; 3rd in Atlantic Division"
+      "text": "Playoffs: Raptors vs. Cavaliers, Game 1 Saturday"
     },
     {
       "badge": "NBA",
       "badge_style": "background:var(--raptors);color:#fff",
-      "text": "Raptors vs. Cavaliers: Sportsnet announces..."
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "background:var(--raptors);color:#fff",
-      "text": "Raptors Playoffs &mdash; schedule TBD"
+      "text": "Raptors (46-36) back in playoffs for first time since 2022"
     },
     {
       "badge": "NFL",
       "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders (5-12) &mdash; 3rd in NFC East"
+      "text": "NFL Draft one week away: Commanders pick 7th"
     },
     {
       "badge": "NFL",
       "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders would reportedly pass on Ohio State star..."
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders &mdash; NFL Draft Apr 23&ndash;25"
+      "text": "Caleb Downs visit lights up draft buzz in DC"
     }
   ],
+  "featured": {
+    "team": "raptors",
+    "kicker": "Toronto Raptors &middot; Playoffs",
+    "headline": "The Raptors Are Back. First Playoffs Since 2022, and Cleveland Awaits.",
+    "dek": "Toronto locked up the fifth seed with a 46-36 record and will face the fourth-seeded Cavaliers in a first-round series starting Saturday at 1 PM in Cleveland. The Raptors swept the season series 3-0, but those wins all came before the Cavs traded for James Harden in February.",
+    "source": "NBA.com",
+    "date": "April 15, 2026",
+    "url": "https://www.nba.com/news/2026-nba-playoffs-series-preview-cavaliers-raptors"
+  },
+  "two_up": [
+    {
+      "team": "leafs",
+      "kicker": "Toronto Maple Leafs &middot; Season End",
+      "headline": "A Season of Dysfunction: How the Leafs Went From Division Champs to Last Place",
+      "dek": "The Athletic details the organizational breakdown behind Toronto&rsquo;s 30-point drop, from Marner&rsquo;s departure to the AI-generated trade proposals that stunned the front office.",
+      "source": "The Athletic",
+      "date": "April 15, 2026",
+      "url": "https://www.nytimes.com/athletic/7194333/2026/04/15/maple-leafs-nhl-2025-26-dysfunction/"
+    },
+    {
+      "team": "commanders",
+      "kicker": "Washington Commanders &middot; Draft",
+      "headline": "Caleb Downs Visits Washington as Draft Buzz Heats Up at Pick No. 7",
+      "dek": "Ohio State&rsquo;s Jim Thorpe Award-winning safety visited the Commanders this week, with insiders pegging Washington as his &ldquo;floor&rdquo; landing spot. GM Adam Peters is weighing safety, receiver, and linebacker at seven.",
+      "source": "ESPN",
+      "date": "April 15, 2026",
+      "url": "https://www.espn.com/nfl/draft2026/story/_/id/48413923/2026-nfl-draft-washington-commanders-updates-buzz-intel-picks-positions"
+    }
+  ],
+  "extra_story": {
+    "team": "jays",
+    "kicker": "Toronto Blue Jays &middot; Early Season",
+    "headline": "Cease&rsquo;s Gem Goes to Waste as Jays Fall 2-1 on Late Eighth-Inning Rally",
+    "dek": "Dylan Cease struck out six in six shutout innings but the Brewers rallied for two in the eighth. Toronto drops to 7-10 and plays the series finale Thursday.",
+    "source": "ESPN",
+    "date": "April 15, 2026",
+    "url": "https://www.espn.com/mlb/recap/_/gameId/401814957"
+  },
   "at_a_glance": [
     {
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
       "record": "32-36-14",
-      "status": "8th in Atlantic Division",
+      "status": "Season Over",
       "status_class": "red",
-      "stat": "Streak: L7"
+      "stat": "Draft Lottery: May 5"
     },
     {
       "team": "jays",
@@ -1715,136 +100,1100 @@
       "record": "7-10",
       "status": "4th in AL East",
       "status_class": "red",
-      "stat": "Streak: L1"
+      "stat": "Today: at MIL, 1:40 PM"
     },
     {
       "team": "raptors",
       "name": "Raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
       "record": "46-36",
-      "status": "3rd in Atlantic Division",
-      "status_class": "muted",
-      "stat": "Streak: W1"
+      "status": "Playoffs &middot; 5th Seed",
+      "status_class": "green",
+      "stat": "<strong>Game 1:</strong> Sat 1 PM at CLE"
     },
     {
       "team": "commanders",
       "name": "Commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "record": "5-12",
-      "status": "3rd in NFC East",
+      "status": "Offseason",
       "status_class": "muted",
-      "stat": ""
+      "stat": "<strong>Draft:</strong> Pick #7, Apr 23"
     }
   ],
   "today_slate": [
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs",
-      "detail": "Eliminated / Season Over",
+      "matchup": "Season Over",
+      "detail": "Draft Lottery: May 5",
       "channel": "",
-      "off": true
+      "is_off": true
     },
     {
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "matchup": "Jays at Brewers",
-      "detail": "12:40 PM ET",
-      "channel": "TBD",
-      "off": false
+      "matchup": "Blue Jays at Brewers",
+      "detail": "1:40 PM ET &middot; American Family Field",
+      "channel": "SNET",
+      "is_off": false
     },
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "matchup": "Raptors",
-      "detail": "Playoffs &mdash; Schedule TBD",
+      "matchup": "Playoff Practice",
+      "detail": "Game 1 vs. Cavaliers: Sat Apr 18 at 1 PM",
       "channel": "",
-      "off": true
+      "is_off": true
     },
     {
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "matchup": "Commanders",
-      "detail": "Pre-Draft",
+      "matchup": "Offseason",
+      "detail": "NFL Draft: Apr 23-25 in Pittsburgh",
       "channel": "",
-      "off": true
+      "is_off": true
     }
   ],
-  "week_ahead": {
-    "games": [
-      {
-        "day": "Thu 4/16",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Brewers",
-        "time": "12:40 PM ET",
-        "tv": "TBD"
+  "week_ahead": [
+    {
+      "day": "Thu 4/16",
+      "team": "jays",
+      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+      "opponent": "at Milwaukee Brewers",
+      "time": "1:40 PM",
+      "tv": "SNET"
+    },
+    {
+      "day": "Fri 4/17",
+      "team": "jays",
+      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+      "opponent": "vs. Tampa Bay Rays",
+      "time": "7:07 PM",
+      "tv": "SNET"
+    },
+    {
+      "day": "Sat 4/18",
+      "team": "raptors",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "opponent": "at Cleveland (Game 1)",
+      "time": "1:00 PM",
+      "tv": "ESPN / SNET"
+    },
+    {
+      "day": "Sat 4/18",
+      "team": "jays",
+      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+      "opponent": "vs. Tampa Bay Rays",
+      "time": "3:07 PM",
+      "tv": "SNET"
+    },
+    {
+      "day": "Sun 4/19",
+      "team": "jays",
+      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+      "opponent": "vs. Tampa Bay Rays",
+      "time": "1:37 PM",
+      "tv": "SNET"
+    },
+    {
+      "day": "Mon 4/20",
+      "team": "raptors",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "opponent": "at Cleveland (Game 2)",
+      "time": "7:00 PM",
+      "tv": "TNT / SNET"
+    },
+    {
+      "day": "Wed 4/22",
+      "team": "jays",
+      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+      "opponent": "vs. Chicago Cubs",
+      "time": "7:07 PM",
+      "tv": "SNET"
+    },
+    {
+      "day": "Wed 4/23",
+      "team": "raptors",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "opponent": "vs. Cleveland (Game 3)",
+      "time": "8:00 PM",
+      "tv": "SNET"
+    },
+    {
+      "day": "Wed 4/23",
+      "team": "commanders",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+      "opponent": "NFL Draft Round 1",
+      "time": "8:00 PM",
+      "tv": "ABC / ESPN"
+    }
+  ],
+  "teams": {
+    "leafs": {
+      "full_name": "Toronto Maple Leafs",
+      "league": "NHL",
+      "record": "32-36-14",
+      "detail": "Season Over &middot; Last in Atlantic Division",
+      "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+      "color_var": "--leafs",
+      "season_phase": "offseason",
+      "the_latest_label": "Offseason Intel",
+      "links": [
+        {
+          "label": "NHL.com",
+          "url": "https://www.nhl.com/mapleleafs/"
+        },
+        {
+          "label": "ESPN",
+          "url": "https://www.espn.com/nhl/team/_/name/tor/toronto-maple-leafs"
+        },
+        {
+          "label": "TSN",
+          "url": "https://www.tsn.ca/nhl/toronto-maple-leafs"
+        },
+        {
+          "label": "The Athletic",
+          "url": "https://www.nytimes.com/athletic/nhl/team/maple-leafs/"
+        },
+        {
+          "label": "Sportsnet",
+          "url": "https://www.sportsnet.ca/nhl/teams/toronto-maple-leafs/"
+        }
+      ],
+      "lotl": {
+        "label": "What's Going On With the Leafs",
+        "body": "The horror show is finally over. <strong>Toronto&rsquo;s season ended Tuesday with a 3-1 loss to Ottawa, their seventh straight defeat</strong>, capping a 32-36-14 campaign that saw the franchise plummet from division champions to last in the Atlantic. The 30-point freefall from last year&rsquo;s 108-point season ranks among the most dramatic collapses in NHL history, and the fallout has only just begun. The Athletic reported this week on deep organizational dysfunction: MLSE CEO Keith Pelley presenting AI-generated trade proposals to hockey staff, cost-cutting that hamstrung the front office, and a culture of friction between business leadership and the hockey department. GM Brad Treliving was fired March 30, and the search for a new head of hockey operations is complicated by the perception that ownership meddles. Auston Matthews&rsquo; season ended March 14 with a grade 3 MCL tear after just 60 games and 53 points. William Nylander finished as the lone bright spot with 26 goals and 73 points. <strong>The draft lottery sits May 5, where Toronto holds the fifth slot with a 24.5% chance of staying put.</strong> For a fanbase that expected playoff hockey, it&rsquo;s ashes.",
+        "updated": "Updated April 16, 2026"
       },
-      {
-        "day": "Sat 4/18",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Diamondbacks",
-        "time": "8:40 PM ET",
-        "tv": "TBD"
+      "key_numbers": [
+        {
+          "number": "78",
+          "label": "Points",
+          "note": "Down 30 from 108 last year"
+        },
+        {
+          "number": "7",
+          "label": "Game Losing Streak",
+          "note": "Ended the season on a skid"
+        },
+        {
+          "number": "5th",
+          "label": "Draft Lottery Position",
+          "note": "Lottery draw: May 5"
+        },
+        {
+          "number": "286",
+          "label": "Goals Against",
+          "note": "31st in the NHL"
+        }
+      ],
+      "recent_results": [
+        {
+          "date": "Apr 15",
+          "result": "L",
+          "team_score": 1,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+          "opponent": "Ottawa",
+          "opponent_score": 3,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/ott.png"
+        },
+        {
+          "date": "Apr 13",
+          "result": "L",
+          "team_score": 5,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+          "opponent": "Dallas",
+          "opponent_score": 6,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/dal.png"
+        },
+        {
+          "date": "Apr 11",
+          "result": "L",
+          "team_score": 2,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+          "opponent": "Florida",
+          "opponent_score": 6,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/fla.png"
+        },
+        {
+          "date": "Apr 10",
+          "result": "L",
+          "team_score": 1,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+          "opponent": "Tampa Bay",
+          "opponent_score": 4,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tb.png"
+        }
+      ],
+      "last_game_highlights": {
+        "available": true,
+        "title": "Leafs vs. Senators &mdash; Final Game of the Season",
+        "subtitle": "NHL &middot; April 15, 2026",
+        "result_badge": "L 1-3",
+        "result_color": "red",
+        "url": "https://www.youtube.com/@NHL/search?query=Maple+Leafs+Senators+highlights+April+2026",
+        "source_channel": "NHL",
+        "game_date": "2026-04-15"
       },
-      {
-        "day": "Sun 4/19",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Diamondbacks",
-        "time": "7:10 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Sun 4/19",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Diamondbacks",
-        "time": "3:10 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Tue 4/21",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Angels",
-        "time": "8:38 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Wed 4/22",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Angels",
-        "time": "8:38 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Wed 4/22",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Angels",
-        "time": "2:07 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "TBD",
-        "team": "raptors",
-        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-        "name": "Raptors",
-        "opp": "Playoffs",
-        "time": "TBD",
-        "tv": ""
+      "the_latest": [
+        {
+          "source": "The Athletic",
+          "source_class": "athletic",
+          "headline": "Inside the Maple Leafs&rsquo; dysfunction: AI trade proposals, cost-cutting, and a fractured front office",
+          "dek": "Chris Johnston details how MLSE&rsquo;s corporate culture collided with hockey operations, from AI-generated trade ideas at the deadline to the budget constraints that left Treliving hamstrung.",
+          "date": "April 15, 2026",
+          "url": "https://www.nytimes.com/athletic/7194333/2026/04/15/maple-leafs-nhl-2025-26-dysfunction/"
+        },
+        {
+          "source": "TSN",
+          "source_class": "tsn",
+          "headline": "Johnston details dysfunction in the Leafs&rsquo; organization and the impact of cost-cutting",
+          "dek": "Chris Johnston joins First Up to discuss the Athletic report, whether the outside perception of the Leafs could scare off candidates for the head of hockey ops role.",
+          "date": "April 15, 2026",
+          "url": "https://www.tsn.ca/video/2026/04/15/johnston-discusses-dysfunction-in-the-leafs-organization-the-impact-of-cost-cutting/"
+        },
+        {
+          "source": "NHL.com",
+          "source_class": "web",
+          "headline": "Why the Maple Leafs missed the playoffs: Marner&rsquo;s departure, defensive woes, and Matthews&rsquo; injury",
+          "dek": "A comprehensive look at how Toronto went from Atlantic Division champions to last place in one season, the first playoff miss since 2015-16.",
+          "date": "April 15, 2026",
+          "url": "https://www.nhl.com/news/why-toronto-maple-leafs-are-eliminated-from-2025-2026-postseason-race"
+        },
+        {
+          "source": "The Hockey News",
+          "source_class": "web",
+          "headline": "Maple Leafs Week Ahead: Last Week of the Season and the NHL Draft Lottery",
+          "dek": "Toronto holds the fifth spot in the lottery with a 24.5% chance of keeping that pick. A look at what&rsquo;s at stake and the road ahead.",
+          "date": "April 14, 2026",
+          "url": "https://thehockeywriters.com/maple-leafs-week-ahead-schedule-storylines-last-week-of-the-season-nhl-draft-lottery/"
+        }
+      ],
+      "podcasts": [
+        {
+          "number": 1,
+          "name": "LFR (Leafs Fan Reaction)",
+          "hosts": "Steve Dangle &middot; YouTube / Podcast",
+          "description": "Steve Dangle reacts to every single Leafs game with the energy and heartbreak of a lifelong fan. Sixteen seasons and counting.",
+          "spotify": "https://open.spotify.com/show/7LrLeIxHmUjb561rkAtEn1",
+          "apple": "https://podcasts.apple.com/ca/podcast/lfr/id1650834032"
+        },
+        {
+          "number": 2,
+          "name": "The Leaf Report",
+          "hosts": "Jonas Siegel &amp; James Mirtle &middot; The Athletic",
+          "description": "The Athletic&rsquo;s Leafs beat writers break down the team with insider access and sharp analysis.",
+          "spotify": "https://open.spotify.com/show/3dlaaFkycUbgoFaMmqAFVZ",
+          "apple": "https://podcasts.apple.com/ca/podcast/the-leaf-report/id1476386498"
+        },
+        {
+          "number": 3,
+          "name": "Leafs Morning Take",
+          "hosts": "Jay Rosehill &amp; Rosie Doughty &middot; The Score",
+          "description": "Daily Leafs coverage from The Score with former NHLer Jay Rosehill bringing the player perspective.",
+          "spotify": "https://open.spotify.com/show/2tSj6mJmjEh53fR9WbNMNB",
+          "apple": "https://podcasts.apple.com/ca/podcast/leafs-morning-take/id1534498935"
+        },
+        {
+          "number": 4,
+          "name": "First Up with Korolnek &amp; Colaiacovo",
+          "hosts": "Michael Korolnek &amp; Carlo Colaiacovo &middot; TSN 1050",
+          "description": "TSN Toronto&rsquo;s morning show with former NHL defenseman Colaiacovo. Great for the big-picture Leafs narrative.",
+          "spotify": "https://open.spotify.com/show/0R3V0mJjsJTi5rNBwfifJI",
+          "apple": "https://podcasts.apple.com/ca/podcast/first-up-with-korolnek-colaiacovo/id28849109"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Leafs Season Finale Highlights",
+          "subtitle": "YouTube &middot; NHL",
+          "url": "https://www.youtube.com/@NHL/search?query=Maple+Leafs+Senators+highlights+April+2026"
+        },
+        {
+          "title": "Steve Dangle: Season Reaction",
+          "subtitle": "YouTube &middot; Steve Dangle",
+          "url": "https://www.youtube.com/@SteveDangle/search?query=Leafs+season+over+2026"
+        },
+        {
+          "title": "Everything That Went Wrong for the Leafs",
+          "subtitle": "YouTube &middot; TSN",
+          "url": "https://www.youtube.com/@TSN/search?query=Maple+Leafs+season+2026+dysfunction"
+        },
+        {
+          "title": "Leafs Post-Game Media Availability",
+          "subtitle": "YouTube &middot; Maple Leafs",
+          "url": "https://www.youtube.com/@MapleLeafs/search?query=media+availability+April+2026"
+        }
+      ],
+      "standings": {
+        "tabs": [
+          {
+            "label": "Atlantic Division",
+            "columns": [
+              "Team",
+              "W",
+              "L",
+              "OTL",
+              "PTS"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Florida",
+                  52,
+                  20,
+                  6,
+                  110
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/fla.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "Toronto",
+                  32,
+                  36,
+                  14,
+                  78
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+                "classes": "you playoff-out"
+              }
+            ]
+          }
+        ]
       }
-    ],
-    "note": "Raptors playoff schedule TBD; Commanders: Pre-Draft"
+    },
+    "jays": {
+      "full_name": "Toronto Blue Jays",
+      "league": "MLB",
+      "record": "7-10",
+      "detail": "4th in AL East",
+      "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+      "color_var": "--jays",
+      "season_phase": "regular_season",
+      "the_latest_label": "The Latest",
+      "links": [
+        {
+          "label": "MLB.com",
+          "url": "https://www.mlb.com/bluejays"
+        },
+        {
+          "label": "ESPN",
+          "url": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays"
+        },
+        {
+          "label": "Sportsnet",
+          "url": "https://www.sportsnet.ca/mlb/teams/toronto-blue-jays/"
+        },
+        {
+          "label": "TSN",
+          "url": "https://www.tsn.ca/mlb/toronto-blue-jays"
+        },
+        {
+          "label": "The Athletic",
+          "url": "https://www.nytimes.com/athletic/mlb/team/blue-jays/"
+        }
+      ],
+      "lotl": {
+        "label": "What's Going On With the Jays",
+        "body": "Seventeen games in and the defending American League champions can&rsquo;t find the offense that carried them to the World Series last October. <strong>Dylan Cease was brilliant Tuesday, striking out six in six shutout innings against Milwaukee, but the bats gave him exactly one run to work with</strong> before the Brewers scraped together a two-run eighth that sealed a 2-1 loss. It&rsquo;s the story of the season so far: strong arms, silent lumber. Toronto sits 7-10, fourth in the AL East and three games back, with a .412 winning percentage that doesn&rsquo;t match the talent on the roster. Vlad Guerrero Jr. has been steady but not spectacular, and the lineup around him keeps stranding runners in scoring position. The bright side? The Jays split the series with Milwaukee after Vlad&rsquo;s go-ahead double keyed a 9-7 extras win Monday. The pitching is there. The bullpen held firm. What&rsquo;s missing is the same thing that carried them last fall: timely hits and the confidence that comes with them. <strong>Patrick Corbin takes the ball Thursday at 1:40 PM for the series finale, then it&rsquo;s home to face Tampa Bay this weekend.</strong>",
+        "updated": "Updated April 16, 2026"
+      },
+      "key_numbers": [
+        {
+          "number": "7-10",
+          "label": "Record",
+          "note": "4th in AL East, 3 GB"
+        },
+        {
+          "number": "3.9",
+          "label": "Runs Per Game",
+          "note": "25th in MLB"
+        },
+        {
+          "number": ".244",
+          "label": "Team AVG",
+          "note": "9th in MLB"
+        },
+        {
+          "number": "6",
+          "label": "Cease Strikeouts",
+          "note": "Six shutout innings vs. MIL"
+        }
+      ],
+      "recent_results": [
+        {
+          "date": "Apr 15",
+          "result": "L",
+          "team_score": 1,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+          "opponent": "Milwaukee",
+          "opponent_score": 2,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/mil.png"
+        },
+        {
+          "date": "Apr 14",
+          "result": "W",
+          "team_score": 9,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+          "opponent": "Milwaukee",
+          "opponent_score": 7,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/mil.png"
+        },
+        {
+          "date": "Apr 12",
+          "result": "W",
+          "team_score": 10,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+          "opponent": "Minnesota",
+          "opponent_score": 4,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/min.png"
+        },
+        {
+          "date": "Apr 11",
+          "result": "L",
+          "team_score": 3,
+          "team_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+          "opponent": "Minnesota",
+          "opponent_score": 5,
+          "opponent_logo": "https://a.espncdn.com/i/teamlogos/mlb/500/min.png"
+        }
+      ],
+      "last_game_highlights": {
+        "available": true,
+        "title": "Blue Jays vs. Brewers Highlights",
+        "subtitle": "MLB &middot; April 15, 2026",
+        "result_badge": "L 1-2",
+        "result_color": "red",
+        "url": "https://www.youtube.com/@MLB/search?query=Blue+Jays+Brewers+highlights+April+15+2026",
+        "source_channel": "MLB",
+        "game_date": "2026-04-15"
+      },
+      "the_latest": [
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Cease&rsquo;s gem goes to waste as Brewers rally in the eighth to edge Jays 2-1",
+          "dek": "Dylan Cease was dominant through six shutout innings but the bullpen couldn&rsquo;t hold a 1-0 lead. William Contreras drove in two in the eighth for Milwaukee.",
+          "date": "April 15, 2026",
+          "url": "https://www.espn.com/mlb/recap/_/gameId/401814957"
+        },
+        {
+          "source": "MLB.com",
+          "source_class": "web",
+          "headline": "Guerrero Jr.&rsquo;s go-ahead double lifts Jays to 9-7 extras win over Brewers",
+          "dek": "Vladimir Guerrero Jr. ripped a double to right-center in the 10th inning, capping a wild back-and-forth game that featured 16 combined runs.",
+          "date": "April 14, 2026",
+          "url": "https://www.mlb.com/gameday/blue-jays-vs-brewers/2026/04/14/823802/final/box"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "2026 Blue Jays: Defending AL champs off to slow start at 7-10",
+          "dek": "Toronto brought back most of last year&rsquo;s World Series roster but the offense has sputtered early. A look at what&rsquo;s gone wrong and whether it&rsquo;s time to worry.",
+          "date": "April 15, 2026",
+          "url": "https://www.cbssports.com/mlb/teams/TOR/toronto-blue-jays/"
+        }
+      ],
+      "podcasts": [
+        {
+          "number": 1,
+          "name": "At The Letters",
+          "hosts": "Kaitlyn McGrath &amp; Keegan Matheson &middot; The Athletic",
+          "description": "The Athletic&rsquo;s Jays beat writers cover every angle of the season with front-office sources and clubhouse access.",
+          "spotify": "https://open.spotify.com/show/1bz3LBG9IW1jGfmLaEVJOB",
+          "apple": "https://podcasts.apple.com/ca/podcast/at-the-letters-a-toronto-blue-jays-podcast/id1529529068"
+        },
+        {
+          "number": 2,
+          "name": "Jays Talk Plus",
+          "hosts": "Ben Wagner &amp; Joe Siddall &middot; Sportsnet",
+          "description": "Sportsnet&rsquo;s flagship Jays podcast with the radio broadcast team. Post-game analysis and interviews.",
+          "spotify": "https://open.spotify.com/show/1DpAfGOzixMkWwGDlFGr9v",
+          "apple": "https://podcasts.apple.com/ca/podcast/jays-talk-plus/id1477377834"
+        },
+        {
+          "number": 3,
+          "name": "Tin Foil Jays",
+          "hosts": "TJ Burton &amp; Co. &middot; Independent",
+          "description": "Fan-driven deep dives into Jays prospects, trades, and front office moves. Fun and irreverent.",
+          "spotify": "https://open.spotify.com/show/7qAC1uxbsV2Ig7EGKMXpEz",
+          "apple": "https://podcasts.apple.com/ca/podcast/tin-foil-jays/id1691773605"
+        },
+        {
+          "number": 4,
+          "name": "Blair and Barker",
+          "hosts": "Jeff Blair &amp; Stephen Brunt &middot; Sportsnet",
+          "description": "Two of Canada&rsquo;s best sportswriters talk baseball, hockey, and everything in between.",
+          "spotify": "https://open.spotify.com/show/3s7wFVqbsTqajnE5PX0b6J",
+          "apple": "https://podcasts.apple.com/ca/podcast/blair-and-barker/id1544107498"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Jays vs. Brewers Highlights (Apr 15)",
+          "subtitle": "YouTube &middot; MLB",
+          "url": "https://www.youtube.com/@MLB/search?query=Blue+Jays+Brewers+highlights+April+2026"
+        },
+        {
+          "title": "Vlad&rsquo;s Walk-Off Double in Extras",
+          "subtitle": "YouTube &middot; MLB",
+          "url": "https://www.youtube.com/@MLB/search?query=Blue+Jays+Brewers+extras+April+14+2026"
+        },
+        {
+          "title": "Jays Season Preview &amp; Analysis",
+          "subtitle": "YouTube &middot; Sportsnet",
+          "url": "https://www.youtube.com/@Sportsnet/search?query=Blue+Jays+2026+season+analysis"
+        },
+        {
+          "title": "Blue Jays Post-Game Reaction",
+          "subtitle": "YouTube &middot; Sportsnet",
+          "url": "https://www.youtube.com/@Sportsnet/search?query=Blue+Jays+post+game+April+2026"
+        }
+      ],
+      "standings": {
+        "tabs": [
+          {
+            "label": "AL East",
+            "columns": [
+              "Team",
+              "W",
+              "L",
+              "PCT",
+              "GB"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Baltimore",
+                  11,
+                  5,
+                  ".688",
+                  "-"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bal.png",
+                "classes": ""
+              },
+              {
+                "cells": [
+                  "New York",
+                  10,
+                  7,
+                  ".588",
+                  "1.5"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                "classes": ""
+              },
+              {
+                "cells": [
+                  "Boston",
+                  9,
+                  8,
+                  ".529",
+                  "2.5"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
+                "classes": ""
+              },
+              {
+                "cells": [
+                  "Toronto",
+                  7,
+                  10,
+                  ".412",
+                  "4.5"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+                "classes": "you"
+              },
+              {
+                "cells": [
+                  "Tampa Bay",
+                  6,
+                  11,
+                  ".353",
+                  "5.5"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tb.png",
+                "classes": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "raptors": {
+      "full_name": "Toronto Raptors",
+      "league": "NBA",
+      "record": "46-36",
+      "detail": "5th Seed &middot; Eastern Conference Playoffs",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "color_var": "--raptors",
+      "season_phase": "playoffs",
+      "the_latest_label": "The Latest",
+      "links": [
+        {
+          "label": "NBA.com",
+          "url": "https://www.nba.com/raptors/"
+        },
+        {
+          "label": "ESPN",
+          "url": "https://www.espn.com/nba/team/_/name/tor/toronto-raptors"
+        },
+        {
+          "label": "Sportsnet",
+          "url": "https://www.sportsnet.ca/nba/teams/toronto-raptors/"
+        },
+        {
+          "label": "Raptors Republic",
+          "url": "https://raptorsrepublic.com/"
+        },
+        {
+          "label": "The Athletic",
+          "url": "https://www.nytimes.com/athletic/nba/team/raptors/"
+        }
+      ],
+      "lotl": {
+        "label": "What's Going On With the Raptors",
+        "body": "For the first time since 2022, the Raptors are in the playoffs, and the vibe around Scotiabank Arena is electric. <strong>Toronto clinched the fifth seed with a 46-36 record, a 16-win improvement over last season</strong>, and they&rsquo;ll open against the fourth-seeded Cleveland Cavaliers in a series that tips off Saturday at 1 PM in Cleveland. The regular-season numbers favor Toronto: they swept the Cavs 3-0 this year. But there&rsquo;s a massive asterisk. All three of those wins came before Cleveland acquired James Harden in February, and the Harden-Mitchell duo has been lethal since, going 19-6 together. Scottie Barnes is the engine, Brandon Ingram earned an All-Star nod, and the wing-heavy lineup gives Toronto versatility that few teams can match. The concern is point guard Immanuel Quickley, who&rsquo;s day-to-day with a hamstring issue heading into Game 1. If he plays, Toronto has the depth to steal home court. If he sits, the backcourt rotation thins in a hurry. <strong>Game 1 is Saturday at 1 PM on ESPN and Sportsnet. Game 2 follows Monday at 7 PM. The Raptors come home for Game 3 on April 23.</strong>",
+        "updated": "Updated April 16, 2026"
+      },
+      "key_numbers": [
+        {
+          "number": "46-36",
+          "label": "Final Record",
+          "note": "+16 wins over last season"
+        },
+        {
+          "number": "3-0",
+          "label": "vs. Cavaliers",
+          "note": "Swept regular-season series"
+        },
+        {
+          "number": "5th",
+          "label": "Seed",
+          "note": "First playoffs since 2022"
+        },
+        {
+          "number": "19-6",
+          "label": "Cavs w/ Harden",
+          "note": "Since February trade"
+        }
+      ],
+      "recent_results": [],
+      "last_game_highlights": {
+        "available": false,
+        "title": "",
+        "subtitle": "",
+        "result_badge": "",
+        "result_color": "",
+        "url": "",
+        "source_channel": "",
+        "game_date": ""
+      },
+      "the_latest": [
+        {
+          "source": "NBA.com",
+          "source_class": "web",
+          "headline": "NBA Playoffs: What to expect in the Cavaliers-Raptors series",
+          "dek": "A deep dive into the matchup between the 4th-seeded Cavs and 5th-seeded Raptors, including the Harden factor and Toronto&rsquo;s defensive versatility.",
+          "date": "April 15, 2026",
+          "url": "https://www.nba.com/news/2026-nba-playoffs-series-preview-cavaliers-raptors"
+        },
+        {
+          "source": "SI",
+          "source_class": "web",
+          "headline": "Raptors vs. Cavaliers: Full first-round 2026 playoff schedule and series preview",
+          "dek": "Game 1 tips Saturday at 1 PM in Cleveland. SI breaks down the complete schedule, key matchups, and why Toronto&rsquo;s regular-season sweep may not mean much.",
+          "date": "April 15, 2026",
+          "url": "https://www.si.com/nba/raptors/onsi/toronto-raptors-vs-cleveland-cavaliers-full-first-round-2026-playoff-schedule-and-series-preview"
+        },
+        {
+          "source": "Raptors Republic",
+          "source_class": "web",
+          "headline": "Raptors vs. Cavaliers: The deepest 2026 NBA playoff preview you&rsquo;ve ever read",
+          "dek": "A granular breakdown of every matchup in the series, from Barnes vs. Mobley to how Harden changes the calculus for Cleveland&rsquo;s half-court offense.",
+          "date": "April 13, 2026",
+          "url": "https://raptorsrepublic.com/2026/04/13/raptors-vs-cavaliers-deepest-2026-nba-playoff-preview-youve-ever-read/"
+        },
+        {
+          "source": "Globe and Mail",
+          "source_class": "web",
+          "headline": "The Raptors clawed their way to the 2026 NBA playoffs. Here&rsquo;s what you need to know.",
+          "dek": "Toronto&rsquo;s return to the postseason after four years is a story of patience, development, and the Brandon Ingram trade that changed everything.",
+          "date": "April 14, 2026",
+          "url": "https://www.theglobeandmail.com/sports/basketball/article-toronto-raptors-nba-playoffs-2026-what-to-know/"
+        }
+      ],
+      "podcasts": [
+        {
+          "number": 1,
+          "name": "Raptors Republic Podcast",
+          "hosts": "Alex Wong &amp; Samson Folk &middot; Raptors Republic",
+          "description": "The premier independent Raptors podcast with credentialed writers who cover the team daily.",
+          "spotify": "https://open.spotify.com/show/3T8bWDBFl8LRjPkXxARyY4",
+          "apple": "https://podcasts.apple.com/ca/podcast/raptors-republic-podcast/id1265370532"
+        },
+        {
+          "number": 2,
+          "name": "Raptors Over Everything",
+          "hosts": "William Lou &amp; Josh Lewenberg &middot; TSN / The Score",
+          "description": "Insider analysis from two of the best Raptors beat reporters in the business.",
+          "spotify": "https://open.spotify.com/show/6yzCbGq5mc0sJ5TnqjQmIS",
+          "apple": "https://podcasts.apple.com/ca/podcast/raptors-over-everything/id1453282313"
+        },
+        {
+          "number": 3,
+          "name": "The Raptors Show with Will Lou",
+          "hosts": "Will Lou &middot; Sportsnet 590",
+          "description": "Daily Raptors coverage on Sportsnet radio. Fast-paced, opinionated, and plugged in.",
+          "spotify": "https://open.spotify.com/show/6OkLlSsHcDhsqNRuXlR31a",
+          "apple": "https://podcasts.apple.com/ca/podcast/the-raptors-show-with-will-lou/id1549474432"
+        },
+        {
+          "number": 4,
+          "name": "Locked On Raptors",
+          "hosts": "Sean Woodley &middot; Locked On Podcast Network",
+          "description": "Daily 30-minute Raptors pod that&rsquo;s perfect for the morning commute. Consistent and focused.",
+          "spotify": "https://open.spotify.com/show/25PZnHTELxaqa8zGeHPDE2",
+          "apple": "https://podcasts.apple.com/ca/podcast/locked-on-raptors/id1268003534"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Raptors Playoff Practice: Full Availability",
+          "subtitle": "YouTube &middot; NBA",
+          "url": "https://www.youtube.com/@NBA/search?query=Raptors+playoff+practice+April+2026"
+        },
+        {
+          "title": "Cavaliers-Raptors Series Preview",
+          "subtitle": "YouTube &middot; ESPN",
+          "url": "https://www.youtube.com/@ESPN/search?query=Raptors+Cavaliers+playoff+preview+2026"
+        },
+        {
+          "title": "Raptors Season Recap: Road to the Playoffs",
+          "subtitle": "YouTube &middot; Raptors",
+          "url": "https://www.youtube.com/@Raptors/search?query=season+recap+playoffs+2026"
+        },
+        {
+          "title": "Barnes on Cavaliers Series: &ldquo;That Noise Don&rsquo;t Matter&rdquo;",
+          "subtitle": "YouTube &middot; Sportsnet",
+          "url": "https://www.youtube.com/@Sportsnet/search?query=Scottie+Barnes+Cavaliers+playoffs+2026"
+        }
+      ],
+      "standings": {
+        "tabs": [
+          {
+            "label": "Eastern Playoffs",
+            "columns": [
+              "Seed",
+              "Team",
+              "W",
+              "L"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "1",
+                  "Boston",
+                  58,
+                  24
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "2",
+                  "Milwaukee",
+                  52,
+                  30
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "3",
+                  "New York",
+                  50,
+                  32
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "4",
+                  "Cleveland",
+                  48,
+                  34
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "5",
+                  "Toronto",
+                  46,
+                  36
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+                "classes": "you playoff-in"
+              },
+              {
+                "cells": [
+                  "6",
+                  "Indiana",
+                  45,
+                  37
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "7",
+                  "Miami",
+                  43,
+                  39
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "8",
+                  "Philadelphia",
+                  42,
+                  40
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+                "classes": "playoff-in wc-line"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "commanders": {
+      "full_name": "Washington Commanders",
+      "league": "NFL",
+      "record": "5-12",
+      "detail": "3rd in NFC East",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+      "color_var": "--commanders",
+      "season_phase": "offseason",
+      "the_latest_label": "Offseason Intel",
+      "links": [
+        {
+          "label": "Commanders.com",
+          "url": "https://www.commanders.com/"
+        },
+        {
+          "label": "ESPN",
+          "url": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+        },
+        {
+          "label": "NFL.com",
+          "url": "https://www.nfl.com/teams/washington-commanders/"
+        },
+        {
+          "label": "Hogs Haven",
+          "url": "https://www.hogshaven.com/"
+        },
+        {
+          "label": "Riggo's Rag",
+          "url": "https://riggosrag.com/"
+        }
+      ],
+      "lotl": {
+        "label": "What's Going On With the Commanders",
+        "body": "The draft room hums with possibility in Ashburn, where a 5-12 season, nine games back, handed Washington the No. 7 pick and six selections to rebuild around Jayden Daniels. <strong>Ohio State safety Caleb Downs&rsquo; pre-draft visit this week lit up the wires</strong>, with insiders pegging the versatile ballhawk as Washington&rsquo;s &ldquo;floor&rdquo; landing spot at seven. Downs won the Jim Thorpe Award and Big Ten Defensive Player of the Year, and his ability to play deep safety or slide into the slot fits Dan Quinn&rsquo;s scheme perfectly. But GM Adam Peters is playing it flexible, eyeing impact over positional value: middle linebacker Sonny Styles, RB Jeremiyah Love from Notre Dame, or Downs himself are all in play. WR visits from Carnell Tate, Makai Lemon, and Omar Cooper Jr. scream receiver hunger opposite Terry McLaurin after Alec Pierce and Romeo Doubs left in free agency. Trade-down buzz swirls if elite tackles slide or edge rushers like David Bailey beckon later. <strong>Round 1 is April 23 at 8 PM from Pittsburgh. Watch if they pounce on Downs or wheel for volume.</strong>",
+        "updated": "Updated April 16, 2026"
+      },
+      "key_numbers": [
+        {
+          "number": "7",
+          "label": "Draft Pick",
+          "note": "Round 1, April 23 in Pittsburgh"
+        },
+        {
+          "number": "6",
+          "label": "Total Picks",
+          "note": "Across 7 rounds"
+        },
+        {
+          "number": "5-12",
+          "label": "2025 Record",
+          "note": "3rd in NFC East"
+        },
+        {
+          "number": "24.5%",
+          "label": "Downs at 7",
+          "note": "Insiders peg floor landing spot"
+        }
+      ],
+      "recent_results": [],
+      "last_game_highlights": {
+        "available": false,
+        "title": "",
+        "subtitle": "",
+        "result_badge": "",
+        "result_color": "",
+        "url": "",
+        "source_channel": "",
+        "game_date": ""
+      },
+      "the_latest": [
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "2026 NFL Draft: Latest Washington Commanders updates, intel, and buzz",
+          "dek": "ESPN&rsquo;s insider roundup of where Washington stands at pick 7, including the Caleb Downs visit, receiver targets, and the trade-down scenarios in play.",
+          "date": "April 15, 2026",
+          "url": "https://www.espn.com/nfl/draft2026/story/_/id/48413923/2026-nfl-draft-washington-commanders-updates-buzz-intel-picks-positions"
+        },
+        {
+          "source": "SI",
+          "source_class": "web",
+          "headline": "Why drafting safety Caleb Downs breaks the rules but fixes the defense",
+          "dek": "Taking a safety at seven is rare, but Downs isn&rsquo;t a normal safety. SI makes the case for why he&rsquo;s the pick that transforms Dan Quinn&rsquo;s secondary.",
+          "date": "April 14, 2026",
+          "url": "https://www.si.com/nfl/commanders/onsi/news/washington-commanders-nfl-draft-2026-caleb-downs-ohio-state-jordan-reid-mike-sainristil-jamal-adams"
+        },
+        {
+          "source": "Commanders.com",
+          "source_class": "web",
+          "headline": "Commanders 2026 Mock Draft Madness 11.0: Final pre-draft edition",
+          "dek": "The team&rsquo;s official site rounds up the latest expert mock drafts. Jeremiyah Love, Caleb Downs, and Carnell Tate keep showing up at pick 7.",
+          "date": "April 15, 2026",
+          "url": "https://www.commanders.com/news/commanders-2026-mock-draft-madness-11-0"
+        },
+        {
+          "source": "Hogs Haven",
+          "source_class": "web",
+          "headline": "Washington Commanders 2026 NFL Draft: Pre-draft meetings and visit tracker",
+          "dek": "The complete tracker of every prospect Washington has met with, visited, or worked out ahead of draft week, organized by position.",
+          "date": "April 14, 2026",
+          "url": "https://www.hogshaven.com/college-prospects/409282/washington-commanders-2026-nfl-draft-pro-days-meetings-and-top-30-visit-tracker"
+        }
+      ],
+      "podcasts": [
+        {
+          "number": 1,
+          "name": "Locked On Commanders",
+          "hosts": "David Harrison &middot; Locked On Podcast Network",
+          "description": "Daily 30-minute Commanders pod. The fastest way to stay current on Washington during draft season.",
+          "spotify": "https://open.spotify.com/show/7eVPgMCFErIDeDAerwIUYp",
+          "apple": "https://podcasts.apple.com/us/podcast/locked-on-commanders/id1441920631"
+        },
+        {
+          "number": 2,
+          "name": "The Kevin Sheehan Show",
+          "hosts": "Kevin Sheehan &middot; Independent",
+          "description": "The dean of DC sports talk. Deep Commanders knowledge and connections that no one else has.",
+          "spotify": "https://open.spotify.com/show/3mScJpkOdj8VXkixUYfNnW",
+          "apple": "https://podcasts.apple.com/us/podcast/the-kevin-sheehan-show/id1507131644"
+        },
+        {
+          "number": 3,
+          "name": "Burgundy &amp; Gold Report",
+          "hosts": "JP Finlay &middot; NBC Sports Washington",
+          "description": "NBC Sports Washington&rsquo;s JP Finlay breaks down the Commanders with insider access and draft analysis.",
+          "spotify": "https://open.spotify.com/show/3BNKHA5TI3HDMNI3mgjXFI",
+          "apple": "https://podcasts.apple.com/us/podcast/burgundy-gold-report/id1439328672"
+        },
+        {
+          "number": 4,
+          "name": "Hogs Haven Podcast",
+          "hosts": "Ken Zaretzky &amp; Mark Phillips &middot; SB Nation",
+          "description": "The Hogs Haven crew brings the fan perspective with draft breakdowns and free agency coverage.",
+          "spotify": "https://open.spotify.com/show/4R8U99Peh5M0Y8xVMhEqNH",
+          "apple": "https://podcasts.apple.com/us/podcast/hogs-haven-podcast/id1461738710"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Commanders Draft Preview: Pick 7 Options",
+          "subtitle": "YouTube &middot; ESPN",
+          "url": "https://www.youtube.com/@ESPN/search?query=Washington+Commanders+draft+2026+pick+7"
+        },
+        {
+          "title": "Caleb Downs Scouting Report",
+          "subtitle": "YouTube &middot; NFL",
+          "url": "https://www.youtube.com/@NFL/search?query=Caleb+Downs+2026+NFL+Draft+scouting+report"
+        },
+        {
+          "title": "Commanders New Uniforms Unveiled",
+          "subtitle": "YouTube &middot; Commanders",
+          "url": "https://www.youtube.com/@Commanders/search?query=2026+uniform+reveal"
+        },
+        {
+          "title": "Mock Draft Monday: 7-Round Breakdown",
+          "subtitle": "YouTube &middot; Commanders",
+          "url": "https://www.youtube.com/@Commanders/search?query=mock+draft+2026+seven+round"
+        }
+      ],
+      "standings": {
+        "tabs": [
+          {
+            "label": "NFC East",
+            "columns": [
+              "Team",
+              "W",
+              "L",
+              "PCT"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Philadelphia",
+                  12,
+                  5,
+                  ".706"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+                "classes": "playoff-in"
+              },
+              {
+                "cells": [
+                  "Dallas",
+                  8,
+                  9,
+                  ".471"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+                "classes": "playoff-out"
+              },
+              {
+                "cells": [
+                  "Washington",
+                  5,
+                  12,
+                  ".294"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+                "classes": "you playoff-out"
+              },
+              {
+                "cells": [
+                  "N.Y. Giants",
+                  4,
+                  13,
+                  ".235"
+                ],
+                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+                "classes": "playoff-out"
+              }
+            ]
+          }
+        ]
+      }
+    }
   }
 }
