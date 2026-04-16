@@ -12,9 +12,12 @@ import re
 import sys
 import time
 import html
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
+from urllib.parse import quote_plus
 
 # === CONFIGURATION ===
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data.json")
@@ -819,14 +822,14 @@ def fetch_league_articles(team_key, limit=5):
 
     try:
         if league == "NHL":
-            # NHL.com content API
-            url = "https://forge-dapi.d3.nhle.com/v2/content/en-us/stories?context.slug=toronto-maple-leafs&$limit=5"
+            # NHL.com API (api-web.nhle.com ‚Äî current working endpoint)
+            url = "https://api-web.nhle.com/v1/content/en-us/stories?tags.slug=torontomapleleafs&context=slug&$limit=5"
             data = espn_fetch(url)
-            if data and "items" in data:
-                for item in data.get("items", []):
+            if data and isinstance(data, list):
+                for item in data[:limit]:
                     slug = item.get("slug", "")
-                    headline = item.get("headline", item.get("title", ""))
-                    summary = item.get("summary", "")
+                    headline = item.get("title", item.get("headline", ""))
+                    summary = item.get("summary", item.get("fields", {}).get("description", ""))
                     if slug and headline:
                         link = f"https://www.nhl.com/news/{slug}"
                         articles.append({
@@ -839,40 +842,81 @@ def fetch_league_articles(team_key, limit=5):
                             "days_old": 0,
                             "type": "news",
                         })
+            # Fallback: try alternate endpoint structure
+            if not articles:
+                url2 = "https://forge-dapi.d3.nhle.com/v2/content/en-us/stories?context.slug=toronto-maple-leafs&$limit=5"
+                data2 = espn_fetch(url2)
+                if data2:
+                    items = data2.get("items", data2.get("stories", []))
+                    for item in items[:limit]:
+                        slug = item.get("slug", "")
+                        headline = item.get("headline", item.get("title", ""))
+                        summary = item.get("summary", "")
+                        if slug and headline:
+                            link = f"https://www.nhl.com/news/{slug}"
+                            articles.append({
+                                "source": "NHL.com",
+                                "source_class": "web",
+                                "headline": headline,
+                                "dek": summary[:200] if summary else "",
+                                "date": "",
+                                "link": link,
+                                "days_old": 0,
+                                "type": "news",
+                            })
 
         elif league == "MLB":
-            # MLB Stats API news endpoint
-            url = "https://statsapi.mlb.com/api/v1/news?teamId=141&limit=5"
-            data = espn_fetch(url)
-            if data and "articles" in data:
-                for item in data.get("articles", []):
-                    headline = item.get("headline", "")
-                    summary = item.get("subhead", item.get("blurb", ""))
-                    # MLB.com article URL
-                    slug = item.get("slug", "")
-                    link = item.get("url", "")
-                    if not link and slug:
-                        link = f"https://www.mlb.com/news/{slug}"
-                    if link and headline:
+            # MLB content API (newer endpoint)
+            url = "https://www.mlb.com/feeds/news/rss/141"
+            try:
+                req = Request(url, headers={"User-Agent": "TheMorningSkate/1.0"})
+                with urlopen(req, timeout=15) as resp:
+                    xml_data = resp.read().decode("utf-8")
+                root = ET.fromstring(xml_data)
+                for item in root.findall(".//item")[:limit]:
+                    headline = item.findtext("title", "")
+                    link = item.findtext("link", "")
+                    desc = item.findtext("description", "")
+                    if headline and link:
                         articles.append({
                             "source": "MLB.com",
                             "source_class": "web",
                             "headline": headline,
-                            "dek": summary[:200] if summary else "",
+                            "dek": desc[:200] if desc else "",
                             "date": "",
                             "link": link,
                             "days_old": 0,
                             "type": "news",
                         })
+            except Exception:
+                # Fallback: Stats API
+                url2 = "https://statsapi.mlb.com/api/v1/news?teamId=141&limit=5"
+                data = espn_fetch(url2)
+                if data and "articles" in data:
+                    for item in data.get("articles", [])[:limit]:
+                        headline = item.get("headline", "")
+                        summary = item.get("subhead", item.get("blurb", ""))
+                        slug = item.get("slug", "")
+                        link = item.get("url", "")
+                        if not link and slug:
+                            link = f"https://www.mlb.com/news/{slug}"
+                        if link and headline:
+                            articles.append({
+                                "source": "MLB.com",
+                                "source_class": "web",
+                                "headline": headline,
+                                "dek": summary[:200] if summary else "",
+                                "date": "",
+                                "link": link,
+                                "days_old": 0,
+                                "type": "news",
+                            })
 
         elif league == "NBA":
-            # NBA.com doesn't have a clean public API, but we can try
-            # the content API endpoint
-            pass  # NBA articles come from ESPN primarily
+            pass  # NBA articles come from Google News + ESPN
 
         elif league == "NFL":
-            # NFL doesn't have a clean public API either
-            pass  # NFL/Commanders articles come from ESPN primarily
+            pass  # NFL articles come from Google News + ESPN
 
     except Exception as e:
         print(f"  WARNING: League API fetch failed for {team_key}: {e}")
@@ -880,13 +924,145 @@ def fetch_league_articles(team_key, limit=5):
     return articles
 
 
+# === SOURCE CLASSIFICATION ===
+# Maps known domains to human-readable source names and CSS classes
+SOURCE_MAP = {
+    "tsn.ca": ("TSN", "tsn"),
+    "sportsnet.ca": ("Sportsnet", "sportsnet"),
+    "theathletic.com": ("The Athletic", "athletic"),
+    "nhl.com": ("NHL.com", "web"),
+    "nba.com": ("NBA.com", "web"),
+    "mlb.com": ("MLB.com", "web"),
+    "nfl.com": ("NFL.com", "web"),
+    "thescore.com": ("theScore", "web"),
+    "thestar.com": ("Toronto Star", "web"),
+    "torontosun.com": ("Toronto Sun", "web"),
+    "theglobeandmail.com": ("Globe and Mail", "web"),
+    "washingtonpost.com": ("Washington Post", "web"),
+    "nbcsports.com": ("NBC Sports", "web"),
+    "si.com": ("SI", "web"),
+    "cbc.ca": ("CBC Sports", "web"),
+    "hogshaven.com": ("Hogs Haven", "web"),
+    "commanders.com": ("Commanders.com", "web"),
+    "thehockeynews.com": ("The Hockey News", "web"),
+    "raptorsrepublic.com": ("Raptors Republic", "web"),
+    "bluejaysnation.com": ("Blue Jays Nation", "web"),
+    "mapleleafshotstove.com": ("Leafs Hot Stove", "web"),
+    "yahoo.com": ("Yahoo Sports", "web"),
+    "foxsports.com": ("Fox Sports", "web"),
+    "reuters.com": ("Reuters", "web"),
+    "apnews.com": ("AP News", "web"),
+}
+
+def classify_source(source_name, url):
+    """Determine the display source name and CSS class from a URL or source name."""
+    url_lower = url.lower() if url else ""
+    for domain, (name, css_class) in SOURCE_MAP.items():
+        if domain in url_lower:
+            return name, css_class
+    # If source_name from RSS is available, use it
+    if source_name:
+        return source_name, "web"
+    return "News", "web"
+
+
+def fetch_google_news_articles(team_key, limit=10):
+    """Fetch articles from Google News RSS for multi-source diversity.
+    Returns articles from TSN, Sportsnet, The Athletic, Toronto Star,
+    Washington Post, league sites, theScore, and more.
+    Google News RSS aggregates all these sources without needing individual APIs."""
+    cfg = TEAMS[team_key]
+    team_name = cfg["full_name"]  # "Toronto Maple Leafs"
+
+    # Build search query ‚Äî use exact match for team name
+    query = quote_plus(f'"{team_name}"')
+
+    # Use Canadian locale for Toronto teams, US for Commanders
+    if team_key == "commanders":
+        rss_url = f"https://news.google.com/rss/search?q={query}+when:3d&hl=en-US&gl=US&ceid=US:en"
+    else:
+        rss_url = f"https://news.google.com/rss/search?q={query}+when:3d&hl=en-CA&gl=CA&ceid=CA:en"
+
+    try:
+        req = Request(rss_url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; TheMorningSkate/1.0)",
+            "Accept": "application/rss+xml, application/xml, text/xml",
+        })
+        with urlopen(req, timeout=15) as resp:
+            xml_data = resp.read().decode("utf-8")
+    except Exception as e:
+        print(f"    WARNING: Google News RSS failed: {e}")
+        return []
+
+    articles = []
+    try:
+        root = ET.fromstring(xml_data)
+        for item in root.findall(".//item"):
+            title_raw = item.findtext("title", "")
+            link = item.findtext("link", "")
+            pub_date = item.findtext("pubDate", "")
+            source_el = item.find("source")
+            source_name = source_el.text if source_el is not None else ""
+
+            if not title_raw or not link:
+                continue
+
+            # Skip ESPN articles (we already have those from the API)
+            if "espn.com" in link.lower():
+                continue
+
+            # Google News title format: "Headline - Source Name"
+            # Strip the " - Source" suffix
+            if " - " in title_raw:
+                headline = title_raw.rsplit(" - ", 1)[0].strip()
+            else:
+                headline = title_raw
+
+            # Classify the source
+            display_source, source_class = classify_source(source_name, link)
+
+            # Parse publication date
+            date_display = ""
+            days_old = 999
+            if pub_date:
+                try:
+                    dt = parsedate_to_datetime(pub_date)
+                    date_display = dt.strftime("%B %d, %Y").replace(" 0", " ")
+                    days_old = max(0, (NOW - dt.astimezone(EST)).days)
+                except Exception:
+                    pass
+
+            # Only include articles from last 3 days
+            if days_old > 3:
+                continue
+
+            articles.append({
+                "source": display_source,
+                "source_class": source_class,
+                "headline": headline,
+                "dek": "",  # Google News RSS doesn't include full descriptions
+                "date": date_display or TODAY_DISPLAY,
+                "link": link,
+                "days_old": days_old,
+                "type": "news",
+            })
+
+            if len(articles) >= limit:
+                break
+
+    except ET.ParseError as e:
+        print(f"    WARNING: Google News RSS parse error: {e}")
+
+    return articles
+
+
 def discover_articles_for_team(team_key, recent, phase_info):
-    """Master article discovery function: combines ESPN API + league API + game recaps.
-    Returns a deduplicated, validated list of articles sorted by relevance."""
+    """Master article discovery: ESPN API + game recaps + league APIs + Google News RSS.
+    Returns a deduplicated, validated list with maximum source diversity."""
     cfg = TEAMS[team_key]
     all_articles = []
 
-    # Layer 1: ESPN News API (most reliable)
+    # Layer 1: ESPN News API (most reliable ‚Äî guaranteed working URLs)
     print(f"    Fetching ESPN articles...")
     espn_articles = fetch_espn_articles(team_key)
     print(f"    Found {len(espn_articles)} ESPN articles")
@@ -899,97 +1075,135 @@ def discover_articles_for_team(team_key, recent, phase_info):
         print(f"    Found {len(recaps)} game recaps")
         all_articles.extend(recaps)
 
-    # Layer 3: League-specific APIs (for source diversity)
+    # Layer 3: League-specific APIs (NHL.com, MLB.com, etc.)
     print(f"    Fetching league articles...")
     league_articles = fetch_league_articles(team_key)
     print(f"    Found {len(league_articles)} league articles")
     all_articles.extend(league_articles)
 
-    # Deduplicate by URL
+    # Layer 4: Google News RSS (multi-source: TSN, Sportsnet, The Athletic,
+    # Toronto Star, Globe & Mail, Washington Post, theScore, NBC Sports, etc.)
+    print(f"    Fetching Google News articles...")
+    gnews_articles = fetch_google_news_articles(team_key)
+    print(f"    Found {len(gnews_articles)} Google News articles")
+    all_articles.extend(gnews_articles)
+
+    # Deduplicate by URL (normalize ‚Äî strip trailing slashes, query params for comparison)
     seen_urls = set()
     unique_articles = []
     for article in all_articles:
         url = article.get("link", "")
-        if url and url not in seen_urls:
-            seen_urls.add(url)
+        # Normalize for dedup: lowercase, strip trailing slash
+        url_norm = url.lower().rstrip("/") if url else ""
+        if url_norm and url_norm not in seen_urls:
+            seen_urls.add(url_norm)
             unique_articles.append(article)
 
-    # Sort: game recaps first, then by recency
+    # Sort: game recaps first, then non-ESPN sources, then by recency
     def sort_key(a):
         type_priority = 0 if a.get("type") == "recap" else 1
+        # Boost non-ESPN sources to get diversity
+        source_priority = 0 if a.get("source", "ESPN") != "ESPN" else 1
         days = a.get("days_old", 999)
-        return (type_priority, days)
+        return (type_priority, source_priority, days)
 
     unique_articles.sort(key=sort_key)
 
-    # Validate URLs (only for non-ESPN articles ‚Äî ESPN URLs are guaranteed)
+    # Validate URLs (ESPN URLs are guaranteed; others need checking)
     validated = []
+    validation_count = 0
+    max_validations = 15  # Cap to keep runtime reasonable
     for article in unique_articles:
         url = article.get("link", "")
         if "espn.com" in url:
             # ESPN URLs from the API are guaranteed valid
             validated.append(article)
-        elif validate_url(url):
-            validated.append(article)
-            print(f"    URL OK: {url[:80]}")
+        elif validation_count < max_validations:
+            validation_count += 1
+            if validate_url(url):
+                validated.append(article)
+                print(f"    [OK] {article.get('source', '?')}: {url[:70]}")
+            else:
+                print(f"    [DEAD] {article.get('source', '?')}: {url[:70]}")
         else:
-            print(f"    URL DEAD ‚Äî dropping: {url[:80]}")
+            # Over validation budget ‚Äî skip non-ESPN articles to stay fast
+            pass
 
-    # Ensure diversity: try to include at least 1 non-ESPN source if available
-    # But don't force it ‚Äî real ESPN articles beat dead non-ESPN links
+    # Log source diversity
+    sources = set(a.get("source", "?") for a in validated)
+    print(f"    Total verified articles: {len(validated)} from {len(sources)} sources: {', '.join(sorted(sources))}")
+
     return validated
 
 
 def select_the_latest(all_articles, count=4):
     """Select the best 3-4 articles for 'The Latest' section.
-    Prioritizes diversity of content type and source."""
+    STRONGLY prioritizes source diversity ‚Äî the whole point of the app
+    is that your dad gets articles from TSN, Sportsnet, The Athletic,
+    Toronto Star, NHL.com, etc. ‚Äî not just ESPN 4 times."""
     if not all_articles:
         return []
 
-    selected = []
-    used_types = set()
-    used_sources = set()
-
-    # First pass: pick diverse articles
-    for article in all_articles:
-        if len(selected) >= count:
-            break
-        source = article.get("source", "")
-        atype = article.get("type", "")
-
-        # Prefer variety: don't stack 3 recaps or 3 from same source
-        if source in used_sources and len(selected) >= 1:
-            continue  # Try to use a different source first
-        if atype in used_types and atype == "recap" and len(selected) >= 1:
-            continue  # Don't stack multiple recaps
-
-        selected.append({
-            "source": source,
+    def make_entry(article):
+        return {
+            "source": article.get("source", "ESPN"),
             "source_class": article.get("source_class", "web"),
             "headline": article.get("headline", ""),
             "dek": article.get("dek", ""),
             "date": article.get("date", TODAY_DISPLAY),
             "link": article.get("link", "#"),
-        })
-        used_types.add(atype)
-        used_sources.add(source)
+        }
 
-    # Second pass: fill remaining slots from any available articles
-    if len(selected) < count:
-        used_urls = {a.get("link") for a in selected}
-        for article in all_articles:
-            if len(selected) >= count:
-                break
-            if article.get("link") not in used_urls:
-                selected.append({
-                    "source": article.get("source", "ESPN"),
-                    "source_class": article.get("source_class", "web"),
-                    "headline": article.get("headline", ""),
-                    "dek": article.get("dek", ""),
-                    "date": article.get("date", TODAY_DISPLAY),
-                    "link": article.get("link", "#"),
-                })
-                used_urls.add(article.get("link"))
+    selected = []
+    used_sources = set()
+    used_urls = set()
+
+    # Separate into ESPN and non-ESPN buckets
+    espn_articles = [a for a in all_articles if a.get("source") == "ESPN"]
+    non_espn_articles = [a for a in all_articles if a.get("source") != "ESPN"]
+
+    # Pass 1: Pick the BEST game recap (if any) ‚Äî ESPN recaps are great for this
+    for article in all_articles:
+        if len(selected) >= 1:
+            break
+        if article.get("type") == "recap":
+            selected.append(make_entry(article))
+            used_sources.add(article.get("source"))
+            used_urls.add(article.get("link"))
+
+    # Pass 2: Fill with NON-ESPN articles (diverse sources)
+    for article in non_espn_articles:
+        if len(selected) >= count:
+            break
+        source = article.get("source", "")
+        url = article.get("link", "")
+        if url in used_urls:
+            continue
+        if source in used_sources and len(non_espn_articles) > count:
+            continue  # Skip duplicate sources if we have enough variety
+        selected.append(make_entry(article))
+        used_sources.add(source)
+        used_urls.add(url)
+
+    # Pass 3: Fill remaining slots with ESPN articles
+    for article in espn_articles:
+        if len(selected) >= count:
+            break
+        url = article.get("link", "")
+        if url in used_urls:
+            continue
+        selected.append(make_entry(article))
+        used_sources.add(article.get("source"))
+        used_urls.add(url)
+
+    # Pass 4: If STILL not enough (unlikely), take anything
+    for article in all_articles:
+        if len(selected) >= count:
+            break
+        url = article.get("link", "")
+        if url not in used_urls:
+            selected.append(make_entry(article))
+            used_urls.add(url)
 
     return selected
 
@@ -1035,7 +1249,13 @@ def build_homepage_stories_from_articles(all_team_facts, all_team_articles):
         if "offseason" in phase_id or "draft" in phase_id or "ended" in phase_id:
             score += 5
 
-        best_article = articles[0]  # Already sorted by relevance
+        # Pick best article: prefer a non-ESPN source for homepage diversity,
+        # but fall back to ESPN (which has guaranteed-working URLs)
+        best_article = articles[0]
+        for a in articles[:6]:
+            if a.get("source", "ESPN") != "ESPN" and a.get("type") != "recap":
+                best_article = a
+                break
 
         team_candidates.append({
             "team_key": team_key,
@@ -2323,15 +2543,50 @@ def build_data():
                     "off": True,
                 })
 
-    # Week Ahead ‚Äî combine all upcoming games for next 7 days
+    # Week Ahead ‚Äî combine all upcoming games for next 7 days + playoff context
+    print(f"\n--- Building Week Ahead ---")
     all_upcoming.sort(key=lambda x: x.get("game_date", ""))
+    week_games = [
+        {k: v for k, v in g.items() if k != "game_date"}
+        for g in all_upcoming
+    ]
+    print(f"  Found {len(week_games)} scheduled games in next 7 days")
+
+    # Add placeholder entries for playoff teams without specific game times
+    teams_with_games = {g["team"] for g in all_upcoming}
+    week_note_parts = []
+    for team_key in ["leafs", "jays", "raptors", "commanders"]:
+        cfg = TEAMS[team_key]
+        phase_info = all_team_facts.get(team_key, {}).get("phase_info", {})
+        phase_id = phase_info.get("phase", "")
+
+        if team_key not in teams_with_games:
+            if "playoffs" in phase_id:
+                # Add a TBD playoff entry so the week ahead isn't empty
+                week_games.append({
+                    "day": "TBD",
+                    "team": team_key,
+                    "logo": cfg["logo"],
+                    "name": cfg["full_name"].split()[-1],
+                    "opp": "Playoffs",
+                    "time": "TBD",
+                    "tv": "",
+                })
+                short_name = cfg["full_name"].split()[-1]
+                week_note_parts.append(f"{short_name} playoff schedule TBD")
+                print(f"  Added playoff TBD for {short_name}")
+            elif "draft" in phase_id or "pre_draft" in phase_id:
+                week_note_parts.append(f"{cfg['full_name'].split()[-1]}: {phase_info.get('label', 'Offseason')}")
+            elif "offseason" in phase_id or "ended" in phase_id:
+                pass  # Don't clutter week ahead with offseason teams
+
+    week_note = "; ".join(week_note_parts) if week_note_parts else ""
+
     db["week_ahead"] = {
-        "games": [
-            {k: v for k, v in g.items() if k != "game_date"}
-            for g in all_upcoming
-        ],
-        "note": "",
+        "games": week_games,
+        "note": week_note,
     }
+    print(f"  Week Ahead: {len(week_games)} entries" + (f" (note: {week_note})" if week_note else ""))
 
     return db
 
