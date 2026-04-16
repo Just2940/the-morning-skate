@@ -992,6 +992,9 @@ def build_full_standings(team_key):
     elif league == "MLB":
         # AL/NL Wild Card
         tab2_name = f"{our_conference} Wild Card" if our_conference else "Wild Card"
+        # NOTE: Do NOT use `our_conference.lower() in gn.lower()` for MLB ‚Äî
+        # "al" is a substring of "Nation*al*", causing NL teams to leak into AL.
+        # Use explicit full-word matching only.
         conf_groups = {gn: es for gn, es in all_groups.items()
                        if (our_conference == "AL" and "American" in gn)
                        or (our_conference == "NL" and "National" in gn)}
@@ -1120,6 +1123,8 @@ def build_full_standings(team_key):
                     "detail": f"Sat Apr 18"  # Placeholder ‚Äî ideally from schedule
                 })
 
+        # Playoff bracket: use bracket format (matchup + series fields)
+        # so index.html renders via the bracket path (no logo column needed)
         bracket_display_rows = []
         for i in range(0, min(8, len(conf_entries_sorted)), 2):
             if i + 1 < len(conf_entries_sorted):
@@ -1498,8 +1503,111 @@ def fetch_google_news_articles(team_key, limit=10):
     return articles
 
 
+# === SOURCE DIVERSITY ENFORCEMENT ===
+# Hard cap: no single source can fill more than this many slots per team section
+MAX_SAME_SOURCE_PER_TEAM = 2
+# Hard cap: no single source can appear more than this many times across ALL homepage stories
+MAX_SAME_SOURCE_HOMEPAGE = 1
+
+# Dedicated RSS feeds for Tier 1 Canadian sources (not just Google News)
+TIER1_RSS_FEEDS = {
+    "leafs": [
+        ("https://www.tsn.ca/rss/nhl/maple-leafs", "TSN", "tsn"),
+        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),  # main feed, filtered below
+    ],
+    "jays": [
+        ("https://www.tsn.ca/rss/mlb", "TSN", "tsn"),
+        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),
+        ("https://www.cbc.ca/cmlink/rss-sports-mlb", "CBC Sports", "web"),
+    ],
+    "raptors": [
+        ("https://www.tsn.ca/rss/nba", "TSN", "tsn"),
+        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),
+    ],
+    "commanders": [
+        # US sources ‚Äî no Canadian feeds needed
+    ],
+}
+
+
+def fetch_tier1_rss_articles(team_key, limit=5):
+    """Fetch articles from dedicated Tier 1 RSS feeds for guaranteed source diversity.
+    This supplements Google News ‚Äî even if Google News returns only Sportsnet articles,
+    we'll still have TSN, CBC, etc. from their own feeds."""
+    cfg = TEAMS[team_key]
+    team_name_lower = cfg["full_name"].lower()
+    # Keywords to filter feed items by relevance to this team
+    team_keywords = [w.lower() for w in cfg["full_name"].split() if len(w) > 3]
+    articles = []
+
+    for feed_url, source_name, source_class in TIER1_RSS_FEEDS.get(team_key, []):
+        try:
+            req = Request(feed_url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; TheMorningSkate/1.0)",
+                "Accept": "application/rss+xml, application/xml, text/xml",
+            })
+            with urlopen(req, timeout=10) as resp:
+                xml_data = resp.read().decode("utf-8", errors="replace")
+
+            root = ET.fromstring(xml_data)
+            for item in root.findall(".//item"):
+                title = item.findtext("title", "")
+                link = item.findtext("link", "")
+                pub_date = item.findtext("pubDate", "")
+                description = item.findtext("description", "")
+
+                if not title or not link:
+                    continue
+
+                # Filter: must mention the team (for general feeds like Sportsnet)
+                combined = (title + " " + description).lower()
+                if not any(kw in combined for kw in team_keywords):
+                    continue
+
+                # Skip ESPN articles (we already have those)
+                if "espn.com" in link.lower():
+                    continue
+
+                # Parse date
+                days_old = 999
+                date_display = ""
+                if pub_date:
+                    try:
+                        dt = parsedate_to_datetime(pub_date)
+                        date_display = dt.strftime("%B %d, %Y").replace(" 0", " ")
+                        days_old = max(0, (NOW - dt.astimezone(EST)).days)
+                    except Exception:
+                        pass
+
+                # Only last 3 days
+                if days_old > 3:
+                    continue
+
+                # Clean HTML from description
+                clean_desc = re.sub(r'<[^>]+>', '', description)[:200].strip()
+
+                articles.append({
+                    "source": source_name,
+                    "source_class": source_class,
+                    "headline": title.strip(),
+                    "dek": clean_desc,
+                    "date": date_display or TODAY_DISPLAY,
+                    "link": link,
+                    "days_old": days_old,
+                    "type": "news",
+                })
+
+                if len(articles) >= limit:
+                    break
+
+        except Exception as e:
+            print(f"    WARNING: {source_name} RSS failed: {e}")
+
+    return articles
+
+
 def discover_articles_for_team(team_key, recent, phase_info):
-    """Master article discovery: ESPN API + game recaps + league APIs + Google News RSS.
+    """Master article discovery: ESPN API + game recaps + league APIs + Tier 1 RSS + Google News RSS.
     Returns a deduplicated, validated list with maximum source diversity."""
     cfg = TEAMS[team_key]
     all_articles = []
@@ -1523,7 +1631,13 @@ def discover_articles_for_team(team_key, recent, phase_info):
     print(f"    Found {len(league_articles)} league articles")
     all_articles.extend(league_articles)
 
-    # Layer 4: Google News RSS (multi-source: TSN, Sportsnet, The Athletic,
+    # Layer 4: Dedicated Tier 1 RSS feeds (TSN, Sportsnet, CBC ‚Äî guaranteed sources)
+    print(f"    Fetching Tier 1 RSS articles...")
+    tier1_articles = fetch_tier1_rss_articles(team_key)
+    print(f"    Found {len(tier1_articles)} Tier 1 RSS articles")
+    all_articles.extend(tier1_articles)
+
+    # Layer 5: Google News RSS (multi-source: The Athletic,
     # Toronto Star, Globe & Mail, Washington Post, theScore, NBC Sports, etc.)
     print(f"    Fetching Google News articles...")
     gnews_articles = fetch_google_news_articles(team_key)
@@ -1580,8 +1694,9 @@ def discover_articles_for_team(team_key, recent, phase_info):
 
 def select_the_latest(all_articles, count=4):
     """Select the best 3-4 articles for 'The Latest' section.
-    STRONGLY prioritizes source diversity ‚Äî the whole point of the app
-    is that your dad gets articles from TSN, Sportsnet, The Athletic,
+    ENFORCES source diversity ‚Äî no single source can appear more than
+    MAX_SAME_SOURCE_PER_TEAM times. The whole point of the app is that
+    your dad gets articles from TSN, Sportsnet, The Athletic,
     Toronto Star, NHL.com, etc. ‚Äî not just ESPN 4 times."""
     if not all_articles:
         return []
@@ -1597,8 +1712,19 @@ def select_the_latest(all_articles, count=4):
         }
 
     selected = []
-    used_sources = set()
+    source_counts = {}  # Track how many times each source is used
     used_urls = set()
+
+    def can_use_source(source):
+        """Check if we haven't exceeded the per-source cap."""
+        return source_counts.get(source, 0) < MAX_SAME_SOURCE_PER_TEAM
+
+    def add_article(article):
+        entry = make_entry(article)
+        selected.append(entry)
+        source = article.get("source", "Unknown")
+        source_counts[source] = source_counts.get(source, 0) + 1
+        used_urls.add(article.get("link"))
 
     # Separate into ESPN and non-ESPN buckets
     espn_articles = [a for a in all_articles if a.get("source") == "ESPN"]
@@ -1609,11 +1735,9 @@ def select_the_latest(all_articles, count=4):
         if len(selected) >= 1:
             break
         if article.get("type") == "recap":
-            selected.append(make_entry(article))
-            used_sources.add(article.get("source"))
-            used_urls.add(article.get("link"))
+            add_article(article)
 
-    # Pass 2: Fill with NON-ESPN articles (diverse sources)
+    # Pass 2: Fill with NON-ESPN articles, one per source (maximize diversity)
     for article in non_espn_articles:
         if len(selected) >= count:
             break
@@ -1621,31 +1745,40 @@ def select_the_latest(all_articles, count=4):
         url = article.get("link", "")
         if url in used_urls:
             continue
-        if source in used_sources and len(non_espn_articles) > count:
-            continue  # Skip duplicate sources if we have enough variety
-        selected.append(make_entry(article))
-        used_sources.add(source)
-        used_urls.add(url)
+        if not can_use_source(source):
+            continue
+        # First pass: strictly one per source for max diversity
+        if source_counts.get(source, 0) >= 1 and len(non_espn_articles) > count:
+            continue
+        add_article(article)
 
-    # Pass 3: Fill remaining slots with ESPN articles
+    # Pass 3: Fill remaining with ESPN (respecting cap)
     for article in espn_articles:
         if len(selected) >= count:
             break
         url = article.get("link", "")
         if url in used_urls:
             continue
-        selected.append(make_entry(article))
-        used_sources.add(article.get("source"))
-        used_urls.add(url)
+        if not can_use_source("ESPN"):
+            continue
+        add_article(article)
 
-    # Pass 4: If STILL not enough (unlikely), take anything
+    # Pass 4: If still not enough, relax the one-per-source constraint
+    # but still enforce the hard MAX_SAME_SOURCE_PER_TEAM cap
     for article in all_articles:
         if len(selected) >= count:
             break
         url = article.get("link", "")
-        if url not in used_urls:
-            selected.append(make_entry(article))
-            used_urls.add(url)
+        source = article.get("source", "Unknown")
+        if url in used_urls:
+            continue
+        if not can_use_source(source):
+            continue
+        add_article(article)
+
+    # Log source diversity
+    unique_sources = len(source_counts)
+    print(f"    The Latest: {len(selected)} articles from {unique_sources} sources: {', '.join(sorted(source_counts.keys()))}")
 
     return selected
 
@@ -1692,12 +1825,21 @@ def build_homepage_stories_from_articles(all_team_facts, all_team_articles):
             score += 5
 
         # Pick best article: prefer a non-ESPN source for homepage diversity,
-        # but fall back to ESPN (which has guaranteed-working URLs)
+        # and try to avoid repeating sources already used by earlier candidates.
+        # Fall back to ESPN (which has guaranteed-working URLs)
+        homepage_used_sources = set(c["article"].get("source") for c in team_candidates)
         best_article = articles[0]
-        for a in articles[:6]:
-            if a.get("source", "ESPN") != "ESPN" and a.get("type") != "recap":
+        for a in articles[:8]:
+            src = a.get("source", "ESPN")
+            if src != "ESPN" and src not in homepage_used_sources and a.get("type") != "recap":
                 best_article = a
                 break
+        else:
+            # Fallback: any non-ESPN source even if already used
+            for a in articles[:6]:
+                if a.get("source", "ESPN") != "ESPN" and a.get("type") != "recap":
+                    best_article = a
+                    break
 
         team_candidates.append({
             "team_key": team_key,
