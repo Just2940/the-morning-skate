@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-16T00:29:26.452893-05:00",
+    "updated": "2026-04-16T03:33:34.285447-05:00",
     "date_display": "April 16, 2026"
   },
   "teams": {
@@ -12,7 +12,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Leafs' faithful are trapped in a nightmare loop&mdash;another gut-wrenching playoff loss, the kind that turns Scotiabank Arena into a tomb.<strong>Ottawa Senators snuffed out Toronto's flicker of hope last night, 3-1, in Game 2 of this first-round bloodbath</strong>, leaving the series at 0-2 with the Atlantic's eighth-place squad, 32-36-14 and 78 points, staring down a 35-game deficit to relevance. The power play, that supposed savior, went ice-cold again&mdash;zero goals on four chances&mdash;while the Senators' Tim St&uuml;tzle danced through defenders like they were pylons, burying the dagger in the third. Goaltending? Woll stood tall with 28 saves, but the forwards mustered just 23 shots, a feeble echo of their 112-point regular-season tease. Captain Tavares, nursing that nagging upper-body tweak from Game 1, logged 18 shifts but couldn't spark the fire; Marner flashed moments, yet the streak hits L7 now, four straight playoff heartbreaks. This isn't rebuilding&mdash;it's reckoning. <strong>Game 3 thunders into Ottawa Saturday night; win there, or the golf courses beckon early, and 20 years without a Cup final grows to 21.</strong>",
+        "body": "<strong>The Leafs fell to the Senators 1&ndash;3</strong>, moving to 32-36-14 on the season. They sit 8th in atlantic division. That&rsquo;s 4 straight losses.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -102,6 +102,14 @@
           "link": "https://www.espn.com/nhl/recap?gameId=401803655"
         },
         {
+          "source": "Sportsnet",
+          "source_class": "web",
+          "headline": "&lsquo;Kinda relieved&rsquo;: Maple Leafs&rsquo; most disappointing season ends with a shrug",
+          "dek": "",
+          "date": "April 16, 2026",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbXdXcUk0TjZKSG9ORklJaUNkNmJaelBMTTVuaVk5ck01ckJRZGpjcmEyZXNwQnBFcGt4NkUwMThHMjUyR2tNNWgyQzdnalNsUi1rMzBpRE1oOGJLT1FydXl4NzFvcmgyZnc2Y0xDVHROektVR3djaXBIZk9iYW1mQTFVRlFGc2hkbS1YYVIwa3pOaDVCOHlaN3NPVWgzU1hVdV9SQkpxNkZqR0R6?oc=5"
+        },
+        {
           "source": "Maple Leaf Hot Stove",
           "source_class": "web",
           "headline": "Craig Berube, on the final day of the season, on what it's meant to coach the Maple Leafs: \"I love Toronto, and I love the Leafs\"",
@@ -110,25 +118,17 @@
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOY0poMlRmbUd5MndQTVBYRG54ZDg0cXJ2b3hHMjNOT1pWVDluVWFnbEFCVlNZS2VpOHpZTTVUQjAxVk50MVRyNDQwa1UtQ2Z0X052cnFpQnVqdWFkQlJmMDl5cmVZalVINy1kckxvWjc2YV9oQ1Rpal9nTkw5aXRoY19uc2tSdnBwNVJtaXI0c1lNbm9PTGRVMVFzcDlJcjlnNEk3bC0ya3VTczUxQ2lBQ2Q2eGRpZFdidHNIYlUycE43aURHaTV0RA?oc=5"
         },
         {
-          "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "Maple Leafs lock up fifth-best odds in NHL Draft Lottery",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQR0FfWE9hb2NjT0hDVk9mazdvM0QtUW1CVTFuamRpcHpJUUQ5LWtyaVFDLXphWDY1eUFVaHhSdzNkNXowdnZuUzctUjV0cmkzNDN2SWVKNjFVVzJBWEdhbm9iekdQMG9CTWVoVU1pM3U2REd3MUhlaTlBVGY4OWd3bWN1cUlQYm54TlZLdWNSMXNiOUZKVm9kdlN3?oc=5"
-        },
-        {
           "source": "NHL.com",
           "source_class": "web",
-          "headline": "TOR at OTT | Recap",
+          "headline": "Senators stay hot, hand Maple Leafs 7th straight loss in regular-season finale",
           "dek": "",
           "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5yNm51U2ZVTXl4blN0YVB3NDFKTHhBczNiNXFUQ2o0TEk0QlhsV2xkdEJWbFRTMFNJSlU0cF9jTmN0SVFUdlpVMGd6LW54VGhlWEFsd29uaW0xUHpDLUZKZFhlS29TV3l4QjRBXzI4ZVk5RTNRd3c?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcnhHUk5vaUVVdXZ5LVZrQ1dZMEItelVzQnNyX3huLUNoTGozdzJYYjlXZGNfZ0ZOYjBIdUZUeHphTDk0Y0drb0E3ZWVpQWlUeTNkblZ6ZUtUQm0xaUQ1RDNaOVFYaDEzX0h5OGowOUlrQlYwY3Fsa0RDRnNZZ3RlRHV4VFhfMUxCbGpUZkNR?oc=5"
         }
       ],
       "standings": {
         "tabs": [
-          "Atlantic Division",
+          "Eastern Conference",
           "Eastern Wild Card"
         ],
         "panes": [
@@ -142,100 +142,196 @@
             ],
             "rows": [
               {
-                "team": "Florida",
-                "logo": "fla",
+                "team": "Hurricanes",
+                "logo": "car",
                 "league": "nhl",
+                "you": false,
                 "vals": [
-                  "52",
-                  "20",
-                  "6",
-                  "110"
-                ],
-                "you": false
+                  "53",
+                  "22",
+                  "7",
+                  "113"
+                ]
+              },
+              {
+                "team": "Sabres",
+                "logo": "buf",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "50",
+                  "23",
+                  "9",
+                  "109"
+                ]
               },
               {
                 "team": "Tampa Bay",
                 "logo": "tb",
                 "league": "nhl",
+                "you": false,
                 "vals": [
-                  "46",
+                  "50",
                   "26",
-                  "5",
-                  "97"
-                ],
-                "you": false
+                  "6",
+                  "106"
+                ]
               },
               {
-                "team": "Boston",
+                "team": "Canadiens",
+                "logo": "mtl",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "48",
+                  "24",
+                  "10",
+                  "106"
+                ]
+              },
+              {
+                "team": "Bruins",
                 "logo": "bos",
                 "league": "nhl",
+                "you": false,
                 "vals": [
-                  "42",
-                  "28",
-                  "7",
-                  "91"
-                ],
-                "you": false
+                  "45",
+                  "27",
+                  "10",
+                  "100"
+                ]
               },
               {
-                "team": "Detroit",
-                "logo": "det",
-                "league": "nhl",
-                "vals": [
-                  "38",
-                  "32",
-                  "7",
-                  "83"
-                ],
-                "you": false
-              },
-              {
-                "team": "Ottawa",
+                "team": "Senators",
                 "logo": "ott",
                 "league": "nhl",
+                "you": false,
                 "vals": [
-                  "36",
-                  "33",
-                  "8",
-                  "80"
-                ],
-                "you": false
+                  "44",
+                  "27",
+                  "11",
+                  "99"
+                ]
               },
               {
-                "team": "Toronto",
+                "team": "Penguins",
+                "logo": "pit",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "41",
+                  "25",
+                  "16",
+                  "98"
+                ]
+              },
+              {
+                "team": "Flyers",
+                "logo": "phi",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "43",
+                  "27",
+                  "12",
+                  "98"
+                ]
+              },
+              {
+                "team": "Capitals",
+                "logo": "wsh",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "43",
+                  "30",
+                  "9",
+                  "95"
+                ]
+              },
+              {
+                "team": "Wings",
+                "logo": "det",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "41",
+                  "31",
+                  "10",
+                  "92"
+                ]
+              },
+              {
+                "team": "Jackets",
+                "logo": "cbj",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "40",
+                  "30",
+                  "12",
+                  "92"
+                ]
+              },
+              {
+                "team": "NY Islanders",
+                "logo": "nyi",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "43",
+                  "34",
+                  "5",
+                  "91"
+                ]
+              },
+              {
+                "team": "Devils",
+                "logo": "nj",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "42",
+                  "37",
+                  "3",
+                  "87"
+                ]
+              },
+              {
+                "team": "Panthers",
+                "logo": "fla",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "40",
+                  "38",
+                  "4",
+                  "84"
+                ]
+              },
+              {
+                "team": "Leafs",
                 "logo": "tor",
                 "league": "nhl",
+                "you": true,
                 "vals": [
                   "32",
                   "36",
                   "14",
                   "78"
-                ],
-                "you": true
+                ]
               },
               {
-                "team": "Buffalo",
-                "logo": "buf",
+                "team": "NY Rangers",
+                "logo": "nyr",
                 "league": "nhl",
+                "you": false,
                 "vals": [
-                  "28",
-                  "36",
-                  "10",
-                  "66"
-                ],
-                "you": false
-              },
-              {
-                "team": "Montr&eacute;al",
-                "logo": "mtl",
-                "league": "nhl",
-                "vals": [
-                  "25",
-                  "40",
+                  "34",
+                  "39",
                   "9",
-                  "59"
-                ],
-                "you": false
+                  "77"
+                ]
               }
             ]
           },
@@ -251,87 +347,229 @@
             "has_seed_col": true,
             "rows": [
               {
-                "seed": "A1",
-                "team": "Florida",
-                "logo": "fla",
+                "team": "Hurricanes",
+                "logo": "car",
                 "league": "nhl",
+                "you": false,
+                "seed": "E1",
                 "vals": [
-                  "52",
-                  "20",
-                  "6",
-                  "110"
-                ],
-                "you": false
+                  "53",
+                  "22",
+                  "7",
+                  "113"
+                ]
               },
               {
-                "seed": "A2",
+                "team": "Sabres",
+                "logo": "buf",
+                "league": "nhl",
+                "you": false,
+                "seed": "E2",
+                "vals": [
+                  "50",
+                  "23",
+                  "9",
+                  "109"
+                ]
+              },
+              {
                 "team": "Tampa Bay",
                 "logo": "tb",
                 "league": "nhl",
-                "vals": [
-                  "46",
-                  "26",
-                  "5",
-                  "97"
-                ],
-                "you": false
-              },
-              {
-                "seed": "A3",
-                "team": "Boston",
-                "logo": "bos",
-                "league": "nhl",
-                "vals": [
-                  "42",
-                  "28",
-                  "7",
-                  "91"
-                ],
-                "you": false
-              },
-              {
-                "seed": "M1",
-                "team": "Carolina",
-                "logo": "car",
-                "league": "nhl",
+                "you": false,
+                "seed": "E3",
                 "vals": [
                   "50",
-                  "22",
-                  "7",
-                  "107"
-                ],
-                "you": false
+                  "26",
+                  "6",
+                  "106"
+                ]
               },
               {
-                "seed": "M2",
-                "team": "New Jersey",
-                "logo": "nj",
+                "team": "Canadiens",
+                "logo": "mtl",
                 "league": "nhl",
+                "you": false,
+                "seed": "WC1",
                 "vals": [
-                  "46",
-                  "25",
-                  "8",
-                  "100"
-                ],
-                "you": false
+                  "48",
+                  "24",
+                  "10",
+                  "106"
+                ]
               },
               {
-                "seed": "M3",
-                "team": "Washington",
-                "logo": "wsh",
+                "team": "Bruins",
+                "logo": "bos",
                 "league": "nhl",
+                "you": false,
+                "seed": "WC2",
+                "vals": [
+                  "45",
+                  "27",
+                  "10",
+                  "100"
+                ]
+              },
+              {
+                "team": "Senators",
+                "logo": "ott",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
                 "vals": [
                   "44",
                   "27",
-                  "8",
-                  "96"
-                ],
-                "you": false
+                  "11",
+                  "99"
+                ]
+              },
+              {
+                "team": "Penguins",
+                "logo": "pit",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "41",
+                  "25",
+                  "16",
+                  "98"
+                ]
+              },
+              {
+                "team": "Flyers",
+                "logo": "phi",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "43",
+                  "27",
+                  "12",
+                  "98"
+                ]
+              },
+              {
+                "team": "Capitals",
+                "logo": "wsh",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "43",
+                  "30",
+                  "9",
+                  "95"
+                ]
+              },
+              {
+                "team": "Wings",
+                "logo": "det",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "41",
+                  "31",
+                  "10",
+                  "92"
+                ]
+              },
+              {
+                "team": "Jackets",
+                "logo": "cbj",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "40",
+                  "30",
+                  "12",
+                  "92"
+                ]
+              },
+              {
+                "team": "NY Islanders",
+                "logo": "nyi",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "43",
+                  "34",
+                  "5",
+                  "91"
+                ]
+              },
+              {
+                "team": "Devils",
+                "logo": "nj",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "42",
+                  "37",
+                  "3",
+                  "87"
+                ]
+              },
+              {
+                "team": "Panthers",
+                "logo": "fla",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "40",
+                  "38",
+                  "4",
+                  "84"
+                ]
+              },
+              {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "32",
+                  "36",
+                  "14",
+                  "78"
+                ]
+              },
+              {
+                "team": "NY Rangers",
+                "logo": "nyr",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "34",
+                  "39",
+                  "9",
+                  "77"
+                ]
               }
             ]
           }
         ]
-      }
+      },
+      "the_latest_label": "The Latest"
     },
     "jays": {
       "full_name": "Toronto Blue Jays",
@@ -341,7 +579,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays' early-season buzz fizzled into frustration last night in Milwaukee, where a <strong>1-2 gut-punch loss to the Brewers</strong> snapped their mini-resurgence and left them grasping at 7-10, fourth in the AL East, 3 games back with a playoff seed mocking them at 12th. Dylan Cease carved through five scoreless innings on April 15, but two fluky runs in the eighth undid it all&mdash;Abner Uribe slamming the door for Milwaukee's homestand salvation&mdash;after they'd clawed a 7&ndash;10 thriller the night before on Daulton Varsho's third bomb and Vladimir Guerrero Jr.'s never-quit double. No major injuries biting yet, but the lineup's inconsistency stings; Varsho and Andr&eacute;s Gim&eacute;nez flashed pop in the series, yet the bats went quiet when it mattered most. At 7-10, this isn't contender fire&mdash;it's a sober wake-up, trajectory dipping with that one-game skid. <strong>Today's noon rubber match at the Brewers</strong> decides if they steal a split or slink home buried deeper&mdash;win it, and momentum flickers; fold, and the AL East vultures circle closer.",
+        "body": "The Blue Jays' bats went ice-cold in Milwaukee last night, mustering just one run on five hits before the Brewers' <strong>eighth-inning babble-ball weirdness flipped a 1-0 Jays lead into a gut-punch 2-1 loss</strong>, evening the series after Toronto's extra-inning thriller the night before. Sitting at 7-10, fourth in the AL East and three games back, they're nursing a one-game skid that underscores a middling start&mdash;potent pitching from Dylan Cease's five scoreless innings can't mask the offense's anemia. Vladimir Guerrero Jr. remains the spark, his doubles fueling comebacks, but the lineup's sputtered since splitting with the Twins, and no fresh injuries cloud the clubhouse&mdash;yet. Jesus Sanchez's sac fly plated the lone run via Dalton Varsho, a flicker in an otherwise dim attack. This isn't panic territory, but the trajectory screams urgency in a loaded division. <strong>Patrick Corbin takes the hill this afternoon at 12:40 for the rubber game&mdash;win it, salvage momentum; drop it, and the Brewers road trip turns toxic</strong>.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -431,20 +669,20 @@
           "link": "https://www.espn.com/mlb/recap?gameId=401814957"
         },
         {
+          "source": "Sportsnet",
+          "source_class": "web",
+          "headline": "Cease&rsquo;s gem goes to waste as quiet bats, nightmare eighth sink Blue Jays",
+          "dek": "",
+          "date": "April 16, 2026",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbE91M2d6SkJ5bk0yM3ptMVR6cHIyODZxTUhVSmdOTmZ1V0pTR0lrRzlVSGo3LUFBLUNQRHc4VkNkSEdRc2RwS0hzdzQyM1p1UDJfZDlTb1NyX3R0clNFSTBTUGdhRHJnVkxCelFZS1Z3LW5mdDBOTU1sdVU1ZkpUZk5jSi1TMzl0SjFCUjJhUjJTT3ItYklhN3FYNW1YNzhqX051alYzUGx1a2Fl?oc=5"
+        },
+        {
           "source": "MLB.com",
           "source_class": "web",
           "headline": "Toronto Blue Jays at Milwaukee Brewers Game Story, Scores/Highlights - 04/15/2026",
           "dek": "",
           "date": "April 16, 2026",
           "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBVb09zLXN5S1ZieGk1ZU1YNzFmWlRma1J4ZVEwTTJjNmM5dUdJV2pGSFdRTHpQMC1PMGQ2MlhQeFp4V3lUTHlBWE5uY01iQ3lQ0gFQQVVfeXFMUFVvT3Mtc3lLVmJ4aTVlTVg3MWZaVGZrUnhlUTBNMmM2Yzl1R0lXakZIV1FMelAwLU8wZDYyWFB4WnhXeVRMeUFYTm5jTWJDeVA?oc=5"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "Resilient Blue Jays outlast Brewers in wild extra-inning win",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONV90TEY2ajRUVmNQbzczVHY0QTE2VkhPVGx6dGM1MU9RR09kOVROQ3I5NVhjZ2RMTTAyTDBtZnFjMHJXdTk3NVlQajVEeVd1X3piWjNBeTJFNEQ1ck5lam9pOGtaZ1NGTFg0VXlHdE10bkQwcDZ2YXdTX01yenNpdUxEMzh2aG5kUHZHWjhjY0Y1UnoyS0RZbU8zeC00R00?oc=5"
         },
         {
           "source": "USA Today",
@@ -457,7 +695,7 @@
       ],
       "standings": {
         "tabs": [
-          "AL East",
+          "American League",
           "AL Wild Card"
         ],
         "panes": [
@@ -471,64 +709,184 @@
             ],
             "rows": [
               {
-                "team": "Baltimore",
-                "logo": "bal",
+                "team": "Tampa Bay",
+                "logo": "tb",
                 "league": "mlb",
+                "you": false,
                 "vals": [
-                  "9",
-                  "4",
-                  ".692",
-                  "&mdash;"
-                ],
-                "you": false
+                  "10",
+                  "7",
+                  ".588",
+                  "-"
+                ]
+              },
+              {
+                "team": "Twins",
+                "logo": "min",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "11",
+                  "8",
+                  ".579",
+                  "-"
+                ]
+              },
+              {
+                "team": "Athletics",
+                "logo": "ath",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "10",
+                  "8",
+                  ".556",
+                  "0.5"
+                ]
               },
               {
                 "team": "NY Yankees",
                 "logo": "nyy",
                 "league": "mlb",
+                "you": false,
+                "vals": [
+                  "10",
+                  "8",
+                  ".556",
+                  "0.5"
+                ]
+              },
+              {
+                "team": "Guardians",
+                "logo": "cle",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "10",
+                  "9",
+                  ".526",
+                  "1"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Tigers",
+                "logo": "det",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Orioles",
+                "logo": "bal",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "LA Angels",
+                "logo": "laa",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "9",
+                  "10",
+                  ".474",
+                  "2"
+                ]
+              },
+              {
+                "team": "Mariners",
+                "logo": "sea",
+                "league": "mlb",
+                "you": false,
                 "vals": [
                   "8",
-                  "5",
-                  ".615",
-                  "1.0"
-                ],
-                "you": false
+                  "11",
+                  ".421",
+                  "3"
+                ]
               },
               {
-                "team": "Tampa Bay",
-                "logo": "tb",
+                "team": "Astros",
+                "logo": "hou",
                 "league": "mlb",
+                "you": false,
                 "vals": [
-                  "7",
-                  "6",
-                  ".538",
-                  "2.0"
-                ],
-                "you": false
+                  "8",
+                  "11",
+                  ".421",
+                  "3"
+                ]
               },
               {
-                "team": "Toronto",
+                "team": "Jays",
                 "logo": "tor",
                 "league": "mlb",
+                "you": true,
                 "vals": [
-                  "6",
-                  "9",
-                  ".400",
-                  "4.0"
-                ],
-                "you": true
+                  "7",
+                  "10",
+                  ".412",
+                  "3"
+                ]
               },
               {
-                "team": "Boston",
+                "team": "Royals",
+                "logo": "kc",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "7",
+                  "11",
+                  ".389",
+                  "3.5"
+                ]
+              },
+              {
+                "team": "Sox",
                 "logo": "bos",
                 "league": "mlb",
+                "you": false,
                 "vals": [
-                  "5",
-                  "8",
-                  ".385",
-                  "4.0"
-                ],
-                "you": false
+                  "7",
+                  "11",
+                  ".389",
+                  "3.5"
+                ]
+              },
+              {
+                "team": "Chi White Sox",
+                "logo": "chw",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "6",
+                  "12",
+                  ".333",
+                  "4.5"
+                ]
               }
             ]
           },
@@ -544,127 +902,343 @@
             "has_seed_col": true,
             "rows": [
               {
-                "seed": "DIV",
-                "team": "Baltimore",
-                "logo": "bal",
-                "league": "mlb",
-                "vals": [
-                  "9",
-                  "4",
-                  ".692",
-                  "&mdash;"
-                ],
-                "you": false,
-                "seed_style": "faint"
-              },
-              {
-                "seed": "DIV",
-                "team": "Cleveland",
-                "logo": "cle",
-                "league": "mlb",
-                "vals": [
-                  "8",
-                  "4",
-                  ".667",
-                  "&mdash;"
-                ],
-                "you": false,
-                "seed_style": "faint"
-              },
-              {
-                "seed": "DIV",
-                "team": "Houston",
-                "logo": "hou",
-                "league": "mlb",
-                "vals": [
-                  "8",
-                  "5",
-                  ".615",
-                  "&mdash;"
-                ],
-                "you": false,
-                "seed_style": "faint"
-              },
-              {
-                "seed": "WC1",
-                "team": "NY Yankees",
-                "logo": "nyy",
-                "league": "mlb",
-                "vals": [
-                  "8",
-                  "5",
-                  ".615",
-                  "&mdash;"
-                ],
-                "you": false,
-                "seed_style": "green",
-                "playoff_in": true
-              },
-              {
-                "seed": "WC2",
-                "team": "Kansas City",
-                "logo": "kc",
-                "league": "mlb",
-                "vals": [
-                  "8",
-                  "5",
-                  ".615",
-                  "&mdash;"
-                ],
-                "you": false,
-                "seed_style": "green",
-                "playoff_in": true
-              },
-              {
-                "seed": "WC3",
                 "team": "Tampa Bay",
                 "logo": "tb",
                 "league": "mlb",
-                "vals": [
-                  "7",
-                  "6",
-                  ".538",
-                  "0.5"
-                ],
                 "you": false,
-                "seed_style": "green",
-                "playoff_in": true,
-                "wc_line": true
-              },
-              {
-                "seed": "&mdash;",
-                "team": "Toronto",
-                "logo": "tor",
-                "league": "mlb",
+                "seed": "DIV",
+                "seed_style": "faint",
                 "vals": [
-                  "6",
-                  "9",
-                  ".400",
-                  "2.5"
-                ],
-                "you": true,
-                "seed_style": "red",
-                "playoff_out": true
+                  "10",
+                  "7",
+                  ".588",
+                  "&mdash;"
+                ]
               },
               {
-                "seed": "&mdash;",
-                "team": "Minnesota",
+                "team": "LA Dodgers",
+                "logo": "lad",
+                "league": "mlb",
+                "you": false,
+                "seed": "DIV",
+                "seed_style": "faint",
+                "vals": [
+                  "14",
+                  "4",
+                  ".778",
+                  "&mdash;"
+                ]
+              },
+              {
+                "team": "Padres",
+                "logo": "sd",
+                "league": "mlb",
+                "you": false,
+                "seed": "WC1",
+                "vals": [
+                  "12",
+                  "6",
+                  ".667",
+                  "2"
+                ]
+              },
+              {
+                "team": "Braves",
+                "logo": "atl",
+                "league": "mlb",
+                "you": false,
+                "seed": "WC2",
+                "vals": [
+                  "12",
+                  "7",
+                  ".632",
+                  "2.5"
+                ]
+              },
+              {
+                "team": "Pirates",
+                "logo": "pit",
+                "league": "mlb",
+                "you": false,
+                "seed": "WC3",
+                "vals": [
+                  "11",
+                  "7",
+                  ".611",
+                  "3"
+                ]
+              },
+              {
+                "team": "Reds",
+                "logo": "cin",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "11",
+                  "7",
+                  ".611",
+                  "3"
+                ]
+              },
+              {
+                "team": "Twins",
                 "logo": "min",
                 "league": "mlb",
-                "vals": [
-                  "5",
-                  "8",
-                  ".385",
-                  "3.0"
-                ],
                 "you": false,
-                "seed_style": "red",
-                "playoff_out": true
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "11",
+                  "8",
+                  ".579",
+                  "-"
+                ]
+              },
+              {
+                "team": "Diamondbacks",
+                "logo": "ari",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "11",
+                  "8",
+                  ".579",
+                  "3.5"
+                ]
+              },
+              {
+                "team": "Athletics",
+                "logo": "ath",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "10",
+                  "8",
+                  ".556",
+                  "0.5"
+                ]
+              },
+              {
+                "team": "NY Yankees",
+                "logo": "nyy",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "10",
+                  "8",
+                  ".556",
+                  "0.5"
+                ]
+              },
+              {
+                "team": "Cardinals",
+                "logo": "stl",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "10",
+                  "8",
+                  ".556",
+                  "4"
+                ]
+              },
+              {
+                "team": "Brewers",
+                "logo": "mil",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "8",
+                  ".529",
+                  "4.5"
+                ]
+              },
+              {
+                "team": "Guardians",
+                "logo": "cle",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "10",
+                  "9",
+                  ".526",
+                  "1"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Tigers",
+                "logo": "det",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Orioles",
+                "logo": "bal",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Cubs",
+                "logo": "chc",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "9",
+                  ".500",
+                  "5"
+                ]
+              },
+              {
+                "team": "LA Angels",
+                "logo": "laa",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "10",
+                  ".474",
+                  "2"
+                ]
+              },
+              {
+                "team": "Marlins",
+                "logo": "mia",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "9",
+                  "10",
+                  ".474",
+                  "5.5"
+                ]
+              },
+              {
+                "team": "Phillies",
+                "logo": "phi",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "8",
+                  "10",
+                  ".444",
+                  "6"
+                ]
+              },
+              {
+                "team": "Nationals",
+                "logo": "wsh",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "8",
+                  "10",
+                  ".444",
+                  "6"
+                ]
+              },
+              {
+                "team": "Mariners",
+                "logo": "sea",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "8",
+                  "11",
+                  ".421",
+                  "3"
+                ]
+              },
+              {
+                "team": "Astros",
+                "logo": "hou",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "8",
+                  "11",
+                  ".421",
+                  "3"
+                ]
+              },
+              {
+                "team": "Jays",
+                "logo": "tor",
+                "league": "mlb",
+                "you": true,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "7",
+                  "10",
+                  ".412",
+                  "3"
+                ]
               }
             ]
           }
         ]
-      }
+      },
+      "the_latest_label": "The Latest"
     },
     "raptors": {
       "full_name": "Toronto Raptors",
@@ -674,7 +1248,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors' playoff firestorm ignited in Cleveland last night, where Scottie Barnes shrugged off the road noise with a defiant \"That shit don't matter\" after practice, channeling the grit that's carried this 46-36 squad &mdash; third in the Atlantic, no. 5 seed &mdash; through a grueling regular season on a one-game win streak. <strong>The series sits deadlocked at 1-1 against the fourth-seeded Cavaliers</strong>, Toronto snatching momentum with a gritty Game 2 steal on enemy ice, their defense clamping down just enough to expose Cleveland's shaky fifth starter while Barnes erupted for 28 points and 10 boards, the All-Star forward proving he's the heartbeat in this do-or-die dance. What went right? Barnes' swagger &mdash; the kid's averaging a playoff double-double already &mdash; and a bench that finally barked back. Wrong? Perimeter lapses that let the Cavs breathe too easy in Game 1. This is the crescendo, the 5.0 games-back regular-season grind boiling over into blood-and-guts basketball. <strong>Game 3 thunders Thursday at 12:30 Eastern back home in Scotiabank Arena</strong> &mdash; win it, and the Raptors seize series control; fold, and Cleveland smells blood. The North wakes up hungry today.",
+        "body": "The air crackles in Toronto this morning &mdash; the Raptors, battle-hardened at <strong>46-36 and the No. 5 seed in the East</strong>, stand on the playoff precipice, their regular-season grind distilled into one electric question: can they topple the Cavaliers? No games yet, just the hum of anticipation after Scottie Barnes shrugged off the underdog tag at practice yesterday &mdash; \"That shit don't matter,\" he growled, eyes locked on Cleveland's doorstep. Their offense, forged for this moment, thrives on possession wars and ugly wins; snag those boards, and the No. 4 seed's pedigree crumbles. Barnes, the wiry heart of it all, carries the load &mdash; his leap from last spring's shadows has this squad third in the Atlantic, 5 games back of the leaders but streaking W1 into the fray. The Cavs loom as minus-460 chalk, yet Toronto's grit &mdash; that 14-game deficit be damned &mdash; screams upset potential. <strong>Game 1 tips at 12:30 Eastern Saturday in Cleveland</strong>; watch Barnes bully the paint, because if the Raptors seize the rebounds, this series ignites into legend.",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -754,76 +1328,124 @@
             "has_seed_col": true,
             "rows": [
               {
-                "seed": "1",
-                "team": "Cleveland",
-                "logo": "cle",
+                "team": "Pistons",
+                "logo": "det",
                 "league": "nba",
+                "you": false,
                 "vals": [
-                  "51",
-                  "31",
-                  ".622"
+                  "60",
+                  "22",
+                  ".732"
                 ],
-                "you": false
+                "seed": "1"
               },
               {
-                "seed": "2",
-                "team": "Boston",
+                "team": "Celtics",
                 "logo": "bos",
                 "league": "nba",
+                "you": false,
                 "vals": [
-                  "50",
-                  "32",
-                  ".610"
+                  "56",
+                  "26",
+                  ".683"
                 ],
-                "you": false
+                "seed": "2"
               },
               {
-                "seed": "3",
                 "team": "New York",
                 "logo": "ny",
                 "league": "nba",
+                "you": false,
                 "vals": [
-                  "49",
-                  "33",
-                  ".598"
+                  "53",
+                  "29",
+                  ".646"
                 ],
-                "you": false
+                "seed": "3"
               },
               {
-                "seed": "4",
-                "team": "Indiana",
-                "logo": "ind",
+                "team": "Cavaliers",
+                "logo": "cle",
                 "league": "nba",
+                "you": false,
                 "vals": [
-                  "48",
-                  "34",
-                  ".585"
+                  "52",
+                  "30",
+                  ".634"
                 ],
-                "you": false
+                "seed": "4"
               },
               {
-                "seed": "5",
-                "team": "Toronto",
-                "logo": "tor",
+                "team": "Hawks",
+                "logo": "atl",
                 "league": "nba",
+                "you": false,
                 "vals": [
                   "46",
                   "36",
                   ".561"
                 ],
-                "you": true
+                "seed": "5"
               },
               {
-                "seed": "6",
-                "team": "Milwaukee",
-                "logo": "mil",
+                "team": "Raptors",
+                "logo": "tor",
                 "league": "nba",
+                "you": true,
+                "vals": [
+                  "46",
+                  "36",
+                  ".561"
+                ],
+                "seed": "6"
+              },
+              {
+                "team": "76ers",
+                "logo": "phi",
+                "league": "nba",
+                "you": false,
                 "vals": [
                   "45",
                   "37",
                   ".549"
                 ],
-                "you": false
+                "seed": "7"
+              },
+              {
+                "team": "Magic",
+                "logo": "orl",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "45",
+                  "37",
+                  ".549"
+                ],
+                "seed": "8"
+              },
+              {
+                "team": "Hornets",
+                "logo": "cha",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "44",
+                  "38",
+                  ".537"
+                ],
+                "seed": "9"
+              },
+              {
+                "team": "Heat",
+                "logo": "mia",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "43",
+                  "39",
+                  ".524"
+                ],
+                "seed": "10"
               }
             ]
           },
@@ -832,29 +1454,52 @@
               "Matchup",
               "Series"
             ],
-            "bracket": true,
             "rows": [
               {
-                "matchup": "(1) Cleveland vs. (8) Chicago",
-                "series": "Sat Apr 18"
+                "seed": "(1) Pistons vs. (2) Celtics",
+                "team": "(1) Pistons vs. (2) Celtics",
+                "logo": "",
+                "league": "nba",
+                "vals": [
+                  "Sat Apr 18"
+                ],
+                "you": false
               },
               {
-                "matchup": "(2) Boston vs. (7) Miami",
-                "series": "Sat Apr 18"
+                "seed": "(3) New York vs. (4) Cavaliers",
+                "team": "(3) New York vs. (4) Cavaliers",
+                "logo": "",
+                "league": "nba",
+                "vals": [
+                  "Sat Apr 18"
+                ],
+                "you": false
               },
               {
-                "matchup": "(3) New York vs. (6) Milwaukee",
-                "series": "Sun Apr 19"
-              },
-              {
-                "matchup": "(4) Indiana vs. (5) Toronto",
-                "series": "Sat Apr 18",
+                "seed": "(5) Hawks vs. (6) Raptors",
+                "team": "(5) Hawks vs. (6) Raptors",
+                "logo": "",
+                "league": "nba",
+                "vals": [
+                  "Sat Apr 18"
+                ],
                 "you": true
+              },
+              {
+                "seed": "(7) 76ers vs. (8) Magic",
+                "team": "(7) 76ers vs. (8) Magic",
+                "logo": "",
+                "league": "nba",
+                "vals": [
+                  "Sat Apr 18"
+                ],
+                "you": false
               }
             ]
           }
         ]
-      }
+      },
+      "the_latest_label": "The Latest"
     },
     "commanders": {
       "full_name": "Washington Commanders",
@@ -864,7 +1509,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft smoke thickens around Washington, where a 5-12 stumble left them third in the NFC East, nine games back, and clutching the No. 7 pick like a lifeline to redemption. <strong>Ohio State safety Caleb Downs toured Ashburn this week</strong>, fueling buzz that he's the Commanders' floor at seven &mdash; his Matt Patricia scheme fit screams instant-impact, with insiders whispering he could slide no lower. GM Adam Peters plays it coy, eyeing positional value but open to linebacker Sonny Styles, RB Jeremiyah Love, or even Downs over premium spots, while odds-makers oddly peg Love as the favorite despite glaring holes at receiver opposite Terry McLaurin &mdash; Carnell Tate and Makai Lemon visited too &mdash; plus secondary and center after a quiet free agency. Trading down tempts, especially with just six picks after shipping seconds and fourths for Laremy Tunsil last spring; Day 2 chatter even floats dealing Daron Payne for ammo. Peters hosted top-30 prospects at Top Golf Tuesday, the final pre-draft frenzy before Pittsburgh. <strong>One week out, watch if Quinn pushes edge like David Bailey in mocks or swaps picks &mdash; this board will define 2026's ascent.</strong>",
+        "body": "The draft clock ticks louder in Ashburn, where a 5-12 stumble left the Commanders third in the NFC East, nine games back, but armed with the No. 7 pick in Pittsburgh next week&mdash;prime real estate to jolt Dan Quinn&rsquo;s roster after free agency whiffed on receiver, center, and secondary upgrades. <strong>Ohio State safety Caleb Downs lit up the Top Golf visit this week</strong>, with insiders whispering he&rsquo;s their floor at seven, maybe higher, as GM Adam Peters preaches impact over positional dogma&mdash;think Jeremiyah Love&rsquo;s burst or Sonny Styles&rsquo; thump. They&rsquo;ve eyed wideouts like Carnell Tate and Makai Lemon to pair with Terry McLaurin, but with just six picks and none in Rounds 2 or 4&mdash;traded for Laremy Tunsil last spring&mdash;trade-down buzz swirls, perhaps flipping No. 7 for volume while oddsmakers oddly peg Love first. Peters stays flexible, hosting buzzworthy prospects right up to Wednesday&rsquo;s deadline. This isn&rsquo;t rebuilding; it&rsquo;s reloading a young core that ended on a win. <strong>Watch if they pounce on Downs Thursday night or deal the pick&mdash;either way, Quinn&rsquo;s defense gets its cornerstone, and 2026 snaps into focus.</strong>",
         "updated": "Updated April 16, 2026"
       },
       "key_numbers": [
@@ -911,26 +1556,25 @@
           "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUk1RNnpNTmVUcTYzMzRSd0trM0RqQ3VoUG14bU5qWk93QkN1OXd2cTdkVkxUbENHTWM4c194LUdKNUhNcG5zd2MySXVrUkpMU1RydlVnb0hqQ1lJa05ZOUlQTTc2LVhoZVNDck81ZWtGRXVRejE2QTVING9fallSQ1BlVGFubVpqaW9uckFtME9oeDZXYklYMU5mNVJBVDF3cWgtYW5TNXNPc3B3VkVrdV9jZURsUXJRRklGOWZLQVFuakdvNm9WN2hvS3VKS21ZUXB6OGVJWGwyTlh5THBIblZ3bnRZZw?oc=5"
         },
         {
+          "source": "WJLA",
+          "source_class": "web",
+          "headline": "TAKE A LOOK! Commanders unveil new uniforms, debut 'Hail Raiser' alternate",
+          "dek": "",
+          "date": "April 16, 2026",
+          "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNQWFsYTVxZEtVOGIyamltc0N6aEpyM3BCOENEVU5ZLVdfeEVlZExsaXNuVncxUFRUZERhd0FlbjdLaEJfNFNWS3E0VTVZMFVsV2NDMkVvS1o0LTVzejdROTRRdTBVS2NvWEotQVQyWWtKdlZFYldIcThzRG84ZWMxOW1YZXk4S2JmVGJtTFJTQzhFWGFBbE4xYmphRW4wQ0VTM2Y5WU1lbW9HOFM3RHlQdjctWEVHbmJaV0dmTEFjNUJmSGgzYS1QQUFDZWYyRGpZT2JfcHRkUmJ3akNUTlV6X3lINmc3ckplSjFZa1BnM2VsQ0ppZ2puZjY5Tm85Um5xZzd5QUZBa0RxZWtGZXRadm52Q1VLNDM1UnpETms2UHVyeUk2c1FaNUljSFhoZw?oc=5"
+        },
+        {
           "source": "The Washington Post",
           "source_class": "web",
           "headline": "A new Washington Commanders uniform has spear on helmet in nod to former name",
           "dek": "",
           "date": "April 15, 2026",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYWp0TFhuVUs0a1ljSEFCemM3SkowQkwtUnFKcmVncERDNl9TSEk2Qlc1eGtkX01NY1lNYzJrYUloak96NHBOSGxwNHBFS2dmOWM3WjZtUjdvc2dhMV9fMS0xODdCUWF6QnAzb2lZZ210Rmp4MXp4dkF1Tk1EOWNSQ1pIaUphTXZhQUVJMkxXV0tKMERfQnF1YkhCTQ?oc=5"
-        },
-        {
-          "source": "The New York Times",
-          "source_class": "web",
-          "headline": "Commanders unveil uniforms that return to the past, including alternate spear logo",
-          "dek": "",
-          "date": "April 15, 2026",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPdWtPQjI1MjYzMlhwbEt0aWFrcDlOS1VoRmtSbzJjOW5Yd3lIQ2k3Z3pjMkYxOU1nMmpGX01RZmdMSDVfX2NWV1gxUjdhbnFHek9ZbW4xTldRRDdndHhRbjRzd3VLVnB0T1QwYWNFMm02Nm1lQmhsb2xPaXBwSWdCbFk1TXJkSnZvQ2sxMVU0VlFNRnFGeUhjYU90cw?oc=5"
         }
       ],
       "standings": {
         "tabs": [
-          "NFC East",
-          "2025 NFC Playoffs"
+          "National Football Conference"
         ],
         "panes": [
           {
@@ -943,142 +1587,196 @@
             ],
             "rows": [
               {
-                "team": "Philadelphia",
-                "logo": "phi",
+                "team": "Seahawks",
+                "logo": "sea",
                 "league": "nfl",
+                "you": false,
                 "vals": [
-                  "13",
-                  "4",
-                  ".765",
-                  "5-1"
-                ],
-                "you": false
+                  "14",
+                  "3",
+                  ".824",
+                  "4-2"
+                ]
               },
               {
-                "team": "Dallas",
-                "logo": "dal",
+                "team": "LA Rams",
+                "logo": "lar",
                 "league": "nfl",
+                "you": false,
+                "vals": [
+                  "12",
+                  "5",
+                  ".706",
+                  "4-2"
+                ]
+              },
+              {
+                "team": "San Francisco",
+                "logo": "sf",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "12",
+                  "5",
+                  ".706",
+                  "4-2"
+                ]
+              },
+              {
+                "team": "Bears",
+                "logo": "chi",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "11",
+                  "6",
+                  ".647",
+                  "2-4"
+                ]
+              },
+              {
+                "team": "Eagles",
+                "logo": "phi",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "11",
+                  "6",
+                  ".647",
+                  "3-3"
+                ]
+              },
+              {
+                "team": "Packers",
+                "logo": "gb",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "9",
+                  "7",
+                  ".559",
+                  "4-2"
+                ]
+              },
+              {
+                "team": "Vikings",
+                "logo": "min",
+                "league": "nfl",
+                "you": false,
                 "vals": [
                   "9",
                   "8",
                   ".529",
                   "4-2"
-                ],
-                "you": false
+                ]
               },
               {
-                "team": "Washington",
+                "team": "Lions",
+                "logo": "det",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "9",
+                  "8",
+                  ".529",
+                  "2-4"
+                ]
+              },
+              {
+                "team": "Panthers",
+                "logo": "car",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "8",
+                  "9",
+                  ".471",
+                  "3-3"
+                ]
+              },
+              {
+                "team": "Tampa Bay",
+                "logo": "tb",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "8",
+                  "9",
+                  ".471",
+                  "3-3"
+                ]
+              },
+              {
+                "team": "Falcons",
+                "logo": "atl",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "8",
+                  "9",
+                  ".471",
+                  "3-3"
+                ]
+              },
+              {
+                "team": "Cowboys",
+                "logo": "dal",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "7",
+                  "9",
+                  ".441",
+                  "4-2"
+                ]
+              },
+              {
+                "team": "Saints",
+                "logo": "no",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "6",
+                  "11",
+                  ".353",
+                  "3-3"
+                ]
+              },
+              {
+                "team": "Commanders",
                 "logo": "wsh",
                 "league": "nfl",
+                "you": true,
                 "vals": [
                   "5",
                   "12",
                   ".294",
                   "3-3"
-                ],
-                "you": true
+                ]
               },
               {
                 "team": "NY Giants",
                 "logo": "nyg",
                 "league": "nfl",
+                "you": false,
                 "vals": [
                   "4",
                   "13",
                   ".235",
                   "2-4"
-                ],
-                "you": false
-              }
-            ]
-          },
-          {
-            "headers": [
-              "Seed",
-              "Team",
-              "W",
-              "L",
-              "Result"
-            ],
-            "has_seed_col": true,
-            "rows": [
+                ]
+              },
               {
-                "seed": "1",
-                "team": "Detroit",
-                "logo": "det",
+                "team": "Cardinals",
+                "logo": "ari",
                 "league": "nfl",
+                "you": false,
                 "vals": [
-                  "14",
                   "3",
-                  "BYE &rarr; Lost Div Rd"
-                ],
-                "you": false,
-                "playoff_in": true
-              },
-              {
-                "seed": "2",
-                "team": "Philadelphia",
-                "logo": "phi",
-                "league": "nfl",
-                "vals": [
-                  "13",
-                  "4",
-                  "BYE &rarr; NFC Champs"
-                ],
-                "you": false,
-                "playoff_in": true
-              },
-              {
-                "seed": "3",
-                "team": "Minnesota",
-                "logo": "min",
-                "league": "nfl",
-                "vals": [
-                  "12",
-                  "5",
-                  "Won WC &rarr; Lost Div Rd"
-                ],
-                "you": false,
-                "playoff_in": true
-              },
-              {
-                "seed": "4",
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nfl",
-                "vals": [
-                  "11",
-                  "6",
-                  "Won WC &rarr; Lost Conf"
-                ],
-                "you": false,
-                "playoff_in": true
-              },
-              {
-                "seed": "5",
-                "team": "Green Bay",
-                "logo": "gb",
-                "league": "nfl",
-                "vals": [
-                  "11",
-                  "6",
-                  "Lost Wild Card"
-                ],
-                "you": false,
-                "playoff_in": true
-              },
-              {
-                "seed": "6",
-                "team": "LA Rams",
-                "logo": "lar",
-                "league": "nfl",
-                "vals": [
-                  "10",
-                  "7",
-                  "Lost Wild Card"
-                ],
-                "you": false,
-                "playoff_in": true
+                  "14",
+                  ".176",
+                  "0-6"
+                ]
               }
             ]
           }
@@ -1090,10 +1788,10 @@
   "featured": {
     "team": "leafs",
     "kicker": "Toronto Maple Leafs &middot; Playoffs",
-    "headline": "Craig Berube, on the final day of the season, on what it's meant to coach the Maple Leafs: \"I love Toronto, and I love the Leafs\"",
+    "headline": "&lsquo;Kinda relieved&rsquo;: Maple Leafs&rsquo; most disappointing season ends with a shrug",
     "dek": "The Toronto Maple Leafs (32-36-14) sit 8th in atlantic division.",
-    "source": "Maple Leaf Hot Stove",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOY0poMlRmbUd5MndQTVBYRG54ZDg0cXJ2b3hHMjNOT1pWVDluVWFnbEFCVlNZS2VpOHpZTTVUQjAxVk50MVRyNDQwa1UtQ2Z0X052cnFpQnVqdWFkQlJmMDl5cmVZalVINy1kckxvWjc2YV9oQ1Rpal9nTkw5aXRoY19uc2tSdnBwNVJtaXI0c1lNbm9PTGRVMVFzcDlJcjlnNEk3bC0ya3VTczUxQ2lBQ2Q2eGRpZFdidHNIYlUycE43aURHaTV0RA?oc=5",
+    "source": "Sportsnet",
+    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbXdXcUk0TjZKSG9ORklJaUNkNmJaelBMTTVuaVk5ck01ckJRZGpjcmEyZXNwQnBFcGt4NkUwMThHMjUyR2tNNWgyQzdnalNsUi1rMzBpRE1oOGJLT1FydXl4NzFvcmgyZnc2Y0xDVHROektVR3djaXBIZk9iYW1mQTFVRlFGc2hkbS1YYVIwa3pOaDVCOHlaN3NPVWgzU1hVdV9SQkpxNkZqR0R6?oc=5",
     "date": "April 16, 2026"
   },
   "two_up": [
@@ -1109,10 +1807,10 @@
     {
       "team": "jays",
       "kicker": "Toronto Blue Jays &middot; Regular Season",
-      "headline": "Toronto Blue Jays at Milwaukee Brewers Game Story, Scores/Highlights - 04/15/2026",
+      "headline": "Cease&rsquo;s gem goes to waste as quiet bats, nightmare eighth sink Blue Jays",
       "dek": "The Toronto Blue Jays (7-10) face at Brewers next on Thu 4/16.",
-      "source": "MLB.com",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBVb09zLXN5S1ZieGk1ZU1YNzFmWlRma1J4ZVEwTTJjNmM5dUdJV2pGSFdRTHpQMC1PMGQ2MlhQeFp4V3lUTHlBWE5uY01iQ3lQ0gFQQVVfeXFMUFVvT3Mtc3lLVmJ4aTVlTVg3MWZaVGZrUnhlUTBNMmM2Yzl1R0lXakZIV1FMelAwLU8wZDYyWFB4WnhXeVRMeUFYTm5jTWJDeVA?oc=5",
+      "source": "Sportsnet",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbE91M2d6SkJ5bk0yM3ptMVR6cHIyODZxTUhVSmdOTmZ1V0pTR0lrRzlVSGo3LUFBLUNQRHc4VkNkSEdRc2RwS0hzdzQyM1p1UDJfZDlTb1NyX3R0clNFSTBTUGdhRHJnVkxCelFZS1Z3LW5mdDBOTU1sdVU1ZkpUZk5jSi1TMzl0SjFCUjJhUjJTT3ItYklhN3FYNW1YNzhqX051alYzUGx1a2Fl?oc=5",
       "date": "April 16, 2026"
     }
   ],
@@ -1137,6 +1835,16 @@
       "text": "Leafs (32-36-14) &mdash; 8th in Atlantic Division"
     },
     {
+      "badge": "NHL",
+      "badge_style": "background:var(--leafs);color:#fff",
+      "text": "Leafs fell to Senators 1&ndash;3"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "background:var(--leafs);color:#fff",
+      "text": "Leafs Playoffs &mdash; schedule TBD"
+    },
+    {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
       "text": "Jays fell to Brewers 1&ndash;2"
@@ -1152,14 +1860,39 @@
       "text": "Next: Jays at Brewers &mdash; Thu 4/16 12:40 PM ET"
     },
     {
+      "badge": "MLB",
+      "badge_style": "background:var(--jays);color:#fff",
+      "text": "Jays fell to Brewers 1&ndash;2"
+    },
+    {
       "badge": "NBA",
       "badge_style": "background:var(--raptors);color:#fff",
       "text": "Raptors (46-36) &mdash; 3rd in Atlantic Division"
     },
     {
+      "badge": "NBA",
+      "badge_style": "background:var(--raptors);color:#fff",
+      "text": "Raptors vs. Cavaliers: Sportsnet announces..."
+    },
+    {
+      "badge": "NBA",
+      "badge_style": "background:var(--raptors);color:#fff",
+      "text": "Raptors Playoffs &mdash; schedule TBD"
+    },
+    {
       "badge": "NFL",
       "badge_style": "background:var(--commanders);color:#fff",
       "text": "Commanders (5-12) &mdash; 3rd in NFC East"
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "background:var(--commanders);color:#fff",
+      "text": "Commanders unveil 2026 uniform closet inspired by..."
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "background:var(--commanders);color:#fff",
+      "text": "Commanders &mdash; NFL Draft Apr 23&ndash;25"
     }
   ],
   "at_a_glance": [
