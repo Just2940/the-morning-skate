@@ -153,19 +153,25 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
             has_clinched = True
 
     if league == "NHL":
-        if has_upcoming and has_recent_game:
-            # Mid-April onward with games = playoffs or late regular season
-            if month >= 4 and month <= 6:
-                return _phase("playoffs", league, cfg)
-            return _phase("regular_season", league, cfg)
-        elif month >= 4 and month <= 6:
-            # April-June: NHL playoffs. Schedule feed may have gaps between rounds.
+        if month >= 4 and month <= 6:
+            # April-June: NHL playoff window.
+            # CRITICAL: Only tag as "playoffs" if the team ACTUALLY qualified.
+            # Teams that missed the playoffs still play late-April regular season games.
             if has_playoff_seed or has_clinched:
                 return _phase("playoffs", league, cfg)
-            elif has_upcoming or has_recent_game or last_game_days_ago <= 14:
-                return _phase("playoffs", league, cfg)
+            elif has_upcoming and has_recent_game:
+                # Has games but no playoff seed ‚Äî still in late regular season
+                return _phase("regular_season", league, cfg)
+            elif has_recent_game and not has_upcoming:
+                # Season just ended, no playoff berth
+                return _phase("eliminated", league, cfg)
+            elif last_game_days_ago <= 14:
+                # Recently played but no upcoming ‚Äî season over
+                return _phase("eliminated", league, cfg)
             else:
                 return _phase("season_ended", league, cfg)
+        elif has_upcoming and has_recent_game:
+            return _phase("regular_season", league, cfg)
         elif has_recent_game and not has_upcoming:
             # Season just ended
             return _phase("season_ended", league, cfg)
@@ -190,27 +196,25 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
 
     elif league == "NBA":
         # NBA playoff detection: use standings data (playoffSeed, clincher) as
-        # the authoritative signal. The schedule feed may be empty between
-        # play-in and Round 1, but the team is still in the playoffs.
-        if has_upcoming and has_recent_game:
-            if month >= 4 and month <= 6:
-                return _phase("playoffs", league, cfg)
-            return _phase("regular_season", league, cfg)
-        elif month >= 4 and month <= 6:
-            # April-June: check if team is in playoffs via ANY signal
-            # 1. Standings data says they have a playoff seed or clinched
-            # 2. Last game was within 14 days (between rounds / play-in gap)
-            # 3. Team has upcoming games scheduled
-            # The regular season schedule feed goes empty after the play-in,
-            # so we can't rely on has_recent_game alone.
+        # the authoritative signal. CRITICAL: Only tag as "playoffs" if the team
+        # actually has a playoff seed or clinched. Teams that missed the playoffs
+        # should NOT be tagged as playoff teams even during April-June.
+        if month >= 4 and month <= 6:
             if has_playoff_seed or has_clinched:
+                # Team qualified ‚Äî they're in the playoffs
                 return _phase("playoffs", league, cfg)
-            elif has_upcoming:
-                return _phase("playoffs", league, cfg)
-            elif has_recent_game or last_game_days_ago <= 14:
-                return _phase("playoffs", league, cfg)
+            elif has_upcoming and has_recent_game:
+                # Has games but no playoff seed ‚Äî late regular season or play-in
+                return _phase("regular_season", league, cfg)
+            elif has_recent_game and not has_upcoming:
+                # Season just ended, no playoff berth
+                return _phase("eliminated", league, cfg)
+            elif last_game_days_ago <= 14:
+                return _phase("eliminated", league, cfg)
             else:
                 return _phase("season_ended", league, cfg)
+        elif has_upcoming and has_recent_game:
+            return _phase("regular_season", league, cfg)
         elif has_recent_game and not has_upcoming:
             return _phase("regular_season", league, cfg)
         elif month >= 6 and month <= 7:
@@ -727,6 +731,434 @@ def get_standings(team_key):
             return stats
 
     return {}
+
+
+def build_full_standings(team_key):
+    """Build complete standings tables from ESPN API for a team's panel.
+    Returns a dict matching the data.json standings schema:
+    { tabs: [...], panes: [{ headers: [...], rows: [...] }, ...] }
+    Each team gets 2 tabs: division + wild card/playoff picture.
+    The team's own row is always included with you=True, even if outside the cutoff."""
+    cfg = TEAMS[team_key]
+    league = cfg["league"]
+    team_id = cfg["espn_team_id"]
+    team_abbr = cfg["espn_abbr"]
+
+    url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings"
+    data = espn_fetch(url)
+    if not data:
+        print(f"    WARNING: Could not fetch standings for {team_key}")
+        return None
+
+    # ESPN logo abbreviation mapping (lowercase for CSS class compatibility)
+    LOGO_MAP = {
+        # NHL
+        "FLA": "fla", "TBL": "tb", "BOS": "bos", "DET": "det", "OTT": "ott",
+        "TOR": "tor", "BUF": "buf", "MTL": "mtl", "CAR": "car", "NJD": "nj",
+        "WSH": "wsh", "NYR": "nyr", "NYI": "nyi", "PHI": "phi", "CBJ": "cbj",
+        "PIT": "pit", "WPG": "wpg", "DAL": "dal", "COL": "col", "MIN": "min",
+        "NSH": "nsh", "STL": "stl", "CHI": "chi", "ARI": "ari", "UTA": "uta",
+        "VGK": "vgk", "VAN": "van", "EDM": "edm", "CGY": "cgy", "LAK": "la",
+        "SEA": "sea", "ANA": "ana", "SJS": "sj",
+        # MLB
+        "BAL": "bal", "NYY": "nyy", "TB": "tb", "BOS": "bos",
+        "CLE": "cle", "DET": "det", "KC": "kc", "MIN": "min", "CWS": "cws",
+        "HOU": "hou", "SEA": "sea", "TEX": "tex", "LAA": "laa", "OAK": "oak",
+        "ATL": "atl", "NYM": "nym", "PHI": "phi", "MIA": "mia", "WSH": "wsh",
+        "MIL": "mil", "CHC": "chc", "STL": "stl", "PIT": "pit", "CIN": "cin",
+        "LAD": "lad", "SD": "sd", "AZ": "ari", "SF": "sf", "COL": "col",
+        # NBA
+        "CLE": "cle", "BOS": "bos", "NYK": "ny", "IND": "ind", "MIL": "mil",
+        "MIA": "mia", "ORL": "orl", "PHI": "phi", "CHI": "chi", "ATL": "atl",
+        "BKN": "bkn", "DET": "det", "CHA": "cha", "WAS": "wsh",
+        "OKC": "okc", "DEN": "den", "MIN": "min", "LAC": "lac", "DAL": "dal",
+        "PHX": "phx", "MEM": "mem", "SAC": "sac", "GSW": "gs", "HOU": "hou",
+        "SAS": "sa", "LAL": "lal", "POR": "por", "UTA": "uta", "NOP": "no",
+        # NFL
+        "PHI": "phi", "DAL": "dal", "WAS": "wsh", "NYG": "nyg",
+        "SF": "sf", "SEA": "sea", "LAR": "lar", "ARI": "ari",
+        "GB": "gb", "DET": "det", "CHI": "chi", "MIN": "min",
+        "TB": "tb", "NO": "no", "ATL": "atl", "CAR": "car",
+        "KC": "kc", "BUF": "buf", "MIA": "mia", "NE": "ne", "NYJ": "nyj",
+        "BAL": "bal", "PIT": "pit", "CIN": "cin", "CLE": "cle",
+        "HOU": "hou", "IND": "ind", "JAX": "jax", "TEN": "ten",
+        "DEN": "den", "LV": "lv", "LAC": "lac",
+    }
+
+    def get_logo(abbr):
+        return LOGO_MAP.get(abbr, abbr.lower())
+
+    def extract_stat(entry, stat_name):
+        for s in entry.get("stats", []):
+            if s.get("name") == stat_name:
+                return s.get("displayValue", s.get("value", ""))
+        return ""
+
+    def is_our_team(entry):
+        eid = str(entry.get("team", {}).get("id", ""))
+        eabbr = entry.get("team", {}).get("abbreviation", "")
+        return eid == team_id or eabbr == team_abbr
+
+    # Parse the full standings structure: children > [groups] > standings > entries
+    all_groups = {}  # group_name -> list of entries
+    for group in data.get("children", []):
+        group_name = group.get("name", "")
+        entries = group.get("standings", {}).get("entries", [])
+        all_groups[group_name] = entries
+
+    if not all_groups:
+        # Flat structure fallback
+        entries = data.get("standings", {}).get("entries", [])
+        if entries:
+            all_groups["League"] = entries
+
+    if not all_groups:
+        return None
+
+    # Find which group our team belongs to
+    our_group = None
+    our_conference = None
+    for group_name, entries in all_groups.items():
+        for entry in entries:
+            if is_our_team(entry):
+                our_group = group_name
+                # Infer conference from group name
+                if "Atlantic" in group_name or "Metropolitan" in group_name or "Eastern" in group_name:
+                    our_conference = "Eastern"
+                elif "Central" in group_name or "Pacific" in group_name or "Western" in group_name:
+                    our_conference = "Western"
+                elif "AL" in group_name or "American" in group_name:
+                    our_conference = "AL"
+                elif "NL" in group_name or "National" in group_name:
+                    our_conference = "NL"
+                elif "NFC" in group_name:
+                    our_conference = "NFC"
+                elif "AFC" in group_name:
+                    our_conference = "AFC"
+                break
+        if our_group:
+            break
+
+    if not our_group:
+        return None
+
+    def build_row(entry, league_key):
+        """Build a standings row from an ESPN entry."""
+        t = entry.get("team", {})
+        abbr = t.get("abbreviation", "")
+        display = t.get("displayName", t.get("shortDisplayName", abbr))
+        # Shorten long names
+        name_map = {"Tampa Bay Lightning": "Tampa Bay", "Tampa Bay Rays": "Tampa Bay",
+                     "Tampa Bay Buccaneers": "Tampa Bay", "New York Yankees": "NY Yankees",
+                     "New York Mets": "NY Mets", "New York Rangers": "NY Rangers",
+                     "New York Islanders": "NY Islanders", "New York Knicks": "New York",
+                     "New York Giants": "NY Giants", "Los Angeles Dodgers": "LA Dodgers",
+                     "Los Angeles Angels": "LA Angels", "Los Angeles Lakers": "LA Lakers",
+                     "Los Angeles Clippers": "LA Clippers", "Los Angeles Rams": "LA Rams",
+                     "Los Angeles Chargers": "LA Chargers", "San Francisco 49ers": "San Francisco",
+                     "San Francisco Giants": "San Francisco", "Chicago White Sox": "Chi White Sox",
+                     "Golden State Warriors": "Golden State", "San Antonio Spurs": "San Antonio",
+                     "New Orleans Pelicans": "New Orleans", "Oklahoma City Thunder": "Oklahoma City",
+                     "Portland Trail Blazers": "Portland", "Sacramento Kings": "Sacramento",
+                     "Minnesota Timberwolves": "Minnesota", "Las Vegas Raiders": "Las Vegas",
+                     "New England Patriots": "New England", "Jacksonville Jaguars": "Jacksonville"}
+        short_name = name_map.get(display, display.split()[-1] if len(display.split()) > 1 else display)
+
+        row = {
+            "team": short_name,
+            "logo": get_logo(abbr),
+            "league": league_key,
+            "you": is_our_team(entry),
+        }
+        return row, entry
+
+    # === BUILD PANE 1: DIVISION STANDINGS ===
+    division_entries = all_groups.get(our_group, [])
+
+    if league == "NHL":
+        headers_div = ["Team", "W", "L", "OTL", "PTS"]
+        stat_keys = ["wins", "losses", "otLosses", "points"]
+        sort_key = "points"
+        league_key = "nhl"
+    elif league == "MLB":
+        headers_div = ["Team", "W", "L", "PCT", "GB"]
+        stat_keys = ["wins", "losses", "winPercent", "gamesBehind"]
+        sort_key = "winPercent"
+        league_key = "mlb"
+    elif league == "NBA":
+        headers_div = ["Team", "W", "L", "PCT"]
+        stat_keys = ["wins", "losses", "winPercent"]
+        sort_key = "winPercent"
+        league_key = "nba"
+    elif league == "NFL":
+        headers_div = ["Team", "W", "L", "PCT", "DIV"]
+        stat_keys = ["wins", "losses", "winPercent", "divisionRecord"]
+        sort_key = "winPercent"
+        league_key = "nfl"
+    else:
+        return None
+
+    # Sort entries by the appropriate key
+    def sort_val(entry):
+        val = extract_stat(entry, sort_key)
+        try:
+            return -float(val)  # Negative for descending
+        except:
+            return 0
+    division_entries_sorted = sorted(division_entries, key=sort_val)
+
+    div_rows = []
+    for entry in division_entries_sorted:
+        row, _ = build_row(entry, league_key)
+        vals = [extract_stat(entry, sk) for sk in stat_keys]
+        row["vals"] = vals
+        div_rows.append(row)
+
+    pane_div = {"headers": headers_div, "rows": div_rows}
+
+    # === BUILD PANE 2: WILD CARD / PLAYOFF PICTURE ===
+    if league == "NHL":
+        # Eastern/Western Wild Card: Top 3 from each division + 2 wild card spots
+        tab2_name = f"{our_conference} Wild Card" if our_conference else "Wild Card"
+        conf_groups = {gn: es for gn, es in all_groups.items()
+                       if our_conference and our_conference.lower() in gn.lower()
+                       or (our_conference == "Eastern" and any(d in gn for d in ["Atlantic", "Metropolitan"]))
+                       or (our_conference == "Western" and any(d in gn for d in ["Central", "Pacific"]))}
+
+        wc_rows = []
+        our_team_in_wc = False
+        for div_name, entries in sorted(conf_groups.items()):
+            sorted_entries = sorted(entries, key=sort_val)
+            div_prefix = div_name[0] if div_name else "?"
+            for i, entry in enumerate(sorted_entries[:3], 1):
+                row, _ = build_row(entry, league_key)
+                row["seed"] = f"{div_prefix}{i}"
+                row["vals"] = [extract_stat(entry, sk) for sk in stat_keys]
+                wc_rows.append(row)
+                if row["you"]:
+                    our_team_in_wc = True
+
+        # Wild card spots: teams 4+ from each division, sorted by points
+        wc_contenders = []
+        for div_name, entries in conf_groups.items():
+            sorted_entries = sorted(entries, key=sort_val)
+            wc_contenders.extend(sorted_entries[3:])
+        wc_contenders_sorted = sorted(wc_contenders, key=sort_val)
+
+        for i, entry in enumerate(wc_contenders_sorted):
+            row, _ = build_row(entry, league_key)
+            if i < 2:
+                row["seed"] = f"WC{i+1}"
+            else:
+                row["seed"] = ""
+                row["seed_style"] = "faint"
+            row["vals"] = [extract_stat(entry, sk) for sk in stat_keys]
+            wc_rows.append(row)
+            if row["you"]:
+                our_team_in_wc = True
+            # Show a few teams beyond the cutoff, but always include our team
+            if i >= 3 and not row["you"] and our_team_in_wc:
+                continue  # Stop after showing a couple below the line
+
+        # If our team still isn't in the wild card pane, add them
+        if not our_team_in_wc:
+            for entry in wc_contenders_sorted:
+                if is_our_team(entry):
+                    row, _ = build_row(entry, league_key)
+                    row["seed"] = ""
+                    row["seed_style"] = "faint"
+                    row["vals"] = [extract_stat(entry, sk) for sk in stat_keys]
+                    wc_rows.append(row)
+                    break
+
+        wc_headers = ["", "Team"] + headers_div[1:]
+        pane_wc = {"headers": wc_headers, "has_seed_col": True, "rows": wc_rows}
+
+    elif league == "MLB":
+        # AL/NL Wild Card
+        tab2_name = f"{our_conference} Wild Card" if our_conference else "Wild Card"
+        conf_groups = {gn: es for gn, es in all_groups.items()
+                       if our_conference and our_conference.lower() in gn.lower()
+                       or (our_conference == "AL" and "American" in gn)
+                       or (our_conference == "NL" and "National" in gn)}
+
+        wc_rows = []
+        our_team_in_wc = False
+        # Division leaders
+        for div_name, entries in sorted(conf_groups.items()):
+            sorted_entries = sorted(entries, key=sort_val)
+            if sorted_entries:
+                entry = sorted_entries[0]
+                row, _ = build_row(entry, league_key)
+                row["seed"] = "DIV"
+                row["seed_style"] = "faint"
+                row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
+                               extract_stat(entry, "winPercent"), "&mdash;"]
+                wc_rows.append(row)
+                if row["you"]:
+                    our_team_in_wc = True
+
+        # Wild card contenders: non-leaders sorted by record
+        wc_contenders = []
+        for div_name, entries in conf_groups.items():
+            sorted_entries = sorted(entries, key=sort_val)
+            wc_contenders.extend(sorted_entries[1:])
+        wc_contenders_sorted = sorted(wc_contenders, key=sort_val)
+
+        for i, entry in enumerate(wc_contenders_sorted):
+            row, _ = build_row(entry, league_key)
+            if i < 3:
+                row["seed"] = f"WC{i+1}"
+            else:
+                row["seed"] = ""
+                row["seed_style"] = "faint"
+            # Calculate WC games behind
+            wc_leader_pct = 1.0
+            if wc_contenders_sorted:
+                try:
+                    wc_leader_pct = float(extract_stat(wc_contenders_sorted[0], "winPercent"))
+                except:
+                    pass
+            try:
+                team_pct = float(extract_stat(entry, "winPercent"))
+                gb = extract_stat(entry, "gamesBehind")
+            except:
+                gb = ""
+            row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
+                           extract_stat(entry, "winPercent"), gb or "&mdash;"]
+            wc_rows.append(row)
+            if row["you"]:
+                our_team_in_wc = True
+            # Show at least 8 teams, or until our team is included
+            if i >= 7 and our_team_in_wc:
+                break
+
+        # If our team still not shown, append them
+        if not our_team_in_wc:
+            for entry in wc_contenders_sorted:
+                if is_our_team(entry):
+                    row, _ = build_row(entry, league_key)
+                    row["seed"] = ""
+                    row["seed_style"] = "faint"
+                    row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
+                                   extract_stat(entry, "winPercent"),
+                                   extract_stat(entry, "gamesBehind") or "&mdash;"]
+                    wc_rows.append(row)
+                    break
+
+        wc_headers = ["", "Team", "W", "L", "PCT", "WCGB"]
+        pane_wc = {"headers": wc_headers, "has_seed_col": True, "rows": wc_rows}
+
+    elif league == "NBA":
+        # Conference standings + playoff bracket
+        tab2_name = "Playoff Bracket"
+        conf_groups = {gn: es for gn, es in all_groups.items()
+                       if our_conference and our_conference.lower() in gn.lower()}
+
+        # Build conference table for tab 1 (replace division with conference)
+        conf_entries = []
+        for gn, entries in conf_groups.items():
+            conf_entries.extend(entries)
+        conf_entries_sorted = sorted(conf_entries, key=sort_val)
+
+        # Override pane_div with full conference standings
+        conf_rows = []
+        for i, entry in enumerate(conf_entries_sorted, 1):
+            row, _ = build_row(entry, league_key)
+            row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
+                           extract_stat(entry, "winPercent")]
+            conf_rows.append(row)
+        pane_div = {"headers": ["Seed", "Team", "W", "L", "PCT"],
+                    "has_seed_col": True,
+                    "rows": []}
+        for i, row in enumerate(conf_rows, 1):
+            row["seed"] = str(i)
+            pane_div["rows"].append(row)
+            if i >= 10:  # Show top 10 + our team
+                break
+
+        # If our team not in top 10, add them
+        our_in_conf = any(r["you"] for r in pane_div["rows"])
+        if not our_in_conf:
+            for i, row in enumerate(conf_rows):
+                if row["you"]:
+                    row["seed"] = str(i + 1)
+                    pane_div["rows"].append(row)
+                    break
+
+        headers_div = pane_div["headers"]
+        tab1_name = f"{our_conference} Conference" if our_conference else "Conference"
+
+        # Playoff bracket: top 8 seeds with matchups
+        bracket_rows = []
+        for i in range(0, min(8, len(conf_entries_sorted)), 2):
+            if i + 1 < len(conf_entries_sorted):
+                t1 = conf_entries_sorted[i]
+                t2 = conf_entries_sorted[i + 1]
+                t1_name = t1.get("team", {}).get("shortDisplayName", "TBD")
+                t2_name = t2.get("team", {}).get("shortDisplayName", "TBD")
+                t1_w = extract_stat(t1, "wins")
+                t1_l = extract_stat(t1, "losses")
+                t2_w = extract_stat(t2, "wins")
+                t2_l = extract_stat(t2, "losses")
+                bracket_rows.append({
+                    "matchup": f"({i+1}) {t1_name} vs. ({i+2}) {t2_name}",
+                    "detail": f"Sat Apr 18"  # Placeholder ‚Äî ideally from schedule
+                })
+
+        pane_wc = {"headers": ["Matchup", "Series"],
+                   "has_seed_col": True,
+                   "rows": []}
+        for i in range(0, min(8, len(conf_entries_sorted)), 2):
+            if i + 1 < len(conf_entries_sorted):
+                t1 = conf_entries_sorted[i]
+                t2 = conf_entries_sorted[i + 1]
+                row1, _ = build_row(t1, league_key)
+                row2, _ = build_row(t2, league_key)
+                pane_wc["rows"].append({
+                    "seed": f"({i+1}) {row1['team']} vs. ({i+2}) {row2['team']}",
+                    "team": f"({i+1}) {row1['team']} vs. ({i+2}) {row2['team']}",
+                    "logo": "",
+                    "league": league_key,
+                    "vals": [f"Sat Apr 18"],
+                    "you": row1["you"] or row2["you"],
+                })
+
+        pane_wc = {"headers": ["Matchup", "Series"], "rows": pane_wc["rows"]}
+
+    elif league == "NFL":
+        # NFC/AFC Division + Playoff Picture
+        tab2_name = f"2025 {our_conference} Playoffs" if our_conference else "Playoffs"
+
+        # Playoff results ‚Äî this is historical data, keep from existing
+        pane_wc = {"headers": ["Seed", "Team", "W", "L", "Result"],
+                   "has_seed_col": True,
+                   "rows": []}
+        # For NFL offseason, we show last season's playoff results
+        # These are better kept from existing data since they're historical
+        # Return None for pane_wc to signal "keep existing"
+        pane_wc = None
+
+    else:
+        pane_wc = None
+
+    # Assemble the result
+    if league == "NBA":
+        tab1_name = f"{our_conference} Conference"
+    else:
+        tab1_name = our_group if our_group else "Division"
+
+    if pane_wc is None:
+        # Only return division pane if wild card couldn't be built
+        return {
+            "tabs": [tab1_name],
+            "panes": [pane_div],
+        }
+
+    return {
+        "tabs": [tab1_name, tab2_name],
+        "panes": [pane_div, pane_wc],
+    }
 
 
 # === ARTICLE DISCOVERY (API-FIRST ARCHITECTURE) ===
@@ -1407,13 +1839,58 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
         if record_stats.get("playoffSeed"):
             facts.append(f"PLAYOFF SEED: {record_stats['playoffSeed']}")
 
-    # Explicit playoff opponent from upcoming schedule (most reliable source)
+    # Explicit playoff series status from actual game data (CRITICAL for preventing hallucination)
     if phase_info and "playoffs" in phase_info.get("phase", ""):
         if upcoming:
             opp = upcoming[0].get("opp", "").replace("vs. ", "").replace("at ", "").strip()
             if opp:
                 facts.append(f"PLAYOFF OPPONENT: {opp} (from ESPN schedule ‚Äî use THIS name, not any other)")
+
+        # Derive playoff series status from ACTUAL recent results
+        # Look for repeated matchups against the same opponent in recent results
+        playoff_opp = None
+        if upcoming:
+            playoff_opp = upcoming[0].get("opp", "").replace("vs. ", "").replace("at ", "").strip()
+        elif recent:
+            playoff_opp = recent[0].get("opp_name", "")
+
+        if playoff_opp and recent:
+            # Count series games from recent results against this opponent
+            series_wins = 0
+            series_losses = 0
+            for g in recent:
+                if g.get("opp_name", "").lower() == playoff_opp.lower():
+                    if g["result"] == "W":
+                        series_wins += 1
+                    else:
+                        series_losses += 1
+                else:
+                    break  # Different opponent = not part of this series
+
+            if series_wins == 0 and series_losses == 0:
+                facts.append(f"PLAYOFF SERIES STATUS: The series against {playoff_opp} has NOT started yet. No games have been played.")
+                facts.append(f"CRITICAL: Do NOT write about any playoff game results. The series has not begun.")
+                if upcoming:
+                    ng = upcoming[0]
+                    facts.append(f"GAME 1: Scheduled for {ng['day']} at {ng['time']}")
+            else:
+                total_games = series_wins + series_losses
+                facts.append(f"PLAYOFF SERIES STATUS: Series vs {playoff_opp} is {series_wins}-{series_losses} (Team leads)" if series_wins > series_losses else
+                             f"PLAYOFF SERIES STATUS: Series vs {playoff_opp} is {series_wins}-{series_losses} (Trail)" if series_wins < series_losses else
+                             f"PLAYOFF SERIES STATUS: Series vs {playoff_opp} is tied {series_wins}-{series_losses}")
+                facts.append(f"SERIES GAMES PLAYED: {total_games}")
+                facts.append(f"IMPORTANT: Only reference games that appear in the RECENT RESULTS above. Do NOT invent additional game results.")
+        elif not recent or not is_recent_enough(recent, max_days=14):
+            facts.append(f"PLAYOFF SERIES STATUS: Awaiting schedule. No playoff games have been played yet.")
+            facts.append(f"CRITICAL: Do NOT fabricate or invent any playoff game results.")
+
         facts.append(f"NOTE: This team is in the PLAYOFFS. All content must reflect playoff urgency.")
+
+    # For eliminated teams, add explicit guidance
+    if phase_info and phase_info.get("phase") == "eliminated":
+        facts.append(f"NOTE: This team has been ELIMINATED or missed the playoffs. Their season is OVER.")
+        facts.append(f"DO NOT write about this team as if they are in the playoffs.")
+        facts.append(f"Focus on: season recap, draft lottery, offseason outlook, what went wrong.")
 
     return "\n".join(facts)
 
@@ -1505,8 +1982,8 @@ def build_key_numbers(team_key, team_info, standings, recent):
     return numbers[:4]
 
 
-def generate_ticker(all_team_facts):
-    """Generate ticker items from verified ESPN data ‚Äî no AI needed.
+def generate_ticker(all_team_facts, all_team_articles=None):
+    """Generate ticker items from verified ESPN data PLUS editorial news bites from articles.
     Each item must have: badge, badge_style, text (matching index.html renderTicker)."""
     ticker_items = []
 
@@ -1531,11 +2008,9 @@ def generate_ticker(all_team_facts):
         record = team_info.get("record", "")
 
         # Determine if team is in-season using PHASE detection (most reliable)
-        # Phase detection already considers standings, schedule, and calendar
         phase_id = phase_info.get("phase", "")
         is_in_season = phase_id in ("regular_season", "regular_season_late", "playoffs",
                                      "preseason", "spring_training")
-        # Also check schedule data as backup
         if not is_in_season and bool(upcoming):
             is_in_season = True
         if not is_in_season and recent:
@@ -1579,7 +2054,6 @@ def generate_ticker(all_team_facts):
                 "text": f"{team_name} record: {record}"
             })
         elif not is_in_season:
-            # Offseason ‚Äî show phase-appropriate label (not always "Offseason")
             phase_label = phase_info.get("label", "Offseason")
             ticker_items.append({
                 "badge": league,
@@ -1594,6 +2068,53 @@ def generate_ticker(all_team_facts):
                 "badge": league,
                 "badge_style": badge_style,
                 "text": f"Next: {team_name} {ng['opp']} &mdash; {ng['day']} {ng['time']}"
+            })
+
+        # === EDITORIAL NEWS BITE from discovered articles ===
+        # Pull the top non-recap headline as a ticker-sized news item
+        if all_team_articles and team_key in all_team_articles:
+            articles = all_team_articles[team_key]
+            for article in articles:
+                headline = article.get("headline", "")
+                source = article.get("source", "")
+                # Skip generic game recaps (already covered by score ticker)
+                if not headline:
+                    continue
+                headline_lower = headline.lower()
+                skip_phrases = ["game story", "scores/highlights", "box score", "full game recap",
+                                "game recap", "final score"]
+                if any(sp in headline_lower for sp in skip_phrases):
+                    continue
+                # Found a non-recap editorial headline ‚Äî truncate for ticker
+                # Ticker items should be under 60 chars
+                if len(headline) > 55:
+                    headline = headline[:52].rsplit(" ", 1)[0] + "..."
+                ticker_items.append({
+                    "badge": league,
+                    "badge_style": badge_style,
+                    "text": headline,
+                })
+                break  # Only one editorial bite per team
+
+        # === PHASE-AWARE EDITORIAL ITEMS ===
+        if phase_id == "playoffs" and not upcoming:
+            # Playoff team waiting for schedule
+            ticker_items.append({
+                "badge": league,
+                "badge_style": badge_style,
+                "text": f"{team_name} Playoffs &mdash; schedule TBD"
+            })
+        elif phase_id == "eliminated":
+            ticker_items.append({
+                "badge": league,
+                "badge_style": badge_style,
+                "text": f"{team_name} season over &mdash; lottery watch begins"
+            })
+        elif phase_id == "pre_draft":
+            ticker_items.append({
+                "badge": league,
+                "badge_style": badge_style,
+                "text": f"{team_name} &mdash; NFL Draft Apr 23&ndash;25"
             })
 
     return ticker_items
@@ -1669,6 +2190,16 @@ CRITICAL ACCURACY RULES:
 - You MUST use the exact record, scores, and standings from the VERIFIED FACTS. Do NOT guess different numbers.
 - You may search for additional COLOR and NARRATIVE details (player performances, quotes, storylines), but ALL statistics MUST come from the VERIFIED FACTS section.
 - If the VERIFIED FACTS say the team is in the offseason, DO NOT write about old game results as current news.
+- If the VERIFIED FACTS say the team is ELIMINATED, do NOT write about them as if they are in the playoffs.
+
+ANTI-HALLUCINATION RULES (MANDATORY):
+- You MUST NOT invent, fabricate, or assume ANY game results, scores, or series outcomes.
+- You MUST NOT write about a playoff game happening unless it appears in the RECENT RESULTS in the VERIFIED FACTS.
+- If the VERIFIED FACTS say "series has NOT started yet", you MUST NOT reference any game in that series.
+- If the VERIFIED FACTS say the team is eliminated or their season is over, write about the offseason, not playoffs.
+- ONLY reference specific game outcomes (scores, player stats from a game, series leads) that are explicitly listed in the RECENT RESULTS section of the VERIFIED FACTS.
+- When in doubt about whether something happened, DO NOT include it. Omitting a fact is always better than inventing one.
+- Your web search may return PREVIEW articles about upcoming games. Do NOT treat previews as if the games already happened.
 
 CRITICAL CONTENT RULES:
 - You MUST produce a finished column paragraph. Do NOT explain what you would need to write the column.
@@ -1702,6 +2233,12 @@ EDITORIAL DIRECTION: {editorial_dir}
 {facts_block}
 Search for the LATEST {cfg['full_name']} news ‚Äî key player performances, quotes, storylines, injuries, trades, or offseason moves from the LAST 48 HOURS. But for ALL statistics (record, standings, scores, streaks), use ONLY the verified facts above.
 
+CRITICAL CONSTRAINT: The VERIFIED FACTS section contains a PLAYOFF SERIES STATUS or SEASON STATUS field. You MUST respect it:
+- If it says "series has NOT started yet" ‚Äî do NOT write about any playoff game results. Write about the upcoming series, matchup analysis, and what to watch for.
+- If it says the team is "ELIMINATED" ‚Äî do NOT write about them being in the playoffs. Write about their season ending, draft lottery, and offseason outlook.
+- If it lists specific series games (e.g., "Series is 1-0") ‚Äî ONLY reference games that appear in the RECENT RESULTS. Do NOT add games that aren't listed.
+- Your web search may find PREVIEW articles about upcoming games. These are about games that HAVE NOT HAPPENED YET. Do not treat them as results.
+
 Your paragraph must include:
 1. An opening that captures the team's CURRENT narrative arc ‚Äî not "The [Team] are..." but something with edge and voice
 2. The most important RECENT development (bold with <strong> tags) ‚Äî this must be something from the last 1-3 days, NOT old news
@@ -1709,7 +2246,7 @@ Your paragraph must include:
 4. A key player thread ‚Äî who's hot, who's hurt, who's the story RIGHT NOW
 5. A forward-looking close bolded with <strong> tags ‚Äî next game, next milestone, or what to watch for
 
-IMPORTANT: Every fact you cite must be CURRENT as of {today_str}. Do not reference game results from weeks or months ago as if they just happened.
+IMPORTANT: Every fact you cite must be CURRENT as of {today_str}. Do not reference game results from weeks or months ago as if they just happened. Do NOT invent scores, player stats from games, or series outcomes.
 
 Write 150-200 words of polished sports column prose. Every sentence should earn its place."""
 
@@ -1785,17 +2322,80 @@ def fact_check_lotl(text, team_key, team_info, recent, upcoming, phase_info, sta
             except (ValueError, IndexError):
                 pass
 
-    # 2. Check for offseason content being written as if team is playing
-    if "offseason" in phase_id or "ended" in phase_id or "draft" in phase_id:
-        game_phrases = ["last night", "tonight's game", "yesterday's game", "beat the", "fell to the", "lost to the"]
+    # 2. Check for offseason/eliminated content being written as if team is playing
+    if "offseason" in phase_id or "ended" in phase_id or "draft" in phase_id or "eliminated" in phase_id:
+        game_phrases = ["last night", "tonight's game", "yesterday's game", "beat the", "fell to the", "lost to the",
+                        "playoff", "series", "first round", "postseason", "game 1", "game 2", "game 3", "game 4"]
         text_lower = text.lower()
         for phrase in game_phrases:
             if phrase in text_lower:
                 # Only flag if there are no recent games within 14 days
-                if not recent or not is_recent_enough(recent, max_days=14):
+                if "eliminated" in phase_id:
+                    # Eliminated teams should NEVER reference playoffs
+                    if phrase in ["playoff", "series", "first round", "postseason", "game 1", "game 2", "game 3", "game 4"]:
+                        problems.append(f"Eliminated team has playoff language: '{phrase}'")
+                        # This is unsalvageable ‚Äî use fallback
+                        print(f"  FACT-CHECK [{team_key}]: Eliminated team references playoffs ‚Äî rejecting LOTL, using fallback")
+                        return generate_espn_fallback_lotl(team_key, team_info, recent or [], upcoming or [],
+                                                          phase_info or {"phase": "eliminated", "label": "Eliminated"})
+                elif not recent or not is_recent_enough(recent, max_days=14):
                     problems.append(f"Offseason team has active game language: '{phrase}'")
 
-    # 3. Check for playoff opponent correctness (if in playoffs with upcoming games)
+    # 3. Check for fabricated playoff series results
+    if "playoffs" in phase_id:
+        text_lower = text.lower()
+        # Check for specific "Game X" references and verify against actual results
+        game_refs = re.findall(r'game\s+(\d)', text_lower)
+        if game_refs and recent:
+            # Count how many playoff games actually happened (against same opponent)
+            playoff_opp = None
+            if upcoming:
+                playoff_opp = upcoming[0].get("opp", "").replace("vs. ", "").replace("at ", "").strip().lower()
+            elif recent:
+                playoff_opp = recent[0].get("opp_name", "").lower()
+
+            actual_games = 0
+            if playoff_opp:
+                for g in recent:
+                    if g.get("opp_name", "").lower() == playoff_opp:
+                        actual_games += 1
+                    else:
+                        break
+
+            for ref in game_refs:
+                ref_num = int(ref)
+                if ref_num > actual_games:
+                    problems.append(f"References Game {ref_num} but only {actual_games} games have been played")
+                    # This is a hallucination ‚Äî use fallback
+                    print(f"  FACT-CHECK [{team_key}]: Fabricated Game {ref_num} reference (only {actual_games} played) ‚Äî rejecting LOTL")
+                    return generate_espn_fallback_lotl(team_key, team_info, recent or [], upcoming or [],
+                                                      phase_info or {"phase": "playoffs", "label": "Playoffs"})
+
+        # Check for fabricated series scores like "1-1", "2-0", etc. in playoff context
+        series_pattern = re.compile(r'(?:series|tied|leads?|trail)\w*\s+(?:at\s+)?(\d)\s*[-\u2013\u2014&]\s*(\d)', re.IGNORECASE)
+        for m in series_pattern.finditer(text):
+            claimed_w, claimed_l = int(m.group(1)), int(m.group(2))
+            claimed_total = claimed_w + claimed_l
+            # Verify against actual game count
+            playoff_opp = None
+            if upcoming:
+                playoff_opp = upcoming[0].get("opp", "").replace("vs. ", "").replace("at ", "").strip().lower()
+            elif recent:
+                playoff_opp = recent[0].get("opp_name", "").lower()
+            actual_games = 0
+            if playoff_opp and recent:
+                for g in recent:
+                    if g.get("opp_name", "").lower() == playoff_opp:
+                        actual_games += 1
+                    else:
+                        break
+            if claimed_total > actual_games:
+                problems.append(f"Claims series is {claimed_w}-{claimed_l} ({claimed_total} games) but only {actual_games} games played")
+                print(f"  FACT-CHECK [{team_key}]: Fabricated series score ‚Äî rejecting LOTL")
+                return generate_espn_fallback_lotl(team_key, team_info, recent or [], upcoming or [],
+                                                  phase_info or {"phase": "playoffs", "label": "Playoffs"})
+
+    # 4. Check for playoff opponent correctness (if in playoffs with upcoming games)
     if "playoffs" in phase_id and upcoming:
         next_opp = upcoming[0].get("opp", "").replace("vs. ", "").replace("at ", "").strip()
         if next_opp:
@@ -2399,9 +2999,22 @@ def build_data():
             "standings": existing_team.get("standings", {}),
         }
 
-        # Preserve special fields
-        if "the_latest_label" in existing_team:
-            team_entry["the_latest_label"] = existing_team["the_latest_label"]
+        # Build full standings tables from ESPN API (replaces stale existing data)
+        print(f"  Building standings tables...")
+        fresh_standings = build_full_standings(team_key)
+        if fresh_standings:
+            team_entry["standings"] = fresh_standings
+            print(f"    Built {len(fresh_standings.get('tabs', []))} tabs: {', '.join(fresh_standings.get('tabs', []))}")
+        else:
+            print(f"    WARNING: Could not build standings ‚Äî keeping existing")
+
+        # Set section label based on phase ‚Äî eliminated/offseason get "Offseason Intel"
+        phase_id_label = phase_info.get("phase", "")
+        if phase_id_label in ("eliminated", "season_ended", "offseason", "deep_offseason",
+                               "draft_free_agency", "pre_draft", "combine_free_agency"):
+            team_entry["the_latest_label"] = "Offseason Intel"
+        else:
+            team_entry["the_latest_label"] = "The Latest"
 
         teams_data[team_key] = team_entry
 
@@ -2433,7 +3046,7 @@ def build_data():
 
     # Ticker ‚Äî generated from REAL ESPN data now, not stale fallback
     print("\n--- Generating ticker from ESPN data ---")
-    db["ticker"] = generate_ticker(all_team_facts)
+    db["ticker"] = generate_ticker(all_team_facts, all_team_articles)
     print(f"  Generated {len(db['ticker'])} ticker items")
 
     # At a Glance ‚Äî build from REAL ESPN team data
