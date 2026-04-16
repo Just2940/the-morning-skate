@@ -430,7 +430,8 @@
       ],
       "standings": {
         "tabs": [
-          "Atlantic Division"
+          "Atlantic Division",
+          "Eastern Wild Card"
         ],
         "panes": [
           {
@@ -443,30 +444,181 @@
             ],
             "rows": [
               {
-                "team": "Florida",
-                "logo": "fla",
+                "team": "Buffalo",
+                "logo": "buf",
                 "league": "nhl",
-                "vals": [
-                  52,
-                  20,
-                  6,
-                  110
-                ],
+                "vals": [50, 23, 8, 108],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
                 "wc_line": false
               },
               {
+                "team": "Tampa Bay",
+                "logo": "tb",
+                "league": "nhl",
+                "vals": [50, 25, 6, 106],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Montreal",
+                "logo": "mtl",
+                "league": "nhl",
+                "vals": [48, 24, 10, 106],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Boston",
+                "logo": "bos",
+                "league": "nhl",
+                "vals": [45, 27, 10, 100],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Ottawa",
+                "logo": "ott",
+                "league": "nhl",
+                "vals": [43, 27, 11, 97],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Detroit",
+                "logo": "det",
+                "league": "nhl",
+                "vals": [41, 31, 10, 92],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
+              },
+              {
+                "team": "Florida",
+                "logo": "fla",
+                "league": "nhl",
+                "vals": [40, 38, 4, 84],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
+              },
+              {
                 "team": "Toronto",
                 "logo": "tor",
                 "league": "nhl",
-                "vals": [
-                  32,
-                  36,
-                  14,
-                  78
-                ],
+                "vals": [32, 36, 14, 78],
+                "you": true,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
+              }
+            ]
+          },
+          {
+            "headers": [
+              "Team",
+              "W",
+              "L",
+              "OTL",
+              "PTS"
+            ],
+            "rows": [
+              {
+                "team": "Buffalo",
+                "logo": "buf",
+                "league": "nhl",
+                "vals": [50, 23, 8, 108],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "A1",
+                "seed_style": "green"
+              },
+              {
+                "team": "Tampa Bay",
+                "logo": "tb",
+                "league": "nhl",
+                "vals": [50, 25, 6, 106],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "A2",
+                "seed_style": "green"
+              },
+              {
+                "team": "Montreal",
+                "logo": "mtl",
+                "league": "nhl",
+                "vals": [48, 24, 10, 106],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "A3",
+                "seed_style": "green"
+              },
+              {
+                "team": "Boston",
+                "logo": "bos",
+                "league": "nhl",
+                "vals": [45, 27, 10, 100],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": true,
+                "seed": "WC1",
+                "seed_style": "green"
+              },
+              {
+                "team": "Ottawa",
+                "logo": "ott",
+                "league": "nhl",
+                "vals": [43, 27, 11, 97],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "WC2",
+                "seed_style": "green"
+              },
+              {
+                "team": "Detroit",
+                "logo": "det",
+                "league": "nhl",
+                "vals": [41, 31, 10, 92],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
+              },
+              {
+                "team": "Florida",
+                "logo": "fla",
+                "league": "nhl",
+                "vals": [40, 38, 4, 84],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
+              },
+              {
+                "team": "Toronto",
+                "logo": "tor",
+                "league": "nhl",
+                "vals": [32, 36, 14, 78],
                 "you": true,
                 "playoff_in": false,
                 "playoff_out": true,
@@ -667,7 +819,8 @@
       ],
       "standings": {
         "tabs": [
-          "AL East"
+          "AL East",
+          "AL Wild Card"
         ],
         "panes": [
           {
@@ -680,15 +833,10 @@
             ],
             "rows": [
               {
-                "team": "Baltimore",
-                "logo": "bal",
+                "team": "Tampa Bay",
+                "logo": "tb",
                 "league": "mlb",
-                "vals": [
-                  11,
-                  5,
-                  ".688",
-                  "-"
-                ],
+                "vals": [10, 7, ".588", "-"],
                 "you": false,
                 "playoff_in": false,
                 "playoff_out": false,
@@ -698,27 +846,17 @@
                 "team": "New York",
                 "logo": "nyy",
                 "league": "mlb",
-                "vals": [
-                  10,
-                  7,
-                  ".588",
-                  "1.5"
-                ],
+                "vals": [10, 8, ".556", "0.5"],
                 "you": false,
                 "playoff_in": false,
                 "playoff_out": false,
                 "wc_line": false
               },
               {
-                "team": "Boston",
-                "logo": "bos",
+                "team": "Baltimore",
+                "logo": "bal",
                 "league": "mlb",
-                "vals": [
-                  9,
-                  8,
-                  ".529",
-                  "2.5"
-                ],
+                "vals": [9, 9, ".500", "1.5"],
                 "you": false,
                 "playoff_in": false,
                 "playoff_out": false,
@@ -728,28 +866,105 @@
                 "team": "Toronto",
                 "logo": "tor",
                 "league": "mlb",
-                "vals": [
-                  7,
-                  10,
-                  ".412",
-                  "4.5"
-                ],
+                "vals": [7, 10, ".412", "3"],
                 "you": true,
                 "playoff_in": false,
                 "playoff_out": false,
                 "wc_line": false
               },
               {
+                "team": "Boston",
+                "logo": "bos",
+                "league": "mlb",
+                "vals": [7, 11, ".389", "3.5"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
+              }
+            ]
+          },
+          {
+            "headers": [
+              "Team",
+              "W",
+              "L",
+              "PCT",
+              "WCGB"
+            ],
+            "rows": [
+              {
+                "team": "Minnesota",
+                "logo": "min",
+                "league": "mlb",
+                "vals": [11, 7, ".611", "-"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "WC1",
+                "seed_style": "green"
+              },
+              {
                 "team": "Tampa Bay",
                 "logo": "tb",
                 "league": "mlb",
-                "vals": [
-                  6,
-                  11,
-                  ".353",
-                  "5.5"
-                ],
+                "vals": [10, 7, ".588", "-"],
                 "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "WC2",
+                "seed_style": "green"
+              },
+              {
+                "team": "Texas",
+                "logo": "tex",
+                "league": "mlb",
+                "vals": [9, 8, ".529", "-"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": true,
+                "seed": "WC3",
+                "seed_style": "green"
+              },
+              {
+                "team": "New York",
+                "logo": "nyy",
+                "league": "mlb",
+                "vals": [9, 8, ".529", "-"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Baltimore",
+                "logo": "bal",
+                "league": "mlb",
+                "vals": [9, 8, ".529", "-"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Detroit",
+                "logo": "det",
+                "league": "mlb",
+                "vals": [8, 9, ".471", "1"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Toronto",
+                "logo": "tor",
+                "league": "mlb",
+                "vals": [7, 10, ".412", "2"],
+                "you": true,
                 "playoff_in": false,
                 "playoff_out": false,
                 "wc_line": false
@@ -920,6 +1135,7 @@
       ],
       "standings": {
         "tabs": [
+          "Atlantic Division",
           "Eastern Playoffs"
         ],
         "panes": [
@@ -934,10 +1150,66 @@
                 "team": "Boston",
                 "logo": "bos",
                 "league": "nba",
-                "vals": [
-                  58,
-                  24
-                ],
+                "vals": [56, 26],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "New York",
+                "logo": "ny",
+                "league": "nba",
+                "vals": [53, 29],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Toronto",
+                "logo": "tor",
+                "league": "nba",
+                "vals": [46, 36],
+                "you": true,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Philadelphia",
+                "logo": "phi",
+                "league": "nba",
+                "vals": [45, 37],
+                "you": false,
+                "playoff_in": true,
+                "playoff_out": false,
+                "wc_line": false
+              },
+              {
+                "team": "Brooklyn",
+                "logo": "bkn",
+                "league": "nba",
+                "vals": [20, 62],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false
+              }
+            ]
+          },
+          {
+            "headers": [
+              "Team",
+              "W",
+              "L"
+            ],
+            "rows": [
+              {
+                "team": "Detroit",
+                "logo": "det",
+                "league": "nba",
+                "vals": [60, 22],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -946,13 +1218,10 @@
                 "seed_style": "green"
               },
               {
-                "team": "Milwaukee",
-                "logo": "mil",
+                "team": "Boston",
+                "logo": "bos",
                 "league": "nba",
-                "vals": [
-                  52,
-                  30
-                ],
+                "vals": [56, 26],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -964,10 +1233,7 @@
                 "team": "New York",
                 "logo": "ny",
                 "league": "nba",
-                "vals": [
-                  50,
-                  32
-                ],
+                "vals": [53, 29],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -979,10 +1245,7 @@
                 "team": "Cleveland",
                 "logo": "cle",
                 "league": "nba",
-                "vals": [
-                  48,
-                  34
-                ],
+                "vals": [52, 30],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -994,10 +1257,7 @@
                 "team": "Toronto",
                 "logo": "tor",
                 "league": "nba",
-                "vals": [
-                  46,
-                  36
-                ],
+                "vals": [46, 36],
                 "you": true,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -1006,13 +1266,10 @@
                 "seed_style": "green"
               },
               {
-                "team": "Indiana",
-                "logo": "ind",
+                "team": "Atlanta",
+                "logo": "atl",
                 "league": "nba",
-                "vals": [
-                  45,
-                  37
-                ],
+                "vals": [46, 36],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -1021,34 +1278,52 @@
                 "seed_style": "green"
               },
               {
-                "team": "Miami",
-                "logo": "mia",
+                "team": "Philadelphia",
+                "logo": "phi",
                 "league": "nba",
-                "vals": [
-                  43,
-                  39
-                ],
+                "vals": [45, 37],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
                 "wc_line": false,
                 "seed": "7",
-                "seed_style": "green"
+                "seed_style": "yellow"
               },
               {
-                "team": "Philadelphia",
-                "logo": "phi",
+                "team": "Orlando",
+                "logo": "orl",
                 "league": "nba",
-                "vals": [
-                  42,
-                  40
-                ],
+                "vals": [45, 37],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
                 "wc_line": true,
                 "seed": "8",
-                "seed_style": "green"
+                "seed_style": "yellow"
+              },
+              {
+                "team": "Charlotte",
+                "logo": "cha",
+                "league": "nba",
+                "vals": [44, 38],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false,
+                "seed": "9",
+                "seed_style": "red"
+              },
+              {
+                "team": "Miami",
+                "logo": "mia",
+                "league": "nba",
+                "vals": [43, 39],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": true,
+                "wc_line": false,
+                "seed": "10",
+                "seed_style": "red"
               }
             ],
             "has_seed_col": true
@@ -1217,7 +1492,8 @@
       ],
       "standings": {
         "tabs": [
-          "NFC East"
+          "NFC East",
+          "2026 Draft Order"
         ],
         "panes": [
           {
@@ -1232,11 +1508,7 @@
                 "team": "Philadelphia",
                 "logo": "phi",
                 "league": "nfl",
-                "vals": [
-                  12,
-                  5,
-                  ".706"
-                ],
+                "vals": [12, 5, ".706"],
                 "you": false,
                 "playoff_in": true,
                 "playoff_out": false,
@@ -1246,11 +1518,7 @@
                 "team": "Dallas",
                 "logo": "dal",
                 "league": "nfl",
-                "vals": [
-                  8,
-                  9,
-                  ".471"
-                ],
+                "vals": [8, 9, ".471"],
                 "you": false,
                 "playoff_in": false,
                 "playoff_out": true,
@@ -1260,11 +1528,7 @@
                 "team": "Washington",
                 "logo": "wsh",
                 "league": "nfl",
-                "vals": [
-                  5,
-                  12,
-                  ".294"
-                ],
+                "vals": [5, 12, ".294"],
                 "you": true,
                 "playoff_in": false,
                 "playoff_out": true,
@@ -1274,17 +1538,142 @@
                 "team": "N.Y. Giants",
                 "logo": "nyg",
                 "league": "nfl",
-                "vals": [
-                  4,
-                  13,
-                  ".235"
-                ],
+                "vals": [4, 13, ".235"],
                 "you": false,
                 "playoff_in": false,
                 "playoff_out": true,
                 "wc_line": false
               }
             ]
+          },
+          {
+            "headers": [
+              "Team",
+              "Pick"
+            ],
+            "rows": [
+              {
+                "team": "Las Vegas",
+                "logo": "lv",
+                "league": "nfl",
+                "vals": ["1"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "1",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "N.Y. Jets",
+                "logo": "nyj",
+                "league": "nfl",
+                "vals": ["2"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "2",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "Arizona",
+                "logo": "ari",
+                "league": "nfl",
+                "vals": ["3"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "3",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "Tennessee",
+                "logo": "ten",
+                "league": "nfl",
+                "vals": ["4"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "4",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "N.Y. Giants",
+                "logo": "nyg",
+                "league": "nfl",
+                "vals": ["5"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "5",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "Cleveland",
+                "logo": "cle",
+                "league": "nfl",
+                "vals": ["6"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "6",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "Washington",
+                "logo": "wsh",
+                "league": "nfl",
+                "vals": ["7"],
+                "you": true,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "7",
+                "seed_style": "green"
+              },
+              {
+                "team": "New Orleans",
+                "logo": "no",
+                "league": "nfl",
+                "vals": ["8"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "8",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "Kansas City",
+                "logo": "kc",
+                "league": "nfl",
+                "vals": ["9"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "9",
+                "seed_style": "neutral"
+              },
+              {
+                "team": "Cincinnati",
+                "logo": "cin",
+                "league": "nfl",
+                "vals": ["10"],
+                "you": false,
+                "playoff_in": false,
+                "playoff_out": false,
+                "wc_line": false,
+                "seed": "10",
+                "seed_style": "neutral"
+              }
+            ],
+            "has_seed_col": true
           }
         ]
       }
