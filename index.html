@@ -1668,7 +1668,7 @@ function renderTicker(items) {
 function renderFeatured(f) {
   if (!f || !f.headline) return;
   document.getElementById('featured').innerHTML = `
-    <a href="${f.link}" target="_blank" class="featured" style="text-decoration:none;color:inherit;display:block">
+    <a href="${f.url}" target="_blank" class="featured" style="text-decoration:none;color:inherit;display:block">
       <div class="featured-kicker ${f.team}">${f.kicker}</div>
       <h2 class="featured-hl">${f.headline}</h2>
       <p class="featured-dek">${f.dek}</p>
@@ -1680,7 +1680,7 @@ function renderTwoUp(stories) {
   if (!stories || !stories.length) return;
   let html = '';
   stories.forEach(s => {
-    html += `<a href="${s.link}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block">
+    html += `<a href="${s.url}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block">
       <div class="story-kicker ${s.team}">${s.kicker}</div>
       <h3 class="story-hl">${s.headline}</h3>
       <p class="story-dek">${s.dek}</p>
@@ -1693,7 +1693,7 @@ function renderTwoUp(stories) {
 function renderExtraStory(s) {
   if (!s || !s.headline) { document.getElementById('extra-story').innerHTML = ''; return; }
   document.getElementById('extra-story').innerHTML = `
-    <a href="${s.link}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:28px">
+    <a href="${s.url}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:28px">
       <div class="story-kicker ${s.team}">${s.kicker}</div>
       <h3 class="story-hl">${s.headline}</h3>
       <p class="story-dek">${s.dek}</p>
@@ -1838,7 +1838,7 @@ function renderTeam(key, t) {
   if (newsEl && t.the_latest) {
     let html = '';
     t.the_latest.forEach(n => {
-      html += `<a href="${n.link}" target="_blank" class="ni"><div class="ni-source ${n.source_class}">${n.source}</div><div class="ni-hl">${n.headline}</div><div class="ni-dek">${n.dek}</div><div class="ni-time">${n.date}</div></a>`;
+      html += `<a href="${n.url}" target="_blank" class="ni"><div class="ni-source ${n.source_class}">${n.source}</div><div class="ni-hl">${n.headline}</div><div class="ni-dek">${n.dek}</div><div class="ni-time">${n.date}</div></a>`;
     });
     newsEl.innerHTML = html;
   }
@@ -1889,10 +1889,50 @@ function renderTeam(key, t) {
   }
 }
 
+// === URL SAFETY NET ===
+// Ensures broken/missing URLs never show a 404 page
+function sanitizeUrl(url, headline) {
+  if (url && typeof url === 'string' && url.startsWith('http')) return url;
+  if (headline) return 'https://www.google.com/search?q=' + encodeURIComponent(headline);
+  return null;
+}
+
+function sanitizeData(data) {
+  if (data.featured) {
+    data.featured.url = sanitizeUrl(data.featured.url, data.featured.headline);
+  }
+  (data.two_up || []).forEach(function(s) { s.url = sanitizeUrl(s.url, s.headline); });
+  if (data.extra_story) {
+    data.extra_story.url = sanitizeUrl(data.extra_story.url, data.extra_story.headline);
+  }
+  ['leafs','jays','raptors','commanders'].forEach(function(key) {
+    var t = (data.teams || {})[key];
+    if (!t) return;
+    if (t.highlights) { t.highlights.url = sanitizeUrl(t.highlights.url, t.highlights.label); }
+    (t.the_latest || []).forEach(function(n) { n.url = sanitizeUrl(n.url, n.headline); });
+  });
+  return data;
+}
+
+document.addEventListener('click', function(e) {
+  var anchor = e.target.closest('a');
+  if (!anchor) return;
+  var href = anchor.getAttribute('href');
+  if (!href || href === 'undefined' || href === 'null' || href === '#') {
+    e.preventDefault();
+    e.stopPropagation();
+    var hl = anchor.querySelector('.featured-hl, .story-hl, .ni-hl, h2, h3');
+    if (hl && hl.textContent) {
+      window.open('https://www.google.com/search?q=' + encodeURIComponent(hl.textContent), '_blank');
+    }
+  }
+}, true);
+
 // === LOAD DATA ===
 fetch('data.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
+    data = sanitizeData(data);
     // Homepage
     renderTicker(data.ticker);
     renderFeatured(data.featured);
