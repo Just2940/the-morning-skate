@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-04-17T05:11:54.407458-05:00",
-    "date_display": "April 17, 2026"
+    "updated": "2026-04-18T04:43:37.925126-05:00",
+    "date_display": "April 18, 2026"
   },
   "teams": {
     "leafs": {
@@ -12,8 +12,8 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "<strong>The Leafs fell to the Senators 1&ndash;3</strong>, moving to 32-36-14 on the season. They sit 8th in atlantic division. That&rsquo;s 4 straight losses.",
-        "updated": "Updated April 17, 2026"
+        "body": "The curtain crashed down on another Toronto Maple Leafs season that promised fireworks but delivered duds&mdash;a <strong>32-36-14 thud</strong> landing them 8th in the Atlantic, 35 games back, with a measly 78 points and an L7 streak to salt the wound. No playoffs, no excuses; this core's grip on the Cup slipped further, exposed by defensive sieves and goaltending that crumbled under pressure, finishing 15th in the playoff seed race. Captain Auston Matthews carried the load as always, his sniper's touch the lone bright spot in a lineup that leaked goals like a sieve&mdash;yet even he couldn't drag them past mediocrity. Whispers of coaching upheaval swirl around Craig Berube, whose systems never gelled, while free agency looms with UFAs like Mitch Marner eyeing the door and draft positioning offering a sliver of hope at a high lottery pick. The suits in the Air Canada Centre face a reckoning: rebuild or retool around the Big Three? It's gut-check time&mdash;no more half-measures. <strong>Watch the draft lottery draw on May 6</strong>; it could redefine this franchise's next decade.",
+        "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
         {
@@ -37,93 +37,42 @@
           "note": "8th in Atlantic Division"
         }
       ],
-      "recent_results": [
-        {
-          "date": "Apr 15",
-          "result": "L",
-          "team_score": 1,
-          "opp_name": "Senators",
-          "opp_score": 3,
-          "opp_logo": "ott",
-          "league": "nhl",
-          "game_date": "2026-04-15",
-          "game_id": "401803655"
-        },
-        {
-          "date": "Apr 13",
-          "result": "L",
-          "team_score": 5,
-          "opp_name": "Stars",
-          "opp_score": 6,
-          "opp_logo": "dal",
-          "league": "nhl",
-          "game_date": "2026-04-13",
-          "game_id": "401803636"
-        },
-        {
-          "date": "Apr 11",
-          "result": "L",
-          "team_score": 2,
-          "opp_name": "Panthers",
-          "opp_score": 6,
-          "opp_logo": "fla",
-          "league": "nhl",
-          "game_date": "2026-04-11",
-          "game_id": "401803621"
-        },
-        {
-          "date": "Apr 9",
-          "result": "L",
-          "team_score": 3,
-          "opp_name": "Islanders",
-          "opp_score": 5,
-          "opp_logo": "nyi",
-          "league": "nhl",
-          "game_date": "2026-04-09",
-          "game_id": "401803603"
-        }
-      ],
+      "recent_results": [],
       "last_game_highlights": {
-        "available": true,
-        "title": "Senators vs. Leafs &mdash; Full Highlights",
-        "subtitle": "NHL &middot; Apr 15, 2026",
-        "result_badge": "L 1-3",
-        "result_class": "l",
-        "url": "https://www.youtube.com/@NHL/search?query=Maple Leafs+Senators+highlights",
-        "game_date": "2026-04-15"
+        "available": false
       },
       "the_latest": [
         {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Leafs fell to Senators 1&ndash;3",
-          "dek": "Full game recap and box score.",
-          "date": "Apr 15",
-          "link": "https://www.espn.com/nhl/recap?gameId=401803655"
-        },
-        {
-          "source": "NHL.com",
+          "source": "Sportsnet",
           "source_class": "web",
-          "headline": "Matthews said he 'can't predict' his future with Maple Leafs",
+          "headline": "Maple Leafs interviewing Mats Sundin for hockey department job",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZk13bUxTNUlUTkNSYVNNcXFmc1B6NkxGYXNNRWhIWWlrcXBhcVhHS2ZWOEw5aXRwZE5CZktOU21IWkIzNEt4U25uc2dkaFRvVnpKc3BLSDJpdVRKc1JPSmI5TmlQelI2MzhKN1VVVHZNbDFpQVZhT1RXSllhQktkYmt3aw?oc=5"
+          "date": "April 17, 2026",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVHhDVDZSbm5FSVBpeEh1Ny1JZlJlam4teV9nZWtMMzdQWHZZaXlHWEFpUlozaGhuOS1yLV9odGZoMnJlenhidm9MSUZZUVhoaHg5YlFtVXphY1BjVEk3cWxFa3E2WkFuWlFKQzhLSm1HVlBBemNmaFkzTUhib3dXbEJTaEU0RS1RSDU3dVAtQXdrckpUNVI1ZjJkZDFaME9tbkE?oc=5"
         },
         {
           "source": "Maple Leaf Hot Stove",
           "source_class": "web",
-          "headline": "Auston Matthews on whether he still believes he can win in Toronto: \"I do... I think we're all hopeful this is just a one-off\"",
+          "headline": "Anthony Stolarz reflects on calling out William Nylander and the team early in the Leafs' season: \"I didn't back up what I said with my play... I regret the way I went about it... Most definitely, it could've been handled in the room\"",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVzJKckNXOTFZd2ZfaWUwcVVxM0pQVTZ0cmo3UXE0cEYxUE5HVzdKN0hQR3c5Q204Ry1fSlRHMUxFSTNHNkFPQmhtRUp3aFl0X2ljRnFfWWFIdUpBSnlNS1lwcXAtTUhZeHl6a1Z3eGtuZ3ZhTjhKdDVxRTQ2NWhKbzZRTzZlVVJ3V3ZEQW83M01YSjZWWEhkS1pMdzA2WjlUdkw1dWEyb0NxcFJFYVE?oc=5"
+          "date": "April 17, 2026",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSng0TEpZeWVsaWJja191UWh3b21HNEZIY0NrclE3Y0FfNEJKRXA0djRrTUR2OHhGaVRFXzJVTTRQYUN4am9Zc1dZUXVqOXpWQ0JmTC00Qjg2X1VuN1A0SHYzS1RWWVN5WDNIWlZmQmNFQzF1ZXhvX1ZZcHRESXlyVFFGbUtVd2x6MnVWVnYxYnVzWUpoaW1ZT2dnMHFaYmRWR2ZUcEhTdkFIY2tSWHp1S1RJdDhmSWU0QmdfTENMQWZlOElQYW9CcTlfYmo?oc=5"
         },
         {
-          "source": "Sportsnet",
+          "source": "heavy.com",
           "source_class": "web",
-          "headline": "Auston Matthews leaves Maple Leafs guessing about his future",
+          "headline": "Maple Leafs Could Be Moving D-Man, and It&rsquo;s Not Reilly",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdnpGZmtpNmo0RGVEVWsxQ0JiUVNmbFNHRl96U2dHSk9Nb3dEb1Rvc2thZTNIemJrRG1qMGw1ZzF6YlFFdndpWUVEV0xzMncyWHZFT1lPRnUwV093SERBSWRaY1pkbVhHMDBBSXhib1hjb3ZESkQtN1Q3NmNiY3dLN192azJLQXlDM2M4eXZXc3NOUW00N3dHUGN3dFFyOU0?oc=5"
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQS04xcF94TEdrR0J4bFFDV1pPeE1ZSTFJRmlXRDA0d3hxMU11eW55djRULWowQlNuZXAzTjdVTkktenowRnVBOU1ORS0xU2l2cDZKdVo3TTJvS2VSOWpicUdxT3ltNldFQmxYdDdJcW50ZVZ3UHlJNS1jTEEySWRFWGFHNTBuZ0hiaWpvcg?oc=5"
+        },
+        {
+          "source": "The Hockey News",
+          "source_class": "web",
+          "headline": "NHL Rumor Roundup: Latest Maple Leafs Speculation After Cleanout Day",
+          "dek": "",
+          "date": "April 17, 2026",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdWhOVGY1VWd6WHN4R2FMQWswdUZPaGFpeUxsV3NJekg5WXVwODh4NktFdkVJVUN5cFZSTG5ObkoxM2szNF83Y0tub1ZWZlRUSnFkWHE0b3FfQUFTNV9CbmZPWklIV1R5Nk50WlFaNTBQaXpJRVdsay1qWS12TUJoekNoZ3RUMEIzc3czbGpiR3h4T05nN3VYR05seDVtb2JUMHdKOVBMa2VWc2xfSmc0?oc=5"
         }
       ],
       "standings": {
@@ -574,29 +523,29 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "7-11",
-      "detail": "4th in AL East",
+      "record": "7-12",
+      "detail": "5th in AL East",
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Toronto's bats went ice-cold again, mustering just one measly run in a <strong>2-1 gut-punch loss to the Brewers</strong> on Thursday &mdash; that's back-to-back 2-1 defeats after splitting the series opener, leaving the Blue Jays at 7-11, fourth in the AL East, and four games back amid a two-game skid. Rookie Brandon Sproat gutted out a career-high 6 2/3 innings for his first quality start, but the bullpen faltered when Milwaukee laid down three straight bunts in the seventh to plate the go-ahead run via Garrett Mitchell, stranding Toronto's tying threat at third. No major injuries surfaced, but this road futility &mdash; now 1-5 away &mdash; screams urgency for Vladimir Guerrero Jr. and the lineup to awaken from their Milwaukee malaise. The Jays aren't buried yet, but the early trajectory demands a reset. <strong>They trek to Arizona tonight for a 8:40 ET tilt against the Diamondbacks, with Eric Lauer (1-2, 7.82 ERA) on the hill versus Michael Soroka's hot 3-0 start</strong> &mdash; win there, or the AL East hunt turns grim fast.",
-        "updated": "Updated April 17, 2026"
+        "body": "The Blue Jays' early-season dreams are curdling into a sour mess&mdash;three straight losses, bats silenced, and the AL East fading in the rearview. <strong>Last night's 3-6 defeat to the Diamondbacks</strong> in Phoenix rubbed salt in the wound, capping a brutal skid after that lone 7&ndash;12 thriller over the Brewers four days back. Sitting at 7-12, fifth in the division and 4 games behind, they're hemorrhaging momentum&mdash;only 2.5 runs above the basement by my count. Vladimir Guerrero Jr. stranded in key spots again, his step late on a Diamondback heater that ended the eighth; the lineup's gone quiet since Ernie Clement's .288 swing offered faint hope. No fresh injuries screaming from the trainer's room, but the bullpen's betrayal&mdash;leaking three in the middle frames&mdash;stings deepest. This isn't contender fire; it's a wake-up call before the roster unravels. <strong>Tonight's rubber match at Arizona, 7:10 ET, demands a spark&mdash;or the hole digs deeper</strong>.",
+        "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
         {
-          "number": "7-11",
+          "number": "7-12",
           "label": "Season Record",
-          "note": "4th in AL East"
+          "note": "5th in AL East"
         },
         {
-          "number": "L2",
+          "number": "L3",
           "label": "Streak",
           "note": "Current streak"
         },
         {
           "number": "4",
           "label": "Games Back",
-          "note": "4th in AL East"
+          "note": "5th in AL East"
         },
         {
           "number": "1-3",
@@ -605,6 +554,17 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Apr 18",
+          "result": "L",
+          "team_score": 3,
+          "opp_name": "Diamondbacks",
+          "opp_score": 6,
+          "opp_logo": "ari",
+          "league": "mlb",
+          "game_date": "2026-04-18",
+          "game_id": "401814985"
+        },
         {
           "date": "Apr 16",
           "result": "L",
@@ -637,60 +597,49 @@
           "league": "mlb",
           "game_date": "2026-04-14",
           "game_id": "401814942"
-        },
-        {
-          "date": "Apr 12",
-          "result": "L",
-          "team_score": 2,
-          "opp_name": "Twins",
-          "opp_score": 8,
-          "opp_logo": "min",
-          "league": "mlb",
-          "game_date": "2026-04-12",
-          "game_id": "401814911"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Brewers vs. Jays &mdash; Full Highlights",
-        "subtitle": "MLB &middot; Apr 16, 2026",
-        "result_badge": "L 1-2",
+        "title": "Diamondbacks vs. Jays &mdash; Full Highlights",
+        "subtitle": "MLB &middot; Apr 18, 2026",
+        "result_badge": "L 3-6",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=kn-GVCdKz38",
-        "game_date": "2026-04-16"
+        "url": "https://www.youtube.com/watch?v=JQIoGpcDWhQ",
+        "game_date": "2026-04-18"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays fell to Brewers 1&ndash;2",
+          "headline": "Jays fell to Diamondbacks 3&ndash;6",
           "dek": "Full game recap and box score.",
-          "date": "Apr 16",
-          "link": "https://www.espn.com/mlb/recap?gameId=401814968"
-        },
-        {
-          "source": "Bluebird Banter",
-          "source_class": "web",
-          "headline": "Deja vu all over again: Jays fall 2-1",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZjB5N09tN0Y1QWxqdGFkM2hfQkktYWtxcUFCcmJfcFN1SXpndDk3WjlIZ09VQlB5dzB6MVFXTU1tREY5d190bVBmTmJwZ2I2WFNsWVZvTWVHYWFCWGsxemNEZURoQURSa0VxTUh4ckVaTFdSZTMyQlZNUTJRemJJbGd1Q2xCcmUydFBEanphNnVNTzFIRXRCN1l6RFFnZ3c?oc=5"
+          "date": "Apr 18",
+          "link": "https://www.espn.com/mlb/recap?gameId=401814985"
         },
         {
           "source": "Sportsnet",
           "source_class": "web",
-          "headline": "Blue Jays provide injury updates on George Springer, Addison Barger",
+          "headline": "Blue Jays' offensive slide continues in sloppy loss to Diamondbacks",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbHY1SExuVUpGLUUxbkZnYldVbzR4RTVCNTJyYU14SVI2SVRDbnBhbkIzNkVacllUUU5iQXFyaHVJUUhuWW5oN1N5UnJORW5MOTRQdHA4SThnNjNIMEdjSW5mY3VROWRnbXBrcVRkeFNka0VlcGRoQVNtLVFCZTFhc3l1djJDTTBlOGh0Y3FHWW5sbmlGRE5KYmtESEVJMWxVRHNJQ29LUQ?oc=5"
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNalBFTl9VTGY4RWVfWVhRbGtCNU8wdExTZmo5dFZDLUIxQzdtV0dFTjdjUmp1M3Y2bVR4Y2N6YnZTbUMwbjVpQmVPV3RfLXBqY2ktbVVVZWhGUC1QVllpc0FHRWdCVkYyQ1pfdmlTYjFmTzlWOXdDMjNIMWo0UGZyUi1rZTdBZWt1NUV1YVNlclJjNHhqSWt6YlkxWnNFMnZiNUt3NzN2UQ?oc=5"
+        },
+        {
+          "source": "MLB.com",
+          "source_class": "web",
+          "headline": "Toronto Blue Jays at Arizona Diamondbacks Game Story, Scores/Highlights - 04/17/2026",
+          "dek": "",
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBSR3k5Qk5ibHhpRXJWQ3pNRVNDaFhHc2hDSldiY3pBN3EwT0owclVSUlpHUVVkUmEtNzlJUHl0SU1VMDduTzltbWhpNU9YUmdR0gFQQVVfeXFMUFJHeTlCTmJseGlFclZDek1FU0NoWEdzaENKV2JjekE3cTBPSjByVVJSWkdRVWRSYS03OUlQeXRJTVUwN25POW1taGk1T1hSZ1E?oc=5"
         },
         {
           "source": "TSN",
           "source_class": "web",
-          "headline": "Blue Jays&rsquo; Berrios allows five runs over 2.2 innings in Dunedin rehab start",
+          "headline": "Blue Jays&rsquo; Varsho exits vs. Diamondbacks with left knee discomfort",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOVS1EeW5YeElVRDQyenlJZU04WU1Uamx1T2JINWdYcFpjMHhFdXMxMzVaNUs5MmQtbGtwd1ZSbXo3Y3lfUFpXTlJBSW93MU50MHd1SF82YlBQVnV4Qmx0ODVGbndkRXg2U1FIYmNtTHlJU255U2JOSXRwNWNRcXdvLVBwcDBoSjd2VFJKdUk3WUNHcHNwWW5xc0l2YXNjbHA4VzJ3N1FadHg?oc=5"
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNT0FtOHlSMmF5TzNmZzFvaFR2d3JlNjgwTmNBSTZnaGxrNTNROGpFSmh6MlQ5WHhXVVpRRDJVQW52WlpYV1VVNjhHc3JmcGhMbnMyNmdUQ3d4dGxJaVU2d3dlNjNFN0pBR2l4eklmaHd1RDBKdGh3N2toM3hXa3B0VEdlOXFnNTBnMFU5c1k4UQ?oc=5"
         }
       ],
       "standings": {
@@ -715,9 +664,21 @@
                 "you": false,
                 "vals": [
                   "11",
-                  "7",
-                  ".611",
+                  "8",
+                  ".579",
                   "-"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "11",
+                  "9",
+                  ".550",
+                  "0.5"
                 ]
               },
               {
@@ -727,8 +688,20 @@
                 "you": false,
                 "vals": [
                   "11",
-                  "8",
-                  ".579",
+                  "9",
+                  ".550",
+                  "0.5"
+                ]
+              },
+              {
+                "team": "NY Yankees",
+                "logo": "nyy",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "11",
+                  "9",
+                  ".550",
                   "0.5"
                 ]
               },
@@ -739,21 +712,21 @@
                 "you": false,
                 "vals": [
                   "11",
-                  "9",
-                  ".550",
+                  "10",
+                  ".524",
                   "1"
                 ]
               },
               {
-                "team": "Rangers",
-                "logo": "tex",
+                "team": "LA Angels",
+                "logo": "laa",
                 "league": "mlb",
                 "you": false,
                 "vals": [
+                  "11",
                   "10",
-                  "9",
-                  ".526",
-                  "1.5"
+                  ".524",
+                  "1"
                 ]
               },
               {
@@ -763,20 +736,8 @@
                 "you": false,
                 "vals": [
                   "10",
-                  "9",
-                  ".526",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "NY Yankees",
-                "logo": "nyy",
-                "league": "mlb",
-                "you": false,
-                "vals": [
                   "10",
-                  "9",
-                  ".526",
+                  ".500",
                   "1.5"
                 ]
               },
@@ -787,21 +748,9 @@
                 "you": false,
                 "vals": [
                   "10",
-                  "9",
-                  ".526",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "LA Angels",
-                "logo": "laa",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "10",
                   "10",
                   ".500",
-                  "2"
+                  "1.5"
                 ]
               },
               {
@@ -810,10 +759,22 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "9",
                   "10",
-                  ".474",
-                  "2.5"
+                  "10",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Sox",
+                "logo": "bos",
+                "league": "mlb",
+                "you": false,
+                "vals": [
+                  "8",
+                  "11",
+                  ".421",
+                  "3"
                 ]
               },
               {
@@ -823,8 +784,8 @@
                 "you": false,
                 "vals": [
                   "8",
-                  "12",
-                  ".400",
+                  "13",
+                  ".381",
                   "4"
                 ]
               },
@@ -835,8 +796,8 @@
                 "you": false,
                 "vals": [
                   "8",
-                  "12",
-                  ".400",
+                  "13",
+                  ".381",
                   "4"
                 ]
               },
@@ -847,21 +808,21 @@
                 "you": true,
                 "vals": [
                   "7",
-                  "11",
-                  ".389",
+                  "12",
+                  ".368",
                   "4"
                 ]
               },
               {
-                "team": "Sox",
-                "logo": "bos",
+                "team": "Chi White Sox",
+                "logo": "chw",
                 "league": "mlb",
                 "you": false,
                 "vals": [
                   "7",
-                  "11",
-                  ".389",
-                  "4"
+                  "13",
+                  ".350",
+                  "4.5"
                 ]
               },
               {
@@ -871,21 +832,9 @@
                 "you": false,
                 "vals": [
                   "7",
-                  "12",
-                  ".368",
-                  "4.5"
-                ]
-              },
-              {
-                "team": "Chi White Sox",
-                "logo": "chw",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "6",
                   "13",
-                  ".316",
-                  "5.5"
+                  ".350",
+                  "4.5"
                 ]
               }
             ]
@@ -910,9 +859,22 @@
                 "seed_style": "faint",
                 "vals": [
                   "11",
-                  "7",
-                  ".611",
+                  "8",
+                  ".579",
                   "&mdash;"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "seed": "WC1",
+                "vals": [
+                  "11",
+                  "9",
+                  ".550",
+                  "0.5"
                 ]
               },
               {
@@ -920,11 +882,24 @@
                 "logo": "min",
                 "league": "mlb",
                 "you": false,
-                "seed": "WC1",
+                "seed": "WC2",
                 "vals": [
                   "11",
-                  "8",
-                  ".579",
+                  "9",
+                  ".550",
+                  "0.5"
+                ]
+              },
+              {
+                "team": "NY Yankees",
+                "logo": "nyy",
+                "league": "mlb",
+                "you": false,
+                "seed": "WC3",
+                "vals": [
+                  "11",
+                  "9",
+                  ".550",
                   "0.5"
                 ]
               },
@@ -933,25 +908,27 @@
                 "logo": "cle",
                 "league": "mlb",
                 "you": false,
-                "seed": "WC2",
+                "seed": "",
+                "seed_style": "faint",
                 "vals": [
                   "11",
-                  "9",
-                  ".550",
+                  "10",
+                  ".524",
                   "1"
                 ]
               },
               {
-                "team": "Rangers",
-                "logo": "tex",
+                "team": "LA Angels",
+                "logo": "laa",
                 "league": "mlb",
                 "you": false,
-                "seed": "WC3",
+                "seed": "",
+                "seed_style": "faint",
                 "vals": [
+                  "11",
                   "10",
-                  "9",
-                  ".526",
-                  "1.5"
+                  ".524",
+                  "1"
                 ]
               },
               {
@@ -963,22 +940,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "10",
-                  "9",
-                  ".526",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "NY Yankees",
-                "logo": "nyy",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
                   "10",
-                  "9",
-                  ".526",
+                  ".500",
                   "1.5"
                 ]
               },
@@ -991,23 +954,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "10",
-                  "9",
-                  ".526",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "LA Angels",
-                "logo": "laa",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "10",
                   "10",
                   ".500",
-                  "2"
+                  "1.5"
                 ]
               },
               {
@@ -1018,10 +967,24 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "9",
                   "10",
-                  ".474",
-                  "2.5"
+                  "10",
+                  ".500",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Sox",
+                "logo": "bos",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "8",
+                  "11",
+                  ".421",
+                  "3"
                 ]
               },
               {
@@ -1033,8 +996,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "8",
-                  "12",
-                  ".400",
+                  "13",
+                  ".381",
                   "4"
                 ]
               },
@@ -1047,8 +1010,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "8",
-                  "12",
-                  ".400",
+                  "13",
+                  ".381",
                   "4"
                 ]
               },
@@ -1061,8 +1024,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "7",
-                  "11",
-                  ".389",
+                  "12",
+                  ".368",
                   "4"
                 ]
               }
@@ -1080,8 +1043,8 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors are standing at the precipice&mdash;5th seed, 46-36 record, and the Cleveland Cavaliers loom like a storm system rolling in from the west. <strong>Game One tips Saturday at 1 p.m. on Prime Video</strong>, and everyone from the talking heads to the oddsmakers has already written Toronto's obituary, penciling in a five- or six-game series exit. The disrespect stings, but it also clarifies things. This roster knows what it needs to prove. Collin Murray-Boyles, the young forward still finding his footing in his first playoff run, has been studying Draymond Green&rsquo;s defensive blueprint&mdash;a sign the Raptors understand they&rsquo;ll need to outthink a Cavaliers team built on execution and depth. The numbers are brutal: since January, Toronto won 26 games but managed only three victories against top-10 net-rating teams, and the offense sputtered to a 27th-ranked rating in those matchups. That&rsquo;s the story the tape tells. <strong>Saturday&rsquo;s opener will reveal whether this team has one more gear, or whether the regular season&rsquo;s careful construction crumbles under playoff pressure.</strong>",
-        "updated": "Updated April 17, 2026"
+        "body": "The air crackles in Toronto this morning &mdash; the Raptors, <strong>back in the playoffs for the first time since 2022</strong>, stand on the brink after a 46-36 grind that locked the 5th seed and 3rd in the Atlantic. Immanuel Quickley, their sharpshooting sparkplug averaging 16.4 points and a career-high 5.9 assists, shook off hamstring tightness Friday, declaring he'll suit up despite the questionable tag &mdash; his second-half three-point surge to 41.5 percent could torch Cleveland's defense. Scottie Barnes looms as the x-factor, with Kevin Garnett crowning him a \"Mini Joker\" ready to bully the paint, while whispers swirl around Jakob Poeltl's injury status. The regular season's ghosts &mdash; that final Nets exit &mdash; fade against this electric reset. All eyes lock on Quicken Loans Arena, where the Cavs lurk as heavy favorites. <strong>Game 1 tips at 1 p.m. ET today</strong> &mdash; win here, and the North awakens; falter, and the dream slips. This is why they rebuilt.",
+        "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
         {
@@ -1111,36 +1074,36 @@
       },
       "the_latest": [
         {
-          "source": "CambridgeToday.ca",
+          "source": "CBC",
           "source_class": "web",
-          "headline": "Toronto Raptors playoff basketball being shown in the Gaslight District",
+          "headline": "The time has come to jump on the Toronto Raptors bandwagon",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOeEprUUVpWmtReFozdlFoc2VWZzh3NVpnVzJpa0ttMFVFTkpqLW9DdEtJUnZ0YlpKNnJnRGZnRlZlaFYxbkFlZFpUSHlYSmc0LVlDNkV2aHlGeWtPcjU3czRzLWVJUGVNdkk4U2M0MnlxbE5mdlhKbkZhRzVqOHRvMER1WWRQY3Z4U0FXZkc3R28wOFBlVENDU255RldoemdObHlQQnFFZ0xOYk0yOVR6eFlsNDJtOEk3b2tkSWpB?oc=5"
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdXhzNnBxR3U4UDNhWGZjR3NIYmRVRmRnY3pTb3N6Mnl6dkdkOHMyTFRrSEJxRDVLX3pBQksyX204UU1iaWxWNlhLWS1LdVhHYmJXbFE2aWZqNHdvZ0JmZFVFNHZEd3hIa0FhVXBhVVZ3SjM0SGlEUW9xNExzQmo2bGxvVHdxTms?oc=5"
         },
         {
-          "source": "NanaimoNewsNOW",
+          "source": "Sportsnet",
           "source_class": "web",
-          "headline": "Playoffs give Raptors all-stars Brandon Ingram and Scottie Barnes a chance to shine",
+          "headline": "Raptors' Quickley confident he'll be available vs. Cavaliers",
           "dek": "",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQY1JXVF9Pa3lUb3pDdGV0elhzOGozZnNVN21GS1VnWldFcmw2NktsQzRrd3lESl9Zd0psNWc5YlJ0T0VZcF9hOFFNYmtnSmNhZXRTYTJtWi14V3VwaW5oQ0ZNOTRQcm8wS3pwVHZ5c2NTYVhUZ0ZUbzE5enpocld2YXBWNmh3cVhUZVRuVThkQzU5RFNEQUhmT2lMVEM3S2lOZTcydElvbV81RlNsSGJWRHVCYWdHd1BORElQUm1vaw?oc=5"
-        },
-        {
-          "source": "TSN",
-          "source_class": "web",
-          "headline": "Josh Lewenberg: Toronto Raptors' Scottie Barnes has a chance to turn breakout season into playoff coming out party",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNR0pYVXA5eVhKN0w5SEc4bnlnLXhHVm5LQ0pmREpDZkxEemZsd1VpWUpYd3B1YXpmblYtNFYtRDJNZlhNYjdrM0ltTGprMGw1WkhJbm9oeXRmNC02VHA1dEFyWUw1dXFIY3A3bzZEYVJjQmc5ckluVnZoRk11UDBtU0Rzd2dfZjlReU1yWmRaNVdsOVdBbTFjdzVJUVFndkZxaWF1ZlAyTEI?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOb1FxME1SRkF3UWtkM0VmaXd0bllNNndRUHVZZHVvZER4X3ZsaTVGUEo0VHhyR0t0aWR3cWU4TjlJd2VxNDEtQ2R6Q3drODVZSU9NbGVZM29HTF93SzlJTWswU0dzcFJibFltMjZDdTZ1cDlfczR6ZHM0VFhNbGZjaVd3RTJSWmdpWHZIU3JNQjVSeHBVeUtGSmZtdw?oc=5"
         },
         {
           "source": "NBA",
           "source_class": "web",
-          "headline": "Toronto Raptors Full Media Availability | Playoff Practice | April 16, 2026",
+          "headline": "Jamal Shead | Playoff Practice | April 17, 2026",
           "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOREhNSGkyc2ppV01nSWxRM05wRDZreVoxR2VYQmJpNVNyRHdCbU41aEtURFBzTU8zRkoxOTZfc2tmdkh1QzFEU0xjdENPRFhib1VtM2dGVEhjUndET3N1TGNlSnFaVW1vRVFkRDQ4YnVHLVJKN2hWdXJqbHEybnQ4LVJLVWpOQ3hzemhyVE9mUU0tTmZlQVpScDlxNThfTnVLNnh0UjZxSjE?oc=5"
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSEhqYjBzTkh0WkhyRjVXSzZIaWhVbG5fX1BkaVlCT1dxa3lqT0pGa0FkQjctcFc2T2xLNlVBeXVyRGpaYTVVNFI2cGlrYURNS2wtWUxTZWlzazRlSnBSM0xzUnB5V2pjUlhXckg1YnJUQUZkQi1Mb0JFZzBEX1M2NXlCZw?oc=5"
+        },
+        {
+          "source": "The New York Times",
+          "source_class": "web",
+          "headline": "Cleveland Cavaliers vs. Toronto Raptors: Playoff schedule, TV and streaming",
+          "dek": "",
+          "date": "April 18, 2026",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV29rQmlrMWU4ejZKVTZmVnM4SDBFc012YVhnRW5QSlhRR1E4MU90UlNqQWpfWk9UVDRUUmxENmtwSE12NkdtNlZoNk04R2JNbHJFLXFSMmFaaXlKZlJ3ejRHbFpMOGJ0MDBkb2g5VmlRYUV3clR3ZndPeTFJbVFScVRDYWNLSTNkVHBNTUprOThNY3kteGVZUmlFQm5sUXI0dlN5WjlhTExqY1U?oc=5"
         }
       ],
       "standings": {
@@ -1322,8 +1285,8 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "Six days. That&rsquo;s all that stands between the Washington Commanders and their chance to reshape a 5-12 season that left them third in the NFC East, nine games behind the division leader. General manager Adam Peters has been crystal clear about his intentions: <strong>the Commanders are \"more likely than not\" staying at No. 7 overall rather than trading back</strong>, signaling confidence that elite talent will still be available when they pick on April 23 in Pittsburgh. Peters hosted more than 20 top prospects at a Top Golf event this week&mdash;names like Arvell Reese, Sonny Styles, David Bailey, and Mansoor Delane&mdash;each one capable of anchoring a defense that desperately needs reinforcement. The mock drafts are all over the map at seven. Edge rusher, linebacker, safety, cornerback&mdash;the Commanders have options, and Peters isn&rsquo;t sweating it. \"There&rsquo;s not too many guys that aren&rsquo;t scheme fits,\" he said. The real work begins next week. <strong>Watch for whether Peters sticks to his word and pulls the trigger at seven, or whether a trade offer proves too tempting to pass up.</strong>",
-        "updated": "Updated April 17, 2026"
+        "body": "The draft room hums with that familiar tension in D.C., where a 5-12 slog to third in the NFC East&mdash;nine games back, mind you&mdash;hands Adam Peters the No. 7 pick like a loaded pistol aimed at redemption. <strong>Just two days ago, Peters doubled down: \"more likely than not\" they stay put, no fire sale trade back unless the board falls just right</strong>&mdash;though whispers of NFC East rivals like the Cowboys itching to leapfrog add that delicious divisional spice. Mock drafts swarm around Jayden Daniels' arsenal, with Bleacher Report's scouts tabbing Ohio State's Carnell Tate as the WR1 prize to unleash opposite Terry McLaurin, while others eye Notre Dame's Jeremiyah Love or Alabama's Sonny Styles to fortify Dan Quinn's injury-ravaged defense. Free agency's quiet splash&mdash;bolstering the line with holdovers like Josh Conerly&mdash;screams urgency for skill bombs and secondary steel at 7, 71, and beyond. Peters covets \"impact\" traits, hosting wideouts like Tate and USC's Makai Lemon, all to armor Daniels after last year's NFC Championship heartbreak. <strong>Five days out, Pittsburgh awaits&mdash;watch if Peters flips the script for extra ammo or pulls the trigger on a game-changer Thursday night.</strong>",
+        "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
         {
@@ -1353,36 +1316,36 @@
       },
       "the_latest": [
         {
-          "source": "Commanders Wire",
+          "source": "USA Today",
           "source_class": "web",
-          "headline": "Former NFL QB makes his pick for Commanders and it's not who you think",
+          "headline": "Native Americans respond to Washington Commanders' new polarizing logo",
           "dek": "",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNampibWd6RW9CSVZ3TGh1WnZQaTFzRnR0NVZzUXg4UGxHRnpJY2NodVNWbnFxTUdVMzRKb2ZRME1HQTVObWszd0dPNUxDUHpFOXVBaU5sTnlnMjBaRnJsVElQZHBvODhxZUwwLTdGanhVenpCRTZQRkN4NHlHSWt2c3BkcnltOUtMQkJmcWxyREpGYmRYZWp5eW90SDNBaWhoeVFKWkUtMzJyZjAwVUgtNHhaOWpGYktIV3NyM0ZoZi1yTFJPam93WmdLTEMxT2h4RzQ3N2c0M18?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZkd1eXQwb1hoVjUxSXNyZFRZRkpaZHplQ3BKc19BeTI1WDgtSi1qS1Q3WERjUm5QSXpCZnk3emNzNVhTdG40d2FUV3FBT1VveHh5MVQ0VUZKLUFMZzlPX1dTMUs4MlY5T1JzRG9jdG04Q29BdzFsVWFkTTdrdzZFdE02ZHFmUFVCVUJqV1RGbmh4VzREMzNneUkwRmxiV0pDU1pVT21GQk9ya3BiN044R25lM0pidmJtM0xQQmFzZm9xN0xTc19EeEtMbVc?oc=5"
         },
         {
-          "source": "Washington Commanders",
+          "source": "NBC4 Washington",
           "source_class": "web",
-          "headline": "'Proud to be a fan': Commanders receive high praise for new uniforms",
-          "dek": "",
-          "date": "April 16, 2026",
-          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOajJKcnRaUVo5d0dqMjQyMnlkNXBMLUxpWW03b2g4dng3MTA1N3pqSE83cWlLc29wX1NPZVFxV3pTbEhKZ0l1WGZGSkxuR2RCRU1fd0k1WVRPaWtIZmw0UkRJWl9WYW5odkxQMnd3dnJ5TVpVRVRzcDJRWDhJWEhPd2ltTGI3dw?oc=5"
-        },
-        {
-          "source": "The BayNet",
-          "source_class": "web",
-          "headline": "Washington Commanders Bring Back Spear, Stripe Helmet &mdash; Fans Celebrate Return To Tradition",
+          "headline": "JP's wish list for Commanders' 7th pick in the draft",
           "dek": "",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMkZvOEZjbU9fTFZBMFF3dzZNb29qYVNKaDM2VU44dmhDdU9WRHpDTkNncGlZWEU5d2I3SDNDN2RKMG9iMG5VQTRLdHJvYWMwWUdQUXo0Ujl2RkNZRnpxc0N2aFVZTmZEejZ0U1ZGQk5wYWJnUUZlb2RnbmIwR0dERmN0c2ZHWFEwVlRWNFVKazlmUDdramp5aFBUMlRaUC04amR0dWlOSkhCZU9FTmh3?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWXEtczF1dVNsNF80T3g1bTJvZkhpWlpTQ2NwbmNFckJwcWxONDJSWU1FT3J4c0RtNXB5LUoybnI2OVpQSzdBYi0ydHp3LWQtdnEtd0JJcXdIRG1Gdk4yT2sxODdWS05QUkxCZjJkbnp3SnJXRnRjQzFvZ0o4ZkxsVndRbmdXYjNYcHZaX2ZIek5OVW1LV3U3R3RnbF9oNWVzemxoajlhbkJjNTlhTUY5MFNiWi1Hanc20gHAAUFVX3lxTE9DZ2R3WElXWmlRWTU1Y1FfSjdzUVpyVkxQRmIzVktHaGJEdFZqZnVsdXFuQ3daeENmOHdwNXBOeXlWVHA5VkRfSGt6eGRpNndkWjFHeXpNNXEzYVJIdHNaN0xMeFhOY2tFSkJxVlBJQWZKdjkxd2g2VEV1b0VrMnZlYUtER0ZaVVZnMWM4MG1oWUE4Ti0wSUFXRzVFMDBaOEw1YlpWYU5PYWE5Q212bFkzWWRzSzYxTm51ZVFBdkxqZw?oc=5"
         },
         {
-          "source": "The Washington Post",
+          "source": "Yahoo Sports",
           "source_class": "web",
-          "headline": "Commanders GM, with plans to keep 7th pick, tries to ignore draft noise",
+          "headline": "Commanders new uniforms draw criticism for spear logo as team brings back burgundy and gold as nod to the past",
           "dek": "",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNN0FDTmhsOWhoMkVQNTZiSUlWN0gzSnZIQnVQcGN4TnVQY2ZKTkVlMlpQQ0lwMFNKdEhjUHA5RW1uWFRxRmg1a1pyQndDOW5HQ0tSamRadml6clNtSVRjMVAySXJNU0RKOE9TQklWLUpDS29QelA1NDFyWWJ6YUs2WmFXS1d6Y1l3U2pYUXFlZXlPQQ?oc=5"
+          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNdVlKYnNReHF2MlFaZGR6SDMxSVdMeUpyRFNOM0Y4WjJ5ZmZpMURrN1ZvRGF3RlVlWF8zbElCM2VUeV9STWI3cnlnbUdTWW1oUFc5ZGlQaW9VSDJJOFJsbFRodzEwZHdERUF1WklueDdJa3FFdjEtdkVsRGJlQ2JyR0h3Z3VLUjYwZWNBQ0psVmZ3dEVidmg5WjZJRU9CSnlOOUNWSE9jQnNiTWwzZ29wTF91V0FkNHgzeFhjcGpVOGpFV1dwRU5fdV9vVHlLYUJuei03a3BvcWl3TksxUWo5S3dBZzBJN1hlU3g4SWhvdldfMndE?oc=5"
+        },
+        {
+          "source": "The New York Times",
+          "source_class": "web",
+          "headline": "The Commanders&rsquo; new uniforms are fire, but going back to the future can stir up old flames",
+          "dek": "",
+          "date": "April 17, 2026",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWW5xVDN6SGVVZGhuSjREQUR0VWxlY090NlNLaDBvRUg1RjliQTV1NERHbzBtVDh6Mkx3T0w5alVpZC1uSjZVLXNhRFdHSmhtaGRZeFFMc2FwdmhkRlpGRzc2VXpNZ3RCcVJ0dEczS1BDb0p0VDNna0JGZXA1QWp1RFFJYTB6MldTbFE?oc=5"
         }
       ],
       "standings": {
@@ -1601,47 +1564,42 @@
   "featured": {
     "team": "raptors",
     "kicker": "Toronto Raptors &middot; Playoffs",
-    "headline": "Toronto Raptors playoff basketball being shown in the Gaslight District",
+    "headline": "The time has come to jump on the Toronto Raptors bandwagon",
     "dek": "The Toronto Raptors (46-36). 3rd in Atlantic Division. ",
-    "source": "CambridgeToday.ca",
-    "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOeEprUUVpWmtReFozdlFoc2VWZzh3NVpnVzJpa0ttMFVFTkpqLW9DdEtJUnZ0YlpKNnJnRGZnRlZlaFYxbkFlZFpUSHlYSmc0LVlDNkV2aHlGeWtPcjU3czRzLWVJUGVNdkk4U2M0MnlxbE5mdlhKbkZhRzVqOHRvMER1WWRQY3Z4U0FXZkc3R28wOFBlVENDU255RldoemdObHlQQnFFZ0xOYk0yOVR6eFlsNDJtOEk3b2tkSWpB?oc=5",
-    "date": "April 17, 2026"
+    "source": "CBC",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdXhzNnBxR3U4UDNhWGZjR3NIYmRVRmRnY3pTb3N6Mnl6dkdkOHMyTFRrSEJxRDVLX3pBQksyX204UU1iaWxWNlhLWS1LdVhHYmJXbFE2aWZqNHdvZ0JmZFVFNHZEd3hIa0FhVXBhVVZ3SjM0SGlEUW9xNExzQmo2bGxvVHdxTms?oc=5",
+    "date": "April 18, 2026"
   },
   "two_up": [
     {
       "team": "jays",
       "kicker": "Toronto Blue Jays &middot; Regular Season",
-      "headline": "Deja vu all over again: Jays fall 2-1",
-      "dek": "The Toronto Blue Jays (7-11) face at Diamondbacks next on Sat 4/18.",
-      "source": "Bluebird Banter",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZjB5N09tN0Y1QWxqdGFkM2hfQkktYWtxcUFCcmJfcFN1SXpndDk3WjlIZ09VQlB5dzB6MVFXTU1tREY5d190bVBmTmJwZ2I2WFNsWVZvTWVHYWFCWGsxemNEZURoQURSa0VxTUh4ckVaTFdSZTMyQlZNUTJRemJJbGd1Q2xCcmUydFBEanphNnVNTzFIRXRCN1l6RFFnZ3c?oc=5",
-      "date": "April 17, 2026"
+      "headline": "Toronto Blue Jays at Arizona Diamondbacks Game Story, Scores/Highlights - 04/17/2026",
+      "dek": "The Toronto Blue Jays (7-12) face at Diamondbacks next on Sun 4/19.",
+      "source": "MLB.com",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBSR3k5Qk5ibHhpRXJWQ3pNRVNDaFhHc2hDSldiY3pBN3EwT0owclVSUlpHUVVkUmEtNzlJUHl0SU1VMDduTzltbWhpNU9YUmdR0gFQQVVfeXFMUFJHeTlCTmJseGlFclZDek1FU0NoWEdzaENKV2JjekE3cTBPSjByVVJSWkdRVWRSYS03OUlQeXRJTVUwN25POW1taGk1T1hSZ1E?oc=5",
+      "date": "April 18, 2026"
     },
     {
       "team": "leafs",
-      "kicker": "Toronto Maple Leafs &middot; Eliminated / Season Over",
-      "headline": "Matthews said he 'can't predict' his future with Maple Leafs",
-      "dek": "The Toronto Maple Leafs (32-36-14) sit 8th in atlantic division.",
-      "source": "NHL.com",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZk13bUxTNUlUTkNSYVNNcXFmc1B6NkxGYXNNRWhIWWlrcXBhcVhHS2ZWOEw5aXRwZE5CZktOU21IWkIzNEt4U25uc2dkaFRvVnpKc3BLSDJpdVRKc1JPSmI5TmlQelI2MzhKN1VVVHZNbDFpQVZhT1RXSllhQktkYmt3aw?oc=5",
-      "date": "April 17, 2026"
+      "kicker": "Toronto Maple Leafs &middot; Season Over",
+      "headline": "Maple Leafs interviewing Mats Sundin for hockey department job",
+      "dek": "The Toronto Maple Leafs (32-36-14). 8th in Atlantic Division. ",
+      "source": "Sportsnet",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVHhDVDZSbm5FSVBpeEh1Ny1JZlJlam4teV9nZWtMMzdQWHZZaXlHWEFpUlozaGhuOS1yLV9odGZoMnJlenhidm9MSUZZUVhoaHg5YlFtVXphY1BjVEk3cWxFa3E2WkFuWlFKQzhLSm1HVlBBemNmaFkzTUhib3dXbEJTaEU0RS1RSDU3dVAtQXdrckpUNVI1ZjJkZDFaME9tbkE?oc=5",
+      "date": "April 18, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders &middot; Pre-Draft",
-    "headline": "Former NFL QB makes his pick for Commanders and it's not who you think",
+    "headline": "Native Americans respond to Washington Commanders' new polarizing logo",
     "dek": "The Washington Commanders (5-12). 3rd in NFC East. ",
-    "source": "Commanders Wire",
-    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNampibWd6RW9CSVZ3TGh1WnZQaTFzRnR0NVZzUXg4UGxHRnpJY2NodVNWbnFxTUdVMzRKb2ZRME1HQTVObWszd0dPNUxDUHpFOXVBaU5sTnlnMjBaRnJsVElQZHBvODhxZUwwLTdGanhVenpCRTZQRkN4NHlHSWt2c3BkcnltOUtMQkJmcWxyREpGYmRYZWp5eW90SDNBaWhoeVFKWkUtMzJyZjAwVUgtNHhaOWpGYktIV3NyM0ZoZi1yTFJPam93WmdLTEMxT2h4RzQ3N2c0M18?oc=5",
-    "date": "April 17, 2026"
+    "source": "USA Today",
+    "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZkd1eXQwb1hoVjUxSXNyZFRZRkpaZHplQ3BKc19BeTI1WDgtSi1qS1Q3WERjUm5QSXpCZnk3emNzNVhTdG40d2FUV3FBT1VveHh5MVQ0VUZKLUFMZzlPX1dTMUs4MlY5T1JzRG9jdG04Q29BdzFsVWFkTTdrdzZFdE02ZHFmUFVCVUJqV1RGbmh4VzREMzNneUkwRmxiV0pDU1pVT21GQk9ya3BiN044R25lM0pidmJtM0xQQmFzZm9xN0xTc19EeEtMbVc?oc=5",
+    "date": "April 18, 2026"
   },
   "ticker": [
-    {
-      "badge": "NHL",
-      "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs fell to Senators 1&ndash;3"
-    },
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
@@ -1650,22 +1608,22 @@
     {
       "badge": "NHL",
       "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs season over &mdash; lottery watch begins"
+      "text": "Maple Leafs interviewing Mats Sundin for hockey..."
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays fell to Brewers 1&ndash;2"
+      "text": "Jays fell to Diamondbacks 3&ndash;6"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays (7-11) &mdash; 4th in AL East"
+      "text": "Jays (7-12) &mdash; 5th in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "background:var(--jays);color:#fff",
-      "text": "Next: Jays at Diamondbacks &mdash; Sat 4/18 8:40 PM ET"
+      "text": "Next: Jays at Diamondbacks &mdash; Sun 4/19 7:10 PM ET"
     },
     {
       "badge": "NBA",
@@ -1675,7 +1633,7 @@
     {
       "badge": "NBA",
       "badge_style": "background:var(--raptors);color:#fff",
-      "text": "Toronto Raptors playoff basketball being shown in..."
+      "text": "The time has come to jump on the Toronto Raptors..."
     },
     {
       "badge": "NBA",
@@ -1690,7 +1648,7 @@
     {
       "badge": "NFL",
       "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Former NFL QB makes his pick for Commanders and..."
+      "text": "Native Americans respond to Washington Commanders'..."
     },
     {
       "badge": "NFL",
@@ -1705,17 +1663,17 @@
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
       "record": "32-36-14",
       "status": "8th in Atlantic Division",
-      "status_class": "red",
-      "stat": "Streak: L7"
+      "status_class": "muted",
+      "stat": ""
     },
     {
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "7-11",
-      "status": "4th in AL East",
+      "record": "7-12",
+      "status": "5th in AL East",
       "status_class": "red",
-      "stat": "Streak: L2"
+      "stat": "Streak: L3"
     },
     {
       "team": "raptors",
@@ -1741,7 +1699,7 @@
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
       "matchup": "Leafs",
-      "detail": "Eliminated / Season Over",
+      "detail": "Season Over",
       "channel": "",
       "off": true
     },
@@ -1749,7 +1707,7 @@
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
       "matchup": "Jays",
-      "detail": "Next: Sat 4/18 at Diamondbacks 8:40 PM ET",
+      "detail": "Next: Sun 4/19 at Diamondbacks 7:10 PM ET",
       "channel": "",
       "off": true
     },
@@ -1772,15 +1730,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Sat 4/18",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Diamondbacks",
-        "time": "8:40 PM ET",
-        "tv": "TBD"
-      },
       {
         "day": "Sun 4/19",
         "team": "jays",
@@ -1833,6 +1782,15 @@
         "name": "Jays",
         "opp": "vs. Guardians",
         "time": "6:07 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Sat 4/25",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "vs. Guardians",
+        "time": "2:07 PM ET",
         "tv": "TBD"
       },
       {
