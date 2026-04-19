@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-19T08:16:49.197214-05:00",
+    "updated": "2026-04-19T09:41:47.264622-05:00",
     "date_display": "April 19, 2026"
   },
   "teams": {
@@ -12,7 +12,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Toronto Maple Leafs' season slammed shut like a rink door in a blizzard - another year of promise curdling into frustration, leaving fans to scrape the ice for answers. Their 32-36-14 ledger landed them <strong>8th in the Atlantic, 35 games back with just 78 points</strong>, capped by a grim L7 streak that buried any faint playoff flicker. The core - Mitch Marner, Auston Matthews, William Nylander - carried the load again, but defensive lapses and goaltending woes turned elite offense into fool's gold; 15th in playoff seedings says it all. Whispers of coaching upheaval swirl around Sheldon Keefe's future, while free agency looms with cap-strapped choices on UFAs like a disgruntled Tavares. Draft lottery odds offer a sliver of hope - perhaps a top-10 pick to inject youth into this aging machine. The Marlies' uneven AHL grind mirrors the big club's talent pipeline issues. <strong>Watch the lottery draw and Shanahan's offseason purge</strong> - that's where Toronto rebuilds or reloads for 2026-27.",
+        "body": "The curtain crashed down on another Toronto Maple Leafs season - a grim 32-36-14 slog that left them <strong>8th in the Atlantic, 31 games back with just 78 points and a seven-game losing streak to cap the misery</strong>. No playoffs, no excuses; this was a roster that sputtered from the jump, bleeding goals and belief in equal measure. The core - Mitch Marner flashing brilliance amid the wreckage, Auston Matthews grinding through injuries that sapped his edge - carried too much freight on shoulders already bowed by expectation. What went wrong? Goaltending crumbled like stale pucks, defense leaked oil, and Craig Berube's bark couldn't mask the bite missing up front. Right? Precious little, save for flashes from kids like Fraser Minten hinting at tomorrow. Now the real skate begins: <strong>draft lottery odds staring at pick 15, free agency whispers around a disgruntled Morgan Rielly, and Berube's seat scorching under Shanahan's glare</strong> - will Treliving swing for a rebuild or double down on the stars? Leafs Nation braces for the purge; summer's the series that counts.",
         "updated": "Updated April 19, 2026"
       },
       "key_numbers": [
@@ -32,7 +32,7 @@
           "note": "Current streak"
         },
         {
-          "number": "35",
+          "number": "31",
           "label": "Games Back",
           "note": "8th in Atlantic Division"
         }
@@ -43,18 +43,10 @@
       },
       "the_latest": [
         {
-          "source": "The Hockey News",
-          "source_class": "web",
-          "headline": "Why The NHL's 'Ball-By-Ball' Draft Lottery Will Be A Must-Watch For Maple Leafs Fans",
-          "dek": "",
-          "date": "April 19, 2026",
-          "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-        },
-        {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NHLPA poll: Sidney Crosby most likely to become head coach",
-          "dek": "Sidney Crosby is seen by his peers as the NHL player most likely to become a head coach, according to the National Hockey League Players' Association's annual player poll released Friday.",
+          "dek": "As the Maple Leafs miss the playoffs with an 8th-place Atlantic finish, peers view Penguins captain Sidney Crosby as the NHL's next head coach in the latest NHLPA poll. This endorsement highlights Crosby's leadership amid Pittsburgh's playoff push, contrasting Toronto's disapp...",
           "date": "April 17, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/48516380/nhlpa-poll-crosby-most-likely-become-head-coach"
         },
@@ -62,14 +54,14 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Which NHL teams have the longest postseason streaks?",
-          "dek": "The Avalanche and Lightning are tied for the longest active consecutive playoff streaks in the NHL. See which other teams make the list.",
+          "dek": "The Toronto Maple Leafs' disappointing 32-36-14 season ended with an eighth-place finish in the Atlantic Division, extending their postseason drought amid Buffalo's league-worst 14-year streak. As playoffs begin without them, this list spotlights teams like the Avalanche and L...",
           "date": "April 16, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/43453258/which-nhl-teams-longest-postseason-streaks"
         }
       ],
       "standings": {
         "tabs": [
-          "Eastern Conference",
+          "Atlantic Division",
           "Eastern Wild Card"
         ],
         "panes": [
@@ -82,18 +74,6 @@
               "PTS"
             ],
             "rows": [
-              {
-                "team": "Hurricanes",
-                "logo": "car",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "53",
-                  "22",
-                  "7",
-                  "113"
-                ]
-              },
               {
                 "team": "Sabres",
                 "logo": "buf",
@@ -155,42 +135,6 @@
                 ]
               },
               {
-                "team": "Penguins",
-                "logo": "pit",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "41",
-                  "25",
-                  "16",
-                  "98"
-                ]
-              },
-              {
-                "team": "Flyers",
-                "logo": "phi",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "43",
-                  "27",
-                  "12",
-                  "98"
-                ]
-              },
-              {
-                "team": "Capitals",
-                "logo": "wsh",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "43",
-                  "30",
-                  "9",
-                  "95"
-                ]
-              },
-              {
                 "team": "Wings",
                 "logo": "det",
                 "league": "nhl",
@@ -200,42 +144,6 @@
                   "31",
                   "10",
                   "92"
-                ]
-              },
-              {
-                "team": "Jackets",
-                "logo": "cbj",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "40",
-                  "30",
-                  "12",
-                  "92"
-                ]
-              },
-              {
-                "team": "NY Islanders",
-                "logo": "nyi",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "43",
-                  "34",
-                  "5",
-                  "91"
-                ]
-              },
-              {
-                "team": "Devils",
-                "logo": "nj",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "42",
-                  "37",
-                  "3",
-                  "87"
                 ]
               },
               {
@@ -261,18 +169,6 @@
                   "14",
                   "78"
                 ]
-              },
-              {
-                "team": "NY Rangers",
-                "logo": "nyr",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "34",
-                  "39",
-                  "9",
-                  "77"
-                ]
               }
             ]
           },
@@ -288,24 +184,11 @@
             "has_seed_col": true,
             "rows": [
               {
-                "team": "Hurricanes",
-                "logo": "car",
-                "league": "nhl",
-                "you": false,
-                "seed": "E1",
-                "vals": [
-                  "53",
-                  "22",
-                  "7",
-                  "113"
-                ]
-              },
-              {
                 "team": "Sabres",
                 "logo": "buf",
                 "league": "nhl",
                 "you": false,
-                "seed": "E2",
+                "seed": "A1",
                 "vals": [
                   "50",
                   "23",
@@ -318,7 +201,7 @@
                 "logo": "tb",
                 "league": "nhl",
                 "you": false,
-                "seed": "E3",
+                "seed": "A2",
                 "vals": [
                   "50",
                   "26",
@@ -331,7 +214,7 @@
                 "logo": "mtl",
                 "league": "nhl",
                 "you": false,
-                "seed": "WC1",
+                "seed": "A3",
                 "vals": [
                   "48",
                   "24",
@@ -340,30 +223,16 @@
                 ]
               },
               {
-                "team": "Bruins",
-                "logo": "bos",
+                "team": "Hurricanes",
+                "logo": "car",
                 "league": "nhl",
                 "you": false,
-                "seed": "WC2",
+                "seed": "M1",
                 "vals": [
-                  "45",
-                  "27",
-                  "10",
-                  "100"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "44",
-                  "27",
-                  "11",
-                  "99"
+                  "53",
+                  "22",
+                  "7",
+                  "113"
                 ]
               },
               {
@@ -371,8 +240,7 @@
                 "logo": "pit",
                 "league": "nhl",
                 "you": false,
-                "seed": "",
-                "seed_style": "faint",
+                "seed": "M2",
                 "vals": [
                   "41",
                   "25",
@@ -385,13 +253,38 @@
                 "logo": "phi",
                 "league": "nhl",
                 "you": false,
-                "seed": "",
-                "seed_style": "faint",
+                "seed": "M3",
                 "vals": [
                   "43",
                   "27",
                   "12",
                   "98"
+                ]
+              },
+              {
+                "team": "Bruins",
+                "logo": "bos",
+                "league": "nhl",
+                "you": false,
+                "seed": "WC1",
+                "vals": [
+                  "45",
+                  "27",
+                  "10",
+                  "100"
+                ]
+              },
+              {
+                "team": "Senators",
+                "logo": "ott",
+                "league": "nhl",
+                "you": false,
+                "seed": "WC2",
+                "vals": [
+                  "44",
+                  "27",
+                  "11",
+                  "99"
                 ]
               },
               {
@@ -510,6 +403,48 @@
           }
         ]
       },
+      "draft_board": {
+        "team": "Toronto Maple Leafs",
+        "league": "NHL",
+        "projected_pick": "#27 overall (top-5 protected pick to Boston)",
+        "draft_date": "June 26-27, 2026",
+        "prospects_watched": [
+          {
+            "name": "Gavin McKenna",
+            "position": "LW",
+            "team": "Penn State",
+            "note": "Top-ranked North American skater per NHL Central Scouting, elite scoring winger to bolster Leafs' offense."
+          },
+          {
+            "name": "Chase Reid",
+            "position": "F",
+            "team": "TBD",
+            "note": "Consensus top-5 hopeful, dynamic forward fitting Toronto's need for high-end talent."
+          },
+          {
+            "name": "Ivar Stenberg",
+            "position": "LW",
+            "team": "Frolunda (SHL)",
+            "note": "Top international skater, skilled playmaker with pro experience."
+          },
+          {
+            "name": "Carson Carels",
+            "position": "D",
+            "team": "TBD",
+            "note": "Rising defenseman Toronto may target, but risks being taken early per beat reports."
+          },
+          {
+            "name": "Keaton Verhoeff",
+            "position": "F",
+            "team": "TBD",
+            "note": "Top-16 prospect with strong two-way game suiting Leafs' rebuild considerations."
+          }
+        ],
+        "lottery": {
+          "odds": "TBD",
+          "outcome": "Pending"
+        }
+      },
       "the_latest_label": "Offseason Intel"
     },
     "jays": {
@@ -520,7 +455,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Another <strong>grand slam catastrophe</strong> struck the Toronto Blue Jays last night in Arizona, where Corbin Carroll crushed Jeff Hoffman's offering to left-center in the eighth, flipping a 2-2 tie into a 6-2 gut punch that extended their misery to four straight losses. They're 7-13 now, dead last in the AL East at fifth place, 5 games back and hemorrhaging momentum after dropping both to the Brewers and now the Diamondbacks - outscored, outdueled, and out of excuses in a desert series that's exposed every flaw. Hoffman, who piled up 33 saves last year, has been a strikeout machine with 18 K's in under nine innings this season, but that bases-loaded bomb stranded Toronto's eight runners left on base despite 12 hits; the bats went 2-for-9 with men in scoring position, a familiar choke. No fresh injuries reported, but this slump screams deeper rot - the rotation's next, Kevin Gausman desperately toeing the rubber this afternoon for series salvation. <strong>Win today, or stare down a 7 - 13 abyss heading home</strong> - the AL East won't wait for wake-up calls.",
+        "body": "Four losses in four nights - Toronto's bats strangled, bullpen betrayed, and the desert sun baking another defeat into the books. <strong>Corbin Carroll's eighth-inning grand slam off Jeff Hoffman yesterday</strong> turned a 2-2 tie into a 6-2 gut punch from the Diamondbacks, capping 12 hits for the Jays that produced zilch after the third. At 7-13, they're anchored in fifth in the AL East, 5 games back amid a four-game skid that started in Milwaukee and deepened in Arizona - offense sputtering, stranding runners like lost luggage. Hoffman's been a strikeout machine early, but that slam exposed the 'pen's fragility; no fresh injury bites, but the lineup's urgency screams for Vlad Guerrero Jr. to ignite before this road trip buries them. No one's panicking yet - this is April - but the mirror's unkind. <strong>Kevin Gausman takes the hill this afternoon in the series finale at Chase Field</strong>; salvage a win, or stare down a .350 clip staring back. The hunt demands desperation now.",
         "updated": "Updated April 19, 2026"
       },
       "key_numbers": [
@@ -605,30 +540,22 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Diamondbacks 2 - 6",
-          "dek": "Full game recap and box score.",
+          "dek": "Corbin Carroll's eighth-inning grand slam off Jeff Hoffman erased a tie and powered Arizona to a 6-2 win, extending Toronto's skid to four straight defeats.[2][3] Despite stranding 12 hits for just two runs, the Jays sit at 7-13 and last in the AL East with a series finale loo...",
           "date": "Apr 19",
           "link": "https://www.espn.com/mlb/recap?gameId=401815000"
-        },
-        {
-          "source": "Bluebird Banter",
-          "source_class": "web",
-          "headline": "Hoffman Meltdown and Quiet Bats, Jays Lose 6-2",
-          "dek": "",
-          "date": "April 19, 2026",
-          "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Diamondbacks 3 - 6",
-          "dek": "Full game recap and box score.",
+          "dek": "Corbin Carroll's eighth-inning grand slam off Jeff Hoffman snapped a tie and powered Arizona to a 6-2 win, handing Toronto its fourth straight loss.[1][2] Despite outhitting the Diamondbacks 12-7, the Jays dropped to 7-13 and last in the AL East ahead of a series finale rubber...",
           "date": "Apr 18",
           "link": "https://www.espn.com/mlb/recap?gameId=401814985"
         }
       ],
       "standings": {
         "tabs": [
-          "American League",
+          "American League East",
           "AL Wild Card"
         ],
         "panes": [
@@ -666,78 +593,6 @@
                 ]
               },
               {
-                "team": "Guardians",
-                "logo": "cle",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "12",
-                  "10",
-                  ".545",
-                  "1"
-                ]
-              },
-              {
-                "team": "Rangers",
-                "logo": "tex",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "11",
-                  "10",
-                  ".524",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Twins",
-                "logo": "min",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "11",
-                  "10",
-                  ".524",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Athletics",
-                "logo": "ath",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "11",
-                  "10",
-                  ".524",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Tigers",
-                "logo": "det",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "11",
-                  "10",
-                  ".524",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "LA Angels",
-                "logo": "laa",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "11",
-                  "11",
-                  ".500",
-                  "2"
-                ]
-              },
-              {
                 "team": "Orioles",
                 "logo": "bal",
                 "league": "mlb",
@@ -747,18 +602,6 @@
                   "11",
                   ".476",
                   "2.5"
-                ]
-              },
-              {
-                "team": "Mariners",
-                "logo": "sea",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "9",
-                  "13",
-                  ".409",
-                  "4"
                 ]
               },
               {
@@ -774,18 +617,6 @@
                 ]
               },
               {
-                "team": "Astros",
-                "logo": "hou",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "8",
-                  "14",
-                  ".364",
-                  "5"
-                ]
-              },
-              {
                 "team": "Jays",
                 "logo": "tor",
                 "league": "mlb",
@@ -795,30 +626,6 @@
                   "13",
                   ".350",
                   "5"
-                ]
-              },
-              {
-                "team": "Chi White Sox",
-                "logo": "chw",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "7",
-                  "14",
-                  ".333",
-                  "5.5"
-                ]
-              },
-              {
-                "team": "Royals",
-                "logo": "kc",
-                "league": "mlb",
-                "you": false,
-                "vals": [
-                  "7",
-                  "14",
-                  ".333",
-                  "5.5"
                 ]
               }
             ]
@@ -835,6 +642,20 @@
             "has_seed_col": true,
             "rows": [
               {
+                "team": "Guardians",
+                "logo": "cle",
+                "league": "mlb",
+                "you": false,
+                "seed": "DIV",
+                "seed_style": "faint",
+                "vals": [
+                  "12",
+                  "10",
+                  ".545",
+                  "-"
+                ]
+              },
+              {
                 "team": "Tampa Bay",
                 "logo": "tb",
                 "league": "mlb",
@@ -845,6 +666,20 @@
                   "12",
                   "8",
                   ".600",
+                  "-"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "seed": "DIV",
+                "seed_style": "faint",
+                "vals": [
+                  "11",
+                  "10",
+                  ".524",
                   "-"
                 ]
               },
@@ -862,21 +697,21 @@
                 ]
               },
               {
-                "team": "Guardians",
-                "logo": "cle",
+                "team": "Twins",
+                "logo": "min",
                 "league": "mlb",
                 "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "12",
+                  "11",
                   "10",
-                  ".545",
-                  "1"
+                  ".524",
+                  "0.5"
                 ]
               },
               {
-                "team": "Rangers",
-                "logo": "tex",
+                "team": "Tigers",
+                "logo": "det",
                 "league": "mlb",
                 "you": false,
                 "seed": "WC3",
@@ -884,21 +719,7 @@
                   "11",
                   "10",
                   ".524",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Twins",
-                "logo": "min",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "11",
-                  "10",
-                  ".524",
-                  "1.5"
+                  "0.5"
                 ]
               },
               {
@@ -912,21 +733,7 @@
                   "11",
                   "10",
                   ".524",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Tigers",
-                "logo": "det",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "11",
-                  "10",
-                  ".524",
-                  "1.5"
+                  "-"
                 ]
               },
               {
@@ -940,7 +747,7 @@
                   "11",
                   "11",
                   ".500",
-                  "2"
+                  "0.5"
                 ]
               },
               {
@@ -968,7 +775,7 @@
                   "9",
                   "13",
                   ".409",
-                  "4"
+                  "2.5"
                 ]
               },
               {
@@ -996,7 +803,7 @@
                   "8",
                   "14",
                   ".364",
-                  "5"
+                  "3.5"
                 ]
               },
               {
@@ -1047,7 +854,7 @@
           "note": "Current streak"
         },
         {
-          "number": "14",
+          "number": "10",
           "label": "Games Back",
           "note": "3rd in Atlantic Division"
         }
@@ -1071,7 +878,7 @@
         "subtitle": "NBA · Apr 18, 2026",
         "result_badge": "L 113-126",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=dCGACD_JSME",
+        "url": "https://www.youtube.com/watch?v=CfoT98jQkWE",
         "game_date": "2026-04-18"
       },
       "the_latest": [
@@ -1079,23 +886,15 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors fell to Cavaliers 113 - 126",
-          "dek": "Full game recap and box score.",
+          "dek": "The fifth-seeded Raptors couldn't contain Donovan Mitchell's 32-point performance in their playoff opener against the fourth-seeded Cavaliers. Toronto's RJ Barrett led the team with 24 points, but the Cavs' balanced scoring attack and three-point shooting prowess proved too mu...",
           "date": "Apr 18",
           "link": "https://www.espn.com/nba/recap?gameId=401869187"
-        },
-        {
-          "source": "TSN",
-          "source_class": "web",
-          "headline": "Raptors fall to Cavaliers in playoff series opener",
-          "dek": "",
-          "date": "April 18, 2026",
-          "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Cleveland takes 1-0 lead into game 2 against Toronto",
-          "dek": "Toronto Raptors (46-36, fifth in the Eastern Conference) vs. Cleveland Cavaliers (52-30, fourth in the Eastern Conference)",
+          "dek": "The Cavaliers' dominant 24-point lead and suffocating defense that held Toronto to a season-low three three-pointers suggest Cleveland's depth could overwhelm a Raptors team relying heavily on RJ Barrett. Toronto must find offensive answers quickly or risk falling into an earl...",
           "date": "April 19, 2026",
           "link": "http://www.espn.com/nba/preview?gameId=401869369"
         }
@@ -1165,10 +964,10 @@
                 "seed": "4"
               },
               {
-                "team": "Hawks",
-                "logo": "atl",
+                "team": "Raptors",
+                "logo": "tor",
                 "league": "nba",
-                "you": false,
+                "you": true,
                 "vals": [
                   "46",
                   "36",
@@ -1177,10 +976,10 @@
                 "seed": "5"
               },
               {
-                "team": "Raptors",
-                "logo": "tor",
+                "team": "Hawks",
+                "logo": "atl",
                 "league": "nba",
-                "you": true,
+                "you": false,
                 "vals": [
                   "46",
                   "36",
@@ -1256,7 +1055,7 @@
                 "you": false
               },
               {
-                "matchup": "(5) Hawks vs. (6) Raptors",
+                "matchup": "(5) Raptors vs. (6) Hawks",
                 "series": "Sat Apr 18",
                 "you": true
               },
@@ -1279,7 +1078,7 @@
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft smoke thickens around Washington, where a 5-12 stumble left them third in the NFC East, nine games back, and armed with the 14th pick in a loaded class - perfect for flipping misery into muscle. <strong>Jack Sperry's perfect seven-round mock dropped Saturday</strong>, handing the Commanders Makai Lemon to juice Jayden Daniels' barren receiver corps beyond Terry McLaurin, then Jermod McCoy at corner to shore up a secondary that's been leaking like a sieve. Free agency pruned vets like Deebo Samuel, Austin Ekeler, and Von Miller off the roster, clearing cap for trenches and speed, while mocks whisper trade-downs - snag extra Day 2 picks from desperate Cowboys or Giants, maybe pouncing on Jeremiyah Love if he slides. Daniels, their franchise spark, needs weapons now; that 79-catch, 1,156-yard Biletnikoff shadow in mocks screams instant impact. No more band-aids - this front office eyes long-term: edge, OT, ILB like Harold Perkins Jr. to bury rivals. <strong>With the draft clock ticking next week, watch if they deal back for volume or swing big at No. 14 - roster rebirth or bust hangs on it.</strong>",
+        "body": "The draft smoke thickens around Washington, where a 5-12 stumble left them third in the NFC East - six games back, but clutching the No. 7 pick like a lifeline in this rebuild roulette. <strong>Jack Sperry's perfect seven-round mock dropped Saturday</strong>, handing the Commanders WR Makai Lemon to stretch the field, CB Jermod McCoy to lock down receivers, and a late QB Taylen Green as insurance - echoing the buzz from Paul's breakdown eyeing elite playmakers at seven or trade-down gambits for volume. Free agency pruned vets like Deebo Samuel, Austin Ekler, and Von Miller, exposing trenches and secondary gaps that scream for OT Francis Mauigoa or EDGE Arvell Reese if they slide. GM Adam Peters won't chase quick fixes - Jeremiyah Love tempts for instant pop, but long-term trumps band-aids on this flawed roster. Eyes on Harold Perkins Jr. at ILB to ignite the front seven. <strong>With the draft ticking down next week, watch if they pounce at seven or wheel for Day 2 hauls - 2026 contention hinges on it.</strong>",
         "updated": "Updated April 19, 2026"
       },
       "key_numbers": [
@@ -1294,7 +1093,7 @@
           "note": "Current streak"
         },
         {
-          "number": "9",
+          "number": "6",
           "label": "Games Back",
           "note": "3rd in NFC East"
         },
@@ -1310,18 +1109,10 @@
       },
       "the_latest": [
         {
-          "source": "Commanders Wire",
-          "source_class": "web",
-          "headline": "Wishful thinking mock draft gives Commanders two first-round picks",
-          "dek": "",
-          "date": "April 19, 2026",
-          "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-        },
-        {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 NFL mock draft: Kiper's pick predictions for Rounds 1-2",
-          "dek": "Mel Kiper Jr. predicts 64 picks across the first two rounds of the NFL draft, including two potential trades, a few QB landing spots and plenty of impact additions.",
+          "dek": "With a 5-12 record and third-place NFC East finish, the Commanders hold a mid-round pick primed for roster upgrades in Kiper's latest two-round projection. His predictions spotlight potential trades and quarterback destinations that could reshape Washington's rebuild trajector...",
           "date": "April 19, 2026",
           "link": "https://www.espn.com/nfl/draft2026/story/_/id/48478995/2026-nfl-mock-draft-mel-kiper-two-rounds-64-picks-final-predictions"
         },
@@ -1329,14 +1120,14 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 NFL free agency grades: Dexter Lawrence II, Kirk Cousins",
-          "dek": "We're handing out report cards on big moves, including the Giants trading Dexter Lawrence II to the Bengals.",
+          "dek": "The Giants' trade of Dexter Lawrence II to the Bengals reshapes the NFC East defensive landscape, easing pressure on Washington's revamped line after their 5-12 finish. Kirk Cousins' free agency moves draw scrutiny amid the Commanders' pre-draft push to rebound from third place.",
           "date": "April 19, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/47911726/2026-nfl-free-agency-grades-signings-trades-latest-best-worst-deals-draft-outlook"
         }
       ],
       "standings": {
         "tabs": [
-          "National Football Conference"
+          "NFC East"
         ],
         "panes": [
           {
@@ -1348,54 +1139,6 @@
               "DIV"
             ],
             "rows": [
-              {
-                "team": "Seahawks",
-                "logo": "sea",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "14",
-                  "3",
-                  ".824",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "LA Rams",
-                "logo": "lar",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "12",
-                  "5",
-                  ".706",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "San Francisco",
-                "logo": "sf",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "12",
-                  "5",
-                  ".706",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Bears",
-                "logo": "chi",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "11",
-                  "6",
-                  ".647",
-                  "2-4"
-                ]
-              },
               {
                 "team": "Eagles",
                 "logo": "phi",
@@ -1409,78 +1152,6 @@
                 ]
               },
               {
-                "team": "Packers",
-                "logo": "gb",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "9",
-                  "7",
-                  ".559",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Vikings",
-                "logo": "min",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "9",
-                  "8",
-                  ".529",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Lions",
-                "logo": "det",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "9",
-                  "8",
-                  ".529",
-                  "2-4"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "car",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "9",
-                  ".471",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "9",
-                  ".471",
-                  "3-3"
-                ]
-              },
-              {
-                "team": "Falcons",
-                "logo": "atl",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "9",
-                  ".471",
-                  "3-3"
-                ]
-              },
-              {
                 "team": "Cowboys",
                 "logo": "dal",
                 "league": "nfl",
@@ -1490,18 +1161,6 @@
                   "9",
                   ".441",
                   "4-2"
-                ]
-              },
-              {
-                "team": "Saints",
-                "logo": "no",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "6",
-                  "11",
-                  ".353",
-                  "3-3"
                 ]
               },
               {
@@ -1527,21 +1186,52 @@
                   ".235",
                   "2-4"
                 ]
-              },
-              {
-                "team": "Cardinals",
-                "logo": "ari",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "3",
-                  "14",
-                  ".176",
-                  "0-6"
-                ]
               }
             ]
           }
+        ]
+      },
+      "draft_board": {
+        "team": "Washington Commanders",
+        "league": "NFL",
+        "projected_pick": "#7 overall",
+        "draft_date": "April 23-25, 2026",
+        "prospects_watched": [
+          {
+            "name": "Jeremiyah Love",
+            "position": "RB",
+            "team": "Notre Dame",
+            "note": "Elite running back who could fall to #7 and provide immediate impact for the Commanders."
+          },
+          {
+            "name": "Makai Lemon",
+            "position": "WR",
+            "team": "TBD",
+            "note": "Top wide receiver target in perfect mock haul to bolster passing attack."
+          },
+          {
+            "name": "Mansoor Delane",
+            "position": "CB",
+            "team": "LSU",
+            "note": "High-ranked cornerback prospect fitting secondary needs."
+          },
+          {
+            "name": "Jermod McCoy",
+            "position": "CB",
+            "team": "TBD",
+            "note": "Cornerback highlighted in Commanders' mock draft for defensive depth."
+          },
+          {
+            "name": "Harold Perkins Jr.",
+            "position": "ILB",
+            "team": "TBD",
+            "note": "Inside linebacker prospect targeted to strengthen front seven."
+          }
+        ],
+        "remaining_picks": [
+          "Round 2 pick 39",
+          "Round 3 pick 71",
+          "Round 4 pick 110"
         ]
       },
       "the_latest_label": "Offseason Intel"
@@ -1549,40 +1239,40 @@
   },
   "featured": {
     "team": "raptors",
-    "kicker": "Toronto Raptors · Playoffs",
-    "headline": "Raptors fall to Cavaliers in playoff series opener",
-    "dek": "The Toronto Raptors (46-36) face at Cavaliers next on Mon 4/20.",
-    "source": "TSN",
-    "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16",
+    "kicker": "Toronto Raptors · Game Recap",
+    "headline": "Raptors fell to Cavaliers 113 - 126",
+    "dek": "The Raptors dropped Game 1 of their first-round playoff series to the fourth-seeded Cavaliers, 126-113, with Donovan Mitchell's 32 points powering Cleveland to a 1-0 lead. RJ Barrett led Toronto with 24 points, but the squad now faces a must-win Game 2 on Monday to even the ma...",
+    "source": "ESPN",
+    "link": "https://www.espn.com/nba/recap?gameId=401869187",
     "date": "April 19, 2026"
   },
   "two_up": [
     {
       "team": "jays",
-      "kicker": "Toronto Blue Jays · Regular Season",
-      "headline": "Hoffman Meltdown and Quiet Bats, Jays Lose 6-2",
-      "dek": "The Toronto Blue Jays (7-13) face at Diamondbacks next on Sun 4/19.",
-      "source": "Bluebird Banter",
-      "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16",
+      "kicker": "Toronto Blue Jays · Game Recap",
+      "headline": "Jays fell to Diamondbacks 2 - 6",
+      "dek": "Jeff Hoffman's eighth-inning grand slam surrendered to Corbin Carroll snapped a tie and handed the Blue Jays their fourth straight loss, dropping them to 7-13 and fifth in the AL East. Manager John Schneider backs the struggling closer despite the blown save, with Kevin Gausma...",
+      "source": "ESPN",
+      "link": "https://www.espn.com/mlb/recap?gameId=401815000",
       "date": "April 19, 2026"
     },
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs · Season Over",
-      "headline": "Why The NHL's 'Ball-By-Ball' Draft Lottery Will Be A Must-Watch For Maple Leafs Fans",
-      "dek": "The Toronto Maple Leafs (32-36-14). 8th in Atlantic Division.",
-      "source": "The Hockey News",
-      "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16",
+      "headline": "NHLPA poll: Sidney Crosby most likely to become head coach",
+      "dek": "The NHLPA's annual player poll crowns Penguins captain Sidney Crosby as the active skater peers most expect to pivot to head coach. For a Maple Leafs squad mired in 8th place after a 32-36-14 season, it spotlights elite leadership voids amid their ongoing coaching carousel and...",
+      "source": "ESPN",
+      "link": "https://www.espn.com/nhl/story/_/id/48516380/nhlpa-poll-crosby-most-likely-become-head-coach",
       "date": "April 19, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders · Pre-Draft",
-    "headline": "Wishful thinking mock draft gives Commanders two first-round picks",
-    "dek": "The Washington Commanders (5-12). 3rd in NFC East.",
-    "source": "Commanders Wire",
-    "link": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16",
+    "headline": "2026 NFL mock draft: Kiper's pick predictions for Rounds 1-2",
+    "dek": "After a disappointing 5-12 season, the Commanders face critical decisions in the draft's opening rounds to rebuild their roster. Kiper's mock projections offer insight into how Washington might address their most pressing needs through strategic picks and potential trades.",
+    "source": "ESPN",
+    "link": "https://www.espn.com/nfl/draft2026/story/_/id/48478995/2026-nfl-mock-draft-mel-kiper-two-rounds-64-picks-final-predictions",
     "date": "April 19, 2026"
   },
   "ticker": [
@@ -1594,7 +1284,7 @@
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Why The NHL's 'Ball-By-Ball' Draft Lottery Will Be"
+      "text": "NHLPA poll: Sidney Crosby most likely to become"
     },
     {
       "badge": "MLB",
@@ -1634,7 +1324,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Wishful thinking mock draft gives Commanders two"
+      "text": "2026 NFL mock draft: Kiper's pick predictions for"
     },
     {
       "badge": "NFL",
