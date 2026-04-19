@@ -2423,6 +2423,178 @@ def perplexity_search(prompt, system_prompt=""):
         return None
 
 
+def generate_editorial_dek(headline, team_key, phase_info, team_info=None, existing_dek=""):
+    """Generate a 2-sentence editorial dek via Perplexity.
+
+    Used for featured / two_up / extra_story / the_latest items. Falls back
+    to existing_dek on any failure. Phase 2 of the daily update: replaces
+    templated deks with web-search-backed editorial context."""
+    if not PERPLEXITY_API_KEY:
+        return existing_dek or ""
+    if not headline:
+        return existing_dek or ""
+
+    cfg = TEAMS.get(team_key, {})
+    team_full = cfg.get("full_name", team_key)
+    league = cfg.get("league", "")
+    record = (team_info or {}).get("record", "")
+    standing = (team_info or {}).get("standing_summary", "")
+    phase_label = phase_info.get("label", "") if phase_info else ""
+    today_str = NOW.strftime("%B %d, %Y")
+
+    system_prompt = (
+        "You are a sharp sports editor writing subhead / dek copy for a daily briefing. "
+        "Given a news headline about a specific team, write exactly TWO sentences (30-55 words total) "
+        "that give the reader meaningful context for why the story matters today. "
+        "Do not repeat the headline verbatim. Do not invent facts. Do not use em-dashes or en-dashes. "
+        "Return only the two sentences, no quotes, no preamble, no markdown."
+    )
+    prompt = (
+        f"TEAM: {team_full} ({league})\n"
+        f"TODAY: {today_str}\n"
+        f"SEASON PHASE: {phase_label}\n"
+        f"RECORD: {record}\n"
+        f"STANDING: {standing}\n"
+        f"HEADLINE: {headline}\n"
+        f"EXISTING DEK (may be generic, may repeat team name): {existing_dek}\n"
+        "Write two sharp sentences of editorial context for this headline."
+    )
+
+    raw = perplexity_search(prompt, system_prompt=system_prompt)
+    if not raw:
+        return existing_dek or ""
+
+    text = raw.strip()
+    if text.startswith('"') and text.endswith('"'):
+        text = text[1:-1].strip()
+    elif text.startswith("'") and text.endswith("'"):
+        text = text[1:-1].strip()
+    text = sanitize_ascii(text)
+    if len(text) > 280:
+        text = text[:277] + "..."
+    if len(text) < 20:
+        return existing_dek or text
+    return text
+
+
+def build_draft_board(team_key, phase_info, team_info=None):
+    """Build Section 0.9 draft board for Leafs + Commanders during offseason.
+
+    Returns dict or None if the team is not one of the two draft-board teams,
+    the phase is not offseason-like, or Perplexity is unavailable / returns
+    unparseable JSON. Output schema matches SKILL.md Section 0.9."""
+    if team_key not in ("leafs", "commanders"):
+        return None
+
+    phase_id = (phase_info or {}).get("phase", "")
+    offseason_phases = (
+        "eliminated", "season_ended", "deep_offseason", "offseason",
+        "pre_draft", "draft_free_agency", "combine_free_agency", "otas",
+        "postseason_offseason",
+    )
+    if phase_id not in offseason_phases:
+        return None
+
+    if not PERPLEXITY_API_KEY:
+        return None
+
+    cfg = TEAMS[team_key]
+    league = cfg["league"]
+    team_full = cfg["full_name"]
+    today_str = NOW.strftime("%B %d, %Y")
+
+    if league == "NHL":
+        schema_hint = (
+            'Return ONLY this JSON (no markdown, no prose):\n'
+            '{\n'
+            '  "projected_pick": "string like #5 overall",\n'
+            '  "draft_date": "string like June 26-27, 2026",\n'
+            '  "lottery": {"odds": "string like 8.5%", "outcome": "Pending or Won 4th overall"},\n'
+            '  "prospects_watched": [\n'
+            '    {"name": "string", "position": "string", "team": "junior or NCAA team", "note": "one sentence fit"}\n'
+            '  ]\n'
+            '}\n'
+            "Include 3-5 prospects the team is most likely to take."
+        )
+    else:
+        schema_hint = (
+            'Return ONLY this JSON (no markdown, no prose):\n'
+            '{\n'
+            '  "projected_pick": "string like #3 overall",\n'
+            '  "draft_date": "string like April 23-25, 2026",\n'
+            '  "remaining_picks": ["Round 2 pick 35", "Round 3 pick 68"],\n'
+            '  "prospects_watched": [\n'
+            '    {"name": "string", "position": "string", "team": "college team", "note": "one sentence fit"}\n'
+            '  ]\n'
+            '}\n'
+            "Include 3-5 prospects the team is most likely to take."
+        )
+
+    system_prompt = (
+        "You are a sports analyst providing factual draft intel. "
+        "Return ONLY a valid JSON object. No markdown fences, no prose, no commentary. "
+        "If uncertain about a field, use the string 'TBD'."
+    )
+    prompt = (
+        f"As of {today_str}, give the latest draft board for the {team_full} ({league}). "
+        f"Use recent public mock drafts and beat reporting. {schema_hint}"
+    )
+
+    raw = perplexity_search(prompt, system_prompt=system_prompt)
+    if not raw:
+        return None
+
+    text = raw.strip()
+    if text.startswith("```"):
+        parts = text.split("```")
+        if len(parts) >= 2:
+            text = parts[1]
+            if text.startswith("json"):
+                text = text[4:]
+        text = text.strip()
+
+    try:
+        data = json.loads(text)
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"  WARNING: build_draft_board: bad JSON: {e}")
+        return None
+
+    if not isinstance(data, dict):
+        return None
+
+    result = {
+        "team": team_full,
+        "league": league,
+        "projected_pick": sanitize_ascii(str(data.get("projected_pick", "TBD"))),
+        "draft_date": sanitize_ascii(str(data.get("draft_date", "TBD"))),
+        "prospects_watched": [],
+    }
+
+    prospects = data.get("prospects_watched") or []
+    if isinstance(prospects, list):
+        for p in prospects[:5]:
+            if not isinstance(p, dict):
+                continue
+            result["prospects_watched"].append({
+                "name": sanitize_ascii(str(p.get("name", ""))),
+                "position": sanitize_ascii(str(p.get("position", ""))),
+                "team": sanitize_ascii(str(p.get("team", ""))),
+                "note": sanitize_ascii(str(p.get("note", ""))),
+            })
+
+    if league == "NHL":
+        lottery = data.get("lottery") if isinstance(data.get("lottery"), dict) else {}
+        result["lottery"] = {
+            "odds": sanitize_ascii(str(lottery.get("odds", "TBD"))),
+            "outcome": sanitize_ascii(str(lottery.get("outcome", "Pending"))),
+        }
+    else:
+        picks = data.get("remaining_picks") if isinstance(data.get("remaining_picks"), list) else []
+        result["remaining_picks"] = [sanitize_ascii(str(p)) for p in picks[:10]]
+
+    return result
+
+
 def generate_lotl(team_key, verified_facts="", phase_info=None, team_info=None, recent=None, upcoming=None):
     """Generate a Lay of the Land paragraph using Perplexity.
     verified_facts: pre-built string of ESPN-verified data that MUST be used for stats.
@@ -3218,6 +3390,16 @@ def build_data():
         articles = select_the_latest(all_team_articles.get(team_key, []), count=4)
         print(f"  Selected {len(articles)} articles for The Latest")
 
+        # Phase 2: regenerate editorial deks for The Latest via Perplexity.
+        # Falls back to the discovered-article dek on any failure.
+        for art in articles:
+            new_dek = generate_editorial_dek(
+                art.get("headline", ""), team_key, phase_info, team_info,
+                existing_dek=art.get("dek", ""),
+            )
+            if new_dek:
+                art["dek"] = new_dek
+
         # Find highlight video (only if team played within last 48 hours)
         highlights = {"available": False}
         if recent:
@@ -3273,6 +3455,11 @@ def build_data():
             "standings": existing_team.get("standings", {}),
         }
 
+        # Phase 2: draft board (Leafs + Commanders during offseason phases)
+        draft_board = build_draft_board(team_key, phase_info, team_info)
+        if draft_board:
+            team_entry["draft_board"] = draft_board
+
         # Build full standings tables from ESPN API (replaces stale existing data)
         print(f"  Building standings tables...")
         fresh_standings = build_full_standings(team_key)
@@ -3298,6 +3485,19 @@ def build_data():
     print("\n--- Building homepage stories from discovered articles ---")
     stories = build_homepage_stories_from_articles(all_team_facts, all_team_articles)
     print(f"  Built {len(stories)} homepage stories from real articles")
+    # Phase 2: regenerate editorial deks for homepage stories via Perplexity.
+    for s in stories:
+        t_key = s.get("team")
+        if not t_key:
+            continue
+        s_facts = all_team_facts.get(t_key, {})
+        new_dek = generate_editorial_dek(
+            s.get("headline", ""), t_key,
+            s_facts.get("phase_info"), s_facts.get("team_info"),
+            existing_dek=s.get("dek", ""),
+        )
+        if new_dek:
+            s["dek"] = new_dek
 
     if stories:
         for s in stories:
