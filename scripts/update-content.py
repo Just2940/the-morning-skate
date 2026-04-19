@@ -73,6 +73,22 @@ def resolve_google_news_url(google_url, timeout=10):
     print(f"  WARNING: Could not resolve Google News URL: {google_url[:80]}...")
     return google_url
 
+def is_publisher_url(url):
+    """Return True if url is safe to ship as an article link.
+    Rejects Google intermediates (news.google, consent, accounts, photos, googleusercontent CDN).
+    Added 2026-04-19 after lh3.googleusercontent.com URLs slipped past resolve_google_news_url."""
+    if not url or not isinstance(url, str) or not url.startswith("http"):
+        return False
+    host = urlparse(url).netloc.lower()
+    if host.endswith(".googleusercontent.com") or host == "googleusercontent.com":
+        return False
+    if host.endswith(".consent.google.com") or host == "consent.google.com":
+        return False
+    if host in ("news.google.com", "accounts.google.com", "photos.google.com"):
+        return False
+    return True
+
+
 # === CONFIGURATION ===
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data.json")
 EST = timezone(timedelta(hours=-5))
@@ -1518,6 +1534,8 @@ def fetch_google_news_articles(team_key, limit=10):
 
             if not title_raw or not link:
                 continue
+            if not is_publisher_url(link):
+                continue
 
             # Skip ESPN articles (we already have those from the API)
             if "espn.com" in link.lower():
@@ -1622,6 +1640,8 @@ def fetch_tier1_rss_articles(team_key, limit=5):
                 description = item.findtext("description", "")
 
                 if not title or not link:
+                    continue
+                if not is_publisher_url(link):
                     continue
 
                 # Filter: must mention the team (for general feeds like Sportsnet)
@@ -2483,12 +2503,23 @@ IMPORTANT: Every fact you cite must be CURRENT as of {today_str}. Do not referen
 
 Write 150-200 words of polished sports column prose. Every sentence should earn its place."""
 
-    result = perplexity_search(prompt, system_prompt)
-    result = _clean_perplexity_prose(result)
+    # === WORD COUNT ENFORCEMENT (120-200 words; retry up to 2x). Added 2026-04-19. ===
+    result = None
+    for attempt in range(3):
+        candidate = perplexity_search(prompt, system_prompt)
+        candidate = _clean_perplexity_prose(candidate)
+        if is_perplexity_failure(candidate):
+            continue
+        # Strip HTML tags for an accurate visible word count
+        plain = re.sub(r'<[^>]+>', '', candidate)
+        word_count = len(plain.split())
+        if 120 <= word_count <= 200:
+            result = candidate
+            break
+        print(f"  WARNING: {team_key} LOTL attempt {attempt+1} word count {word_count} outside [120,200], retrying")
 
-    # === GARBAGE FILTER ===
-    if is_perplexity_failure(result):
-        print(f"  WARNING: Perplexity returned garbage for {team_key} LOTL ‚Äî using ESPN fallback")
+    if not result:
+        print(f"  WARNING: Perplexity could not produce valid LOTL for {team_key}; using ESPN fallback")
         result = generate_espn_fallback_lotl(team_key, team_info or {}, recent or [], upcoming or [], phase_info or {"phase": "unknown", "label": "Unknown"})
 
     return result
