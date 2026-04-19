@@ -134,10 +134,10 @@ TEAMS = {
 
 # === ASCII SANITIZATION ===
 UNICODE_TO_ENTITY = {
-    "\u2014": "&mdash;", "\u2013": "&ndash;", "\u00d7": "&times;",
+    "\u2014": "—", "\u2013": "–", "\u00d7": "&times;",
     "\u2264": "&le;", "\u2265": "&ge;", "\u2192": "&rarr;", "\u2190": "&larr;",
     "\u00b7": "&middot;", "\u2022": "&#8226;", "\u2026": "&hellip;",
-    "\u2018": "&lsquo;", "\u2019": "&rsquo;", "\u201c": "&ldquo;", "\u201d": "&rdquo;",
+    "\u2018": "&lsquo;", "\u2019": "’", "\u201c": "&ldquo;", "\u201d": "&rdquo;",
     "\u2122": "&trade;", "\u00a9": "&copy;", "\u00ae": "&reg;",
     "\u00e9": "&eacute;", "\u00e8": "&egrave;", "\u00e0": "&agrave;",
     "\u00e7": "&ccedil;", "\u00f1": "&ntilde;", "\u00fc": "&uuml;",
@@ -563,7 +563,7 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
     elif recent:
         g = recent[0]
         result_word = "beat" if g["result"] == "W" else "fell to"
-        parts.append(f"<strong>The {short} {result_word} the {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}</strong>, moving to {record} on the season.")
+        parts.append(f"<strong>The {short} {result_word} the {g['opp_name']} {g['team_score']}–{g['opp_score']}</strong>, moving to {record} on the season.")
         if standing:
             parts.append(f"They sit {standing.lower()}.")
     else:
@@ -580,7 +580,7 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
                 break
         if streak_count >= 2:
             word = "wins" if streak_type == "W" else "losses"
-            parts.append(f"That&rsquo;s {streak_count} straight {word}.")
+            parts.append(f"That’s {streak_count} straight {word}.")
 
     # Next game
     if upcoming:
@@ -1062,7 +1062,7 @@ def build_full_standings(team_key):
                 row["seed"] = "DIV"
                 row["seed_style"] = "faint"
                 row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
-                               extract_stat(entry, "winPercent"), "&mdash;"]
+                               extract_stat(entry, "winPercent"), "—"]
                 wc_rows.append(row)
                 if row["you"]:
                     our_team_in_wc = True
@@ -1094,7 +1094,7 @@ def build_full_standings(team_key):
             except:
                 gb = ""
             row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
-                           extract_stat(entry, "winPercent"), gb or "&mdash;"]
+                           extract_stat(entry, "winPercent"), gb or "—"]
             wc_rows.append(row)
             if row["you"]:
                 our_team_in_wc = True
@@ -1111,7 +1111,7 @@ def build_full_standings(team_key):
                     row["seed_style"] = "faint"
                     row["vals"] = [extract_stat(entry, "wins"), extract_stat(entry, "losses"),
                                    extract_stat(entry, "winPercent"),
-                                   extract_stat(entry, "gamesBehind") or "&mdash;"]
+                                   extract_stat(entry, "gamesBehind") or "—"]
                     wc_rows.append(row)
                     break
 
@@ -1300,7 +1300,7 @@ def fetch_espn_game_recap_urls(team_key, recent):
         recaps.append({
             "source": "ESPN",
             "source_class": "espn",
-            "headline": f"{cfg['full_name'].split()[-1]} {result_word} {opp} {ts}&ndash;{os_score}",
+            "headline": f"{cfg['full_name'].split()[-1]} {result_word} {opp} {ts}–{os_score}",
             "dek": f"Full game recap and box score.",
             "date": game.get("date", ""),
             "link": recap_url,
@@ -1947,7 +1947,7 @@ def build_homepage_stories_from_articles(all_team_facts, all_team_articles):
 
         # Ensure dek isn't too long
         if len(dek) > 250:
-            dek = dek[:247] + "..."
+            dek = dek[:247] + "…"
 
         stories.append({
             "team": team_key,
@@ -2194,10 +2194,10 @@ def generate_ticker(all_team_facts, all_team_articles=None):
 
     # Badge styles per team (CSS variable colors)
     BADGE_STYLES = {
-        "leafs": "background:var(--leafs);color:#fff",
-        "jays": "background:var(--jays);color:#fff",
-        "raptors": "background:var(--raptors);color:#fff",
-        "commanders": "background:var(--commanders);color:#fff",
+        "leafs": "nhl",
+        "jays": "mlb",
+        "raptors": "nba",
+        "commanders": "nfl",
     }
 
     for team_key, facts_dict in all_team_facts.items():
@@ -2241,7 +2241,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                 ticker_items.append({
                     "badge": league,
                     "badge_style": badge_style,
-                    "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']}"
+                    "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}–{g['opp_score']}"
                 })
 
         # Record + standing
@@ -2250,7 +2250,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             ticker_items.append({
                 "badge": league,
                 "badge_style": badge_style,
-                "text": f"{team_name} ({record}) &mdash; {standing}"
+                "text": f"{team_name} ({record}) — {standing}"
             })
         elif record:
             ticker_items.append({
@@ -2263,7 +2263,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             ticker_items.append({
                 "badge": league,
                 "badge_style": badge_style,
-                "text": f"{team_name} &mdash; {phase_label}"
+                "text": f"{team_name} — {phase_label}"
             })
 
         # Next game (only if in-season / has upcoming)
@@ -2272,7 +2272,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             ticker_items.append({
                 "badge": league,
                 "badge_style": badge_style,
-                "text": f"Next: {team_name} {ng['opp']} &mdash; {ng['day']} {ng['time']}"
+                "text": f"Next: {team_name} {ng['opp']} — {ng['day']} {ng['time']}"
             })
 
         # === EDITORIAL NEWS BITE from discovered articles ===
@@ -2293,7 +2293,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                 # Found a non-recap editorial headline ‚Äî truncate for ticker
                 # Ticker items should be under 60 chars
                 if len(headline) > 55:
-                    headline = headline[:52].rsplit(" ", 1)[0] + "..."
+                    headline = headline[:52].rsplit(" ", 1)[0] + "…"
                 ticker_items.append({
                     "badge": league,
                     "badge_style": badge_style,
@@ -2307,19 +2307,19 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             ticker_items.append({
                 "badge": league,
                 "badge_style": badge_style,
-                "text": f"{team_name} Playoffs &mdash; schedule TBD"
+                "text": f"{team_name} Playoffs — schedule TBD"
             })
         elif phase_id == "eliminated":
             ticker_items.append({
                 "badge": league,
                 "badge_style": badge_style,
-                "text": f"{team_name} season over &mdash; lottery watch begins"
+                "text": f"{team_name} season over — lottery watch begins"
             })
         elif phase_id == "pre_draft":
             ticker_items.append({
                 "badge": league,
                 "badge_style": badge_style,
-                "text": f"{team_name} &mdash; NFL Draft Apr 23&ndash;25"
+                "text": f"{team_name} — NFL Draft Apr 23–25"
             })
 
     # Deduplicate ticker items by text content (keep first occurrence)
@@ -2336,7 +2336,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
     # Cap all ticker item texts at 70 chars for readability
     for item in ticker_items:
         if len(item["text"]) > 70:
-            item["text"] = item["text"][:67].rsplit(" ", 1)[0] + "..."
+            item["text"] = item["text"][:67].rsplit(" ", 1)[0] + "…"
 
     return ticker_items
 
@@ -2432,7 +2432,7 @@ FORMATTING:
 - ONE paragraph, 150-200 words. Dense, polished prose ‚Äî no filler.
 - Bold the single most important recent event with <strong> tags.
 - Bold the forward-looking detail at the end with <strong> tags.
-- Use HTML entities: &mdash; for em dashes, &ndash; for en dashes, &rsquo; for apostrophes.
+- Use HTML entities: — for em dashes, – for en dashes, ’ for apostrophes.
 - Do NOT use markdown. No asterisks, no bullet points.
 - Do NOT include citation numbers like [1], [2], etc. Write clean prose with no reference markers.
 - Do NOT exceed 200 words."""
@@ -2526,7 +2526,7 @@ def fact_check_lotl(text, team_key, team_info, recent, upcoming, phase_info, sta
         if len(cparts) >= 2:
             try:
                 cw, cl = int(cparts[0]), int(cparts[1].strip().split()[0])
-                # Find all record-like patterns: "6-9", "6\u20139", "6\u20149", "6&ndash;9", "6&mdash;9"
+                # Find all record-like patterns: "6-9", "6\u20139", "6\u20149", "6–9", "6—9"
                 record_pattern = re.compile(r'(\d{1,3})\s*[-\u2013\u2014]\s*(\d{1,3})')
                 html_pattern = re.compile(r'(\d{1,3})\s*&[nm]dash;\s*(\d{1,3})')
 
@@ -2539,7 +2539,7 @@ def fact_check_lotl(text, team_key, team_info, recent, upcoming, phase_info, sta
                         if abs(total - ctotal) <= 6 and total > 10:
                             if w != cw or l != cl:
                                 problems.append(f"Wrong record: found {m.group(0)}, correct is {correct_record}")
-                                text = text[:m.start()] + correct_record.replace("-", "&ndash;") + text[m.end():]
+                                text = text[:m.start()] + correct_record.replace("-", "–") + text[m.end():]
             except (ValueError, IndexError):
                 pass
 
@@ -2728,7 +2728,7 @@ def generate_espn_fallback_stories(all_team_facts):
             # Game recap story
             g = recent[0]
             result_word = "Beat" if g["result"] == "W" else "Fall to"
-            headline = f"{cfg['full_name'].split()[-1]} {result_word} {g['opp_name']} {g['team_score']}&ndash;{g['opp_score']} &mdash; Record Moves to {record}"
+            headline = f"{cfg['full_name'].split()[-1]} {result_word} {g['opp_name']} {g['team_score']}–{g['opp_score']} — Record Moves to {record}"
             dek = f"The {cfg['full_name']} are now {record}"
             if standing:
                 dek += f", {standing.lower()}"
@@ -2747,7 +2747,7 @@ def generate_espn_fallback_stories(all_team_facts):
             })
         elif "playoffs" in phase_id:
             # Playoff status story
-            headline = f"{cfg['full_name'].split()[-1]} in the Playoffs &mdash; {record} Heading Into the Postseason"
+            headline = f"{cfg['full_name'].split()[-1]} in the Playoffs — {record} Heading Into the Postseason"
             dek = f"The {cfg['full_name']} ({record}) are playoff-bound."
             if standing:
                 dek += f" {standing}."
@@ -2764,7 +2764,7 @@ def generate_espn_fallback_stories(all_team_facts):
         elif record:
             # Status update story
             topic = phase_info.get("label", "Update")
-            headline = f"{cfg['full_name'].split()[-1]} Update &mdash; {record}, {standing or topic}"
+            headline = f"{cfg['full_name'].split()[-1]} Update — {record}, {standing or topic}"
             dek = f"The {cfg['full_name']} sit at {record}."
             if standing:
                 dek += f" {standing}."
@@ -2849,7 +2849,7 @@ For each story, provide in this EXACT JSON format (no markdown, just raw JSON):
     {{
       "team": "leafs|jays|raptors|commanders",
       "kicker": "Team Name &middot; Topic",
-      "headline": "10-18 word punchy headline with &mdash; for drama",
+      "headline": "10-18 word punchy headline with — for drama",
       "dek": "2-3 sentences, 40-60 words with context and forward-looking detail",
       "source": "Source name like ESPN or NHL.com",
       "link": "Real, currently accessible URL to the best article covering this story"
@@ -2863,7 +2863,7 @@ STORY SELECTION PRIORITY:
 3. Major breaking news (trades, injuries, firings) from last 24 hours
 4. Offseason team's most significant current storyline (draft, free agency, etc.)
 
-Use HTML entities (&mdash; &ndash; &middot;) not unicode. All URLs must be real ‚Äî search for real articles published in the last 48 hours. Do NOT fabricate URLs. Do NOT include citation numbers like [1], [2] in any text fields."""
+Use HTML entities (— – &middot;) not unicode. All URLs must be real ‚Äî search for real articles published in the last 48 hours. Do NOT fabricate URLs. Do NOT include citation numbers like [1], [2] in any text fields."""
 
     result = perplexity_search(prompt)
     if not result:
@@ -2954,7 +2954,7 @@ Return in this EXACT JSON format (no markdown, just raw JSON):
 
 Prefer Tier 1 sources: league official sites, ESPN, TSN, Sportsnet, The Athletic, CBS Sports, NBC Sports.
 Include a mix of content types: recaps, analysis, roster/injury news.
-Use HTML entities (&mdash; &ndash;) not unicode.
+Use HTML entities (— –) not unicode.
 Do NOT include citation numbers like [1], [2] in any text fields.
 ALL URLs must be real and currently accessible ‚Äî do NOT guess or fabricate URLs."""
 
@@ -3182,7 +3182,7 @@ def build_data():
                 result_badge = f"{'W' if last_game['result'] == 'W' else 'L'} {last_game['team_score']}-{last_game['opp_score']}"
                 highlights = {
                     "available": True,
-                    "title": f"{last_game['opp_name']} vs. {cfg['full_name'].split()[-1]} &mdash; Full Highlights",
+                    "title": f"{last_game['opp_name']} vs. {cfg['full_name'].split()[-1]} — Full Highlights",
                     "subtitle": f"{cfg['league']} &middot; {last_game['date']}, {NOW.year}",
                     "result_badge": result_badge,
                     "result_class": "w" if last_game["result"] == "W" else "l",
@@ -3363,7 +3363,7 @@ def build_data():
                 phase_label = phase_info.get("label", "Offseason")
                 # If team is in playoffs but between rounds/series, say so
                 if "playoffs" in phase_id:
-                    detail_text = "Playoffs &mdash; Schedule TBD"
+                    detail_text = "Playoffs — Schedule TBD"
                 elif "draft" in phase_id or "pre_draft" in phase_id:
                     detail_text = phase_label
                 else:
