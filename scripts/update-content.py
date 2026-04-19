@@ -136,7 +136,7 @@ TEAMS = {
 UNICODE_TO_ENTITY = {
     "\u2014": "—", "\u2013": "–", "\u00d7": "&times;",
     "\u2264": "&le;", "\u2265": "&ge;", "\u2192": "&rarr;", "\u2190": "&larr;",
-    "\u00b7": "&middot;", "\u2022": "&#8226;", "\u2026": "&hellip;",
+    "\u00b7": "&middot;", "\u2022": "&#8226;",
     "\u2018": "&lsquo;", "\u2019": "’", "\u201c": "&ldquo;", "\u201d": "&rdquo;",
     "\u2122": "&trade;", "\u00a9": "&copy;", "\u00ae": "&reg;",
     "\u00e9": "&eacute;", "\u00e8": "&egrave;", "\u00e0": "&agrave;",
@@ -2280,7 +2280,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
         if all_team_articles and team_key in all_team_articles:
             articles = all_team_articles[team_key]
             for article in articles:
-                headline = article.get("headline", "")
+                headline = html.unescape(article.get("headline", "")).rstrip("…. \t").strip()
                 source = article.get("source", "")
                 # Skip generic game recaps (already covered by score ticker)
                 if not headline:
@@ -2293,7 +2293,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                 # Found a non-recap editorial headline ‚Äî truncate for ticker
                 # Ticker items should be under 60 chars
                 if len(headline) > 55:
-                    headline = headline[:52].rsplit(" ", 1)[0] + "…"
+                    headline = headline[:52].rsplit(" ", 1)[0]
                 ticker_items.append({
                     "badge": league,
                     "badge_style": badge_style,
@@ -2336,7 +2336,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
     # Cap all ticker item texts at 70 chars for readability
     for item in ticker_items:
         if len(item["text"]) > 70:
-            item["text"] = item["text"][:67].rsplit(" ", 1)[0] + "…"
+            item["text"] = item["text"][:67].rsplit(" ", 1)[0]
 
     return ticker_items
 
