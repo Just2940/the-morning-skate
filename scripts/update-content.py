@@ -41,8 +41,9 @@ def resolve_google_news_url(google_url, timeout=10):
         req.method = "HEAD"
         with urlopen(req, timeout=timeout) as resp:
             final_url = resp.url
-            # Verify we actually got redirected away from Google
-            if "news.google" not in urlparse(final_url).netloc:
+            # Verify we actually got redirected away from Google (incl. googleusercontent intermediates)
+            netloc = urlparse(final_url).netloc.lower()
+            if not any(b in netloc for b in ("news.google", "googleusercontent", "consent.google")):
                 return final_url
     except Exception:
         pass
@@ -53,16 +54,17 @@ def resolve_google_news_url(google_url, timeout=10):
         })
         with urlopen(req, timeout=timeout) as resp:
             final_url = resp.url
-            if "news.google" not in urlparse(final_url).netloc:
+            netloc = urlparse(final_url).netloc.lower()
+            if not any(b in netloc for b in ("news.google", "googleusercontent", "consent.google")):
                 return final_url
             # Method 3: Check for meta refresh or JS redirect in body
             body = resp.read(8192).decode("utf-8", errors="ignore")
             meta_match = re.search(r'url=([^"\\s>]+)', body, re.IGNORECASE)
             if meta_match:
                 candidate = meta_match.group(1).strip()
-                if "news.google" not in candidate and candidate.startswith("http"):
+                if candidate.startswith("http") and not any(b in candidate.lower() for b in ("news.google", "googleusercontent", "consent.google")):
                     return candidate
-            href_match = re.search(r'href="(https?://(?!news.google)[^"]+)"', body)
+            href_match = re.search(r'href="(https?://(?!news\.google|googleusercontent|consent\.google)[^"]+)"', body)
             if href_match:
                 return href_match.group(1)
     except Exception:
@@ -133,24 +135,32 @@ TEAMS = {
 }
 
 # === ASCII SANITIZATION ===
-UNICODE_TO_ENTITY = {
-    "\u2014": "—", "\u2013": "–", "\u00d7": "&times;",
-    "\u2264": "&le;", "\u2265": "&ge;", "\u2192": "&rarr;", "\u2190": "&larr;",
-    "\u00b7": "&middot;", "\u2022": "&#8226;",
-    "\u2018": "&lsquo;", "\u2019": "’", "\u201c": "&ldquo;", "\u201d": "&rdquo;",
-    "\u2122": "&trade;", "\u00a9": "&copy;", "\u00ae": "&reg;",
-    "\u00e9": "&eacute;", "\u00e8": "&egrave;", "\u00e0": "&agrave;",
-    "\u00e7": "&ccedil;", "\u00f1": "&ntilde;", "\u00fc": "&uuml;",
+# Banned dashes per Section 0.3 — replaced with ASCII equivalents.
+# Everything else (curly quotes, accented chars, middle-dot, etc.) is kept as
+# Unicode so it renders correctly as textContent in the frontend.
+BANNED_DASH_REPLACEMENTS = {
+    "\u2014": " - ",   # em-dash —
+    "\u2013": " - ",   # en-dash –
 }
 
 def sanitize_ascii(text):
+    """Normalize text for JSON output.
+
+    Historical name kept for compatibility. Output is now clean UTF-8
+    (not ASCII) — em-dash / en-dash are stripped per Section 0.3,
+    any HTML entities in upstream text are decoded back to Unicode,
+    and the result is trimmed of double-spaces.
+    """
     if not isinstance(text, str):
         return text
-    # Decode any HTML entities first (from AI output, RSS, etc.)
+    # Decode HTML entities from AI output / RSS (incl. numeric and named)
     text = html.unescape(text)
-    for char, entity in UNICODE_TO_ENTITY.items():
-        text = text.replace(char, entity)
-    return text.encode("ascii", "xmlcharrefreplace").decode("ascii")
+    # Strip banned dashes to ASCII per Section 0.3
+    for ch, replacement in BANNED_DASH_REPLACEMENTS.items():
+        text = text.replace(ch, replacement)
+    # Collapse double-spaces introduced by dash replacement
+    text = re.sub(r"  +", " ", text).strip()
+    return text
 
 def sanitize_entry(entry):
     if isinstance(entry, dict):
@@ -3440,21 +3450,31 @@ def main():
     # Sanitize all content for ASCII safety
     db = sanitize_entry(db)
 
-    # Write data.json
+    # Write data.json (UTF-8, ensure_ascii=False — Section 0.3 bans numeric
+    # HTML entities like &#8212;, which ensure_ascii=True used to produce)
     print(f"\nWriting {DATA_FILE}...")
-    with open(DATA_FILE, "w", encoding="ascii") as f:
-        json.dump(db, f, indent=2, ensure_ascii=True)
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(db, f, indent=2, ensure_ascii=False)
 
-    # Verify pure ASCII
-    with open(DATA_FILE, "rb") as f:
-        raw = f.read()
-        non_ascii = [i for i, b in enumerate(raw) if b > 127]
-        if non_ascii:
-            print(f"\n  FATAL: {len(non_ascii)} non-ASCII bytes in output!")
-            sys.exit(1)
+    # Verify no banned chars / entities per Section 0.3
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        text = f.read()
+    banned_markers = {
+        "em-dash U+2014": "\u2014",
+        "en-dash U+2013": "\u2013",
+        "&mdash;": "&mdash;",
+        "&ndash;": "&ndash;",
+        "&#8212;": "&#8212;",
+        "&#8211;": "&#8211;",
+        "&middot; literal": "&middot;",
+    }
+    found = {name: text.count(s) for name, s in banned_markers.items() if text.count(s) > 0}
+    if found:
+        print(f"\n  FATAL: banned chars/entities in output: {found}")
+        sys.exit(1)
 
-    size_kb = len(raw) / 1024
-    print(f"  Done. {size_kb:.1f} KB written, pure ASCII verified.")
+    size_kb = len(text.encode("utf-8")) / 1024
+    print(f"  Done. {size_kb:.1f} KB written, banned-char check passed.")
     print(f"\n=== Update complete ===")
 
 
