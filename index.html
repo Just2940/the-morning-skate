@@ -246,7 +246,11 @@ body::before {
   letter-spacing: 1px;
   color: white;
 }
-.ls-badge.playoff { background: var(--raptors); animation: livePulse 2.5s ease-in-out infinite; }
+.ls-badge.nhl { background: var(--leafs); }
+    .ls-badge.mlb { background: var(--jays); }
+    .ls-badge.nba { background: var(--raptors); }
+    .ls-badge.nfl { background: var(--commanders); }
+    .ls-badge.playoff { background: var(--raptors); animation: livePulse 2.5s ease-in-out infinite; }
 .ls-badge.draft { background: var(--ink); }
 @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.65} }
 .ls-text {
@@ -1650,7 +1654,7 @@ function initScrollArrows() {
 
 // === LOGO URL HELPER ===
 function logoUrl(abbr, league) {
-  return `https://a.espncdn.com/i/teamlogos/${league}/500/${abbr}.png`;
+  return `https://a.espncdn.com/i/teamlogos/${(league||'').toLowerCase()}/500/${abbr}.png`;
 }
 
 // === RENDER FUNCTIONS ===
@@ -1661,7 +1665,7 @@ function renderTicker(items) {
   // Two copies for seamless loop
   for (let copy = 0; copy < 2; copy++) {
     items.forEach(item => {
-      const bs = item.badge_style || '';
+      const bs = item.badge_style || (item.badge || '').toLowerCase();
       if (bs.startsWith('background')) {
         html += `<span class="ls-badge" style="${bs}">${item.badge || ''}</span>`;
       } else {
@@ -1906,8 +1910,8 @@ function renderTeam(key, t) {
     if (db.label) {
       html += '<div style="margin-bottom:10px;font-size:13px;color:var(--ink-med);">';
       html += '<strong style="color:var(--ink);">' + db.label + '</strong>';
-      if (db.event_date) html += ' ¬∑ ' + db.event_date;
-      if (db.pick_position) html += ' ¬∑ ' + db.pick_position;
+      if (db.event_date) html += ' · ' + db.event_date;
+      if (db.pick_position) html += ' · ' + db.pick_position;
       html += '</div>';
     }
     html += '<div class="tbl-wrap"><table class="tbl draft-tbl"><thead><tr>';
