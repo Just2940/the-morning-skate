@@ -1,18 +1,19 @@
 {
   "meta": {
-    "updated": "2026-04-18T04:43:37.925126-05:00",
-    "date_display": "April 18, 2026"
+    "updated": "Updated Sunday, April 19, 2026",
+    "date_display": "April 18, 2026",
+    "date": "April 19, 2026"
   },
   "teams": {
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
       "record": "32-36-14",
-      "detail": "8th in Atlantic Division",
+      "detail": "Missed playoffs ¬∑ 5th in 2026 Draft Lottery order",
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The curtain crashed down on another Toronto Maple Leafs season that promised fireworks but delivered duds&mdash;a <strong>32-36-14 thud</strong> landing them 8th in the Atlantic, 35 games back, with a measly 78 points and an L7 streak to salt the wound. No playoffs, no excuses; this core's grip on the Cup slipped further, exposed by defensive sieves and goaltending that crumbled under pressure, finishing 15th in the playoff seed race. Captain Auston Matthews carried the load as always, his sniper's touch the lone bright spot in a lineup that leaked goals like a sieve&mdash;yet even he couldn't drag them past mediocrity. Whispers of coaching upheaval swirl around Craig Berube, whose systems never gelled, while free agency looms with UFAs like Mitch Marner eyeing the door and draft positioning offering a sliver of hope at a high lottery pick. The suits in the Air Canada Centre face a reckoning: rebuild or retool around the Big Three? It's gut-check time&mdash;no more half-measures. <strong>Watch the draft lottery draw on May 6</strong>; it could redefine this franchise's next decade.",
+        "body": "The curtain crashed down on another Toronto Maple Leafs season that promised fireworks but delivered duds‚Äîa <strong>32-36-14 thud</strong> landing them 8th in the Atlantic, 35 games back, with a measly 78 points and an L7 streak to salt the wound. No playoffs, no excuses; this core's grip on the Cup slipped further, exposed by defensive sieves and goaltending that crumbled under pressure, finishing 15th in the playoff seed race. Captain Auston Matthews carried the load as always, his sniper's touch the lone bright spot in a lineup that leaked goals like a sieve‚Äîyet even he couldn't drag them past mediocrity. Whispers of coaching upheaval swirl around Craig Berube, whose systems never gelled, while free agency looms with UFAs like Mitch Marner eyeing the door and draft positioning offering a sliver of hope at a high lottery pick. The suits in the Air Canada Centre face a reckoning: rebuild or retool around the Big Three? It's gut-check time‚Äîno more half-measures. <strong>Watch the draft lottery draw on May 6</strong>; it could redefine this franchise's next decade.",
         "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
@@ -43,36 +44,36 @@
       },
       "the_latest": [
         {
+          "source": "theScore",
+          "source_class": "score",
+          "headline": "Report: Leafs to interview Mats Sundin for hockey operations role",
+          "dek": "The Hall of Famer has met with Keith Pelley about an advisory position, per Friedman.",
+          "date": "April 17, 2026",
+          "url": "https://www.thescore.com/nhl/news/3525004/report-leafs-to-interview-sundin-for-hockey-operations-role"
+        },
+        {
           "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "Maple Leafs interviewing Mats Sundin for hockey department job",
-          "dek": "",
-          "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVHhDVDZSbm5FSVBpeEh1Ny1JZlJlam4teV9nZWtMMzdQWHZZaXlHWEFpUlozaGhuOS1yLV9odGZoMnJlenhidm9MSUZZUVhoaHg5YlFtVXphY1BjVEk3cWxFa3E2WkFuWlFKQzhLSm1HVlBBemNmaFkzTUhib3dXbEJTaEU0RS1RSDU3dVAtQXdrckpUNVI1ZjJkZDFaME9tbkE?oc=5"
-        },
-        {
-          "source": "Maple Leaf Hot Stove",
-          "source_class": "web",
-          "headline": "Anthony Stolarz reflects on calling out William Nylander and the team early in the Leafs' season: \"I didn't back up what I said with my play... I regret the way I went about it... Most definitely, it could've been handled in the room\"",
-          "dek": "",
-          "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSng0TEpZeWVsaWJja191UWh3b21HNEZIY0NrclE3Y0FfNEJKRXA0djRrTUR2OHhGaVRFXzJVTTRQYUN4am9Zc1dZUXVqOXpWQ0JmTC00Qjg2X1VuN1A0SHYzS1RWWVN5WDNIWlZmQmNFQzF1ZXhvX1ZZcHRESXlyVFFGbUtVd2x6MnVWVnYxYnVzWUpoaW1ZT2dnMHFaYmRWR2ZUcEhTdkFIY2tSWHp1S1RJdDhmSWU0QmdfTENMQWZlOElQYW9CcTlfYmo?oc=5"
-        },
-        {
-          "source": "heavy.com",
-          "source_class": "web",
-          "headline": "Maple Leafs Could Be Moving D-Man, and It&rsquo;s Not Reilly",
-          "dek": "",
+          "source_class": "sportsnet",
+          "headline": "Will the Maple Leafs rise or regress next season as expectations grow?",
+          "dek": "Sportsnet panel weighs whether the core can bounce back, or whether a harder reset is coming after the first-round exit.",
           "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQS04xcF94TEdrR0J4bFFDV1pPeE1ZSTFJRmlXRDA0d3hxMU11eW55djRULWowQlNuZXAzTjdVTkktenowRnVBOU1ORS0xU2l2cDZKdVo3TTJvS2VSOWpicUdxT3ltNldFQmxYdDdJcW50ZVZ3UHlJNS1jTEEySWRFWGFHNTBuZ0hiaWpvcg?oc=5"
+          "url": "https://www.sportsnet.ca/nhl/video/will-maple-leafs-rise-or-regress-next-season-as-expectations-grow/"
         },
         {
-          "source": "The Hockey News",
-          "source_class": "web",
-          "headline": "NHL Rumor Roundup: Latest Maple Leafs Speculation After Cleanout Day",
-          "dek": "",
+          "source": "NHL.com",
+          "source_class": "nhl",
+          "headline": "Maple Leafs cleanout day: full media availability",
+          "dek": "Auston Matthews, John Tavares, William Nylander and coach Craig Berube address an abrupt end to the season.",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdWhOVGY1VWd6WHN4R2FMQWswdUZPaGFpeUxsV3NJekg5WXVwODh4NktFdkVJVUN5cFZSTG5ObkoxM2szNF83Y0tub1ZWZlRUSnFkWHE0b3FfQUFTNV9CbmZPWklIV1R5Nk50WlFaNTBQaXpJRVdsay1qWS12TUJoekNoZ3RUMEIzc3czbGpiR3h4T05nN3VYR05seDVtb2JUMHdKOVBMa2VWc2xfSmc0?oc=5"
+          "url": "https://www.nhl.com/mapleleafs/video/maple-leafs-full-media-availability-6393201601112"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "NHL sets date for 2026 Draft Lottery",
+          "dek": "The lottery runs Tuesday, May 5 on Sportsnet from the NHL Network studio in Secaucus, N.J.",
+          "date": "April 16, 2026",
+          "url": "https://www.sportsnet.ca/nhl/article/nhl-sets-date-for-2026-draft-lottery/"
         }
       ],
       "standings": {
@@ -518,17 +519,99 @@
           }
         ]
       },
-      "the_latest_label": "Offseason Intel"
+      "the_latest_label": "Around the Leafs",
+      "draft_board": {
+        "label": "NHL Draft Lottery",
+        "event_date": "Tuesday, May 5, 2026",
+        "pick_position": "5th in lottery order",
+        "notes": "Top-5 protected pick owed to Boston from the Brandon Carlo trade. Toronto keeps it if no team from 6th-or-worse jumps into the top 5.",
+        "headers": [
+          "#",
+          "Team",
+          "Pts",
+          "Odds #1"
+        ],
+        "rows": [
+          {
+            "pk": "1",
+            "team": "Vancouver Canucks",
+            "logo": "van",
+            "pts": "58",
+            "odds": "25.5%",
+            "you": false
+          },
+          {
+            "pk": "2",
+            "team": "Chicago Blackhawks",
+            "logo": "chi",
+            "pts": "‚Äî",
+            "odds": "13.5%",
+            "you": false
+          },
+          {
+            "pk": "3",
+            "team": "New York Rangers",
+            "logo": "nyr",
+            "pts": "‚Äî",
+            "odds": "11.5%",
+            "you": false
+          },
+          {
+            "pk": "4",
+            "team": "Calgary Flames",
+            "logo": "cgy",
+            "pts": "‚Äî",
+            "odds": "9.5%",
+            "you": false
+          },
+          {
+            "pk": "5",
+            "team": "Toronto Maple Leafs",
+            "logo": "tor",
+            "pts": "78",
+            "odds": "8.5%",
+            "you": true
+          },
+          {
+            "pk": "6",
+            "team": "Philadelphia Flyers",
+            "logo": "phi",
+            "pts": "‚Äî",
+            "odds": "7.5%",
+            "you": false
+          },
+          {
+            "pk": "7",
+            "team": "Seattle Kraken",
+            "logo": "sea",
+            "pts": "‚Äî",
+            "odds": "6.5%",
+            "you": false
+          },
+          {
+            "pk": "8",
+            "team": "San Jose Sharks",
+            "logo": "sjs",
+            "pts": "‚Äî",
+            "odds": "6.0%",
+            "you": false
+          }
+        ]
+      }
     },
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
       "record": "7-12",
       "detail": "5th in AL East",
-      "live_strip": null,
+      "live_strip": {
+        "badge": "NEXT",
+        "badge_class": "",
+        "text": "Today 4:10 PM ET at Arizona ¬∑ Sportsnet"
+      },
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays' early-season dreams are curdling into a sour mess&mdash;three straight losses, bats silenced, and the AL East fading in the rearview. <strong>Last night's 3-6 defeat to the Diamondbacks</strong> in Phoenix rubbed salt in the wound, capping a brutal skid after that lone 7&ndash;12 thriller over the Brewers four days back. Sitting at 7-12, fifth in the division and 4 games behind, they're hemorrhaging momentum&mdash;only 2.5 runs above the basement by my count. Vladimir Guerrero Jr. stranded in key spots again, his step late on a Diamondback heater that ended the eighth; the lineup's gone quiet since Ernie Clement's .288 swing offered faint hope. No fresh injuries screaming from the trainer's room, but the bullpen's betrayal&mdash;leaking three in the middle frames&mdash;stings deepest. This isn't contender fire; it's a wake-up call before the roster unravels. <strong>Tonight's rubber match at Arizona, 7:10 ET, demands a spark&mdash;or the hole digs deeper</strong>.",
+        "body": "The Blue Jays' early-season dreams are curdling into a sour mess‚Äîthree straight losses, bats silenced, and the AL East fading in the rearview. <strong>Last night's 3-6 defeat to the Diamondbacks</strong> in Phoenix rubbed salt in the wound, capping a brutal skid after that lone 7‚Äì12 thriller over the Brewers four days back. Sitting at 7-12, fifth in the division and 4 games behind, they're hemorrhaging momentum‚Äîonly 2.5 runs above the basement by my count. Vladimir Guerrero Jr. stranded in key spots again, his step late on a Diamondback heater that ended the eighth; the lineup's gone quiet since Ernie Clement's .288 swing offered faint hope. No fresh injuries screaming from the trainer's room, but the bullpen's betrayal‚Äîleaking three in the middle frames‚Äîstings deepest. This isn't contender fire; it's a wake-up call before the roster unravels. <strong>Tonight's rubber match at Arizona, 7:10 ET, demands a spark‚Äîor the hole digs deeper</strong>.",
         "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
@@ -601,8 +684,8 @@
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Diamondbacks vs. Jays &mdash; Full Highlights",
-        "subtitle": "MLB &middot; Apr 18, 2026",
+        "title": "Diamondbacks vs. Jays ‚Äî Full Highlights",
+        "subtitle": "MLB ¬∑ Apr 18, 2026",
         "result_badge": "L 3-6",
         "result_class": "l",
         "url": "https://www.youtube.com/watch?v=JQIoGpcDWhQ",
@@ -612,34 +695,34 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays fell to Diamondbacks 3&ndash;6",
-          "dek": "Full game recap and box score.",
-          "date": "Apr 18",
-          "link": "https://www.espn.com/mlb/recap?gameId=401814985"
+          "headline": "Diamondbacks 6, Blue Jays 3: game recap and box score",
+          "dek": "Toronto stranded 10 runners as Arizona broke the game open in the sixth. Myles Straw had a solo shot in the loss.",
+          "date": "April 18, 2026",
+          "url": "https://www.espn.com/mlb/recap?gameId=401814985"
         },
         {
           "source": "Sportsnet",
-          "source_class": "web",
-          "headline": "Blue Jays' offensive slide continues in sloppy loss to Diamondbacks",
-          "dek": "",
+          "source_class": "sportsnet",
+          "headline": "Varsho exits Blue Jays' loss with left knee discomfort",
+          "dek": "Day-to-day, no imaging planned. Straw replaced him in centre after the third inning.",
           "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNalBFTl9VTGY4RWVfWVhRbGtCNU8wdExTZmo5dFZDLUIxQzdtV0dFTjdjUmp1M3Y2bVR4Y2N6YnZTbUMwbjVpQmVPV3RfLXBqY2ktbVVVZWhGUC1QVllpc0FHRWdCVkYyQ1pfdmlTYjFmTzlWOXdDMjNIMWo0UGZyUi1rZTdBZWt1NUV1YVNlclJjNHhqSWt6YlkxWnNFMnZiNUt3NzN2UQ?oc=5"
+          "url": "https://www.sportsnet.ca/mlb/article/blue-jays-daulton-varsho-exits-vs-diamondbacks-with-left-knee-discomfort/"
         },
         {
           "source": "MLB.com",
-          "source_class": "web",
-          "headline": "Toronto Blue Jays at Arizona Diamondbacks Game Story, Scores/Highlights - 04/17/2026",
-          "dek": "",
-          "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBSR3k5Qk5ibHhpRXJWQ3pNRVNDaFhHc2hDSldiY3pBN3EwT0owclVSUlpHUVVkUmEtNzlJUHl0SU1VMDduTzltbWhpNU9YUmdR0gFQQVVfeXFMUFJHeTlCTmJseGlFclZDek1FU0NoWEdzaENKV2JjekE3cTBPSjByVVJSWkdRVWRSYS03OUlQeXRJTVUwN25POW1taGk1T1hSZ1E?oc=5"
+          "source_class": "mlb",
+          "headline": "Jays call up Eloy Jim√©nez as Springer heads to IL",
+          "dek": "Springer went on the 10-day IL with a fractured left big toe; Jim√©nez joins the active roster in his spot.",
+          "date": "April 17, 2026",
+          "url": "https://www.mlb.com/news/eloy-jimenez-called-up-george-springer-placed-on-il"
         },
         {
           "source": "TSN",
-          "source_class": "web",
-          "headline": "Blue Jays&rsquo; Varsho exits vs. Diamondbacks with left knee discomfort",
-          "dek": "",
+          "source_class": "tsn",
+          "headline": "Blue Jays' offensive slide continues in sloppy loss to Diamondbacks",
+          "dek": "Three straight losses and 17 runs across six games; the Jays slip to 7-12 heading into the Angels series.",
           "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNT0FtOHlSMmF5TzNmZzFvaFR2d3JlNjgwTmNBSTZnaGxrNTNROGpFSmh6MlQ5WHhXVVpRRDJVQW52WlpYV1VVNjhHc3JmcGhMbnMyNmdUQ3d4dGxJaVU2d3dlNjNFN0pBR2l4eklmaHd1RDBKdGh3N2toM3hXa3B0VEdlOXFnNTBnMFU5c1k4UQ?oc=5"
+          "url": "https://www.tsn.ca/mlb/toronto-blue-jays"
         }
       ],
       "standings": {
@@ -861,7 +944,7 @@
                   "11",
                   "8",
                   ".579",
-                  "&mdash;"
+                  "‚Äî"
                 ]
               },
               {
@@ -1033,17 +1116,21 @@
           }
         ]
       },
-      "the_latest_label": "The Latest"
+      "the_latest_label": "Around the Jays"
     },
     "raptors": {
       "full_name": "Toronto Raptors",
       "league": "NBA",
       "record": "46-36",
-      "detail": "3rd in Atlantic Division",
-      "live_strip": null,
+      "detail": "#5 seed ¬∑ East 1st round vs Cavaliers",
+      "live_strip": {
+        "badge": "PLAYOFFS",
+        "badge_class": "playoff",
+        "text": "Trail 0-1 ¬∑ Game 2 Mon 4/20 at Cleveland, 7:00 PM ET, Peacock/NBCSN"
+      },
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The air crackles in Toronto this morning &mdash; the Raptors, <strong>back in the playoffs for the first time since 2022</strong>, stand on the brink after a 46-36 grind that locked the 5th seed and 3rd in the Atlantic. Immanuel Quickley, their sharpshooting sparkplug averaging 16.4 points and a career-high 5.9 assists, shook off hamstring tightness Friday, declaring he'll suit up despite the questionable tag &mdash; his second-half three-point surge to 41.5 percent could torch Cleveland's defense. Scottie Barnes looms as the x-factor, with Kevin Garnett crowning him a \"Mini Joker\" ready to bully the paint, while whispers swirl around Jakob Poeltl's injury status. The regular season's ghosts &mdash; that final Nets exit &mdash; fade against this electric reset. All eyes lock on Quicken Loans Arena, where the Cavs lurk as heavy favorites. <strong>Game 1 tips at 1 p.m. ET today</strong> &mdash; win here, and the North awakens; falter, and the dream slips. This is why they rebuilt.",
+        "body": "The air crackles in Toronto this morning ‚Äî the Raptors, <strong>back in the playoffs for the first time since 2022</strong>, stand on the brink after a 46-36 grind that locked the 5th seed and 3rd in the Atlantic. Immanuel Quickley, their sharpshooting sparkplug averaging 16.4 points and a career-high 5.9 assists, shook off hamstring tightness Friday, declaring he'll suit up despite the questionable tag ‚Äî his second-half three-point surge to 41.5 percent could torch Cleveland's defense. Scottie Barnes looms as the x-factor, with Kevin Garnett crowning him a \"Mini Joker\" ready to bully the paint, while whispers swirl around Jakob Poeltl's injury status. The regular season's ghosts ‚Äî that final Nets exit ‚Äî fade against this electric reset. All eyes lock on Quicken Loans Arena, where the Cavs lurk as heavy favorites. <strong>Game 1 tips at 1 p.m. ET today</strong> ‚Äî win here, and the North awakens; falter, and the dream slips. This is why they rebuilt.",
         "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
@@ -1074,36 +1161,36 @@
       },
       "the_latest": [
         {
-          "source": "CBC",
-          "source_class": "web",
-          "headline": "The time has come to jump on the Toronto Raptors bandwagon",
-          "dek": "",
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Cavaliers 126, Raptors 113: Mitchell pours in 32 in Game 1",
+          "dek": "Cleveland led by 24 in the fourth; Barrett had 24 and Shead (starting for injured Quickley) added 17 with five triples.",
           "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdXhzNnBxR3U4UDNhWGZjR3NIYmRVRmRnY3pTb3N6Mnl6dkdkOHMyTFRrSEJxRDVLX3pBQksyX204UU1iaWxWNlhLWS1LdVhHYmJXbFE2aWZqNHdvZ0JmZFVFNHZEd3hIa0FhVXBhVVZ3SjM0SGlEUW9xNExzQmo2bGxvVHdxTms?oc=5"
+          "url": "https://www.espn.com/nba/recap/_/gameId/401869187"
         },
         {
           "source": "Sportsnet",
-          "source_class": "web",
+          "source_class": "sportsnet",
           "headline": "Raptors' Quickley confident he'll be available vs. Cavaliers",
-          "dek": "",
+          "dek": "Toronto's starting PG said Friday he expects to play despite the hamstring strain he aggravated in the regular-season finale.",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOb1FxME1SRkF3UWtkM0VmaXd0bllNNndRUHVZZHVvZER4X3ZsaTVGUEo0VHhyR0t0aWR3cWU4TjlJd2VxNDEtQ2R6Q3drODVZSU9NbGVZM29HTF93SzlJTWswU0dzcFJibFltMjZDdTZ1cDlfczR6ZHM0VFhNbGZjaVd3RTJSWmdpWHZIU3JNQjVSeHBVeUtGSmZtdw?oc=5"
+          "url": "https://www.sportsnet.ca/nba/article/raptors-quickley-confident-hell-be-available-vs-cavaliers/"
         },
         {
-          "source": "NBA",
-          "source_class": "web",
-          "headline": "Jamal Shead | Playoff Practice | April 17, 2026",
-          "dek": "",
-          "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSEhqYjBzTkh0WkhyRjVXSzZIaWhVbG5fX1BkaVlCT1dxa3lqT0pGa0FkQjctcFc2T2xLNlVBeXVyRGpaYTVVNFI2cGlrYURNS2wtWUxTZWlzazRlSnBSM0xzUnB5V2pjUlhXckg1YnJUQUZkQi1Mb0JFZzBEX1M2NXlCZw?oc=5"
+          "source": "NBA.com",
+          "source_class": "nba",
+          "headline": "Jamal Shead on starting Game 1: playoff practice, April 17",
+          "dek": "Shead on his mindset entering the postseason and sharing ball-handling reps with Quickley.",
+          "date": "April 17, 2026",
+          "url": "https://www.nba.com/raptors"
         },
         {
-          "source": "The New York Times",
-          "source_class": "web",
-          "headline": "Cleveland Cavaliers vs. Toronto Raptors: Playoff schedule, TV and streaming",
-          "dek": "",
-          "date": "April 18, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV29rQmlrMWU4ejZKVTZmVnM4SDBFc012YVhnRW5QSlhRR1E4MU90UlNqQWpfWk9UVDRUUmxENmtwSE12NkdtNlZoNk04R2JNbHJFLXFSMmFaaXlKZlJ3ejRHbFpMOGJ0MDBkb2g5VmlRYUV3clR3ZndPeTFJbVFScVRDYWNLSTNkVHBNTUprOThNY3kteGVZUmlFQm5sUXI0dlN5WjlhTExqY1U?oc=5"
+          "source": "Raptors Republic",
+          "source_class": "nba",
+          "headline": "The definitive Raptors vs Cavs playoff preview",
+          "dek": "Matchup breakdown of Mitchell-Mobley vs Barnes-IQ, bench depth, and the half-court offence keys.",
+          "date": "April 14, 2026",
+          "url": "https://raptorsrepublic.com/2026/04/14/the-definitive-raptors-vs-cavs-playoff-preview-w-samson-louis/"
         }
       ],
       "standings": {
@@ -1171,10 +1258,10 @@
                 "seed": "4"
               },
               {
-                "team": "Hawks",
-                "logo": "atl",
+                "team": "Raptors",
+                "logo": "tor",
                 "league": "nba",
-                "you": false,
+                "you": true,
                 "vals": [
                   "46",
                   "36",
@@ -1183,10 +1270,10 @@
                 "seed": "5"
               },
               {
-                "team": "Raptors",
-                "logo": "tor",
+                "team": "Hawks",
+                "logo": "atl",
                 "league": "nba",
-                "you": true,
+                "you": false,
                 "vals": [
                   "46",
                   "36",
@@ -1245,47 +1332,47 @@
             ]
           },
           {
+            "bracket": true,
             "headers": [
               "Matchup",
               "Series"
             ],
-            "bracket": true,
             "rows": [
               {
-                "matchup": "(1) Pistons vs. (2) Celtics",
-                "series": "Sat Apr 18",
+                "matchup": "(1) Pistons vs. (8) Magic",
+                "series": "Starts Sun 4/19",
                 "you": false
               },
               {
-                "matchup": "(3) New York vs. (4) Cavaliers",
-                "series": "Sat Apr 18",
+                "matchup": "(2) Celtics vs. (7) 76ers",
+                "series": "Starts Sun 4/19",
                 "you": false
               },
               {
-                "matchup": "(5) Hawks vs. (6) Raptors",
-                "series": "Sat Apr 18",
+                "matchup": "(3) Knicks vs. (6) Hawks",
+                "series": "Starts Sun 4/19",
+                "you": false
+              },
+              {
+                "matchup": "(4) Cavaliers vs. (5) Raptors",
+                "series": "CLE leads 1-0",
                 "you": true
-              },
-              {
-                "matchup": "(7) 76ers vs. (8) Magic",
-                "series": "Sat Apr 18",
-                "you": false
               }
             ]
           }
         ]
       },
-      "the_latest_label": "The Latest"
+      "the_latest_label": "Around the Raptors"
     },
     "commanders": {
       "full_name": "Washington Commanders",
       "league": "NFL",
       "record": "5-12",
-      "detail": "3rd in NFC East",
+      "detail": "3rd NFC East ¬∑ Pick #7 in 2026 NFL Draft",
       "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft room hums with that familiar tension in D.C., where a 5-12 slog to third in the NFC East&mdash;nine games back, mind you&mdash;hands Adam Peters the No. 7 pick like a loaded pistol aimed at redemption. <strong>Just two days ago, Peters doubled down: \"more likely than not\" they stay put, no fire sale trade back unless the board falls just right</strong>&mdash;though whispers of NFC East rivals like the Cowboys itching to leapfrog add that delicious divisional spice. Mock drafts swarm around Jayden Daniels' arsenal, with Bleacher Report's scouts tabbing Ohio State's Carnell Tate as the WR1 prize to unleash opposite Terry McLaurin, while others eye Notre Dame's Jeremiyah Love or Alabama's Sonny Styles to fortify Dan Quinn's injury-ravaged defense. Free agency's quiet splash&mdash;bolstering the line with holdovers like Josh Conerly&mdash;screams urgency for skill bombs and secondary steel at 7, 71, and beyond. Peters covets \"impact\" traits, hosting wideouts like Tate and USC's Makai Lemon, all to armor Daniels after last year's NFC Championship heartbreak. <strong>Five days out, Pittsburgh awaits&mdash;watch if Peters flips the script for extra ammo or pulls the trigger on a game-changer Thursday night.</strong>",
+        "body": "The draft room hums with that familiar tension in D.C., where a 5-12 slog to third in the NFC East‚Äînine games back, mind you‚Äîhands Adam Peters the No. 7 pick like a loaded pistol aimed at redemption. <strong>Just two days ago, Peters doubled down: \"more likely than not\" they stay put, no fire sale trade back unless the board falls just right</strong>‚Äîthough whispers of NFC East rivals like the Cowboys itching to leapfrog add that delicious divisional spice. Mock drafts swarm around Jayden Daniels' arsenal, with Bleacher Report's scouts tabbing Ohio State's Carnell Tate as the WR1 prize to unleash opposite Terry McLaurin, while others eye Notre Dame's Jeremiyah Love or Alabama's Sonny Styles to fortify Dan Quinn's injury-ravaged defense. Free agency's quiet splash‚Äîbolstering the line with holdovers like Josh Conerly‚Äîscreams urgency for skill bombs and secondary steel at 7, 71, and beyond. Peters covets \"impact\" traits, hosting wideouts like Tate and USC's Makai Lemon, all to armor Daniels after last year's NFC Championship heartbreak. <strong>Five days out, Pittsburgh awaits‚Äîwatch if Peters flips the script for extra ammo or pulls the trigger on a game-changer Thursday night.</strong>",
         "updated": "Updated April 18, 2026"
       },
       "key_numbers": [
@@ -1316,36 +1403,36 @@
       },
       "the_latest": [
         {
-          "source": "USA Today",
-          "source_class": "web",
-          "headline": "Native Americans respond to Washington Commanders' new polarizing logo",
-          "dek": "",
-          "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZkd1eXQwb1hoVjUxSXNyZFRZRkpaZHplQ3BKc19BeTI1WDgtSi1qS1Q3WERjUm5QSXpCZnk3emNzNVhTdG40d2FUV3FBT1VveHh5MVQ0VUZKLUFMZzlPX1dTMUs4MlY5T1JzRG9jdG04Q29BdzFsVWFkTTdrdzZFdE02ZHFmUFVCVUJqV1RGbmh4VzREMzNneUkwRmxiV0pDU1pVT21GQk9ya3BiN044R25lM0pidmJtM0xQQmFzZm9xN0xTc19EeEtMbVc?oc=5"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Commanders 2026 NFL Draft picks, needs and analysis",
+          "dek": "Six selections starting with No. 7 overall. WR, CB and C top the shopping list around Jayden Daniels.",
+          "date": "April 18, 2026",
+          "url": "https://www.espn.com/nfl/draft2026/story/_/id/48431713/washington-commanders-nfl-draft-picks-2026-selection-analysis-depth-chart"
         },
         {
-          "source": "NBC4 Washington",
-          "source_class": "web",
-          "headline": "JP's wish list for Commanders' 7th pick in the draft",
-          "dek": "",
+          "source": "Commanders.com",
+          "source_class": "commanders",
+          "headline": "Mock Draft Madness 8.0: final first-round projections",
+          "dek": "Washington's in-house board, with WR Carnell Tate emerging as the consensus pick at No. 7.",
           "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWXEtczF1dVNsNF80T3g1bTJvZkhpWlpTQ2NwbmNFckJwcWxONDJSWU1FT3J4c0RtNXB5LUoybnI2OVpQSzdBYi0ydHp3LWQtdnEtd0JJcXdIRG1Gdk4yT2sxODdWS05QUkxCZjJkbnp3SnJXRnRjQzFvZ0o4ZkxsVndRbmdXYjNYcHZaX2ZIek5OVW1LV3U3R3RnbF9oNWVzemxoajlhbkJjNTlhTUY5MFNiWi1Hanc20gHAAUFVX3lxTE9DZ2R3WElXWmlRWTU1Y1FfSjdzUVpyVkxQRmIzVktHaGJEdFZqZnVsdXFuQ3daeENmOHdwNXBOeXlWVHA5VkRfSGt6eGRpNndkWjFHeXpNNXEzYVJIdHNaN0xMeFhOY2tFSkJxVlBJQWZKdjkxd2g2VEV1b0VrMnZlYUtER0ZaVVZnMWM4MG1oWUE4Ti0wSUFXRzVFMDBaOEw1YlpWYU5PYWE5Q212bFkzWWRzSzYxTm51ZVFBdkxqZw?oc=5"
+          "url": "https://www.commanders.com/news/commanders-2026-mock-draft-madness-8-0"
         },
         {
-          "source": "Yahoo Sports",
-          "source_class": "web",
-          "headline": "Commanders new uniforms draw criticism for spear logo as team brings back burgundy and gold as nod to the past",
-          "dek": "",
-          "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNdVlKYnNReHF2MlFaZGR6SDMxSVdMeUpyRFNOM0Y4WjJ5ZmZpMURrN1ZvRGF3RlVlWF8zbElCM2VUeV9STWI3cnlnbUdTWW1oUFc5ZGlQaW9VSDJJOFJsbFRodzEwZHdERUF1WklueDdJa3FFdjEtdkVsRGJlQ2JyR0h3Z3VLUjYwZWNBQ0psVmZ3dEVidmg5WjZJRU9CSnlOOUNWSE9jQnNiTWwzZ29wTF91V0FkNHgzeFhjcGpVOGpFV1dwRU5fdV9vVHlLYUJuei03a3BvcWl3TksxUWo5S3dBZzBJN1hlU3g4SWhvdldfMndE?oc=5"
+          "source": "NFL.com",
+          "source_class": "nfl",
+          "headline": "2026 NFL Draft order: every pick, Rounds 1-7",
+          "dek": "The complete draft board. Commanders pick #7, #71, #147, #187, #209 and #223.",
+          "date": "April 15, 2026",
+          "url": "https://www.dazn.com/en-US/news/american-football/nfl-2026-draft-order-every-pick-round-1-to-7/1mvk6jej5ujro1fp0f5nqprqy5"
         },
         {
-          "source": "The New York Times",
-          "source_class": "web",
-          "headline": "The Commanders&rsquo; new uniforms are fire, but going back to the future can stir up old flames",
-          "dek": "",
-          "date": "April 17, 2026",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWW5xVDN6SGVVZGhuSjREQUR0VWxlY090NlNLaDBvRUg1RjliQTV1NERHbzBtVDh6Mkx3T0w5alVpZC1uSjZVLXNhRFdHSmhtaGRZeFFMc2FwdmhkRlpGRzc2VXpNZ3RCcVJ0dEczS1BDb0p0VDNna0JGZXA1QWp1RFFJYTB6MldTbFE?oc=5"
+          "source": "Commanders.com",
+          "source_class": "commanders",
+          "headline": "Behold the Burgundy and Gold: new uniform reveal",
+          "dek": "Washington's new jersey set leans into the throwback palette, with modern black accents on the striping.",
+          "date": "April 15, 2026",
+          "url": "https://www.commanders.com/video/behold-the-burgundy-and-gold"
         }
       ],
       "standings": {
@@ -1558,113 +1645,165 @@
           }
         ]
       },
-      "the_latest_label": "Offseason Intel"
+      "the_latest_label": "Around the Commanders",
+      "draft_board": {
+        "label": "2026 NFL Draft",
+        "event_date": "Thursday, April 23 - Saturday, April 25 ¬∑ Pittsburgh",
+        "pick_position": "Pick #7 overall (6 total selections)",
+        "notes": "Round 1 (#7), Round 3 (#71), Round 5 (#147), Round 6 (#187 and #209), Round 7 (#223). Needs: WR, CB, C. Mock-draft consensus at No. 7: WR Carnell Tate (Ohio State).",
+        "headers": [
+          "Rd",
+          "Pick",
+          "Pos",
+          "Target"
+        ],
+        "rows": [
+          {
+            "pk": "1",
+            "team": "#7",
+            "logo": "wsh",
+            "pts": "WR",
+            "odds": "Carnell Tate (OSU)",
+            "you": true
+          },
+          {
+            "pk": "3",
+            "team": "#71",
+            "logo": "wsh",
+            "pts": "OL/DL",
+            "odds": "Board-best",
+            "you": false
+          },
+          {
+            "pk": "5",
+            "team": "#147",
+            "logo": "wsh",
+            "pts": "CB",
+            "odds": "Depth piece",
+            "you": false
+          },
+          {
+            "pk": "6",
+            "team": "#187",
+            "logo": "wsh",
+            "pts": "RB",
+            "odds": "Jayden Daniels insurance",
+            "you": false
+          },
+          {
+            "pk": "6",
+            "team": "#209",
+            "logo": "wsh",
+            "pts": "LB",
+            "odds": "Special teams",
+            "you": false
+          },
+          {
+            "pk": "7",
+            "team": "#223",
+            "logo": "wsh",
+            "pts": "S",
+            "odds": "Developmental",
+            "you": false
+          }
+        ]
+      }
     }
   },
   "featured": {
     "team": "raptors",
-    "kicker": "Toronto Raptors &middot; Playoffs",
-    "headline": "The time has come to jump on the Toronto Raptors bandwagon",
-    "dek": "The Toronto Raptors (46-36). 3rd in Atlantic Division. ",
-    "source": "CBC",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdXhzNnBxR3U4UDNhWGZjR3NIYmRVRmRnY3pTb3N6Mnl6dkdkOHMyTFRrSEJxRDVLX3pBQksyX204UU1iaWxWNlhLWS1LdVhHYmJXbFE2aWZqNHdvZ0JmZFVFNHZEd3hIa0FhVXBhVVZ3SjM0SGlEUW9xNExzQmo2bGxvVHdxTms?oc=5",
-    "date": "April 18, 2026"
+    "kicker": "Toronto Raptors ¬∑ Playoffs",
+    "headline": "Cavaliers roll Raptors 126-113 in Game 1 behind Mitchell and Strus",
+    "dek": "Donovan Mitchell poured in 32 and Max Strus added 24 off the bench as Cleveland pulled away on a 27-9 run spanning the second and third quarters. RJ Barrett led Toronto with 24 in its first playoff game since 2022.",
+    "source": "ESPN",
+    "date": "April 18, 2026",
+    "url": "https://www.espn.com/nba/recap/_/gameId/401869187"
   },
   "two_up": [
     {
       "team": "jays",
-      "kicker": "Toronto Blue Jays &middot; Regular Season",
-      "headline": "Toronto Blue Jays at Arizona Diamondbacks Game Story, Scores/Highlights - 04/17/2026",
-      "dek": "The Toronto Blue Jays (7-12) face at Diamondbacks next on Sun 4/19.",
-      "source": "MLB.com",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBSR3k5Qk5ibHhpRXJWQ3pNRVNDaFhHc2hDSldiY3pBN3EwT0owclVSUlpHUVVkUmEtNzlJUHl0SU1VMDduTzltbWhpNU9YUmdR0gFQQVVfeXFMUFJHeTlCTmJseGlFclZDek1FU0NoWEdzaENKV2JjekE3cTBPSjByVVJSWkdRVWRSYS03OUlQeXRJTVUwN25POW1taGk1T1hSZ1E?oc=5",
-      "date": "April 18, 2026"
+      "kicker": "Toronto Blue Jays ¬∑ Injury",
+      "headline": "Varsho exits Blue Jays' loss with left knee discomfort",
+      "dek": "The centre fielder came out in the third after aggravating pre-existing quad soreness. Manager John Schneider said he's day-to-day and won't need imaging.",
+      "source": "Sportsnet",
+      "date": "April 18, 2026",
+      "url": "https://www.sportsnet.ca/mlb/article/blue-jays-daulton-varsho-exits-vs-diamondbacks-with-left-knee-discomfort/"
     },
     {
       "team": "leafs",
-      "kicker": "Toronto Maple Leafs &middot; Season Over",
-      "headline": "Maple Leafs interviewing Mats Sundin for hockey department job",
-      "dek": "The Toronto Maple Leafs (32-36-14). 8th in Atlantic Division. ",
-      "source": "Sportsnet",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVHhDVDZSbm5FSVBpeEh1Ny1JZlJlam4teV9nZWtMMzdQWHZZaXlHWEFpUlozaGhuOS1yLV9odGZoMnJlenhidm9MSUZZUVhoaHg5YlFtVXphY1BjVEk3cWxFa3E2WkFuWlFKQzhLSm1HVlBBemNmaFkzTUhib3dXbEJTaEU0RS1RSDU3dVAtQXdrckpUNVI1ZjJkZDFaME9tbkE?oc=5",
-      "date": "April 18, 2026"
+      "kicker": "Toronto Maple Leafs ¬∑ Front Office",
+      "headline": "Report: Leafs interviewing Mats Sundin for hockey operations role",
+      "dek": "The franchise's all-time leading scorer has met with MLSE president Keith Pelley about an advisory position, per Friedman, as Toronto retools after a first-round exit.",
+      "source": "theScore",
+      "date": "April 17, 2026",
+      "url": "https://www.thescore.com/nhl/news/3525004/report-leafs-to-interview-sundin-for-hockey-operations-role"
     }
   ],
   "extra_story": {
     "team": "commanders",
-    "kicker": "Washington Commanders &middot; Pre-Draft",
-    "headline": "Native Americans respond to Washington Commanders' new polarizing logo",
-    "dek": "The Washington Commanders (5-12). 3rd in NFC East. ",
-    "source": "USA Today",
-    "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZkd1eXQwb1hoVjUxSXNyZFRZRkpaZHplQ3BKc19BeTI1WDgtSi1qS1Q3WERjUm5QSXpCZnk3emNzNVhTdG40d2FUV3FBT1VveHh5MVQ0VUZKLUFMZzlPX1dTMUs4MlY5T1JzRG9jdG04Q29BdzFsVWFkTTdrdzZFdE02ZHFmUFVCVUJqV1RGbmh4VzREMzNneUkwRmxiV0pDU1pVT21GQk9ya3BiN044R25lM0pidmJtM0xQQmFzZm9xN0xTc19EeEtMbVc?oc=5",
-    "date": "April 18, 2026"
+    "kicker": "Washington Commanders ¬∑ 2026 NFL Draft",
+    "headline": "Commanders' 2026 NFL Draft picks, needs and analysis",
+    "dek": "Washington holds the No. 7 overall pick and five more selections starting Thursday. ESPN breaks down the board, the needs (WR, CB, C), and the likely targets for Jayden Daniels' supporting cast.",
+    "source": "ESPN",
+    "date": "April 18, 2026",
+    "url": "https://www.espn.com/nfl/draft2026/story/_/id/48431713/washington-commanders-nfl-draft-picks-2026-selection-analysis-depth-chart"
   },
   "ticker": [
     {
+      "badge": "NBA",
+      "badge_style": "",
+      "text": "Raptors trail Cavaliers 1-0 after Game 1 loss 126-113"
+    },
+    {
+      "badge": "NBA",
+      "badge_style": "",
+      "text": "Next: Raptors at Cavaliers Game 2 Mon 4/20 7:00 PM ET"
+    },
+    {
+      "badge": "MLB",
+      "badge_style": "",
+      "text": "Jays (7-12) fall to D-backs 3-6 on Friday in Phoenix"
+    },
+    {
+      "badge": "MLB",
+      "badge_style": "",
+      "text": "Next: Jays at Diamondbacks Sun 4/19 4:10 PM ET"
+    },
+    {
+      "badge": "MLB",
+      "badge_style": "",
+      "text": "Springer (toe) eyeing Apr 24 return against Guardians"
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "",
+      "text": "NFL Draft opens Thu 4/23, Commanders pick 7th overall"
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "",
+      "text": "Commanders unveil burgundy-and-gold uniform set"
+    },
+    {
       "badge": "NHL",
-      "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Leafs (32-36-14) &mdash; 8th in Atlantic Division"
+      "badge_style": "",
+      "text": "Leafs (32-36-14) cleanout day; Mats Sundin meets with MLSE"
     },
     {
       "badge": "NHL",
-      "badge_style": "background:var(--leafs);color:#fff",
-      "text": "Maple Leafs interviewing Mats Sundin for hockey..."
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays fell to Diamondbacks 3&ndash;6"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "background:var(--jays);color:#fff",
-      "text": "Jays (7-12) &mdash; 5th in AL East"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "background:var(--jays);color:#fff",
-      "text": "Next: Jays at Diamondbacks &mdash; Sun 4/19 7:10 PM ET"
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "background:var(--raptors);color:#fff",
-      "text": "Raptors (46-36) &mdash; 3rd in Atlantic Division"
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "background:var(--raptors);color:#fff",
-      "text": "The time has come to jump on the Toronto Raptors..."
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "background:var(--raptors);color:#fff",
-      "text": "Raptors Playoffs &mdash; schedule TBD"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders (5-12) &mdash; 3rd in NFC East"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Native Americans respond to Washington Commanders'..."
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "background:var(--commanders);color:#fff",
-      "text": "Commanders &mdash; NFL Draft Apr 23&ndash;25"
+      "badge_style": "",
+      "text": "NHL Draft Lottery set for Tue 5/5; Leafs 5th in order"
     }
   ],
   "at_a_glance": [
     {
-      "team": "leafs",
-      "name": "Leafs",
-      "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "32-36-14",
-      "status": "8th in Atlantic Division",
-      "status_class": "muted",
-      "stat": ""
+      "team": "raptors",
+      "name": "Raptors",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+      "record": "46-36",
+      "status": "East 1st round vs CLE",
+      "status_class": "red",
+      "stat": "Trail series 0-1"
     },
     {
       "team": "jays",
@@ -1676,46 +1815,38 @@
       "stat": "Streak: L3"
     },
     {
-      "team": "raptors",
-      "name": "Raptors",
-      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "record": "46-36",
-      "status": "3rd in Atlantic Division",
-      "status_class": "muted",
-      "stat": "Streak: W1"
-    },
-    {
       "team": "commanders",
       "name": "Commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "record": "5-12",
-      "status": "3rd in NFC East",
+      "status": "Pick #7 in NFL Draft",
       "status_class": "muted",
-      "stat": ""
+      "stat": "Draft: Thu 4/23"
+    },
+    {
+      "team": "leafs",
+      "name": "Leafs",
+      "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+      "record": "32-36-14",
+      "status": "Missed playoffs",
+      "status_class": "muted",
+      "stat": "Lottery: Tue 5/5"
     }
   ],
   "today_slate": [
     {
-      "team": "leafs",
-      "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs",
-      "detail": "Season Over",
-      "channel": "",
-      "off": true
-    },
-    {
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "matchup": "Jays",
-      "detail": "Next: Sun 4/19 at Diamondbacks 7:10 PM ET",
-      "channel": "",
-      "off": true
+      "matchup": "Jays @ Diamondbacks",
+      "detail": "Sun 4/19 ¬∑ 4:10 PM ET ¬∑ Chase Field",
+      "channel": "Sportsnet",
+      "off": false
     },
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
       "matchup": "Raptors",
-      "detail": "Playoffs &mdash; Schedule TBD",
+      "detail": "Off ¬∑ Game 2 Mon 4/20 at Cleveland",
       "channel": "",
       "off": true
     },
@@ -1723,12 +1854,21 @@
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "matchup": "Commanders",
-      "detail": "Pre-Draft",
+      "detail": "Pre-Draft ¬∑ Pick #7 Thu 4/23",
+      "channel": "",
+      "off": true
+    },
+    {
+      "team": "leafs",
+      "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+      "matchup": "Leafs",
+      "detail": "Season over ¬∑ Draft lottery Tue 5/5",
       "channel": "",
       "off": true
     }
   ],
   "week_ahead": {
+    "note": "Raptors first-round series (CLE leads 1-0); Jays open homestand vs Guardians Fri 4/24; NFL Draft begins Thu 4/23; NHL Draft Lottery Tue 5/5.",
     "games": [
       {
         "day": "Sun 4/19",
@@ -1736,17 +1876,26 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Diamondbacks",
-        "time": "7:10 PM ET",
-        "tv": "TBD"
+        "time": "4:10 PM ET",
+        "tv": "Sportsnet"
       },
       {
-        "day": "Sun 4/19",
+        "day": "Mon 4/20",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Cavaliers (Game 2)",
+        "time": "7:00 PM ET",
+        "tv": "Peacock/NBCSN"
+      },
+      {
+        "day": "Mon 4/20",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
-        "opp": "at Diamondbacks",
-        "time": "3:10 PM ET",
-        "tv": "TBD"
+        "opp": "at Angels",
+        "time": "9:38 PM ET",
+        "tv": "Sportsnet"
       },
       {
         "day": "Tue 4/21",
@@ -1754,8 +1903,8 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Angels",
-        "time": "8:38 PM ET",
-        "tv": "TBD"
+        "time": "9:38 PM ET",
+        "tv": "Sportsnet"
       },
       {
         "day": "Wed 4/22",
@@ -1763,46 +1912,63 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Angels",
-        "time": "8:38 PM ET",
-        "tv": "TBD"
+        "time": "3:07 PM ET",
+        "tv": "Sportsnet"
       },
       {
-        "day": "Wed 4/22",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Angels",
-        "time": "2:07 PM ET",
-        "tv": "TBD"
+        "day": "Thu 4/23",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "vs Cavaliers (Game 3)",
+        "time": "8:00 PM ET",
+        "tv": "Amazon Prime"
+      },
+      {
+        "day": "Thu 4/23",
+        "team": "commanders",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+        "name": "Commanders",
+        "opp": "NFL Draft Round 1 (Pick #7)",
+        "time": "8:00 PM ET",
+        "tv": "ABC/ESPN"
       },
       {
         "day": "Fri 4/24",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
-        "opp": "vs. Guardians",
-        "time": "6:07 PM ET",
-        "tv": "TBD"
+        "opp": "vs Guardians",
+        "time": "7:07 PM ET",
+        "tv": "Sportsnet"
       },
       {
         "day": "Sat 4/25",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
-        "opp": "vs. Guardians",
-        "time": "2:07 PM ET",
-        "tv": "TBD"
+        "opp": "vs Guardians",
+        "time": "3:07 PM ET",
+        "tv": "Sportsnet"
       },
       {
-        "day": "TBD",
+        "day": "Sun 4/26",
         "team": "raptors",
         "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
         "name": "Raptors",
-        "opp": "Playoffs",
-        "time": "TBD",
-        "tv": ""
+        "opp": "vs Cavaliers (Game 4)",
+        "time": "1:00 PM ET",
+        "tv": "ESPN"
+      },
+      {
+        "day": "Sun 4/26",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "vs Guardians",
+        "time": "1:37 PM ET",
+        "tv": "Sportsnet"
       }
-    ],
-    "note": "Raptors playoff schedule TBD; Commanders: Pre-Draft"
+    ]
   }
 }
