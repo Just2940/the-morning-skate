@@ -85,6 +85,15 @@ BANNED_HOSTS = {
     "goo.gl",
     "ow.ly",
     "tinyurl.com",
+    "googleusercontent.com",
+    "lh3.googleusercontent.com",
+    "lh4.googleusercontent.com",
+    "lh5.googleusercontent.com",
+    "lh6.googleusercontent.com",
+    "lh7.googleusercontent.com",
+    "consent.google.com",
+    "accounts.google.com",
+    "photos.google.com",
 }
 BANNED_PATH_PATTERNS = [r"/search", r"/results"]
 
@@ -99,6 +108,12 @@ def sanitize_url(url: str | None) -> tuple[bool, str]:
     host = p.netloc.lower()
     if host in BANNED_HOSTS:
         return False, f"banned host: {host}"
+    # Wildcard-match any googleusercontent/google-internal subdomain.
+    # (e.g. lh3.googleusercontent.com, consent-next.google.com, etc.)
+    if host.endswith(".googleusercontent.com") or host == "googleusercontent.com":
+        return False, f"banned googleusercontent subdomain: {host}"
+    if host.endswith(".consent.google.com") or host == "consent.google.com":
+        return False, f"banned consent.google subdomain: {host}"
     for pat in BANNED_PATH_PATTERNS:
         if re.search(pat, p.path):
             return False, f"banned path pattern {pat!r}: {p.path}"
@@ -174,7 +189,16 @@ BANNED_CHARS = {
     "\u2018": "curly-squote-left (U+2018) — use '",
     "\u2019": "curly-squote-right (U+2019) — use '",
 }
-BANNED_HTML_ENTITIES = ["&mdash;", "&ndash;", "&hellip;"]
+BANNED_HTML_ENTITIES = [
+    # Named entities
+    "&mdash;", "&ndash;", "&hellip;", "&middot;", "&nbsp;",
+    "&lsquo;", "&rsquo;", "&ldquo;", "&rdquo;",
+    # Numeric entities (decimal)
+    "&#8212;", "&#8211;", "&#8230;", "&#183;", "&#160;",
+    "&#8216;", "&#8217;", "&#8220;", "&#8221;",
+    # Numeric entities (hex)
+    "&#x2014;", "&#x2013;", "&#x2026;", "&#xB7;", "&#xA0;",
+]
 
 # Known mojibake signatures (UTF-8 read as MacRoman/Windows-1252)
 MOJIBAKE_SIGS = {
