@@ -1,8 +1,9 @@
 name: Daily Morning Skate Update
+
 on:
   schedule:
-    - cron: "0 9 * * *"  # 9 AM UTC = 4 AM EST
-  workflow_dispatch:       # Manual trigger from GitHub UI
+    - cron: "0 9 * * *"   # 9 AM UTC = 4 AM EST
+  workflow_dispatch: {}
 
 jobs:
   update:
@@ -16,10 +17,19 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install validator dependencies
+        run: pip install requests
+
       - name: Run update script
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
         run: python scripts/update-content.py
+
+      - name: Validate content (Section 0 rules)
+        # Enforces every rule in SKILL.md Section 0. If ANY check fails, the
+        # workflow fails here and the commit+push step below is skipped —
+        # yesterday's data.json stays live. That's the whole point.
+        run: python scripts/validate_content.py --data data.json --html index.html
 
       - name: Check for changes
         id: changes
