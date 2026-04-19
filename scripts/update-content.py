@@ -785,7 +785,7 @@ def get_team_schedule(team_key):
 def get_standings(team_key):
     """Get standings from ESPN and extract this team's entry."""
     cfg = TEAMS[team_key]
-    url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings"
+    url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings?level=3"
     data = espn_fetch(url)
     if not data:
         return {}
@@ -794,7 +794,12 @@ def get_standings(team_key):
     team_abbr = cfg["espn_abbr"]
 
     # Navigate the standings structure: children > standings > entries
-    for group in data.get("children", []):
+    def _iter_groups(node):
+        if node.get("standings", {}).get("entries"):
+            yield node
+        for c in node.get("children", []):
+            yield from _iter_groups(c)
+    for group in _iter_groups(data):
         group_name = group.get("name", "")
         for subgroup in group.get("standings", {}).get("entries", []):
             entry_team = subgroup.get("team", {})
@@ -839,7 +844,7 @@ def build_full_standings(team_key):
     team_id = cfg["espn_team_id"]
     team_abbr = cfg["espn_abbr"]
 
-    url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings"
+    url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings?level=3"
     data = espn_fetch(url)
     if not data:
         print(f"    WARNING: Could not fetch standings for {team_key}")
@@ -896,10 +901,14 @@ def build_full_standings(team_key):
 
     # Parse the full standings structure: children > [groups] > standings > entries
     all_groups = {}  # group_name -> list of entries
-    for group in data.get("children", []):
-        group_name = group.get("name", "")
-        entries = group.get("standings", {}).get("entries", [])
-        all_groups[group_name] = entries
+    def _collect(node):
+        entries = node.get("standings", {}).get("entries", [])
+        if entries:
+            all_groups[node.get("name", "")] = entries
+        for child in node.get("children", []):
+            _collect(child)
+    for top in data.get("children", []):
+        _collect(top)
 
     if not all_groups:
         # Flat structure fallback
