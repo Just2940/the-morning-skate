@@ -2904,8 +2904,8 @@ Nothing else ‚Äî just the URL."""
             return url_match.group()
 
     # Fallback: return a search URL
-    search_name = cfg["youtube_search_name"]
-    return f"https://www.youtube.com/{cfg['youtube_channel']}/search?query={search_name}+{opp_name.replace(' ', '+')}+highlights"
+    # No fresh URL found — return None so the caller can gate on it
+    return None
 
 
 def find_news_articles(team_key, phase_info=None):
@@ -3179,16 +3179,17 @@ def build_data():
             if days_since_game <= 2:
                 print(f"  Finding highlight video for vs {last_game['opp_name']}...")
                 hl_url = find_highlight_url(team_key, last_game["opp_name"])
-                result_badge = f"{'W' if last_game['result'] == 'W' else 'L'} {last_game['team_score']}-{last_game['opp_score']}"
-                highlights = {
-                    "available": True,
-                    "title": f"{last_game['opp_name']} vs. {cfg['full_name'].split()[-1]} — Full Highlights",
-                    "subtitle": f"{cfg['league']} &middot; {last_game['date']}, {NOW.year}",
-                    "result_badge": result_badge,
-                    "result_class": "w" if last_game["result"] == "W" else "l",
-                    "url": hl_url,
-                    "game_date": last_game.get("game_date", ""),
-                }
+                if hl_url:
+                    result_badge = f"{'W' if last_game['result'] == 'W' else 'L'} {last_game['team_score']}-{last_game['opp_score']}"
+                    highlights = {
+                        "available": True,
+                        "title": f"{last_game['opp_name']} vs. {cfg['full_name'].split()[-1]} — Full Highlights",
+                        "subtitle": f"{cfg['league']} &middot; {last_game['date']}, {NOW.year}",
+                        "result_badge": result_badge,
+                        "result_class": "w" if last_game["result"] == "W" else "l",
+                        "url": hl_url,
+                        "game_date": last_game.get("game_date", ""),
+                    }
             else:
                 print(f"  Skipping highlights ‚Äî last game was {days_since_game} days ago")
 
