@@ -1158,8 +1158,14 @@ def build_full_standings(team_key):
     elif league == "NBA":
         # Conference standings + playoff bracket
         tab2_name = "Playoff Bracket"
+        # NBA: ESPN groups NBA standings by division (Atlantic/Central/Southeast = East,
+        # Northwest/Pacific/Southwest = West). A substring match on "eastern"/"western"
+        # against division names returns nothing. Map conference -> division names instead.
+        NBA_EAST_DIVS = ("Atlantic", "Central", "Southeast")
+        NBA_WEST_DIVS = ("Northwest", "Pacific", "Southwest")
+        _nba_target_divs = NBA_EAST_DIVS if our_conference == "Eastern" else NBA_WEST_DIVS
         conf_groups = {gn: es for gn, es in all_groups.items()
-                       if our_conference and our_conference.lower() in gn.lower()}
+                       if any(div in gn for div in _nba_target_divs)}
 
         # Build conference table for tab 1 (replace division with conference)
         conf_entries = []
@@ -2429,7 +2435,6 @@ def generate_editorial_dek(headline, team_key, phase_info, team_info=None, exist
     Used for featured / two_up / extra_story / the_latest items. Falls back
     to existing_dek on any failure. Phase 2 of the daily update: replaces
     templated deks with web-search-backed editorial context."""
-    print("  DEBUG gen_dek:", team_key, "key=", bool(PERPLEXITY_API_KEY), "hlen=", len(headline or ""), "phase=", (phase_info or {}).get("phase") if phase_info else None, flush=True)
     if not PERPLEXITY_API_KEY:
         return existing_dek or ""
     if not headline:
@@ -2488,7 +2493,6 @@ def build_draft_board(team_key, phase_info, team_info=None):
         return None
 
     phase_id = (phase_info or {}).get("phase", "")
-    print("  DEBUG draft_board:", team_key, "phase_id=", phase_id, "key=", bool(PERPLEXITY_API_KEY), flush=True)
     offseason_phases = (
         "eliminated", "season_ended", "deep_offseason", "offseason",
         "pre_draft", "draft_free_agency", "combine_free_agency", "otas",
