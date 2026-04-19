@@ -1,0 +1,77 @@
+name: Verify Live Site (post-deploy)
+
+# Runs after the Daily Update workflow pushes to main. Sevalla auto-deploys
+# within ~30s. This job waits, fetches the live site + data.json with
+# cache-busters, and re-runs the Section 0 validators against the deployed
+# content. Catches mojibake or truncation introduced during transfer.
+#
+# If anything fails, it opens a GitHub Issue so you see it the next time
+# you open the repo — the previous day's data is still live (because
+# validate_content.py already blocked a bad push), so the site isn't broken,
+# but this alerts you that the pipeline needs attention.
+
+on:
+  workflow_run:
+    workflows: ["Daily Morning Skate Update"]
+    types: [completed]
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Wait 45s for Sevalla deploy
+        run: sleep 45
+
+      - name: Fetch live files
+        run: |
+          TS=$(date +%s)
+          curl -sfL "https://themorningskate.to/data.json?v=verify&t=$TS" -o live-data.json
+          curl -sfL "https://themorningskate.to/?v=verify&t=$TS" -o live-index.html
+          echo "Live data.json: $(wc -c < live-data.json) bytes"
+          echo "Live index.html: $(wc -c < live-index.html) bytes"
+
+      - name: Validate live content
+        id: validate
+        run: python scripts/validate_content.py --data live-data.json --html live-index.html
+
+      - name: Open issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Live site validation failed — ${new Date().toISOString().slice(0,10)}`;
+            const body = [
+              'The post-deploy validator found issues on the live site.',
+              '',
+              `Workflow run: ${context.payload.workflow_run?.html_url || 'manual dispatch'}`,
+              '',
+              'Check the "Validate live content" step log for the list of failing rules.',
+              '',
+              'Most common causes:',
+              '- Transfer-layer corruption (mojibake introduced in push)',
+              '- Service worker caching old content (the validator should fetch with cache-bust)',
+              '- Sevalla deploy still propagating (re-run in 2 min)',
+              '',
+              'See SKILL.md Section 0 for the full list of enforced rules.'
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['pipeline', 'bug']
+            });
