@@ -1913,6 +1913,21 @@ def select_the_latest(all_articles, count=4):
             continue
         add_article(article)
 
+    # === FORCE NON-ESPN DIVERSITY ===
+    # If all selected articles are from ESPN, force-swap the last one
+    # for the best non-ESPN article available.
+    if selected and all(s.get("source") == "ESPN" for s in selected):
+        non_espn_avail = [a for a in all_articles if a.get("source") != "ESPN" and a.get("link") not in used_urls]
+        if non_espn_avail:
+            replacement = make_entry(non_espn_avail[0])
+            old_src = selected[-1].get("source", "ESPN")
+            selected[-1] = replacement
+            source_counts[old_src] = source_counts.get(old_src, 1) - 1
+            new_src = non_espn_avail[0].get("source", "Unknown")
+            source_counts[new_src] = source_counts.get(new_src, 0) + 1
+            used_urls.add(non_espn_avail[0].get("link"))
+            print(f"    Diversity fix: swapped last ESPN for {new_src}")
+
     # Log source diversity
     unique_sources = len(source_counts)
     print(f"    The Latest: {len(selected)} articles from {unique_sources} sources: {', '.join(sorted(source_counts.keys()))}")
@@ -1996,6 +2011,29 @@ def build_homepage_stories_from_articles(all_team_facts, all_team_articles):
 
     # Sort by score (highest first)
     team_candidates.sort(key=lambda x: x["score"], reverse=True)
+
+    # === SOURCE DIVERSITY ENFORCEMENT (per-position uniqueness) ===
+    # Ensure no two homepage stories share the same source.
+    # When a duplicate is found, swap to an alternative article from that team.
+    used_homepage_sources = set()
+    for candidate in team_candidates[:4]:
+        article = candidate["article"]
+        source = article.get("source", "ESPN")
+        if source in used_homepage_sources:
+            team_key_c = candidate["team_key"]
+            team_arts = all_team_articles.get(team_key_c, [])
+            swapped = False
+            for alt in team_arts:
+                alt_source = alt.get("source", "ESPN")
+                if alt_source not in used_homepage_sources and alt.get("link") != article.get("link"):
+                    candidate["article"] = alt
+                    source = alt_source
+                    swapped = True
+                    print(f"  Homepage diversity: swapped {team_key_c} from {article.get('source')} to {alt_source}")
+                    break
+            if not swapped:
+                print(f"  Homepage diversity: no alt source for {team_key_c} (keeping {source})")
+        used_homepage_sources.add(source)
 
     # Build editorial stories from top candidates
     for candidate in team_candidates[:4]:
@@ -2783,6 +2821,35 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
     if not result:
         print(f"  WARNING: Perplexity could not produce valid LOTL for {team_key}; using ESPN fallback")
         result = generate_espn_fallback_lotl(team_key, team_info or {}, recent or [], upcoming or [], phase_info or {"phase": "unknown", "label": "Unknown"})
+
+
+    # === FALLBACK WORD-COUNT GATE ===
+    # If the result is under 120 words, pad with league-aware offseason context.
+    # Common for offseason teams with no recent games.
+    if result:
+        _fb_plain = re.sub(r'<[^>]+>', '', result)
+        _fb_wc = len(_fb_plain.split())
+        if _fb_wc < 120:
+            print(f"  WARNING: LOTL only {_fb_wc} words for {team_key}; padding")
+            _cfg = TEAMS[team_key]
+            _league = _cfg.get("league", "")
+            _pad = []
+            if _league == "NBA":
+                _pad.append(f"Around the {_league}, the offseason machinery is already whirring \u2014 front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario.")
+                _pad.append(f"For the {_cfg['full_name']}, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.")
+            elif _league == "NHL":
+                _pad.append(f"Across the {_league}, attention is turning to offseason planning \u2014 draft prep, trade scenarios, and the kind of roster surgery that shapes the next window.")
+                _pad.append(f"For the {_cfg['full_name']}, the question is how aggressively the front office moves to retool around the core pieces already in place.")
+            elif _league == "MLB":
+                _pad.append(f"Around the {_league}, the offseason transaction wire is heating up as clubs position themselves for the next competitive push.")
+                _pad.append(f"For the {_cfg['full_name']}, every front-office decision this winter will be measured against the trajectory of the rebuild and the development timeline of the young core.")
+            elif _league == "NFL":
+                _pad.append(f"Across the {_league}, the offseason program calendar is the primary focus \u2014 OTAs, minicamp, and the slow ramp toward training camp define the rhythm now.")
+                _pad.append(f"For the {_cfg['full_name']}, the puzzle is assembling the right combination of draft capital and veteran additions to take the next step in a competitive division.")
+            if _pad:
+                result = result.rstrip() + " " + " ".join(_pad)
+            _padded_wc = len(re.sub(r'<[^>]+>', '', result).split())
+            print(f"  Padded LOTL to {_padded_wc} words for {team_key}")
 
     return result
 
