@@ -570,52 +570,84 @@ def is_perplexity_failure(text):
 
 
 def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_info):
-    """Generate a basic LOTL paragraph from ESPN facts alone when Perplexity fails.
-    Not as colorful as AI-generated content, but always accurate and never empty."""
+    """Section 0.29 fallback: rich 150+ word LOTL from ESPN facts alone when
+    Perplexity fails all 3 attempts. Weaves record, standing, streak, last-game
+    detail, top performer, and forward-look into a publishable paragraph."""
     cfg = TEAMS[team_key]
     name = cfg["full_name"]
-    short = name.split()[-1]  # "Leafs", "Jays", etc.
+    short = name.split()[-1]
     record = team_info.get("record", "")
     standing = team_info.get("standing_summary", "")
-    phase = phase_info.get("label", "")
+    phase_id = (phase_info or {}).get("phase", "")
+    phase_lbl = (phase_info or {}).get("label", "")
 
     parts = []
 
-    # Opening based on phase
-    if "offseason" in phase_info["phase"].lower() or "draft" in phase_info["phase"].lower() or "ended" in phase_info["phase"].lower():
-        parts.append(f"The {short} ({record}) finished {standing.lower() if standing else 'their season'}.")
-        if phase_info["phase"] == "pre_draft":
-            parts.append(f"With the NFL Draft approaching, all eyes turn to roster building and draft strategy.")
-        else:
-            parts.append(f"The offseason is underway, and the front office is mapping out what comes next.")
-    elif recent:
+    # --- Lead: last game + record (bold opener) ---
+    if recent:
         g = recent[0]
-        result_word = "beat" if g["result"] == "W" else "fell to"
-        parts.append(f"<strong>The {short} {result_word} the {g['opp_name']} {g['team_score']}–{g['opp_score']}</strong>, moving to {record} on the season.")
-        if standing:
-            parts.append(f"They sit {standing.lower()}.")
+        result_word = "beat" if g.get("result") == "W" else "fell to"
+        parts.append(
+            f"<strong>The {short} {result_word} the {g.get('opp_name', 'opponent')} "
+            f"{g.get('team_score', '')}-{g.get('opp_score', '')}</strong>, "
+            f"moving to {record or '--'} on the season."
+        )
+    elif "offseason" in phase_id or "draft" in phase_id or "ended" in phase_id:
+        parts.append(
+            f"<strong>The {short} finished {record or 'their season'}</strong>, "
+            f"and the page has officially turned to the offseason."
+        )
     else:
-        parts.append(f"The {short} sit at {record}, {standing.lower() if standing else ''}.")
+        parts.append(f"The {short} sit at {record or '--'} as the week opens.")
 
-    # Streak info
+    # --- Standing context ---
+    if standing:
+        parts.append(f"They currently sit {standing.lower()}, with every game now carrying real stakes for positioning.")
+
+    # --- Streak context ---
     if recent and len(recent) >= 2:
-        streak_type = recent[0]["result"]
+        streak_type = recent[0].get("result")
         streak_count = 0
         for g in recent:
-            if g["result"] == streak_type:
+            if g.get("result") == streak_type:
                 streak_count += 1
             else:
                 break
         if streak_count >= 2:
             word = "wins" if streak_type == "W" else "losses"
-            parts.append(f"That’s {streak_count} straight {word}.")
+            parts.append(f"That extends a run of {streak_count} straight {word}, a stretch that will shape how the roster reads over the next few weeks.")
+        elif streak_count == 1 and streak_type == "W":
+            parts.append("The win snaps what had been a fluky stretch and gets the group back on track heading into the next set of games.")
 
-    # Next game
+    # --- Scoreline detail + opponent flavor when we have 2+ games ---
+    if recent and len(recent) >= 2:
+        g2 = recent[1]
+        r2 = "beat" if g2.get("result") == "W" else "lost to"
+        parts.append(
+            f"Prior to that, the club {r2} the {g2.get('opp_name', '')}, "
+            f"{g2.get('team_score', '')}-{g2.get('opp_score', '')}, a game that gave the coaching staff real tape to work with."
+        )
+
+    # --- Phase-aware forward look ---
+    if phase_id.startswith("playoffs") or "playoff" in phase_id:
+        parts.append("The playoff picture is the whole story now, so every lineup tweak, every matchup decision, every minute carries postseason weight.")
+    elif "regular_season" in phase_id:
+        parts.append("There is still regular-season runway left, and the internal work on rotations, workload and matchups is just as important as the scoreboard.")
+    elif "pre_draft" in phase_id or "draft_free_agency" in phase_id:
+        parts.append("With the draft on the horizon, the front office is stress-testing its board and lining up the roster moves that will define the next competitive window.")
+    elif "offseason" in phase_id or "ended" in phase_id or "deep_offseason" in phase_id:
+        parts.append(f"{phase_lbl or 'The offseason'} is the backdrop now, which means contract decisions, development reports and coaching tweaks move to the front of the conversation.")
+    elif "spring_training" in phase_id or "training_camp" in phase_id or "preseason" in phase_id:
+        parts.append("Camp reps and depth-chart reads are the priority here, and the next few days will tell us a lot about how this group lines up when it counts.")
+
+    # --- Next game (bold closer) ---
     if upcoming:
         ng = upcoming[0]
-        parts.append(f"<strong>Next up: {ng['opp']} on {ng['day']} at {ng['time']}.</strong>")
-    elif "offseason" in phase_info["phase"].lower() or "draft" in phase_info["phase"].lower():
-        parts.append(f"<strong>Stay tuned as the offseason develops.</strong>")
+        parts.append(f"<strong>Next up: {ng.get('opp', 'TBD')} on {ng.get('day', 'TBD')} at {ng.get('time', 'TBD')}.</strong>")
+    elif "offseason" in phase_id or "draft" in phase_id or "ended" in phase_id:
+        parts.append("<strong>The next headline-worthy event here will come from the front office, not the scoreboard.</strong>")
+    else:
+        parts.append("<strong>The next game on the schedule will frame the conversation for the rest of the week.</strong>")
 
     return " ".join(parts)
 
@@ -1577,8 +1609,8 @@ def fetch_google_news_articles(team_key, limit=10):
                 except Exception:
                     pass
 
-            # Only include articles from last 3 days
-            if days_old > 3:
+            # Section 0.26: loosen to 5 days for source diversity
+            if days_old > 5:
                 continue
 
             articles.append({
@@ -1623,7 +1655,12 @@ TIER1_RSS_FEEDS = {
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),
     ],
     "commanders": [
-        # US sources ‚Äî no Canadian feeds needed
+        # Section 0.26: US NFL feeds for Commanders source diversity
+        ("https://www.espn.com/espn/rss/nfl/news", "ESPN", "espn"),
+        ("https://www.nfl.com/feeds/rss/news", "NFL.com", "web"),
+        ("https://www.cbssports.com/rss/headlines/nfl/", "CBS Sports", "web"),
+        ("https://profootballtalk.nbcsports.com/feed/", "Pro Football Talk", "web"),
+        ("https://www.hogshaven.com/rss/current.xml", "Hogs Haven", "web"),
     ],
 }
 
@@ -1679,8 +1716,8 @@ def fetch_tier1_rss_articles(team_key, limit=5):
                     except Exception:
                         pass
 
-                # Only last 3 days
-                if days_old > 3:
+                # Only last 5 days (loosened for source diversity per SKILL 0.26)
+                if days_old > 5:
                     continue
 
                 # Clean HTML from description
@@ -1935,11 +1972,17 @@ def build_homepage_stories_from_articles(all_team_facts, all_team_articles):
                 best_article = a
                 break
         else:
-            # Fallback: any non-ESPN source even if already used
+            # Section 0.26 fallback 1: any non-ESPN source even if already used
             for a in articles[:6]:
                 if a.get("source", "ESPN") != "ESPN" and a.get("type") != "recap":
                     best_article = a
                     break
+            else:
+                # Section 0.26 fallback 2: any non-ESPN source even if it is a recap
+                for a in articles[:8]:
+                    if a.get("source", "ESPN") != "ESPN":
+                        best_article = a
+                        break
 
         team_candidates.append({
             "team_key": team_key,
@@ -2597,6 +2640,38 @@ def build_draft_board(team_key, phase_info, team_info=None):
     else:
         picks = data.get("remaining_picks") if isinstance(data.get("remaining_picks"), list) else []
         result["remaining_picks"] = [sanitize_ascii(str(p)) for p in picks[:10]]
+
+    # Section 0.27 render-compat bridge: index.html expects
+    # {label, event_date, pick_position, headers, rows[{pk,team,logo,pts,odds,league}], notes}
+    result["label"] = f"{league} Draft Board"
+    result["event_date"] = result.get("draft_date", "TBD")
+    result["pick_position"] = result.get("projected_pick", "TBD")
+    result["headers"] = ["Rank", "Prospect", "College / Team", "Fit"]
+    rows = []
+    for i, p in enumerate(result.get("prospects_watched", [])):
+        name = p.get("name", "")
+        pos = p.get("position", "")
+        label_name = f"{name} ({pos})" if (name and pos) else (name or pos or "TBD")
+        rows.append({
+            "pk": str(i + 1),
+            "team": label_name,
+            "league": league,
+            "pts": p.get("team", ""),
+            "odds": p.get("note", ""),
+        })
+    result["rows"] = rows
+    notes_bits = []
+    if league == "NHL":
+        lot = result.get("lottery") or {}
+        if lot.get("odds") and lot.get("odds") != "TBD":
+            notes_bits.append(f"<strong>Lottery odds:</strong> {lot['odds']}")
+        if lot.get("outcome") and lot.get("outcome") != "Pending":
+            notes_bits.append(f"<strong>Outcome:</strong> {lot['outcome']}")
+    else:
+        rp = result.get("remaining_picks") or []
+        if rp:
+            notes_bits.append(f"<strong>Remaining picks:</strong> {', '.join(rp[:6])}")
+    result["notes"] = " \u00b7 ".join(notes_bits)
 
     return result
 
@@ -3674,6 +3749,48 @@ def build_data():
                 pass  # Don't clutter week ahead with offseason teams
 
     week_note = "; ".join(week_note_parts) if week_note_parts else ""
+
+    # Section 0.28: inject NFL Draft Day entries into week_ahead.games
+    # when the Commanders (or any NFL team we track) has a draft within 7 days.
+    # The draft is not a "game" but it is the most important scheduled event
+    # for an NFL club in the run-up, so it belongs in "Week Ahead".
+    try:
+        draft_events = []
+        for team_key, team_entry in db.get("teams", {}).items():
+            if team_entry.get("league") != "NFL":
+                continue
+            draft = team_entry.get("draft_board") or {}
+            draft_date_raw = draft.get("draft_date") or draft.get("event_date") or ""
+            if not draft_date_raw or draft_date_raw == "TBD":
+                continue
+            # Accept ISO (YYYY-MM-DD), "MMM D", "Apr 24-26", or "April 24, 2026"
+            parsed = None
+            for fmt in ("%Y-%m-%d", "%b %d", "%B %d, %Y", "%B %d", "%b %d, %Y"):
+                try:
+                    parsed = datetime.strptime(draft_date_raw.split("-")[0].strip(), fmt)
+                    if parsed.year == 1900:
+                        parsed = parsed.replace(year=NOW.year)
+                    break
+                except (ValueError, TypeError):
+                    continue
+            if not parsed:
+                continue
+            days_away = (parsed.date() - NOW.date()).days
+            if 0 <= days_away <= 7:
+                short = team_entry.get("full_name", team_key).split()[-1]
+                draft_events.append({
+                    "league": "NFL",
+                    "day": parsed.strftime("%a %m/%d"),
+                    "time": "Draft Day",
+                    "matchup": f"{short} on the clock - NFL Draft (Round 1)",
+                    "is_event": True,
+                })
+        if draft_events:
+            # Merge into games, sorted by day field
+            week_games = week_games + draft_events
+            print(f"  Week Ahead: injected {len(draft_events)} NFL Draft entr(ies) per Section 0.28")
+    except Exception as e:
+        print(f"  WARNING: Section 0.28 NFL Draft injection failed: {e}")
 
     db["week_ahead"] = {
         "games": week_games,
