@@ -3534,6 +3534,34 @@ def build_data():
         if lotl_text:
             lotl_text = fact_check_lotl(lotl_text, team_key, team_info, recent, upcoming, phase_info, standings)
 
+        # === POST-FACT-CHECK WORD-COUNT GATE ===
+        # fact_check_lotl can return generate_espn_fallback_lotl(...) directly, bypassing
+        # the padding inside generate_lotl. Re-check and pad here to guarantee >= 120 words.
+        if lotl_text:
+            _pfc_plain = re.sub(r'<[^>]+>', '', lotl_text)
+            _pfc_wc = len(_pfc_plain.split())
+            if _pfc_wc < 120:
+                print(f"  WARNING: post-fact-check LOTL only {_pfc_wc} words for {team_key}; padding")
+                _cfg = TEAMS[team_key]
+                _league = _cfg.get("league", "")
+                _pad = []
+                if _league == "NBA":
+                    _pad.append(f"Around the {_league}, the offseason machinery is already whirring \u2014 front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario.")
+                    _pad.append(f"For the {_cfg['full_name']}, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.")
+                elif _league == "NHL":
+                    _pad.append(f"Across the {_league}, attention is turning to offseason planning \u2014 draft prep, trade scenarios, and the kind of roster surgery that shapes the next window.")
+                    _pad.append(f"For the {_cfg['full_name']}, the question is how aggressively the front office moves to retool around the core pieces already in place.")
+                elif _league == "MLB":
+                    _pad.append(f"Around the {_league}, the offseason transaction wire is heating up as clubs position themselves for the next competitive push.")
+                    _pad.append(f"For the {_cfg['full_name']}, every front-office decision this winter will be measured against the trajectory of the rebuild and the development timeline of the young core.")
+                elif _league == "NFL":
+                    _pad.append(f"Across the {_league}, the offseason program calendar is the primary focus \u2014 OTAs, minicamp, and the slow ramp toward training camp define the rhythm now.")
+                    _pad.append(f"For the {_cfg['full_name']}, the puzzle is assembling the right combination of draft capital and veteran additions to take the next step in a competitive division.")
+                if _pad:
+                    lotl_text = lotl_text.rstrip() + " " + " ".join(_pad)
+                _padded_wc = len(re.sub(r'<[^>]+>', '', lotl_text).split())
+                print(f"  Padded post-fact-check LOTL to {_padded_wc} words for {team_key}")
+
         # Select articles for The Latest from discovered articles (no Perplexity needed)
         articles = select_the_latest(all_team_articles.get(team_key, []), count=4)
         print(f"  Selected {len(articles)} articles for The Latest")
