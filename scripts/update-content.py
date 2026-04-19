@@ -17,7 +17,59 @@ from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlparse, parse_qs
+import base64
+
+
+# === GOOGLE NEWS URL RESOLVER ===
+def resolve_google_news_url(google_url, timeout=10):
+    """Resolve a Google News wrapper URL to the actual article URL.
+    Google News RSS feeds wrap article URLs in redirect links.
+    This function follows the redirect to get the real destination.
+    Falls back to trying to decode the URL from the path if redirect fails."""
+    if not google_url:
+        return google_url
+    # Only process Google News wrapper URLs
+    parsed = urlparse(google_url)
+    if "news.google" not in parsed.netloc:
+        return google_url
+    try:
+        # Method 1: Follow the HTTP redirect
+        req = Request(google_url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; MorningSkatBot/1.0)",
+        })
+        req.method = "HEAD"
+        with urlopen(req, timeout=timeout) as resp:
+            final_url = resp.url
+            # Verify we actually got redirected away from Google
+            if "news.google" not in urlparse(final_url).netloc:
+                return final_url
+    except Exception:
+        pass
+    try:
+        # Method 2: Follow with GET (some redirects need it)
+        req = Request(google_url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; MorningSkatBot/1.0)",
+        })
+        with urlopen(req, timeout=timeout) as resp:
+            final_url = resp.url
+            if "news.google" not in urlparse(final_url).netloc:
+                return final_url
+            # Method 3: Check for meta refresh or JS redirect in body
+            body = resp.read(8192).decode("utf-8", errors="ignore")
+            meta_match = re.search(r'url=([^"\\s>]+)', body, re.IGNORECASE)
+            if meta_match:
+                candidate = meta_match.group(1).strip()
+                if "news.google" not in candidate and candidate.startswith("http"):
+                    return candidate
+            href_match = re.search(r'href="(https?://(?!news.google)[^"]+)"', body)
+            if href_match:
+                return href_match.group(1)
+    except Exception:
+        pass
+    # If all methods fail, return original (validator will catch it)
+    print(f"  WARNING: Could not resolve Google News URL: {google_url[:80]}...")
+    return google_url
 
 # === CONFIGURATION ===
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data.json")
@@ -1446,7 +1498,8 @@ def fetch_google_news_articles(team_key, limit=10):
         root = ET.fromstring(xml_data)
         for item in root.findall(".//item"):
             title_raw = item.findtext("title", "")
-            link = item.findtext("link", "")
+            link_raw = item.findtext("link", "")
+            link = resolve_google_news_url(link_raw)
             pub_date = item.findtext("pubDate", "")
             source_el = item.find("source")
             source_name = source_el.text if source_el is not None else ""
