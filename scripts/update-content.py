@@ -146,6 +146,8 @@ UNICODE_TO_ENTITY = {
 def sanitize_ascii(text):
     if not isinstance(text, str):
         return text
+    # Decode any HTML entities first (from AI output, RSS, etc.)
+    text = html.unescape(text)
     for char, entity in UNICODE_TO_ENTITY.items():
         text = text.replace(char, entity)
     return text.encode("ascii", "xmlcharrefreplace").decode("ascii")
@@ -2432,7 +2434,7 @@ FORMATTING:
 - ONE paragraph, 150-200 words. Dense, polished prose ‚Äî no filler.
 - Bold the single most important recent event with <strong> tags.
 - Bold the forward-looking detail at the end with <strong> tags.
-- Use HTML entities: — for em dashes, – for en dashes, ’ for apostrophes.
+- Use literal Unicode characters (NOT HTML entities): — for em dashes, – for en dashes, ’ for apostrophes. Do NOT output tokens like &mdash; &ndash; or &rsquo;.
 - Do NOT use markdown. No asterisks, no bullet points.
 - Do NOT include citation numbers like [1], [2], etc. Write clean prose with no reference markers.
 - Do NOT exceed 200 words."""
