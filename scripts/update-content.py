@@ -655,14 +655,25 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
 # === ESPN API HELPERS ===
 
 def espn_fetch(url):
-    """Fetch from ESPN's public API."""
-    try:
-        req = Request(url, headers={"User-Agent": "TheMorningSkate/1.0"})
-        with urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except (URLError, HTTPError) as e:
-        print(f"  WARNING: ESPN fetch failed for {url}: {e}")
-        return None
+    """Fetch from ESPN's public API with retry on transient failures.
+
+    3 attempts with exponential backoff (2s, 4s). This prevents the daily build
+    from failing on a single ESPN API hiccup.
+    """
+    last_err = None
+    for attempt in range(3):
+        try:
+            req = Request(url, headers={"User-Agent": "TheMorningSkate/1.0"})
+            with urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except (URLError, HTTPError, json.JSONDecodeError, TimeoutError) as e:
+            last_err = e
+            if attempt < 2:
+                backoff = 2 * (attempt + 1)
+                print(f"  ESPN fetch attempt {attempt+1} failed ({e}); retrying in {backoff}s: {url}")
+                time.sleep(backoff)
+    print(f"  WARNING: ESPN fetch failed for {url} after 3 attempts: {last_err}")
+    return None
 
 
 def get_team_info(team_key):
@@ -3639,11 +3650,29 @@ def build_data():
         # Build full standings tables from ESPN API (replaces stale existing data)
         print(f"  Building standings tables...")
         fresh_standings = build_full_standings(team_key)
-        if fresh_standings:
+
+        def _has_rows(standings_dict):
+            if not isinstance(standings_dict, dict):
+                return False
+            panes = standings_dict.get("panes", [])
+            for p in panes:
+                rows = p.get("rows", []) if isinstance(p, dict) else (p if isinstance(p, list) else [])
+                if rows:
+                    return True
+            return False
+
+        if fresh_standings and _has_rows(fresh_standings):
             team_entry["standings"] = fresh_standings
             print(f"    Built {len(fresh_standings.get('tabs', []))} tabs: {', '.join(fresh_standings.get('tabs', []))}")
         else:
-            print(f"    WARNING: Could not build standings ‚Äî keeping existing")
+            # Fresh fetch failed or came back empty. Keep existing standings if they have rows.
+            existing_standings = existing_team.get("standings", {})
+            if _has_rows(existing_standings):
+                team_entry["standings"] = existing_standings
+                print(f"    WARNING: fresh standings empty for {team_key} -- preserving last-known-good from previous data.json")
+            else:
+                team_entry["standings"] = existing_standings  # keep whatever (may still be empty)
+                print(f"    WARNING: both fresh and existing standings empty for {team_key} -- validator may fail")
 
         # Set section label based on phase ‚Äî eliminated/offseason get "Offseason Intel"
         phase_id_label = phase_info.get("phase", "")
