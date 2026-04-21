@@ -151,32 +151,50 @@ TEAMS = {
 }
 
 # === ASCII SANITIZATION ===
-# Banned dashes per Section 0.3 — replaced with ASCII equivalents.
-# Everything else (curly quotes, accented chars, middle-dot, etc.) is kept as
-# Unicode so it renders correctly as textContent in the frontend.
-BANNED_DASH_REPLACEMENTS = {
-    "\u2014": " - ",   # em-dash —
-    "\u2013": " - ",   # en-dash –
+# Section 0.3 (see scripts/validate_content.py) bans curly quotes, em/en dashes,
+# ellipsis, and HTML entities in data.json. We replace them with ASCII
+# equivalents here so nothing leaks into the output. Accented characters,
+# middle-dot, etc. are preserved as Unicode and render correctly as textContent
+# in the frontend.
+#
+# NOTE: ellipsis -> single space (NOT "...") so Section 0.4 ticker ban on
+# literal "..." stays clean regardless of which field the text ends up in.
+
+BANNED_PUNCT_REPLACEMENTS = {
+    "\u2014": " - ",  # em-dash
+    "\u2013": " - ",  # en-dash
+    "\u2018": "'",    # left single curly quote
+    "\u2019": "'",    # right single curly quote / apostrophe
+    "\u201C": '"',    # left double curly quote
+    "\u201D": '"',    # right double curly quote
+    "\u2026": " ",    # ellipsis -> space (collapsed below)
+    "\u00A0": " ",    # non-breaking space -> regular space
 }
+
+# Backward-compat alias for the old name.
+BANNED_DASH_REPLACEMENTS = BANNED_PUNCT_REPLACEMENTS
+
 
 def sanitize_ascii(text):
     """Normalize text for JSON output.
 
-    Historical name kept for compatibility. Output is now clean UTF-8
-    (not ASCII) — em-dash / en-dash are stripped per Section 0.3,
-    any HTML entities in upstream text are decoded back to Unicode,
-    and the result is trimmed of double-spaces.
+    Historical name kept for compatibility. Output is clean UTF-8 with Section
+    0.3 banned punctuation stripped: em/en dashes become ' - ', curly quotes
+    become straight quotes, ellipsis becomes a space. HTML entities in upstream
+    text (AI output, RSS) are decoded back to Unicode first so entities like
+    &rsquo; are normalized along with the literal U+2019 character.
     """
     if not isinstance(text, str):
         return text
-    # Decode HTML entities from AI output / RSS (incl. numeric and named)
+    # Decode HTML entities from AI output / RSS (incl. numeric and named).
     text = html.unescape(text)
-    # Strip banned dashes to ASCII per Section 0.3
-    for ch, replacement in BANNED_DASH_REPLACEMENTS.items():
+    # Strip banned punctuation per Section 0.3.
+    for ch, replacement in BANNED_PUNCT_REPLACEMENTS.items():
         text = text.replace(ch, replacement)
-    # Collapse double-spaces introduced by dash replacement
+    # Collapse double/triple spaces introduced by dash/ellipsis replacement.
     text = re.sub(r"  +", " ", text).strip()
     return text
+
 
 def sanitize_entry(entry):
     if isinstance(entry, dict):
@@ -3947,13 +3965,36 @@ def main():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         text = f.read()
     banned_markers = {
+        # Section 0.3 banned literal chars -- MUST match validate_content.py BANNED_CHARS
         "em-dash U+2014": "\u2014",
         "en-dash U+2013": "\u2013",
+        "ellipsis U+2026": "\u2026",
+        "curly-dquote-left U+201C": "\u201C",
+        "curly-dquote-right U+201D": "\u201D",
+        "curly-squote-left U+2018": "\u2018",
+        "curly-squote-right U+2019": "\u2019",
+        # Named HTML entities
         "&mdash;": "&mdash;",
         "&ndash;": "&ndash;",
+        "&hellip;": "&hellip;",
+        "&middot;": "&middot;",
+        "&nbsp;": "&nbsp;",
+        "&lsquo;": "&lsquo;",
+        "&rsquo;": "&rsquo;",
+        "&ldquo;": "&ldquo;",
+        "&rdquo;": "&rdquo;",
+        # Decimal numeric entities
         "&#8212;": "&#8212;",
         "&#8211;": "&#8211;",
-        "&middot; literal": "&middot;",
+        "&#8230;": "&#8230;",
+        "&#8216;": "&#8216;",
+        "&#8217;": "&#8217;",
+        "&#8220;": "&#8220;",
+        "&#8221;": "&#8221;",
+        # Hex numeric entities
+        "&#x2014;": "&#x2014;",
+        "&#x2013;": "&#x2013;",
+        "&#x2026;": "&#x2026;",
     }
     found = {name: text.count(s) for name, s in banned_markers.items() if text.count(s) > 0}
     if found:
