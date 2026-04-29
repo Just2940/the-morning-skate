@@ -11,7 +11,7 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "<strong>The Leafs finished 32-36-14</strong>, and the page has officially turned to the offseason. They currently sit 8th in atlantic division, with every game now carrying real stakes for positioning. Season Over is the backdrop now, which means contract decisions, development reports and coaching tweaks move to the front of the conversation. <strong>The next headline-worthy event here will come from the front office, not the scoreboard.</strong> Across the NHL, attention is turning to offseason planning - draft prep, trade scenarios, and the kind of roster surgery that shapes the next window. For the Toronto Maple Leafs, the question is how aggressively the front office moves to retool around the core pieces already in place.",
+        "body": "<strong>The Leafs finished 32-36-14</strong>, and the page has officially turned to the offseason. They currently sit 8th in atlantic division, Season Over is the backdrop now, which means contract decisions, development reports and coaching tweaks move to the front of the conversation. <strong>The next headline-worthy event here will come from the front office, not the scoreboard.</strong> The next headline-worthy event will come from the front office, not the scoreboard - the GM and head-coach searches will set the tone for whatever roster reset comes next. For the Toronto Maple Leafs, the question is how aggressively the front office moves to retool around the core pieces already in place.",
         "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
@@ -837,8 +837,7 @@
       ],
       "standings": {
         "tabs": [
-          "Eastern Conference",
-          "Playoff Bracket"
+          "Eastern Conference"
         ],
         "panes": [
           {
@@ -972,35 +971,6 @@
                 "seed": "10"
               }
             ]
-          },
-          {
-            "headers": [
-              "Matchup",
-              "Series"
-            ],
-            "bracket": true,
-            "rows": [
-              {
-                "matchup": "(1) Pistons vs. (2) Celtics",
-                "series": "Sat Apr 18",
-                "you": false
-              },
-              {
-                "matchup": "(3) New York vs. (4) Cavaliers",
-                "series": "Sat Apr 18",
-                "you": false
-              },
-              {
-                "matchup": "(5) Raptors vs. (6) Hawks",
-                "series": "Sat Apr 18",
-                "you": true
-              },
-              {
-                "matchup": "(7) 76ers vs. (8) Magic",
-                "series": "Sat Apr 18",
-                "you": false
-              }
-            ]
           }
         ]
       },
@@ -1118,81 +1088,6 @@
           }
         ]
       },
-      "draft_board": {
-        "team": "Washington Commanders",
-        "league": "NFL",
-        "projected_pick": "TBD",
-        "draft_date": "April 23-25, 2026",
-        "prospects_watched": [
-          {
-            "name": "Ahmad Moten Sr.",
-            "position": "DT",
-            "team": "Miami Hurricanes",
-            "note": "300-pound trench monster projected to Commanders at #14 overall in 2027 mock draft as impactful defensive lineman."
-          },
-          {
-            "name": "Sonny Styles",
-            "position": "LB",
-            "team": "Ohio State",
-            "note": "Best off-ball linebacker in the 2026 draft class, selected by Commanders at #7 overall."
-          },
-          {
-            "name": "Antonio Williams",
-            "position": "WR",
-            "team": "Clemson",
-            "note": "Third-round selection by Commanders in 2026 draft to add receiver depth."
-          },
-          {
-            "name": "Joshua Josephs",
-            "position": "ED",
-            "team": "Tennessee",
-            "note": "Fifth-round edge defender picked by Commanders for pass rush potential."
-          }
-        ],
-        "remaining_picks": [
-          "TBD"
-        ],
-        "label": "NFL Draft Board",
-        "event_date": "April 23-25, 2026",
-        "pick_position": "TBD",
-        "headers": [
-          "Rank",
-          "Prospect",
-          "College / Team",
-          "Fit"
-        ],
-        "rows": [
-          {
-            "pk": "1",
-            "team": "Ahmad Moten Sr. (DT)",
-            "league": "NFL",
-            "pts": "Miami Hurricanes",
-            "odds": "300-pound trench monster projected to Commanders at #14 overall in 2027 mock draft as impactful defensive lineman."
-          },
-          {
-            "pk": "2",
-            "team": "Sonny Styles (LB)",
-            "league": "NFL",
-            "pts": "Ohio State",
-            "odds": "Best off-ball linebacker in the 2026 draft class, selected by Commanders at #7 overall."
-          },
-          {
-            "pk": "3",
-            "team": "Antonio Williams (WR)",
-            "league": "NFL",
-            "pts": "Clemson",
-            "odds": "Third-round selection by Commanders in 2026 draft to add receiver depth."
-          },
-          {
-            "pk": "4",
-            "team": "Joshua Josephs (ED)",
-            "league": "NFL",
-            "pts": "Tennessee",
-            "odds": "Fifth-round edge defender picked by Commanders for pass rush potential."
-          }
-        ],
-        "notes": "<strong>Remaining picks:</strong> TBD"
-      },
       "the_latest_label": "Offseason Intel"
     }
   },
@@ -1241,11 +1136,6 @@
       "text": "Leafs (32-36-14) - 8th in Atlantic Division"
     },
     {
-      "badge": "NHL",
-      "badge_style": "nhl",
-      "text": "NHL teams' offseason keys, including free agency,"
-    },
-    {
       "badge": "MLB",
       "badge_style": "mlb",
       "text": "Jays beat Red Sox 3-0"
@@ -1284,11 +1174,6 @@
       "badge": "NFL",
       "badge_style": "nfl",
       "text": "Biggest 2026 NFL postdraft questions for all 32 teams"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "nfl",
-      "text": "Commanders - NFL Draft Apr 23-25"
     }
   ],
   "at_a_glance": [
@@ -1456,6 +1341,6 @@
         "tv": "TBD"
       }
     ],
-    "note": "Commanders: Pre-Draft"
+    "note": ""
   }
 }

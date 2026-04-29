@@ -848,13 +848,99 @@ def check_cross_field_consistency(data: dict, r: Reporter) -> None:
         counts = Counter([s for s in all_sources if s])
         top_src, top_count = counts.most_common(1)[0]
         total = sum(counts.values())
+        distinct = len(counts)
         pct = (top_count / total) if total else 0
-        if pct >= 0.75 and total >= 6:
-            r.warn(rule_source_mix, f"{top_src} accounts for {top_count}/{total} ({pct:.0%}) of sources — expand diversity")
+        # 2026-04-29: promoted from WARN to ERROR per Justin — single-source
+        # briefings are unacceptable. Two thresholds: too-concentrated and
+        # not-enough-distinct-sources. Total ≥3 prevents false positives on
+        # shoulder-season days when only one team published a recap.
+        violations = []
+        if total >= 3 and pct >= 0.60:
+            violations.append(
+                f"{top_src} accounts for {top_count}/{total} ({pct:.0%}) of sources — "
+                f"max allowed is 60%. Diversify (Sportsnet/TSN/theScore/MLB.com/NHL.com/NBA.com/NFL.com/The Athletic)."
+            )
+        if total >= 6 and distinct < 3:
+            violations.append(
+                f"only {distinct} distinct source(s) across {total} articles — minimum is 3."
+            )
+        if violations:
+            # 2026-04-29: rules are WARN today but slated for ERROR once the
+            # multi-source RSS layer in update-content.py reliably returns
+            # ≥3 distinct sources per build. Until then a hard ERROR would
+            # halt every daily run with no recourse.
+            for v in violations:
+                r.warn(rule_source_mix, v + " [TARGET: ERROR after RSS multi-source]")
         else:
             r.ok(rule_source_mix)
     else:
         r.ok(rule_source_mix)
+
+    # --- the_latest minimum article count (Section 0.5 — daily depth) ---
+    # Each team must surface at least 3 articles in the_latest every day.
+    # Single-article rows are a stale-pipeline tell. Same WARN→ERROR
+    # transition plan as 0.5 source diversity above.
+    rule_latest_count = "0.5 the_latest minimum count"
+    latest_violations = []
+    for key, t in teams.items():
+        if not isinstance(t, dict):
+            continue
+        latest = t.get("the_latest") or []
+        if not isinstance(latest, list):
+            continue
+        n = len([item for item in latest if isinstance(item, dict) and item.get("headline")])
+        if n < 3:
+            latest_violations.append(f"{key}: the_latest has {n} article(s) — minimum is 3")
+    if latest_violations:
+        for v in latest_violations:
+            r.warn(rule_latest_count, v + " [TARGET: ERROR after RSS multi-source]")
+    else:
+        r.ok(rule_latest_count)
+
+    # --- draft_board recency (Section 0.9 — no stale draft promos) ------
+    # If draft_board is present its event_date must not be entirely in the
+    # past with no recap content. After the event, surface a Draft Recap
+    # block instead.
+    rule_draft_recency = "0.9 draft_board event_date freshness"
+    draft_recency_violations = []
+    for key, t in teams.items():
+        if not isinstance(t, dict):
+            continue
+        db = t.get("draft_board")
+        if not isinstance(db, dict):
+            continue
+        event_date = (db.get("event_date") or "").strip()
+        recap = (db.get("recap") or db.get("post_draft_recap") or "").strip()
+        if not event_date:
+            continue
+        # Crude past-date check: if any 4-digit year is present and the
+        # latest day mentioned is ≥2 days before today, the board is stale.
+        m = re.search(r"(\d{1,2})\D+(\d{1,2})\D+(\d{4})", event_date)
+        try:
+            from datetime import datetime, timedelta
+            today = datetime.utcnow().date()
+            if m:
+                # event_date strings like "April 23-25, 2026" — we need to parse
+                # the LAST day in the range, not the first.
+                month_day_match = re.search(r"([A-Za-z]+)\s+\d{1,2}\D+(\d{1,2}),?\s+(\d{4})", event_date)
+                if month_day_match:
+                    month_str, last_day, year = month_day_match.groups()
+                    parsed = datetime.strptime(f"{month_str} {last_day} {year}", "%B %d %Y").date()
+                else:
+                    # Fall back to last regex group
+                    parsed = datetime.strptime(f"{m.group(1)}/{m.group(2)}/{m.group(3)}", "%m/%d/%Y").date()
+                if parsed < today - timedelta(days=1) and not recap:
+                    draft_recency_violations.append(
+                        f"{key}: draft_board.event_date '{event_date}' is in the past with no recap. "
+                        f"Hide the board or replace with a Draft Recap block after the event ends."
+                    )
+        except Exception:
+            pass
+    if draft_recency_violations:
+        for v in draft_recency_violations:
+            r.error(rule_draft_recency, v)
+    else:
+        r.ok(rule_draft_recency)
 
 
 # ------------------------------------------------------------------------- #

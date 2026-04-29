@@ -436,9 +436,15 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
         elif month >= 2 and month <= 3:
             return _phase("combine_free_agency", league, cfg)
         elif month == 4:
-            return _phase("pre_draft", league, cfg)
+            # NFL Draft typically lands Apr 23-25. Before that = pre-draft;
+            # after = post-draft (rookie reactions, depth-chart implications).
+            day = NOW.day
+            if day <= 22:
+                return _phase("pre_draft", league, cfg)
+            else:
+                return _phase("post_draft", league, cfg)
         elif month >= 5 and month <= 6:
-            return _phase("otas", league, cfg)
+            return _phase("post_draft" if month == 5 else "otas", league, cfg)
         elif month >= 7 and month <= 8:
             return _phase("training_camp", league, cfg)
         else:
@@ -551,6 +557,20 @@ def _phase(phase_id, league, cfg):
                 f"and what positions the team is targeting. "
                 f"Do NOT write about regular season game results ‚Äî the NFL season ended in January. "
                 f"This is entirely about the draft and roster building for next season."
+            ),
+        },
+        "post_draft": {
+            "label": "Post-Draft",
+            "recency_days": 7,
+            "editorial_direction": (
+                f"The NFL Draft has just wrapped. The {team_name} are in post-draft mode. "
+                f"Today's date is {today_str}. "
+                f"Focus on: who the team actually drafted (round, pick, college, fit), "
+                f"undrafted free-agent signings, depth-chart implications, scheme fit, "
+                f"and immediate-impact rookies. Reference the team's actual picks by name — "
+                f"do NOT write generically as if the draft has not happened. "
+                f"Do NOT write about regular season game results — the previous NFL season "
+                f"ended in January. The story right now is the rookie class."
             ),
         },
         "combine_free_agency": {
@@ -2383,7 +2403,11 @@ def build_key_numbers(team_key, team_info, standings, recent, phase_info=None):
     phase_id = (phase_info or {}).get("phase", "") if isinstance(phase_info, dict) else ""
     is_offseason = bool(phase_id) and (
         "offseason" in phase_id
-        or phase_id in ("season_ended", "pre_draft", "draft_week")
+        or phase_id in (
+            "season_ended", "pre_draft", "draft_week", "post_draft",
+            "eliminated", "draft_free_agency", "combine_free_agency",
+            "otas", "training_camp", "postseason_offseason",
+        )
     )
     historical_prefix = "Final " if is_offseason else ""
 
@@ -2632,6 +2656,25 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                 "badge_style": badge_style,
                 "text": f"{team_name} — NFL Draft Apr 23–25"
             })
+        elif phase_id == "post_draft":
+            # Surface the team's biggest current story: their actual draft
+            # picks. Fallback to "Draft recap" only if Perplexity hasn't
+            # populated picks yet — never re-emit the stale Apr 23-25 promo.
+            picks = (facts_dict.get("draft_picks") or [])[:1]
+            if picks:
+                pick = picks[0]
+                pick_text = f"{team_name} drafted {pick.get('name', 'TBD')} — {pick.get('position', '')} ({pick.get('round', '?')}/{pick.get('pick', '?')})"
+                ticker_items.append({
+                    "badge": league,
+                    "badge_style": badge_style,
+                    "text": pick_text.strip(' — '),
+                })
+            else:
+                ticker_items.append({
+                    "badge": league,
+                    "badge_style": badge_style,
+                    "text": f"{team_name} — post-draft outlook",
+                })
 
     # Deduplicate ticker items by text content (keep first occurrence)
     seen_texts = set()
@@ -2752,18 +2795,24 @@ def build_draft_board(team_key, phase_info, team_info=None):
     """Build Section 0.9 draft board for Leafs + Commanders during offseason.
 
     Returns dict or None if the team is not one of the two draft-board teams,
-    the phase is not offseason-like, or Perplexity is unavailable / returns
-    unparseable JSON. Output schema matches SKILL.md Section 0.9."""
+    the phase is not pre-draft (post-draft teams should NOT carry a "Draft
+    Board · TBD" block — the validator's 0.9 freshness rule will fail the
+    build), or Perplexity is unavailable / returns unparseable JSON. Output
+    schema matches SKILL.md Section 0.9."""
     if team_key not in ("leafs", "commanders"):
         return None
 
     phase_id = (phase_info or {}).get("phase", "")
-    offseason_phases = (
+    # Section 0.9: only show a forward-looking draft board for teams that
+    # haven't drafted yet. Post-draft teams need a recap block instead, which
+    # is handled separately. Note: NFL "post_draft" is intentionally NOT in
+    # this list — see Section 0.9 freshness in validate_content.py.
+    pre_draft_phases = (
         "eliminated", "season_ended", "deep_offseason", "offseason",
         "pre_draft", "draft_free_agency", "combine_free_agency", "otas",
         "postseason_offseason",
     )
-    if phase_id not in offseason_phases:
+    if phase_id not in pre_draft_phases:
         return None
 
     if not PERPLEXITY_API_KEY:
@@ -4259,7 +4308,11 @@ def build_data():
                 print(f"  Padded post-fact-check LOTL to {_padded_wc} words for {team_key}")
 
         # Select articles for The Latest from discovered articles (no Perplexity needed)
-        articles = select_the_latest(all_team_articles.get(team_key, []), count=4)
+        # Bumped from 4 to 6: validator now requires ≥3 in the_latest, and
+        # cross-section dedup (run later) can strip 1-3 articles per team
+        # when they overlap with featured/two_up. Pulling 6 keeps the floor
+        # at ≥3 after dedup.
+        articles = select_the_latest(all_team_articles.get(team_key, []), count=6)
         print(f"  Selected {len(articles)} articles for The Latest")
 
         # Phase 2: regenerate editorial deks for The Latest via Perplexity.
@@ -4511,8 +4564,13 @@ def build_data():
                 # If team is in playoffs but between rounds/series, say so
                 if "playoffs" in phase_id:
                     detail_text = "Playoffs — Schedule TBD"
-                elif "draft" in phase_id or "pre_draft" in phase_id:
-                    detail_text = phase_label
+                elif phase_id == "pre_draft":
+                    detail_text = "NFL Draft this week"
+                elif phase_id == "post_draft":
+                    # Justin called out 2026-04-29: never show a "Pre-Draft"
+                    # or "Post-Draft" tag in the slate after the draft has
+                    # wrapped — it reads as stale. Show "Offseason" instead.
+                    detail_text = "Offseason"
                 else:
                     detail_text = phase_label
                 db["today_slate"].append({
@@ -4556,10 +4614,14 @@ def build_data():
                 short_name = cfg["full_name"].split()[-1]
                 week_note_parts.append(f"{short_name} playoff schedule TBD")
                 print(f"  Added playoff TBD for {short_name}")
-            elif "draft" in phase_id or "pre_draft" in phase_id:
-                week_note_parts.append(f"{cfg['full_name'].split()[-1]}: {phase_info.get('label', 'Offseason')}")
-            elif "offseason" in phase_id or "ended" in phase_id:
-                pass  # Don't clutter week ahead with offseason teams
+            elif phase_id == "pre_draft":
+                # Only flag teams that have an upcoming draft. Once the draft
+                # is over (post_draft), the user explicitly does NOT want a
+                # "Commanders: Post-Draft" filler note in the week ahead —
+                # the draft block lives in the team's own pane now.
+                week_note_parts.append(f"{cfg['full_name'].split()[-1]}: {phase_info.get('label', 'Pre-Draft')}")
+            elif "offseason" in phase_id or "ended" in phase_id or phase_id == "post_draft":
+                pass  # Don't clutter week ahead with offseason / post-draft teams
 
     week_note = "; ".join(week_note_parts) if week_note_parts else ""
 
