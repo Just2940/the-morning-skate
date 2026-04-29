@@ -1657,6 +1657,29 @@ function logoUrl(abbr, league) {
   return `https://a.espncdn.com/i/teamlogos/${(league||'').toLowerCase()}/500/${abbr}.png`;
 }
 
+// === HTML ESCAPE HELPERS ===
+// Data fields go through esc() before being interpolated into innerHTML
+// templates. This prevents both XSS (e.g. a Perplexity-returned <script> tag)
+// and silent DOM breakage (a headline with & or < will terminate or confuse
+// the surrounding template without this escape).
+function esc(s) {
+  if (s === null || s === undefined) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+// Only for URLs we trust to already be absolute https links. Strips any
+// javascript: protocol just in case a URL slipped through without validation.
+function escUrl(u) {
+  if (!u) return '#';
+  const s = String(u).trim();
+  if (/^\s*javascript:/i.test(s)) return '#';
+  return esc(s);
+}
+
 // === RENDER FUNCTIONS ===
 
 function renderTicker(items) {
@@ -1667,11 +1690,11 @@ function renderTicker(items) {
     items.forEach(item => {
       const bs = item.badge_style || (item.badge || '').toLowerCase();
       if (bs.startsWith('background')) {
-        html += `<span class="ls-badge" style="${bs}">${item.badge || ''}</span>`;
+        html += `<span class="ls-badge" style="${esc(bs)}">${esc(item.badge || '')}</span>`;
       } else {
-        html += `<span class="ls-badge ${bs}">${item.badge || ''}</span>`;
+        html += `<span class="ls-badge ${esc(bs)}">${esc(item.badge || '')}</span>`;
       }
-      html += `<span class="ls-text">${item.text}</span>`;
+      html += `<span class="ls-text">${esc(item.text)}</span>`;
       html += `<span class="ls-dot">&middot;</span>`;
     });
   }
@@ -1681,12 +1704,14 @@ function renderTicker(items) {
 
 function renderFeatured(f) {
   if (!f || !f.headline) return;
+  // Kicker may contain &middot; from the pipeline -- treat as trusted HTML
+  // from the source but escape dynamic pieces around it.
   document.getElementById('featured').innerHTML = `
-    <a href="${f.url}" target="_blank" class="featured" style="text-decoration:none;color:inherit;display:block">
-      <div class="featured-kicker ${f.team}">${f.kicker}</div>
-      <h2 class="featured-hl">${f.headline}</h2>
-      <p class="featured-dek">${f.dek}</p>
-      <div class="featured-meta">${f.source} &middot; ${f.date}</div>
+    <a href="${escUrl(f.link || f.url)}" target="_blank" rel="noopener noreferrer" class="featured" style="text-decoration:none;color:inherit;display:block">
+      <div class="featured-kicker ${esc(f.team || '')}">${esc(f.kicker || '')}</div>
+      <h2 class="featured-hl">${esc(f.headline || '')}</h2>
+      <p class="featured-dek">${esc(f.dek || '')}</p>
+      <div class="featured-meta">${esc(f.source || '')} &middot; ${esc(f.date || '')}</div>
     </a>`;
 }
 
@@ -1694,11 +1719,11 @@ function renderTwoUp(stories) {
   if (!stories || !stories.length) return;
   let html = '';
   stories.forEach(s => {
-    html += `<a href="${s.url}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block">
-      <div class="story-kicker ${s.team}">${s.kicker}</div>
-      <h3 class="story-hl">${s.headline}</h3>
-      <p class="story-dek">${s.dek}</p>
-      <div class="story-meta">${s.source} &middot; ${s.date}</div>
+    html += `<a href="${escUrl(s.link || s.url)}" target="_blank" rel="noopener noreferrer" class="story" style="text-decoration:none;color:inherit;display:block">
+      <div class="story-kicker ${esc(s.team || '')}">${esc(s.kicker || '')}</div>
+      <h3 class="story-hl">${esc(s.headline || '')}</h3>
+      <p class="story-dek">${esc(s.dek || '')}</p>
+      <div class="story-meta">${esc(s.source || '')} &middot; ${esc(s.date || '')}</div>
     </a>`;
   });
   document.getElementById('two-up').innerHTML = html;
@@ -1707,11 +1732,11 @@ function renderTwoUp(stories) {
 function renderExtraStory(s) {
   if (!s || !s.headline) { document.getElementById('extra-story').innerHTML = ''; return; }
   document.getElementById('extra-story').innerHTML = `
-    <a href="${s.url}" target="_blank" class="story" style="text-decoration:none;color:inherit;display:block;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:28px">
-      <div class="story-kicker ${s.team}">${s.kicker}</div>
-      <h3 class="story-hl">${s.headline}</h3>
-      <p class="story-dek">${s.dek}</p>
-      <div class="story-meta">${s.source} &middot; ${s.date}</div>
+    <a href="${escUrl(s.link || s.url)}" target="_blank" rel="noopener noreferrer" class="story" style="text-decoration:none;color:inherit;display:block;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:28px">
+      <div class="story-kicker ${esc(s.team || '')}">${esc(s.kicker || '')}</div>
+      <h3 class="story-hl">${esc(s.headline || '')}</h3>
+      <p class="story-dek">${esc(s.dek || '')}</p>
+      <div class="story-meta">${esc(s.source || '')} &middot; ${esc(s.date || '')}</div>
     </a>`;
 }
 
@@ -1719,12 +1744,12 @@ function renderAtAGlance(items) {
   if (!items) return;
   let html = '';
   items.forEach(g => {
-    html += `<div class="glance" onclick="go('${g.team}')">
-      <img class="glance-logo" src="${g.logo}" alt="">
-      <div class="glance-name">${g.name}</div>
-      <div class="glance-record">${g.record}</div>
-      <div class="glance-status ${g.status_class}">${g.status}</div>
-      <div class="glance-stat">${g.stat}</div>
+    html += `<div class="glance" onclick="go('${esc(g.team || '')}')">
+      <img class="glance-logo" src="${escUrl(g.logo)}" alt="${esc((g.name || '') + ' logo')}">
+      <div class="glance-name">${esc(g.name || '')}</div>
+      <div class="glance-record">${esc(g.record || '')}</div>
+      <div class="glance-status ${esc(g.status_class || '')}">${esc(g.status || '')}</div>
+      <div class="glance-stat">${esc(g.stat || '')}</div>
     </div>`;
   });
   document.getElementById('at-a-glance').innerHTML = html;
@@ -1735,12 +1760,12 @@ function renderTodaySlate(items) {
   let html = '';
   items.forEach(s => {
     html += `<div class="slate-card${s.off ? ' off' : ''}">
-      <img class="slate-logo" src="${s.logo}" alt="">
+      <img class="slate-logo" src="${escUrl(s.logo)}" alt="${esc((s.matchup || '') + ' logo')}">
       <div class="slate-info">
-        <div class="slate-matchup">${s.matchup}</div>
-        <div class="slate-detail">${s.detail}</div>
+        <div class="slate-matchup">${esc(s.matchup || '')}</div>
+        <div class="slate-detail">${esc(s.detail || '')}</div>
       </div>
-      ${s.channel ? `<div class="slate-channel">${s.channel}</div>` : ''}
+      ${s.channel ? `<div class="slate-channel">${esc(s.channel)}</div>` : ''}
     </div>`;
   });
   document.getElementById('today-slate').innerHTML = html;
@@ -1751,15 +1776,15 @@ function renderWeekAhead(wa) {
   let html = '';
   (wa.games || []).forEach(g => {
     html += `<tr>
-      <td class="week-day">${g.day}</td>
-      <td><div class="week-team"><img src="${g.logo}" alt="">${g.name}</div></td>
-      <td class="week-opp">${g.opp}</td>
-      <td class="week-time">${g.time}</td>
-      <td class="week-tv">${g.tv}</td>
+      <td class="week-day">${esc(g.day || '')}</td>
+      <td><div class="week-team"><img src="${escUrl(g.logo)}" alt="${esc((g.name || '') + ' logo')}">${esc(g.name || '')}</div></td>
+      <td class="week-opp">${esc(g.opp || g.matchup || '')}</td>
+      <td class="week-time">${esc(g.time || '')}</td>
+      <td class="week-tv">${esc(g.tv || '')}</td>
     </tr>`;
   });
   document.getElementById('week-ahead-body').innerHTML = html;
-  if (wa.note) document.getElementById('week-ahead-note').innerHTML = wa.note;
+  if (wa.note) document.getElementById('week-ahead-note').textContent = wa.note;
 }
 
 // === TEAM PANEL RENDERER ===
@@ -1767,34 +1792,45 @@ function renderWeekAhead(wa) {
 function renderTeam(key, t) {
   if (!t) return;
 
-  // Header
+  // Header - use textContent (safer, cheaper, no HTML needed)
   const nameEl = document.getElementById(key + '-name');
   const recEl = document.getElementById(key + '-record');
   const detEl = document.getElementById(key + '-detail');
   if (nameEl) nameEl.textContent = t.full_name || '';
-  if (recEl) recEl.innerHTML = t.record || '';
-  if (detEl) detEl.innerHTML = t.detail || '';
+  if (recEl) recEl.textContent = t.record || '';
+  if (detEl) detEl.textContent = t.detail || '';
 
   // Live strip
   const lsWrap = document.getElementById(key + '-live-strip-wrap');
   if (lsWrap) {
     if (t.live_strip) {
       lsWrap.innerHTML = `<div class="live-strip" style="margin-top:0;border-top:none">
-        <span class="ls-badge ${t.live_strip.badge_class || ''}">${t.live_strip.badge}</span>
-        <span class="ls-text">${t.live_strip.text}</span>
+        <span class="ls-badge ${esc(t.live_strip.badge_class || '')}">${esc(t.live_strip.badge || '')}</span>
+        <span class="ls-text">${esc(t.live_strip.text || '')}</span>
       </div>`;
     } else {
       lsWrap.innerHTML = '';
     }
   }
 
-  // LOTL
+  // LOTL -- body intentionally uses innerHTML because the pipeline emits
+  // inline <strong>/<em> markup. The body is sanitized server-side (Section
+  // 0.3) so trust level is high but we remove any stray <script> tag as
+  // defense-in-depth.
   const lotl = t.lotl || {};
   const lblEl = document.getElementById(key + '-lotl-label');
   const bodyEl = document.getElementById(key + '-lotl-body');
   const updEl = document.getElementById(key + '-lotl-updated');
   if (lblEl) lblEl.textContent = lotl.label || '';
-  if (bodyEl) bodyEl.innerHTML = lotl.body || '';
+  if (bodyEl) {
+    const rawBody = lotl.body || '';
+    // Strip <script> and on* event handlers as a safety net
+    const cleanBody = rawBody
+      .replace(/<script[\s\S]*?<\/script>/gi, '')
+      .replace(/\son\w+\s*=\s*"[^"]*"/gi, '')
+      .replace(/\son\w+\s*=\s*'[^']*'/gi, '');
+    bodyEl.innerHTML = cleanBody;
+  }
   if (updEl) updEl.textContent = lotl.updated || '';
 
   // Key Numbers
@@ -1802,7 +1838,7 @@ function renderTeam(key, t) {
   if (knEl && t.key_numbers) {
     let html = '';
     t.key_numbers.forEach(kn => {
-      html += `<div class="kn"><div class="kn-num" style="color:var(--${key})">${kn.number}</div><div class="kn-label">${kn.label}</div><div class="kn-note">${kn.note}</div></div>`;
+      html += `<div class="kn"><div class="kn-num" style="color:var(--${esc(key)})">${esc(kn.number || '')}</div><div class="kn-label">${esc(kn.label || '')}</div><div class="kn-note">${esc(kn.note || '')}</div></div>`;
     });
     knEl.innerHTML = html;
   }
@@ -1813,14 +1849,14 @@ function renderTeam(key, t) {
     let html = '<div class="sec"><span class="sec-label">Recent Results</span><span class="sec-line"></span></div>';
     html += '<div class="sb-wrap"><button class="sb-arrow left" onclick="this.nextElementSibling.scrollBy({left:-240,behavior:\'smooth\'})">&#8249;</button><div class="scoreboard">';
     t.recent_results.forEach(g => {
-      const wl = g.result.toLowerCase();
+      const wl = (g.result || '').toLowerCase();
       const tLogo = logoUrl(key === 'commanders' ? 'wsh' : 'tor', g.league);
       const oLogo = logoUrl(g.opp_logo, g.league);
       const tName = key === 'commanders' ? 'Washington' : 'Toronto';
-      html += `<div class="sb-game"><div class="sb-date">${g.date} <span class="sb-pill ${wl}">${g.result}</span></div>`;
-      html += `<div class="sb-row ${wl}"><img src="${tLogo}"><span class="sb-row-name">${tName}</span><span class="sb-row-score">${g.team_score}</span></div>`;
+      html += `<div class="sb-game"><div class="sb-date">${esc(g.date || '')} <span class="sb-pill ${esc(wl)}">${esc(g.result || '')}</span></div>`;
+      html += `<div class="sb-row ${esc(wl)}"><img src="${escUrl(tLogo)}" alt=""><span class="sb-row-name">${esc(tName)}</span><span class="sb-row-score">${esc(g.team_score)}</span></div>`;
       html += `<div class="sb-divider"></div>`;
-      html += `<div class="sb-row ${wl === 'w' ? 'l' : 'w'}"><img src="${oLogo}"><span class="sb-row-name">${g.opp_name}</span><span class="sb-row-score">${g.opp_score}</span></div></div>`;
+      html += `<div class="sb-row ${esc(wl === 'w' ? 'l' : 'w')}"><img src="${escUrl(oLogo)}" alt=""><span class="sb-row-name">${esc(g.opp_name || '')}</span><span class="sb-row-score">${esc(g.opp_score)}</span></div></div>`;
     });
     html += '</div><button class="sb-arrow right" onclick="this.previousElementSibling.scrollBy({left:240,behavior:\'smooth\'})">&#8250;</button></div>';
     rrWrap.innerHTML = html;
@@ -1834,13 +1870,13 @@ function renderTeam(key, t) {
     const hl = t.last_game_highlights || {};
     if (hl.available) {
       hlWrap.innerHTML = `<div class="sec"><span class="sec-label">Last Game Highlights</span><span class="sec-line"></span></div>
-        <a href="${hl.url}" target="_blank" class="highlights-card" style="--accent:var(--${key})">
+        <a href="${escUrl(hl.url)}" target="_blank" rel="noopener noreferrer" class="highlights-card" style="--accent:var(--${esc(key)})">
           <div class="hl-play">&#9654;</div>
           <div class="hl-body">
-            <div class="hl-title">${hl.title}</div>
-            <div class="hl-sub">${hl.subtitle}</div>
+            <div class="hl-title">${esc(hl.title || '')}</div>
+            <div class="hl-sub">${esc(hl.subtitle || '')}</div>
           </div>
-          <div class="hl-badge ${hl.result_class}">${hl.result_badge}</div>
+          <div class="hl-badge ${esc(hl.result_class || '')}">${esc(hl.result_badge || '')}</div>
         </a>`;
     } else {
       hlWrap.innerHTML = '';
@@ -1852,7 +1888,8 @@ function renderTeam(key, t) {
   if (newsEl && t.the_latest) {
     let html = '';
     t.the_latest.forEach(n => {
-      html += `<a href="${n.url}" target="_blank" class="ni"><div class="ni-source ${n.source_class}">${n.source}</div><div class="ni-hl">${n.headline}</div><div class="ni-dek">${n.dek}</div><div class="ni-time">${n.date}</div></a>`;
+      if (!n || !n.url) return;
+      html += `<a href="${escUrl(n.url)}" target="_blank" rel="noopener noreferrer" class="ni"><div class="ni-source ${esc(n.source_class || '')}">${esc(n.source || '')}</div><div class="ni-hl">${esc(n.headline || '')}</div><div class="ni-dek">${esc(n.dek || '')}</div><div class="ni-time">${esc(n.date || '')}</div></a>`;
     });
     newsEl.innerHTML = html;
   }
@@ -1862,19 +1899,19 @@ function renderTeam(key, t) {
   if (stEl && t.standings && t.standings.tabs) {
     let html = '<div class="standings-tabs">';
     t.standings.tabs.forEach((tab, i) => {
-      html += `<button class="standings-tab${i === 0 ? ' active' : ''}" onclick="stab(this)">${tab}</button>`;
+      html += `<button class="standings-tab${i === 0 ? ' active' : ''}" onclick="stab(this)">${esc(tab || '')}</button>`;
     });
     html += '</div>';
 
     (t.standings.panes || []).forEach((pane, pi) => {
       html += `<div class="standings-pane${pi === 0 ? ' active' : ''}"><div class="tbl-wrap"><table class="tbl"><thead><tr>`;
-      (pane.headers || []).forEach(h => { html += `<th>${h}</th>`; });
+      (pane.headers || []).forEach(h => { html += `<th>${esc(h || '')}</th>`; });
       html += '</tr></thead><tbody>';
 
       if (pane.bracket) {
         // Bracket-style display
         (pane.rows || []).forEach(r => {
-          html += `<tr${r.you ? ' class="you"' : ''}><td>${r.matchup}</td><td>${r.series}</td></tr>`;
+          html += `<tr${r.you ? ' class="you"' : ''}><td>${esc(r.matchup || '')}</td><td>${esc(r.series || '')}</td></tr>`;
         });
       } else {
         (pane.rows || []).forEach(r => {
@@ -1888,10 +1925,10 @@ function renderTeam(key, t) {
           html += `<tr${clsStr}>`;
           if (pane.has_seed_col) {
             const seedStyle = r.seed_style === 'green' ? 'color:var(--green);font-weight:700' : r.seed_style === 'red' ? 'color:var(--red)' : 'color:var(--ink-faint)';
-            html += `<td style="font-size:9px;${seedStyle}">${r.seed || ''}</td>`;
+            html += `<td style="font-size:9px;${seedStyle}">${esc(r.seed || '')}</td>`;
           }
-          html += `<td><div class="tc"><img src="${logoUrl(r.logo, r.league)}">${r.team}</div></td>`;
-          (r.vals || []).forEach(v => { html += `<td>${v}</td>`; });
+          html += `<td><div class="tc"><img src="${escUrl(logoUrl(r.logo, r.league))}" alt="">${esc(r.team || '')}</div></td>`;
+          (r.vals || []).forEach(v => { html += `<td>${esc(v == null ? '' : v)}</td>`; });
           html += '</tr>';
         });
       }
@@ -1909,27 +1946,27 @@ function renderTeam(key, t) {
     let html = '';
     if (db.label) {
       html += '<div style="margin-bottom:10px;font-size:13px;color:var(--ink-med);">';
-      html += '<strong style="color:var(--ink);">' + db.label + '</strong>';
-      if (db.event_date) html += ' · ' + db.event_date;
-      if (db.pick_position) html += ' · ' + db.pick_position;
+      html += '<strong style="color:var(--ink);">' + esc(db.label) + '</strong>';
+      if (db.event_date) html += ' &middot; ' + esc(db.event_date);
+      if (db.pick_position) html += ' &middot; ' + esc(db.pick_position);
       html += '</div>';
     }
     html += '<div class="tbl-wrap"><table class="tbl draft-tbl"><thead><tr>';
-    (db.headers || []).forEach(h => { html += '<th>' + h + '</th>'; });
+    (db.headers || []).forEach(h => { html += '<th>' + esc(h || '') + '</th>'; });
     html += '</tr></thead><tbody>';
     (db.rows || []).forEach(r => {
       const cls = r.you ? ' class="rd1"' : (r.gone ? ' class="gone"' : '');
       html += '<tr' + cls + '>';
-      html += '<td class="pk">' + (r.pk || '') + '</td>';
-      const logo = r.logo ? '<img src="' + logoUrl(r.logo, r.league || t.league) + '" alt="">' : '';
-      html += '<td><div class="tc">' + logo + (r.team || '') + '</div></td>';
-      html += '<td>' + (r.pts || '') + '</td>';
-      html += '<td>' + (r.odds || '') + '</td>';
+      html += '<td class="pk">' + esc(r.pk || '') + '</td>';
+      const logo = r.logo ? '<img src="' + escUrl(logoUrl(r.logo, r.league || t.league)) + '" alt="">' : '';
+      html += '<td><div class="tc">' + logo + esc(r.team || '') + '</div></td>';
+      html += '<td>' + esc(r.pts || '') + '</td>';
+      html += '<td>' + esc(r.odds || '') + '</td>';
       html += '</tr>';
     });
     html += '</tbody></table></div>';
     if (db.notes) {
-      html += '<div style="margin-top:10px;font-size:12px;color:var(--ink-med);line-height:1.5;">' + db.notes + '</div>';
+      html += '<div style="margin-top:10px;font-size:12px;color:var(--ink-med);line-height:1.5;">' + esc(db.notes) + '</div>';
     }
     dbEl.innerHTML = html;
   }
