@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-29T04:21:48.202394-05:00",
+    "updated": "2026-04-29T05:16:09.612492-05:00",
     "date_display": "April 29, 2026"
   },
   "teams": {
@@ -11,7 +11,7 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "<strong>The Leafs finished 32-36-14</strong>, and the page has officially turned to the offseason. They currently sit 8th in atlantic division, Season Over is the backdrop now, which means contract decisions, development reports and coaching tweaks move to the front of the conversation. <strong>The next headline-worthy event here will come from the front office, not the scoreboard.</strong> The next headline-worthy event will come from the front office, not the scoreboard - the GM and head-coach searches will set the tone for whatever roster reset comes next. For the Toronto Maple Leafs, the question is how aggressively the front office moves to retool around the core pieces already in place.",
+        "body": "The silence after another lost season hangs heavy over Toronto - 32-36-14, eighth in the Atlantic, a <strong>streak-snapping seven-game slide</strong> that buried the Leafs 31 points back and clinched their 15th-place seed in the playoff lottery. No miracles this time; the core that promised so much delivered 78 points and frustration, exposed by defensive lapses and a goaltending carousel that leaked goals like a sieve. Auston Matthews carried the load as always, his sniper's touch the lone bright spot amid the wreckage, but even he couldn't mask the systemic rot - too reliant on star power, not enough grit from the bottom six. Now the real work begins: Shanahan's front office faces a pivotal offseason, with coaching whispers swirling around Craig Berube as a reset button and free agents like Mitch Marner staring down UFA status. Draft lottery odds loom large, a high pick their best shot at fresh blood. <strong>Watch the May 8 lottery draw - it could redefine this franchise's next decade.</strong>",
         "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
@@ -45,7 +45,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NHLPA poll: Sidney Crosby most likely to become head coach",
-          "dek": "William Nylander earned recognition from NHL peers as the league's most fashionable player in the NHLPA's annual poll, highlighting his off-ice flair amid the Maple Leafs' disappointing season. The nod underscores Toronto's star power even as the team sits eighth in the Atlantic",
+          "dek": "William Nylander of the Maple Leafs earned the nod from fellow players as the league's most fashionable, sharing the spotlight in the NHLPA's annual poll with Sidney Crosby's coaching favorite status. For a team wrapping a disappointing 32-36-14 season in eighth place in the",
           "date": "April 17, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/48516380/nhlpa-poll-crosby-most-likely-become-head-coach"
         }
@@ -394,6 +394,43 @@
           }
         ]
       },
+      "draft_board": {
+        "team": "Toronto Maple Leafs",
+        "league": "NHL",
+        "projected_pick": "TBD",
+        "draft_date": "TBD",
+        "prospects_watched": [
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          }
+        ],
+        "lottery": {
+          "odds": "TBD",
+          "outcome": "TBD"
+        },
+        "label": "NHL Draft Board",
+        "event_date": "TBD",
+        "pick_position": "TBD",
+        "headers": [
+          "Rank",
+          "Prospect",
+          "College / Team",
+          "Fit"
+        ],
+        "rows": [
+          {
+            "pk": "1",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          }
+        ],
+        "notes": "<strong>Outcome:</strong> TBD"
+      },
       "the_latest_label": "Offseason Intel"
     },
     "jays": {
@@ -403,7 +440,7 @@
       "detail": "4th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Trey Yesavage stormed back from World Series glory like a man possessed, firing 5.1 shutout innings in <strong>the Blue Jays' 3-0 blanking of the Red Sox</strong> last night - his first start since hoisting that trophy in '25, no walks, just four hits and three K's to snap Boston's skid and even the series. At 13-16, fourth in the AL East and 6.5 back, Toronto's clinging to their wild-card pulse on a one-game streak after splitting four with Cleveland; Vladimir Guerrero Jr. delivered the dagger with a two-out single scoring Miles Shaw, all three runs plating in clutch spots against a Red Sox staff that couldn't breathe. No major injuries clouding the clubhouse - Eloy Jimenez is steady at.696 OPS since his call-up - but this early swoon demands proof they're not fading into divisional irrelevance. <strong>Eric Lauer takes the hill this afternoon at 2:07 for a series clincher</strong>; win it, and the trajectory bends toward contender talk - lose, and the ghosts of too many Aprils past grow louder.",
+        "body": "Trey Yesavage stormed back to the mound like a man possessed, firing 5.1 shutout innings in his 2026 debut to <strong>blank the Red Sox 3-0</strong> and snatch a split from Boston's grasp. The Jays, scraping by at 13-16 and mired in fourth in the AL East, 6.5 games back, needed every bit of that vintage shutdown - four hits, three punchouts, zero walks - to halt the bleeding after Monday's 0-5 thud. Vladimir Guerrero Jr. delivered the clutch two-out knock, plating a run in a rally that scored all three tallies with timely hacks. No major injuries surfaced in the grit, but this crew's trajectory screams salvage job - playoff seed ninth, points minus 1.5, yet that one-game streak feels like oxygen. Yesavage, fresh off 2025 World Series scars, looks like the ace they've craved. <strong>Eric Lauer toes the rubber this afternoon against the Sox at 2:07 ET - win the series, or watch the East gap widen into a chasm.</strong>",
         "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
@@ -488,7 +525,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Red Sox 0-5",
-          "dek": "The Blue Jays' shutout loss drops them to 13-16 and fourth in the AL East, extending a skid after Boston's dominant 5-0 win in the series opener. With a rubber match looming against the Red Sox, Toronto urgently needs a rebound to halt their slide in a tight division",
+          "dek": "Toronto Blue Jays dropped the series opener 5-0 to the Red Sox, getting blanked on just two hits after starting 12-16. The loss leaves them clinging to fourth in the AL East at 13-16, with a critical rubber match ahead against Boston's three-game winning streak.",
           "date": "Apr 27",
           "link": "https://www.espn.com/mlb/recap?gameId=401815110"
         }
@@ -830,14 +867,15 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors beat Cavaliers 126-104",
-          "dek": "Toronto's dominant 126-104 victory over Cleveland evens their first-round playoff series at 2-2, setting up a decisive Game 5 tomorrow. The Raptors' blowout performance keeps their postseason hopes alive after a rollercoaster start against the Cavaliers.",
+          "dek": "Toronto's dominant performance keeps their improbable playoff run alive and forces a decisive Game 6 against Cleveland. The Raptors have clawed back from a 2-2 series tie to seize control of a first-round matchup few expected them to win.",
           "date": "Apr 24",
           "link": "https://www.espn.com/nba/recap?gameId=401869375"
         }
       ],
       "standings": {
         "tabs": [
-          "Eastern Conference"
+          "Eastern Conference",
+          "Playoff Bracket"
         ],
         "panes": [
           {
@@ -971,6 +1009,35 @@
                 "seed": "10"
               }
             ]
+          },
+          {
+            "headers": [
+              "Matchup",
+              "Series"
+            ],
+            "bracket": true,
+            "rows": [
+              {
+                "matchup": "(1) Pistons vs. (2) Celtics",
+                "series": "Sat Apr 18",
+                "you": false
+              },
+              {
+                "matchup": "(3) New York vs. (4) Cavaliers",
+                "series": "Sat Apr 18",
+                "you": false
+              },
+              {
+                "matchup": "(5) Raptors vs. (6) Hawks",
+                "series": "Sat Apr 18",
+                "you": true
+              },
+              {
+                "matchup": "(7) 76ers vs. (8) Magic",
+                "series": "Sat Apr 18",
+                "you": false
+              }
+            ]
           }
         ]
       },
@@ -983,7 +1050,7 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft dust has barely settled in Washington, where a 5-12 stumble left the Commanders third in the NFC East - six games back, but armed with prime picks to rebuild around Jayden Daniels. <strong>Analyst Logan Paulsen's post-draft breakdown yesterday lit up the airwaves</strong>, hailing No. 7 overall snag Sonny Styles as a \"one-of-one\" freak - 6-foot-4, versatile enough to terrorize from linebacker or safety, unlocking Dan Quinn's defense like nobody since prime London Fletcher. They snagged six rookies total, bulking the backfield with sixth-round bruiser Kaytron Allen - a Penn State yardage machine already dubbed the Chris Rodriguez heir, poised to grind behind Rachaad White - and deepening lines everywhere from Chig Okonkwo at tight end to a crowded corner room. No splashy free-agency fireworks this offseason, but GM Adam Peters traded shrewdly for depth, eyeing Daniels' growth via technical trench help. It's a roster reset after that late win streak fizzled - competition everywhere, no handouts. <strong>Minicamp next week thrusts these kids into OTAs</strong>, where Styles' speed and Allen's hammer meet vets; fail to gel, and 2026's another slog - succeed, and the East quakes.",
+        "body": "The draft dust settles in D.C., and Adam Peters just flipped the script on a 5-12 squad that limped to third in the NFC East - trading for Laremy Tunsil left them with six picks, but they loaded up offense with four gems instead of bulking the defense everyone craved. <strong>Sonny Styles</strong>, the safety snagged early, headlines alongside receiver Antonio Williams, whose slot-ready hands could stretch Dan Quinn's scheme wide open; Joshua Josephs in the fifth bolsters the edge with free agents looming. UDFAs are trickling in quietly, plugging depth holes without fanfare. This haul - balanced, not flashy - fits Quinn's revamp like a glove, shoving Williams into a WR room begging for juice after last year's drought. Styles might crack the secondary Day 1, his range patching gaps exposed in that six-games-back finish. No more excuses; Peters maximized value, passing on corners like Mansoor Delane to Chiefs thieves. <strong>Watch OTAs for Williams' first snaps - they'll signal if this class ignites a playoff push or just teases one.</strong>",
         "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
@@ -1017,7 +1084,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 NFL draft grades for 32 teams: Winners, losers, steals",
-          "dek": "The Washington Commanders earned a B+ for their 2026 NFL Draft class, headlined by No. 7 overall pick LB Sonny Styles from Ohio State and adding WR Antonio Williams, edge Joshua Josephs and others for defensive and offensive depth. With a 5-12 record last season, this",
+          "dek": "Commanders earned a solid B+ draft grade for adding linebacker Sonny Styles at No. 7 overall, bolstering a defense fresh off $120 million in free-agent spending. Day 3 picks like WR Antonio Williams and EDGE Joshua Josephs round out a well-balanced class amid their ongoing",
           "date": "April 27, 2026",
           "link": "https://www.espn.com/nfl/draft2026/story/_/id/48547351/2026-nfl-draft-grades-32-teams-kiper-winners-losers-steals-sleepers-favorite-picks-classes"
         }
@@ -1088,14 +1155,14 @@
           }
         ]
       },
-      "the_latest_label": "Offseason Intel"
+      "the_latest_label": "The Latest"
     }
   },
   "featured": {
     "team": "raptors",
     "kicker": "Toronto Raptors - Game Recap",
     "headline": "Raptors beat Cavaliers 93-89",
-    "dek": "Toronto stunned Cleveland 93-89 in Game 4, powered by Scottie Barnes' 23 points, nine rebounds and six assists alongside Ingram's 23 points, evening their first-round series at 2-2. The gritty road win keeps the Raptors' improbable playoff run alive with Game 5 looming",
+    "dek": "Toronto Raptors stunned the Cavaliers 93-89 in Game 4, powered by Scottie Barnes' 23 points, 9 rebounds and 6 assists alongside Ingram's 23 points, evening their first-round series at 2-2. This gritty road win keeps their improbable playoff run alive, with a pivotal Game 5",
     "source": "ESPN",
     "link": "https://www.espn.com/nba/recap?gameId=401869377",
     "date": "April 29, 2026"
@@ -1105,7 +1172,7 @@
       "team": "jays",
       "kicker": "Toronto Blue Jays - Game Recap",
       "headline": "Jays beat Red Sox 3-0",
-      "dek": "Trey Yesavage delivered 5 1/3 sharp innings in his season debut, blanking the Red Sox while Kazuma Okamoto's two-run single and Vladimir Guerrero Jr.'s RBI knock fueled the shutout. The win halts Boston's three-game streak under interim manager Chad Tracy and avenges Monday's",
+      "dek": "Trey Yesavage delivered a dominant season debut with 5 1/3 shutout innings as Toronto snapped Boston's three-game winning streak. The Blue Jays' offensive breakthrough came via two-out hits, including Vladimir Guerrero Jr.'s RBI single, after being shut out 5-0 the previous",
       "source": "ESPN",
       "link": "https://www.espn.com/mlb/recap?gameId=401815118",
       "date": "April 29, 2026"
@@ -1114,7 +1181,7 @@
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Season Over",
       "headline": "NHL teams' offseason keys, including free agency, draft needs",
-      "dek": "Star forwards Auston Matthews and William Nylander are demanding management add physical top-six forwards and mobile defensemen to fix roster gaps after missing playoffs. With trade targets like Robert Thomas and Jake DeBrusk in play, the Leafs face pressure to rebuild around",
+      "dek": "Star players Auston Matthews and William Nylander are demanding management add physical forwards and mobile defensemen to transform a roster that finished last in the Atlantic Division. How Toronto responds to these internal calls this offseason will determine whether the",
       "source": "ESPN",
       "link": "https://www.espn.com/nhl/story/_/id/48475221/nhl-2026-offseason-schedule-keys-draft-picks-trades-free-agency-cap-space",
       "date": "April 29, 2026"
@@ -1122,9 +1189,9 @@
   ],
   "extra_story": {
     "team": "commanders",
-    "kicker": "Washington Commanders - Pre-Draft",
+    "kicker": "Washington Commanders - Post-Draft",
     "headline": "Biggest 2026 NFL postdraft questions for all 32 teams",
-    "dek": "Washington's draft class grabbed early value and finished first in draft capital efficiency, but the real test is whether Sonny Styles, Joshua Joseph, and Matt Golden can help transform a 5-12 roster into a playoff contender. The Commanders still face questions about adding",
+    "dek": "Bleacher Report labeled the Commanders a rebuilding franchise after their 5-12 season and six-pick draft headlined by Ohio State linebacker Sonny Styles, despite high praise for his defensive impact. With only two defensive selections amid ongoing roster questions, experts",
     "source": "ESPN",
     "link": "https://www.espn.com/nfl/story/_/page/nfldraftpostdraftquestions48602828/nfl-draft-2026-biggest-postdraft-questions-32-teams-offseason-signings",
     "date": "April 29, 2026"
@@ -1134,6 +1201,11 @@
       "badge": "NHL",
       "badge_style": "nhl",
       "text": "Leafs (32-36-14) - 8th in Atlantic Division"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "NHL teams' offseason keys, including free agency,"
     },
     {
       "badge": "MLB",
@@ -1174,6 +1246,11 @@
       "badge": "NFL",
       "badge_style": "nfl",
       "text": "Biggest 2026 NFL postdraft questions for all 32 teams"
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "nfl",
+      "text": "Commanders - post-draft outlook"
     }
   ],
   "at_a_glance": [
@@ -1243,7 +1320,7 @@
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "matchup": "Commanders",
-      "detail": "Pre-Draft",
+      "detail": "Offseason",
       "channel": "",
       "off": true
     }
