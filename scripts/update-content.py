@@ -276,8 +276,14 @@ def sanitize_ascii(text):
     # Strip banned punctuation per Section 0.3.
     for ch, replacement in BANNED_PUNCT_REPLACEMENTS.items():
         text = text.replace(ch, replacement)
-    # Collapse double/triple spaces introduced by dash/ellipsis replacement.
+    # Strip Perplexity-style citation markers: [1], [2][7], [11], etc.
+    # Run before space-collapse so adjacent markers ([1][2]) leave clean output.
+    text = re.sub(r"\[\d+\]", "", text)
+    # Collapse double/triple spaces introduced by dash/ellipsis/citation replacement.
     text = re.sub(r"  +", " ", text).strip()
+    # Tidy spaces left before terminal punctuation by citation removal
+    # (e.g. "playoffs .[1]" -> "playoffs ." -> "playoffs.").
+    text = re.sub(r"\s+([.,;:!?])", r"\1", text)
     return text
 
 
@@ -2361,14 +2367,25 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
     return "\n".join(facts)
 
 
-def build_key_numbers(team_key, team_info, standings, recent):
-    """Generate 4 key numbers from verified ESPN data."""
+def build_key_numbers(team_key, team_info, standings, recent, phase_info=None):
+    """Generate 4 key numbers from verified ESPN data.
+
+    When the team is in an off-season phase the active-season labels (Streak,
+    Games Back, Last 4) get a "Final " prefix so the cards read as historical
+    end-of-season facts instead of looking like live, stale data.
+    """
     cfg = TEAMS[team_key]
     league = cfg["league"]
     numbers = []
     record = team_info.get("record", "")
     record_stats = team_info.get("record_stats", {})
     standing_summary = team_info.get("standing_summary", "")
+    phase_id = (phase_info or {}).get("phase", "") if isinstance(phase_info, dict) else ""
+    is_offseason = bool(phase_id) and (
+        "offseason" in phase_id
+        or phase_id in ("season_ended", "pre_draft", "draft_week")
+    )
+    historical_prefix = "Final " if is_offseason else ""
 
     # Number 1: Record
     if record:
@@ -2406,9 +2423,16 @@ def build_key_numbers(team_key, team_info, standings, recent):
             numbers.append({"number": wp, "label": "Win Pct", "note": standing_summary or ""})
 
     # Number 3: Streak
+    streak_label = f"{historical_prefix}Streak"
+    streak_note_active = "Current streak"
+    streak_note_offseason = "End of season"
     streak = standings.get("streak", "")
     if streak:
-        numbers.append({"number": streak, "label": "Streak", "note": "Current streak"})
+        numbers.append({
+            "number": streak,
+            "label": streak_label,
+            "note": streak_note_offseason if is_offseason else streak_note_active,
+        })
     elif recent:
         # Calculate from recent results
         streak_type = recent[0]["result"]
@@ -2419,7 +2443,11 @@ def build_key_numbers(team_key, team_info, standings, recent):
             else:
                 break
         streak_str = f"{'W' if streak_type == 'W' else 'L'}{streak_count}"
-        numbers.append({"number": streak_str, "label": "Streak", "note": f"{'Won' if streak_type == 'W' else 'Lost'} last {streak_count}"})
+        if is_offseason:
+            streak_note = streak_note_offseason
+        else:
+            streak_note = f"{'Won' if streak_type == 'W' else 'Lost'} last {streak_count}"
+        numbers.append({"number": streak_str, "label": streak_label, "note": streak_note})
 
     # Number 4: Games back or recent form
     # NHL uses points, not wins, so the proper label is "Points Back". The
@@ -2436,13 +2464,21 @@ def build_key_numbers(team_key, team_info, standings, recent):
             gb_label = "Games Behind"
         else:
             gb_label = "Games Back"
-        numbers.append({"number": str(gb), "label": gb_label, "note": standing_summary or "In division"})
+        numbers.append({
+            "number": str(gb),
+            "label": f"{historical_prefix}{gb_label}",
+            "note": standing_summary or "In division",
+        })
     elif recent:
         # For 1st-place teams or when GB unavailable, show Last 4 record
         last_n = recent[:4]
         w = sum(1 for g in last_n if g["result"] == "W")
         l = len(last_n) - w
-        numbers.append({"number": f"{w}-{l}", "label": "Last 4", "note": "Recent form"})
+        numbers.append({
+            "number": f"{w}-{l}",
+            "label": f"{historical_prefix}Last 4",
+            "note": "End of season" if is_offseason else "Recent form",
+        })
 
     # Pad to 4 if we don't have enough
     while len(numbers) < 4:
@@ -2451,7 +2487,11 @@ def build_key_numbers(team_key, team_info, standings, recent):
             last_10 = recent[:10]
             w = sum(1 for g in last_10 if g["result"] == "W")
             l = len(last_10) - w
-            numbers.append({"number": f"{w}-{l}", "label": f"Last {len(last_10)}", "note": "Recent form"})
+            numbers.append({
+                "number": f"{w}-{l}",
+                "label": f"{historical_prefix}Last {len(last_10)}",
+                "note": "End of season" if is_offseason else "Recent form",
+            })
         else:
             break
 
@@ -4259,8 +4299,10 @@ def build_data():
             else:
                 print(f"  Skipping highlights ‚Äî last game was {days_since_game} days ago")
 
-        # Build key numbers from ESPN data
-        key_numbers = build_key_numbers(team_key, team_info, standings, recent)
+        # Build key numbers from ESPN data — pass phase so off-season teams get
+        # "Final " prefixed labels (Streak/Games Back/Last 4) instead of looking
+        # like live, stale data.
+        key_numbers = build_key_numbers(team_key, team_info, standings, recent, phase_info)
 
         # Use existing data as fallback ONLY for fields ESPN couldn't provide
         existing_team = existing.get("teams", {}).get(team_key, {})
