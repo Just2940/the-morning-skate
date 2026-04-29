@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-04-21T11:45:25.989056-05:00",
-    "date_display": "April 21, 2026"
+    "updated": "2026-04-29T04:21:48.202394-05:00",
+    "date_display": "April 29, 2026"
   },
   "teams": {
     "leafs": {
@@ -9,11 +9,10 @@
       "league": "NHL",
       "record": "32-36-14",
       "detail": "8th in Atlantic Division",
-      "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Toronto Maple Leafs' latest chapter slammed shut with a whimper - 32-36-14, eighth in the Atlantic, a brutal 31 games back and a seven-game skid that buried any faint playoff hopes under an avalanche of mediocrity. <strong>Yesterday's stunning firing of head coach Sheldon Keefe</strong> - after four straight seasons without a second-round win - ignited the inevitable housecleaning, with GM Brad Treliving now holding the torch to torch the status quo. The core four - Mitch Marner, Auston Matthews, William Nylander, John Tavares - racked up points but couldn't drag this roster past its defensive black hole or goaltending roulette; 78 points won't cut it in a division stacked with beasts. Injuries to Morgan Rielly and Max Domi lingered too long, exposing depth issues that no amount of star power could patch. Now comes the real hockey: free agency looms with cap hell, the draft lottery beckons at 15th seed for a shot at top prospects like the Marlies' Fraser Minten who's tearing it up in the AHL playoffs, and whispers of a franchise pivot grow louder. <strong>Watch Treliving's first splashy trade by May 1 - </strong> it could redefine this eternal also-ran or doom another summer to irrelevance.",
-        "updated": "Updated April 21, 2026"
+        "body": "<strong>The Leafs finished 32-36-14</strong>, and the page has officially turned to the offseason. They currently sit 8th in atlantic division, with every game now carrying real stakes for positioning. Season Over is the backdrop now, which means contract decisions, development reports and coaching tweaks move to the front of the conversation. <strong>The next headline-worthy event here will come from the front office, not the scoreboard.</strong> Across the NHL, attention is turning to offseason planning - draft prep, trade scenarios, and the kind of roster surgery that shapes the next window. For the Toronto Maple Leafs, the question is how aggressively the front office moves to retool around the core pieces already in place.",
+        "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
         {
@@ -33,7 +32,7 @@
         },
         {
           "number": "31",
-          "label": "Games Back",
+          "label": "Points Back",
           "note": "8th in Atlantic Division"
         }
       ],
@@ -46,17 +45,9 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NHLPA poll: Sidney Crosby most likely to become head coach",
-          "dek": "The NHLPA's annual player poll names Penguins captain Sidney Crosby as the active player peers see most likely to pivot to head coach after his career ends. For the Leafs, who missed playoffs with a 32-36-14 record and eighth-place Atlantic finish, it spotlights a coaching arc...",
+          "dek": "William Nylander earned recognition from NHL peers as the league's most fashionable player in the NHLPA's annual poll, highlighting his off-ice flair amid the Maple Leafs' disappointing season. The nod underscores Toronto's star power even as the team sits eighth in the Atlantic",
           "date": "April 17, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/48516380/nhlpa-poll-crosby-most-likely-become-head-coach"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Which NHL teams have the longest postseason streaks?",
-          "dek": "Pittsburgh's 16-year playoff streak from 2006 to 2022 stands as the longest among major North American pro sports teams and ties for seventh in NHL history.[1] For the Maple Leafs, finishing 32-36-14 and eighth in the Atlantic, the list underscores their ongoing postseason str...",
-          "date": "April 16, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/43453258/which-nhl-teams-longest-postseason-streaks"
         }
       ],
       "standings": {
@@ -403,188 +394,103 @@
           }
         ]
       },
-      "draft_board": {
-        "team": "Toronto Maple Leafs",
-        "league": "NHL",
-        "projected_pick": "#12 overall",
-        "draft_date": "June 26-27, 2026",
-        "prospects_watched": [
-          {
-            "name": "Caleb Scott",
-            "position": "C",
-            "team": "USNTDP",
-            "note": "Skilled playmaking center with high hockey IQ, fits Leafs' need for top-six forward depth."
-          },
-          {
-            "name": "Jack Nesbitt",
-            "position": "RW",
-            "team": "Windsor Spitfires",
-            "note": "Physical power forward with strong shot, projected as a middle-six winger for Toronto's lineup."
-          },
-          {
-            "name": "Cole Aitcheson",
-            "position": "D",
-            "team": "Barrie Colts",
-            "note": "Tough, stay-at-home defender who could pair well with offensive blueliners on the Leafs' backend."
-          },
-          {
-            "name": "Blake Fiddler",
-            "position": "C",
-            "team": "Edmonton Oil Kings",
-            "note": "Two-way center with excellent skating and faceoff prowess, ideal for bottom-six reliability."
-          }
-        ],
-        "lottery": {
-          "odds": "0%",
-          "outcome": "Pending"
-        },
-        "label": "NHL Draft Board",
-        "event_date": "June 26-27, 2026",
-        "pick_position": "#12 overall",
-        "headers": [
-          "Rank",
-          "Prospect",
-          "College / Team",
-          "Fit"
-        ],
-        "rows": [
-          {
-            "pk": "1",
-            "team": "Caleb Scott (C)",
-            "league": "NHL",
-            "pts": "USNTDP",
-            "odds": "Skilled playmaking center with high hockey IQ, fits Leafs' need for top-six forward depth."
-          },
-          {
-            "pk": "2",
-            "team": "Jack Nesbitt (RW)",
-            "league": "NHL",
-            "pts": "Windsor Spitfires",
-            "odds": "Physical power forward with strong shot, projected as a middle-six winger for Toronto's lineup."
-          },
-          {
-            "pk": "3",
-            "team": "Cole Aitcheson (D)",
-            "league": "NHL",
-            "pts": "Barrie Colts",
-            "odds": "Tough, stay-at-home defender who could pair well with offensive blueliners on the Leafs' backend."
-          },
-          {
-            "pk": "4",
-            "team": "Blake Fiddler (C)",
-            "league": "NHL",
-            "pts": "Edmonton Oil Kings",
-            "odds": "Two-way center with excellent skating and faceoff prowess, ideal for bottom-six reliability."
-          }
-        ],
-        "notes": "<strong>Lottery odds:</strong> 0%"
-      },
       "the_latest_label": "Offseason Intel"
     },
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "9-13",
+      "record": "13-16",
       "detail": "4th in AL East",
-      "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Vladimir Guerrero Jr. is awakening from his early-season slumber, torching Angels pitching with three hits including a 430-foot bomb that flipped the script on a tight ballgame. <strong>The Jays' 5-2 takedown of L.A. last night</strong> - capped by Dylan Cease's 12 whiffs in five frames - snapped their skid and bumped them to 9-13, still lurking fourth in the AL East, 4 games back with a fresh two-game streak breathing life into a sputtering start. No major injuries biting them now, but the real spark is Vladdy's bat heating up alongside that Arizona explosion where Nathan Lukes raked seven hits over three days - proof this lineup can erupt when it clicks. They're not contenders yet, but wins like this stem the bleed. <strong>Tonight's rubber match at Angel Stadium</strong> looms large at 8:38 ET - win it, and they steal a series on the coast, planting seeds for a climb; drop it, and the East's wolves close in fast.",
-        "updated": "Updated April 21, 2026"
+        "body": "Trey Yesavage stormed back from World Series glory like a man possessed, firing 5.1 shutout innings in <strong>the Blue Jays' 3-0 blanking of the Red Sox</strong> last night - his first start since hoisting that trophy in '25, no walks, just four hits and three K's to snap Boston's skid and even the series. At 13-16, fourth in the AL East and 6.5 back, Toronto's clinging to their wild-card pulse on a one-game streak after splitting four with Cleveland; Vladimir Guerrero Jr. delivered the dagger with a two-out single scoring Miles Shaw, all three runs plating in clutch spots against a Red Sox staff that couldn't breathe. No major injuries clouding the clubhouse - Eloy Jimenez is steady at .696 OPS since his call-up - but this early swoon demands proof they're not fading into divisional irrelevance. <strong>Eric Lauer takes the hill this afternoon at 2:07 for a series clincher</strong>; win it, and the trajectory bends toward contender talk - lose, and the ghosts of too many Aprils past grow louder.",
+        "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
         {
-          "number": "9-13",
+          "number": "13-16",
           "label": "Season Record",
           "note": "4th in AL East"
         },
         {
-          "number": "W2",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "4",
+          "number": "6.5",
           "label": "Games Back",
           "note": "4th in AL East"
         },
         {
-          "number": "2-2",
+          "number": "3-1",
           "label": "Last 4",
           "note": "Recent form"
         }
       ],
       "recent_results": [
         {
-          "date": "Apr 21",
+          "date": "Apr 28",
+          "result": "W",
+          "team_score": 3,
+          "opp_name": "Red Sox",
+          "opp_score": 0,
+          "opp_logo": "bos",
+          "league": "mlb",
+          "game_date": "2026-04-28",
+          "game_id": "401815118"
+        },
+        {
+          "date": "Apr 27",
+          "result": "L",
+          "team_score": 0,
+          "opp_name": "Red Sox",
+          "opp_score": 5,
+          "opp_logo": "bos",
+          "league": "mlb",
+          "game_date": "2026-04-27",
+          "game_id": "401815110"
+        },
+        {
+          "date": "Apr 26",
+          "result": "W",
+          "team_score": 4,
+          "opp_name": "Guardians",
+          "opp_score": 2,
+          "opp_logo": "cle",
+          "league": "mlb",
+          "game_date": "2026-04-26",
+          "game_id": "401815096"
+        },
+        {
+          "date": "Apr 25",
           "result": "W",
           "team_score": 5,
-          "opp_name": "Angels",
-          "opp_score": 2,
-          "opp_logo": "laa",
+          "opp_name": "Guardians",
+          "opp_score": 3,
+          "opp_logo": "cle",
           "league": "mlb",
-          "game_date": "2026-04-21",
-          "game_id": "401815025"
-        },
-        {
-          "date": "Apr 19",
-          "result": "L",
-          "team_score": 2,
-          "opp_name": "Diamondbacks",
-          "opp_score": 6,
-          "opp_logo": "ari",
-          "league": "mlb",
-          "game_date": "2026-04-19",
-          "game_id": "401815000"
-        },
-        {
-          "date": "Apr 19",
-          "result": "W",
-          "team_score": 10,
-          "opp_name": "Diamondbacks",
-          "opp_score": 4,
-          "opp_logo": "ari",
-          "league": "mlb",
-          "game_date": "2026-04-19",
-          "game_id": "401815015"
-        },
-        {
-          "date": "Apr 18",
-          "result": "L",
-          "team_score": 3,
-          "opp_name": "Diamondbacks",
-          "opp_score": 6,
-          "opp_logo": "ari",
-          "league": "mlb",
-          "game_date": "2026-04-18",
-          "game_id": "401814985"
+          "game_date": "2026-04-25",
+          "game_id": "401815081"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Angels vs. Jays - Full Highlights",
-        "subtitle": "MLB · Apr 21, 2026",
-        "result_badge": "W 5-2",
+        "title": "Red Sox vs. Jays - Full Highlights",
+        "subtitle": "MLB - Apr 28, 2026",
+        "result_badge": "W 3-0",
         "result_class": "w",
-        "url": "https://www.youtube.com/watch?v=-2liigxUlRM",
-        "game_date": "2026-04-21"
+        "url": "https://www.youtube.com/watch?v=748E-pSc2ck",
+        "game_date": "2026-04-28"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays beat Angels 5 - 2",
-          "dek": "Dylan Cease earned his first victory as a Blue Jay in the win, while the Toronto offense was powered by strong performances that included multiple home runs.[2] The victory provides momentum for a struggling team that entered the game with a 9-13 record in fourth place in the ...",
-          "date": "Apr 21",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815025"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Jays fell to Diamondbacks 2 - 6",
-          "dek": "Toronto's loss drops them further below .500 in a crowded AL East where early-season struggles compound the pressure to perform. The Diamondbacks' offensive output exposes continued pitching vulnerabilities that have plagued the Jays through their slow start.",
-          "date": "Apr 19",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815000"
+          "headline": "Jays fell to Red Sox 0-5",
+          "dek": "The Blue Jays' shutout loss drops them to 13-16 and fourth in the AL East, extending a skid after Boston's dominant 5-0 win in the series opener. With a rubber match looming against the Red Sox, Toronto urgently needs a rebound to halt their slide in a tight division",
+          "date": "Apr 27",
+          "link": "https://www.espn.com/mlb/recap?gameId=401815110"
         }
       ],
       "standings": {
@@ -608,9 +514,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "13",
-                  "9",
-                  ".591",
+                  "20",
+                  "10",
+                  ".667",
                   "-"
                 ]
               },
@@ -620,10 +526,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "12",
-                  "10",
-                  ".545",
-                  "1"
+                  "18",
+                  "11",
+                  ".621",
+                  "1.5"
                 ]
               },
               {
@@ -632,10 +538,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "11",
-                  "12",
-                  ".478",
-                  "2.5"
+                  "14",
+                  "15",
+                  ".483",
+                  "5.5"
                 ]
               },
               {
@@ -644,10 +550,10 @@
                 "league": "mlb",
                 "you": true,
                 "vals": [
-                  "9",
                   "13",
-                  ".409",
-                  "4"
+                  "16",
+                  ".448",
+                  "6.5"
                 ]
               },
               {
@@ -656,10 +562,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "9",
-                  "13",
-                  ".409",
-                  "4"
+                  "12",
+                  "18",
+                  ".400",
+                  "8"
                 ]
               }
             ]
@@ -676,16 +582,16 @@
             "has_seed_col": true,
             "rows": [
               {
-                "team": "Guardians",
-                "logo": "cle",
+                "team": "Tigers",
+                "logo": "det",
                 "league": "mlb",
                 "you": false,
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "13",
-                  "11",
-                  ".542",
+                  "15",
+                  "15",
+                  ".500",
                   "-"
                 ]
               },
@@ -697,9 +603,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "13",
-                  "9",
-                  ".591",
+                  "20",
+                  "10",
+                  ".667",
                   "-"
                 ]
               },
@@ -711,9 +617,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "12",
-                  "11",
-                  ".522",
+                  "15",
+                  "14",
+                  ".517",
                   "-"
                 ]
               },
@@ -724,50 +630,36 @@
                 "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "12",
-                  "10",
-                  ".545",
-                  "1"
+                  "18",
+                  "11",
+                  ".621",
+                  "1.5"
                 ]
               },
               {
-                "team": "Tigers",
-                "logo": "det",
+                "team": "Guardians",
+                "logo": "cle",
                 "league": "mlb",
                 "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "12",
-                  "11",
-                  ".522",
+                  "15",
+                  "16",
+                  ".484",
                   "0.5"
                 ]
               },
               {
-                "team": "Twins",
-                "logo": "min",
+                "team": "Mariners",
+                "logo": "sea",
                 "league": "mlb",
                 "you": false,
                 "seed": "WC3",
                 "vals": [
-                  "11",
-                  "11",
-                  ".500",
+                  "15",
+                  "16",
+                  ".484",
                   "1"
-                ]
-              },
-              {
-                "team": "Rangers",
-                "logo": "tex",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "11",
-                  "11",
-                  ".500",
-                  "0.5"
                 ]
               },
               {
@@ -778,38 +670,24 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "11",
-                  "12",
-                  ".478",
-                  "2.5"
-                ]
-              },
-              {
-                "team": "LA Angels",
-                "logo": "laa",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "11",
-                  "13",
-                  ".458",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Mariners",
-                "logo": "sea",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "10",
                   "14",
-                  ".417",
-                  "2.5"
+                  "15",
+                  ".483",
+                  "5.5"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "14",
+                  "16",
+                  ".467",
+                  "1.5"
                 ]
               },
               {
@@ -820,10 +698,38 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "9",
                   "13",
-                  ".409",
-                  "4"
+                  "16",
+                  ".448",
+                  "6.5"
+                ]
+              },
+              {
+                "team": "Twins",
+                "logo": "min",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "13",
+                  "17",
+                  ".433",
+                  "2"
+                ]
+              },
+              {
+                "team": "Chi White Sox",
+                "logo": "chw",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "13",
+                  "17",
+                  ".433",
+                  "2"
                 ]
               }
             ]
@@ -837,11 +743,10 @@
       "league": "NBA",
       "record": "46-36",
       "detail": "3rd in Atlantic Division",
-      "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "<strong>The Raptors fell to the Cavaliers 105-115</strong>, moving to 46-36 on the season. They currently sit 3rd in atlantic division, with every game now carrying real stakes for positioning. That extends a run of 2 straight losses, a stretch that will shape how the roster reads over the next few weeks. Prior to that, the club lost to the Cavaliers, 113-126, a game that gave the coaching staff real tape to work with. The playoff picture is the whole story now, so every lineup tweak, every matchup decision, every minute carries postseason weight. <strong>Next up: vs. Cavaliers on Fri 4/24 at 7:00 PM ET.</strong> Around the NBA, the offseason machinery is already whirring - front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario. For the Toronto Raptors, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.",
-        "updated": "Updated April 21, 2026"
+        "body": "<strong>The Raptors beat the Cavaliers 93-89</strong>, moving to 46-36 on the season. They currently sit 3rd in atlantic division, with every game now carrying real stakes for positioning. That extends a run of 2 straight wins, a stretch that will shape how the roster reads over the next few weeks. Prior to that, the club beat the Cavaliers, 126-104, a game that gave the coaching staff real tape to work with. The playoff picture is the whole story now, so every lineup tweak, every matchup decision, every minute carries postseason weight. <strong>Next up: at Cavaliers on Wed 4/29 at 6:30 PM ET.</strong> Around the NBA, the offseason machinery is already whirring - front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario. For the Toronto Raptors, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.",
+        "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
         {
@@ -866,6 +771,28 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Apr 26",
+          "result": "W",
+          "team_score": 93,
+          "opp_name": "Cavaliers",
+          "opp_score": 89,
+          "opp_logo": "cle",
+          "league": "nba",
+          "game_date": "2026-04-26",
+          "game_id": "401869377"
+        },
+        {
+          "date": "Apr 24",
+          "result": "W",
+          "team_score": 126,
+          "opp_name": "Cavaliers",
+          "opp_score": 104,
+          "opp_logo": "cle",
+          "league": "nba",
+          "game_date": "2026-04-24",
+          "game_id": "401869375"
+        },
         {
           "date": "Apr 20",
           "result": "L",
@@ -892,7 +819,7 @@
       "last_game_highlights": {
         "available": true,
         "title": "Cavaliers vs. Raptors - Full Highlights",
-        "subtitle": "NBA · Apr 20, 2026",
+        "subtitle": "NBA - Apr 20, 2026",
         "result_badge": "L 105-115",
         "result_class": "l",
         "url": "https://www.youtube.com/watch?v=0ziLIqPZkK8",
@@ -902,18 +829,10 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Raptors fell to Cavaliers 105 - 115",
-          "dek": "Cleveland's stars Donovan Mitchell (30 points), James Harden (28) and Evan Mobley (25) overwhelmed Toronto for a 2-0 series lead in the East first-round playoffs. The Raptors' season-high 22 turnovers fueled 22 Cavs points despite Scottie Barnes' playoff career-high 26, puttin...",
-          "date": "Apr 20",
-          "link": "https://www.espn.com/nba/recap?gameId=401869369"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Raptors fell to Cavaliers 113 - 126",
-          "dek": "The Cavaliers took a commanding 2-0 series lead over the Raptors with a 115-105 Game 2 victory in Cleveland. Donovan Mitchell's 30 points and James Harden's 28 fueled the blowout, leaving Scottie Barnes' 26 points not enough for Toronto to avoid the playoff brink.[1][2][5]",
-          "date": "Apr 18",
-          "link": "https://www.espn.com/nba/recap?gameId=401869187"
+          "headline": "Raptors beat Cavaliers 126-104",
+          "dek": "Toronto's dominant 126-104 victory over Cleveland evens their first-round playoff series at 2-2, setting up a decisive Game 5 tomorrow. The Raptors' blowout performance keeps their postseason hopes alive after a rollercoaster start against the Cavaliers.",
+          "date": "Apr 24",
+          "link": "https://www.espn.com/nba/recap?gameId=401869375"
         }
       ],
       "standings": {
@@ -1092,11 +1011,10 @@
       "league": "NFL",
       "record": "5-12",
       "detail": "3rd in NFC East",
-      "live_strip": null,
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft room hums with that familiar pre-war tension in Ashburn - Commanders holding the <strong>No. 7 pick</strong> after a grinding 5-12 slog that landed them third in the NFC East, six games back, their lone win streak a faint echo from January. Mock drafts swarm like scouts at a pro day: Conor Orr tabs Ohio State's Carnell Tate to juice Jayden Daniels' arsenal, replacing the fading Terry McLaurin at 31; Eric Edholm eyes LSU corner Mansoor Delane, a D.C. kid polishing up for Dan Quinn's secondary; CBS's R.J. White doubles down on Tate as WR1 heir. Free agency patched holes, but needs scream at corner, safety, receiver - Adam Peters covets a trade-down windfall, like CBS's Carter Bahns blueprint swapping 7 and 71 to Dallas for 12 and 20, snagging Biletnikoff winner Makai Lemon then Tennessee's Jermod McCoy. Daniels demands weapons; Quinn rebuilds the back end. <strong>With the NFL Draft exploding Thursday in Pittsburgh, watch Peters wheel and deal - those extra firsts could redefine 2026.</strong>",
-        "updated": "Updated April 21, 2026"
+        "body": "The draft dust has barely settled in Washington, where a 5-12 stumble left the Commanders third in the NFC East - six games back, but armed with prime picks to rebuild around Jayden Daniels. <strong>Analyst Logan Paulsen's post-draft breakdown yesterday lit up the airwaves</strong>, hailing No. 7 overall snag Sonny Styles as a \"one-of-one\" freak - 6-foot-4, versatile enough to terrorize from linebacker or safety, unlocking Dan Quinn's defense like nobody since prime London Fletcher. They snagged six rookies total, bulking the backfield with sixth-round bruiser Kaytron Allen - a Penn State yardage machine already dubbed the Chris Rodriguez heir, poised to grind behind Rachaad White - and deepening lines everywhere from Chig Okonkwo at tight end to a crowded corner room. No splashy free-agency fireworks this offseason, but GM Adam Peters traded shrewdly for depth, eyeing Daniels' growth via technical trench help. It's a roster reset after that late win streak fizzled - competition everywhere, no handouts. <strong>Minicamp next week thrusts these kids into OTAs</strong>, where Styles' speed and Allen's hammer meet vets; fail to gel, and 2026's another slog - succeed, and the East quakes.",
+        "updated": "Updated April 29, 2026"
       },
       "key_numbers": [
         {
@@ -1111,7 +1029,7 @@
         },
         {
           "number": "6",
-          "label": "Games Back",
+          "label": "Games Behind",
           "note": "3rd in NFC East"
         },
         {
@@ -1128,18 +1046,10 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 NFL draft intel, notes: What Adam Schefter is hearing",
-          "dek": "With the 2026 NFL Draft just days away, Adam Schefter's insights could shape the Washington Commanders' strategy after their injury-plagued 5-12 slide from NFC Championship contention. Rumors swirl around top-10 targets like WRs Carnell Tate and Makai Lemon to bolster Jayden D...",
-          "date": "April 20, 2026",
-          "link": "https://www.espn.com/nfl/draft2026/story/_/id/48507444/2026-nfl-draft-notes-intel-buzz-adam-schefter-first-round-picks-teams-trades"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "2026 NFL mock draft: Jordan Reid's predictions for 257 picks",
-          "dek": "ESPN's Jordan Reid released his exhaustive seven-round mock draft for the 2026 NFL Draft, predicting all 257 picks just days before the event kicks off in Pittsburgh. With the Commanders holding a 5-12 record and third-place NFC East standing, his projections offer critical in...",
-          "date": "April 20, 2026",
-          "link": "https://www.espn.com/nfl/draft2026/story/_/id/48480079/2026-nfl-mock-draft-seven-rounds-257-picks-predictions-jordan-reid-fits"
+          "headline": "2026 NFL draft grades for 32 teams: Winners, losers, steals",
+          "dek": "The Washington Commanders earned a B+ for their 2026 NFL Draft class, headlined by No. 7 overall pick LB Sonny Styles from Ohio State and adding WR Antonio Williams, edge Joshua Josephs and others for defensive and offensive depth. With a 5-12 record last season, this",
+          "date": "April 27, 2026",
+          "link": "https://www.espn.com/nfl/draft2026/story/_/id/48547351/2026-nfl-draft-grades-32-teams-kiper-winners-losers-steals-sleepers-favorite-picks-classes"
         }
       ],
       "standings": {
@@ -1211,47 +1121,40 @@
       "draft_board": {
         "team": "Washington Commanders",
         "league": "NFL",
-        "projected_pick": "#7 overall",
+        "projected_pick": "TBD",
         "draft_date": "April 23-25, 2026",
         "prospects_watched": [
           {
+            "name": "Ahmad Moten Sr.",
+            "position": "DT",
+            "team": "Miami Hurricanes",
+            "note": "300-pound trench monster projected to Commanders at #14 overall in 2027 mock draft as impactful defensive lineman."
+          },
+          {
             "name": "Sonny Styles",
-            "position": "ILB",
+            "position": "LB",
             "team": "Ohio State",
-            "note": "Versatile off-ball linebacker highly ranked on team-specific big boards and featured in trade-up mocks."
+            "note": "Best off-ball linebacker in the 2026 draft class, selected by Commanders at #7 overall."
           },
           {
-            "name": "Carnell Tate",
+            "name": "Antonio Williams",
             "position": "WR",
-            "team": "Ohio State",
-            "note": "Top wide receiver target mocked to Commanders at #7 by multiple experts."
+            "team": "Clemson",
+            "note": "Third-round selection by Commanders in 2026 draft to add receiver depth."
           },
           {
-            "name": "Caleb Downs",
-            "position": "S",
-            "team": "Ohio State",
-            "note": "Versatile safety projected as a game-changer for Dan Quinn's defense at #7."
-          },
-          {
-            "name": "Arvell Reese",
-            "position": "EDGE",
-            "team": "Ohio State",
-            "note": "Best pound-for-pound athlete in the class and top Round 1 target for pass rush."
-          },
-          {
-            "name": "Mansoor Delane",
-            "position": "CB",
-            "team": "LSU",
-            "note": "Cornerback frequently mocked to Commanders to bolster secondary in expert predictions."
+            "name": "Joshua Josephs",
+            "position": "ED",
+            "team": "Tennessee",
+            "note": "Fifth-round edge defender picked by Commanders for pass rush potential."
           }
         ],
         "remaining_picks": [
-          "Round 2 pick 39",
-          "Round 3 pick 71"
+          "TBD"
         ],
         "label": "NFL Draft Board",
         "event_date": "April 23-25, 2026",
-        "pick_position": "#7 overall",
+        "pick_position": "TBD",
         "headers": [
           "Rank",
           "Prospect",
@@ -1261,82 +1164,75 @@
         "rows": [
           {
             "pk": "1",
-            "team": "Sonny Styles (ILB)",
+            "team": "Ahmad Moten Sr. (DT)",
             "league": "NFL",
-            "pts": "Ohio State",
-            "odds": "Versatile off-ball linebacker highly ranked on team-specific big boards and featured in trade-up mocks."
+            "pts": "Miami Hurricanes",
+            "odds": "300-pound trench monster projected to Commanders at #14 overall in 2027 mock draft as impactful defensive lineman."
           },
           {
             "pk": "2",
-            "team": "Carnell Tate (WR)",
+            "team": "Sonny Styles (LB)",
             "league": "NFL",
             "pts": "Ohio State",
-            "odds": "Top wide receiver target mocked to Commanders at #7 by multiple experts."
+            "odds": "Best off-ball linebacker in the 2026 draft class, selected by Commanders at #7 overall."
           },
           {
             "pk": "3",
-            "team": "Caleb Downs (S)",
+            "team": "Antonio Williams (WR)",
             "league": "NFL",
-            "pts": "Ohio State",
-            "odds": "Versatile safety projected as a game-changer for Dan Quinn's defense at #7."
+            "pts": "Clemson",
+            "odds": "Third-round selection by Commanders in 2026 draft to add receiver depth."
           },
           {
             "pk": "4",
-            "team": "Arvell Reese (EDGE)",
+            "team": "Joshua Josephs (ED)",
             "league": "NFL",
-            "pts": "Ohio State",
-            "odds": "Best pound-for-pound athlete in the class and top Round 1 target for pass rush."
-          },
-          {
-            "pk": "5",
-            "team": "Mansoor Delane (CB)",
-            "league": "NFL",
-            "pts": "LSU",
-            "odds": "Cornerback frequently mocked to Commanders to bolster secondary in expert predictions."
+            "pts": "Tennessee",
+            "odds": "Fifth-round edge defender picked by Commanders for pass rush potential."
           }
         ],
-        "notes": "<strong>Remaining picks:</strong> Round 2 pick 39, Round 3 pick 71"
+        "notes": "<strong>Remaining picks:</strong> TBD"
       },
       "the_latest_label": "Offseason Intel"
     }
   },
   "featured": {
     "team": "raptors",
-    "kicker": "Toronto Raptors · Game Recap",
-    "headline": "Raptors fell to Cavaliers 105 - 115",
-    "dek": "Cleveland's stars Donovan Mitchell (30 points), James Harden (28) and Evan Mobley (25) overwhelmed Toronto for a commanding 2-0 series lead in the Eastern Conference first round. The Raptors' season-high 22 turnovers fueled 22 Cleveland points despite Scottie Barnes' playoff c...",
+    "kicker": "Toronto Raptors - Game Recap",
+    "headline": "Raptors beat Cavaliers 93-89",
+    "dek": "Toronto stunned Cleveland 93-89 in Game 4, powered by Scottie Barnes' 23 points, nine rebounds and six assists alongside Ingram's 23 points, evening their first-round series at 2-2. The gritty road win keeps the Raptors' improbable playoff run alive with Game 5 looming",
     "source": "ESPN",
-    "link": "https://www.espn.com/nba/recap?gameId=401869369",
-    "date": "April 21, 2026"
+    "link": "https://www.espn.com/nba/recap?gameId=401869377",
+    "date": "April 29, 2026"
   },
   "two_up": [
     {
       "team": "jays",
-      "kicker": "Toronto Blue Jays · Game Recap",
-      "headline": "Jays beat Angels 5 - 2",
-      "dek": "Vladimir Guerrero Jr. smashed a home run and tallied three hits while Dylan Cease fanned 12 in five innings for his first win with Toronto. The victory snaps a skid for the 9-13 Blue Jays, who sit fourth in the AL East and host the Angels again Wednesday.[1][2][7]",
+      "kicker": "Toronto Blue Jays - Game Recap",
+      "headline": "Jays beat Red Sox 3-0",
+      "dek": "Trey Yesavage delivered 5 1/3 sharp innings in his season debut, blanking the Red Sox while Kazuma Okamoto's two-run single and Vladimir Guerrero Jr.'s RBI knock fueled the shutout. The win halts Boston's three-game streak under interim manager Chad Tracy and avenges Monday's",
       "source": "ESPN",
-      "link": "https://www.espn.com/mlb/recap?gameId=401815025",
-      "date": "April 21, 2026"
+      "link": "https://www.espn.com/mlb/recap?gameId=401815118",
+      "date": "April 29, 2026"
     },
     {
       "team": "leafs",
-      "kicker": "Toronto Maple Leafs · Season Over",
-      "headline": "NHLPA poll: Sidney Crosby most likely to become head coach",
-      "dek": "The Toronto Maple Leafs wrapped up another disappointing season at 32-36-14, landing eighth in the Atlantic Division with no playoff berth. As coaches eye the next era for the franchise, NHLPA peers peg Penguins star Sidney Crosby as the league's top future bench boss in the a...",
+      "kicker": "Toronto Maple Leafs - Season Over",
+      "headline": "NHL teams' offseason keys, including free agency, draft needs",
+      "dek": "Star forwards Auston Matthews and William Nylander are demanding management add physical top-six forwards and mobile defensemen to fix roster gaps after missing playoffs.[1] With trade targets like Robert Thomas and Jake DeBrusk in play, the Leafs face pressure to rebuild around",
       "source": "ESPN",
-      "link": "https://www.espn.com/nhl/story/_/id/48516380/nhlpa-poll-crosby-most-likely-become-head-coach",
-      "date": "April 21, 2026"
+      "link": "https://www.espn.com/nhl/story/_/id/48475221/nhl-2026-offseason-schedule-keys-draft-picks-trades-free-agency-cap-space",
+      "date": "April 29, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
-    "kicker": "Washington Commanders · Pre-Draft",
-    "headline": "2026 NFL draft intel, notes: What Adam Schefter is hearing",
-    "dek": "The Commanders are just days away from the draft with the seventh overall pick and reportedly exploring a trade-down scenario to accumulate additional picks while targeting LSU quarterback Manor Delane.[4] General Manager Adam Peters faces pressure to rebuild a 5-12 roster tha...",
+    "kicker": "Washington Commanders - Pre-Draft",
+    "headline": "Biggest 2026 NFL postdraft questions for all 32 teams",
+    "dek": "Washington's draft class grabbed early value and finished first in draft capital efficiency, but the real test is whether Sonny Styles, Joshua Joseph, and Matt Golden can help transform a 5-12 roster into a playoff contender. The Commanders still face questions about adding",
     "source": "ESPN",
-    "link": "https://www.espn.com/nfl/draft2026/story/_/id/48507444/2026-nfl-draft-notes-intel-buzz-adam-schefter-first-round-picks-teams-trades",
-    "date": "April 21, 2026"
+    "link": "https://www.espn.com/nfl/story/_/page/nfldraftpostdraftquestions48602828/nfl-draft-2026-biggest-postdraft-questions-32-teams-offseason-signings",
+    "date": "April 29, 2026"
   },
   "ticker": [
     {
@@ -1347,27 +1243,27 @@
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "NHLPA poll: Sidney Crosby most likely to become"
+      "text": "NHL teams' offseason keys, including free agency,"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays beat Angels 5 - 2"
+      "text": "Jays beat Red Sox 3-0"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (9-13) - 4th in AL East"
+      "text": "Jays (13-16) - 4th in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays at Angels - Wed 4/22 8:38 PM ET"
+      "text": "Next: Jays vs. Red Sox - Wed 4/29 2:07 PM ET"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors fell to Cavaliers 105 - 115"
+      "text": "Raptors beat Cavaliers 93-89"
     },
     {
       "badge": "NBA",
@@ -1377,7 +1273,7 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Next: Raptors vs. Cavaliers - Fri 4/24 7:00 PM ET"
+      "text": "Next: Raptors at Cavaliers - Wed 4/29 6:30 PM ET"
     },
     {
       "badge": "NFL",
@@ -1387,12 +1283,12 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "2026 NFL draft intel, notes: What Adam Schefter is"
+      "text": "Biggest 2026 NFL postdraft questions for all 32 teams"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders - NFL Draft Apr 23 - 25"
+      "text": "Commanders - NFL Draft Apr 23-25"
     }
   ],
   "at_a_glance": [
@@ -1409,10 +1305,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "9-13",
+      "record": "13-16",
       "status": "4th in AL East",
       "status_class": "green",
-      "stat": "Streak: W2"
+      "stat": "Streak: W1"
     },
     {
       "team": "raptors",
@@ -1420,7 +1316,7 @@
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
       "record": "46-36",
       "status": "3rd in Atlantic Division",
-      "status_class": "red",
+      "status_class": "green",
       "stat": "Streak: W1"
     },
     {
@@ -1445,18 +1341,18 @@
     {
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "matchup": "Jays",
-      "detail": "Next: Wed 4/22 at Angels 8:38 PM ET",
-      "channel": "",
-      "off": true
+      "matchup": "Jays vs. Red Sox",
+      "detail": "2:07 PM ET",
+      "channel": "TBD",
+      "off": false
     },
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "matchup": "Raptors",
-      "detail": "Next: Fri 4/24 vs. Cavaliers 7:00 PM ET",
-      "channel": "",
-      "off": true
+      "matchup": "Raptors at Cavaliers",
+      "detail": "6:30 PM ET",
+      "channel": "TBD",
+      "off": false
     },
     {
       "team": "commanders",
@@ -1470,92 +1366,94 @@
   "week_ahead": {
     "games": [
       {
-        "day": "Wed 4/22",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Angels",
-        "time": "8:38 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Wed 4/22",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Angels",
-        "time": "2:07 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Fri 4/24",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "vs. Guardians",
-        "time": "6:07 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Fri 4/24",
-        "team": "raptors",
-        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-        "name": "Raptors",
-        "opp": "vs. Cavaliers",
-        "time": "7:00 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Sat 4/25",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "vs. Guardians",
-        "time": "2:07 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Sun 4/26",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "vs. Guardians",
-        "time": "12:37 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Sun 4/26",
-        "team": "raptors",
-        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-        "name": "Raptors",
-        "opp": "vs. Cavaliers",
-        "time": "12:00 PM ET",
-        "tv": "TBD"
-      },
-      {
-        "day": "Mon 4/27",
+        "day": "Wed 4/29",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "vs. Red Sox",
-        "time": "6:07 PM ET",
+        "time": "2:07 PM ET",
         "tv": "TBD"
       },
       {
-        "day": "Tue 4/28",
+        "day": "Wed 4/29",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Cavaliers",
+        "time": "6:30 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Thu 4/30",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
-        "opp": "vs. Red Sox",
-        "time": "6:07 PM ET",
+        "opp": "at Twins",
+        "time": "6:40 PM ET",
         "tv": "TBD"
       },
       {
-        "league": "NFL",
-        "day": "Thu 04/23",
-        "time": "Draft Day",
-        "matchup": "Commanders on the clock - NFL Draft (Round 1)",
-        "is_event": true
+        "day": "Fri 5/1",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "vs. Cavaliers",
+        "time": "11:00 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Sat 5/2",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Twins",
+        "time": "7:10 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Sun 5/3",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Twins",
+        "time": "11:35 AM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Sun 5/3",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Cavaliers",
+        "time": "11:00 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Mon 5/4",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Rays",
+        "time": "5:40 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Tue 5/5",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Rays",
+        "time": "5:40 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Wed 5/6",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Rays",
+        "time": "12:10 PM ET",
+        "tv": "TBD"
       }
     ],
     "note": "Commanders: Pre-Draft"
