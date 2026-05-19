@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-05-18T07:26:16.988203-05:00",
-    "date_display": "May 18, 2026"
+    "updated": "2026-05-19T07:01:33.957428-05:00",
+    "date_display": "May 19, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The season didn't merely end - it sputtered out in a long, ugly skid that left Toronto staring at a 32-36-14 record, eighth in the Atlantic Division, and 78 points in the ledger. That's not a bad bounce or a cruel whistle; that's a team that spent the spring punching holes in its own floor. <strong>L7</strong> tells the story better than any polished exit interview ever could. The Maple Leafs were never close enough to smell postseason oxygen, and the 31-game gap behind the division pace underlines how far the climb truly was. Now comes the hard part, the part Toronto has postponed too many times: sorting the roster, the bench, and the front office with a colder eye than sentiment allows. The cap will bite. The room will change. Some familiar names will be shopped, some will be spared, and every decision has to answer the same old question - who can actually drag this club out of the middle? <strong>What matters next is not a moral victory tour but a ruthless summer reset, with coaching scrutiny, roster turnover, and draft planning all on the table.</strong>",
-        "updated": "Updated May 18, 2026"
+        "body": "The season died with a thud, and not a dramatic one - just the slow, ugly unraveling of a club that never found a spine. <strong>Toronto's 32-36-14 finish, good for 78 points and 8th in the Atlantic, is a hard verdict, not a fluke</strong>. That's not a bad week; that's a broken year, with a 15th-place playoff seed and a seven-game losing streak leaving the sweater in the closet far too early. The Leafs spent the spring looking like a team between eras, never quite committed to the old core and not nearly bold enough to build the new one. The decisions ahead are the real headline now - coaching, roster surgery, and the uncomfortable question of who stays when the bill comes due. The front office can talk about retooling, but this was a club that bled points and lost its way in every tight stretch. <strong>What matters next is whether Toronto finally makes a ruthless summer move - or settles for another comforting press conference and the same old disappointment</strong>.",
+        "updated": "Updated May 19, 2026"
       },
       "key_numbers": [
         {
@@ -45,7 +45,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 Stanley Cup playoffs: Lessons learned, what comes next",
-          "dek": "With Toronto eliminated and the regular season already over, this playoff roundup offers a clean read on how the field has changed without the Maple Leafs in it. The lessons on tactics, goaltending, and late-series adjustments also help frame what Toronto must address before",
+          "dek": "Toronto's season is over, so the focus shifts to how the Maple Leafs fit into the broader playoff picture and what the current field reveals about the gap they still need to close. The lessons from two rounds of postseason hockey also help frame the roster, coaching and",
           "date": "May 14, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/48761019/2026-nhl-playoffs-stanley-cup-lessons-takeaways-favorites-scoring-top-players-trends"
         }
@@ -397,38 +397,38 @@
       "draft_board": {
         "team": "Toronto Maple Leafs",
         "league": "NHL",
-        "projected_pick": "#1 overall",
+        "projected_pick": "#25 overall",
         "draft_date": "June 26-27, 2026",
         "prospects_watched": [
           {
-            "name": "Gavin McKenna",
+            "name": "Justin Carbonneau",
+            "position": "RW",
+            "team": "Blainville-Boisbriand Armada (QMJHL)",
+            "note": "A high-upside winger who fits Toronto's need for more young scoring talent and would be a plausible target if he reaches their range."
+          },
+          {
+            "name": "Carter Bear",
             "position": "LW",
-            "team": "TBD",
-            "note": "Consensus top prospect in recent mocks and the most common fit if Toronto holds the first pick."
+            "team": "Everett Silvertips (WHL)",
+            "note": "A competitive top-six forward with a power-forward element who profiles as a strong fit for a Leafs group that needs more puck-battle wins and finishing."
           },
           {
-            "name": "Ivar Stenberg",
-            "position": "LW",
-            "team": "TBD",
-            "note": "Frequently listed near the top of recent mock drafts and viewed as a high-end skill winger for a team seeking elite offense."
-          },
-          {
-            "name": "Misa",
+            "name": "Brady Martin",
             "position": "C",
-            "team": "TBD",
-            "note": "Center talent remains a priority target in draft chatter because he projects as a top-line playdriver."
+            "team": "Soo Greyhounds (OHL)",
+            "note": "A two-way center with play-driving traits who would add badly needed center depth and long-term lineup flexibility."
           },
           {
-            "name": "Keaton Verhoeff",
-            "position": "D",
-            "team": "TBD",
-            "note": "A premium right-shot defense prospect who would fit Toronto's need for a long-term blue-line anchor if the board shifts."
+            "name": "Alexander Zharovsky",
+            "position": "RW",
+            "team": "Salavat Yulaev Ufa (KHL)",
+            "note": "A skilled right-shot winger with upside who could appeal if Toronto prioritizes pure talent over immediate NHL readiness."
           },
           {
-            "name": "Michael Misa",
+            "name": "Will Horcoff",
             "position": "C",
-            "team": "TBD",
-            "note": "Elite offensive center option often mentioned alongside McKenna at the very top of the class and a strong fallback if Toronto pivots away from a winger."
+            "team": "University of Michigan (NCAA)",
+            "note": "A projection pick with size and center utility that could interest Toronto if it leans toward a development bet in the middle of the ice."
           }
         ],
         "lottery": {
@@ -437,7 +437,7 @@
         },
         "label": "NHL Draft Board",
         "event_date": "June 26-27, 2026",
-        "pick_position": "#1 overall",
+        "pick_position": "#25 overall",
         "headers": [
           "Rank",
           "Prospect",
@@ -447,38 +447,38 @@
         "rows": [
           {
             "pk": "1",
-            "team": "Gavin McKenna (LW)",
+            "team": "Justin Carbonneau (RW)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "Consensus top prospect in recent mocks and the most common fit if Toronto holds the first pick."
+            "pts": "Blainville-Boisbriand Armada (QMJHL)",
+            "odds": "A high-upside winger who fits Toronto's need for more young scoring talent and would be a plausible target if he reaches their range."
           },
           {
             "pk": "2",
-            "team": "Ivar Stenberg (LW)",
+            "team": "Carter Bear (LW)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "Frequently listed near the top of recent mock drafts and viewed as a high-end skill winger for a team seeking elite offense."
+            "pts": "Everett Silvertips (WHL)",
+            "odds": "A competitive top-six forward with a power-forward element who profiles as a strong fit for a Leafs group that needs more puck-battle wins and finishing."
           },
           {
             "pk": "3",
-            "team": "Misa (C)",
+            "team": "Brady Martin (C)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "Center talent remains a priority target in draft chatter because he projects as a top-line playdriver."
+            "pts": "Soo Greyhounds (OHL)",
+            "odds": "A two-way center with play-driving traits who would add badly needed center depth and long-term lineup flexibility."
           },
           {
             "pk": "4",
-            "team": "Keaton Verhoeff (D)",
+            "team": "Alexander Zharovsky (RW)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "A premium right-shot defense prospect who would fit Toronto's need for a long-term blue-line anchor if the board shifts."
+            "pts": "Salavat Yulaev Ufa (KHL)",
+            "odds": "A skilled right-shot winger with upside who could appeal if Toronto prioritizes pure talent over immediate NHL readiness."
           },
           {
             "pk": "5",
-            "team": "Michael Misa (C)",
+            "team": "Will Horcoff (C)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "Elite offensive center option often mentioned alongside McKenna at the very top of the class and a strong fallback if Toronto pivots away from a winger."
+            "pts": "University of Michigan (NCAA)",
+            "odds": "A projection pick with size and center utility that could interest Toronto if it leans toward a development bet in the middle of the ice."
           }
         ],
         "notes": ""
@@ -488,36 +488,47 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "21-25",
+      "record": "21-26",
       "detail": "3rd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Two straight wins have given the Blue Jays a little oxygen, and they needed it. <strong>Sunday's 4-1 takedown of the Tigers</strong> was the kind of tidy, no-nonsense victory a club stranded at 21-25 and sitting 3rd in the AL East can use as a brake and a spark at once. The Jays are still nine and a half back, so nobody is mistaking this for a charge, but the swing of the week has been real - after dropping a 3-2 squeaker on Friday, they answered with a 2-1 grinder on Saturday and then handled business yesterday. That's the difference between drifting and hanging around. The bats haven't exactly roared, but they've done enough, and the pitching has kept the train on the tracks. Now comes the real measuring stick: a Monday night date with the Yankees in New York, the sort of game that tells you whether this bounce is a blip or the first sign of life. <strong>Watch whether the Jays can turn this two-game burst into something sturdier at Yankee Stadium.</strong>",
-        "updated": "Updated May 18, 2026"
+        "body": "The Blue Jays keep finding new ways to lose the kind of games that harden a club - or expose it. <strong>Last night's 7-6 loss to the Yankees</strong> was the latest bruise, a game Toronto led by the look of things and still handed back, leaving it at 21-26, third in the AL East, 10.5 games off the pace and buried in the middle class of the American League at playoff seed 9. That's not a contender's profile; that's a team chasing its own shadow. The sting is that the bats have recently shown some life - four runs on May 17, two on May 16 - but the margin for error is shrinking by the night. One night it's a one-run grinder, the next it's a bullpen leak, and the record keeps telling the same blunt story. There's no mystery here: Toronto needs cleaner innings, crisper defense and somebody to grab the wheel when the game tilts. <strong>Tonight's rematch in New York will say whether this club can stop the slide - or keep feeding it.</strong>",
+        "updated": "Updated May 19, 2026"
       },
       "key_numbers": [
         {
-          "number": "21-25",
+          "number": "21-26",
           "label": "Season Record",
           "note": "3rd in AL East"
         },
         {
-          "number": "W2",
+          "number": "L1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "9.5",
+          "number": "10.5",
           "label": "Games Back",
           "note": "3rd in AL East"
         },
         {
-          "number": "3-1",
+          "number": "2-2",
           "label": "Last 4",
           "note": "Recent form"
         }
       ],
       "recent_results": [
+        {
+          "date": "May 18",
+          "result": "L",
+          "team_score": 6,
+          "opp_name": "Yankees",
+          "opp_score": 7,
+          "opp_logo": "nyy",
+          "league": "mlb",
+          "game_date": "2026-05-18",
+          "game_id": "401815395"
+        },
         {
           "date": "May 17",
           "result": "W",
@@ -550,36 +561,25 @@
           "league": "mlb",
           "game_date": "2026-05-15",
           "game_id": "401815351"
-        },
-        {
-          "date": "May 13",
-          "result": "W",
-          "team_score": 5,
-          "opp_name": "Rays",
-          "opp_score": 3,
-          "opp_logo": "tb",
-          "league": "mlb",
-          "game_date": "2026-05-13",
-          "game_id": "401815325"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Tigers vs. Jays - Full Highlights",
-        "subtitle": "MLB - May 17, 2026",
-        "result_badge": "W 4-1",
-        "result_class": "w",
-        "url": "https://www.youtube.com/watch?v=M6mBDa9AIQs",
-        "game_date": "2026-05-17"
+        "title": "Yankees vs. Jays - Full Highlights",
+        "subtitle": "MLB - May 18, 2026",
+        "result_badge": "L 6-7",
+        "result_class": "l",
+        "url": "https://www.youtube.com/watch?v=6XT2xMCld9s",
+        "game_date": "2026-05-18"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays beat Tigers 2-1",
-          "dek": "Toronto snapped the brief Tigers series with a tight win, getting just enough offense to back a staff effort that kept Detroit from breaking through. At 21-25 and still chasing ground in the AL East, every series win matters as the Blue Jays head into a pivotal stretch.",
-          "date": "May 16",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815366"
+          "headline": "Jays beat Tigers 4-1",
+          "dek": "A win over Detroit gives Toronto a chance to steady itself after an uneven start and keep from falling further behind in the AL East race. At 21-26, the Jays need results like this to build momentum before the schedule starts to tighten.",
+          "date": "May 17",
+          "link": "https://www.espn.com/mlb/recap?gameId=401815381"
         }
       ],
       "standings": {
@@ -603,9 +603,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "30",
+                  "31",
                   "15",
-                  ".667",
+                  ".674",
                   "-"
                 ]
               },
@@ -615,9 +615,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "28",
+                  "29",
                   "19",
-                  ".596",
+                  ".604",
                   "3"
                 ]
               },
@@ -628,9 +628,9 @@
                 "you": true,
                 "vals": [
                   "21",
-                  "25",
-                  ".457",
-                  "9.5"
+                  "26",
+                  ".447",
+                  "10.5"
                 ]
               },
               {
@@ -640,9 +640,9 @@
                 "you": false,
                 "vals": [
                   "21",
-                  "26",
-                  ".447",
-                  "10"
+                  "27",
+                  ".438",
+                  "11"
                 ]
               },
               {
@@ -651,9 +651,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "19",
+                  "20",
                   "27",
-                  ".413",
+                  ".426",
                   "11.5"
                 ]
               }
@@ -678,9 +678,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "26",
+                  "27",
                   "22",
-                  ".542",
+                  ".551",
                   "-"
                 ]
               },
@@ -692,9 +692,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "30",
+                  "31",
                   "15",
-                  ".667",
+                  ".674",
                   "-"
                 ]
               },
@@ -707,8 +707,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "23",
-                  "23",
-                  ".500",
+                  "24",
+                  ".489",
                   "-"
                 ]
               },
@@ -719,9 +719,9 @@
                 "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "28",
+                  "29",
                   "19",
-                  ".596",
+                  ".604",
                   "3"
                 ]
               },
@@ -733,8 +733,21 @@
                 "seed": "WC2",
                 "vals": [
                   "24",
-                  "22",
-                  ".522",
+                  "23",
+                  ".511",
+                  "2"
+                ]
+              },
+              {
+                "team": "Mariners",
+                "logo": "sea",
+                "league": "mlb",
+                "you": false,
+                "seed": "WC3",
+                "vals": [
+                  "23",
+                  "26",
+                  ".469",
                   "1"
                 ]
               },
@@ -743,17 +756,18 @@
                 "logo": "tex",
                 "league": "mlb",
                 "you": false,
-                "seed": "WC3",
+                "seed": "",
+                "seed_style": "faint",
                 "vals": [
                   "22",
-                  "24",
-                  ".478",
+                  "25",
+                  ".468",
                   "1"
                 ]
               },
               {
-                "team": "Mariners",
-                "logo": "sea",
+                "team": "Twins",
+                "logo": "min",
                 "league": "mlb",
                 "you": false,
                 "seed": "",
@@ -762,7 +776,7 @@
                   "22",
                   "26",
                   ".458",
-                  "2"
+                  "4.5"
                 ]
               },
               {
@@ -774,9 +788,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "21",
-                  "25",
-                  ".457",
-                  "9.5"
+                  "26",
+                  ".447",
+                  "10.5"
                 ]
               },
               {
@@ -788,28 +802,14 @@
                 "seed_style": "faint",
                 "vals": [
                   "21",
-                  "26",
-                  ".447",
-                  "10"
+                  "27",
+                  ".438",
+                  "11"
                 ]
               },
               {
-                "team": "Twins",
-                "logo": "min",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "21",
-                  "26",
-                  ".447",
-                  "4.5"
-                ]
-              },
-              {
-                "team": "Tigers",
-                "logo": "det",
+                "team": "Sox",
+                "logo": "bos",
                 "league": "mlb",
                 "you": false,
                 "seed": "",
@@ -818,7 +818,7 @@
                   "20",
                   "27",
                   ".426",
-                  "5.5"
+                  "11.5"
                 ]
               }
             ]
@@ -835,7 +835,7 @@
       "lotl": {
         "label": "What's Going On With the Raptors",
         "body": "<strong>The Raptors fell to the Cavaliers 102-114</strong>, moving to 46-36 on the season. They currently sit 3rd in atlantic division, with every game now carrying real stakes for positioning. Prior to that, the club beat the Cavaliers, 112-110, a game that gave the coaching staff real tape to work with. The playoff picture is the whole story now, so every lineup tweak, every matchup decision, every minute carries postseason weight. <strong>The next game on the schedule will frame the conversation for the rest of the week.</strong> Around the NBA, the offseason machinery is already whirring - front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario. For the Toronto Raptors, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.",
-        "updated": "Updated May 18, 2026"
+        "updated": "Updated May 19, 2026"
       },
       "key_numbers": [
         {
@@ -913,7 +913,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NBA offseason: What 10 Giannis trade contenders can offer Bucks",
-          "dek": "With Milwaukee's future suddenly a league-wide talking point, Toronto's place in any Giannis sweepstakes depends on whether it can combine young talent, picks and salary matching without gutting its core. For the Raptors, this is less about rumor chasing than judging how far a",
+          "dek": "With the postseason still unfolding, speculation about Giannis Antetokounmpo's future immediately reshapes the league's next move and could alter the Raptors' path in the East. This breakdown shows which teams have the draft capital and matching salaries to make a real offer,",
           "date": "May 14, 2026",
           "link": "https://www.espn.com/nba/story/_/id/48762977/nba-draft-2026-10-giannis-bucks-trade-contenders-warriors-heat-rockets-celtics"
         }
@@ -1096,8 +1096,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The draft is in the books, and now comes the hard part - turning optimism into Sundays that matter. Washington sits 3rd in the NFC East at 6 games back, with a lonely W1 tag on the ledger and the blunt truth of a 14th playoff seed hanging over it; that's not contention, that's a reminder that the roster still needs weight, speed and sturdier hands in the right places. <strong>The real news is the rookie class the Commanders just brought in, headlined by linebacker Sonny Styles and the rest of a haul meant to shore up a defense that too often bent like wet cardboard.</strong> The offense, meanwhile, still leans on Terry McLaurin and a run game that now has Rachaad White in the picture, but the bigger question is whether the new additions can supply the second and third layer this team has lacked. Jayden Daniels' health remains the franchise's pulse; if he's upright, everything else has a chance to breathe. <strong>For now, the eye goes to how quickly the rookies crack the depth chart when camps open.</strong>",
-        "updated": "Updated May 18, 2026"
+        "body": "The draft dust has barely settled, and in Washington the question isn't who's coming - it's who can finally force their way onto the field. The Commanders sit third in the NFC East, 6 games back, with a 14 seed in the pecking order and a W1 attached to a season that is already over and now gives way to the real business: building a roster that can stand up in December, not just survive April. <strong>Washington's most interesting new name is Kaytron Allen, a sixth-round back out of Penn State, the kind of low-cost runner who can turn a crowded backfield into a meritocracy by August.</strong> That's the point of this class: competition, not ceremony. Allen arrives as a hammer with fresh legs, and in a league that chews up depth charts, the Commanders need runners who can protect the quarterback, catch the checkdown, and do something violent on third down. The rest of the offseason should be judged by one standard - who helps now, who helps later, and who gets swallowed by the numbers. <strong>Watch Allen in camp; if he pops, Washington may have found a useful piece before the leaves turn.</strong>",
+        "updated": "Updated May 19, 2026"
       },
       "key_numbers": [
         {
@@ -1119,10 +1119,18 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 NFL free agency grades: Aaron Rodgers, Dexter Lawrence",
-          "dek": "Free agency still shapes the playoff race, and this review helps sort the signings and extensions that could change the balance of power in the NFC and beyond. For Washington, the bigger question is whether its own offseason moves stack up against the conference contenders",
-          "date": "May 17, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/47911726/2026-nfl-free-agency-grades-signings-trades-latest-best-worst-deals-draft-outlook"
+          "headline": "Projecting 2026 NFL rookie leaders in 10 stat categories",
+          "dek": "With the draft complete, the Commanders' rookie class is part of the bigger league-wide conversation about which first-year players can make an immediate statistical impact. For Washington, these projections also offer an early gauge of how much its newcomers could influence a",
+          "date": "May 19, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/48777825/2026-nfl-season-projections-rookie-leaders-statistics-touchdowns-sacks"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "2026 NFL offseason: Best NFL team fits for 14 free agents",
+          "dek": "With the draft over, the Commanders can still reshape key parts of the roster by targeting veteran free agents who might fill immediate needs without long-term commitments. This kind of fit-driven offseason list matters because Washington remains in the NFC East chase and every",
+          "date": "May 18, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/48751416/2026-nfl-best-team-fits-remaining-free-agents-samuel-bosa-diggs"
         }
       ],
       "standings": {
@@ -1198,39 +1206,39 @@
     "team": "raptors",
     "kicker": "Toronto Raptors - Playoffs",
     "headline": "NBA offseason: Draft, free agency, trade targets for eliminated teams",
-    "dek": "The Raptors are already shifting from playoff ambitions to what comes next, and that makes every draft, free agency, and trade decision immediately relevant. With a 46-36 season in the books, Toronto's next moves will shape whether it can move closer to contention or settle into",
+    "dek": "Toronto's season is over, so attention quickly turns to how the front office can use the draft, free agency and trades to improve a 46-36 roster. With most of the league already eliminated, the Raptors are now in the same offseason scramble as every other team looking for a",
     "source": "ESPN",
     "link": "https://www.espn.com/nba/story/_/id/48432907/nba-offseason-2026-draft-free-agency-trade-targets-30-teams",
-    "date": "May 18, 2026"
+    "date": "May 19, 2026"
   },
   "two_up": [
     {
       "team": "jays",
       "kicker": "Toronto Blue Jays - Game Recap",
-      "headline": "Jays beat Tigers 4-1",
-      "dek": "Toronto earned a much-needed win as it tries to climb out of an underwhelming start and keep pace in a crowded AL East. A series of strong innings should help set the tone before a tough matchup at Yankee Stadium later today.",
+      "headline": "Jays fell to Yankees 6-7",
+      "dek": "The Blue Jays left Monday with another one-run loss, a setback that keeps them stuck below.500 and searching for consistency in the AL East. They stay in New York for a quick turnaround Tuesday, making this a chance to respond before the gap in the division grows any wider.",
       "source": "ESPN",
-      "link": "https://www.espn.com/mlb/recap?gameId=401815381",
-      "date": "May 18, 2026"
+      "link": "https://www.espn.com/mlb/recap?gameId=401815395",
+      "date": "May 19, 2026"
     },
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Season Over",
       "headline": "NHL teams' offseason keys, including free agency, draft needs",
-      "dek": "Toronto's disappointing 32-36-14 finish makes the offseason a reset point, with little margin for another year of drift. How the Maple Leafs handle free agency and the draft will shape whether they can climb out of the Atlantic Division basement next season.",
+      "dek": "Toronto's disappointing 32-36-14 finish leaves the front office with little margin for error as it tries to reset a roster that fell to eighth in the Atlantic. With free agency and the draft ahead, the key questions are whether the Maple Leafs can add immediate help and build a",
       "source": "ESPN",
       "link": "https://www.espn.com/nhl/story/_/id/48475221/nhl-2026-offseason-schedule-keys-draft-picks-trades-free-agency-cap-space",
-      "date": "May 18, 2026"
+      "date": "May 19, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Post-Draft",
-    "headline": "2026 NFL offseason: Best NFL team fits for 14 free agents",
-    "dek": "With the draft in the books, Washington's next roster moves will be judged against a still-open veteran market, especially at spots where depth and playmaking can change the NFC East picture. The fits on this list matter because they point to where the Commanders could still",
-    "source": "ESPN",
-    "link": "https://www.espn.com/nfl/story/_/id/48751416/2026-nfl-best-team-fits-remaining-free-agents-samuel-bosa-diggs",
-    "date": "May 18, 2026"
+    "headline": "Commanders set for joint practices with Ravens, Dolphins",
+    "dek": "Joint practices give Washington a controlled early test against different schemes before the preseason games begin, offering coaches a clearer read on roster battles and scheme fit. With the Ravens and Dolphins on the schedule, the Commanders get a valuable chance to sharpen",
+    "source": "Pro Football Talk",
+    "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/commanders-set-for-joint-practices-with-ravens-dolphins",
+    "date": "May 19, 2026"
   },
   "ticker": [
     {
@@ -1246,17 +1254,17 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays beat Tigers 4-1"
+      "text": "Jays fell to Yankees 6-7"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (21-25) - 3rd in AL East"
+      "text": "Jays (21-26) - 3rd in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays at Yankees - Mon 5/18 6:05 PM ET"
+      "text": "Next: Jays at Yankees - Tue 5/19 6:05 PM ET"
     },
     {
       "badge": "NBA",
@@ -1281,7 +1289,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "2026 NFL offseason: Best NFL team fits for 14 free"
+      "text": "Commanders set for joint practices with Ravens,"
     },
     {
       "badge": "NFL",
@@ -1303,10 +1311,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "21-25",
+      "record": "21-26",
       "status": "3rd in AL East",
-      "status_class": "green",
-      "stat": "Streak: W2"
+      "status_class": "red",
+      "stat": "Streak: L1"
     },
     {
       "team": "raptors",
@@ -1364,15 +1372,6 @@
   "week_ahead": {
     "games": [
       {
-        "day": "Mon 5/18",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Yankees",
-        "time": "6:05 PM ET",
-        "tv": "TBD"
-      },
-      {
         "day": "Tue 5/19",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
@@ -1428,6 +1427,15 @@
       },
       {
         "day": "Mon 5/25",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "vs. Marlins",
+        "time": "6:07 PM ET",
+        "tv": "TBD"
+      },
+      {
+        "day": "Tue 5/26",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
