@@ -2897,6 +2897,30 @@ def perplexity_search(prompt, system_prompt=""):
         return None
 
 
+# Mirror of the validator's GENERIC_DEK_PATTERNS (0.5 dek specificity).
+# The dek enricher must never ship copy the validator will hard-fail.
+GENERIC_DEK_PATTERNS = [
+    r"\bhere'?s what you need to know\b",
+    r"\beverything you need to know\b",
+    r"\bthe latest on\b",
+    r"\ba look at\b",
+    r"\binside the\b",
+    r"\bbreaking down\b",
+]
+
+
+def _dek_is_generic(text):
+    low = (text or "").lower()
+    return any(re.search(p, low) for p in GENERIC_DEK_PATTERNS)
+
+
+def _dek_or_blank(existing_dek):
+    """Ship a clean publisher dek or nothing - never a validator-failing one."""
+    if existing_dek and not _dek_is_generic(existing_dek):
+        return existing_dek
+    return ""
+
+
 def generate_editorial_dek(headline, team_key, phase_info, team_info=None, existing_dek=""):
     """Generate a 2-sentence editorial dek via Perplexity.
 
@@ -2904,9 +2928,9 @@ def generate_editorial_dek(headline, team_key, phase_info, team_info=None, exist
     to existing_dek on any failure. Phase 2 of the daily update: replaces
     templated deks with web-search-backed editorial context."""
     if not PERPLEXITY_API_KEY:
-        return existing_dek or ""
+        return _dek_or_blank(existing_dek)
     if not headline:
-        return existing_dek or ""
+        return _dek_or_blank(existing_dek)
 
     cfg = TEAMS.get(team_key, {})
     team_full = cfg.get("full_name", team_key)
@@ -2934,22 +2958,33 @@ def generate_editorial_dek(headline, team_key, phase_info, team_info=None, exist
         "Write two sharp sentences of editorial context for this headline."
     )
 
-    raw = perplexity_search(prompt, system_prompt=system_prompt)
-    if not raw:
-        return existing_dek or ""
-
-    text = raw.strip()
-    if text.startswith('"') and text.endswith('"'):
-        text = text[1:-1].strip()
-    elif text.startswith("'") and text.endswith("'"):
-        text = text[1:-1].strip()
-    text = sanitize_ascii(text)
-    if len(text) > 280:
-        # Section 0.4 bans '...' so truncate at word boundary without a suffix
-        text = truncate_at_word(text, 280)
-    if len(text) < 20:
-        return existing_dek or text
-    return text
+    system_prompt += (
+        " NEVER use these stock constructions: 'a look at', 'inside the', "
+        "'breaking down', 'the latest on', 'everything you need to know', "
+        "'what you need to know'. Write specific, concrete copy instead."
+    )
+    for _attempt in range(2):
+        raw = perplexity_search(prompt, system_prompt=system_prompt)
+        if not raw:
+            continue
+        cand = raw.strip()
+        if cand.startswith('"') and cand.endswith('"'):
+            cand = cand[1:-1].strip()
+        elif cand.startswith("'") and cand.endswith("'"):
+            cand = cand[1:-1].strip()
+        cand = sanitize_ascii(cand)
+        if len(cand) > 280:
+            # Section 0.4 bans '...' so truncate at word boundary without a suffix
+            cand = truncate_at_word(cand, 280)
+        if len(cand) < 20:
+            continue
+        if _dek_is_generic(cand):
+            print(f"  WARNING: generic dek for {team_key} ('{headline[:40]}'); retrying")
+            continue
+        return cand
+    # Compliance fallback: a clean publisher dek beats a generic AI one;
+    # an empty dek (which rule 0.5 skips) beats failing the build.
+    return _dek_or_blank(existing_dek)
 
 
 def build_draft_board(team_key, phase_info, team_info=None):

@@ -114,6 +114,11 @@ def sanitize_url(url: str | None) -> tuple[bool, str]:
         return False, f"banned googleusercontent subdomain: {host}"
     if host.endswith(".consent.google.com") or host == "consent.google.com":
         return False, f"banned consent.google subdomain: {host}"
+    # YouTube search pages are deliberate Watch-card destinations - the
+    # /search and /results bans exist to catch Google redirect intermediates,
+    # not YouTube's canonical search URL.
+    if host in ("www.youtube.com", "youtube.com", "m.youtube.com"):
+        return True, "ok (youtube destination)"
     for pat in BANNED_PATH_PATTERNS:
         if re.search(pat, p.path):
             return False, f"banned path pattern {pat!r}: {p.path}"
