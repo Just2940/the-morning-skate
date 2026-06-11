@@ -1781,105 +1781,170 @@ MAX_SAME_SOURCE_HOMEPAGE = 1
 
 # Dedicated RSS feeds for Tier 1 Canadian sources (not just Google News)
 TIER1_RSS_FEEDS = {
+    # (url, source_name, source_class, team_specific)
+    # team_specific=True: every item on the feed is about the team, so the
+    # keyword relevance filter is skipped (team blogs rarely repeat the name).
+    # Rebuilt 2026-06-11: TSN discontinued RSS (404s), NFL.com feed 404s,
+    # CBC webfeed returns an empty channel, Commanders.com feed stale (2022),
+    # Hogs Haven moved to Atom at /rss/index.xml.
     "leafs": [
-        ("https://www.tsn.ca/rss/nhl/maple-leafs", "TSN", "tsn"),
-        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),  # main feed, filtered below
+        ("https://www.sportsnet.ca/hockey/nhl/feed/", "Sportsnet", "sportsnet", False),
+        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "jays": [
-        ("https://www.tsn.ca/rss/mlb", "TSN", "tsn"),
-        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),
-        ("https://www.cbc.ca/cmlink/rss-sports-mlb", "CBC Sports", "web"),
+        ("https://www.sportsnet.ca/baseball/mlb/feed/", "Sportsnet", "sportsnet", False),
+        ("https://www.mlb.com/feeds/news/rss.xml", "MLB.com", "web", False),
+        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "raptors": [
-        ("https://www.tsn.ca/rss/nba", "TSN", "tsn"),
-        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet"),
+        ("https://www.raptorsrepublic.com/feed/", "Raptors Republic", "web", False),
+        ("https://www.sportsnet.ca/basketball/nba/feed/", "Sportsnet", "sportsnet", False),
+        ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "commanders": [
-        # Section 0.26: US NFL feeds for Commanders source diversity
-        ("https://www.espn.com/espn/rss/nfl/news", "ESPN", "espn"),
-        ("https://www.nfl.com/feeds/rss/news", "NFL.com", "web"),
-        ("https://www.cbssports.com/rss/headlines/nfl/", "CBS Sports", "web"),
-        ("https://profootballtalk.nbcsports.com/feed/", "Pro Football Talk", "web"),
-        ("https://www.hogshaven.com/rss/current.xml", "Hogs Haven", "web"),
+        ("https://www.hogshaven.com/rss/index.xml", "Hogs Haven", "web", True),
+        ("https://riggosrag.com/feed", "Riggo's Rag", "web", True),
+        ("https://www.nbcsports.com/profootballtalk.rss", "Pro Football Talk", "web", False),
+        ("https://www.cbssports.com/rss/headlines/nfl/", "CBS Sports", "web", False),
     ],
 }
 
+_ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
-def fetch_tier1_rss_articles(team_key, limit=5):
-    """Fetch articles from dedicated Tier 1 RSS feeds for guaranteed source diversity.
-    This supplements Google News ‚Äî even if Google News returns only Sportsnet articles,
-    we'll still have TSN, CBC, etc. from their own feeds."""
+
+def _feed_items(root):
+    """Extract items from an RSS <item> or Atom <entry> document.
+    Returns a list of dicts: {title, link, desc, date_raw}."""
+    out = []
+    for it in root.findall(".//item"):
+        out.append({
+            "title": (it.findtext("title", "") or "").strip(),
+            "link": (it.findtext("link", "") or "").strip(),
+            "desc": it.findtext("description", "") or "",
+            "date_raw": it.findtext("pubDate", "") or "",
+        })
+    if out:
+        return out
+    for e in root.findall(".//" + _ATOM_NS + "entry"):
+        link = ""
+        for ln in e.findall(_ATOM_NS + "link"):
+            if ln.get("rel", "alternate") == "alternate" and ln.get("href"):
+                link = ln.get("href")
+                break
+        if not link:
+            ln0 = e.find(_ATOM_NS + "link")
+            if ln0 is not None:
+                link = ln0.get("href") or ""
+        out.append({
+            "title": (e.findtext(_ATOM_NS + "title", "") or "").strip(),
+            "link": (link or "").strip(),
+            "desc": e.findtext(_ATOM_NS + "summary", "") or e.findtext(_ATOM_NS + "content", "") or "",
+            "date_raw": e.findtext(_ATOM_NS + "published", "") or e.findtext(_ATOM_NS + "updated", "") or "",
+        })
+    return out
+
+
+def _parse_feed_date(raw):
+    """Parse an RFC-822 (RSS) or ISO-8601 (Atom) date. Aware datetime or None."""
+    raw = (raw or "").strip()
+    if not raw:
+        return None
+    try:
+        return parsedate_to_datetime(raw)
+    except Exception:
+        pass
+    try:
+        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
+# Per-team negative keywords: kill cross-franchise bleed from multi-team
+# publishers (e.g. Raptors Republic also covers the WNBA Toronto Tempo,
+# which matches the "toronto" relevance keyword).
+TIER1_NEGATIVE_KEYWORDS = {
+    "raptors": ("tempo", "wnba"),
+}
+
+
+def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
+    """Fetch articles from dedicated Tier 1 RSS/Atom feeds for source diversity.
+
+    Prints one diagnostic line per feed so CI logs show exactly what each feed
+    returned from the runner network (items/kw/fresh/kept). Silent zero-counts
+    were how the 100%-ESPN monoculture went unnoticed for six weeks."""
     cfg = TEAMS[team_key]
-    team_name_lower = cfg["full_name"].lower()
-    # Keywords to filter feed items by relevance to this team
     team_keywords = [w.lower() for w in cfg["full_name"].split() if len(w) > 3]
+    negative_keywords = TIER1_NEGATIVE_KEYWORDS.get(team_key, ())
     articles = []
-
-    for feed_url, source_name, source_class in TIER1_RSS_FEEDS.get(team_key, []):
+    seen_links = set()
+    for feed_url, source_name, source_class, team_specific in TIER1_RSS_FEEDS.get(team_key, []):
+        if len(articles) >= limit:
+            break
+        n_items = n_kw = n_fresh = n_kept = 0
         try:
             req = Request(feed_url, headers={
                 "User-Agent": "Mozilla/5.0 (compatible; TheMorningSkate/1.0)",
-                "Accept": "application/rss+xml, application/xml, text/xml",
+                "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml",
             })
             with urlopen(req, timeout=10) as resp:
                 xml_data = resp.read().decode("utf-8", errors="replace")
-
             root = ET.fromstring(xml_data)
-            for item in root.findall(".//item"):
-                title = item.findtext("title", "")
-                link = item.findtext("link", "")
-                pub_date = item.findtext("pubDate", "")
-                description = item.findtext("description", "")
-
+            items = _feed_items(root)
+            n_items = len(items)
+            feed_kept = 0
+            for item in items:
+                title, link, description = item["title"], item["link"], item["desc"]
                 if not title or not link:
+                    continue
+                # Wrapper/collection pseudo-items (Sportsnet "NHL Featured" etc.)
+                low_link = link.lower()
+                if "sn-collection" in low_link or low_link.rstrip("/") in ("https://www.sportsnet.ca", "http://www.sportsnet.ca"):
                     continue
                 if not is_publisher_url(link):
                     continue
-
-                # Filter: must mention the team (for general feeds like Sportsnet)
-                combined = (title + " " + description).lower()
-                if not any(kw in combined for kw in team_keywords):
+                if "espn.com" in low_link:
                     continue
-
-                # Skip ESPN articles (we already have those)
-                if "espn.com" in link.lower():
+                if low_link.rstrip("/") in seen_links:
                     continue
-
-                # Parse date
+                if negative_keywords and any(nk in (title + " " + description).lower() for nk in negative_keywords):
+                    continue
+                if not team_specific:
+                    combined = (title + " " + description).lower()
+                    if not any(kw in combined for kw in team_keywords):
+                        continue
+                n_kw += 1
                 days_old = 999
                 date_display = ""
-                if pub_date:
+                dt = _parse_feed_date(item["date_raw"])
+                if dt is not None:
                     try:
-                        dt = parsedate_to_datetime(pub_date)
                         date_display = dt.strftime("%B %d, %Y").replace(" 0", " ")
                         days_old = max(0, (NOW - dt.astimezone(EST)).days)
                     except Exception:
                         pass
-
-                # Only last 5 days (loosened for source diversity per SKILL 0.26)
                 if days_old > 5:
                     continue
-
-                # Clean HTML from description
+                n_fresh += 1
                 clean_desc = truncate_at_word(re.sub(r'<[^>]+>', '', description).strip(), 200)
-
+                seen_links.add(low_link.rstrip("/"))
                 articles.append({
                     "source": source_name,
                     "source_class": source_class,
-                    "headline": title.strip(),
+                    "headline": title,
                     "dek": clean_desc,
                     "date": date_display or TODAY_DISPLAY,
                     "link": link,
                     "days_old": days_old,
                     "type": "news",
                 })
-
-                if len(articles) >= limit:
+                n_kept += 1
+                feed_kept += 1
+                if feed_kept >= per_feed_cap or len(articles) >= limit:
                     break
-
+            print(f"      [tier1] {source_name} {feed_url}: items={n_items} kw={n_kw} fresh={n_fresh} kept={n_kept}")
         except Exception as e:
             print(f"    WARNING: {source_name} RSS failed: {e}")
-
     return articles
 
 
