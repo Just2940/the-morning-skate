@@ -870,7 +870,7 @@ def check_cross_field_consistency(data: dict, r: Reporter) -> None:
             # ≥3 distinct sources per build. Until then a hard ERROR would
             # halt every daily run with no recourse.
             for v in violations:
-                r.warn(rule_source_mix, v + " [TARGET: ERROR after RSS multi-source]")
+                r.error(rule_source_mix, v)
         else:
             r.ok(rule_source_mix)
     else:
@@ -893,7 +893,7 @@ def check_cross_field_consistency(data: dict, r: Reporter) -> None:
             latest_violations.append(f"{key}: the_latest has {n} article(s) — minimum is 3")
     if latest_violations:
         for v in latest_violations:
-            r.warn(rule_latest_count, v + " [TARGET: ERROR after RSS multi-source]")
+            r.error(rule_latest_count, v)
     else:
         r.ok(rule_latest_count)
 
