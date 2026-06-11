@@ -1527,11 +1527,13 @@ def fetch_espn_game_recap_urls(team_key, recent):
         ts = game.get("team_score", 0)
         os_score = game.get("opp_score", 0)
         result_word = "beat" if result == "W" else "fell to"
-
+        _r1, _r2 = ts, os_score
+        if result == "L":
+            _r1, _r2 = _r2, _r1  # winner-first score order on losses
         recaps.append({
             "source": "ESPN",
             "source_class": "espn",
-            "headline": f"{cfg['full_name'].split()[-1]} {result_word} {opp} {ts}–{os_score}",
+            "headline": f"{cfg['full_name'].split()[-1]} {result_word} {opp} {_r1}-{_r2}",
             "dek": f"Full game recap and box score.",
             "date": game.get("date", ""),
             "link": recap_url,
@@ -1882,6 +1884,17 @@ TIER1_NEGATIVE_KEYWORDS = {
     "raptors": ("tempo", "wnba"),
 }
 
+# Relevance keywords per team. Bare "toronto" matched Argonauts (CFL),
+# Toronto Tempo (WNBA) and cross-sport Toronto clips, filing Jays stories
+# under the Raptors. Nicknames only - city names are poison for a
+# three-team city.
+TEAM_RELEVANCE_KEYWORDS = {
+    "leafs": ("maple leafs", "leafs"),
+    "jays": ("blue jays", "jays"),
+    "raptors": ("raptors",),
+    "commanders": ("commanders",),
+}
+
 
 def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
     """Fetch articles from dedicated Tier 1 RSS/Atom feeds for source diversity.
@@ -1890,7 +1903,9 @@ def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
     returned from the runner network (items/kw/fresh/kept). Silent zero-counts
     were how the 100%-ESPN monoculture went unnoticed for six weeks."""
     cfg = TEAMS[team_key]
-    team_keywords = [w.lower() for w in cfg["full_name"].split() if len(w) > 3]
+    team_keywords = list(TEAM_RELEVANCE_KEYWORDS.get(team_key, ())) or [
+        w.lower() for w in cfg["full_name"].split() if len(w) > 3
+    ]
     negative_keywords = TIER1_NEGATIVE_KEYWORDS.get(team_key, ())
     articles = []
     seen_links = set()
@@ -2785,6 +2800,11 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                 skip_phrases = ["game story", "scores/highlights", "box score", "full game recap",
                                 "game recap", "final score"]
                 if any(sp in headline_lower for sp in skip_phrases):
+                    continue
+                # Synthesized recap headlines ("Jays fell to Phillies 7-4")
+                # duplicate the score ticker item - skip them here.
+                _tn = team_name.lower()
+                if headline_lower.startswith(_tn + " fell to") or headline_lower.startswith(_tn + " beat"):
                     continue
                 # Found a non-recap editorial headline ‚Äî truncate for ticker
                 # Ticker items should be under 60 chars
