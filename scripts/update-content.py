@@ -2809,7 +2809,7 @@ def build_draft_board(team_key, phase_info, team_info=None):
     # this list — see Section 0.9 freshness in validate_content.py.
     pre_draft_phases = (
         "eliminated", "season_ended", "deep_offseason", "offseason",
-        "pre_draft", "draft_free_agency", "combine_free_agency", "otas",
+        "pre_draft", "draft_free_agency", "combine_free_agency",
         "postseason_offseason",
     )
     if phase_id not in pre_draft_phases:
@@ -2947,7 +2947,24 @@ def build_draft_board(team_key, phase_info, team_info=None):
     return result
 
 
-def generate_lotl(team_key, verified_facts="", phase_info=None, team_info=None, recent=None, upcoming=None):
+# Section 0.23 (fe476e2 revival): boilerplate that must never ship in a LOTL.
+# These phrases are the tells of generic filler - they imply live competition
+# or stock front-office hand-waving for teams that are not playing.
+LOTL_BANNED_PHRASES = (
+    "every game now carrying real stakes for positioning",
+    "the question is how aggressively the front office moves",
+    "attention is turning to",
+    "the front office is stress-testing its board",
+)
+
+
+def _lotl_banned_hits(text):
+    """Return the banned boilerplate phrases present in text (case-insensitive)."""
+    plain = re.sub(r"<[^>]+>", "", text or "").lower()
+    return [p for p in LOTL_BANNED_PHRASES if p in plain]
+
+
+def generate_lotl(team_key, verified_facts="", phase_info=None, team_info=None, recent=None, upcoming=None, anchor_headlines=None):
     """Generate a Lay of the Land paragraph using Perplexity.
     verified_facts: pre-built string of ESPN-verified data that MUST be used for stats.
     phase_info: season phase context from detect_season_phase().
@@ -3000,7 +3017,15 @@ FORMATTING:
 - Use literal Unicode characters (NOT HTML entities): — for em dashes, – for en dashes, ’ for apostrophes. Do NOT output tokens like &mdash; &ndash; or &rsquo;.
 - Do NOT use markdown. No asterisks, no bullet points.
 - Do NOT include citation numbers like [1], [2], etc. Write clean prose with no reference markers.
-- Do NOT exceed 200 words."""
+- Do NOT exceed 200 words.
+
+BANNED BOILERPLATE (FORBIDDEN - these exact phrases and close variants):
+- "every game now carrying real stakes for positioning"
+- "the question is how aggressively the front office moves"
+- "Across the [league], attention is turning to..."
+- "the front office is stress-testing its board"
+- Never write a sentence that implies live competition for a team whose season is over.
+If real headlines are provided below, write about THOSE instead of generic offseason filler."""
 
     facts_block = ""
     if verified_facts:
@@ -3012,12 +3037,24 @@ FORMATTING:
 
 """
 
+    anchor_block = ""
+    if anchor_headlines:
+        _ah = [h.strip() for h in anchor_headlines if h and h.strip()][:4]
+        if _ah:
+            anchor_block = (
+                "=== TODAY'S REAL HEADLINES (verified outlets; the actual storylines) ===\n"
+                + "\n".join("- " + h for h in _ah)
+                + "\n=== END HEADLINES ===\n\n"
+                "ANCHOR RULE: Your column MUST engage with at least one of these real "
+                "headlines. They are anchor facts. Do not contradict them, and do not "
+                "write generic offseason filler when a real storyline exists above.\n\n"
+            )
     prompt = f"""Write today's "Lay of the Land" column for the {cfg['full_name']} as of the morning of {today_str}.
 
 SEASON PHASE: {phase_label}
 EDITORIAL DIRECTION: {editorial_dir}
 {facts_block}
-Search for the LATEST {cfg['full_name']} news ‚Äî key player performances, quotes, storylines, injuries, trades, or offseason moves from the LAST 48 HOURS. But for ALL statistics (record, standings, scores, streaks), use ONLY the verified facts above.
+{anchor_block}Search for the LATEST {cfg['full_name']} news ‚Äî key player performances, quotes, storylines, injuries, trades, or offseason moves from the LAST 48 HOURS. But for ALL statistics (record, standings, scores, streaks), use ONLY the verified facts above.
 
 CRITICAL CONSTRAINT: The VERIFIED FACTS section contains a PLAYOFF SERIES STATUS or SEASON STATUS field. You MUST respect it:
 - If it says "series has NOT started yet" ‚Äî do NOT write about any playoff game results. Write about the upcoming series, matchup analysis, and what to watch for.
@@ -3042,6 +3079,10 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
         candidate = perplexity_search(prompt, system_prompt)
         candidate = _clean_perplexity_prose(candidate)
         if is_perplexity_failure(candidate):
+            continue
+        _banned_hits = _lotl_banned_hits(candidate)
+        if _banned_hits:
+            print(f"  WARNING: {team_key} LOTL attempt {attempt+1} contains banned boilerplate {_banned_hits}; retrying")
             continue
         # Strip HTML tags for an accurate visible word count
         plain = re.sub(r'<[^>]+>', '', candidate)
@@ -3071,8 +3112,8 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
                 _pad.append(f"Around the {_league}, the offseason machinery is already whirring \u2014 front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario.")
                 _pad.append(f"For the {_cfg['full_name']}, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.")
             elif _league == "NHL":
-                _pad.append(f"Across the {_league}, attention is turning to offseason planning \u2014 draft prep, trade scenarios, and the kind of roster surgery that shapes the next window.")
-                _pad.append(f"For the {_cfg['full_name']}, the question is how aggressively the front office moves to retool around the core pieces already in place.")
+                _pad.append(f"The {_league} calendar has flipped to building season \u2014 draft prep, trade talks, and the roster surgery that shapes the next contending window.")
+                _pad.append(f"For the {_cfg['full_name']}, the work runs from the draft table to the trade market, and the choices made this summer will define the next window.")
             elif _league == "MLB":
                 _pad.append(f"Around the {_league}, the offseason transaction wire is heating up as clubs position themselves for the next competitive push.")
                 _pad.append(f"For the {_cfg['full_name']}, every front-office decision this winter will be measured against the trajectory of the rebuild and the development timeline of the young core.")
@@ -4273,7 +4314,8 @@ def build_data():
 
         # Generate LOTL via Perplexity WITH verified facts AND phase context
         print(f"  Generating Lay of the Land (phase: {phase_info['label']})...")
-        lotl_text = generate_lotl(team_key, verified_facts, phase_info, team_info, recent, upcoming)
+        _anchors = [a.get("headline", "") for a in all_team_articles.get(team_key, []) if a.get("headline")][:4]
+        lotl_text = generate_lotl(team_key, verified_facts, phase_info, team_info, recent, upcoming, anchor_headlines=_anchors)
 
         # === POST-GENERATION FACT-CHECK ===
         if lotl_text:
@@ -4294,8 +4336,8 @@ def build_data():
                     _pad.append(f"Around the {_league}, the offseason machinery is already whirring \u2014 front offices are mapping out draft boards, free-agent target lists are being quietly circulated, and cap projections are being stress-tested against every conceivable scenario.")
                     _pad.append(f"For the {_cfg['full_name']}, the conversation centers on which direction the rebuild takes next and whether the draft lottery delivers the kind of franchise-altering talent that can accelerate the timeline.")
                 elif _league == "NHL":
-                    _pad.append(f"Across the {_league}, attention is turning to offseason planning \u2014 draft prep, trade scenarios, and the kind of roster surgery that shapes the next window.")
-                    _pad.append(f"For the {_cfg['full_name']}, the question is how aggressively the front office moves to retool around the core pieces already in place.")
+                    _pad.append(f"The {_league} calendar has flipped to building season \u2014 draft prep, trade talks, and the roster surgery that shapes the next contending window.")
+                    _pad.append(f"For the {_cfg['full_name']}, the work runs from the draft table to the trade market, and the choices made this summer will define the next window.")
                 elif _league == "MLB":
                     _pad.append(f"Around the {_league}, the offseason transaction wire is heating up as clubs position themselves for the next competitive push.")
                     _pad.append(f"For the {_cfg['full_name']}, every front-office decision this winter will be measured against the trajectory of the rebuild and the development timeline of the young core.")

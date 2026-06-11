@@ -911,6 +911,16 @@ def check_cross_field_consistency(data: dict, r: Reporter) -> None:
             continue
         event_date = (db.get("event_date") or "").strip()
         recap = (db.get("recap") or db.get("post_draft_recap") or "").strip()
+        # Ghost boards: an event_date with no parseable year (e.g. "TBD")
+        # plus a placeholder projected_pick is an empty promo panel.
+        # Never ship it - either build a real board or omit it entirely.
+        _pick = (db.get("projected_pick") or "").strip()
+        if not re.search(r"\d{4}", event_date) and _pick.upper() in ("", "TBD", "N/A") and not recap:
+            draft_recency_violations.append(
+                f"{key}: draft_board is a placeholder ghost (event_date='{event_date or 'empty'}', "
+                f"projected_pick='{_pick or 'empty'}'). Hide the board or build a real one."
+            )
+            continue
         if not event_date:
             continue
         # Crude past-date check: if any 4-digit year is present and the
