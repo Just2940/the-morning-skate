@@ -86,7 +86,7 @@ body::before {
   padding: 32px 24px 0;
   border-bottom: 3px double var(--rule-dark);
   background: var(--warm-white);
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 200;
   overflow: hidden;
@@ -149,7 +149,7 @@ body::before {
   gap: 0;
   padding: 0;
   position: sticky;
-  top: 97px;
+  top: 0;
   z-index: 199;
   background: var(--warm-white);
   border-bottom: 1px solid var(--rule);
@@ -1393,7 +1393,7 @@ body::before {
 
 
   <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
-  <div class="watch-grid">
+  <div class="watch-grid" id="watch-leafs">
     <a href="https://www.youtube.com/results?search_query=Toronto+Maple+Leafs+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Latest Leafs Highlights</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Steve+Dangle+LFR+Maple+Leafs" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Steve Dangle &mdash; LFR Reactions</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Maple+Leafs+offseason+rebuild" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Leafs Offseason &amp; Rebuild Talk</div><div class="watch-sub">YouTube</div></div></a>
@@ -1459,7 +1459,7 @@ body::before {
 
 
   <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
-  <div class="watch-grid">
+  <div class="watch-grid" id="watch-jays">
     <a href="https://www.youtube.com/results?search_query=Toronto+Blue+Jays+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Latest Blue Jays Highlights</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Blue+Jays+game+recap" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Game Recaps</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Blue+Jays+analysis" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Blue Jays Analysis</div><div class="watch-sub">YouTube</div></div></a>
@@ -1523,7 +1523,7 @@ body::before {
 
 
   <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
-  <div class="watch-grid">
+  <div class="watch-grid" id="watch-raptors">
     <a href="https://www.youtube.com/results?search_query=Toronto+Raptors+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Latest Raptors Highlights</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Raptors+playoffs" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Raptors Playoffs Coverage</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Scottie+Barnes+highlights" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Scottie Barnes Highlights</div><div class="watch-sub">YouTube</div></div></a>
@@ -1587,7 +1587,7 @@ body::before {
 
 
   <div class="sec"><span class="sec-label">Watch</span><span class="sec-line"></span></div>
-  <div class="watch-grid">
+  <div class="watch-grid" id="watch-commanders">
     <a href="https://www.youtube.com/results?search_query=Washington+Commanders+NFL+Draft+preview" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Commanders Draft Preview</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Washington+Commanders+offseason" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Offseason Moves &amp; Analysis</div><div class="watch-sub">YouTube</div></div></a>
     <a href="https://www.youtube.com/results?search_query=Jayden+Daniels+Commanders" target="_blank" class="watch-card"><div class="watch-play yt">&#9654;</div><div class="watch-body"><div class="watch-title">Jayden Daniels Updates</div><div class="watch-sub">YouTube</div></div></a>
@@ -1790,6 +1790,17 @@ function renderWeekAhead(wa) {
 // === TEAM PANEL RENDERER ===
 
 function renderTeam(key, t) {
+  if (t.watch && t.watch.length) {
+    var _wg = document.getElementById('watch-' + key);
+    if (_wg) {
+      _wg.innerHTML = t.watch.map(function(w) {
+        return '<a href="' + escUrl(w.url) + '" target="_blank" class="watch-card">' +
+          '<div class="watch-play yt">&#9654;</div><div class="watch-body">' +
+          '<div class="watch-title">' + esc(w.title) + '</div>' +
+          '<div class="watch-sub">' + esc(w.sub || 'YouTube') + '</div></div></a>';
+      }).join('');
+    }
+  }
   if (!t) return;
 
   // Header - use textContent (safer, cheaper, no HTML needed)

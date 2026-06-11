@@ -362,8 +362,12 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
             # April-June: NHL playoff window.
             # CRITICAL: Only tag as "playoffs" if the team ACTUALLY qualified.
             # Use the clincher field as the definitive signal, NOT playoffSeed alone.
-            if has_clinched:
+            if has_clinched and (has_upcoming or last_game_days_ago <= 10):
                 return _phase("playoffs", league, cfg)
+            elif has_clinched:
+                # ESPN's clincher flag persists on FINAL standings all summer.
+                # Clinched + no upcoming games + stale last game = run is over.
+                return _phase("eliminated" if last_game_days_ago <= 21 else "season_ended", league, cfg)
             elif has_upcoming and has_recent_game:
                 # Has games but no playoff seed ‚Äî still in late regular season
                 return _phase("regular_season", league, cfg)
@@ -404,9 +408,13 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
         # CRITICAL: playoffSeed is a RANKING for all teams, not a qualification flag.
         # Only use has_clinched (positive clinch indicator) to determine playoff status.
         if month >= 4 and month <= 6:
-            if has_clinched:
+            if has_clinched and (has_upcoming or last_game_days_ago <= 10):
                 # Team qualified ‚Äî they're in the playoffs
                 return _phase("playoffs", league, cfg)
+            elif has_clinched:
+                # ESPN's clincher flag persists on FINAL standings all summer.
+                # Clinched + no upcoming games + stale last game = run is over.
+                return _phase("eliminated" if last_game_days_ago <= 21 else "season_ended", league, cfg)
             elif has_upcoming and has_recent_game:
                 # Has games but no playoff seed ‚Äî late regular season or play-in
                 return _phase("regular_season", league, cfg)
@@ -699,9 +707,9 @@ def is_perplexity_failure(text):
 
 
 def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_info):
-    """Section 0.29 fallback: rich 150+ word LOTL from ESPN facts alone when
-    Perplexity fails all 3 attempts. Weaves record, standing, streak, last-game
-    detail, top performer, and forward-look into a publishable paragraph."""
+    """Section 0.29 fallback: deterministic LOTL from ESPN facts when Perplexity
+    fails all attempts. PHASE-AWARE: never writes about a finished season as if
+    games are live, and contains zero banned boilerplate."""
     cfg = TEAMS[team_key]
     name = cfg["full_name"]
     short = name.split()[-1]
@@ -709,75 +717,83 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
     standing = team_info.get("standing_summary", "")
     phase_id = (phase_info or {}).get("phase", "")
     phase_lbl = (phase_info or {}).get("label", "")
-
-    parts = []
-
-    # --- Lead: last game + record (bold opener) ---
+    OVER = ("season_ended", "eliminated", "offseason", "deep_offseason",
+            "postseason_offseason", "pre_draft", "post_draft",
+            "draft_free_agency", "combine_free_agency", "otas")
+    is_over = phase_id in OVER
+    last_days = 999
     if recent:
-        g = recent[0]
-        result_word = "beat" if g.get("result") == "W" else "fell to"
+        try:
+            last_days = (NOW.replace(tzinfo=None) - datetime.strptime(
+                recent[0].get("game_date", ""), "%Y-%m-%d")).days
+        except Exception:
+            pass
+    parts = []
+    rec_txt = record or "the final horn"
+    if is_over:
         parts.append(
-            f"<strong>The {short} {result_word} the {g.get('opp_name', 'opponent')} "
-            f"{g.get('team_score', '')}-{g.get('opp_score', '')}</strong>, "
-            f"moving to {record or '--'} on the season."
+            f"<strong>The {short}' season is in the books at {rec_txt}</strong>, "
+            f"and the conversation has moved squarely to what comes next."
         )
-    elif "offseason" in phase_id or "draft" in phase_id or "ended" in phase_id:
-        parts.append(
-            f"<strong>The {short} finished {record or 'their season'}</strong>, "
-            f"and the page has officially turned to the offseason."
-        )
+        if recent and last_days <= 7:
+            g = recent[0]
+            rw = "a win over" if g.get("result") == "W" else "a loss to"
+            parts.append(
+                f"It ended with {rw} the {g.get('opp_name', '')}, "
+                f"{g.get('team_score', '')}-{g.get('opp_score', '')}."
+            )
+        if standing:
+            parts.append(f"They finished {standing.lower()} - a final placement that frames every decision this summer.")
+        if phase_id == "otas":
+            parts.append("OTAs and minicamp are where depth charts start to tilt - quiet June reps become real roles by August, and the coaching staff is sorting keepers from camp bodies right now.")
+        elif phase_id == "combine_free_agency":
+            parts.append("Free agency and the combine set the table now, and every visit, workout and signing hints at the roster the front office wants to field in the fall.")
+        elif phase_id == "training_camp":
+            parts.append("Training camp is the proving ground now, and the position battles underway will decide how this roster actually lines up when the games count.")
+        else:
+            parts.append("The work now runs through the draft table, the trade market and the cap sheet, and the bets made over the next few weeks will shape the roster that shows up to camp.")
+        parts.append("<strong>The next headline here comes from the front office, not the scoreboard.</strong>")
     else:
-        parts.append(f"The {short} sit at {record or '--'} as the week opens.")
-
-    # --- Standing context ---
-    if standing:
-        parts.append(f"They currently sit {standing.lower()}, with every game now carrying real stakes for positioning.")
-
-    # --- Streak context ---
-    if recent and len(recent) >= 2:
-        streak_type = recent[0].get("result")
-        streak_count = 0
-        for g in recent:
-            if g.get("result") == streak_type:
-                streak_count += 1
-            else:
-                break
-        if streak_count >= 2:
-            word = "wins" if streak_type == "W" else "losses"
-            parts.append(f"That extends a run of {streak_count} straight {word}, a stretch that will shape how the roster reads over the next few weeks.")
-        elif streak_count == 1 and streak_type == "W":
-            parts.append("The win snaps what had been a fluky stretch and gets the group back on track heading into the next set of games.")
-
-    # --- Scoreline detail + opponent flavor when we have 2+ games ---
-    if recent and len(recent) >= 2:
-        g2 = recent[1]
-        r2 = "beat" if g2.get("result") == "W" else "lost to"
-        parts.append(
-            f"Prior to that, the club {r2} the {g2.get('opp_name', '')}, "
-            f"{g2.get('team_score', '')}-{g2.get('opp_score', '')}, a game that gave the coaching staff real tape to work with."
-        )
-
-    # --- Phase-aware forward look ---
-    if phase_id.startswith("playoffs") or "playoff" in phase_id:
-        parts.append("The playoff picture is the whole story now, so every lineup tweak, every matchup decision, every minute carries postseason weight.")
-    elif "regular_season" in phase_id:
-        parts.append("There is still regular-season runway left, and the internal work on rotations, workload and matchups is just as important as the scoreboard.")
-    elif "pre_draft" in phase_id or "draft_free_agency" in phase_id:
-        parts.append("With the draft on the horizon, the front office is stress-testing its board and lining up the roster moves that will define the next competitive window.")
-    elif "offseason" in phase_id or "ended" in phase_id or "deep_offseason" in phase_id:
-        parts.append(f"{phase_lbl or 'The offseason'} is the backdrop now, which means contract decisions, development reports and coaching tweaks move to the front of the conversation.")
-    elif "spring_training" in phase_id or "training_camp" in phase_id or "preseason" in phase_id:
-        parts.append("Camp reps and depth-chart reads are the priority here, and the next few days will tell us a lot about how this group lines up when it counts.")
-
-    # --- Next game (bold closer) ---
-    if upcoming:
-        ng = upcoming[0]
-        parts.append(f"<strong>Next up: {ng.get('opp', 'TBD')} on {ng.get('day', 'TBD')} at {ng.get('time', 'TBD')}.</strong>")
-    elif "offseason" in phase_id or "draft" in phase_id or "ended" in phase_id:
-        parts.append("<strong>The next headline-worthy event here will come from the front office, not the scoreboard.</strong>")
-    else:
-        parts.append("<strong>The next game on the schedule will frame the conversation for the rest of the week.</strong>")
-
+        if recent and last_days <= 14:
+            g = recent[0]
+            result_word = "beat" if g.get("result") == "W" else "fell to"
+            parts.append(
+                f"<strong>The {short} {result_word} the {g.get('opp_name', 'opponent')} "
+                f"{g.get('team_score', '')}-{g.get('opp_score', '')}</strong>, "
+                f"moving to {record or '--'} on the season."
+            )
+        else:
+            parts.append(f"The {short} sit at {record or '--'} as the week opens.")
+        if standing:
+            parts.append(f"They sit {standing.lower()}, and the standings race sharpens a little every night.")
+        if recent and len(recent) >= 2:
+            streak_type = recent[0].get("result")
+            streak_count = 0
+            for g in recent:
+                if g.get("result") == streak_type:
+                    streak_count += 1
+                else:
+                    break
+            if streak_count >= 2:
+                word = "wins" if streak_type == "W" else "losses"
+                parts.append(f"That makes {streak_count} straight {word}, a stretch that is starting to define how this roster reads.")
+            g2 = recent[1]
+            r2 = "beat" if g2.get("result") == "W" else "lost to"
+            parts.append(
+                f"Before that, the club {r2} the {g2.get('opp_name', '')} "
+                f"{g2.get('team_score', '')}-{g2.get('opp_score', '')}."
+            )
+        if phase_id.startswith("playoffs"):
+            parts.append("The playoffs set the stakes now, and every lineup call carries postseason weight.")
+        elif "regular_season" in phase_id:
+            parts.append("There is runway left in the schedule, and the work on rotations and matchups matters as much as the scoreboard.")
+        elif phase_id in ("spring_training", "preseason"):
+            parts.append("Camp reps and depth-chart reads are the story, and the next week will say a lot about how this group lines up when it counts.")
+        if upcoming:
+            ng = upcoming[0]
+            parts.append(f"<strong>Next up: {ng.get('opp', 'TBD')} on {ng.get('day', 'TBD')} at {ng.get('time', 'TBD')}.</strong>")
+        else:
+            parts.append("<strong>The schedule turns over quickly here - the next result will reset the conversation.</strong>")
     return " ".join(parts)
 
 
@@ -938,7 +954,7 @@ def get_team_schedule(team_key):
                     "name": cfg["full_name"].split()[-1],  # "Leafs", "Jays", etc.
                     "opp": f"{home_away} {opp_name}",
                     "time": f"{time_str} ET" if time_str else "TBD",
-                    "tv": broadcast or "TBD",
+                    "tv": broadcast or "",
                     "game_date": game_date,
                 })
 
@@ -2340,19 +2356,34 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
         facts.append(f"STANDING: {standing}")
 
     # Standings details
+    over_phases = ("season_ended", "eliminated", "offseason", "deep_offseason",
+                   "postseason_offseason", "pre_draft", "post_draft",
+                   "draft_free_agency", "combine_free_agency", "otas")
+    season_over = bool(phase_info) and phase_info.get("phase", "") in over_phases
+    if season_over:
+        facts.append("SEASON STATUS: This team's season is OVER. Every stat below is FINAL. "
+                     "Do NOT write about streaks, standings, seeds, or games as current or live events.")
     if standings:
         if "streak" in standings:
-            facts.append(f"STREAK: {standings['streak']}")
+            facts.append((f"FINAL SEASON STREAK (how the season ENDED): {standings['streak']}")
+                         if season_over else (f"STREAK: {standings['streak']}"))
         if "points" in standings:
             facts.append(f"POINTS: {standings['points']}")
         if "gamesBack" in standings:
-            facts.append(f"GAMES BACK: {standings['gamesBack']}")
+            facts.append((f"FINAL GAMES BACK: {standings['gamesBack']}") if season_over
+                         else (f"GAMES BACK: {standings['gamesBack']}"))
         if "gamesBehind" in standings:
-            facts.append(f"GAMES BEHIND: {standings['gamesBehind']}")
+            facts.append((f"FINAL GAMES BEHIND: {standings['gamesBehind']}") if season_over
+                         else (f"GAMES BEHIND: {standings['gamesBehind']}"))
         if "clincher" in standings:
             facts.append(f"CLINCH STATUS: {standings['clincher']}")
         if "playoffSeed" in standings:
-            facts.append(f"PLAYOFF SEED: {standings['playoffSeed']}")
+            # Seeds: only meaningful for actual qualifiers, never for MLB
+            # (no such thing as an 8-seed in baseball), never once a season
+            # is over. ESPN assigns a "seed" ranking to EVERY team.
+            _cl = str(standings.get("clincher", "")).lower().strip()
+            if (not season_over) and _cl and "e" not in _cl and TEAMS[team_key]["league"] != "MLB":
+                facts.append(f"PLAYOFF SEED: {standings['playoffSeed']}")
 
     # Recent results ‚Äî only include if they're actually recent
     if recent:
@@ -2393,7 +2424,9 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
     record_stats = team_info.get("record_stats", {})
     if record_stats:
         # Check for playoff elimination or clinch
-        if record_stats.get("playoffSeed"):
+        if (record_stats.get("playoffSeed") and not season_over
+                and "playoffs" in (phase_info or {}).get("phase", "")
+                and TEAMS[team_key]["league"] != "MLB"):
             facts.append(f"PLAYOFF SEED: {record_stats['playoffSeed']}")
 
     # Explicit playoff series status from actual game data (CRITICAL for preventing hallucination)
@@ -2452,6 +2485,62 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
     return "\n".join(facts)
 
 
+def build_watch_cards(team_key, phase_info, draft_board=None):
+    """Phase-aware YouTube watch cards. Replaces the static cards that were
+    still advertising 'Commanders Draft Preview' seven weeks after the draft."""
+    from urllib.parse import quote_plus
+    cfg = TEAMS[team_key]
+    name = cfg["full_name"]
+    short = name.split()[-1]
+    league = cfg["league"]
+    year = NOW.year
+    phase_id = (phase_info or {}).get("phase", "")
+
+    def yt(q):
+        return "https://www.youtube.com/results?search_query=" + quote_plus(q)
+
+    over = phase_id in ("season_ended", "eliminated", "offseason", "deep_offseason",
+                        "postseason_offseason", "pre_draft", "post_draft",
+                        "draft_free_agency", "combine_free_agency", "otas")
+    if league == "NFL" and phase_id in ("otas", "post_draft", "training_camp"):
+        cards = [
+            (f"{short} Minicamp & OTAs", yt(f"{name} minicamp OTAs {year}")),
+            (f"{short} Roster Battles", yt(f"{name} roster battles {year}")),
+            (f"{short} Rookie Watch", yt(f"{name} rookie highlights {year}")),
+            (f"{short} Camp Preview", yt(f"{name} training camp preview {year}")),
+        ]
+    elif over and league in ("NHL", "NBA"):
+        cards = [
+            (f"{short} Draft Coverage", yt(f"{name} {league} draft {year}")),
+            (f"{short} Offseason Plans", yt(f"{name} offseason plan {year}")),
+            (f"{short} Trade & FA Rumors", yt(f"{name} trade rumors free agency {year}")),
+            (f"Latest {short} News", yt(f"{name} news this week")),
+        ]
+        top = ""
+        if draft_board:
+            try:
+                top = (draft_board.get("prospects_watched") or [{}])[0].get("name") or ""
+            except Exception:
+                top = ""
+        if top and top != "TBD":
+            cards[1] = (f"Prospect Watch: {top}", yt(f"{top} highlights"))
+    elif over:
+        cards = [
+            (f"{short} Offseason News", yt(f"{name} offseason {year}")),
+            (f"{short} Top Plays", yt(f"{name} top plays")),
+            (f"{short} Trade Rumors", yt(f"{name} trade rumors {year}")),
+            (f"Latest {short} News", yt(f"{name} news this week")),
+        ]
+    else:
+        cards = [
+            (f"Latest {short} Highlights", yt(f"{name} highlights")),
+            (f"{short} Game Recaps", yt(f"{name} game recap {year}")),
+            (f"{short} Analysis & Reaction", yt(f"{name} analysis this week")),
+            (f"Around the {league}", yt(f"{league} top plays this week")),
+        ]
+    return [{"title": t, "url": u, "sub": "YouTube"} for t, u in cards]
+
+
 def build_key_numbers(team_key, team_info, standings, recent, phase_info=None):
     """Generate 4 key numbers from verified ESPN data.
 
@@ -2500,8 +2589,12 @@ def build_key_numbers(team_key, team_info, standings, recent, phase_info=None):
     elif league == "NBA":
         # Use playoff seed if available, else conference rank
         seed = standings.get("playoffSeed", "")
-        if seed and str(seed) != "0":
-            numbers.append({"number": f"#{seed}", "label": "Playoff Seed", "note": standing_summary or ""})
+        _cl = str(standings.get("clincher", "")).lower().strip()
+        _made_playoffs = bool(_cl) and "e" not in _cl
+        if seed and str(seed) != "0" and _made_playoffs:
+            numbers.append({"number": f"#{seed}",
+                            "label": "Final Seed" if is_offseason else "Playoff Seed",
+                            "note": standing_summary or ""})
         else:
             ppg = standings.get("avgPointsFor", "")
             if ppg:
@@ -2638,10 +2731,13 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             if days_since <= 14:
                 g = recent[0]
                 result_word = "beat" if g["result"] == "W" else "fell to"
+                _s1, _s2 = g["team_score"], g["opp_score"]
+                if g["result"] == "L":
+                    _s1, _s2 = _s2, _s1  # winner-first score order on losses
                 ticker_items.append({
                     "badge": league,
                     "badge_style": badge_style,
-                    "text": f"{team_name} {result_word} {g['opp_name']} {g['team_score']}–{g['opp_score']}"
+                    "text": f"{team_name} {result_word} {g['opp_name']} {_s1}-{_s2}"
                 })
 
         # Record + standing
@@ -3000,13 +3096,13 @@ def build_draft_board(team_key, phase_info, team_info=None):
     if league == "NHL":
         lot = result.get("lottery") or {}
         if lot.get("odds") and lot.get("odds") != "TBD":
-            notes_bits.append(f"<strong>Lottery odds:</strong> {lot['odds']}")
+            notes_bits.append(f"Lottery odds: {lot['odds']}")
         if lot.get("outcome") and lot.get("outcome") != "Pending":
-            notes_bits.append(f"<strong>Outcome:</strong> {lot['outcome']}")
+            notes_bits.append(f"Outcome: {lot['outcome']}")
     else:
         rp = result.get("remaining_picks") or []
         if rp:
-            notes_bits.append(f"<strong>Remaining picks:</strong> {', '.join(rp[:6])}")
+            notes_bits.append(f"Remaining picks: {', '.join(rp[:6])}")
     result["notes"] = " \u00b7 ".join(notes_bits)
 
     return result
@@ -4462,14 +4558,27 @@ def build_data():
         # Build key numbers from ESPN data — pass phase so off-season teams get
         # "Final " prefixed labels (Streak/Games Back/Last 4) instead of looking
         # like live, stale data.
+        # Resolve record BEFORE key numbers: ESPN returns no record for NFL
+        # teams in the offseason, which was silently dropping the Record card
+        # and blanking the at-a-glance card.
+        existing_team = existing.get("teams", {}).get(team_key, {})
+        record = team_info.get("record", "") or existing_team.get("record", "")
+        standing_summary = team_info.get("standing_summary", "") or existing_team.get("detail", "")
+        if record and not team_info.get("record"):
+            team_info = dict(team_info)
+            team_info["record"] = record
         key_numbers = build_key_numbers(team_key, team_info, standings, recent, phase_info)
 
-        # Use existing data as fallback ONLY for fields ESPN couldn't provide
-        existing_team = existing.get("teams", {}).get(team_key, {})
-
-        # Record comes from ESPN now, not fallback
-        record = team_info.get("record", existing_team.get("record", ""))
-        standing_summary = team_info.get("standing_summary", existing_team.get("detail", ""))
+        # Final guard: no banned boilerplate ships, no matter which path
+        # (Perplexity, fallback, padding) produced the prose.
+        if lotl_text:
+            _final_hits = _lotl_banned_hits(lotl_text)
+            if _final_hits:
+                print(f"  WARNING: scrubbing banned boilerplate from {team_key} LOTL: {_final_hits}")
+                _sents = re.split(r'(?<=[.!?]) +', lotl_text)
+                _kept = [x for x in _sents if not _lotl_banned_hits(x)]
+                if _kept:
+                    lotl_text = " ".join(_kept)
 
         team_entry = {
             "full_name": cfg["full_name"],
@@ -4495,6 +4604,9 @@ def build_data():
         draft_board = build_draft_board(team_key, phase_info, team_info)
         if draft_board:
             team_entry["draft_board"] = draft_board
+
+        # Phase-aware Watch cards (rendered by index.html when present)
+        team_entry["watch"] = build_watch_cards(team_key, phase_info, draft_board)
 
         # Build full standings tables from ESPN API (replaces stale existing data)
         print(f"  Building standings tables...")
@@ -4526,7 +4638,8 @@ def build_data():
         # Set section label based on phase ‚Äî eliminated/offseason get "Offseason Intel"
         phase_id_label = phase_info.get("phase", "")
         if phase_id_label in ("eliminated", "season_ended", "offseason", "deep_offseason",
-                               "draft_free_agency", "pre_draft", "combine_free_agency"):
+                               "draft_free_agency", "pre_draft", "combine_free_agency",
+                               "otas", "post_draft", "postseason_offseason", "training_camp"):
             team_entry["the_latest_label"] = "Offseason Intel"
         else:
             team_entry["the_latest_label"] = "The Latest"
@@ -4585,8 +4698,8 @@ def build_data():
         recent = facts.get("recent", [])
         upcoming = facts.get("upcoming", [])
         standings_info = facts.get("standings", {})
-        record = ti.get("record", "")
-        standing = ti.get("standing_summary", "")
+        record = ti.get("record", "") or teams_data.get(team_key, {}).get("record", "")
+        standing = ti.get("standing_summary", "") or teams_data.get(team_key, {}).get("detail", "")
 
         # Determine if team is in-season using PHASE detection (fixes playoff gap issue)
         phase_info = facts.get("phase_info", {})
