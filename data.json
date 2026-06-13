@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-06-12T07:16:01.628729-05:00",
-    "date_display": "June 12, 2026"
+    "updated": "2026-06-13T06:11:34.546345-05:00",
+    "date_display": "June 13, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The season ended not with a bang but with a long, flat thud - a club that could not find traction, could not find answers, and finished 32-36-14, eighth in the Atlantic, 31 points adrift and buried under a seven-game skid. <strong>The real news is behind the bench, where the Maple Leafs' coaching vacancy has already started to draw interest, with Joe Pavelski confirming he'd listen to the opening.</strong> That tells you everything about where this organization stands: the winter's work is done, the roster needs a harder edge, and the next move has to be smarter than the last. There are bright threads in the wreckage - the scouting combi ne chatter is already centering on the draft, and the Maple Leafs will need every useful opinion they can gather - but this is still a team that bled too many points and never climbed out of its own hole. The head coach search will shape the summer, and so will the call on young goaltending, with Artur Akhtyamov drawing notice in the system. <strong>What happens next - bench hire, draft board, and whether Toronto can finally choose a clear identity - will define the offseason.</strong>",
-        "updated": "Updated June 12, 2026"
+        "body": "The Toronto Maple Leafs didn't just slip; they collapsed under the weight of a seven-game losing streak, ending a fractured season with a bleak 32-36-14 record and a final 78 points. Sitting 8th in the Atlantic Division, 31 points behind the playoff line, the team's identity evaporated long before the final buzzer. Now, the roster is a question mark, and the coaching vacancy is the season's most urgent cliffhanger - <strong>Pavelski confirms interest in the Maple Leafs head coach opening</strong>, signaling a potential shift toward veteran leadership. While no key player thread dominates the narrative right now, the collective fatigue is palpable, and the front office faces a brutal free-agency overhaul. The draft looms as a rare chance to rebuild, with <strong>Bourne: Why Gavin McKenna is right pick for Maple Leafs at No. 1</strong> hinting at a strategic pivot toward youth. <strong>The offseason begins with a clear mandate: rebuild the core, retool the coaching staff, and turn the draft into a lifeline.</strong>",
+        "updated": "Updated June 13, 2026"
       },
       "key_numbers": [
         {
@@ -44,24 +44,24 @@
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Pavelski confirms interest in Maple Leafs head coach opening",
-          "dek": "A familiar name has surfaced in Toronto's coaching search, adding an unexpected twist to a job the Maple Leafs need to get right after a disappointing season. Any serious interest from a candidate with no bench experience would signal how wide the club is casting its net as it",
-          "date": "June 11, 2026",
-          "link": "https://www.sportsnet.ca/nhl/article/pavelski-confirms-interest-in-maple-leafs-head-coach-opening/"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
           "headline": "Scout's Analysis: Looking at Artur Akhtyamov ahead of Calder Cup Finals",
-          "dek": "Artur Akhtyamov's playoff surge gives the Marlies a timely boost as they chase the Calder Cup, and it also adds pressure to a Toronto depth chart that needs certainty in goal. Jason Bukala's analysis matters now because strong AHL play can turn a prospect into an offseason",
+          "dek": "Artur Akhtyamov's playoff surge gives the Marlies a timely boost as they enter the Calder Cup Finals with a chance to cap the season with a championship run. For Toronto, the scout's read matters because strong play in net could move a young goalie from prospect status into the",
           "date": "June 11, 2026",
           "link": "https://www.sportsnet.ca/ahl/article/scouts-analysis-looking-at-artur-akhtyamov-ahead-of-calder-cup-final/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
+          "headline": "Overheard at the NHL scouting combine: Draft, prospects, trade buzz",
+          "dek": "With the Maple Leafs coming off a disappointing finish, the scouting combine is where front-office clues start to matter most for a team trying to retool its future. Any draft or trade chatter tied to Toronto could point to how aggressively it plans to reshape the roster after",
+          "date": "June 10, 2026",
+          "link": "https://www.espn.com/nhl/story/_/id/49011258/nhl-2026-draft-scouting-combine-top-prospects-players-testing-interviews-trades"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
           "headline": "Ranking every dog name and pun from the 2026 'Stanley Pup'",
-          "dek": "The Stanley Pup has become a lighthearted NHL crossover that still serves a real purpose by spotlighting 32 adoptable rescue dogs. For Maple Leafs fans, it is a rare postseason-adjacent story that offers some relief after a 32-36-14 season and keeps the league conversation alive",
+          "dek": "The NHL's annual rescue-dog showcase gives the league a lighthearted offseason moment and turns a niche dog show into a broader charity platform. For Maple Leafs fans, it is a rare chance to keep a hockey connection alive while the team's season is already finished and attention",
           "date": "June 8, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/48994598/nhl-stanley-cup-2026-dog-names-puns"
         }
@@ -414,45 +414,45 @@
         "team": "Toronto Maple Leafs",
         "league": "NHL",
         "projected_pick": "TBD",
-        "draft_date": "June 27-28, 2026",
+        "draft_date": "June 26-27, 2026",
         "prospects_watched": [
           {
             "name": "Gavin McKenna",
-            "position": "Left wing",
-            "team": "Medicine Hat Tigers (WHL)",
-            "note": "The consensus top player in the 2026 class, but Toronto would only be in range if it wins the lottery or trades into the very top of the board."
+            "position": "LW",
+            "team": "Medicine Hat Tigers",
+            "note": "Elite offensive talent who would be the clear best-player-available target if Toronto lands a high pick."
           },
           {
-            "name": "Ivar Stenberg",
-            "position": "Center",
-            "team": "Frölunda HC (J20/SHL)",
-            "note": "A high-end skill and playmaking option who fits the kind of premium offensive talent Toronto would target if it ends up with an early first-round pick."
+            "name": "Keaton Verhoeff",
+            "position": "RHD",
+            "team": "Prince Albert Raiders",
+            "note": "A premium right-shot defense prospect who fits a club looking to add long-term blue-line upside."
           },
           {
             "name": "Chase Reid",
-            "position": "Defense",
-            "team": "TBD",
-            "note": "A rising blue-line prospect who has appeared in recent mock-draft chatter and would fit Toronto's need to keep adding young defense talent."
+            "position": "D",
+            "team": "OHL",
+            "note": "A high-scoring defenseman who has been mentioned among the top 2026 prospects and would fit a value-driven first-round board."
           },
           {
-            "name": "Alberts Smits",
-            "position": "Defense",
-            "team": "TBD",
-            "note": "A frequently mentioned name in 2026 draft previews and mock-draft discussion, with size and upside that could appeal to Toronto's scouting staff."
+            "name": "Lincoln Kuehne",
+            "position": "F",
+            "team": "NCAA",
+            "note": "A recent mock-draft favorite in public scouting lists, offering forward skill and development upside."
           },
           {
-            "name": "Jonas Woo",
-            "position": "Defense",
-            "team": "TBD",
-            "note": "A later-board defender whose rise in public rankings makes him a plausible target if Toronto is selecting in the middle or late first round."
+            "name": "Landon Hafele",
+            "position": "F",
+            "team": "NCAA",
+            "note": "Another recent mock-draft name for the 2026 class who could fit Toronto if the board shifts toward skill forwards."
           }
         ],
         "lottery": {
           "odds": "TBD",
-          "outcome": "Pending"
+          "outcome": "TBD"
         },
         "label": "NHL Draft Board",
-        "event_date": "June 27-28, 2026",
+        "event_date": "June 26-27, 2026",
         "pick_position": "TBD",
         "headers": [
           "Rank",
@@ -463,41 +463,41 @@
         "rows": [
           {
             "pk": "1",
-            "team": "Gavin McKenna (Left wing)",
+            "team": "Gavin McKenna (LW)",
             "league": "NHL",
-            "pts": "Medicine Hat Tigers (WHL)",
-            "odds": "The consensus top player in the 2026 class, but Toronto would only be in range if it wins the lottery or trades into the very top of the board."
+            "pts": "Medicine Hat Tigers",
+            "odds": "Elite offensive talent who would be the clear best-player-available target if Toronto lands a high pick."
           },
           {
             "pk": "2",
-            "team": "Ivar Stenberg (Center)",
+            "team": "Keaton Verhoeff (RHD)",
             "league": "NHL",
-            "pts": "Frölunda HC (J20/SHL)",
-            "odds": "A high-end skill and playmaking option who fits the kind of premium offensive talent Toronto would target if it ends up with an early first-round pick."
+            "pts": "Prince Albert Raiders",
+            "odds": "A premium right-shot defense prospect who fits a club looking to add long-term blue-line upside."
           },
           {
             "pk": "3",
-            "team": "Chase Reid (Defense)",
+            "team": "Chase Reid (D)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "A rising blue-line prospect who has appeared in recent mock-draft chatter and would fit Toronto's need to keep adding young defense talent."
+            "pts": "OHL",
+            "odds": "A high-scoring defenseman who has been mentioned among the top 2026 prospects and would fit a value-driven first-round board."
           },
           {
             "pk": "4",
-            "team": "Alberts Smits (Defense)",
+            "team": "Lincoln Kuehne (F)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "A frequently mentioned name in 2026 draft previews and mock-draft discussion, with size and upside that could appeal to Toronto's scouting staff."
+            "pts": "NCAA",
+            "odds": "A recent mock-draft favorite in public scouting lists, offering forward skill and development upside."
           },
           {
             "pk": "5",
-            "team": "Jonas Woo (Defense)",
+            "team": "Landon Hafele (F)",
             "league": "NHL",
-            "pts": "TBD",
-            "odds": "A later-board defender whose rise in public rankings makes him a plausible target if Toronto is selecting in the middle or late first round."
+            "pts": "NCAA",
+            "odds": "Another recent mock-draft name for the 2026 class who could fit Toronto if the board shifts toward skill forwards."
           }
         ],
-        "notes": ""
+        "notes": "Outcome: TBD"
       },
       "watch": [
         {
@@ -526,26 +526,26 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "33-36",
+      "record": "34-36",
       "detail": "3rd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Jays have spent the week getting punched by a good Phillies club, and the bruise shows - <strong>the 7-4 loss on June 10 dropped Toronto to 33-36 and left them third in the AL East, nine games back</strong>. That's the hard truth of it: a team with some fight, but not enough clean innings, not enough timely hitting, and too much room between its ceiling and the division pace. They did answer once, beating Philadelphia 3-2 on June 9, but the split in those three games only underlined how fragile the margin is for a club sitting at -1.5 on the run line and carrying a one-game skid. The bright spot has been the bullpen's fresh life, with Varland surfacing as a real power arm - velo and bite, the kind of stuff that can stabilize a shaky staff if the command holds. Toronto now turns straight to the Yankees tonight in the Bronx, and that is the kind of game that tells you whether this season still has some climb left in it or just more grumbling ahead. <strong>First pitch is 6:37 p.m. ET - and the Jays need a sharp start badly.</strong>",
-        "updated": "Updated June 12, 2026"
+        "body": "The Toronto Blue Jays aren't just surviving the AL East grind; they're clawing back into contention with a fierce, 8-5 demolition of their archrivals. <strong>That 8-5 victory over the Yankees on June 12 is the team's most vital recent spark, turning a 34-36 record and third-place standing into a genuine W1 streak that whispers \"contender\" again.</strong> Eight games behind the division lead, Kirk's triumphant return to the lineup is the story right now - his clutch hitting proving indispensable to the Jays' trajectory and lifting the team's morale after a shaky three-game split with the Phillies. The bullpen, once a liability, held firm, while the offense exploded for eight runs, silencing doubts about their power. With the streak building and Kirk back in the fold, the Jays are finally playing with the edge of a team that believes it can win the East. <strong>Now, all eyes turn to Saturday's 2:07 PM ET showdown with the Yankees at home, where a win could tighten the division race and push the Blue Jays even closer to the top.</strong> This isn't just a game; it's a chance to seize momentum and prove they're still in the hunt.",
+        "updated": "Updated June 13, 2026"
       },
       "key_numbers": [
         {
-          "number": "33-36",
+          "number": "34-36",
           "label": "Season Record",
           "note": "3rd in AL East"
         },
         {
-          "number": "L1",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "9",
+          "number": "8",
           "label": "Games Back",
           "note": "3rd in AL East"
         },
@@ -556,6 +556,17 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Jun 12",
+          "result": "W",
+          "team_score": 8,
+          "opp_name": "Yankees",
+          "opp_score": 5,
+          "opp_logo": "nyy",
+          "league": "mlb",
+          "game_date": "2026-06-12",
+          "game_id": "401815723"
+        },
         {
           "date": "Jun 10",
           "result": "L",
@@ -588,52 +599,49 @@
           "league": "mlb",
           "game_date": "2026-06-08",
           "game_id": "401815675"
-        },
-        {
-          "date": "Jun 7",
-          "result": "W",
-          "team_score": 6,
-          "opp_name": "Orioles",
-          "opp_score": 4,
-          "opp_logo": "bal",
-          "league": "mlb",
-          "game_date": "2026-06-07",
-          "game_id": "401815658"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Phillies vs. Jays - Full Highlights",
-        "subtitle": "MLB - Jun 10, 2026",
-        "result_badge": "L 4-7",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=bppek_EbrSQ",
-        "game_date": "2026-06-10"
+        "title": "Yankees vs. Jays - Full Highlights",
+        "subtitle": "MLB - Jun 12, 2026",
+        "result_badge": "W 8-5",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=Ietyd8bCZeQ",
+        "game_date": "2026-06-12"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
+          "headline": "Jays beat Yankees 8-5",
+          "dek": "Toronto's win gave a struggling club a needed lift against the division leader, trimming the gap in the AL East and making the series more meaningful for both teams. The Jays also got offense from key return and power bats, a sign their lineup can still swing a game even while",
+          "date": "Jun 12",
+          "link": "https://www.espn.com/mlb/recap?gameId=401815723"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Kirk's triumphant return shows his importance to Blue Jays' trajectory",
+          "dek": "Alejandro Kirk's return gives Toronto a steadier spine behind the plate, and that matters for a club trying to climb back into the AL East race from third place. His presence helps the Blue Jays play the way they were built to, with better sequencing, control, and confidence in",
+          "date": "June 12, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/kirks-triumphant-return-shows-his-importance-to-blue-jays-trajectory/"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
           "headline": "Jays fell to Phillies 7-4",
-          "dek": "The Phillies' 7-4 victory extends Toronto's recent struggles, dropping the Blue Jays to 33-36 and cementing their precarious third-place grip in the AL East. This loss halts any momentum toward a top-tier finish, forcing the Jays to address critical inconsistencies before the",
+          "dek": "Toronto's offense didn't carry over from its Friday win over New York, leaving the club still searching for the consistency needed to climb back in the AL East race. At 34-36 and third in the division, every series now carries added weight as the Blue Jays try to stop the slide",
           "date": "Jun 10",
           "link": "https://www.espn.com/mlb/recap?gameId=401815701"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "How Blue Jays' Yesavage has remained rock solid despite stylistic change",
-          "dek": "Trey Yesavage's early big-league performance matters because the Blue Jays need dependable arms as they try to climb out of a sub-.500 start and keep pace in the AL East. The intriguing part is that he has stayed effective even after changing how he gets hitters out, giving",
-          "date": "June 11, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/how-blue-jays-yesavage-has-remained-rock-solid-despite-stylistic-change/"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Jays beat Phillies 3-2",
-          "dek": "A narrow win over a playoff-caliber Phillies club gives Toronto a needed lift as it tries to steady a season that has slipped below.500. The result can help reset the tone for a team sitting third in the AL East and searching for more consistency in the stretch before summer",
-          "date": "Jun 9",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815686"
+          "headline": "Blue Jays' Okamoto crushes a moonshot homer into the 500s",
+          "dek": "Kazuma Okamoto's 500-foot moonshot against the Yankees marks a historic breakout for the rookie, instantly shifting the momentum in Toronto's favor. This dominant display of power underscores the Blue Jays' rising potential as they chase a playoff spot in the AL East.",
+          "date": "June 12, 2026",
+          "link": "https://www.sportsnet.ca/mlb/video/blue-jays-okamoto-crushes-a-moonshot-homer-into-the-500s/"
         }
       ],
       "standings": {
@@ -658,8 +666,8 @@
                 "you": false,
                 "vals": [
                   "40",
-                  "25",
-                  ".615",
+                  "26",
+                  ".606",
                   "-"
                 ]
               },
@@ -670,8 +678,8 @@
                 "you": false,
                 "vals": [
                   "41",
-                  "26",
-                  ".612",
+                  "27",
+                  ".603",
                   "-"
                 ]
               },
@@ -681,10 +689,10 @@
                 "league": "mlb",
                 "you": true,
                 "vals": [
-                  "33",
+                  "34",
                   "36",
-                  ".478",
-                  "9"
+                  ".486",
+                  "8"
                 ]
               },
               {
@@ -693,10 +701,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "33",
+                  "34",
                   "37",
-                  ".471",
-                  "9.5"
+                  ".479",
+                  "8.5"
                 ]
               },
               {
@@ -705,10 +713,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "27",
+                  "28",
                   "39",
-                  ".409",
-                  "13.5"
+                  ".418",
+                  "12.5"
                 ]
               }
             ]
@@ -732,9 +740,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "36",
+                  "37",
                   "31",
-                  ".537",
+                  ".544",
                   "-"
                 ]
               },
@@ -747,8 +755,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "40",
-                  "25",
-                  ".615",
+                  "26",
+                  ".606",
                   "-"
                 ]
               },
@@ -760,9 +768,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "36",
+                  "37",
                   "34",
-                  ".514",
+                  ".521",
                   "-"
                 ]
               },
@@ -774,8 +782,8 @@
                 "seed": "WC1",
                 "vals": [
                   "41",
-                  "26",
-                  ".612",
+                  "27",
+                  ".603",
                   "-"
                 ]
               },
@@ -786,23 +794,10 @@
                 "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "37",
+                  "38",
                   "33",
-                  ".529",
+                  ".535",
                   "0.5"
-                ]
-              },
-              {
-                "team": "Rangers",
-                "logo": "tex",
-                "league": "mlb",
-                "you": false,
-                "seed": "WC3",
-                "vals": [
-                  "34",
-                  "34",
-                  ".500",
-                  "1"
                 ]
               },
               {
@@ -810,12 +805,25 @@
                 "logo": "ath",
                 "league": "mlb",
                 "you": false,
+                "seed": "WC3",
+                "vals": [
+                  "34",
+                  "35",
+                  ".493",
+                  "2"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "33",
+                  "34",
                   "35",
-                  ".485",
+                  ".493",
                   "2"
                 ]
               },
@@ -827,10 +835,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "33",
+                  "34",
                   "36",
-                  ".478",
-                  "9"
+                  ".486",
+                  "8"
                 ]
               },
               {
@@ -841,10 +849,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "33",
+                  "34",
                   "37",
-                  ".471",
-                  "9.5"
+                  ".479",
+                  "8.5"
                 ]
               },
               {
@@ -855,9 +863,9 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "31",
+                  "32",
                   "39",
-                  ".443",
+                  ".451",
                   "6.5"
                 ]
               },
@@ -869,9 +877,9 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "31",
+                  "32",
                   "39",
-                  ".443",
+                  ".451",
                   "5"
                 ]
               }
@@ -910,8 +918,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The season ended with a hard, honest number attached to it - 46-36, good for third in the Atlantic Division - and now the Raptors are being judged less on what they won than on what still needs fixing. <strong>The most meaningful development is Bobby Webster's long-term extension, a clear signal that ownership is committing to his vision</strong>, and that matters because this roster is entering a summer where the margins will decide everything. The final record says this club was sturdy, not scary; competitive, not complete. There were enough wins to avoid panic, but not enough force to make anyone in the East flinch. Darko Rajakovic's future is already being tied to a possible new contract, which tells you the organization wants continuity, not another reboot. That is sensible - provided the front office can turn continuity into edge. The next order of business is blunt: sharpen the draft board, evaluate the cap sheet, and decide which pieces fit a team that finished 10 games behind the pace it needed. <strong>What matters now is whether Toronto uses this offseason to add real bite, or simply repackage the same middle-of-the-road roster</strong>.",
-        "updated": "Updated June 12, 2026"
+        "body": "The season didn't end with a parade, but it did end with a pulse - and that matters in Toronto. <strong>Bobby Webster's long-term extension is the day's defining move</strong>, a clear signal that the Raptors are choosing continuity after a 46-36 finish that left them third in the Atlantic Division, respectable on paper and still short of the standard that once made this place a nuisance in the East. The numbers tell the story: 5.0 points, 10 games behind, and a club that finished with a W1 streak but never truly found a sustainable gear. That is the burden now - sort out which pieces fit the next climb, whether the coaching seat needs to be adjusted, and how much of the current core deserves to be carried forward. The headlines about OG Anunoby's clutch moments and the franchise's greatest playoff comebacks only sharpen the point: this market remembers nerves of steel, not merely decent records. <strong>What comes next is harder and more important - the offseason decisions that will decide whether 46 wins was a plateau or a launchpad</strong>.",
+        "updated": "Updated June 13, 2026"
       },
       "key_numbers": [
         {
@@ -943,16 +951,16 @@
         {
           "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "Raptors could soon reward Darko Rajakovic with new contract extension",
-          "dek": "With Bobby Webster's extension now set, Toronto's front office is signaling continuity by turning its attention to Darko Rajakovic, who is in the final year of his deal. The move would reward a coach whose three seasons have steadily improved the Raptors and helped stabilize the",
-          "date": "June 11, 2026",
-          "link": "https://raptorsrepublic.com/2026/06/11/nba-news-rumours-raptors-could-soon-reward-darko-rajakovic-with-new-contract-extension/"
+          "headline": "OG Anunoby's clutch Game Four miracle proves what Raptors' fans already knew",
+          "dek": "OG Anunoby came through in a huge Game Four moment, giving Toronto another reminder of how valuable he is when the pressure spikes. For Raptors fans, the play fits a familiar pattern: the wing who left Toronto still keeps showing up in the biggest spots.",
+          "date": "June 12, 2026",
+          "link": "https://raptorsrepublic.com/2026/06/12/og-anunobys-nba-finals-clutch-game-four-miracle-proves-what-raptors-fans-already-knew/"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Raptors commit to Bobby Webster's vision with long-term extension",
-          "dek": "Toronto is signaling that its 46-36 finish and third-place Atlantic standing were enough to validate the front office plan, not just the roster's progress. The extension keeps Bobby Webster in place to shape the next phase of a rebuild that now looks more like a sustained push",
+          "dek": "By extending Bobby Webster's contract, the Raptors signal they trust his long-term blueprint to rebuild the franchise after a competitive season. This commitment stabilizes the team's leadership, ensuring continuity in his vision to elevate the squad from its third-place",
           "date": "June 8, 2026",
           "link": "https://www.sportsnet.ca/nba/article/raptors-commit-to-bobby-websters-vision-with-long-term-extension/"
         },
@@ -960,7 +968,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Grading bold 2025-26 season predictions for all 30 NBA teams",
-          "dek": "Toronto's 46-36 finish gave the Raptors a respectable regular season, but it also sets the bar for judging whether preseason calls about their direction were accurate. With the year over, this grade check can show which predictions matched the club's actual step forward and",
+          "dek": "Toronto's 46-36 finish and third-place Atlantic showing make it a relevant test case in a column grading preseason calls across the league. The Raptors' season sits squarely in the middle ground between surprise and expectation, which is exactly why their prediction results",
           "date": "June 9, 2026",
           "link": "https://www.espn.com/nba/story/_/id/48994601/grading-bold-2025-26-nba-season-predictions-all-30-teams-playoffs-rookies-stats"
         },
@@ -968,7 +976,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors GM Webster extended, promoted to executive vice president",
-          "dek": "The move locks in the architect of Toronto's roster at a time when the franchise is trying to build on a 46-36 season and keep its front office stable. Elevating Bobby Webster also signals the Raptors want continuity as they plan the next steps around a team that finished third",
+          "dek": "The move locks in continuity for Toronto's front office after a 46-36 season and a third-place finish in the Atlantic Division. It also signals the Raptors are backing Webster to steer the next phase of roster building and offseason decisions.",
           "date": "June 8, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49001088/raptors-gm-webster-extended-promoted-executive-vice-president"
         }
@@ -1173,8 +1181,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The summer script in Washington has a sharper edge than usual - not because of a game, but because the roster is already talking in half-formed truths, the kind that harden fast in OTAs and minicamp. <strong>Antonio Williams fitting into the new offense</strong> is the freshest thread, and it matters because this team cannot afford wasted snaps while the staff sorts out roles around Jayden Daniels and a rebuilt supporting cast. The Commanders finished third in the NFC East, 6 games back, and that's the kind of gap that forces real self-scouting rather than polite optimism. Nick Cross brings the sort of versatility defensive coaches adore - a movable piece who can tighten coverage one series and support the run the next - while Joshua Josephs has already flashed enough in the final week of OTAs to make the back end of the roster battles worth watching. The quiet story, though, is Daniels himself: the legend's eye for a changed detail suggests Washington's franchise quarterback is already refining the little things that tilt a season. <strong>Watch minicamp for who keeps stacking days - because in Washington, the depth chart is being written now.</strong>",
-        "updated": "Updated June 12, 2026"
+        "body": "Roster-building season can be cruel in Washington, because it reveals every soft spot before the pads even click. That is where the Commanders sit now in OTAs and minicamp - not chasing boxes on a scoreboard, but sorting out whether the offense or the defense will end up carrying the heavier load in 2026. <strong>Nick Allegretti's case that he can thrive at center is the most important development right now</strong>, because a stable middle can calm everything around it, from protection calls to the rhythm of the run game. The new pieces matter, too: Rachaad White's receiving ability gives the backfield a cleaner outlet and a little more sizzle, while Sonny Styles looks like the kind of draft-day gift teams brag about for years if he settles in quickly. Washington finished 3rd in the NFC East, 6 games behind, with a W1 closing note - but those numbers belong to the rearview mirror. What matters now is who grabs jobs in June and turns potential into structure. <strong>Watch the center battle, White's role, and how quickly Styles forces himself onto the field</strong>.",
+        "updated": "Updated June 13, 2026"
       },
       "key_numbers": [
         {
@@ -1199,44 +1207,44 @@
       },
       "the_latest": [
         {
-          "source": "Hogs Haven",
-          "source_class": "web",
-          "headline": "How Nick Cross' versatility can help Washington Commanders defense",
-          "dek": "Nick Cross gives Washington a movable piece in the back end, which matters as the Commanders sort out roles during OTAs and minicamp. If he can handle more than one job, the defense gains flexibility it badly needs while trying to tighten up in a crowded NFC East.",
-          "date": "June 11, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-news/420210/nick-cross-safety-colts-nfl-2026-free-agency"
-        },
-        {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Commanders legend spots overlooked Jayden Daniels change that should terrify NFL",
-          "dek": "Santana Moss, a Commanders icon, has identified a subtle but critical shift in Jayden Daniels' play that could redefine the quarterback's ceiling and intimidate the entire league. This overlooked change suggests Daniels is evolving into a weapon capable of dominating defenses,",
+          "headline": "Commanders still can't believe Sonny Styles fell into their laps",
+          "dek": "Sonny Styles giving Washington an unexpected defensive building block changes the tone of a spring program that is trying to turn promise into pressure before training camp. For a team sitting third in the NFC East, a rookie who arrives with this much buzz raises the stakes for",
           "date": "June 12, 2026",
-          "link": "https://riggosrag.com/washington-commanders-legend-spots-overlooked-jayden-daniels-change-terrify-nfl?utm_source=RSS"
+          "link": "https://riggosrag.com/commanders-still-can-t-believe-sonny-styles-fell-into-their-laps?utm_source=RSS"
         },
         {
-          "source": "Riggo's Rag",
+          "source": "CBS Sports",
           "source_class": "web",
-          "headline": "Washington Commanders 53-man roster projection after 2026 OTAs",
-          "dek": "The Commanders are still sorting out real jobs at the bottom of the roster, where summer practices can decide whether a rookie or veteran survives the first cut. Special teams and depth spots are especially unsettled, making this projection a useful snapshot of where the",
+          "headline": "Stefon Diggs landing spots: Commanders, Ravens among fits after NFL closes investigation",
+          "dek": "Stefon Diggs' sudden availability as a free agent reshapes the NFL's offseason landscape, with the Commanders and Ravens emerging as logical destinations for the veteran receiver. The league's decision to close its investigation without suspending Diggs for personal conduct",
           "date": "June 12, 2026",
-          "link": "https://riggosrag.com/washington-commanders-53-man-roster-projection-after-2026-otas?utm_source=RSS"
+          "link": "https://www.cbssports.com/nfl/news/stefon-diggs-landing-spots-nfl-investigation/"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Commanders believe Daniels, revamped scheme can make it work",
+          "dek": "Washington is betting that Jayden Daniels' growth and a more tailored offense can raise the ceiling even if the receiver room never gets a clear second target. That makes OTAs and minicamp a key early test of whether the revamped scheme can spread the ball enough to keep the",
+          "date": "June 13, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/49041279/no-brandon-aiyuk-no-stefon-diggs-commanders-jayden-daniels-new-offense-david-blough"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NFL players make World Cup predictions, weigh in on USMNT",
-          "dek": "With the World Cup approaching, NFL players are offering a cross-sport snapshot of which stars and countries are drawing the most attention. Their picks also give a quick read on how the U.S. team is viewed heading into a tournament that will test its place on the sport's",
+          "dek": "With OTAs and minicamp underway, this World Cup crossover gives Commanders fans a lighter way to track how NFL players see the global game and where they rate the USMNT. It also adds offseason texture to a team still trying to climb in a crowded NFC East.",
           "date": "June 12, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/49009790/nfl-players-world-cup-golden-boot-predictions-france-kylian-mbappe"
         },
         {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Terry McLaurin excited for offensive changes",
-          "dek": "McLaurin's comfort with a redesigned offense matters because Washington's passing game depends on him as the top target and a weekly matchup problem for NFC East defenses. OTAs and minicamp are the first chance to see whether more motion and route variety can translate into a",
+          "source": "Hogs Haven",
+          "source_class": "web",
+          "headline": "What makes Nick Allegretti confident he can thrive as Commanders center",
+          "dek": "The Commanders' decision to move on from Tyler Biadasz left a major opening at center, and Nick Allegretti's case for the job matters because it could shape the middle of the offensive line for a team trying to climb in the NFC East. With OTAs and minicamp underway, his",
           "date": "June 12, 2026",
-          "link": "https://www.espn.com/video/clip/_/id/49038046/terry-mclaurin-excited-offensive-changes"
+          "link": "https://www.hogshaven.com/washington-commanders-news/420466/nick-allegretti-center-ota-tyler-biadasz"
         }
       ],
       "standings": {
@@ -1333,40 +1341,40 @@
   "featured": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "Fuelled by velo slap, Varland emerges as Blue Jays' bullpen ace",
-    "dek": "Louis Varland's rise gives Toronto a rare late-inning edge while the club is still trying to climb out of the AL East pack. With the Blue Jays 33-36 and third in the division, his emergence matters because every reliable bullpen arm counts in a tight standings race.",
-    "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/mlb/article/fuelled-by-velo-slap-varland-emerges-as-blue-jays-bullpen-ace/",
-    "date": "June 12, 2026"
+    "headline": "Kirk boosts Blue Jays' offense with 3 hits in return from IL",
+    "dek": "Alejandro Kirk's return gives Toronto a much-needed spark at a time when runs have been hard to come by and every division game matters. With the Blue Jays sitting below.500 and chasing ground in the AL East, his immediate impact offers a small but timely lift before the Yankees",
+    "source": "MLB.com",
+    "link": "https://www.mlb.com/news/alejandro-kirk-reinstated-davis-schneider-recalled-daulton-varsho-on-il",
+    "date": "June 13, 2026"
   },
   "two_up": [
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Season Over",
-      "headline": "Overheard at the NHL scouting combine: Draft, prospects, trade buzz",
-      "dek": "With Toronto coming off a disappointing 32-36-14 season, the combine chatter matters because it points to how the club might restock its pipeline and retool quickly. The buzz around prospects, draft targets and trade talk offers an early read on whether the Maple Leafs can turn",
-      "source": "ESPN",
-      "link": "https://www.espn.com/nhl/story/_/id/49011258/nhl-2026-draft-scouting-combine-top-prospects-players-testing-interviews-trades",
-      "date": "June 12, 2026"
+      "headline": "Pavelski confirms interest in Maple Leafs head coach opening",
+      "dek": "A respected former NHL star being tied to Toronto's coaching vacancy adds immediate intrigue to a search already under pressure after a disappointing season. If the Maple Leafs are seriously considering an unconventional candidate, it signals a willingness to rethink the path",
+      "source": "Sportsnet",
+      "link": "https://www.sportsnet.ca/nhl/article/pavelski-confirms-interest-in-maple-leafs-head-coach-opening/",
+      "date": "June 13, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Season Over",
-      "headline": "Raptors Weekly Wrap-Up: Bobby Webster extended, more",
-      "dek": "Toronto's front office is entering the offseason with stability after Bobby Webster's extension, a move that clarifies who will shape the next roster decisions. With Darko Rajakovic's future also in focus and potential targets already circulating, the story points to how the",
+      "headline": "A look back at the 3 greatest Raptors playoff comebacks",
+      "dek": "The Raptors have built a postseason identity around surviving pressure, and that history gives this retrospective more weight than a simple nostalgia piece. With the season over and playoff memories still fresh, the focus lands on the moments when Toronto flipped games it had no",
       "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/06/11/raptors-weekly-wrap-up-nba-news-rumours-bobby-webster-extended-more/",
-      "date": "June 12, 2026"
+      "link": "https://raptorsrepublic.com/2026/06/12/nba-news-rumours-a-look-back-at-the-3-greatest-raptors-playoff-comebacks/",
+      "date": "June 13, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - OTAs & Minicamp",
-    "headline": "Three subtle ways Antonio Williams fits the Commanders new offense",
-    "dek": "Antonio Williams is already drawing attention in Washington because his fit in the new offense could shape how the Commanders use a third-round pick beyond simple depth. During OTAs and minicamp, the focus is on whether his route-running and versatility can help the unit create",
+    "headline": "Offense or defense? Where will the Commanders rank higher in 2026?",
+    "dek": "The Commanders are still in the stage where offseason work is about building the foundation, making these OTAs and minicamp reps a first real clue to whether the offense or defense is ahead. With both sides trying to establish identity before training camp, the ranking question",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-analysis/419299/antonio-williams-fits-washington-commanders-new-offense-david-blough-nfl",
-    "date": "June 12, 2026"
+    "link": "https://www.hogshaven.com/the-5-oclock-club/419288/which-side-ball-rank-higher-2026-offense-defense-washington-commanders-nfl",
+    "date": "June 13, 2026"
   },
   "ticker": [
     {
@@ -1382,22 +1390,22 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays fell to Phillies 7-4"
+      "text": "Jays beat Yankees 8-5"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (33-36) - 3rd in AL East"
+      "text": "Jays (34-36) - 3rd in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays vs. Yankees - Fri 6/12 6:37 PM ET"
+      "text": "Next: Jays vs. Yankees - Sat 6/13 2:07 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Fuelled by velo slap, Varland emerges as Blue Jays'"
+      "text": "Kirk's triumphant return shows his importance to"
     },
     {
       "badge": "NBA",
@@ -1407,7 +1415,7 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors Weekly Wrap-Up: Bobby Webster extended, more"
+      "text": "A look back at the 3 greatest Raptors playoff comebacks"
     },
     {
       "badge": "NFL",
@@ -1417,7 +1425,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Three subtle ways Antonio Williams fits the"
+      "text": "Offense or defense? Where will the Commanders rank"
     }
   ],
   "at_a_glance": [
@@ -1434,10 +1442,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "33-36",
+      "record": "34-36",
       "status": "3rd in AL East",
-      "status_class": "red",
-      "stat": "Streak: L1"
+      "status_class": "green",
+      "stat": "Streak: W1"
     },
     {
       "team": "raptors",
@@ -1471,7 +1479,7 @@
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
       "matchup": "Jays vs. Yankees",
-      "detail": "6:37 PM ET",
+      "detail": "2:07 PM ET",
       "channel": "",
       "off": false
     },
@@ -1494,15 +1502,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Fri 6/12",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "vs. Yankees",
-        "time": "6:37 PM ET",
-        "tv": ""
-      },
       {
         "day": "Sat 6/13",
         "team": "jays",
@@ -1550,6 +1549,15 @@
       },
       {
         "day": "Fri 6/19",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Cubs",
+        "time": "1:20 PM ET",
+        "tv": ""
+      },
+      {
+        "day": "Sat 6/20",
         "team": "jays",
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
