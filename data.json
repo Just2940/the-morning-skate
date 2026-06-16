@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-06-15T10:11:36.122273-05:00",
-    "date_display": "June 15, 2026"
+    "updated": "2026-06-16T08:25:49.842505-05:00",
+    "date_display": "June 16, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "<strong>The Leafs' season is in the books at 32-36-14</strong>, and the conversation has moved squarely to what comes next. They finished 8th in atlantic division - a final placement that frames every decision this summer. The work now runs through the draft table, the trade market and the cap sheet, and the bets made over the next few weeks will shape the roster that shows up to camp. <strong>The next headline here comes from the front office, not the scoreboard.</strong> The NHL calendar has flipped to building season - draft prep, trade talks, and the roster surgery that shapes the next contending window. For the Toronto Maple Leafs, the work runs from the draft table to the trade market, and the choices made this summer will define the next window.",
-        "updated": "Updated June 15, 2026"
+        "body": "The season died the way too many Maple Leafs seasons die - short of the standard, short on answers, and with the front office staring at another autumn of hard decisions. Toronto finished <strong>32-36-14</strong>, good for <strong>78 points</strong> and <strong>8th in the Atlantic Division</strong>, then went out on a <strong>L7</strong> stumble that only sharpened the familiar question: what, exactly, is this club building toward? <strong>The most interesting development of the morning is the signing of forward Tinus Luc Koblar to a three-year, entry-level contract</strong> - a small move on paper, but the kind of low-cost bet this organization needs to make more often if it wants to find value beyond the headline names. The big-picture headache remains the same: a team that slipped to <strong>31 games behind</strong> and never found the consistency to matter. Coaching remains unresolved, the draft chatter is already hot, and the headline that matters most is the one asking whether Gavin McKenna belongs at No. 1. <strong>What to watch now: the coaching hire, the next wave of prospect decisions, and whether Toronto finally uses the offseason to change its shape instead of repainting the same old house.</strong>",
+        "updated": "Updated June 16, 2026"
       },
       "key_numbers": [
         {
@@ -44,24 +44,24 @@
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
+          "headline": "Maple Leafs sign F Tinus Luc Koblar to three-year, entry-level contract",
+          "dek": "Toronto is locking up a promising 18-year-old center who flashed real offense in Sweden and at the world stage, signaling a bet on his development rather than an immediate roster fix.\n\nFor a team that finished eighth in the Atlantic, this is the kind of low-risk, long-view move",
+          "date": "June 15, 2026",
+          "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-sign-f-tinus-luc-koblar-to-three-year-entry-level-contract/"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
           "headline": "Bourne: Why Gavin McKenna is right pick for Maple Leafs at No. 1",
-          "dek": "With the draft nearing, Toronto's front office faces a rare chance to reset a disappointing season by betting on a high-end prospect who could change the franchise's trajectory. Bourne's case for Gavin McKenna centers on long-term upside, making this more than a pick discussion",
+          "dek": "The Maple Leafs won a first-round lottery spot after a disastrous season, making the selection of Penn State playmaker Gavin McKenna critical to reopening their contention window. McKenna is widely viewed as the draft's most franchise-ready talent, offering the high-upside",
           "date": "June 10, 2026",
           "link": "https://www.sportsnet.ca/nhl/article/bourne-why-gavin-mckenna-is-right-pick-for-maple-leafs-at-no-1/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Which NHL teams have won the most Stanley Cup titles?",
-          "dek": "The Montreal Canadiens hold the record with 23 Stanley Cup titles, making them the most successful franchise in NHL history. Exploring other championship-caliber teams reveals how close contenders like the Toronto Maple Leafs have come to joining this elite group.",
-          "date": "June 15, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/40344315/which-nhl-teams-won-most-stanley-cup-titles"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
           "headline": "NHL Power Rankings: Way-too-early edition for 2026-27 season",
-          "dek": "Toronto's place in the way-too-early rankings will hinge on whether this offseason brings real roster change after a 32-36-14 finish and another eighth-place result in the Atlantic. With next season already on the radar, the Maple Leafs face pressure to show they can climb back",
+          "dek": "Toronto's offseason hinges on turning another disappointing finish into a stronger 2026-27 roster, with forward depth and playoff toughness again at the center of the conversation.\n\nThe Leafs also have young talent pushing into the picture, including 2025 draft pick Tinus Luc",
           "date": "June 15, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49043763/nhl-power-rankings-2026-27-top-teams-players-poll-best-games-free-agents"
         }
@@ -414,45 +414,45 @@
         "team": "Toronto Maple Leafs",
         "league": "NHL",
         "projected_pick": "#1 overall",
-        "draft_date": "June 26-27, 2026",
+        "draft_date": "June 27-28, 2026",
         "prospects_watched": [
           {
             "name": "Gavin McKenna",
-            "position": "W",
+            "position": "LW",
             "team": "Penn State",
-            "note": "Most recent mock drafts and beat-style coverage have Toronto taking McKenna first overall; he is the consensus top target and best fit if they keep the pick."
-          },
-          {
-            "name": "Chase Reid",
-            "position": "RHD",
-            "team": "Soo Greyhounds",
-            "note": "If Toronto were to trade down or pivot, Reid is the next premium name in recent mock draft boards as the top defenseman."
+            "note": "The consensus top prospect is the clear fit if Toronto holds first overall, and recent mock drafts repeatedly connect him to the Leafs at No. 1."
           },
           {
             "name": "Ivar Stenberg",
             "position": "LW",
             "team": "Frölunda HC",
-            "note": "A high-end winger who remains in the top tier of June boards and could be in play if Toronto evaluates skill over positional need."
+            "note": "A top-line winger alternative who continues to appear near the top of public mocks if Toronto pivots off McKenna."
           },
           {
-            "name": "Caleb Malhotra",
-            "position": "C",
-            "team": "Brantford Bulldogs",
-            "note": "He is the top center in several recent prospect lists and would make sense if Toronto prioritizes a future middle-six or top-six pivot."
+            "name": "Brek Liske",
+            "position": "D",
+            "team": "TBD",
+            "note": "Beat reporting has specifically framed him as a target for Toronto's later first-round slot, with a case made for him at No. 60."
           },
           {
-            "name": "Albert Smits",
-            "position": "LD",
-            "team": "Jukurit",
-            "note": "A mobile left-shot defender who shows up in the top-five prospect mix and would be a candidate if the Leafs surprise by addressing defense early."
+            "name": "Chase Reid",
+            "position": "D",
+            "team": "TBD",
+            "note": "A premium defense prospect who fits the kind of high-upside blueliner Toronto would monitor if it adds multiple picks or trades back."
+          },
+          {
+            "name": "Maddox Dagenais",
+            "position": "F",
+            "team": "TBD",
+            "note": "A skilled, pace-driven forward who shows up in public draft-board chatter as a value target if Toronto looks beyond the very top tier."
           }
         ],
         "lottery": {
-          "odds": "Won 1st overall",
+          "odds": "TBD",
           "outcome": "Won 1st overall"
         },
         "label": "NHL Draft Board",
-        "event_date": "June 26-27, 2026",
+        "event_date": "June 27-28, 2026",
         "pick_position": "#1 overall",
         "headers": [
           "Rank",
@@ -463,41 +463,41 @@
         "rows": [
           {
             "pk": "1",
-            "team": "Gavin McKenna (W)",
+            "team": "Gavin McKenna (LW)",
             "league": "NHL",
             "pts": "Penn State",
-            "odds": "Most recent mock drafts and beat-style coverage have Toronto taking McKenna first overall; he is the consensus top target and best fit if they keep the pick."
+            "odds": "The consensus top prospect is the clear fit if Toronto holds first overall, and recent mock drafts repeatedly connect him to the Leafs at No. 1."
           },
           {
             "pk": "2",
-            "team": "Chase Reid (RHD)",
-            "league": "NHL",
-            "pts": "Soo Greyhounds",
-            "odds": "If Toronto were to trade down or pivot, Reid is the next premium name in recent mock draft boards as the top defenseman."
-          },
-          {
-            "pk": "3",
             "team": "Ivar Stenberg (LW)",
             "league": "NHL",
             "pts": "Frölunda HC",
-            "odds": "A high-end winger who remains in the top tier of June boards and could be in play if Toronto evaluates skill over positional need."
+            "odds": "A top-line winger alternative who continues to appear near the top of public mocks if Toronto pivots off McKenna."
+          },
+          {
+            "pk": "3",
+            "team": "Brek Liske (D)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "Beat reporting has specifically framed him as a target for Toronto's later first-round slot, with a case made for him at No. 60."
           },
           {
             "pk": "4",
-            "team": "Caleb Malhotra (C)",
+            "team": "Chase Reid (D)",
             "league": "NHL",
-            "pts": "Brantford Bulldogs",
-            "odds": "He is the top center in several recent prospect lists and would make sense if Toronto prioritizes a future middle-six or top-six pivot."
+            "pts": "TBD",
+            "odds": "A premium defense prospect who fits the kind of high-upside blueliner Toronto would monitor if it adds multiple picks or trades back."
           },
           {
             "pk": "5",
-            "team": "Albert Smits (LD)",
+            "team": "Maddox Dagenais (F)",
             "league": "NHL",
-            "pts": "Jukurit",
-            "odds": "A mobile left-shot defender who shows up in the top-five prospect mix and would be a candidate if the Leafs surprise by addressing defense early."
+            "pts": "TBD",
+            "odds": "A skilled, pace-driven forward who shows up in public draft-board chatter as a value target if Toronto looks beyond the very top tier."
           }
         ],
-        "notes": "Lottery odds: Won 1st overall - Outcome: Won 1st overall"
+        "notes": "Outcome: Won 1st overall"
       },
       "watch": [
         {
@@ -530,8 +530,8 @@
       "detail": "3rd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Jays have spent the last three nights getting shoved around by the Yankees, and the latest thump landed hard - <strong><strong>an 8-3 loss on June 14</strong></strong> that left Toronto staring at a 34-38 record, 3rd place in the AL East, and 10 games back. That is not the profile of a club controlling its own fate; it is a team trying to stop the slide before it becomes a crater. The brief spark on June 12, when Toronto beat New York 8-5, already feels like a flicker rather than a turn. Since then, the offense has gone quiet again, and the two-game skid has only sharpened the pressure on a roster that cannot afford many more empty nights. There is no hiding the math: a -2.0 mark and a.472 pace means the Jays need cleaner innings, more authoritative at-bats, and less self-inflicted damage. Caballero's clock antics may have added spice to the rivalry, but the standings still tell the real story. <strong>Tuesday in Boston brings the next checkpoint - a 5:45 p.m. ET start against the Red Sox, and another chance to prove this club still has some pulse</strong>.",
-        "updated": "Updated June 15, 2026"
+        "body": "The Jays have reached that familiar June crossroads - too good to shrug off, too sloppy to call a contender without a win streak to prove it. <strong>Toronto was shoved back by the Yankees again, 8-3 on June 14, and that's now a two-game skid after a 3-1 loss the day before.</strong> At 34-38, third in the AL East and 10 games back, they're not buried, but they're chasing with a broken shoe. The lone bright patch in the recent run was the 8-5 win over New York on June 12, a reminder that this club still has a pulse when the bats wake up. Dylan Cease's yoga session with the club's local media is a neat little story, but the bigger question is whether the rotation and lineup can settle down before the standings harden around them. <strong>Tonight at Fenway against the Red Sox, the Jays need a clean start and a sharper finish - anything less and the gap starts looking less like June noise and more like July trouble.</strong>",
+        "updated": "Updated June 16, 2026"
       },
       "key_numbers": [
         {
@@ -607,7 +607,7 @@
         "subtitle": "MLB - Jun 14, 2026",
         "result_badge": "L 3-8",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=fXaV-xFt__A",
+        "url": "https://www.youtube.com/watch?v=iM0aZQfeYZs",
         "game_date": "2026-06-14"
       },
       "the_latest": [
@@ -615,7 +615,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Yankees 8-3",
-          "dek": "Toronto's loss left it under.500 at 34-38 and still chasing ground in the AL East, with the division race tightening around a weekend setback. The Yankees' 8-3 win also underscores how quickly a game can slip once New York's power starts breaking through.",
+          "dek": "The Blue Jays dropped another game to the division-leading Yankees, with a late rally turning a close contest into an 8-3 loss that deepens pressure in the AL East race.\n\nToronto is now 34-38 and third in the division, so this result matters as much for the standings as for the",
           "date": "Jun 14",
           "link": "https://www.espn.com/mlb/recap?gameId=401815753"
         },
@@ -623,7 +623,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Notebook: Caballero's clock antics add new element to Blue Jays-Yankees rivalry",
-          "dek": "The Blue Jays are trying to steady a **34-38** start and keep pace in the AL East, so every Yankees matchup carries extra weight in a season that has not yet found momentum. Caballero's pitch clock gamesmanship adds a fresh flashpoint to a division rivalry that already matters",
+          "dek": "José Caballero's pitch clock strategy has ignited a new tactical battle in the Blue Jays-Yankees rivalry, forcing both teams to navigate stricter timing rules that could alter game outcomes. This ongoing friction adds a fresh layer of intensity to a series where Toronto, sitting",
           "date": "June 15, 2026",
           "link": "https://www.sportsnet.ca/mlb/article/notebook-caballeros-clock-antics-add-new-element-to-blue-jays-yankees-rivalry/"
         },
@@ -631,17 +631,9 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Yankees 3-1",
-          "dek": "Toronto's offense never found enough against a division rival that is still setting the pace in the AL East, leaving little margin for a club already under.500. The loss makes this series result more than a one-off, because the Jays need wins like this to chip back toward the",
+          "dek": "The Blue Jays' 3-1 loss to division rival Yankees deepens their struggle at 34-38 while the rivals surge to 43-27 and first place in the AL East. This defeat marks their sixth loss in seven games against a team that has now won six of its last seven, widening the gap that",
           "date": "Jun 13",
           "link": "https://www.espn.com/mlb/recap?gameId=401815738"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Missed chances loom large as Blue Jays drop series to Yankees",
-          "dek": "Toronto's skid has left little margin in a crowded AL East, and every missed chance is magnified as the Blue Jays try to stop sliding below.500. Sunday's loss underscored a familiar flaw: when the lineup needs one timely hit, the offense too often comes up empty.",
-          "date": "June 14, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/missed-chances-loom-large-as-blue-jays-drop-series-to-yankees/"
         }
       ],
       "standings": {
@@ -678,9 +670,9 @@
                 "you": false,
                 "vals": [
                   "41",
-                  "27",
-                  ".603",
-                  "1"
+                  "28",
+                  ".594",
+                  "1.5"
                 ]
               },
               {
@@ -782,9 +774,9 @@
                 "seed": "WC1",
                 "vals": [
                   "41",
-                  "27",
-                  ".603",
-                  "1"
+                  "28",
+                  ".594",
+                  "1.5"
                 ]
               },
               {
@@ -807,10 +799,10 @@
                 "you": false,
                 "seed": "WC3",
                 "vals": [
-                  "35",
                   "36",
-                  ".493",
-                  "1"
+                  "36",
+                  ".500",
+                  "0.5"
                 ]
               },
               {
@@ -822,9 +814,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "35",
-                  "36",
-                  ".493",
-                  "1"
+                  "37",
+                  ".486",
+                  "1.5"
                 ]
               },
               {
@@ -863,10 +855,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "33",
+                  "34",
                   "40",
-                  ".452",
-                  "6.5"
+                  ".459",
+                  "6"
                 ]
               },
               {
@@ -878,9 +870,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "33",
-                  "40",
-                  ".452",
-                  "4"
+                  "41",
+                  ".446",
+                  "4.5"
                 ]
               }
             ]
@@ -918,8 +910,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "Something real has finally settled over Toronto - the noise of the chase is gone, and what remains is the hard accounting of a season that ended at 46-36, third in the Atlantic, respectable on paper and unfinished in spirit. <strong>Collin Murray-Boyles' transcendent rookie season</strong> gave the Raptors a young pillar and a clear reason to believe the rebuild is not drifting, but belief is not a plan. The numbers say they were 10 games out, with a final 5.0-point profile and a W1 finish, and that is the profile of a team that could win enough nights without ever looking like it had solved the bigger problem. Now comes the clean-up work - coaching, roster construction, and the draft board - with the draft dark horses, MELEEK THOMAS and QUADIR COPELAND, looming as the sort of swing choices that can sharpen or blunt the next two years. The old OG Anunoby trade chatter has new life after his Finals game-winner, too, because Toronto's past keeps poking at its present. <strong>What matters next is whether the front office turns a promising season into a more dangerous one - or just another promising story.</strong>",
-        "updated": "Updated June 15, 2026"
+        "body": "The season ended with no parade, no panic, just a hard verdict: Toronto went 46-36, finished 3rd in the Atlantic Division and still left the building 10 games back, a solid record that never quite matched the heft of a true contender. <strong>Collin Murray-Boyles' transcendent rookie season</strong> gives the Raptors their cleanest reason for optimism, because in a year where the margins were thin, he looked like the kind of young piece a franchise can build around instead of merely lean on. The bigger question now is what comes next around him. <strong>The Raptors Draft Dark Horses: MELEEK THOMAS & QUADIR COPELAND</strong> headline the conversation, and that is exactly where a team in transition should live - in the draft room, not in empty promises. The Rudy Gay trade-tree chatter only reinforces the old lesson: this franchise has been at its best when it turns one move into three and plans ahead with nerve. The offseason should be about adding shooting, clarifying the coaching voice and deciding whether this core is one starter short or one star away. <strong>The work now is to turn a promising young spine into a roster that can actually bite.</strong>",
+        "updated": "Updated June 16, 2026"
       },
       "key_numbers": [
         {
@@ -951,16 +943,16 @@
         {
           "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "Raptors Draft Dark Horses: MELEEK THOMAS & QUADIR COPELAND",
-          "dek": "Toronto's front office is entering draft season with a mid-first-round pick that could shape the next step of its roster build after a 46-36 finish. A discussion of Meleek Thomas and Quadir Copeland matters because identifying a value swing at No. 19 could help the Raptors add",
-          "date": "June 13, 2026",
-          "link": "https://raptorsrepublic.com/2026/06/13/raptors-draft-dark-horses-meleek-thomas-quadir-copeland/"
+          "headline": "Collin Murray-Boyles' transcendent rookie season for the Raptors",
+          "dek": "Collin Murray-Boyles gave Toronto a rare rookie centerpiece, turning a rebuilding season into one with a clear long-term identity. His breakout matters because the Raptors finished 46-36 and now have a young player who already looks like part of their core.",
+          "date": "June 15, 2026",
+          "link": "https://raptorsrepublic.com/2026/06/15/collin-murray-boyles-transcendent-rookie-season-for-the-raptors/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 NBA mock draft: Projecting all 60 picks in Rounds 1 and 2",
-          "dek": "Toronto's 46-36 finish leaves the Raptors in a position to weigh fit and upside as draft boards firm up and trade chatter intensifies before draft night. With two full rounds projected, the mock offers a useful snapshot of how the team and the rest of the league could navigate",
+          "dek": "Toronto's 46-36 finish left it in the draft range where one pick can reshape a roster that has already pushed back into the playoff picture. With trade chatter building and several prospects still in play, this mock drafts the options that could define the Raptors' next step.",
           "date": "June 15, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49041464/2026-nba-mock-draft-projecting-60-picks-draft-night-trade-talks-boozer-peterson-dybantsa-acuff"
         },
@@ -968,7 +960,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2027 NBA championship odds: Spurs early favorites to win it all, followed by Thunder and Celtics",
-          "dek": "Toronto enters the offseason after a 46-36 finish, so the early 2027 title board is less about where the Raptors stand now than how much ground they can close before next spring. With San Antonio, Oklahoma City and Boston opening as the top futures favorites, Toronto's path will",
+          "dek": "Toronto's young core made the postseason this spring, but the Raptors still sit well behind the NBA's early title tier as sportsbooks open 2027 futures. With the Thunder, Spurs and Celtics setting the market, the question is whether Toronto can narrow that gap enough to matter",
           "date": "June 14, 2026",
           "link": "https://www.espn.com/espn/betting/story/_/id/49062262/2027-nba-finals-odds-mvp-2026-27-championship-betting"
         }
@@ -1173,8 +1165,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The offseason in Washington is no place for soft edges - especially when the roster is still being redrawn around a quarterback who has to make the whole operation look larger than it is. The loudest early-summer note is <strong>Jordan Magee and Percy Butler fighting for relevance in '26</strong>, a battle that tells you exactly where this team is: the middle class of the roster is under siege, and nobody is getting a free pass. Washington finished 3rd in the NFC East, 6 games back, with a W1 ending to a season that is now closed for business, so the real drama has shifted to who fits the next version of the club. Nick Cross slots in at No. 8 in the safety rankings, which only sharpens the pressure on Butler, while the Stefon Diggs admission has added a little heat to a receiver room that needs certainty, not theater. And if the Brandon Aiyuk rumble is more than background noise, Washington will have to decide whether it is watching from the porch or making a move. <strong>For now, the most important thing is who separates in minicamp - and who gets left behind.</strong>",
-        "updated": "Updated June 15, 2026"
+        "body": "The offseason has turned into a sorting table - who stays, who rises, and who gets squeezed out when the pads finally come on. The sharpest edge right now is <strong>the kicker battle that could decide both training camp and preseason</strong>, a reminder that even in June, jobs are won in the margins. Washington sits 3rd in the NFC East, but those numbers are frozen in the glass; the real story is the roster around Jayden Daniels being reshaped for a new push. That starts with Daniels himself, who has to take the next step in minicamp while the offense finds its rhythm and the young pieces around him settle in. It also includes the draft-class watch, with Sonny Styles and other newcomers needing to look like more than just camp bodies, and the steady climb of Sam Cosmi, whose rise to No. 7 in the roster rankings says plenty about how much this line matters. Add in the Stefon Diggs homecoming talk - and the uneasy concern attached to it - and you get a team still building, still probing, still deciding. <strong>What happens in minicamp should clarify the quarterback's support system and narrow the kicking race before camp opens wide.</strong>",
+        "updated": "Updated June 16, 2026"
       },
       "key_numbers": [
         {
@@ -1201,16 +1193,16 @@
         {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Stefon Diggs just struck a nerve with crystal clear Commanders admission",
-          "dek": "Stefon Diggs is keeping the focus on Washington at a time when the Commanders are still shaping their roster during OTAs and minicamp. The comments matter because any hint of interest from a proven receiver adds intrigue to a team trying to climb from third in the NFC East.",
-          "date": "June 15, 2026",
-          "link": "https://riggosrag.com/stefon-diggs-struck-nerve-crystal-clear-washington-commanders-admission?utm_source=RSS"
+          "headline": "Stefon Diggs push for Commanders homecoming comes with frightening concern",
+          "dek": "Stefon Diggs has made clear he wants a Washington reunion, but recent chatter suggests the Commanders may not be returning the interest as they sort out their receiver plans. With OTAs and minicamp underway, the decision also carries real risk because Diggs is still navigating a",
+          "date": "June 16, 2026",
+          "link": "https://riggosrag.com/stefon-diggs-push-washington-commanders-homecoming-frightening-concern?utm_source=RSS"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "Stefon Diggs landing spots: Commanders, Ravens among fits after NFL closes investigation",
-          "dek": "Stefon Diggs is back on the market after the league closed its investigation, putting a proven playmaker in play for a Commanders offense still trying to separate from the NFC East pack. For Washington, this is a chance to add a veteran target during OTAs and minicamp, but any",
+          "dek": "Stefon Diggs being cleared to sign turns a speculative free-agent market into a real roster possibility just as the Commanders are in OTAs and minicamp. For Washington, it raises an immediate question about adding another proven target before training camp, with Baltimore also",
           "date": "June 12, 2026",
           "link": "https://www.cbssports.com/nfl/news/stefon-diggs-landing-spots-nfl-investigation/"
         },
@@ -1218,7 +1210,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 NFL minicamps: Teams, rookies, QBs we're watching",
-          "dek": "Washington's minicamp matters because the Commanders are in the middle of building toward 2026, with every rep offering clues about roster spots and the shape of the offense. In a crowded NFC East race, how the quarterback room and rookies handle these practices can hint at",
+          "dek": "Washington's mandatory minicamp is the first real checkpoint for Jayden Daniels, Terry McLaurin and the revamped offense before the team disappears for summer break. With 100 percent participation expected, the practices will also show how quickly rookies and new additions are",
           "date": "June 15, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/48988004/2026-nfl-minicamps-otas-teams-rookies-qbs-veterans-watching"
         },
@@ -1226,17 +1218,17 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NFL players make World Cup predictions, weigh in on USMNT",
-          "dek": "With OTAs still shaping the Washington roster, this World Cup conversation offers a lighter gauge of how NFL players are sizing up the global game and the U.S. side's chances. It also gives Commanders fans a June diversion before minicamp scrutiny turns back to whether the team",
+          "dek": "As Washington wraps OTAs and heads into minicamp, the focus is still on how the roster is coming together before training camp pressure ramps up. This side note from around the league gives Commanders fans a lighter June snapshot of which NFL voices are confident in the USMNT",
           "date": "June 13, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/49009790/nfl-players-world-cup-golden-boot-predictions-france-kylian-mbappe"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Commanders roster rankings: Safety Nick Cross comes in at No. 8",
-          "dek": "Nick Cross landing at No. 8 underscores how much weight Washington is putting on a revamped secondary as OTAs and minicamp sharpen the roster picture. With the Commanders trying to climb in a crowded NFC East, every ranking in this top 10 series signals who could shape the",
-          "date": "June 14, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-analysis/420726/commanders-roster-rankings-safety-nick-cross-colts-daronte-jones"
+          "headline": "Commanders minicamp preview: Jayden Daniels, Sonny Styles and more",
+          "dek": "Jayden Daniels gets one more meaningful tuneup before training camp, and this minicamp should offer the clearest early read on how Washington's upgraded offense is coming together. It also gives the Commanders a final chance to evaluate new names like Sonny Styles in a setting",
+          "date": "June 15, 2026",
+          "link": "https://www.hogshaven.com/washington-commanders-analysis/420816/commanders-veteran-minicamp-preview-jayden-daniels-sonny-styles-terry-mclaurin"
         }
       ],
       "standings": {
@@ -1333,40 +1325,40 @@
   "featured": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "Blue Jays are far too good to write off this early",
-    "dek": "At 34-38 and still third in the AL East, Toronto has enough talent to make this a short-lived slide rather than a season-long spiral. A strong showing against Boston this week could quickly reset the conversation and keep the Blue Jays within reach of the division race.",
-    "source": "MLB.com",
-    "link": "https://www.mlb.com/news/blue-jays-looking-to-make-run-in-al-standings",
-    "date": "June 15, 2026"
+    "headline": "How Blue Jays' Dylan Cease uses yoga to unlock success on mound",
+    "dek": "Dylan Cease's off-field routine is more than a curiosity for Toronto, because the Blue Jays need his strikeout stuff and stability to keep climbing in a tight AL East race. His return from a hamstring issue adds another layer, making his preparation a timely lens on how he has",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/mlb/article/how-blue-jays-dylan-cease-uses-yoga-to-unlock-success-on-mound/",
+    "date": "June 16, 2026"
   },
   "two_up": [
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Season Over",
-      "headline": "Pavelski confirms interest in Maple Leafs head coach opening",
-      "dek": "Joe Pavelski is now publicly tied to Toronto's coaching search, adding a high-profile but unconventional option as the Maple Leafs try to reset after a disappointing 32-36-14 season. His interest gives the opening extra intrigue because it raises the question of whether the club",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/article/pavelski-confirms-interest-in-maple-leafs-head-coach-opening/",
-      "date": "June 15, 2026"
+      "headline": "Which NHL teams have won the most Stanley Cup titles?",
+      "dek": "The Toronto Maple Leafs, who finished 32-36-14 and placed 8th in the Atlantic, have not won a Stanley Cup since their 13th title 59 years ago. This long drought makes the question of which NHL teams hold the most championships deeply relevant to fans still waiting for their next",
+      "source": "ESPN",
+      "link": "https://www.espn.com/nhl/story/_/id/40344315/which-nhl-teams-won-most-stanley-cup-titles",
+      "date": "June 16, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Season Over",
-      "headline": "Collin Murray-Boyles' transcendent rookie season for the Raptors",
-      "dek": "Collin Murray-Boyles' rookie year has given Toronto a potential long-term cornerstone, making his immediate impact one of the clearest bright spots from a 46-36 season. For a team that finished third in the Atlantic, his emergence helps frame where the Raptors can build next",
+      "headline": "The Rudy Gay Trade Tree: How a 2013 trade fueled the Knicks' championship",
+      "dek": "A 2013 Rudy Gay swap was just a midseason reset for Toronto at the time, but this piece tracks how the move kept sending value down the line for years. With the Raptors off the court and a 46-36 finish already in the books, it's a reminder that one deadline deal can shape two",
       "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/06/15/collin-murray-boyles-transcendent-rookie-season-for-the-raptors/",
-      "date": "June 15, 2026"
+      "link": "https://raptorsrepublic.com/2026/06/15/the-rudy-gay-trade-tree-how-a-2013-trade-fueled-the-knicks-championship/",
+      "date": "June 16, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - OTAs & Minicamp",
-    "headline": "Commanders News: Jordan Magee & Percy Butler fight for relevance in '26",
-    "dek": "Jordan Magee and Percy Butler are entering a crucial stretch of OTAs and minicamp, where every rep matters as they try to secure meaningful roles on a roster that is still taking shape. For Washington, their progress or regression could help determine how much depth and",
+    "headline": "Commanders News: Training camp & preseason could be a tale of 2 kickers",
+    "dek": "Training camp and preseason will put Washington's kicking job under a spotlight, with incumbent Jake Moody and rookie Drew Stevens already shaping up as the offseason's most consequential duel.\n\nIn a season where every point can matter in the NFC East race, that kind of special",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-news/420678/commanders-news-jordan-magee-percy-butler-fight-for-relevance-in-26",
-    "date": "June 15, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-news/420743/commanders-news-2026-training-camp-could-become-tale-two-kickers",
+    "date": "June 16, 2026"
   },
   "ticker": [
     {
@@ -1377,7 +1369,7 @@
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Pavelski confirms interest in Maple Leafs head"
+      "text": "Maple Leafs sign F Tinus Luc Koblar to three-year,"
     },
     {
       "badge": "MLB",
@@ -1397,7 +1389,7 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Notebook: Caballero's clock antics add new element"
+      "text": "How Blue Jays' Dylan Cease uses yoga to unlock"
     },
     {
       "badge": "NBA",
@@ -1407,7 +1399,7 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Collin Murray-Boyles' transcendent rookie season"
+      "text": "The Rudy Gay Trade Tree: How a 2013 trade fueled"
     },
     {
       "badge": "NFL",
@@ -1417,7 +1409,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders News: Jordan Magee & Percy Butler fight"
+      "text": "Commanders News: Training camp & preseason could be"
     }
   ],
   "at_a_glance": [
@@ -1470,10 +1462,10 @@
     {
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "matchup": "Jays",
-      "detail": "Next: Tue 6/16 at Red Sox 5:45 PM ET",
+      "matchup": "Jays at Red Sox",
+      "detail": "5:45 PM ET",
       "channel": "",
-      "off": true
+      "off": false
     },
     {
       "team": "raptors",
@@ -1555,6 +1547,15 @@
         "name": "Jays",
         "opp": "vs. Astros",
         "time": "6:07 PM ET",
+        "tv": ""
+      },
+      {
+        "day": "Tue 6/23",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "vs. Astros",
+        "time": "3:07 PM ET",
         "tv": ""
       }
     ],
