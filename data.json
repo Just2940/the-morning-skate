@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-06-19T07:43:01.880142-05:00",
-    "date_display": "June 19, 2026"
+    "updated": "2026-06-20T06:13:56.630771-05:00",
+    "date_display": "June 20, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The season died the way too many Leafs seasons do - too many losses, too little margin, and another spring spent staring at the same old unfinished business. Toronto finished 32-36-14, eighth in the Atlantic Division, with 78 points and a season-ending L7; that is not a bad run, it is a flat one, and the standings say it plainly. <strong>The headliner is the sign-and-trade for Darren Raddysh, a bold swing that lands a right-shot defenseman and an eight-year commitment worth more than $8 million annually.</strong> That move, along with the reports that Toronto was the only club granted permission to speak with Bruce Cassidy and that Jim Hiller's hiring signals a win-now posture, tells you exactly where this organization still lives - chasing urgency, not patience. The problem is the same one that has haunted this franchise for years: the ceiling keeps being promised, but the floor keeps collapsing. <strong>Now comes the real test - whether this front office can turn a noisy offseason into a coherent one before free agency and the draft reshape the roster.</strong>",
-        "updated": "Updated June 19, 2026"
+        "body": "The season died with a thud, and nobody in Toronto can pretend otherwise - 78 points, 8th in the Atlantic, and a final kick of L7 that said all the quiet parts out loud. Yet the first real jolt of the Chayka era arrived fast: <strong>the Maple Leafs landed Darren Raddysh in a sign-and-trade, giving him an eight-year deal at an $8.5 million cap hit and sending a fifth-round pick to Tampa Bay</strong>. That is not tire-kicking. That is a front office choosing a right-shot defenseman who can run a power play and betting the blue line needs conviction, not caution. Raddysh, 30, brings the kind of offensive punch Toronto has been chasing and the kind of contract that turns a move into a statement. The bigger question now is whether this is the first clean stroke of a larger repaint - coaching voices, cap maneuvering, and a draft board that has to be sharpened after a flat finish. The regular season is gone; the audit begins now. <strong>Watch for Chayka's next move - because the Leafs have started their offseason by acting like they mean to change the picture, not just hang another frame.</strong>",
+        "updated": "Updated June 20, 2026"
       },
       "key_numbers": [
         {
@@ -44,26 +44,26 @@
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Maple Leafs complete sign-and-trade deal for Darren Raddysh",
-          "dek": "Toronto is making a rare all-in move at the blue line, adding Darren Raddysh in a sign-and-trade after a season in which he posted 22 goals and 70 points. The deal signals the Leafs are willing to pay for immediate impact, even with the season already over and the roster still",
+          "headline": "What Darren Raddysh can do for the Maple Leafs",
+          "dek": "Darren Raddysh arrives as the Leafs' biggest bet to fix a blue line that bled goals last season and lacked a reliable puck mover against top competition. His breakout 70-point year and heavy power-play usage give Toronto a chance to add offense from defense, but the eight-year",
           "date": "June 19, 2026",
-          "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-complete-sign-and-trade-deal-for-darren-raddysh/"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Maple Leafs only team to receive permission from Vegas to speak to Cassidy",
-          "dek": "Toronto's coaching search just got a revealing footnote: Vegas had to clear Cassidy for any interview, and the Leafs were the only club allowed to make that call. It also underscores how close the team came to a very different hire before settling on Jim Hiller, a decision that",
-          "date": "June 17, 2026",
-          "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-only-team-to-receive-permission-from-vegas-to-speak-to-cassidy/"
+          "link": "https://www.sportsnet.ca/nhl/article/what-darren-raddysh-can-do-for-the-maple-leafs/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Trades we'd like to see during the 2026 NHL offseason",
-          "dek": "Toronto enters the summer after another uneven finish, with the roster under pressure to change before the draft and free agency open. Rumors already point to the Leafs exploring bigger moves, including calls on young core pieces and a possible shakeup on defense.",
+          "headline": "NHL trade grades: Report cards for biggest deals of 2026 offseason",
+          "dek": "Toronto's front office is already acting like a contender, and the Darren Raddysh sign-and-trade signals a willingness to pay now for help on the blue line. Those grades matter because they show whether the Leafs turned a cheap trade chip into a real upgrade or overpaid for",
           "date": "June 19, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/49110952/nhl-2026-trades-draft-picks-prospects-top-players-contracts"
+          "link": "https://www.espn.com/nhl/story/_/id/49116941/nhl-2026-offseason-trade-grades-deals-report-cards-top-players-prospects-biggest-deals"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Maple Leafs acquire Lightning's Raddysh in sign-and-trade",
+          "dek": "The Maple Leafs have jumped the market for a top offensive defenseman, signaling urgency to strengthen a blue line that needed help before free agency opened. Giving up only a fifth-round pick to secure Darren Raddysh on an eight-year deal raises the stakes for a team that is",
+          "date": "June 19, 2026",
+          "link": "https://www.espn.com/nhl/story/_/id/49116063/source-leafs-acquire-lightning-raddysh-sign-trade"
         }
       ],
       "standings": {
@@ -419,36 +419,36 @@
           {
             "name": "Gavin McKenna",
             "position": "LW",
-            "team": "Penn State",
-            "note": "The consensus top player and the clear favorite in recent mock drafts, making him the most likely Maple Leafs selection at No. 1."
-          },
-          {
-            "name": "Ivar Stenberg",
-            "position": "C/LW",
-            "team": "Frölunda",
-            "note": "Frequently appears near the top of recent public mock drafts as a high-end skill forward if Toronto considers an alternative to McKenna."
-          },
-          {
-            "name": "Caleb Malhotra",
-            "position": "C",
-            "team": "Boston College",
-            "note": "A center with strong two-way value who shows up in recent mock-draft discussion as a plausible top-pick pivot."
+            "team": "TBD",
+            "note": "The consensus frontrunner to go first overall, making him the clear center of Toronto's draft board if the pick holds."
           },
           {
             "name": "Chase Reid",
-            "position": "RD",
-            "team": "Soo Greyhounds",
-            "note": "One of the leading defense options in the class and a realistic target if Toronto prefers a premium blueliner with the top pick."
+            "position": "RHD",
+            "team": "Sault Ste. Marie (OHL)",
+            "note": "A top-tier defense option who sits near the top of several public rankings and would fit as a high-end two-way blue-liner."
           },
           {
-            "name": "Carson Rehkopf",
-            "position": "LW",
-            "team": "Kitchener Rangers",
-            "note": "A goal-scoring winger who has been discussed in recent draft boards as a potential fit if Toronto trades down or pivots later."
+            "name": "Carson Carels",
+            "position": "LHD",
+            "team": "Prince George (WHL)",
+            "note": "A highly rated defense prospect whose all-around game makes him one of the likeliest alternatives if Toronto pivots from forward."
+          },
+          {
+            "name": "Keaton Verhoeff",
+            "position": "RHD",
+            "team": "University of North Dakota (NCAA)",
+            "note": "A premium right-shot defenseman with top-pair upside who remains in the first-overall discussion across public boards."
+          },
+          {
+            "name": "Daxon Rudolph",
+            "position": "RHD",
+            "team": "Prince Albert (WHL)",
+            "note": "A big right-shot defense prospect commonly grouped among the elite blue-liners near the top of the draft."
           }
         ],
         "lottery": {
-          "odds": "TBD",
+          "odds": "Won 1st overall",
           "outcome": "Won 1st overall"
         },
         "label": "NHL Draft Board",
@@ -465,39 +465,39 @@
             "pk": "1",
             "team": "Gavin McKenna (LW)",
             "league": "NHL",
-            "pts": "Penn State",
-            "odds": "The consensus top player and the clear favorite in recent mock drafts, making him the most likely Maple Leafs selection at No. 1."
+            "pts": "TBD",
+            "odds": "The consensus frontrunner to go first overall, making him the clear center of Toronto's draft board if the pick holds."
           },
           {
             "pk": "2",
-            "team": "Ivar Stenberg (C/LW)",
+            "team": "Chase Reid (RHD)",
             "league": "NHL",
-            "pts": "Frölunda",
-            "odds": "Frequently appears near the top of recent public mock drafts as a high-end skill forward if Toronto considers an alternative to McKenna."
+            "pts": "Sault Ste. Marie (OHL)",
+            "odds": "A top-tier defense option who sits near the top of several public rankings and would fit as a high-end two-way blue-liner."
           },
           {
             "pk": "3",
-            "team": "Caleb Malhotra (C)",
+            "team": "Carson Carels (LHD)",
             "league": "NHL",
-            "pts": "Boston College",
-            "odds": "A center with strong two-way value who shows up in recent mock-draft discussion as a plausible top-pick pivot."
+            "pts": "Prince George (WHL)",
+            "odds": "A highly rated defense prospect whose all-around game makes him one of the likeliest alternatives if Toronto pivots from forward."
           },
           {
             "pk": "4",
-            "team": "Chase Reid (RD)",
+            "team": "Keaton Verhoeff (RHD)",
             "league": "NHL",
-            "pts": "Soo Greyhounds",
-            "odds": "One of the leading defense options in the class and a realistic target if Toronto prefers a premium blueliner with the top pick."
+            "pts": "University of North Dakota (NCAA)",
+            "odds": "A premium right-shot defenseman with top-pair upside who remains in the first-overall discussion across public boards."
           },
           {
             "pk": "5",
-            "team": "Carson Rehkopf (LW)",
+            "team": "Daxon Rudolph (RHD)",
             "league": "NHL",
-            "pts": "Kitchener Rangers",
-            "odds": "A goal-scoring winger who has been discussed in recent draft boards as a potential fit if Toronto trades down or pivots later."
+            "pts": "Prince Albert (WHL)",
+            "odds": "A big right-shot defense prospect commonly grouped among the elite blue-liners near the top of the draft."
           }
         ],
-        "notes": "Outcome: Won 1st overall"
+        "notes": "Lottery odds: Won 1st overall - Outcome: Won 1st overall"
       },
       "watch": [
         {
@@ -526,26 +526,26 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "37-38",
+      "record": "37-39",
       "detail": "3rd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays woke up with a little swagger and a lot of catching up to do - the kind that comes from a sweep and the hard arithmetic of a 37-38 record. <strong>They just finished off the Red Sox with a 4-3 win, capping a three-game sweep and stretching the winning streak to three.</strong> That leaves Toronto third in the AL East, 9 games back, but the mood has changed fast from the flat day after the Yankee loss to a club playing cleaner, sharper baseball. Vladimir Guerrero Jr. supplied thunder in Wednesday's 4-3 win, Nathan Lukes kept adding timely pop, and Trey Yesavage - the young arm at the center of the recent buzz - gave them six punchouts and enough calm to keep the sweep alive. That matters because this team has been searching for a run, not a speech. Three straight against Boston gives them one. <strong>Now the test is carrying that edge into Wrigley this afternoon against the Cubs at 1:20 PM ET.</strong>",
-        "updated": "Updated June 19, 2026"
+        "body": "The good vibes from a tidy sweep of Boston lasted only a day before reality slapped the Blue Jays in the face. <strong>Kevin Gausman's rare dud helped trigger a 16-2 demolition by the Cubs on Friday night</strong>, and the bullpen had no answer once Chicago opened the floodgates. Toronto sits at 37-39, third in the AL East, 10 games back and still carrying the kind of record that turns every hot stretch into a chance at respectability rather than comfort. The early June surge - three straight over the Red Sox, capped by a 4-3 escape and a 3-0 shutout - showed the club can still strangle a game when the pitching is crisp. But the rotation and relief corps were exposed in a hurry at Wrigley, and that is the story now. Gausman's off night is one thing; the deeper concern is how thin the margin becomes when the staff cracks. <strong>Toronto gets the Cubs again Saturday afternoon at 1:20 p.m. ET - and it needs a cleaner, sterner response than the one it offered Friday.</strong>",
+        "updated": "Updated June 20, 2026"
       },
       "key_numbers": [
         {
-          "number": "37-38",
+          "number": "37-39",
           "label": "Season Record",
           "note": "3rd in AL East"
         },
         {
-          "number": "W3",
+          "number": "L1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "9",
+          "number": "10",
           "label": "Games Back",
           "note": "3rd in AL East"
         },
@@ -556,6 +556,17 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Jun 19",
+          "result": "L",
+          "team_score": 2,
+          "opp_name": "Cubs",
+          "opp_score": 16,
+          "opp_logo": "chc",
+          "league": "mlb",
+          "game_date": "2026-06-19",
+          "game_id": "401815820"
+        },
         {
           "date": "Jun 18",
           "result": "W",
@@ -588,52 +599,49 @@
           "league": "mlb",
           "game_date": "2026-06-16",
           "game_id": "401815779"
-        },
-        {
-          "date": "Jun 14",
-          "result": "L",
-          "team_score": 3,
-          "opp_name": "Yankees",
-          "opp_score": 8,
-          "opp_logo": "nyy",
-          "league": "mlb",
-          "game_date": "2026-06-14",
-          "game_id": "401815753"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Red Sox vs. Jays - Full Highlights",
-        "subtitle": "MLB - Jun 18, 2026",
-        "result_badge": "W 4-3",
-        "result_class": "w",
-        "url": "https://www.youtube.com/watch?v=i46ZDPTU4kE",
-        "game_date": "2026-06-18"
+        "title": "Cubs vs. Jays - Full Highlights",
+        "subtitle": "MLB - Jun 19, 2026",
+        "result_badge": "L 2-16",
+        "result_class": "l",
+        "url": "https://www.youtube.com/watch?v=IqTM7_rgMFo",
+        "game_date": "2026-06-19"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
+          "headline": "Jays fell to Cubs 16-2",
+          "dek": "Toronto's margin for error is shrinking fast as a lopsided loss drops the club further below.500 and keeps it chasing the division pack. A rough night on the mound and a quiet lineup made Friday's series opener feel more like a warning than a one-off.",
+          "date": "Jun 19",
+          "link": "https://www.espn.com/mlb/recap?gameId=401815820"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Gausman's rare dud further strains bullpen as Blue Jays crushed by Cubs",
+          "dek": "Kevin Gausman's short outing leaves Toronto leaning harder on a bullpen that has little margin for error in a crowded division race. The blowout also magnifies how quickly one rough start can ripple through a staff already trying to protect innings and stay afloat in the AL East.",
+          "date": "June 19, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/gausmans-rare-dud-further-strains-bullpen-as-blue-jays-crushed-by-cubs/"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
           "headline": "Jays beat Red Sox 4-3",
-          "dek": "A one-run win over Boston gives Toronto a needed boost in a crowded AL East race, where every game matters for staying within reach of the division leaders. At 37-38, the Blue Jays still need results like this to build momentum before the schedule turns harder.",
+          "dek": "A needed bounce-back keeps Toronto from spiraling after a rough stretch and gives the club a little breathing room in the AL East race. Pulling out a one-run win over Boston matters because it can reset a sub-.500 team's confidence before the schedule tightens again.",
           "date": "Jun 18",
           "link": "https://www.espn.com/mlb/recap?gameId=401815806"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Gotta See It: Guerrero Jr. takes Gray deep to left centre in first inning",
-          "dek": "Vladimir Guerrero Jr. is starting to look more like the force Toronto needs, with his homer at Fenway his fourth of the season and his first in 25 games. For a Blue Jays team hovering under.500, a quick jolt from its centerpiece can change the tone of a road trip in a hurry.",
-          "date": "June 18, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/gotta-see-it-guerrero-jr-takes-gray-deep-to-left-centre-in-first-inning/"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Jays beat Red Sox 3-0",
-          "dek": "The Blue Jays' sweep of Boston gives a sub-.500 team a much-needed boost after a tense late-inning finish at Fenway, where Brandon Valenzuela's two-out RBI double decided it. Toronto has now taken five of six from the Red Sox this season, a useful sign as it tries to climb in",
-          "date": "Jun 17",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815794"
+          "headline": "How new Blue Jays have outperformed returning players in 2026",
+          "dek": "Toronto's slow start makes the offseason additions look more important by the day, because the club needs the new faces to carry more of the offense and change the shape of the lineup. This piece shows which newcomers have delivered and how that production is standing up next to",
+          "date": "June 19, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/how-new-blue-jays-have-outperformed-returning-players-in-2026/"
         }
       ],
       "standings": {
@@ -657,9 +665,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "45",
+                  "46",
                   "28",
-                  ".616",
+                  ".622",
                   "-"
                 ]
               },
@@ -669,9 +677,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "41",
+                  "42",
                   "30",
-                  ".577",
+                  ".583",
                   "3"
                 ]
               },
@@ -682,9 +690,9 @@
                 "you": true,
                 "vals": [
                   "37",
-                  "38",
-                  ".493",
-                  "9"
+                  "39",
+                  ".487",
+                  "10"
                 ]
               },
               {
@@ -694,9 +702,9 @@
                 "you": false,
                 "vals": [
                   "35",
-                  "41",
-                  ".461",
-                  "11.5"
+                  "42",
+                  ".455",
+                  "12.5"
                 ]
               },
               {
@@ -705,9 +713,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "29",
+                  "30",
                   "43",
-                  ".403",
+                  ".411",
                   "15.5"
                 ]
               }
@@ -733,8 +741,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "39",
-                  "34",
-                  ".534",
+                  "35",
+                  ".527",
                   "-"
                 ]
               },
@@ -746,9 +754,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "45",
+                  "46",
                   "28",
-                  ".616",
+                  ".622",
                   "-"
                 ]
               },
@@ -761,8 +769,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "39",
-                  "37",
-                  ".513",
+                  "38",
+                  ".506",
                   "-"
                 ]
               },
@@ -773,9 +781,9 @@
                 "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "41",
+                  "42",
                   "30",
-                  ".577",
+                  ".583",
                   "3"
                 ]
               },
@@ -787,22 +795,9 @@
                 "seed": "WC2",
                 "vals": [
                   "40",
-                  "35",
-                  ".533",
+                  "36",
+                  ".526",
                   "-"
-                ]
-              },
-              {
-                "team": "Jays",
-                "logo": "tor",
-                "league": "mlb",
-                "you": true,
-                "seed": "WC3",
-                "vals": [
-                  "37",
-                  "38",
-                  ".493",
-                  "9"
                 ]
               },
               {
@@ -810,13 +805,40 @@
                 "logo": "ath",
                 "league": "mlb",
                 "you": false,
+                "seed": "WC3",
+                "vals": [
+                  "38",
+                  "38",
+                  ".500",
+                  "0.5"
+                ]
+              },
+              {
+                "team": "Jays",
+                "logo": "tor",
+                "league": "mlb",
+                "you": true,
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
                   "37",
-                  "38",
-                  ".493",
-                  "1.5"
+                  "39",
+                  ".487",
+                  "10"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "36",
+                  "39",
+                  ".480",
+                  "2"
                 ]
               },
               {
@@ -828,22 +850,22 @@
                 "seed_style": "faint",
                 "vals": [
                   "36",
-                  "40",
-                  ".474",
+                  "41",
+                  ".468",
                   "4.5"
                 ]
               },
               {
-                "team": "Rangers",
-                "logo": "tex",
+                "team": "Astros",
+                "logo": "hou",
                 "league": "mlb",
                 "you": false,
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "35",
-                  "39",
-                  ".473",
+                  "36",
+                  "41",
+                  ".468",
                   "3"
                 ]
               },
@@ -856,23 +878,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "35",
-                  "41",
-                  ".461",
-                  "11.5"
-                ]
-              },
-              {
-                "team": "Astros",
-                "logo": "hou",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "35",
-                  "41",
-                  ".461",
-                  "4"
+                  "42",
+                  ".455",
+                  "12.5"
                 ]
               }
             ]
@@ -910,8 +918,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The season ended with a tidy record and an unruly to-do list. Toronto finished 46-36, third in the Atlantic Division, and the only thing the final stretch really settled was that this was a good team, not a finished one. <strong>The most important recent development is the draft-board scramble around Toronto's options - with Chris Cenac Jr. flagged as a risky swing and guards like Labaron Philon, Cam Carr and Christian Anderson in the conversation.</strong> That's the right kind of problem for a club that can afford patience after a year that ended with a 5.0-point margin and 10 games back. The Raptors need more shooting, more stability, and probably one clear answer on the bench or in the room before they start spending real money. RJ Barrett remains part of the long game, which is sensible; the franchise should resist the urge to force a shortcut through a draft class and an NIL era that keep reshuffling value. Toronto has earned the right to be selective, even picky. <strong>Now comes the real test - picking the right prospect, protecting the cap, and turning a respectable 46-36 into something sturdier next season.</strong>",
-        "updated": "Updated June 19, 2026"
+        "body": "The season didn't end with a flourish so much as a hard stop, and that's the truth Toronto has to live with now. <strong>Darko Rajakovic's contract extension is in the works</strong> - a clear sign the organization is choosing continuity after a 46-36 finish that left the Raptors 3rd in the Atlantic Division, 10 games back and carrying the faint, unsatisfying glow of a.500-plus team that still wasn't close enough. The record says competence; the gap says unfinished business. The real task now is sorting signal from noise. Jakob Poeltl remains the structural anchor, but the bigger story is the frontcourt and backcourt fit around him, and whether the Raptors can use the draft to add a cleaner guard solution without forcing a reach. That lines up with the club's posture: management is already talking about taking \"who fits best,\" and that is the right instinct in a draft deep enough to reward patience. <strong>What matters next is whether Toronto turns a respectable floor into a real ceiling - through the draft, through free agency, and through the coach it appears ready to keep.</strong>",
+        "updated": "Updated June 20, 2026"
       },
       "key_numbers": [
         {
@@ -941,42 +949,26 @@
       },
       "the_latest": [
         {
-          "source": "Raptors Republic",
-          "source_class": "web",
-          "headline": "Raptors Draft Options: LABARON PHILON, CAM CARR, CHRISTIAN ANDERSON",
-          "dek": "With Toronto holding the 19th pick, this draft note zeroes in on guards who could fit a roster that already finished 46-36 and needs more backcourt creation. Labaron Philon, Cam Carr and Christian Anderson each offer a different kind of swing, from immediate scoring punch to",
-          "date": "June 18, 2026",
-          "link": "https://raptorsrepublic.com/2026/06/18/raptors-draft-options-labaron-philon-cam-carr-christian-anderson/"
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Contract extension for Raptors coach Darko Rajakovic in the works",
+          "dek": "The Raptors are signaling stability after a 46-36 season by moving to lock in Darko Rajakovic, a vote of confidence in the coach charged with steering the rebuild. The timing points to an offseason that could center on continuity at the top before Toronto turns to roster",
+          "date": "June 19, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/contract-extension-for-raptors-coach-darko-rajakovic-in-the-works/"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Raptors optimistic heading into draft despite position, realities of NIL era",
-          "dek": "Toronto's front office enters the draft with a playoff-caliber record, but without a lottery cushion, forcing every evaluation to carry more weight. In the NIL era, the Raptors have to find value where the margins are thinner and the payoff is less obvious than in past drafts.",
+          "dek": "The Raptors face a shrinking pool of lottery talent as the NIL era reshapes college recruiting, forcing them to rely heavily on draft strategy. Yet optimism remains strong that their rebuild can secure the right piece despite these new realities.",
           "date": "June 16, 2026",
           "link": "https://www.sportsnet.ca/nba/article/raptors-optimistic-heading-into-draft-despite-position-realities-of-nil-era/"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Tolzman says depth of draft will allow Raptors to take 'who fits best'",
-          "dek": "With the draft board still fluid, Toronto can afford to let the board come to it instead of forcing a positional need at No. 19. Tolzman's comments signal a front office leaning on the class's depth, where the gap between similarly graded prospects may be small enough to",
-          "date": "June 16, 2026",
-          "link": "https://www.sportsnet.ca/nba/video/tolzman-says-depth-of-draft-will-allow-raptors-to-take-who-fits-best/"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "NBA free agency: Six underrated players teams should target",
-          "dek": "Toronto's 46-36 finish left it with a solid base, but the Raptors still have to add dependable rotation help if they want to move beyond the middle of the pack. That makes this free-agent market relevant because the right undervalued signing could fill a need without forcing a",
-          "date": "June 18, 2026",
-          "link": "https://www.espn.com/nba/story/_/id/49098145/nba-2026-underrated-free-agents-offseason-targets"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2026 NBA mock draft: Projecting all 60 picks in Rounds 1 and 2",
-          "dek": "The Raptors' No. 19 pick gives them a chance to target a player who can fit a roster that just finished 46-36 and still has room to grow. With Toronto mentioned among teams hovering in the middle of the first round, this mock draft helps frame whether they stay put or get pulled",
+          "dek": "The Raptors enter draft week with two picks and a chance to add either a backcourt organizer or frontcourt size after a 46-36 season that left them third in the Atlantic. With trade talks picking up and the board still shifting, this mock helps frame what Toronto could do if it",
           "date": "June 16, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49041464/2026-nba-mock-draft-projecting-60-picks-draft-night-trade-talks-boozer-peterson-dybantsa-acuff"
         }
@@ -1181,8 +1173,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The quiet work of June is where a team's paint starts to dry - and Washington's got a fresh coat on the defense, with Daronte Jones already shaping the new edges of the room. <strong>Odafe Oweh and K'Lavon Chaisson stood out at minicamp</strong>, a useful sign for a club that finished 3rd in the NFC East, 6 games back, with a season that ended 1-0 and left no illusion about the gap to the top. The real story now is not last fall's record; it's whether these additions can turn a front seven that has been redesigned in the image of Dan Quinn's staff into something nasty enough to matter. Oweh brings speed off the corner, Chaisson brings the kind of springy, prove-it energy that can change a practice field in a hurry, and both arrive with a chance to win snaps before the pads even come on. Washington has spent all spring talking about fit, not flash. <strong>What matters next is whether that minicamp juice survives into training camp, when depth charts stop being suggestions and start becoming law.</strong>",
-        "updated": "Updated June 19, 2026"
+        "body": "The offseason's best news in Ashburn is also the clearest sign Washington is trying to build something sturdier than last year's flash - an offensive line that can grow up fast. <strong>Laremy Tunsil has been shepherding Josh Conerly Jr. through minicamp</strong>, and that matters because young tackles do not usually get tutored by one of the league's cleanest technicians; they get thrown into the fire and told to survive. Washington finished 3rd in the NFC East, 6 games back, and the final record says the same thing the tape did: too much inconsistency, too little room for error. That is why the camp buzz around Conerly, plus the staff's decision to spotlight IPP project T.J. Maguranyanga, feels more meaningful than the usual June optimism. It is also why the UDFA chatter around Malik Spencer deserves a long look. This is roster-building season, not pageantry. <strong>What happens next is simple: who keeps climbing, who stalls, and whether the new linemen can turn talk into protection once the real games begin.</strong>",
+        "updated": "Updated June 20, 2026"
       },
       "key_numbers": [
         {
@@ -1209,42 +1201,42 @@
         {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Commanders minicamp warning may force Adam Peters to stop waiting",
-          "dek": "Minicamp exposed how little proven receiver depth Washington has beyond its top options, turning a summer issue into a potential roster priority before training camp begins. If the warning signs keep showing up in Ashburn, Adam Peters may have to accelerate help instead of",
-          "date": "June 19, 2026",
-          "link": "https://riggosrag.com/washington-commanders-minicamp-warning-may-force-adam-peters-stop-waiting?utm_source=RSS"
+          "headline": "6 Commanders players who lost crucial ground at 2026 minicamp",
+          "dek": "Minicamp gave Washington a first real chance to sort out who is helping and who is slipping, and the evaluations now matter because the roster is still unsettled. The players who faded may have turned a short June window into an early depth-chart setback before training camp",
+          "date": "June 20, 2026",
+          "link": "https://riggosrag.com/6-washington-commanders-players-lost-crucial-ground-2026-minicamp?utm_source=RSS"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "Free agent Stefon Diggs keeps eye on Commanders: 'Back home' fans still matter",
-          "dek": "Stefon Diggs' interest gives Washington a rare chance to add a proven playmaker with local ties while the team is still sorting out its offense in OTAs and minicamp. For a franchise trying to climb from third in the NFC East, landing a veteran receiver with hometown appeal would",
+          "dek": "Stefon Diggs keeping Washington in the mix gives the Commanders a real offseason storyline at a position where added firepower could change the offense. His hometown ties make this more than a standard free-agent decision, with fans and coaches watching whether sentiment turns",
           "date": "June 18, 2026",
           "link": "https://www.cbssports.com/nfl/news/nfl-free-agent-stefon-diggs-commanders/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 NFL free agency: Ranking best players still available",
-          "dek": "The Commanders have already cleared room and addressed the roster, but with OTAs winding down, free agents like Joey Bosa or Deebo Samuel could still reshape the depth chart before training camp. Washington's cap flexibility and need for another impact weapon make this ranking",
+          "headline": "3 key offensive takeaways for the Commanders",
+          "dek": "Washington's offense is under the microscope because minicamp brought a new scheme, and the first clues are how quickly Jayden Daniels is absorbing it. John Keim's takeaways show whether the Commanders are building something more balanced and efficient as they try to climb the",
           "date": "June 19, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/48162895/2026-nfl-free-agency-ranking-best-remaining-available-unsigned-players"
+          "link": "https://www.espn.com/video/clip/_/id/49119994/3-key-offensive-takeaways-commanders"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 NFL minicamp live updates: Last spring practices wrap up",
-          "dek": "Minicamp is the last chance for Washington to sharpen its new pieces and clean up chemistry before the team breaks for summer. For a roster still chasing the top of the NFC East, these reps offer an early read on whether the Commanders are closing the gap or just collecting",
-          "date": "June 18, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/48950554/2026-nfl-minicamp-live-updates-teams-mandatory-camps-news-notes-depth-charts"
+          "headline": "2026 NFL free agency: Ranking best players still available",
+          "dek": "Washington still has enough roster pressure to make the remaining free agent market relevant, especially if the front office wants to firm up the trenches or add proven depth before training camp. With names like Joey Bosa and Deebo Samuel still on the board, the story is really",
+          "date": "June 19, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/48162895/2026-nfl-free-agency-ranking-best-remaining-available-unsigned-players"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Dan Quinn: K'Lavon Chaisson among standouts from Commanders minicamp",
-          "dek": "Dan Quinn used minicamp to spotlight newcomers and depth players who could shape the Commanders' roster battle when training camp opens. Chaisson's mention matters because Washington is still trying to identify pass-rush help that can stick beyond offseason drills.",
-          "date": "June 18, 2026",
-          "link": "https://www.hogshaven.com/pressers/421345/dan-quinn-names-standouts-klavon-chaisson-rachaad-white-washington-commanders-minicamp"
+          "headline": "How Commanders OT Laremy Tunsil is helping Josh Conerly Jr. progress",
+          "dek": "Laremy Tunsil's presence at OTAs gives Washington a veteran anchor at left tackle, and that matters for a line trying to raise its level in front of a young quarterback and a new offensive direction.\n\nFor Josh Conerly Jr., learning beside a proven pass protector can speed up the",
+          "date": "June 19, 2026",
+          "link": "https://www.hogshaven.com/washington-commanders-news/421826/commanders-offensive-lineman-laremy-tunsil-josh-conerly-minicamp"
         }
       ],
       "standings": {
@@ -1341,71 +1333,71 @@
   "featured": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "Yesavage finds groove to help Blue Jays sweep Red Sox",
-    "dek": "Trey Yesavage's career-best 7.1-inning outing, fueled by a mechanical tweak and aggressive strike-zone approach, secured the Blue Jays' first Fenway Park sweep since August 2023 and lifted them back within a game of.500. This road-series triumph marks a turning point for a team",
-    "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/mlb/article/yesavage-finds-groove-to-help-blue-jays-sweep-red-sox/",
-    "date": "June 19, 2026"
+    "headline": "Kelly's slam jumpstarts Cubs' rout of Blue Jays in 16-run outburst",
+    "dek": "Kelly's grand slam turned a tight game into a blowout, leaving Toronto with another ugly loss as it tries to stop a slide that has kept it below.500. The Blue Jays now have to regroup quickly in Chicago, where the series loss already puts added weight on a road trip that matters",
+    "source": "MLB.com",
+    "link": "https://www.mlb.com/news/carson-kelly-hits-grand-slam-in-cubs-win-vs-blue-jays",
+    "date": "June 20, 2026"
   },
   "two_up": [
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Season Over",
-      "headline": "Source: Leafs to acquire Lightning's Raddysh in sign-and-trade",
-      "dek": "The Maple Leafs are adding one of the market's top offensive defensemen, a move that points to an aggressive reset under new GM John Chayka after a disappointing 32-36-14 season. Raddysh's breakout 70-point year gives Toronto an immediate power-play boost and signals a push to",
-      "source": "ESPN",
-      "link": "https://www.espn.com/nhl/story/_/id/49116063/source-leafs-acquire-lightning-raddysh-sign-trade",
-      "date": "June 19, 2026"
+      "headline": "Darren Raddysh deal starts Chayka's Maple Leafs era with a bang",
+      "dek": "John Chayka wasted no time putting his stamp on Toronto, landing the top offensive defenseman in the pre free agency market before July 1. The move gives a retooling Maple Leafs blue line immediate help and signals a much more aggressive approach than the club has shown in",
+      "source": "Sportsnet",
+      "link": "https://www.sportsnet.ca/nhl/article/darren-raddysh-deal-starts-chaykas-maple-leafs-era-with-a-bang/",
+      "date": "June 20, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Season Over",
-      "headline": "2026 NBA Draft: Chris Cenac Jr. is a risky prospect for the Raptors",
-      "dek": "Toronto needs to balance long-term upside with immediate roster fit, and a raw frontcourt prospect like Chris Cenac Jr. would test how much risk this front office is willing to take. The debate matters because a 46-36 team still has playoff ambitions, but its draft choice could",
-      "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/06/18/2026-nba-draft-chris-cenac-jr-is-a-risky-prospect-for-the-raptors/",
-      "date": "June 19, 2026"
+      "headline": "NBA free agency: Six underrated players teams should target",
+      "dek": "Toronto's 46-36 finish left it close enough to contend but still needing more reliable depth around its core, so undervalued free agents could matter as much as splashier names. With the draft and offseason moves looming, this is the kind of market where smart, affordable",
+      "source": "ESPN",
+      "link": "https://www.espn.com/nba/story/_/id/49098145/nba-2026-underrated-free-agents-offseason-targets",
+      "date": "June 20, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - OTAs & Minicamp",
-    "headline": "How Daronte Jones will attack with new Commanders EDGE Odafe Oweh",
-    "dek": "Daronte Jones is bringing a more aggressive front to Washington, and Oweh's arrival gives the Commanders a proven finisher to turn that philosophy into pressure. With OTAs and minicamp underway, how Jones deploys him will shape a defense trying to climb out of the NFC East",
+    "headline": "Commanders UDFA spotlight: former Michigan State safety Malik Spencer",
+    "dek": "Malik Spencer gives Washington a developmental safety with real college continuity, something that stands out in a UDFA class built on projection. His long Michigan State run also makes him a useful gauge of how the Commanders want to sort fringe roster candidates during OTAs",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-analysis/420715/daronte-jones-commanders-edge-odafe-oweh-2026-nfl-season",
-    "date": "June 19, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-draft/421142/commanders-undrafted-free-agent-michigan-state-safety-malik-spencer",
+    "date": "June 20, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs (32-36-14) - 8th in Atlantic Division"
+      "text": "Leafs - Season Over"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Maple Leafs complete sign-and-trade deal for Darren"
+      "text": "Darren Raddysh deal starts Chayka's Maple Leafs era"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays beat Red Sox 4-3"
+      "text": "Jays fell to Cubs 16-2"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (37-38) - 3rd in AL East"
+      "text": "Jays (37-39) - 3rd in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays at Cubs - Fri 6/19 1:20 PM ET"
+      "text": "Next: Jays at Cubs - Sat 6/20 1:20 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Yesavage finds groove to help Blue Jays sweep Red Sox"
+      "text": "Gausman's rare dud further strains bullpen as Blue"
     },
     {
       "badge": "NBA",
@@ -1415,7 +1407,7 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "2026 NBA Draft: Chris Cenac Jr. is a risky prospect"
+      "text": "Contract extension for Raptors coach Darko"
     },
     {
       "badge": "NFL",
@@ -1425,7 +1417,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "How Daronte Jones will attack with new Commanders"
+      "text": "Commanders UDFA spotlight: former Michigan State"
     }
   ],
   "at_a_glance": [
@@ -1442,10 +1434,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "37-38",
+      "record": "37-39",
       "status": "3rd in AL East",
-      "status_class": "green",
-      "stat": "Streak: W3"
+      "status_class": "red",
+      "stat": "Streak: L1"
     },
     {
       "team": "raptors",
@@ -1502,15 +1494,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Fri 6/19",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Cubs",
-        "time": "1:20 PM ET",
-        "tv": ""
-      },
       {
         "day": "Sat 6/20",
         "team": "jays",
@@ -1572,6 +1555,15 @@
         "name": "Jays",
         "opp": "vs. Rangers",
         "time": "6:07 PM ET",
+        "tv": ""
+      },
+      {
+        "day": "Sat 6/27",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "vs. Rangers",
+        "time": "2:07 PM ET",
         "tv": ""
       }
     ],
