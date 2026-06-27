@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-06-26T06:42:39.950703-05:00",
-    "date_display": "June 26, 2026"
+    "updated": "2026-06-27T05:55:31.270355-05:00",
+    "date_display": "June 27, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Toronto Maple Leafs' season didn't just fade; it collapsed under a seven-game losing streak, ending in the 8th spot of the Atlantic Division with a meager 78 points and a 31-point deficit to the top. <strong>GM Kyle Chayka is now openly trading into the top 10 for the draft, signaling a potential shakeup that could include moving veterans like Morgan Rielly and Bobby Rielly Knies</strong>. The numbers are brutal: 78 points, 8th in the Atlantic, and a final streak of L7 that left the club e-clinched and out of the playoffs. While Auston Matthews' path back to Rocket Richard form is being charted by new coach Sheldon Hiller, the immediate story is the roster's fragility and the front office's willingness to dismantle for the future. Hiller's philosophy meshes with management, but the draft - starting tonight in Buffalo - holds the key to resetting the franchise's trajectory. <strong>What to watch: whether Chayka uses the No. 1 pick to secure a franchise center or pivots to a trade that reshapes the entire roster</strong>. The offseason begins now, and the Leafs must decide if they rebuild quietly or strike boldly.",
-        "updated": "Updated June 26, 2026"
+        "body": "The Toronto Maple Leafs' season didn't just end; it collapsed under a seven-game losing streak that left them 8th in the Atlantic Division with a dispiriting 78 points and 31 games behind the pace. Yet, from that wreckage, a fresh dawn arrives: <strong>the Maple Leafs have selected Gavin McKenna as the No. 1 overall pick in the 2026 NHL Draft</strong>, injecting hope into a fanbase that had grown cynical. McKenna, a Yukon native, represents the kind of elite talent the team desperately needs to rebuild its core after a season defined by injuries and inconsistency. The front office now faces critical choices: will they retain head coach Sheldon Keefe, or pivot to a new voice? Can they attract key free agents to bolster a roster that finished with a final streak of L7? The path forward is clear but demanding. <strong>The true test begins now: integrating McKenna into the system and deciding whether to overhaul the coaching staff to match the franchise's long-term ambitions.</strong>",
+        "updated": "Updated June 27, 2026"
       },
       "key_numbers": [
         {
@@ -44,26 +44,26 @@
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Maple Leafs' Chayka on trading into top 10, possible Rielly and Knies trades",
-          "dek": "After an 8th-place finish that left the franchise with significant holes, GM John Chayka confirms the team is actively pursuing top-10 trade options to secure a young defenseman for their upcoming first pick. The organization is also weighing potential moves for veteran Morgan",
-          "date": "June 25, 2026",
-          "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-chayka-on-trading-into-top-10-possible-rielly-and-knies-trades/"
+          "headline": "'Isn't what I imagined': Maple Leafs' McKenna era begins with hope, surprise",
+          "dek": "Toronto's selection of Penn State winger Gavin McKenna marks the franchise's first No. 1 overall pick since Auston Matthews in 2016, signaling a bold new chapter in their offseason rebuild. McKenna's own surprise at the magnitude of being chosen top overall underscores both the",
+          "date": "June 26, 2026",
+          "link": "https://www.sportsnet.ca/nhl/article/isnt-what-i-imagined-maple-leafs-mckenna-era-begins-with-hope-surprise/"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "How Leafs' Hiller envisions Matthews returning to Rocket Richard form",
-          "dek": "New head coach Jim Hiller sees his long-standing trust with captain Auston Matthews as the foundation for unlocking the power play that has stalled in recent seasons. With Matthews recovering from knee surgery and the team aiming to rebound after an eighth-place finish, Hiller's",
-          "date": "June 25, 2026",
-          "link": "https://www.sportsnet.ca/nhl/video/how-leafs-hiller-envisions-matthews-returning-to-rocket-richard-form/"
+          "headline": "How close were Jets, Maple Leafs to making big draft-night moves?",
+          "dek": "The Leafs already reshaped their roster on draft night by trading for Gavin McKenna and Darren Raddysh, proving they are willing to move aggressively when star talent is available. This story matters because those same front-office operators now hint they could have dealt",
+          "date": "June 26, 2026",
+          "link": "https://www.sportsnet.ca/nhl/video/how-close-were-jets-maple-leafs-to-making-big-draft-night-moves/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 NHL draft: Buzz on prospects, trades, free agency",
-          "dek": "The Toronto Maple Leafs hold the first overall pick and are widely projected to select Penn State's Gavin McKenna to fuel their franchise after a disappointing season. With multiple draft-day trades already reshaping the order and the first round set for Friday, the buzz around",
-          "date": "June 25, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/49145616/2026-nhl-draft-trades-free-agency-picks-prospects-buzz-rumors"
+          "headline": "NHL trade grades: Report cards for biggest deals of 2026 offseason",
+          "dek": "With the Leafs locked in eighth place after a season over, the team faces urgent pressure to reshape its roster for a deeper playoff run. The 2026 offseason trade grades reveal which general managers made bold moves that could directly impact Toronto's chances of climbing the",
+          "date": "June 27, 2026",
+          "link": "https://www.espn.com/nhl/story/_/id/49116941/nhl-2026-offseason-trade-grades-deals-report-cards-top-players-prospects-biggest-deals"
         }
       ],
       "standings": {
@@ -418,37 +418,37 @@
         "prospects_watched": [
           {
             "name": "Gavin McKenna",
-            "position": "Center",
+            "position": "C",
+            "team": "Penn State (NCAA)",
+            "note": "Consensus 1st overall pick and the Leafs selected him with the first pick."
+          },
+          {
+            "name": "Ivar Stenberg",
+            "position": "RW",
+            "team": "Sweden (Junior)",
+            "note": "Ranked as the best player in the draft by some analysts and went #2 overall."
+          },
+          {
+            "name": "Macklin Celebrini",
+            "position": "C",
+            "team": "Boston (NCAA)",
+            "note": "Elite prospect expected to join top-tier players like Celebrini and Will Smith in the draft class."
+          },
+          {
+            "name": "Will Smith",
+            "position": "C",
+            "team": "Stanford (NCAA)",
+            "note": "Highly regarded center in the 2026 draft class."
+          },
+          {
+            "name": "Benjamin",
+            "position": "G",
             "team": "Junior",
-            "note": "Definitely going to be the pick by the Toronto Maple Leafs according to Chris Johnston."
-          },
-          {
-            "name": "Chase Reed",
-            "position": "Winger",
-            "team": "Junior",
-            "note": "Highly ranked prospect potentially available if the Leafs trade for a higher pick."
-          },
-          {
-            "name": "Matthew Knies",
-            "position": "Winger",
-            "team": "NCAA",
-            "note": "Tops Chris Johnson's trade bait board at number three for the Leafs."
-          },
-          {
-            "name": "Morgan Rielly",
-            "position": "Defender",
-            "team": "NHL",
-            "note": "Right behind Knies at number four on the trade bait board, though a current player."
-          },
-          {
-            "name": "Brandon Carlo",
-            "position": "Defender",
-            "team": "NHL",
-            "note": "Ranked at number three on the trade bait board, though a current player."
+            "note": "TBD as a potential depth pick for the Leafs."
           }
         ],
         "lottery": {
-          "odds": "Pending",
+          "odds": "8.5%",
           "outcome": "Won 1st overall"
         },
         "label": "NHL Draft Board",
@@ -463,41 +463,41 @@
         "rows": [
           {
             "pk": "1",
-            "team": "Gavin McKenna (Center)",
+            "team": "Gavin McKenna (C)",
             "league": "NHL",
-            "pts": "Junior",
-            "odds": "Definitely going to be the pick by the Toronto Maple Leafs according to Chris Johnston."
+            "pts": "Penn State (NCAA)",
+            "odds": "Consensus 1st overall pick and the Leafs selected him with the first pick."
           },
           {
             "pk": "2",
-            "team": "Chase Reed (Winger)",
+            "team": "Ivar Stenberg (RW)",
             "league": "NHL",
-            "pts": "Junior",
-            "odds": "Highly ranked prospect potentially available if the Leafs trade for a higher pick."
+            "pts": "Sweden (Junior)",
+            "odds": "Ranked as the best player in the draft by some analysts and went #2 overall."
           },
           {
             "pk": "3",
-            "team": "Matthew Knies (Winger)",
+            "team": "Macklin Celebrini (C)",
             "league": "NHL",
-            "pts": "NCAA",
-            "odds": "Tops Chris Johnson's trade bait board at number three for the Leafs."
+            "pts": "Boston (NCAA)",
+            "odds": "Elite prospect expected to join top-tier players like Celebrini and Will Smith in the draft class."
           },
           {
             "pk": "4",
-            "team": "Morgan Rielly (Defender)",
+            "team": "Will Smith (C)",
             "league": "NHL",
-            "pts": "NHL",
-            "odds": "Right behind Knies at number four on the trade bait board, though a current player."
+            "pts": "Stanford (NCAA)",
+            "odds": "Highly regarded center in the 2026 draft class."
           },
           {
             "pk": "5",
-            "team": "Brandon Carlo (Defender)",
+            "team": "Benjamin (G)",
             "league": "NHL",
-            "pts": "NHL",
-            "odds": "Ranked at number three on the trade bait board, though a current player."
+            "pts": "Junior",
+            "odds": "TBD as a potential depth pick for the Leafs."
           }
         ],
-        "notes": "Lottery odds: Pending - Outcome: Won 1st overall"
+        "notes": "Lottery odds: 8.5% - Outcome: Won 1st overall"
       },
       "watch": [
         {
@@ -526,21 +526,21 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "39-42",
+      "record": "39-43",
       "detail": "3rd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Toronto Blue Jays' regular season has imploded into a three-game losing streak, and the latest collapse against the Rangers confirms the team can't overcome another rocky outing from Gausman in loss to Rangers. <strong>Wyatt Langford's three-run homer and Joc Pederson's leadoff shot sealed a 6-5 defeat, leaving the Jays at 39-42 and third in the AL East, 9.5 games behind the division leader</strong>. The offense, which briefly surged when Ernie Clement launched a left-field 2-1 fastball for a 3-1 lead in the third inning, couldn't sustain momentum against Texas. Gausman's inconsistent pitching remains the story right now, while the bullpen's inability to protect leads has turned contender energy into honest struggle. With the streak now at L3, the team faces a critical juncture: can they regroup against the Rangers tonight, or will the rot deepen? <strong>The Jays must seize the Friday 6:07 PM ET matchup vs. Rangers at home to halt the slide and rebuild any hope of a playoff push</strong>.",
-        "updated": "Updated June 26, 2026"
+        "body": "The Toronto Blue Jays aren't just losing; they're imploding, tumbling through a four-game skid that's buried any contender momentum they once flirted with. <strong>They fell to the Rangers 5-4 on Friday night</strong>, a late rally that crumbled as Corbin Hughes' struggles continued to haunt their pitching staff, extending their losing streak to four straight and dropping them to 39-43. Sitting third in the AL East, 9.5 games behind the division leader, the Jays are in a free fall, having lost 10 of their last 14, with Nathan Eovaldi fanning nine batters in shutout innings for the Rangers while the Jays' offense went silent. Kazuma Okamoto, their power bat, remains a story, but the team's inability to score consistently - only 17 runs in the last four losses - has exposed a fragile lineup. The pitching, once a backbone, is now a liability, with Hughes and others failing to close games. <strong>Today, they face the Rangers again at 2:07 PM ET, a critical matchup to stop the slide and regain any hope of climbing back into the hunt</strong>.",
+        "updated": "Updated June 27, 2026"
       },
       "key_numbers": [
         {
-          "number": "39-42",
+          "number": "39-43",
           "label": "Season Record",
           "note": "3rd in AL East"
         },
         {
-          "number": "L3",
+          "number": "L4",
           "label": "Streak",
           "note": "Current streak"
         },
@@ -550,12 +550,23 @@
           "note": "3rd in AL East"
         },
         {
-          "number": "1-3",
+          "number": "0-4",
           "label": "Last 4",
           "note": "Recent form"
         }
       ],
       "recent_results": [
+        {
+          "date": "Jun 26",
+          "result": "L",
+          "team_score": 4,
+          "opp_name": "Rangers",
+          "opp_score": 5,
+          "opp_logo": "tex",
+          "league": "mlb",
+          "game_date": "2026-06-26",
+          "game_id": "401815912"
+        },
         {
           "date": "Jun 25",
           "result": "L",
@@ -588,52 +599,41 @@
           "league": "mlb",
           "game_date": "2026-06-23",
           "game_id": "401815868"
-        },
-        {
-          "date": "Jun 22",
-          "result": "W",
-          "team_score": 4,
-          "opp_name": "Astros",
-          "opp_score": 2,
-          "opp_logo": "hou",
-          "league": "mlb",
-          "game_date": "2026-06-22",
-          "game_id": "401815855"
         }
       ],
       "last_game_highlights": {
         "available": true,
         "title": "Rangers vs. Jays - Full Highlights",
-        "subtitle": "MLB - Jun 25, 2026",
-        "result_badge": "L 5-6",
+        "subtitle": "MLB - Jun 26, 2026",
+        "result_badge": "L 4-5",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=oW3_vn7Q4Cs",
-        "game_date": "2026-06-25"
+        "url": "https://www.youtube.com/watch?v=gbbf2sDICqY",
+        "game_date": "2026-06-26"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays fell to Rangers 6-5",
-          "dek": "A one-point loss to the Rangers deepens the Blue Jays' struggle to climb out of third place in the AL East with a 39-42 record. This defeat extends a disappointing stretch following a series loss to the Astros, leaving Toronto's playoff hopes increasingly uncertain as the",
-          "date": "Jun 25",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815903"
+          "headline": "Jays fell to Rangers 5-4",
+          "dek": "Toronto now faces a critical four-game losing streak that threatens to erase their AL East playoff momentum as they slip further behind the Rangers. This narrow one-run loss at home underscores a disturbing inability to close tight games against division rivals, forcing urgent",
+          "date": "Jun 26",
+          "link": "https://www.espn.com/mlb/recap?gameId=401815912"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "'Our best baseball is in front of us': Schneider on what's ahead",
-          "dek": "After collapsing to lose two straight games and blowing saves in four of their only four 500-record outings, the Blue Jays face a critical moment where their margin for error is dangerously thin. Manager John Schneider's call to tighten up all phases signals that the team must",
-          "date": "June 25, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/our-best-baseball-is-in-front-of-us-schneider-on-whats-ahead/"
+          "headline": "Blue Jays' Jesus Sanchez exits vs. Rangers with sprained ankle",
+          "dek": "With the Blue Jays sitting at 39-43 and clinging to third place in the AL East, losing a key outfielder who bats.274 with a.753 OPS creates immediate pressure on their playoff push. Sanchez's sprained ankle, which occurred during a critical defensive play against the Rangers,",
+          "date": "June 26, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-jesus-sanchez-exits-vs-rangers-after-rolling-ankle-on-wall/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays fell to Astros 3-1",
-          "dek": "The loss to the Astros extends the Blue Jays' struggle against a division rival that just posted a dominant 10-win start, pushing their record to 39-42. This defeat deepens the gap behind the AL East leaders and threatens to derail their playoff momentum as the regular season",
-          "date": "Jun 24",
-          "link": "https://www.espn.com/mlb/recap?gameId=401815883"
+          "headline": "Jays fell to Rangers 6-5",
+          "dek": "The Blue Jays have now lost four consecutive games, dropping to 39-43 and deepening their struggles in a tight AL East race. This single-run defeat to the Rangers marks their fourth straight loss by one point, highlighting a critical inability to close out tight contests during",
+          "date": "Jun 25",
+          "link": "https://www.espn.com/mlb/recap?gameId=401815903"
         }
       ],
       "standings": {
@@ -658,8 +658,8 @@
                 "you": false,
                 "vals": [
                   "48",
-                  "32",
-                  ".600",
+                  "33",
+                  ".593",
                   "-"
                 ]
               },
@@ -669,10 +669,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "45",
+                  "46",
                   "33",
-                  ".577",
-                  "2"
+                  ".582",
+                  "1"
                 ]
               },
               {
@@ -682,8 +682,8 @@
                 "you": true,
                 "vals": [
                   "39",
-                  "42",
-                  ".481",
+                  "43",
+                  ".476",
                   "9.5"
                 ]
               },
@@ -693,10 +693,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "38",
+                  "39",
                   "44",
-                  ".463",
-                  "11"
+                  ".470",
+                  "10"
                 ]
               },
               {
@@ -705,10 +705,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "33",
+                  "34",
                   "46",
-                  ".418",
-                  "14.5"
+                  ".425",
+                  "13.5"
                 ]
               }
             ]
@@ -732,9 +732,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "41",
+                  "42",
                   "38",
-                  ".519",
+                  ".525",
                   "-"
                 ]
               },
@@ -747,8 +747,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "48",
-                  "32",
-                  ".600",
+                  "33",
+                  ".593",
                   "-"
                 ]
               },
@@ -760,9 +760,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
+                  "42",
                   "41",
-                  "41",
-                  ".500",
+                  ".506",
                   "-"
                 ]
               },
@@ -773,10 +773,10 @@
                 "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "45",
+                  "46",
                   "33",
-                  ".577",
-                  "2"
+                  ".582",
+                  "1"
                 ]
               },
               {
@@ -787,21 +787,35 @@
                 "seed": "WC2",
                 "vals": [
                   "42",
-                  "39",
-                  ".519",
-                  "-"
+                  "40",
+                  ".512",
+                  "1"
                 ]
               },
               {
-                "team": "Astros",
-                "logo": "hou",
+                "team": "Athletics",
+                "logo": "ath",
                 "league": "mlb",
                 "you": false,
                 "seed": "WC3",
                 "vals": [
                   "40",
-                  "43",
-                  ".482",
+                  "42",
+                  ".488",
+                  "1.5"
+                ]
+              },
+              {
+                "team": "Rangers",
+                "logo": "tex",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "40",
+                  "42",
+                  ".488",
                   "1.5"
                 ]
               },
@@ -814,37 +828,23 @@
                 "seed_style": "faint",
                 "vals": [
                   "39",
-                  "42",
-                  ".481",
+                  "43",
+                  ".476",
                   "9.5"
                 ]
               },
               {
-                "team": "Athletics",
-                "logo": "ath",
+                "team": "Astros",
+                "logo": "hou",
                 "league": "mlb",
                 "you": false,
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "39",
-                  "42",
-                  ".481",
-                  "1.5"
-                ]
-              },
-              {
-                "team": "Rangers",
-                "logo": "tex",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "39",
-                  "42",
-                  ".481",
-                  "1.5"
+                  "40",
+                  "44",
+                  ".476",
+                  "2.5"
                 ]
               },
               {
@@ -855,10 +855,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "38",
+                  "39",
                   "44",
-                  ".463",
-                  "11"
+                  ".470",
+                  "10"
                 ]
               },
               {
@@ -869,9 +869,9 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "38",
+                  "39",
                   "44",
-                  ".463",
+                  ".470",
                   "4.5"
                 ]
               }
@@ -910,8 +910,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Toronto Raptors' season has quietly closed its door, leaving a franchise of 46 wins and 36 losses - third in the Atlantic Division but still 10 points behind the playoff ceiling - grappling with what comes next. The most urgent move? <strong>Raptors lock in Jamal Shead on a $2.3M team option</strong>, signaling a commitment to youth and continuity after a season that ended with a single win and a 54-day silence. While Allen Graves, the first-rounder who transformed from an injured football player to a Raptors draft pick, now steps into Toronto's spotlight, the real story is the front office's pivot: no coaching revolution yet, no panic in free agency, but a deliberate build around emerging talent. The roster's offensive stumbles this past postseason echo through the offseason, but Graves' trajectory offers hope. <strong>What to watch now: how quickly the Raptors integrate draft picks Graves and Bradley into the system, and whether Shead's presence becomes the foundation of a deeper, more resilient team</strong>. The season is over, but the rebuild is just beginning.",
-        "updated": "Updated June 26, 2026"
+        "body": "The Toronto Raptors' season didn't just end; it evaporated into a quiet offseason, leaving a 46-36 record and a third-place Atlantic Division finish that feels both solid and unsatisfying. The most significant recent development is the arrival of the <strong>2026 draft class</strong>, as new faces land in Toronto and roster decisions loom large for Webster's first solo off-season. This team, which finished 10 games behind the playoff threshold with a final W1 streak, now faces urgent questions: Will the front office gamble aggressively in free agency, or rebuild through the draft? Jamal Shead's retention - via a $2.30 million team option - signals a commitment to young guard development, but the lack of a star scorer remains a glaring hole, especially after Mabrey's historic 50-point game earlier this year. The Raptors' future hinges on whether they can pivot from a mid-tier regular-season team to a contender. <strong>What to watch next is Webster's first major offseason move</strong>, as the draft, free agency, and potential trade rumors will define the franchise's trajectory for years to come.",
+        "updated": "Updated June 27, 2026"
       },
       "key_numbers": [
         {
@@ -941,10 +941,26 @@
       },
       "the_latest": [
         {
+          "source": "Raptors Republic",
+          "source_class": "web",
+          "headline": "Raptors Weekly Wrap-Up: draft class arrives, more",
+          "dek": "The Raptors secured a rare draft win by selecting Allen Graves, an elite multi-positional defender who projects as a floor-spacing four for the modern NBA. With Graves and Jaden Bradley arriving, the team now has new faces to evaluate as they make critical roster decisions",
+          "date": "June 26, 2026",
+          "link": "https://raptorsrepublic.com/2026/06/26/raptors-weekly-wrap-up-draft-class-arrives-more/"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "How much are Raptors willing to gamble in Webster's first solo off-season?",
+          "dek": "Bobby Webster now holds full veto power over the Raptors' roster moves for the first time, forcing the team to decide whether to protect its young core or aggressively pursue a veteran like Kawhi Leonard. With the Atlantic Division secured but the championship window narrowing,",
+          "date": "June 26, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/how-much-are-raptors-willing-to-gamble-in-websters-first-solo-off-season/"
+        },
+        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "How Allen Graves grew from injured football player to Raptors first-rounder",
-          "dek": "Allen Graves' selection at 19th spot marks a rare triumph for the Raptors, who turned a football injury that nearly ended his career into a top-tier NBA prospect. His arrival offers immediate hope for a 46-win team that finished third in the Atlantic, proving the draft can",
+          "dek": "Allen Graves' transformation from a sidelined football prospect to the Raptors' 19th pick proves his path was never preordained, making his selection a standout story of resilience. This versatile forward's journey, now charted by Sportsnet's Michael Grange, highlights why",
           "date": "June 25, 2026",
           "link": "https://www.sportsnet.ca/nba/article/how-allen-graves-grew-from-injured-football-player-to-raptors-first-rounder/"
         },
@@ -952,7 +968,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NBA free agency 2026: How all 30 teams can ace their offseason",
-          "dek": "After finishing third in the Atlantic with a 46-win record, the Raptors are aggressively pursuing a reunion with Kawhi Leonard to transform their offseason into a championship opportunity. Front office talks are also heating up for LaMelo Ball, signaling that this team aims to",
+          "dek": "The Raptors are positioning themselves as a key suitor for Kawhi Leonard, whose potential departure from the Clippers could reshape the league's star distribution. With major moves already underway, this offseason offers a critical chance for the team to finally secure the",
           "date": "June 26, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49171485/nba-offseason-2026-how-lakers-warriors-heat-knicks-all-30-teams-ace-summer"
         },
@@ -960,25 +976,9 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "2027 NBA championship odds: Timberwolves shorten to 22-1, Hornets now 100-1",
-          "dek": "The Minnesota Timberwolves surged to 22-1 championship odds after acquiring LaMelo Ball, signaling a major shift in the 2027 title race just as the Raptors finish a 46-win season. While Toronto sits third in the Atlantic Division, the front office now faces critical decisions to",
+          "dek": "Minnesota's price tightening after the LaMelo Ball trade shows the market is already reordering the league before next season begins. For Toronto, the update matters because any shift in the Western pecking order can change the Raptors' path to contention and the trade landscape",
           "date": "June 25, 2026",
           "link": "https://www.espn.com/espn/betting/story/_/id/49062262/2027-nba-finals-odds-mvp-2026-27-championship-betting"
-        },
-        {
-          "source": "Raptors Republic",
-          "source_class": "web",
-          "headline": "Jalen Celestine gets shot with hometown Raptors",
-          "dek": "Jalen Celestine, a hometown guard from Ajax, Ontario, joins the Raptors on a Summer League deal just days after the 2026 NBA Draft wrapped up. This signing underscores Toronto's urgency to build its post-draft roster quickly while giving a local prospect a chance to prove",
-          "date": "June 25, 2026",
-          "link": "https://raptorsrepublic.com/2026/06/25/jalen-celestine-gets-shot-with-hometown-raptors/"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Report: Kawhi Leonard, Raptors have mutual interest in reunion",
-          "dek": "Nearly eight years after Kawhi Leonard delivered Toronto its only championship before leaving, the Raptors now face a rare chance to bring their most iconic star back to Scottie Barnes. This potential reunion could instantly reshape the Eastern Conference title picture if",
-          "date": "June 25, 2026",
-          "link": "https://www.sportsnet.ca/nba/article/report-kawhi-leonard-raptors-have-mutual-interest-in-reunion/"
         }
       ],
       "standings": {
@@ -1181,8 +1181,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The offseason has already put the Commanders on trial, and the verdict so far is less about wins than fit. <strong>The real story is the zone-heavy offense trying to mesh with center Nick Allegretti</strong> - a small line item on paper, a big one in practice, because protection rules and timing inside the pocket can make or break a young quarterback's spring. Washington sits 3rd in the NFC East, and the final line from last season - W1, six games back - says plenty about the gap it still has to close. But OTAs are where the next argument begins. Brandon Aiyuk's name keeps buzzing around the building, Stefon Diggs is still running routes, and that is no accident; these are the kinds of veteran pieces that can either sharpen a room or crowd it. The staff's challenge is simple and merciless: make the scheme clean, make the center comfortable, and make the new pieces fit without turning camp into a traffic jam. <strong>What to watch next: whether the Allegretti fit settles the line or exposes it before the pads even come on</strong>.",
-        "updated": "Updated June 26, 2026"
+        "body": "The Washington Commanders aren't waiting for the season to start; they're building the engine that could finally silence the NFC East's skeptics. At the heart of this offseason surge is <strong>Odafe Oweh</strong>, the edge rusher now ranked No. 4 in the team's latest roster analysis, a signal that the front office is prioritizing defensive dominance. With the Commanders sitting 3rd in the NFC East and a final-season record of W1 - six games behind the division lead - the roster battle isn't just about depth; it's about identity. Brian Flores' defense is poised to become more aggressive, and the question isn't whether it will fit Nick Allegretti at center, but whether the new zone-heavy scheme will unlock the unit's full potential. One veteran, left with more to prove after the offseason program, stands as the story right now: a reminder that in OTAs and minicamp, every rep is a audition. <strong>What to watch in minicamp is how Oweh and the new zone defense sync up</strong>, because if they do, the Commanders could finally turn the tide in a division that's long ignored them.",
+        "updated": "Updated June 27, 2026"
       },
       "key_numbers": [
         {
@@ -1209,16 +1209,24 @@
         {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Adam Schefter hints when Brandon Aiyuk may finally get his Commanders answer",
-          "dek": "This story matters now because Aiyuk has publicly demanded his release from the 49ers specifically to join the Commanders, making his potential arrival a top priority for Washington. Schefter's timeline hints that the team could finally resolve this blockbuster trade before the",
+          "headline": "Commanders' offseason program left one veteran with more to prove than expected",
+          "dek": "Chris Paul earned a contract extension after a standout year, but the offseason program has now turned his spot into an open competition he must win. With the Commanders' offseason ranked among the league's best, Paul faces higher expectations to prove his value than anyone",
+          "date": "June 27, 2026",
+          "link": "https://riggosrag.com/commanders-offseason-program-left-one-veteran-with-more-prove-than-expected?utm_source=RSS"
+        },
+        {
+          "source": "Pro Football Talk",
+          "source_class": "web",
+          "headline": "Before Brandon Aiyuk can force his release, he must apply for reinstatement",
+          "dek": "Brandon Aiyuk's path to Washington hinges on a simple two-step move: petitioning the league for reinstatement and then showing up to training camp to force the 49ers' hand. Until he completes this, the team remains on the reserve/left squad list with no guarantee of release,",
           "date": "June 26, 2026",
-          "link": "https://riggosrag.com/adam-schefter-hints-when-brandon-aiyuk-may-finally-get-commanders-answer?utm_source=RSS"
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/before-brandon-aiyuk-can-force-his-release-he-must-apply-for-reinstatement"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "Brandon Aiyuk drama continues: Receiver taunts 49ers with 'Go Commanders' chant in latest social media video",
-          "dek": "Aiyuk's latest social media stunt directly ties the Commanders to his ongoing, public push to leave the 49ers, signaling a potential roster shift before the season begins. This trolling campaign keeps Washington in the spotlight as the primary destination for a star receiver",
+          "dek": "Brandon Aiyuk's relentless social media taunts toward the 49ers have made his desire to join Washington undeniable, yet his failure to apply for reinstatement from the reserve list keeps him effectively untradeable. While many assume he will eventually land alongside Jayden",
           "date": "June 25, 2026",
           "link": "https://www.cbssports.com/nfl/news/brandon-aiyuk-commanders-video/"
         },
@@ -1226,7 +1234,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Questions about 10 new NFL coordinators entering 2026 season",
-          "dek": "The Commanders are in the part of the offseason when scheme changes start to matter, and new coordinator hires across the NFC East could reshape the division race before training camp even opens. For Washington, any shift in how rivals attack or defend will influence a team",
+          "dek": "Head coach Dan Quinn has placed his 2026 rebuild on the shoulders of a 30-year-old rookie offensive coordinator and a first-time defensive leader, creating a high-stakes gamble for the franchise. Quinn dramatically replaced respected veteran Kingsbury with wunderkind David",
           "date": "June 26, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/49166861/new-nfl-coordinators-offense-defense-questions-2026-season-cowboys-bills-commanders"
         },
@@ -1234,17 +1242,9 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Ranking WR, TE, RB groups for 2026: Best and worst NFL teams",
-          "dek": "The Commanders' thin wide receiver depth has sparked a warning that they must target Brandon Aiyuk to avoid a critical skill-position gap in 2026. As the team navigates OTAs and minicamp, this ranking underscores why bolstering their pass-catcher group is the single most urgent",
+          "dek": "The Washington Commanders' skill position group is ranked 26th in the NFL, a glaring weakness that must be addressed as the team sits third in the NFC East. With no clear receiver options behind Terry McLaurin and a committee approach at running back, these rankings highlight",
           "date": "June 25, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/49154825/ranking-nfl-teams-offensive-groups-wr-rb-te-2026-season-best-playmakers"
-        },
-        {
-          "source": "Hogs Haven",
-          "source_class": "web",
-          "headline": "Commanders News: More Aiyuk antics as Stefon Diggs keeps running routes",
-          "dek": "As the Commanders enter Phase 3 of OTAs with young quarterback Jayden Daniels evolving, rumors of veteran free agents like Stefon Diggs and Brandon Aiyuk create major intrigue around the roster. These name-dropping antics test whether the team will prioritize cap space and youth",
-          "date": "June 25, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-news/422324/washington-commanders-news-more-aiyuk-antics-stefon-diggs-tunsil-josh-conerly-allegretti-chenal"
         }
       ],
       "standings": {
@@ -1341,40 +1341,40 @@
   "featured": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "Blue Jays can't overcome another rocky outing from Gausman in loss to Rangers",
-    "dek": "Gausman's fourth-straight loss and 4.04 ERA this season expose a critical pitching vulnerability that keeps the Blue Jays stuck in third place despite their offense carrying them. With the team hovering just three games above the division cutoff, another shaky start from their",
+    "headline": "Blue Jays' late rally falls short as Corbin's struggles continue",
+    "dek": "Corbin's mounting struggles have cost the Blue Jays another chance to climb from their 39-43 record, deepening concerns about their pitching reliability in a tight AL East race. With the team sitting third and facing the Rangers again today, every lost game widens the gap to the",
     "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/mlb/article/blue-jays-cant-overcome-another-rocky-outing-from-gausman-in-loss-to-rangers/",
-    "date": "June 26, 2026"
+    "link": "https://www.sportsnet.ca/mlb/article/blue-jays-late-rally-falls-short-as-corbins-struggles-continue/",
+    "date": "June 27, 2026"
   },
   "two_up": [
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Season Over",
-      "headline": "NHL trade grades: Report cards for biggest deals of 2026 offseason",
-      "dek": "With the Leafs sitting eighth in the Atlantic and the season officially over, the 2026 offseason trade report cards reveal whether this franchise can finally pivot from stagnation to contention. As rival teams like Washington and Chicago aggressively retool, these grades show if",
+      "headline": "2026 NHL draft updates: 7-round, 32-team pick tracker",
+      "dek": "Toronto Maple Leafs head coach and general manager just won the draft lottery to secure the No. 1 pick, selecting playmaker Gavin McKenna to fuel their overdue overhaul. This franchise move sets the stage for a new era as McKenna joins Auston Matthews and William Nylander to",
       "source": "ESPN",
-      "link": "https://www.espn.com/nhl/story/_/id/49116941/nhl-2026-offseason-trade-grades-deals-report-cards-top-players-prospects-biggest-deals",
-      "date": "June 26, 2026"
+      "link": "https://www.espn.com/nhl/story/_/id/49189811/2026-nhl-draft-pick-tracker-live-updates-analysis-32-teams-7-rounds-scouting-notes",
+      "date": "June 27, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Season Over",
-      "headline": "Raptors lock in Jamal Shead on $2.3M team option",
-      "dek": "By securing Jamal Shead for just $2.3 million, the Raptors protect their fragile financial position while keeping a rotation staple who played every game last season. This low-cost lock-in preserves crucial flexibility for a potential extension next July or a cap space strategy",
+      "headline": "A historic list expands: Mabrey joins Toronto's 50-point club",
+      "dek": "Marina Mabrey didn't just join Toronto's 50-point club; she tied the WNBA single-game scoring record with 53 points, surpassing the previous Tempo franchise best by 15 points. Her performance places her second all-time among Toronto basketball players, trailing only Fred",
       "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/06/25/raptors-lock-in-jamal-shead-on-2-3m-team-option/",
-      "date": "June 26, 2026"
+      "link": "https://raptorsrepublic.com/2026/06/26/a-historic-list-expands-mabrey-joins-torontos-50-point-club/",
+      "date": "June 27, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - OTAs & Minicamp",
-    "headline": "Will the Commanders new zone-heavy scheme fit center Nick Allegretti?",
-    "dek": "Allegretti's fit matters now because Washington is installing a different run-game identity, and the center is the pivot point for making the shift work in camp. If he settles in, it steadies an offensive line that needs answers before the season starts; if not, the Commanders",
+    "headline": "Commanders roster rankings: edge rusher Odafe Oweh lands at No. 4",
+    "dek": "Odafe Oweh's fourth-place ranking on the 2026 roster highlights his explosive role in Dan Quinn's completely retooled defense, which invested massive free-agent contracts to fix a previously non-elite edge rusher group. This assessment matters now as the team enters OTAs and",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-analysis/421989/will-washington-commanders-new-zone-heavy-scheme-fit-center-nick-allegretti",
-    "date": "June 26, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-analysis/422677/odafe-oweh-commanders-roster-rankings-ravens-chargers",
+    "date": "June 27, 2026"
   },
   "ticker": [
     {
@@ -1385,27 +1385,27 @@
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Maple Leafs' Chayka on trading into top 10,"
+      "text": "'Isn't what I imagined': Maple Leafs' McKenna era"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays fell to Rangers 6-5"
+      "text": "Jays fell to Rangers 5-4"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (39-42) - 3rd in AL East"
+      "text": "Jays (39-43) - 3rd in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays vs. Rangers - Fri 6/26 6:07 PM ET"
+      "text": "Next: Jays vs. Rangers - Sat 6/27 2:07 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays can't overcome another rocky outing from"
+      "text": "Blue Jays' late rally falls short as Corbin's"
     },
     {
       "badge": "NBA",
@@ -1415,7 +1415,7 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors lock in Jamal Shead on $2.3M team option"
+      "text": "A historic list expands: Mabrey joins Toronto's"
     },
     {
       "badge": "NFL",
@@ -1425,7 +1425,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Will the Commanders new zone-heavy scheme fit"
+      "text": "Commanders roster rankings: edge rusher Odafe Oweh"
     }
   ],
   "at_a_glance": [
@@ -1442,10 +1442,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "39-42",
+      "record": "39-43",
       "status": "3rd in AL East",
       "status_class": "red",
-      "stat": "Streak: L3"
+      "stat": "Streak: L4"
     },
     {
       "team": "raptors",
@@ -1479,7 +1479,7 @@
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
       "matchup": "Jays vs. Rangers",
-      "detail": "6:07 PM ET",
+      "detail": "2:07 PM ET",
       "channel": "",
       "off": false
     },
@@ -1502,15 +1502,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Fri 6/26",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "vs. Rangers",
-        "time": "6:07 PM ET",
-        "tv": ""
-      },
       {
         "day": "Sat 6/27",
         "team": "jays",
@@ -1554,6 +1545,15 @@
         "name": "Jays",
         "opp": "vs. Mets",
         "time": "2:07 PM ET",
+        "tv": ""
+      },
+      {
+        "day": "Sat 7/4",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Mariners",
+        "time": "9:10 PM ET",
         "tv": ""
       }
     ],
