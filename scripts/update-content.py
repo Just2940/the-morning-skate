@@ -2374,19 +2374,20 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
     season_over = bool(phase_info) and phase_info.get("phase", "") in over_phases
     if season_over:
         facts.append("SEASON STATUS: This team's season is OVER. Every stat below is FINAL. "
-                     "Do NOT write about streaks, standings, seeds, or games as current or live events.")
+                     "Do NOT write about streaks, standings, seeds, or games as current or live events. "
+                     "NEVER mention last season's streak, games-back, or seed in the column. "
+                     "The final record may appear AT MOST once, only to frame a current decision.")
     if standings:
-        if "streak" in standings:
-            facts.append((f"FINAL SEASON STREAK (how the season ENDED): {standings['streak']}")
-                         if season_over else (f"STREAK: {standings['streak']}"))
+        if "streak" in standings and not season_over:
+            # A dead season's streak is trivia, not context - never feed it
+            # to the LOTL prompt once the season is over.
+            facts.append(f"STREAK: {standings['streak']}")
         if "points" in standings:
             facts.append(f"POINTS: {standings['points']}")
-        if "gamesBack" in standings:
-            facts.append((f"FINAL GAMES BACK: {standings['gamesBack']}") if season_over
-                         else (f"GAMES BACK: {standings['gamesBack']}"))
-        if "gamesBehind" in standings:
-            facts.append((f"FINAL GAMES BEHIND: {standings['gamesBehind']}") if season_over
-                         else (f"GAMES BEHIND: {standings['gamesBehind']}"))
+        if "gamesBack" in standings and not season_over:
+            facts.append(f"GAMES BACK: {standings['gamesBack']}")
+        if "gamesBehind" in standings and not season_over:
+            facts.append(f"GAMES BEHIND: {standings['gamesBehind']}")
         if "clincher" in standings:
             facts.append(f"CLINCH STATUS: {standings['clincher']}")
         if "playoffSeed" in standings:
@@ -3218,7 +3219,8 @@ If real headlines are provided below, write about THOSE instead of generic offse
         editorial_dir += (
             " CRITICAL OFFSEASON RULE: Do NOT recap or dwell on last season. You may reference"
             " the finished season in AT MOST one short clause, and only if it directly frames a"
-            " current decision. The column is about NOW and NEXT: signings, trades, draft moves,"
+            " current decision. NEVER cite last season's streak, games-back, seed, or standing."
+            " The column is about NOW and NEXT: signings, trades, draft moves,"
             " camp battles, roster construction, and what to watch for."
         )
     anchor_block = ""
