@@ -3077,6 +3077,14 @@ def build_draft_board(team_key, phase_info, team_info=None):
     # the-draft bug are the same disease - gate on the DATE, not the phase.
     try:
         _ed = str(result.get("event_date") or "")
+        # Placeholder ghost: no parseable year AND no real projected pick
+        # (post-draft Perplexity returns TBD/TBD - same disease as the
+        # date-in-the-past case, mirrors validator 0.9).
+        if not re.search(r"\d{4}", _ed):
+            _pick = str(result.get("projected_pick") or "").strip().upper()
+            if _pick in ("", "TBD", "N/A"):
+                print(f"  Draft board for {team_key} suppressed: placeholder (date/pick TBD)")
+                return None
         _m = re.search(r"([A-Za-z]+)\s+\d{1,2}\D+(\d{1,2}),?\s+(\d{4})", _ed)
         if not _m:
             _m = re.search(r"([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})", _ed)
