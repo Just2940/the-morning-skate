@@ -4763,10 +4763,14 @@ def build_data():
         _hl = (teams_data.get(team_key, {}) or {}).get("last_game_highlights") or {}
         # logo fields are ESPN ABBRS (validator 0.14 verifies them); the
         # renderer builds URLs via logoUrl(abbr, league).
-        _opp = ""
-        _lm = re.search(r"/500/([a-z0-9]+)\.png", str(g.get("opp_logo", "")).lower())
-        if _lm:
-            _opp = _lm.group(1)
+        _raw = str(g.get("opp_logo", "")).strip().lower()
+        if re.fullmatch(r"[a-z0-9]{2,5}", _raw):
+            _opp = _raw  # schedule already stores ESPN abbrs
+        else:
+            _opp = ""
+            _lm = re.search(r"/500/([a-z0-9]+)\.png", _raw)
+            if _lm:
+                _opp = _lm.group(1)
         db["scoreboard"].append({
             "team": team_key,
             "name": cfg["full_name"].split()[-1],
