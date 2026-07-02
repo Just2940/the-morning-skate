@@ -729,11 +729,10 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
         except Exception:
             pass
     parts = []
-    rec_txt = record or "the final horn"
     if is_over:
         parts.append(
-            f"<strong>The {short}' season is in the books at {rec_txt}</strong>, "
-            f"and the conversation has moved squarely to what comes next."
+            f"<strong>This stretch of the calendar is where the {short}' next season gets built</strong>, "
+            f"and the front office is doing the talking now."
         )
         if recent and last_days <= 7:
             g = recent[0]
@@ -742,8 +741,6 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
                 f"It ended with {rw} the {g.get('opp_name', '')}, "
                 f"{g.get('team_score', '')}-{g.get('opp_score', '')}."
             )
-        if standing:
-            parts.append(f"They finished {standing.lower()} - a final placement that frames every decision this summer.")
         if phase_id == "otas":
             parts.append("OTAs and minicamp are where depth charts start to tilt - quiet June reps become real roles by August, and the coaching staff is sorting keepers from camp bodies right now.")
         elif phase_id == "combine_free_agency":
@@ -3188,13 +3185,13 @@ CRITICAL CONTENT RULES:
 - A column based on verified facts alone is infinitely better than no column at all.
 
 FORMATTING:
-- ONE paragraph, 150-200 words. Dense, polished prose ‚Äî no filler.
+- ONE paragraph, 110-150 words. Dense, polished prose ‚Äî no filler.
 - Bold the single most important recent event with <strong> tags.
 - Bold the forward-looking detail at the end with <strong> tags.
 - Use literal Unicode characters (NOT HTML entities): — for em dashes, – for en dashes, ’ for apostrophes. Do NOT output tokens like &mdash; &ndash; or &rsquo;.
 - Do NOT use markdown. No asterisks, no bullet points.
 - Do NOT include citation numbers like [1], [2], etc. Write clean prose with no reference markers.
-- Do NOT exceed 200 words.
+- Do NOT exceed 160 words.
 
 BANNED BOILERPLATE (FORBIDDEN - these exact phrases and close variants):
 - "every game now carrying real stakes for positioning"
@@ -3214,6 +3211,16 @@ If real headlines are provided below, write about THOSE instead of generic offse
 
 """
 
+    OVER_PHASES_LOTL = ("season_ended", "eliminated", "offseason", "deep_offseason",
+                        "postseason_offseason", "pre_draft", "post_draft",
+                        "draft_free_agency", "combine_free_agency", "otas", "training_camp")
+    if (phase_info or {}).get("phase", "") in OVER_PHASES_LOTL:
+        editorial_dir += (
+            " CRITICAL OFFSEASON RULE: Do NOT recap or dwell on last season. You may reference"
+            " the finished season in AT MOST one short clause, and only if it directly frames a"
+            " current decision. The column is about NOW and NEXT: signings, trades, draft moves,"
+            " camp battles, roster construction, and what to watch for."
+        )
     anchor_block = ""
     if anchor_headlines:
         _ah = [h.strip() for h in anchor_headlines if h and h.strip()][:4]
@@ -3248,7 +3255,7 @@ Your paragraph must include:
 
 IMPORTANT: Every fact you cite must be CURRENT as of {today_str}. Do not reference game results from weeks or months ago as if they just happened. Do NOT invent scores, player stats from games, or series outcomes.
 
-Write 150-200 words of polished sports column prose. Every sentence should earn its place."""
+Write 110-150 words of polished sports column prose. Every sentence should earn its place."""
 
     # === WORD COUNT ENFORCEMENT (120-200 words; retry up to 2x). Added 2026-04-19. ===
     result = None
@@ -3264,10 +3271,10 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
         # Strip HTML tags for an accurate visible word count
         plain = re.sub(r'<[^>]+>', '', candidate)
         word_count = len(plain.split())
-        if 120 <= word_count <= 200:
+        if 90 <= word_count <= 160:
             result = candidate
             break
-        print(f"  WARNING: {team_key} LOTL attempt {attempt+1} word count {word_count} outside [120,200], retrying")
+        print(f"  WARNING: {team_key} LOTL attempt {attempt+1} word count {word_count} outside [90,160], retrying")
 
     if not result:
         print(f"  WARNING: Perplexity could not produce valid LOTL for {team_key}; using ESPN fallback")
@@ -3280,7 +3287,7 @@ Write 150-200 words of polished sports column prose. Every sentence should earn 
     if result:
         _fb_plain = re.sub(r'<[^>]+>', '', result)
         _fb_wc = len(_fb_plain.split())
-        if _fb_wc < 120:
+        if _fb_wc < 90:
             print(f"  WARNING: LOTL only {_fb_wc} words for {team_key}; padding")
             _cfg = TEAMS[team_key]
             _league = _cfg.get("league", "")
@@ -4504,7 +4511,7 @@ def build_data():
         if lotl_text:
             _pfc_plain = re.sub(r'<[^>]+>', '', lotl_text)
             _pfc_wc = len(_pfc_plain.split())
-            if _pfc_wc < 120:
+            if _pfc_wc < 90:
                 print(f"  WARNING: post-fact-check LOTL only {_pfc_wc} words for {team_key}; padding")
                 _cfg = TEAMS[team_key]
                 _league = _cfg.get("league", "")
