@@ -3279,7 +3279,7 @@ Write 110-150 words of polished sports column prose. Every sentence should earn 
             print(f"  WARNING: {team_key} LOTL attempt {attempt+1} contains banned boilerplate {_banned_hits}; retrying")
             continue
         if (phase_info or {}).get("phase", "") in OVER_PHASES_LOTL:
-            if re.search(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b", candidate, re.I):
+            if re.search(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b|\b\d+[- ]game (deficit|hole|gap|cushion)\b|\blone (recent )?(win|loss)\b|\bdeficit\b", candidate, re.I):
                 print(f"  WARNING: {team_key} LOTL attempt {attempt+1} cites dead-season streak/GB; retrying")
                 continue
         # Strip HTML tags for an accurate visible word count
@@ -4623,7 +4623,7 @@ def build_data():
                  "postseason_offseason", "pre_draft", "post_draft",
                  "draft_free_agency", "combine_free_agency", "otas", "training_camp")
         if lotl_text and phase_info.get("phase", "") in _over:
-            _stale_re = re.compile(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b", re.I)
+            _stale_re = re.compile(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b|\b\d+[- ]game (deficit|hole|gap|cushion)\b|\blone (recent )?(win|loss)\b|\bdeficit\b", re.I)
             if _stale_re.search(re.sub(r"<[^>]+>", "", lotl_text)):
                 _sents = re.split(r"(?<=[.!?]) +", lotl_text)
                 _kept = [x for x in _sents if not _stale_re.search(re.sub(r"<[^>]+>", "", x))]
