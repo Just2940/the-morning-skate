@@ -3278,6 +3278,10 @@ Write 110-150 words of polished sports column prose. Every sentence should earn 
         if _banned_hits:
             print(f"  WARNING: {team_key} LOTL attempt {attempt+1} contains banned boilerplate {_banned_hits}; retrying")
             continue
+        if (phase_info or {}).get("phase", "") in OVER_PHASES_LOTL:
+            if re.search(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b", candidate, re.I):
+                print(f"  WARNING: {team_key} LOTL attempt {attempt+1} cites dead-season streak/GB; retrying")
+                continue
         # Strip HTML tags for an accurate visible word count
         plain = re.sub(r'<[^>]+>', '', candidate)
         word_count = len(plain.split())
@@ -4611,6 +4615,20 @@ def build_data():
                 _sents = re.split(r'(?<=[.!?]) +', lotl_text)
                 _kept = [x for x in _sents if not _lotl_banned_hits(x)]
                 if _kept:
+                    lotl_text = " ".join(_kept)
+
+        # Deterministic backstop: prompts persuade, they do not guarantee.
+        # For finished seasons, drop any sentence citing streak or games-back.
+        _over = ("season_ended", "eliminated", "offseason", "deep_offseason",
+                 "postseason_offseason", "pre_draft", "post_draft",
+                 "draft_free_agency", "combine_free_agency", "otas", "training_camp")
+        if lotl_text and phase_info.get("phase", "") in _over:
+            _stale_re = re.compile(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b", re.I)
+            if _stale_re.search(re.sub(r"<[^>]+>", "", lotl_text)):
+                _sents = re.split(r"(?<=[.!?]) +", lotl_text)
+                _kept = [x for x in _sents if not _stale_re.search(re.sub(r"<[^>]+>", "", x))]
+                if _kept:
+                    print(f"  WARNING: scrubbed dead-season stat sentence(s) from {team_key} LOTL")
                     lotl_text = " ".join(_kept)
 
         team_entry = {
