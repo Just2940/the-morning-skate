@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-02T06:31:02.858481-05:00",
+    "updated": "2026-07-02T09:23:56.267613-04:00",
     "date_display": "July 2, 2026"
   },
   "teams": {
@@ -11,7 +11,7 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Toronto Maple Leafs didn't just shuffle the offseason deck - they flipped the table, betting big on a Hall of Fame goaltender to resurrect a franchise that finished 8th in the Atlantic with 78 points and missed the playoffs. <strong>Sergei Bobrovsky agrees to a three-year, $21M deal with the Maple Leafs</strong>, reuniting with the 2024 Stanley Cup-winning tandem and shielding the team from Anthony Stolarz's injury history. General Manager John Chayka, nowhere to be found on a dock, crushed two trades and five signings before Canada Day even ignited, including Nick Paul, Jack Roslovic, and depth forwards to flesh out the roster. At 37, Bobrovsky brings a career-churned resume but a proven edge in high-stakes games - exactly what this cap-tight team needs. <strong>What to watch for now: how quickly Bobrovsky locks in during camp and whether the Leafs can finally stabilize their crease for a playoff push next season.</strong>",
+        "body": "Toronto's offseason has detonated with a blockbuster that redefines the franchise's entire identity, proving GM John Chayka isn't playing it safe. <strong>Sergei Bobrovsky agrees to a three-year, $21M deal with the Maple Leafs</strong>, injecting two-time Stanley Cup pedigree into a crease that faltered after missing the playoffs last season with 78 points and an 8th-place Atlantic standing. The 37-year-old goalie, who posted a 27-23-1 record last year, arrives as the immediate story, while Chayka's roster overhaul - trading Joseph Woll and Nick Robertson to clear cap space - signals a bold reset. This isn't just a goalie swap; it's a statement that the Leafs are desperate to turn the tide. <strong>What to watch now: how Bobrovsky's presence reshapes the team's defensive confidence heading into next season</strong>.",
         "updated": "Updated July 2, 2026"
       },
       "key_numbers": [
@@ -45,7 +45,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Sergei Bobrovsky headlines Maple Leafs' wild free agency, trade day",
-          "dek": "John Chayka's aggressive free agency pivot to veteran goalie Sergei Bobrovsky directly addresses the Maple Leafs' critical need for stability after their captain's injury history. This bold move signals a clear intent to win now while protecting the team's future by securing a",
+          "dek": "John Chayka has immediately addressed Toronto's long-neglected goaltending hole by securing two-time Cup champion Sergei Bobrovsky, a veteran with Stanley Cup Final experience who arrives just as the GM rebuilds the roster. This bold three-year, $21 million signing signals a new",
           "date": "July 1, 2026",
           "link": "https://www.sportsnet.ca/nhl/article/sergei-bobrovsky-headlines-maple-leafs-wild-free-agency-trade-day/"
         },
@@ -53,7 +53,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Sergei Bobrovsky agrees to three-year, $21M deal with Maple Leafs",
-          "dek": "By locking up a two-time Vezina winner for three years, the Maple Leafs directly address their critical need for a proven starter after trading Joseph Woll and leaving the net exposed. While Bobrovsky's age and recent slump in Florida raise concerns, his track record and",
+          "dek": "The Leafs secure a proven two-time Vezina winner to fill the net after trading Joseph Woll, addressing a critical gap that left them without a starter. While Bobrovsky's age and recent struggles raise questions, his pedigree and front-loaded contract offer a high-upside path",
           "date": "July 1, 2026",
           "link": "https://www.sportsnet.ca/nhl/article/sergei-bobrovsky-agrees-to-three-year-21m-deal-with-maple-leafs/"
         },
@@ -61,15 +61,14 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Leafs sign G Sergei Bobrovsky to 3-year, $21M deal, sources say",
-          "dek": "By landing a two-time Vezina Trophy winner, the Maple Leafs immediately address their most critical roster hole after trading Joseph Woll to Philadelphia. This aggressive free agency move signals Toronto's intent to sprint back into contention by securing a proven starter with",
+          "dek": "This high-risk, high-reward move addresses the Leafs' desperate need for a proven starter after trading Joseph Woll, injecting immediate confidence into a roster aiming to sprint back into contention. Yet the gamble on a soon-to-be 38-year-old goalie coming off his worst career",
           "date": "July 1, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49239735/sergei-bobrovsky-inks-3-year-21m-deal-toronto"
         }
       ],
       "standings": {
         "tabs": [
-          "Atlantic Division",
-          "Eastern Wild Card"
+          "Atlantic Division - Final"
         ],
         "panes": [
           {
@@ -178,235 +177,6 @@
                 ]
               }
             ]
-          },
-          {
-            "headers": [
-              "",
-              "Team",
-              "W",
-              "L",
-              "OTL",
-              "PTS"
-            ],
-            "has_seed_col": true,
-            "rows": [
-              {
-                "team": "Sabres",
-                "logo": "buf",
-                "league": "nhl",
-                "you": false,
-                "seed": "A1",
-                "vals": [
-                  "50",
-                  "23",
-                  "9",
-                  "109"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nhl",
-                "you": false,
-                "seed": "A2",
-                "vals": [
-                  "50",
-                  "26",
-                  "6",
-                  "106"
-                ]
-              },
-              {
-                "team": "Canadiens",
-                "logo": "mtl",
-                "league": "nhl",
-                "you": false,
-                "seed": "A3",
-                "vals": [
-                  "48",
-                  "24",
-                  "10",
-                  "106"
-                ]
-              },
-              {
-                "team": "Hurricanes",
-                "logo": "car",
-                "league": "nhl",
-                "you": false,
-                "seed": "M1",
-                "vals": [
-                  "53",
-                  "22",
-                  "7",
-                  "113"
-                ]
-              },
-              {
-                "team": "Penguins",
-                "logo": "pit",
-                "league": "nhl",
-                "you": false,
-                "seed": "M2",
-                "vals": [
-                  "41",
-                  "25",
-                  "16",
-                  "98"
-                ]
-              },
-              {
-                "team": "Flyers",
-                "logo": "phi",
-                "league": "nhl",
-                "you": false,
-                "seed": "M3",
-                "vals": [
-                  "43",
-                  "27",
-                  "12",
-                  "98"
-                ]
-              },
-              {
-                "team": "Bruins",
-                "logo": "bos",
-                "league": "nhl",
-                "you": false,
-                "seed": "WC1",
-                "vals": [
-                  "45",
-                  "27",
-                  "10",
-                  "100"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "seed": "WC2",
-                "vals": [
-                  "44",
-                  "27",
-                  "11",
-                  "99"
-                ]
-              },
-              {
-                "team": "Capitals",
-                "logo": "wsh",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "43",
-                  "30",
-                  "9",
-                  "95"
-                ]
-              },
-              {
-                "team": "Wings",
-                "logo": "det",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "41",
-                  "31",
-                  "10",
-                  "92"
-                ]
-              },
-              {
-                "team": "Jackets",
-                "logo": "cbj",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "40",
-                  "30",
-                  "12",
-                  "92"
-                ]
-              },
-              {
-                "team": "NY Islanders",
-                "logo": "nyi",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "43",
-                  "34",
-                  "5",
-                  "91"
-                ]
-              },
-              {
-                "team": "Devils",
-                "logo": "nj",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "42",
-                  "37",
-                  "3",
-                  "87"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "fla",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "40",
-                  "38",
-                  "4",
-                  "84"
-                ]
-              },
-              {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "32",
-                  "36",
-                  "14",
-                  "78"
-                ]
-              },
-              {
-                "team": "NY Rangers",
-                "logo": "nyr",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "34",
-                  "39",
-                  "9",
-                  "77"
-                ]
-              }
-            ]
           }
         ]
       },
@@ -441,7 +211,7 @@
       "detail": "3rd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays finally cracked the code, turning a packed Rogers Centre into a stress-free Canada Day celebration with <strong>a 9-3 rout of the Mets</strong>. Rookie Sean Keys, the story of the night, flipped the game wide open with his first major league home run - a three-run blast that broke the 2-0 tie and gave the team a lead they've rarely felt this season. Sitting at 41-46 and third in the AL East, 11 games behind the division lead, the Jays are fighting for a Wild Card spot, but this win offers a blueprint: contact, power, and bullpen dominance, as Spencer Miles delivered three scoreless innings. Keys' emergence is the spark they need, but the road remains steep. <strong>Next up, a Saturday night showdown at Seattle against the Mariners at 9:10 PM ET</strong>, where the Blue Jays must prove this isn't just a holiday fluke.",
+        "body": "With a packed Rogers Centre and the nation watching on Canada Day, the Blue Jays finally delivered a stress-free afternoon of baseball against a stubborn Mets squad. <strong>Sean Keys' first Major League home run sparked a 9-3 rout</strong>, silencing critics and giving the 41-46 team, sitting 11 games back in the AL East, a genuine flicker of Wild Card hope. Keys, joined by Spencer Miles' three scoreless innings, embodied the surge needed to break their recent slump, while Guerrero Jr. showed subtle signs of progress after a tough stretch. The series win over New York offers a rare momentum boost, but the road remains steep with 11 games to catch the division leader. <strong>Next up, Saturday's 10:10 PM ET trip to Seattle against the Mariners</strong>, where the Jays must prove this Canada Day win was just the start of a serious run.",
         "updated": "Updated July 2, 2026"
       },
       "key_numbers": [
@@ -526,7 +296,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays beat Mets 9-3",
-          "dek": "This Canada Day victory over the Mets ends a frustrating 3-7 homestand and provides crucial momentum as the Jays chase an AL Wild Card spot. Prospect Sean Keys launched his first MLB home run while Vladimir Guerrero Jr. broke an 0-for-12 skid, signaling a potential offensive",
+          "dek": "This 9-3 Canada Day rout ends a maddening 3-7 homestand and gives the Blue Jays their first real breathing room while chasing a Wild Card spot. Sean Keys launching his first MLB home run and Vladimir Guerrero Jr. ending an 0-for-12 skid signal that the team's key players are",
           "date": "Jul 1",
           "link": "https://www.espn.com/mlb/recap?gameId=401815981"
         },
@@ -534,7 +304,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Keys' first career homer gives Blue Jays boost in Canada Day win",
-          "dek": "A rookie slugger's breakthrough moment on Canada Day lifts the Blue Jays' morale as they chase a playoff spot from a fragile 41-46 record. This early-season power surge offers a crucial spark for the team's third-place AL East standing heading into the summer stretch.",
+          "dek": "The Blue Jays needed a spark to climb from their 41-46 slump, and Keys' milestone hit provided exactly that momentum on a crucial home stretch. This victory in Canada Day action signals the team is finally finding its footing as they chase a playoff spot in the tight AL East.",
           "date": "July 1, 2026",
           "link": "https://www.sportsnet.ca/mlb/article/keys-first-career-homer-gives-blue-jays-boost-in-canada-day-win/"
         },
@@ -542,7 +312,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Mets 3-0",
-          "dek": "The Blue Jays erased a 3-0 deficit from the opener with a 9-3 Canada Day victory, showcasing their offensive resilience behind two three-run homers. This win salvages the series against the slumping Mets, preventing a further decline in the AL East standings where they already",
+          "dek": "The Blue Jays lost their series finale to the Mets in a 3-0 shutout, a stark reversal after winning the previous night 9-3 with Sean Keys and Myles Straw hitting three-run homers. This defeat caps a disappointing 3-7 home stand on the season's easiest schedule, leaving the team",
           "date": "Jun 30",
           "link": "https://www.espn.com/mlb/recap?gameId=401815966"
         }
@@ -821,7 +591,7 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Toronto Raptors have abandoned the slow rebuild for a high-stakes gamble, trading their future to resurrect a champion. <strong>Superstar Kawhi Leonard is officially returning to Toronto</strong> in a blockbuster deal that sends Brandon Ingram, Gradey Dick, and two unprotected first-round picks to the Clippers, while Leonard signs a two-year, $126 million extension. After a season that ended with a 46-36 record and a third-place finish in the Atlantic Division, the front office has bet everything on the 35-year-old's final year to ignite a title run. The loss of young talent like Dick and Ingram leaves a void, but the arrival of Leonard shifts the entire narrative from patience to urgency. <strong>What to watch now is whether Leonard's legacy can override the cost of the team's future</strong> as camp opens and the new roster faces its first real test.",
+        "body": "The Toronto Raptors' offseason has exploded with the seismic return of a legend, reshaping the franchise's trajectory in a single day. <strong>The Clippers officially traded Kawhi Leonard to the Raptors for Brandon Ingram, Gradey Dick, and picks</strong>, sending the veteran star back to the city where he delivered the 2019 title. This bold move comes as the team, which finished 46-36 and placed third in the Atlantic Division, aggressively rebuilds its core. While Gradey Dick's departure signals a shift in roster philosophy, Leonard's reported desire to \"retire as a Raptor\" frames the emotional weight of this reunion. The cap picture is now dominated by Leonard's $50 million one-year deal, forcing creative accounting to keep the roster flexible. <strong>What to watch next is how the front office leverages this star power to attract complementary free agents and secure a top playoff seed in a loaded Atlantic Division</strong>.",
         "updated": "Updated July 2, 2026"
       },
       "key_numbers": [
@@ -855,7 +625,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "How Raptors' cap, roster picture will look after Kawhi Leonard acquisition",
-          "dek": "The Raptors have traded for Kawhi Leonard to pivot from a long rebuild into an immediate Eastern Conference push, betting elite defense and offense on a 35-year-old Finals MVP. This blockbuster move triggers a hard cap at $209 million, leaving the team with just over $5 million",
+          "dek": "If Kawai Leonard joins the Raptors, the team will hit a hard cap at $209 million, leaving just over $5 million to fill three remaining roster spots. This financial constraint severely limits future moves even as the franchise pursues critical extensions for Leonard, Poeltl,",
           "date": "July 1, 2026",
           "link": "https://www.sportsnet.ca/nba/article/how-raptors-cap-roster-picture-look-after-kawhi-leonard-acquisition/"
         },
@@ -863,7 +633,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Kawhi traded to Raptors: Grades, reaction, Clippers' next steps",
-          "dek": "Toronto's odds to win the East dropped from +1400 to +800 after reacquiring Kawhi Leonard, instantly making them the conference's third-shortest bet behind the Celtics and Knicks. This high-risk, high-reward move raises the Raptors' ceiling to a legitimate contender if Leonard",
+          "dek": "Kawhi Leonard's return to Toronto instantly transforms the Raptors into legitimate Eastern Conference title contenders by reuniting him with the core that won the franchise its only championship in 2019. The Clippers, meanwhile, pivot toward a youth-driven rebuild by securing",
           "date": "June 30, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49208596/kawhi-leonard-trade-grades-reaction-clippers-raptors-contract"
         },
@@ -871,7 +641,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Shams: Clippers nearing a deal to send Kawhi to Raptors",
-          "dek": "Kawhi Leonard returns to Toronto as the only franchise willing to sign his long-term extension, instantly vaulting the young Raptors into serious Eastern Conference contention. This blockbuster reunion pairs his championship pedigree with Scottie Barnes, giving the Atlantic",
+          "dek": "Reuniting with the player who delivered Toronto's only championship in 2019 instantly cracks open a new title window for a Raptors team just emerging from its first playoff appearance since 2022. This bold gamble, which trades away significant draft capital and locks the",
           "date": "June 30, 2026",
           "link": "https://www.espn.com/video/clip/_/id/49228668/clippers-nearing-deal-send-kawhi-raptors"
         },
@@ -879,7 +649,7 @@
           "source": "Raptors Republic",
           "source_class": "web",
           "headline": "Raptors lock in Alijah Martin for two more years",
-          "dek": "This two-year, $4.8 million deal elevates second-round pick Alijah Martin from a two-way player to a full roster spot, signaling the Raptors' intent to build around his developing G League scoring and shooting. Securing a key young guard now gives Toronto critical flexibility in",
+          "dek": "Alijah Martin's two-year deal secures a promising second-round pick the Raptors are building around for the long term, especially after moving Kawhi Leonard. This minimum-salary contract gives Toronto extra cap flexibility while ensuring a G League standout who averaged 18.9",
           "date": "July 1, 2026",
           "link": "https://raptorsrepublic.com/2026/07/01/raptors-lock-in-alijah-martin-for-two-more-years/"
         },
@@ -887,15 +657,14 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Should Raptors move Barrett as follow-up to further bolster roster?",
-          "dek": "With a hard cap leaving just over $5 million to fill the roster, trading RJ Barrett could free up the critical space needed to address perimeter shooting and frontcourt depth. Moving Barrett also prevents a future financial conflict where extending Kawhi Leonard to a max deal",
+          "dek": "With Kawhi Leonard now back in Toronto, the Raptors must quickly add another scoring guard to turn their championship window into reality. Moving RJ Barrett could free up the necessary resources to secure that missing offensive piece and lock Leonard into a long-term extension.",
           "date": "July 1, 2026",
           "link": "https://www.sportsnet.ca/nba/video/should-raptors-move-barrett-as-follow-up-to-further-bolster-roster/"
         }
       ],
       "standings": {
         "tabs": [
-          "Eastern Conference",
-          "Playoff Bracket"
+          "Eastern Conference - Final"
         ],
         "panes": [
           {
@@ -1029,35 +798,6 @@
                 "seed": "10"
               }
             ]
-          },
-          {
-            "headers": [
-              "Matchup",
-              "Series"
-            ],
-            "bracket": true,
-            "rows": [
-              {
-                "matchup": "(1) Pistons vs. (2) Celtics",
-                "series": "Sat Apr 18",
-                "you": false
-              },
-              {
-                "matchup": "(3) New York vs. (4) Cavaliers",
-                "series": "Sat Apr 18",
-                "you": false
-              },
-              {
-                "matchup": "(5) Raptors vs. (6) Hawks",
-                "series": "Sat Apr 18",
-                "you": true
-              },
-              {
-                "matchup": "(7) 76ers vs. (8) Magic",
-                "series": "Sat Apr 18",
-                "you": false
-              }
-            ]
           }
         ]
       },
@@ -1092,7 +832,7 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "<strong>This stretch of the calendar is where the Commanders' next season gets built</strong>, and the front office is doing the talking now. Training camp is the proving ground now, and the position battles underway will decide how this roster actually lines up when the games count. <strong>The next headline here comes from the front office, not the scoreboard.</strong> Across the NFL, the offseason program calendar is the primary focus - OTAs, minicamp, and the slow ramp toward training camp define the rhythm now. For the Washington Commanders, the puzzle is assembling the right combination of draft capital and veteran additions to take the next step in a competitive division.",
+        "body": "The Washington Commanders aren't just gathering for camp; they're sharpening a blade after a season that ended with a single, telling win and a 3rd-place NFC East finish. <strong>Dan Quinn has left one camp showdown that won't sit still</strong>, a battle that will define the depth chart and the team's preseason identity. Position battles are heating up, with UDFA standout Utah OL Tanoa Togiai drawing early attention and special teams pieces like Jordan McGee and Kamren Curl poised to make their mark. Quinn's focus is clear: build a roster that can survive the grind, not just flash in the preseason. <strong>What to watch is how the Commanders stack up against the Giants in Week 5</strong>, a home game that could signal whether this squad is ready to roar.",
         "updated": "Updated July 2, 2026"
       },
       "key_numbers": [
@@ -1120,47 +860,47 @@
         {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "7 Commanders draft picks facing a fight they cannot afford to lose",
-          "dek": "With training camp kicking off intensity, these seven picks must prove they can deliver on the same hidden-gem potential that turned last year's seventh-round steal into an epic success. Their performance will be the ultimate tie-breaker for the Commanders' hopes of building a",
+          "headline": "Dan Quinn leaves Commanders with one camp showdown that won't sit still",
+          "dek": "Training camp is the critical moment where Dan Quinn must finally sort out the Commanders' most volatile roster battle, a showdown that could define the franchise's future direction in Year 3. \nWith the team needing to get younger and faster after a 5-12 disaster, this single",
           "date": "July 2, 2026",
-          "link": "https://riggosrag.com/7-washington-commanders-draft-picks-facing-fight-cannot-afford-lose?utm_source=RSS"
+          "link": "https://riggosrag.com/dan-quinn-leaves-commanders-with-one-camp-showdown-that-wont-sit-still?utm_source=RSS"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "Betting the Commanders in 2026: See how Washington's win total, Super Bowl odds are trending and our best bets",
-          "dek": "With a 2025 season marred by injuries that limited Jayden Daniels to seven games and Terry McLaurin to ten, the Commanders face a critical win total test as they enter training camp. Washington's ability to rebound from a disastrous 2-5 record in one-score games and a",
+          "dek": "Washington's 2026 win total hinges on whether Jayden Daniels and Terry McLaurin can stay healthy after an injury-plagued 2025 that left the team near the bottom of the league in player health. The Commanders must also reverse their sharp decline in one-score game performance and",
           "date": "July 1, 2026",
           "link": "https://www.cbssports.com/nfl/news/betting-the-commanders-in-2026-see-how-washingtons-win-total-super-bowl-odds-are-trending-and-our-best-bets/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Which U.S. area has best NFL players? Eight teams, Cup winner",
-          "dek": "This headline's experiment on dividing NFL talent by U.S. region offers a fresh way to assess where the Commanders' roster strength truly stands. As training camp begins, the story matters because it challenges assumptions about geographic player quality just as the team",
-          "date": "July 2, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49226040/2026-nfl-domestic-cup-american-football-united-states-barnwell-texas-florida-california"
+          "headline": "10 predictions for 2026 NFL season: Division winners, trades",
+          "dek": "With Washington sitting third in the NFC East and training camp starting, these 2026 division predictions directly test whether the Commanders can finally break their conference ceiling. The potential trades highlighted here could reshape the roster before the season, making",
+          "date": "July 1, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/49218532/2026-nfl-season-predictions-division-winners-awards-playoffs-trades"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "NFC East: Can Cowboys, Giants or Commanders unseat Eagles?",
-          "dek": "The Commanders are banking on a second straight draft steal and a new-look defense to erase their 5-12 collapse and challenge the Eagles for NFC East supremacy. Training camp will determine if Jayden Daniels can stay healthy and if the revamped roster can finally deliver the",
-          "date": "July 2, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49217071/nfl-nfc-east-cowboys-giants-eagles-commanders-dak-prescott-malik-nabers-jayden-daniels-jalen-hurts"
+          "headline": "2026 NFL offseason grades: Draft, trades, more moves by team",
+          "dek": "The Commanders earned a top offseason grade for their aggressive draft and trade strategy, signaling a clear shift toward building a contender before training camp begins. This evaluation highlights how their recent roster moves directly address the team's third-place standing",
+          "date": "June 30, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/49147104/nfl-offseason-grades-2026-free-agency-draft-trades-extensions-coaching-changes"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
           "headline": "Can Dan Quinn's Commanders reach 5-0 vs Giants in Week 5 home game?",
-          "dek": "Dan Quinn's Commanders are building a 3rd-place NFC East squad with serious playoff momentum, making any early-season surge against the Giants a critical test of their championship ceiling. A Week 5 home win would vault them into legitimate 5-0 contention, proving this defense",
+          "dek": "Dan Quinn's Commanders are building on a defensive identity that can propel them to a rare 5-0 start if they dominate the Giants in Week 5. This home matchup against a division rival is the critical test that will define whether their early momentum translates into a legitimate",
           "date": "July 2, 2026",
           "link": "https://www.hogshaven.com/the-5-oclock-club/419171/previewing-washington-commanders-week-5-home-game-new-york-giants-nfl"
         }
       ],
       "standings": {
         "tabs": [
-          "NFC East"
+          "NFC East - Final"
         ],
         "panes": [
           {
@@ -1253,7 +993,7 @@
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
     "headline": "Blue Jays rout Mets on Canada Day as Guerrero Jr. shows signs of progress",
-    "dek": "A Canada Day victory over the Mets provides a rare spark for the Blue Jays, whose 41-46 record has left them trailing in the AL East. Vladimir Guerrero Jr.'s first-inning double signals a potential breakout from his slump, offering hope that the team's offense can finally find",
+    "dek": "A Canada Day victory against the Mets ends a frustrating three-loss homestand and signals the Blue Jays can finally build momentum in their tight AL East race. Vladimir Guerrero Jr.'s return from oblique tightness with a key double and clutch defensive play suggests their star",
     "source": "Sportsnet",
     "link": "https://www.sportsnet.ca/mlb/article/blue-jays-rout-mets-on-canada-day-as-guerrero-jr-shows-signs-of-progress/",
     "date": "July 2, 2026"
@@ -1263,7 +1003,7 @@
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Draft & Free Agency",
       "headline": "NHL free agency 2026: Grades, fits for all the big signings",
-      "dek": "The Leafs have pivoted to a win-now strategy, signing Sergei Bobrovsky and multiple depth forwards to maximize their window with Auston Matthews. This aggressive free agency spree directly addresses their secondary scoring needs and solidifies the roster for a championship push",
+      "dek": "The Toronto Maple Leafs quietly reshaped their roster by signing Jack Roslovic to a sneaky two-year deal worth $4 million annually, a move that saves $700,000 a year compared to projections. This strategic fit at a lower total cost of $5 million demonstrates how the team is",
       "source": "ESPN",
       "link": "https://www.espn.com/nhl/story/_/id/49236055/nhl-free-agency-2026-grades-fits-all-big-signings",
       "date": "July 2, 2026"
@@ -1272,7 +1012,7 @@
       "team": "raptors",
       "kicker": "Toronto Raptors - Draft & Free Agency",
       "headline": "Farewell to Gradey Dick",
-      "dek": "With Kawhi Leonard returning to Toronto in a blockbuster swap that sends Gradey Dick to the Clippers, the Raptors are finally pivoting toward a youth-driven rebuild. This trade reshapes the franchise's identity by replacing veteran star power with a haul of future draft assets",
+      "dek": "With Gradey Dick heading elsewhere, the Raptors must now pivot their free agency strategy to fill the scoring void he leaves behind. This farewell marks a critical turning point for the team as they reshape their roster just weeks after securing third place in the Atlantic.",
       "source": "Raptors Republic",
       "link": "https://raptorsrepublic.com/2026/07/01/farewell-to-gradey-dick/",
       "date": "July 2, 2026"
@@ -1282,7 +1022,7 @@
     "team": "commanders",
     "kicker": "Washington Commanders - Training Camp",
     "headline": "Washington Commanders UDFA spotlight: Utah OL Tanoa Togiai",
-    "dek": "Tanoa Togiai, the Utah offensive lineman spotlighted as a Washington UDFA, represents a critical depth addition for the Commanders as training camp begins. His presence underscores the team's focus on bolstering roster toughness while they compete for a stronger position in the",
+    "dek": "Spotlighting Utah offensive lineman Tanoa Togiai underscores how the Commanders are building depth on the roster as training camp begins. This focus on undrafted free agents highlights the team's commitment to finding reliable contributors who can strengthen the lineup for the",
     "source": "Hogs Haven",
     "link": "https://www.hogshaven.com/washington-commanders-draft/422882/washington-commanders-udfa-spotlight-utah-tanoa-togiai-guard",
     "date": "July 2, 2026"
@@ -1306,7 +1046,7 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays at Mariners - Sat 7/4 9:10 PM ET"
+      "text": "Next: Jays at Mariners - Sat 7/4 10:10 PM ET"
     },
     {
       "badge": "MLB",
@@ -1331,12 +1071,12 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "10 predictions for 2026 NFL season: Division winners, trades"
+      "text": "Aiyuk: If 49ers cut me, I'll sign with Commanders 'tomorrow'"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "2026 NFL offseason grades: Draft, trades, more moves by team"
+      "text": "Washington Commanders UDFA spotlight: Utah OL Tanoa Togiai"
     }
   ],
   "scoreboard": [
@@ -1405,7 +1145,7 @@
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
       "matchup": "Jays",
-      "detail": "Next: Sat 7/4 at Mariners 9:10 PM ET",
+      "detail": "Next: Sat 7/4 at Mariners 10:10 PM ET",
       "channel": "",
       "off": true
     },
@@ -1434,7 +1174,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Mariners",
-        "time": "9:10 PM ET",
+        "time": "10:10 PM ET",
         "tv": ""
       },
       {
@@ -1443,7 +1183,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Mariners",
-        "time": "4:00 PM ET",
+        "time": "5:00 PM ET",
         "tv": ""
       },
       {
@@ -1452,7 +1192,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Giants",
-        "time": "8:45 PM ET",
+        "time": "9:45 PM ET",
         "tv": ""
       },
       {
@@ -1461,7 +1201,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "name": "Jays",
         "opp": "at Giants",
-        "time": "8:45 PM ET",
+        "time": "9:45 PM ET",
         "tv": ""
       }
     ],
