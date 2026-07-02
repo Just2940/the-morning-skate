@@ -2696,187 +2696,129 @@ def build_key_numbers(team_key, team_info, standings, recent, phase_info=None):
 
 
 def generate_ticker(all_team_facts, all_team_articles=None):
-    """Generate ticker items from verified ESPN data PLUS editorial news bites from articles.
-    Each item must have: badge, badge_style, text (matching index.html renderTicker)."""
+    """Ticker = bite-sized, timely, complete. Editorial contract (2026-07-02):
+    - Scores from the last 48h and the next game while a season is live.
+    - Records/standings IN SEASON ONLY - a July "46-36, 3rd in Atlantic"
+      for a finished season is noise, not news.
+    - Offseason teams get real news bites, transactions first (trades,
+      signings, draft picks) - never a phase label pretending to be news.
+    - A headline ships WHOLE or not at all. Never truncate mid-thought.
+    - Phase-label filler is the absolute last resort so a quiet team still
+      has a presence in the ticker."""
+    TICKER_MAX = 60
     ticker_items = []
-
-    # Badge styles per team (CSS variable colors)
     BADGE_STYLES = {
         "leafs": "nhl",
         "jays": "mlb",
         "raptors": "nba",
         "commanders": "nfl",
     }
+    IN_SEASON_PHASES = ("regular_season", "regular_season_late", "playoffs",
+                        "spring_training", "preseason")
+    TRANSACTION_WORDS = ("trade", "traded", "sign", "signs", "signed", "signing",
+                         "deal", "extension", "extend", "acquire", "acquires",
+                         "acquired", "waive", "waived", "release", "released",
+                         "draft", "drafted", "agrees", "agreement", "claims",
+                         "re-sign", "buyout", "contract")
+    SKIP_PHRASES = ("game story", "scores/highlights", "box score",
+                    "full game recap", "game recap", "final score")
+
+    def add(team_key, text):
+        text = " ".join((text or "").split())
+        if not text or len(text) > TICKER_MAX:
+            return False
+        ticker_items.append({
+            "badge": TEAMS[team_key]["league"],
+            "badge_style": BADGE_STYLES.get(team_key, "muted"),
+            "text": text,
+        })
+        return True
+
+    def clean_headline(raw):
+        h = html.unescape(raw or "").strip()
+        # Attribution prefixes spend budget without informing Dad.
+        h = re.sub(r"^(reports?|sources?|breaking|official|shams|woj)\s*:\s*", "", h, flags=re.I)
+        return h.rstrip(" .|-")
 
     for team_key, facts_dict in all_team_facts.items():
         cfg = TEAMS[team_key]
         team_name = cfg["full_name"].split()[-1]
-        league = cfg["league"]
-        badge_style = BADGE_STYLES.get(team_key, "muted")
-
         recent = facts_dict.get("recent", [])
         team_info = facts_dict.get("team_info", {})
         upcoming = facts_dict.get("upcoming", [])
         phase_info = facts_dict.get("phase_info", {})
-        record = team_info.get("record", "")
-
-        # Determine if team is in-season using PHASE detection (most reliable)
         phase_id = phase_info.get("phase", "")
-        is_in_season = phase_id in ("regular_season", "regular_season_late", "playoffs",
-                                     "preseason", "spring_training")
-        if not is_in_season and bool(upcoming):
-            is_in_season = True
-        if not is_in_season and recent:
-            try:
-                last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
-                days_since = (NOW.replace(tzinfo=None) - last_game_date).days
-                if days_since <= 14:
-                    is_in_season = True
-            except:
-                pass
+        record = team_info.get("record", "")
+        standing = team_info.get("standing_summary", "")
+        in_season = phase_id in IN_SEASON_PHASES or bool(upcoming)
+        n_added = 0
 
-        # Most recent game result ‚Äî only if game was within the last 14 days
-        if recent and is_in_season:
+        # --- 1. Fresh final score (48h): the most important bite ---------
+        if recent:
             try:
-                last_game_date = datetime.strptime(recent[0].get("game_date", ""), "%Y-%m-%d")
-                days_since = (NOW.replace(tzinfo=None) - last_game_date).days
-            except:
+                days_since = (NOW.replace(tzinfo=None) - datetime.strptime(
+                    recent[0].get("game_date", ""), "%Y-%m-%d")).days
+            except Exception:
                 days_since = 999
-
-            if days_since <= 14:
+            if days_since <= 2:
                 g = recent[0]
                 result_word = "beat" if g["result"] == "W" else "fell to"
                 _s1, _s2 = g["team_score"], g["opp_score"]
                 if g["result"] == "L":
-                    _s1, _s2 = _s2, _s1  # winner-first score order on losses
-                ticker_items.append({
-                    "badge": league,
-                    "badge_style": badge_style,
-                    "text": f"{team_name} {result_word} {g['opp_name']} {_s1}-{_s2}"
-                })
+                    _s1, _s2 = _s2, _s1
+                if add(team_key, f"{team_name} {result_word} {g['opp_name']} {_s1}-{_s2}"):
+                    n_added += 1
 
-        # Record + standing
-        standing = team_info.get("standing_summary", "")
-        if record and standing:
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} ({record}) — {standing}"
-            })
-        elif record:
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} record: {record}"
-            })
-        elif not is_in_season:
-            phase_label = phase_info.get("label", "Offseason")
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} — {phase_label}"
-            })
-
-        # Next game (only if in-season / has upcoming)
+        # --- 2. Next game, tightest form that fits -----------------------
         if upcoming:
             ng = upcoming[0]
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"Next: {team_name} {ng['opp']} — {ng['day']} {ng['time']}"
-            })
+            for cand in (
+                f"Next: {team_name} {ng.get('opp', '')} - {ng.get('day', '')} {ng.get('time', '')}",
+                f"Next: {team_name} {ng.get('opp', '')} {ng.get('day', '')}",
+                f"{team_name} {ng.get('opp', '')} {ng.get('day', '')}",
+            ):
+                if add(team_key, cand):
+                    n_added += 1
+                    break
 
-        # === EDITORIAL NEWS BITE from discovered articles ===
-        # Pull the top non-recap headline as a ticker-sized news item
-        if all_team_articles and team_key in all_team_articles:
-            articles = all_team_articles[team_key]
-            for article in articles:
-                headline = html.unescape(article.get("headline", "")).rstrip("…. \t").strip()
-                source = article.get("source", "")
-                # Skip generic game recaps (already covered by score ticker)
-                if not headline:
-                    continue
-                headline_lower = headline.lower()
-                skip_phrases = ["game story", "scores/highlights", "box score", "full game recap",
-                                "game recap", "final score"]
-                if any(sp in headline_lower for sp in skip_phrases):
-                    continue
-                # Synthesized recap headlines ("Jays fell to Phillies 7-4")
-                # duplicate the score ticker item - skip them here.
-                _tn = team_name.lower()
-                if headline_lower.startswith(_tn + " fell to") or headline_lower.startswith(_tn + " beat"):
-                    continue
-                # Found a non-recap editorial headline ‚Äî truncate for ticker
-                # Ticker items should be under 60 chars
-                if len(headline) > 55:
-                    headline = headline[:52].rsplit(" ", 1)[0]
-                ticker_items.append({
-                    "badge": league,
-                    "badge_style": badge_style,
-                    "text": headline,
-                })
-                break  # Only one editorial bite per team
+        # --- 3. Record + standing: IN SEASON ONLY ------------------------
+        if in_season and record and standing:
+            if add(team_key, f"{team_name} ({record}) - {standing}"):
+                n_added += 1
 
-        # === PHASE-AWARE EDITORIAL ITEMS ===
-        if phase_id == "playoffs" and not upcoming:
-            # Playoff team waiting for schedule
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} Playoffs — schedule TBD"
-            })
-        elif phase_id == "eliminated":
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} season over — lottery watch begins"
-            })
-        elif phase_id == "pre_draft":
-            ticker_items.append({
-                "badge": league,
-                "badge_style": badge_style,
-                "text": f"{team_name} — NFL Draft Apr 23–25"
-            })
-        elif phase_id == "post_draft":
-            # Surface the team's biggest current story: their actual draft
-            # picks. Fallback to "Draft recap" only if Perplexity hasn't
-            # populated picks yet — never re-emit the stale Apr 23-25 promo.
-            picks = (facts_dict.get("draft_picks") or [])[:1]
-            if picks:
-                pick = picks[0]
-                pick_text = f"{team_name} drafted {pick.get('name', 'TBD')} — {pick.get('position', '')} ({pick.get('round', '?')}/{pick.get('pick', '?')})"
-                ticker_items.append({
-                    "badge": league,
-                    "badge_style": badge_style,
-                    "text": pick_text.strip(' — '),
-                })
-            else:
-                ticker_items.append({
-                    "badge": league,
-                    "badge_style": badge_style,
-                    "text": f"{team_name} — post-draft outlook",
-                })
+        # --- 4. News bites: whole headlines only, transactions first -----
+        want = 1 if in_season else 2
+        got = 0
+        pool = (all_team_articles or {}).get(team_key, []) or []
+        candidates = []
+        for article in pool:
+            headline = clean_headline(article.get("headline", ""))
+            if not headline or len(headline) > TICKER_MAX:
+                continue  # ships whole or not at all - NEVER chopped
+            hl = headline.lower()
+            if any(sp in hl for sp in SKIP_PHRASES):
+                continue
+            _tn = team_name.lower()
+            if hl.startswith(_tn + " fell to") or hl.startswith(_tn + " beat"):
+                continue  # duplicates the score bite
+            is_txn = any(w in hl for w in TRANSACTION_WORDS)
+            candidates.append((0 if is_txn else 1, len(candidates), headline))
+        candidates.sort()
+        _seen = set()
+        for _, _, headline in candidates:
+            if got >= want:
+                break
+            if headline.lower() in _seen:
+                continue
+            _seen.add(headline.lower())
+            if add(team_key, headline):
+                got += 1
 
-    # Deduplicate ticker items by text content (keep first occurrence)
-    seen_texts = set()
-    deduped = []
-    for item in ticker_items:
-        if item["text"] not in seen_texts:
-            seen_texts.add(item["text"])
-            deduped.append(item)
-    if len(deduped) < len(ticker_items):
-        print(f"  Ticker dedup: removed {len(ticker_items) - len(deduped)} duplicate(s)")
-    ticker_items = deduped
-
-    # Cap all ticker item texts at 70 chars for readability
-    for item in ticker_items:
-        if len(item["text"]) > 70:
-            item["text"] = item["text"][:67].rsplit(" ", 1)[0]
+        # --- 5. Absolute last resort: keep a quiet team present ----------
+        if n_added == 0 and got == 0:
+            add(team_key, f"{team_name}: {phase_info.get('label', 'Offseason')}")
 
     return ticker_items
-
-
-# === PERPLEXITY API ===
 
 def perplexity_search(prompt, system_prompt=""):
     """Call Perplexity API with web search for fresh information."""
