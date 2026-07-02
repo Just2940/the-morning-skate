@@ -162,7 +162,11 @@ def is_publisher_url(url):
 
 # === CONFIGURATION ===
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data.json")
-EST = timezone(timedelta(hours=-5))
+try:
+    from zoneinfo import ZoneInfo
+    EST = ZoneInfo("America/New_York")  # real ET (handles EST/EDT)
+except Exception:
+    EST = timezone(timedelta(hours=-5))
 NOW = datetime.now(EST)
 TODAY = NOW.strftime("%Y-%m-%d")
 TODAY_DISPLAY = NOW.strftime("%B %d, %Y").replace(" 0", " ")  # "April 14, 2026" not "April 04"
@@ -2800,13 +2804,18 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             if hl.startswith(_tn + " fell to") or hl.startswith(_tn + " beat"):
                 continue  # duplicates the score bite
             is_txn = any(w in hl for w in TRANSACTION_WORDS)
-            candidates.append((0 if is_txn else 1, len(candidates), headline))
+            is_team = _tn in hl
+            candidates.append((0 if is_team else 1, 0 if is_txn else 1, len(candidates), headline))
         candidates.sort()
         _seen = set()
-        for _, _, headline in candidates:
+        for _pteam, _ptxn, _, headline in candidates:
             if got >= want:
                 break
             if headline.lower() in _seen:
+                continue
+            # Offseason: league-wide items (headline lacks the team name) are
+            # a last resort - never stacked on top of real team news.
+            if (not in_season) and _pteam == 1 and got >= 1:
                 continue
             _seen.add(headline.lower())
             if add(team_key, headline):
@@ -4694,6 +4703,25 @@ def build_data():
             team_entry["the_latest_label"] = "Offseason Intel"
         else:
             team_entry["the_latest_label"] = "The Latest"
+
+        # Ship-clean standings for finished seasons: drop dead playoff-race
+        # panes (an April bracket in July) and mark what remains as Final.
+        _over_std = phase_info.get("phase", "") in (
+            "season_ended", "eliminated", "offseason", "deep_offseason",
+            "postseason_offseason", "pre_draft", "post_draft",
+            "draft_free_agency", "combine_free_agency", "otas", "training_camp")
+        _st = team_entry.get("standings") or {}
+        _tabs = _st.get("tabs") or []
+        _panes = _st.get("panes") or []
+        if _over_std and len(_tabs) == len(_panes) and len(_tabs) > 1:
+            _keep = [ix for ix, tb in enumerate(_tabs)
+                     if not any(w in str(tb).lower() for w in ("bracket", "wild card", "playoff"))]
+            if _keep and len(_keep) < len(_tabs):
+                _st["tabs"] = [_tabs[ix] for ix in _keep]
+                _st["panes"] = [_panes[ix] for ix in _keep]
+        if _over_std and _st.get("tabs"):
+            _st["tabs"] = [tb if "final" in str(tb).lower() else f"{tb} - Final"
+                           for tb in _st["tabs"]]
 
         teams_data[team_key] = team_entry
 
