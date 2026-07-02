@@ -719,7 +719,7 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
     phase_lbl = (phase_info or {}).get("label", "")
     OVER = ("season_ended", "eliminated", "offseason", "deep_offseason",
             "postseason_offseason", "pre_draft", "post_draft",
-            "draft_free_agency", "combine_free_agency", "otas")
+            "draft_free_agency", "combine_free_agency", "otas", "training_camp")
     is_over = phase_id in OVER
     last_days = 999
     if recent:
@@ -3318,7 +3318,7 @@ Write 110-150 words of polished sports column prose. Every sentence should earn 
             elif _league == "NFL":
                 _pad.append(f"Across the {_league}, the offseason program calendar is the primary focus \u2014 OTAs, minicamp, and the slow ramp toward training camp define the rhythm now.")
                 _pad.append(f"For the {_cfg['full_name']}, the puzzle is assembling the right combination of draft capital and veteran additions to take the next step in a competitive division.")
-            if _pad:
+            if _pad and _pad[0] not in result:
                 result = result.rstrip() + " " + " ".join(_pad)
             _padded_wc = len(re.sub(r'<[^>]+>', '', result).split())
             print(f"  Padded LOTL to {_padded_wc} words for {team_key}")
@@ -4542,7 +4542,7 @@ def build_data():
                 elif _league == "NFL":
                     _pad.append(f"Across the {_league}, the offseason program calendar is the primary focus \u2014 OTAs, minicamp, and the slow ramp toward training camp define the rhythm now.")
                     _pad.append(f"For the {_cfg['full_name']}, the puzzle is assembling the right combination of draft capital and veteran additions to take the next step in a competitive division.")
-                if _pad:
+                if _pad and _pad[0] not in lotl_text:
                     lotl_text = lotl_text.rstrip() + " " + " ".join(_pad)
                 _padded_wc = len(re.sub(r'<[^>]+>', '', lotl_text).split())
                 print(f"  Padded post-fact-check LOTL to {_padded_wc} words for {team_key}")
