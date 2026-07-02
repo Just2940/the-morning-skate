@@ -3074,6 +3074,25 @@ def build_draft_board(team_key, phase_info, team_info=None):
     # {label, event_date, pick_position, headers, rows[{pk,team,logo,pts,odds,league}], notes}
     result["label"] = f"{league} Draft Board"
     result["event_date"] = result.get("draft_date", "TBD")
+    # Mirror of validator 0.9: never ship a forward-looking board for an
+    # event that already ended. The NFL otas bug and the NHL July-after-
+    # the-draft bug are the same disease - gate on the DATE, not the phase.
+    try:
+        _ed = str(result.get("event_date") or "")
+        _m = re.search(r"([A-Za-z]+)\s+\d{1,2}\D+(\d{1,2}),?\s+(\d{4})", _ed)
+        if not _m:
+            _m = re.search(r"([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})", _ed)
+        if _m:
+            _g = _m.groups()
+            try:
+                _parsed = datetime.strptime(f"{_g[0]} {_g[-2]} {_g[-1]}", "%B %d %Y").date()
+            except ValueError:
+                _parsed = datetime.strptime(f"{_g[0]} {_g[-2]} {_g[-1]}", "%b %d %Y").date()
+            if _parsed < (NOW.replace(tzinfo=None).date() - timedelta(days=1)):
+                print(f"  Draft board for {team_key} suppressed: {_ed} already ended")
+                return None
+    except Exception:
+        pass
     result["pick_position"] = result.get("projected_pick", "TBD")
     result["headers"] = ["Rank", "Prospect", "College / Team", "Fit"]
     rows = []
