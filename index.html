@@ -1261,6 +1261,40 @@ body::before {
   color: var(--ink-faint);
   margin-top: 6px;
 }
+
+/* === LAST NIGHT SCOREBOARD === */
+#last-night { margin: 26px 0 8px; }
+.ln-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.ln-card { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 12px 16px; cursor: pointer; transition: box-shadow .15s ease, transform .15s ease; }
+.ln-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,.08); transform: translateY(-1px); }
+.ln-top { display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 9px; }
+.ln-pill { font-size: 11px; font-weight: 800; padding: 1px 8px; border-radius: 7px; color: #fff; }
+.ln-pill.w { background: #2E7D4F; }
+.ln-pill.l { background: #B3392E; }
+.ln-row { display: flex; align-items: center; gap: 9px; padding: 3.5px 0; opacity: .58; }
+.ln-row.ln-win { opacity: 1; }
+.ln-row img { width: 24px; height: 24px; object-fit: contain; }
+.ln-team { flex: 1; font-family: var(--sans); font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.ln-row.ln-win .ln-team { font-weight: 800; }
+.ln-score { font-family: var(--sans); font-size: 19px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 700px) { .ln-grid { grid-template-columns: 1fr 1fr; } .ln-team { font-size: 13px; } }
+
+/* === LAST NIGHT SCOREBOARD === */
+#last-night { margin: 26px 0 8px; }
+.ln-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.ln-card { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 12px 16px; cursor: pointer; transition: box-shadow .15s ease, transform .15s ease; }
+.ln-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,.08); transform: translateY(-1px); }
+.ln-top { display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 9px; }
+.ln-pill { font-size: 11px; font-weight: 800; padding: 1px 8px; border-radius: 7px; color: #fff; }
+.ln-pill.w { background: #2E7D4F; }
+.ln-pill.l { background: #B3392E; }
+.ln-row { display: flex; align-items: center; gap: 9px; padding: 3.5px 0; opacity: .58; }
+.ln-row.ln-win { opacity: 1; }
+.ln-row img { width: 24px; height: 24px; object-fit: contain; }
+.ln-team { flex: 1; font-family: var(--sans); font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.ln-row.ln-win .ln-team { font-weight: 800; }
+.ln-score { font-family: var(--sans); font-size: 19px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 700px) { .ln-grid { grid-template-columns: 1fr 1fr; } .ln-team { font-size: 13px; } }
 </style>
 
 
@@ -1308,6 +1342,12 @@ body::before {
 <div class="panel on" id="p-home">
 
   <div class="live-strip" id="ticker"></div>
+
+  <!-- LAST NIGHT SCOREBOARD -->
+  <div id="last-night"></div>
+
+  <!-- LAST NIGHT SCOREBOARD -->
+  <div id="last-night"></div>
 
   <!-- FEATURED STORY -->
   <div id="featured"></div>
@@ -1684,6 +1724,40 @@ function escUrl(u) {
 
 // === RENDER FUNCTIONS ===
 
+function renderScoreboard(items) {
+  const el = document.getElementById('last-night');
+  if (!el) return;
+  if (!items || !items.length) { el.innerHTML = ''; return; }
+  let html = `<div class="sec"><span class="sec-label">Last Night</span><span class="sec-line"></span></div><div class="ln-grid">`;
+  items.forEach(g => {
+    const won = g.result === 'W';
+    const pill = won ? `<span class="ln-pill w">W</span>` : `<span class="ln-pill l">L</span>`;
+    html += `<div class="ln-card" onclick="go('p-${esc(g.team)}')" role="button" tabindex="0">` +
+      `<div class="ln-top"><span>${esc(g.league)} FINAL</span>${pill}</div>` +
+      `<div class="ln-row${won ? ' ln-win' : ''}"><img src="${escUrl(g.logo)}" alt=""><span class="ln-team">${esc(g.name)}</span><span class="ln-score">${esc(String(g.team_score))}</span></div>` +
+      `<div class="ln-row${!won ? ' ln-win' : ''}"><img src="${escUrl(g.opp_logo)}" alt=""><span class="ln-team">${esc(g.opp_name)}</span><span class="ln-score">${esc(String(g.opp_score))}</span></div>` +
+      `</div>`;
+  });
+  el.innerHTML = html + `</div>`;
+}
+
+function renderScoreboard(items) {
+  const el = document.getElementById('last-night');
+  if (!el) return;
+  if (!items || !items.length) { el.innerHTML = ''; return; }
+  let html = `<div class="sec"><span class="sec-label">Last Night</span><span class="sec-line"></span></div><div class="ln-grid">`;
+  items.forEach(g => {
+    const won = g.result === 'W';
+    const pill = won ? `<span class="ln-pill w">W</span>` : `<span class="ln-pill l">L</span>`;
+    html += `<div class="ln-card" onclick="go('p-${esc(g.team)}')" role="button" tabindex="0">` +
+      `<div class="ln-top"><span>${esc(g.league)} FINAL</span>${pill}</div>` +
+      `<div class="ln-row${won ? ' ln-win' : ''}"><img src="${escUrl(g.logo)}" alt=""><span class="ln-team">${esc(g.name)}</span><span class="ln-score">${esc(String(g.team_score))}</span></div>` +
+      `<div class="ln-row${!won ? ' ln-win' : ''}"><img src="${escUrl(g.opp_logo)}" alt=""><span class="ln-team">${esc(g.opp_name)}</span><span class="ln-score">${esc(String(g.opp_score))}</span></div>` +
+      `</div>`;
+  });
+  el.innerHTML = html + `</div>`;
+}
+
 function renderTicker(items) {
   if (!items || !items.length) return;
   let html = '<div class="ls-track">';
@@ -2035,6 +2109,8 @@ fetch('data.json?v=' + Date.now())
     data = sanitizeData(data);
     // Homepage
     renderTicker(data.ticker);
+    renderScoreboard(data.scoreboard);
+    renderScoreboard(data.scoreboard);
     renderFeatured(data.featured);
     renderTwoUp(data.two_up);
     renderExtraStory(data.extra_story);
