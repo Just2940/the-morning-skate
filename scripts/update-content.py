@@ -4761,47 +4761,19 @@ def build_data():
             continue
         cfg = TEAMS[team_key]
         _hl = (teams_data.get(team_key, {}) or {}).get("last_game_highlights") or {}
+        # logo fields are ESPN ABBRS (validator 0.14 verifies them); the
+        # renderer builds URLs via logoUrl(abbr, league).
+        _opp = ""
+        _lm = re.search(r"/500/([a-z0-9]+)\.png", str(g.get("opp_logo", "")).lower())
+        if _lm:
+            _opp = _lm.group(1)
         db["scoreboard"].append({
             "team": team_key,
             "name": cfg["full_name"].split()[-1],
             "league": cfg["league"],
-            "logo": cfg["logo"],
+            "logo": cfg["espn_abbr"].lower(),
             "opp_name": g.get("opp_name", ""),
-            "opp_logo": g.get("opp_logo", ""),
-            "team_score": g.get("team_score", ""),
-            "opp_score": g.get("opp_score", ""),
-            "result": g.get("result", ""),
-            "date": g.get("date", ""),
-            "link": _hl.get("url", "") if _hl.get("available") else "",
-        })
-    print(f"  Scoreboard: {len(db['scoreboard'])} final(s) from last night")
-
-    # === LAST NIGHT SCOREBOARD (homepage) ===
-    # The single most important reader job: did my teams win last night?
-    # One card per team with a final from the last ~24h. Empty = hidden.
-    db["scoreboard"] = []
-    for team_key in ["leafs", "jays", "raptors", "commanders"]:
-        facts = all_team_facts.get(team_key, {})
-        recent = facts.get("recent", [])
-        if not recent:
-            continue
-        g = recent[0]
-        try:
-            _days = (NOW.replace(tzinfo=None) - datetime.strptime(
-                g.get("game_date", ""), "%Y-%m-%d")).days
-        except Exception:
-            _days = 999
-        if _days > 1:
-            continue
-        cfg = TEAMS[team_key]
-        _hl = (teams_data.get(team_key, {}) or {}).get("last_game_highlights") or {}
-        db["scoreboard"].append({
-            "team": team_key,
-            "name": cfg["full_name"].split()[-1],
-            "league": cfg["league"],
-            "logo": cfg["logo"],
-            "opp_name": g.get("opp_name", ""),
-            "opp_logo": g.get("opp_logo", ""),
+            "opp_logo": _opp,
             "team_score": g.get("team_score", ""),
             "opp_score": g.get("opp_score", ""),
             "result": g.get("result", ""),
