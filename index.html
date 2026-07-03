@@ -1643,10 +1643,15 @@ document.getElementById('mDate').textContent = new Date()
   .toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
 
 function go(id) {
+  // Resolve BOTH targets before touching the DOM - an unknown id must be
+  // a no-op, never a blank page (panels were once hidden before a crash).
+  const panel = document.getElementById('p-'+id);
+  const btn = document.querySelector('[data-t="'+id+'"]');
+  if (!panel || !btn) { console.warn('go(): unknown panel "'+id+'"'); return; }
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('p-'+id).classList.add('on');
-  document.querySelector('[data-t="'+id+'"]').classList.add('active');
+  panel.classList.add('on');
+  btn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1718,7 +1723,7 @@ function renderScoreboard(items) {
   items.forEach(g => {
     const won = g.result === 'W';
     const pill = won ? `<span class="ln-pill w">W</span>` : `<span class="ln-pill l">L</span>`;
-    html += `<div class="ln-card" onclick="go('p-${esc(g.team)}')" role="button" tabindex="0">` +
+    html += `<div class="ln-card" onclick="go('${esc(g.team)}')" role="button" tabindex="0">` +
       `<div class="ln-top"><span>${esc(g.league)} FINAL</span>${pill}</div>` +
       `<div class="ln-row${won ? ' ln-win' : ''}"><img src="${logoUrl(g.logo, g.league)}" alt=""><span class="ln-team">${esc(g.name)}</span><span class="ln-score">${esc(String(g.team_score))}</span></div>` +
       `<div class="ln-row${!won ? ' ln-win' : ''}"><img src="${logoUrl(g.opp_logo, g.league)}" alt=""><span class="ln-team">${esc(g.opp_name)}</span><span class="ln-score">${esc(String(g.opp_score))}</span></div>` +
