@@ -4877,7 +4877,9 @@ def build_data():
     # At a Glance ‚Äî build from REAL ESPN team data
     # === LAST NIGHT SCOREBOARD (homepage) ===
     # The single most important reader job: did my teams win last night?
-    # One card per team with a final from the last ~24h. Empty = hidden.
+    # One card per team with the most recent final within 3 days - an off
+    # night or travel day must not blank the latest score (the card shows
+    # the game date, so a 2-day-old final reads honestly). Empty = hidden.
     db["scoreboard"] = []
     for team_key in ["leafs", "jays", "raptors", "commanders"]:
         facts = all_team_facts.get(team_key, {})
@@ -4890,7 +4892,7 @@ def build_data():
                 g.get("game_date", ""), "%Y-%m-%d")).days
         except Exception:
             _days = 999
-        if _days > 1:
+        if _days > 3:
             continue
         cfg = TEAMS[team_key]
         _hl = (teams_data.get(team_key, {}) or {}).get("last_game_highlights") or {}
@@ -4917,7 +4919,7 @@ def build_data():
             "date": g.get("date", ""),
             "link": _hl.get("url", "") if _hl.get("available") else "",
         })
-    print(f"  Scoreboard: {len(db['scoreboard'])} final(s) from last night")
+    print(f"  Scoreboard: {len(db['scoreboard'])} final(s) in 3-day window")
 
     db["at_a_glance"] = []
     for team_key in ["leafs", "jays", "raptors", "commanders"]:
