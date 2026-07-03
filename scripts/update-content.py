@@ -5164,6 +5164,25 @@ def build_data():
     print("\n--- Running content diagnostics ---")
     db = run_content_diagnostics(db)
 
+    # === LEAD VARIETY, POST-QA PASS (2026-07-03) ===
+    # run_content_diagnostics can purge a team's lead story (cross-section
+    # URL dedup) and silently promote slot 2 - which can reinstate the very
+    # masthead the in-select swap rotated away from. Re-assert the rule on
+    # the final lists. Synthesized recap leads ("Jays beat Mets 9-3") are
+    # protected: a final score always beats variety.
+    _recap_pat = re.compile(r"\b(beat|fell to)\b.*\d+-\d+")
+    for _tk, _tdata in (db.get("teams") or {}).items():
+        _tl = _tdata.get("the_latest") or []
+        _ptl = ((existing.get("teams", {}) or {}).get(_tk, {}) or {}).get("the_latest") or []
+        _plead = (_ptl[0] or {}).get("source", "") if _ptl else ""
+        if (len(_tl) >= 2 and _plead
+                and _tl[0].get("source") == _plead
+                and _tl[1].get("source") != _plead
+                and not _recap_pat.search(_tl[0].get("headline", ""))):
+            _tl[0], _tl[1] = _tl[1], _tl[0]
+            _nl = _tl[0].get("source")
+            print(f"  [variety] post-QA lead swapped off {_plead} -> {_nl} ({_tk})")
+
     return db
 
 
