@@ -198,6 +198,7 @@ TEAMS = {
         "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
         "youtube_channel": "@MLB",
         "youtube_search_name": "Blue Jays",
+        "default_tv": "Sportsnet",  # Rogers owns the team; every game airs on SN
     },
     "raptors": {
         "full_name": "Toronto Raptors",
@@ -853,6 +854,107 @@ def get_team_info(team_key):
     return result
 
 
+# === TV BROADCAST EXTRACTION (2026-07-03) ==================================
+# ESPN serves TWO broadcast schemas. The team-schedule endpoint (which
+# get_team_schedule uses) ships {"media": {"shortName": "FOX"}, "type": ...},
+# while the scoreboard endpoint ships {"market": "away", "names": [...]}.
+# The old code read only names[] - a key the schedule endpoint never has -
+# so the Week Ahead TV column was blank for every game, forever. Parse both
+# shapes, rank what Dad can actually watch (Canadian linear TV first), and
+# fall back to the league scoreboard when the schedule omits broadcasts.
+
+_TV_ALIASES = {
+    "snet": "Sportsnet", "sn": "Sportsnet", "sn1": "Sportsnet",
+    "sno": "Sportsnet", "snp": "Sportsnet", "sn360": "Sportsnet",
+    "sportsnet one": "Sportsnet", "sportsnet ontario": "Sportsnet",
+    "sportsnet pacific": "Sportsnet", "sportsnet 360": "Sportsnet",
+    "tsn1": "TSN", "tsn2": "TSN", "tsn3": "TSN", "tsn4": "TSN",
+    "tsn5": "TSN",
+}
+
+_TV_NATIONAL = ("fox", "cbs", "nbc", "abc", "espn", "tnt", "tbs", "fs1",
+                "mlb network", "nba tv", "nhl network", "nfl network", "nfln")
+_TV_STREAMING = ("mlb.tv", "apple tv+", "prime video", "amazon", "peacock",
+                 "espn+", "netflix", "youtube")
+
+
+def _tv_normalize(name):
+    n = " ".join((name or "").split())
+    return _TV_ALIASES.get(n.lower(), n)
+
+
+def _tv_rank(name):
+    """Lower = better for a Toronto household. SNY (Mets regional) must NOT
+    read as Sportsnet - aliases above are exact-match only."""
+    low = name.lower()
+    if low.endswith(".tv") and low != "mlb.tv":
+        return 4  # opponent in-market streams (Mariners.TV) - last resort
+    for c in ("sportsnet", "tsn", "cbc", "citytv"):
+        if low == c or low.startswith(c + " "):
+            return 0
+    for n in _TV_NATIONAL:
+        if low == n or low.startswith(n + " "):
+            return 1
+    if any(t in low for t in _TV_STREAMING):
+        return 3
+    return 2
+
+
+def _extract_tv(comp):
+    """Best watchable channel from a competition dict, either ESPN schema."""
+    cands = []
+    for b in comp.get("broadcasts", []) or []:
+        if isinstance(b, str):
+            cands.append(b)
+            continue
+        if not isinstance(b, dict):
+            continue
+        btype = ((b.get("type") or {}).get("shortName") or "").lower()
+        if btype == "radio":
+            continue
+        for n in (b.get("names") or []):
+            cands.append(n)
+        m = ((b.get("media") or {}).get("shortName") or "").strip()
+        if m:
+            cands.append(m)
+    for g in comp.get("geoBroadcasts", []) or []:
+        gtype = ((g.get("type") or {}).get("shortName") or "").lower()
+        if gtype not in ("tv", "streaming"):
+            continue
+        m = ((g.get("media") or {}).get("shortName") or "").strip()
+        if m:
+            cands.append(m)
+    best, best_rank = "", 99
+    for raw in cands:
+        name = _tv_normalize(raw)
+        if not name:
+            continue
+        r = _tv_rank(name)
+        if r < best_rank:
+            best, best_rank = name, r
+    return best
+
+
+_SCOREBOARD_TV_CACHE = {}
+
+
+def _scoreboard_tv(cfg, game_date):
+    """The scoreboard endpoint often carries broadcasts when the schedule
+    endpoint omits them. One fetch per (league, date), cached for the run."""
+    key = (cfg["espn_league"], game_date)
+    if key not in _SCOREBOARD_TV_CACHE:
+        url = ("https://site.api.espn.com/apis/site/v2/sports/"
+               + cfg["espn_sport"] + "/" + cfg["espn_league"]
+               + "/scoreboard?dates=" + game_date.replace("-", ""))
+        _SCOREBOARD_TV_CACHE[key] = espn_fetch(url) or {}
+    for event in _SCOREBOARD_TV_CACHE[key].get("events", []):
+        comp = (event.get("competitions") or [{}])[0]
+        for t in comp.get("competitors", []):
+            if t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]:
+                return _extract_tv(comp)
+    return ""
+
+
 def get_team_schedule(team_key):
     """Get recent and upcoming games from ESPN."""
     cfg = TEAMS[team_key]
@@ -925,12 +1027,11 @@ def get_team_schedule(team_key):
 
             if opp_team:
                 opp_name = opp_team.get("team", {}).get("shortDisplayName", "???")
-                broadcast = ""
-                for b in comp.get("broadcasts", []):
-                    names = b.get("names", [])
-                    if names:
-                        broadcast = names[0]
-                        break
+                broadcast = _extract_tv(comp)
+                if not broadcast and game_date:
+                    broadcast = _scoreboard_tv(cfg, game_date)
+                if not broadcast:
+                    broadcast = cfg.get("default_tv", "")
 
                 # Parse game time
                 try:
@@ -967,6 +1068,10 @@ def get_team_schedule(team_key):
     upcoming.sort(key=lambda x: x.get("game_date", ""))
     week_from_now = (NOW + timedelta(days=7)).strftime("%Y-%m-%d")
     upcoming = [g for g in upcoming if g.get("game_date", "") <= week_from_now]
+
+    if upcoming:
+        _with_tv = sum(1 for g in upcoming if g.get("tv"))
+        print(f"  [tv] {team_key}: {_with_tv}/{len(upcoming)} upcoming games have a TV channel")
 
     return recent, upcoming
 
