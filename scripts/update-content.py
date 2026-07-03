@@ -1913,14 +1913,20 @@ TIER1_RSS_FEEDS = {
     # Hogs Haven moved to Atom at /rss/index.xml.
     "leafs": [
         ("https://www.sportsnet.ca/hockey/nhl/feed/", "Sportsnet", "sportsnet", False),
+        ("https://theleafsnation.com/feed", "The Leafs Nation", "web", True),
+        ("https://www.dailyfaceoff.com/feed", "Daily Faceoff", "web", False),
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "jays": [
         ("https://www.sportsnet.ca/baseball/mlb/feed/", "Sportsnet", "sportsnet", False),
+        ("https://www.bluebirdbanter.com/rss/index.xml", "Bluebird Banter", "web", True),
+        ("https://jaysjournal.com/feed", "Jays Journal", "web", True),
         ("https://www.mlb.com/feeds/news/rss.xml", "MLB.com", "web", False),
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "raptors": [
+        ("https://www.raptorshq.com/rss/index.xml", "Raptors HQ", "web", True),
+        ("https://www.espn.com/espn/rss/nba/news", "ESPN", "web", False),
         ("https://www.raptorsrepublic.com/feed/", "Raptors Republic", "web", False),
         ("https://www.sportsnet.ca/basketball/nba/feed/", "Sportsnet", "sportsnet", False),
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
@@ -1928,6 +1934,8 @@ TIER1_RSS_FEEDS = {
     "commanders": [
         ("https://www.hogshaven.com/rss/index.xml", "Hogs Haven", "web", True),
         ("https://riggosrag.com/feed", "Riggo's Rag", "web", True),
+        ("https://www.espn.com/espn/rss/nfl/news", "ESPN", "web", False),
+        ("https://sports.yahoo.com/nfl/rss.xml", "Yahoo Sports", "web", False),
         ("https://www.nbcsports.com/profootballtalk.rss", "Pro Football Talk", "web", False),
         ("https://www.cbssports.com/rss/headlines/nfl/", "CBS Sports", "web", False),
     ],
@@ -2171,7 +2179,7 @@ def discover_articles_for_team(team_key, recent, phase_info):
     return validated
 
 
-def select_the_latest(all_articles, count=4):
+def select_the_latest(all_articles, count=4, prev_lead_source=""):
     """Select the best 3-4 articles for 'The Latest' section.
     ENFORCES source diversity ‚Äî no single source can appear more than
     MAX_SAME_SOURCE_PER_TEAM times. The whole point of the app is that
@@ -2191,6 +2199,7 @@ def select_the_latest(all_articles, count=4):
         }
 
     selected = []
+    lead_is_recap = False
     source_counts = {}  # Track how many times each source is used
     used_urls = set()
 
@@ -2215,6 +2224,7 @@ def select_the_latest(all_articles, count=4):
             break
         if article.get("type") == "recap":
             add_article(article)
+            lead_is_recap = True
 
     # Pass 2: Fill with NON-ESPN articles, one per source (maximize diversity)
     for article in non_espn_articles:
@@ -2273,6 +2283,17 @@ def select_the_latest(all_articles, count=4):
     # Log source diversity
     unique_sources = len(source_counts)
     print(f"    The Latest: {len(selected)} articles from {unique_sources} sources: {', '.join(sorted(source_counts.keys()))}")
+
+    # === LEAD VARIETY (2026-07-03) ===
+    # Justin: the lead story should not come from the same masthead every
+    # day. If yesterday led with this source and slot 2 offers a different
+    # one, flip them. Recaps keep the lead - a final score beats variety.
+    if (prev_lead_source and not lead_is_recap and len(selected) >= 2
+            and selected[0].get("source") == prev_lead_source
+            and selected[1].get("source") != prev_lead_source):
+        selected[0], selected[1] = selected[1], selected[0]
+        _new_lead = selected[0].get("source")
+        print(f"    [variety] lead swapped off {prev_lead_source} -> {_new_lead}")
 
     return selected
 
@@ -4666,7 +4687,9 @@ def build_data():
         # cross-section dedup (run later) can strip 1-3 articles per team
         # when they overlap with featured/two_up. Pulling 6 keeps the floor
         # at ≥3 after dedup.
-        articles = select_the_latest(all_team_articles.get(team_key, []), count=6)
+        _prev_tl = ((existing.get("teams", {}) or {}).get(team_key, {}) or {}).get("the_latest") or []
+        _prev_lead = (_prev_tl[0] or {}).get("source", "") if _prev_tl else ""
+        articles = select_the_latest(all_team_articles.get(team_key, []), count=6, prev_lead_source=_prev_lead)
         print(f"  Selected {len(articles)} articles for The Latest")
 
         # Phase 2: regenerate editorial deks for The Latest via Perplexity.
@@ -4854,6 +4877,17 @@ def build_data():
         for s in stories:
             print(f"    [{s['team']}] {s['headline'][:60]} -> {s['link'][:60]}")
 
+        # Lead variety: the homepage hero should not come from the same
+        # masthead two days running when an alternative exists. A game
+        # recap keeps the hero slot regardless.
+        _prev_feat_src = (existing.get("featured") or {}).get("source", "")
+        if (len(stories) >= 2 and _prev_feat_src
+                and stories[0].get("source") == _prev_feat_src
+                and stories[1].get("source") != _prev_feat_src
+                and "recap" not in (stories[0].get("kicker", "") or "").lower()):
+            stories[0], stories[1] = stories[1], stories[0]
+            _new_hero = stories[0].get("source")
+            print(f"  [variety] homepage lead swapped off {_prev_feat_src} -> {_new_hero}")
         if len(stories) >= 1:
             db["featured"] = stories[0]
         if len(stories) >= 3:
