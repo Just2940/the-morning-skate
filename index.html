@@ -1270,7 +1270,7 @@ body::before {
 
 /* === LAST NIGHT SCOREBOARD === */
 #last-night { margin: 22px 0 4px; }
-.ln-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.ln-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; max-width: 100%; }
 .ln-card { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 12px 16px; cursor: pointer; transition: box-shadow .15s ease, transform .15s ease; }
 .ln-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,.08); transform: translateY(-1px); }
 .ln-top { display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 9px; }
