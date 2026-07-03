@@ -1,8 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="8" y="8" width="496" height="496" rx="112" fill="#FAF6EE"/>
-  <path d="M 256 190 m -66 0 a 66 66 0 0 1 132 0" fill="#E8A020"/>
-  <line x1="88" y1="278" x2="424" y2="278" stroke="#16233F" stroke-width="10" stroke-linecap="round"/>
-  <path d="M 132 342 C 220 318 316 350 388 330"
-        fill="none" stroke="#16233F" stroke-width="9" stroke-linecap="round" stroke-opacity="0.85"/>
-  <line x1="150" y1="232" x2="182" y2="232" stroke="#16233F" stroke-width="6" stroke-linecap="round" stroke-opacity="0.35"/>
-  <line x1="330" y1="232" x2="362" y2="232" stroke="#16233F" stroke-width="6" stroke-linecap="round" stroke-opacity="0.35"/>
-<rect x="8" y="8" width="496" height="496" rx="112" fill="none" stroke="#16233F" stroke-opacity="0.10" stroke-width="3"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="8" y="8" width="496" height="496" rx="112" fill="#FAF7F2"/>
+  <path d="M 148 292
+           C 130 286 122 254 140 233
+           C 148 223 162 218 178 217
+           C 208 211 230 197 244 178
+           C 249 170 254 163 260 159
+           C 266 155 273 156 276 162
+           C 279 168 281 177 283 186
+           C 287 178 294 172 302 170
+           C 308 168 313 170 315 176
+           C 318 190 319 206 320 226
+           C 321 250 322 272 323 292
+           Z" fill="#1C1917"/>
+  <path d="M 186 232 C 210 224 228 210 242 192"
+        fill="none" stroke="#FAF7F2" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="206" cy="240" r="5" fill="#FAF7F2"/>
+  <circle cx="220" cy="228" r="5" fill="#FAF7F2"/>
+  <circle cx="233" cy="214" r="5" fill="#FAF7F2"/>
+  <circle cx="245" cy="199" r="5" fill="#FAF7F2"/>
+  <path d="M 174 292 L 200 292 L 194 324 L 182 324 Z" fill="#1C1917"/>
+  <path d="M 288 292 L 314 292 L 318 324 L 298 324 Z" fill="#1C1917"/>
+  <path d="M 122 320
+           C 122 341 137 354 163 357
+           C 242 364 302 361 358 352
+           L 357 339
+           C 302 348 243 351 166 344
+           C 147 342 135 333 134 320
+           Z" fill="#1C1917"/>
+<rect x="8" y="8" width="496" height="496" rx="112" fill="none" stroke="#1C1917" stroke-opacity="0.08" stroke-width="3"/></svg>
