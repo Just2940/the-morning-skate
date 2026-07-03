@@ -1118,6 +1118,12 @@ body::before {
   display: flex; align-items: center; gap: 8px; font-weight: 600;
 }
 .tbl .tc img { width: 20px; height: 20px; object-fit: contain; }
+.tbl tr td.team-td {
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
 
 /* ‚Äö√Ñ√∂‚àö√Ü‚àö√ë‚Äö√Ñ√∂‚àö√Ü‚àö√ë Draft table ‚Äö√Ñ√∂‚àö√Ü‚àö√ë‚Äö√Ñ√∂‚àö√Ü‚àö√ë */
 .draft-tbl td.pk {
@@ -1263,7 +1269,7 @@ body::before {
 }
 
 /* === LAST NIGHT SCOREBOARD === */
-#last-night { margin: 26px 0 8px; }
+#last-night { margin: 22px 0 4px; }
 .ln-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
 .ln-card { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 12px 16px; cursor: pointer; transition: box-shadow .15s ease, transform .15s ease; }
 .ln-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,.08); transform: translateY(-1px); }
@@ -1423,8 +1429,8 @@ body::before {
   </div>
 
 
-  <div class="sec"><span class="sec-label">Draft</span><span class="sec-line"></span></div>
-  <div class="draft-board-wrap" id="leafs-draft-board"></div>
+  <div class="sec" id="leafs-draft-sec" style="display:none"><span class="sec-label">Draft</span><span class="sec-line"></span></div>
+  <div class="draft-board-wrap" id="leafs-draft-board" style="display:none"></div>
 
   <div class="sec"><span class="sec-label">Standings</span><span class="sec-line"></span></div>
   <div class="standings-wrap" id="leafs-standings"></div>
@@ -1617,8 +1623,8 @@ body::before {
   </div>
 
 
-  <div class="sec"><span class="sec-label">Draft</span><span class="sec-line"></span></div>
-  <div class="draft-board-wrap" id="commanders-draft-board"></div>
+  <div class="sec" id="commanders-draft-sec" style="display:none"><span class="sec-label">Draft</span><span class="sec-line"></span></div>
+  <div class="draft-board-wrap" id="commanders-draft-board" style="display:none"></div>
 
   <div class="sec"><span class="sec-label">Standings</span><span class="sec-line"></span></div>
   <div class="standings-wrap" id="commanders-standings"></div>
@@ -1708,7 +1714,7 @@ function renderScoreboard(items) {
   const el = document.getElementById('last-night');
   if (!el) return;
   if (!items || !items.length) { el.innerHTML = ''; return; }
-  let html = `<div class="sec"><span class="sec-label">Last Night</span><span class="sec-line"></span></div><div class="ln-grid">`;
+  let html = `<div class="ln-grid">`;
   items.forEach(g => {
     const won = g.result === 'W';
     const pill = won ? `<span class="ln-pill w">W</span>` : `<span class="ln-pill l">L</span>`;
@@ -1977,7 +1983,7 @@ function renderTeam(key, t) {
             const seedStyle = r.seed_style === 'green' ? 'color:var(--green);font-weight:700' : r.seed_style === 'red' ? 'color:var(--red)' : 'color:var(--ink-faint)';
             html += `<td style="font-size:9px;${seedStyle}">${esc(r.seed || '')}</td>`;
           }
-          html += `<td><div class="tc"><img src="${escUrl(logoUrl(r.logo, r.league))}" alt="">${esc(r.team || '')}</div></td>`;
+          html += `<td class="team-td"><div class="tc"><img src="${escUrl(logoUrl(r.logo, r.league))}" alt="">${esc(r.team || '')}</div></td>`;
           (r.vals || []).forEach(v => { html += `<td>${esc(v == null ? '' : v)}</td>`; });
           html += '</tr>';
         });
@@ -1991,6 +1997,10 @@ function renderTeam(key, t) {
 
   // Draft Board (Leafs lottery / Commanders draft picks)
   const dbEl = document.getElementById(key + '-draft-board');
+  const dSec = document.getElementById(key + '-draft-sec');
+  const hasBoard = !!(dbEl && t.draft_board);
+  if (dSec) dSec.style.display = hasBoard ? '' : 'none';
+  if (dbEl) dbEl.style.display = hasBoard ? '' : 'none';
   if (dbEl && t.draft_board) {
     const db = t.draft_board;
     let html = '';
