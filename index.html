@@ -1293,28 +1293,38 @@ body::before {
 #almanacFab svg { width: 30px; height: 30px; display: block; }
 #almanacFab:active { transform: scale(.94); }
 #almanacSheet { position: fixed; inset: 0; background: var(--cream); z-index: 950;
-  overflow-y: auto; display: none; padding: 20px 18px 48px; }
+  overflow-y: auto; display: none; padding: 20px 18px 60px; }
 #almanacSheet.open { display: block; }
+.alm-inner { max-width: 640px; margin: 0 auto; }
 .alm-head { display: flex; align-items: flex-start; justify-content: space-between;
   border-bottom: 3px double var(--ink); padding-bottom: 12px; }
-.alm-title { font-family: var(--display); font-size: 30px; font-weight: 800; line-height: 1.05; }
-.alm-date { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); margin-top: 4px; }
+.alm-title { font-family: var(--serif); font-size: 32px; font-weight: 900;
+  letter-spacing: -1px; line-height: 1; color: var(--ink); }
+.alm-date { font-family: var(--sans); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px; color: var(--ink-muted); margin-top: 7px; }
 .alm-close { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--ink);
-  background: var(--cream); color: var(--ink); font-size: 17px; line-height: 1; cursor: pointer; flex: none; }
-.alm-sec { margin-top: 24px; max-width: 640px; }
-.alm-sec h3 { font-family: var(--sans); font-size: 12px; letter-spacing: .12em;
-  text-transform: uppercase; border-bottom: 2px solid var(--ink); padding-bottom: 6px; margin: 0 0 4px; }
+  background: var(--cream); color: var(--ink); font-size: 17px; line-height: 1;
+  cursor: pointer; flex: none; }
+.alm-sec { margin-top: 26px; }
 .alm-item { display: flex; gap: 12px; padding: 12px 0;
-  border-bottom: 1px solid rgba(28,25,23,.12); font-family: var(--body-serif);
-  font-size: 15.5px; line-height: 1.5; }
+  border-bottom: 1px solid var(--rule); font-family: var(--body-serif);
+  font-size: 15.5px; line-height: 1.55; }
 .alm-year { font-family: var(--mono); font-weight: 700; min-width: 48px; flex: none; }
 .alm-chip { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: .06em;
   border: 1.5px solid var(--ink); border-radius: 999px; padding: 1px 8px; margin-left: 6px;
   display: inline-block; vertical-align: 2px; }
 .alm-count { display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
-  padding: 12px 0; border-bottom: 1px solid rgba(28,25,23,.12);
+  padding: 12px 0; border-bottom: 1px solid var(--rule);
   font-family: var(--body-serif); font-size: 15.5px; }
 .alm-days { font-family: var(--mono); font-weight: 700; font-size: 17px; white-space: nowrap; }
+.alm-days small { font-size: 11px; font-weight: 500; color: var(--ink-muted); }
+.alm-lghead { font-family: var(--sans); font-size: 10px; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-muted);
+  margin: 14px 0 4px; }
+.alm-scores { display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 2px 20px; }
+.alm-score { font-family: var(--mono); font-size: 13.5px; padding: 5px 0;
+  border-bottom: 1px solid var(--rule); white-space: nowrap; }
 </style>
 
 
@@ -1761,21 +1771,52 @@ function renderAlmanac(a) {
   const otd = (a && a.on_this_day) || [];
   const bd = (a && a.birthdays) || [];
   const cd = (a && a.countdowns) || [];
-  if (!otd.length && !bd.length && !cd.length) { fab.style.display = 'none'; return; }
+  const lg = (a && a.ledger) || [];
+  const ar = (a && a.around) || [];
+  if (!otd.length && !bd.length && !cd.length && !lg.length && !ar.length) {
+    fab.style.display = 'none'; return;
+  }
   fab.style.display = 'flex';
   document.getElementById('almDate').textContent = new Date().toLocaleDateString('en-US',
     { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  const secHead = t => '<div class="sec"><span class="sec-label">' + t +
+                       '</span><span class="sec-line"></span></div>';
   let h = '';
   if (otd.length) {
-    h += '<div class="alm-sec"><h3>On This Day</h3>';
+    h += '<div class="alm-sec">' + secHead('On This Day');
     otd.forEach(e => {
       h += '<div class="alm-item"><span class="alm-year">' + esc(String(e.year)) + '</span>' +
            '<span>' + esc(e.text) + '<span class="alm-chip">' + esc(e.league || '') + '</span></span></div>';
     });
     h += '</div>';
   }
+  if (cd.length) {
+    h += '<div class="alm-sec">' + secHead('Countdowns');
+    cd.forEach(c => {
+      const d = c.days === 0 ? 'today' : (c.days === 1 ? 'tomorrow' : 'in ' + c.days + ' days');
+      h += '<div class="alm-count"><span>' + esc(c.label) +
+           (c.date ? '<br><span class="alm-date" style="margin-top:2px">' + esc(c.date) + '</span>' : '') +
+           '</span><span class="alm-days">' + d + '</span></div>';
+    });
+    h += '</div>';
+  }
+  if (ar.length) {
+    h += '<div class="alm-sec">' + secHead('Around the Leagues');
+    ar.forEach(b => {
+      h += '<div class="alm-lghead">' + esc(b.league) + ' - yesterday</div><div class="alm-scores">';
+      (b.games || []).forEach(g => {
+        const aw = esc(g.away) + ' ' + g.away_score;
+        const hm = esc(g.home) + ' ' + g.home_score;
+        h += '<div class="alm-score">' +
+             (g.away_score > g.home_score ? '<strong>' + aw + '</strong>' : aw) + ', ' +
+             (g.home_score > g.away_score ? '<strong>' + hm + '</strong>' : hm) + '</div>';
+      });
+      h += '</div>';
+    });
+    h += '</div>';
+  }
   if (bd.length) {
-    h += '<div class="alm-sec"><h3>Birthdays</h3>';
+    h += '<div class="alm-sec">' + secHead('Birthdays');
     bd.forEach(b => {
       h += '<div class="alm-count"><span>' + esc(b.name) +
            (b.position ? '<span class="alm-chip">' + esc(b.position) + '</span>' : '') +
@@ -1784,13 +1825,13 @@ function renderAlmanac(a) {
     });
     h += '</div>';
   }
-  if (cd.length) {
-    h += '<div class="alm-sec"><h3>Countdowns</h3>';
-    cd.forEach(c => {
-      const d = c.days === 0 ? 'today' : (c.days === 1 ? 'tomorrow' : 'in ' + c.days + ' days');
-      h += '<div class="alm-count"><span>' + esc(c.label) +
-           (c.date ? '<br><span class="alm-date">' + esc(c.date) + '</span>' : '') + '</span>' +
-           '<span class="alm-days">' + d + '</span></div>';
+  if (lg.length) {
+    h += '<div class="alm-sec">' + secHead('The Ledger');
+    lg.forEach(x => {
+      h += '<div class="alm-count"><span>Days ' + esc(x.label) +
+           '<span class="alm-chip">' + esc(x.league || '') + '</span></span>' +
+           '<span class="alm-days">' + Number(x.days).toLocaleString('en-US') +
+           ' <small>days</small></span></div>';
     });
     h += '</div>';
   }
@@ -2204,6 +2245,7 @@ if ('serviceWorker' in navigator) {
   </svg>
 </button>
 <div id="almanacSheet" role="dialog" aria-label="The Almanac">
+  <div class="alm-inner">
   <div class="alm-head">
     <div>
       <div class="alm-title">The Almanac</div>
@@ -2212,6 +2254,7 @@ if ('serviceWorker' in navigator) {
     <button class="alm-close" onclick="closeAlmanac()" aria-label="Close">&#10005;</button>
   </div>
   <div id="almBody"></div>
+  </div>
 </div>
 </body>
 </html>

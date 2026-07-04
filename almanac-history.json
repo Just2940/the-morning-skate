@@ -6,6 +6,18 @@
   "01-02": [
     {"team": "leafs", "year": 1992, "text": "The Doug Gilmour trade: Toronto lands Killer from Calgary in a ten-player blockbuster that changes the decade."}
   ],
+  "01-12": [
+    {"team": "commanders", "year": 1992, "text": "Washington routs Detroit 41-10 for the NFC title and a ticket to Super Bowl XXVI."}
+  ],
+  "01-17": [
+    {"team": "commanders", "year": 1988, "text": "Washington edges Minnesota 17-10 for the NFC championship, one stop short of the goal line at the gun."}
+  ],
+  "01-18": [
+    {"team": "commanders", "year": 2025, "text": "Jayden Daniels and the Commanders stun the top-seeded Lions 45-31 in the divisional round."}
+  ],
+  "01-22": [
+    {"team": "commanders", "year": 1983, "text": "Washington beats Dallas 31-17 for the NFC title on the way to Super Bowl XVII."}
+  ],
   "01-26": [
     {"team": "commanders", "year": 1992, "text": "Washington beats Buffalo 37-24 in Super Bowl XXVI for the franchise's third Lombardi Trophy."}
   ],
@@ -21,17 +33,27 @@
   "02-12": [
     {"team": "raptors", "year": 2000, "text": "Vince Carter's dunk contest in Oakland - half-man, half-amazing, and the night the Raptors arrived."}
   ],
+  "02-14": [
+    {"team": "raptors", "year": 2016, "text": "The NBA All-Star Game comes to Toronto - the first Midsummer Classic of basketball played outside the United States."}
+  ],
   "04-07": [
     {"team": "jays", "year": 1977, "text": "In the Exhibition Stadium snow, the Blue Jays win their first-ever game 9-5 over the White Sox."}
   ],
   "04-18": [
     {"team": "leafs", "year": 1942, "text": "Down 3-0 in the Cup Final, the Leafs complete the only comeback of its kind, beating Detroit in Game 7."}
   ],
+  "04-21": [
+    {"team": "leafs", "year": 1951, "text": "Bill Barilko's overtime winner clinches the 1951 Stanley Cup - the goal immortalized by the Tragically Hip."}
+  ],
+  "04-22": [
+    {"team": "leafs", "year": 1976, "text": "Darryl Sittler again: five goals in a single playoff game against Philadelphia."}
+  ],
   "04-25": [
     {"team": "commanders", "year": 2024, "text": "The Commanders take Jayden Daniels second overall in the NFL Draft."}
   ],
   "04-26": [
-    {"team": "jays", "year": 2019, "text": "Vladimir Guerrero Jr. makes his big-league debut at the Rogers Centre."}
+    {"team": "jays", "year": 2019, "text": "Vladimir Guerrero Jr. makes his big-league debut at the Rogers Centre."},
+    {"team": "leafs", "year": 2022, "text": "Auston Matthews buries his 60th of the season - the first 60-goal year by a Leaf."}
   ],
   "05-02": [
     {"team": "leafs", "year": 1967, "text": "The Leafs beat Montreal 3-1 in Game 6 to win the Stanley Cup - the franchise's 13th, and counting the days since."}
@@ -51,8 +73,12 @@
   "06-13": [
     {"team": "raptors", "year": 2019, "text": "The Raptors beat Golden State in Game 6 - Canada's first NBA championship. We The North, champions."}
   ],
+  "06-17": [
+    {"team": "raptors", "year": 2019, "text": "Two million people flood downtown Toronto for the Raptors' championship parade."}
+  ],
   "06-24": [
-    {"team": "raptors", "year": 1998, "text": "Draft-night magic: Toronto turns Antawn Jamison into Vince Carter in a swap of top-five picks."}
+    {"team": "raptors", "year": 1998, "text": "Draft-night magic: Toronto turns Antawn Jamison into Vince Carter in a swap of top-five picks."},
+    {"team": "leafs", "year": 2016, "text": "The Leafs win the lottery and take Auston Matthews first overall in Buffalo."}
   ],
   "07-01": [
     {"team": "leafs", "year": 2018, "text": "Hometown signing: John Tavares joins the Leafs on Canada Day, announcing it with a childhood bedsheets photo."}
@@ -60,14 +86,23 @@
   "07-09": [
     {"team": "jays", "year": 1991, "text": "SkyDome hosts the All-Star Game - the Midsummer Classic comes to Toronto."}
   ],
+  "07-30": [
+    {"team": "jays", "year": 2015, "text": "The all-in summer: the Jays land David Price from Detroit two days after trading for Troy Tulowitzki."}
+  ],
   "09-02": [
     {"team": "jays", "year": 1990, "text": "After four lost no-hitters in the ninth, Dave Stieb finally gets his no-no, blanking Cleveland 3-0."}
+  ],
+  "09-30": [
+    {"team": "jays", "year": 2015, "text": "The 22-year wait ends: the Jays clinch the AL East, their first division title since 1993."}
   ],
   "10-04": [
     {"team": "jays", "year": 2016, "text": "Edwin Encarnacion's three-run walk-off blast sinks Baltimore in the AL Wild Card game."}
   ],
   "10-05": [
     {"team": "jays", "year": 1985, "text": "Doyle Alexander goes the distance against the Yankees and the Jays clinch their first AL East title."}
+  ],
+  "10-09": [
+    {"team": "jays", "year": 2016, "text": "The Donaldson Dash: Josh scampers home on a wild throw in the 10th to sweep Texas out of the ALDS."}
   ],
   "10-12": [
     {"team": "leafs", "year": 2016, "text": "Auston Matthews scores four goals in his NHL debut - no one had ever done it before."}
@@ -81,6 +116,9 @@
   ],
   "10-24": [
     {"team": "jays", "year": 1992, "text": "The Jays beat Atlanta in 11 innings in Game 6 - Canada's first World Series championship."}
+  ],
+  "11-01": [
+    {"team": "raptors", "year": 1946, "text": "Big-league basketball is born in Toronto: the NBA's very first game, Huskies vs Knicks at Maple Leaf Gardens."}
   ],
   "11-03": [
     {"team": "raptors", "year": 1995, "text": "The Raptors win their first-ever game, beating New Jersey 94-79 at the SkyDome."}

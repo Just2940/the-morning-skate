@@ -5289,8 +5289,72 @@ def build_almanac():
             print(f"  [almanac] countdown {team_key} failed: {e}")
 
     alm["countdowns"].sort(key=lambda c: c["days"])
+
+    # --- 4. The Ledger: days since each team's last championship ----------
+    # Pure date math - the one module that can never be empty, so the
+    # Almanac always has a page worth reading.
+    alm["ledger"] = []
+    try:
+        LEDGER = [
+            ("leafs", "NHL", "since the Leafs last won the Stanley Cup", datetime(1967, 5, 2)),
+            ("jays", "MLB", "since the Jays won their last World Series", datetime(1993, 10, 23)),
+            ("raptors", "NBA", "since the Raptors won it all", datetime(2019, 6, 13)),
+            ("commanders", "NFL", "since Washington last won the Super Bowl", datetime(1992, 1, 26)),
+        ]
+        for tk, lg, label, d0 in LEDGER:
+            days = (today.date() - d0.date()).days
+            if days > 0:
+                alm["ledger"].append({"team": tk, "league": lg, "label": label, "days": days})
+        alm["ledger"].sort(key=lambda x: -x["days"])
+    except Exception as e:
+        print(f"  [almanac] ledger failed: {e}")
+
+    # --- 5. Around the Leagues: yesterday's finals, league-wide -----------
+    alm["around"] = []
+    yest = (today - timedelta(days=1)).strftime("%Y%m%d")
+    seen_leagues = []
+    for cfg in TEAMS.values():
+        tup = (cfg["espn_sport"], cfg["espn_league"], cfg["league"])
+        if tup in seen_leagues:
+            continue
+        seen_leagues.append(tup)
+        sport, lg_path, lg_name = tup
+        try:
+            url = (f"https://site.api.espn.com/apis/site/v2/sports/"
+                   f"{sport}/{lg_path}/scoreboard?dates={yest}")
+            data = espn_fetch(url) or {}
+            rows = []
+            for event in data.get("events", []):
+                comp = (event.get("competitions") or [{}])[0]
+                st = ((comp.get("status") or {}).get("type") or {}).get("name", "")
+                if st != "STATUS_FINAL":
+                    continue
+                away = home = ""
+                ascore = hscore = 0
+                for t in comp.get("competitors", []):
+                    abbr = t.get("team", {}).get("abbreviation", "")
+                    try:
+                        sc = int(t.get("score") or 0)
+                    except (TypeError, ValueError):
+                        sc = 0
+                    if t.get("homeAway") == "away":
+                        away, ascore = abbr, sc
+                    else:
+                        home, hscore = abbr, sc
+                if away and home:
+                    rows.append({"away": away, "away_score": ascore,
+                                 "home": home, "home_score": hscore})
+                if len(rows) >= 16:
+                    break
+            if rows:
+                alm["around"].append({"league": lg_name, "games": rows})
+        except Exception as e:
+            print(f"  [almanac] around {lg_name} failed: {e}")
+
     print(f"  Almanac: {len(alm['on_this_day'])} history, "
-          f"{len(alm['birthdays'])} birthdays, {len(alm['countdowns'])} countdowns")
+          f"{len(alm['birthdays'])} birthdays, {len(alm['countdowns'])} countdowns, "
+          f"{len(alm['ledger'])} ledger, "
+          f"{sum(len(b['games']) for b in alm['around'])} league finals")
     return alm
 
 
