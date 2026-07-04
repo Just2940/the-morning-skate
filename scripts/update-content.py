@@ -5155,6 +5155,9 @@ def build_data():
         "games": week_games,
         "note": week_note,
     }
+
+    # === THE ALMANAC (floating bubble content) ===
+    db["almanac"] = build_almanac()
     print(f"  Week Ahead: {len(week_games)} entries" + (f" (note: {week_note})" if week_note else ""))
 
     # === CONTENT-LEVEL QA (Section 0.5 equivalent — cross-field / cross-section) ===
@@ -5187,6 +5190,110 @@ def build_data():
 
 
 # === MAIN ===
+def build_almanac():
+    """The Almanac (floating bubble): On This Day + birthdays + countdowns.
+    Deterministic by design: curated local history DB plus the same ESPN
+    roster/schedule APIs the rest of the app trusts. Every sub-module
+    fails EMPTY - the almanac can never take down the daily build."""
+    alm = {"on_this_day": [], "birthdays": [], "countdowns": []}
+    today = NOW.astimezone(EST)
+    key = today.strftime("%m-%d")
+    alm["date_key"] = key
+
+    # --- 1. On This Day: curated database shipped with the repo ----------
+    try:
+        hist_path = os.path.join(os.path.dirname(DATA_FILE), "almanac-history.json")
+        with open(hist_path, encoding="utf-8") as f:
+            hist = json.load(f)
+        for ev in hist.get(key, []):
+            team = ev.get("team", "")
+            year = ev.get("year", 0)
+            text = " ".join(str(ev.get("text", "")).split())
+            if team in TEAMS and isinstance(year, int) and 1900 <= year <= today.year and 20 <= len(text) <= 220:
+                alm["on_this_day"].append({
+                    "team": team, "year": year, "text": text,
+                    "league": TEAMS[team]["league"],
+                    "years_ago": today.year - year,
+                })
+    except Exception as e:
+        print(f"  [almanac] on_this_day failed: {e}")
+
+    # --- 2. Birthdays: ESPN rosters carry dateOfBirth ---------------------
+    for team_key, cfg in TEAMS.items():
+        try:
+            url = (f"https://site.api.espn.com/apis/site/v2/sports/"
+                   f"{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}/roster")
+            data = espn_fetch(url) or {}
+            flat = []
+            for g in data.get("athletes", []):
+                if isinstance(g, dict) and isinstance(g.get("items"), list):
+                    flat.extend(g["items"])
+                elif isinstance(g, dict):
+                    flat.append(g)
+            for a in flat:
+                dob = str(a.get("dateOfBirth", ""))[:10]
+                if len(dob) == 10 and dob[5:] == key:
+                    try:
+                        age = today.year - int(dob[:4])
+                    except ValueError:
+                        continue
+                    pos = ((a.get("position") or {}).get("abbreviation") or "")
+                    name = a.get("displayName", "")
+                    if name and 17 <= age <= 55:
+                        alm["birthdays"].append({
+                            "team": team_key, "league": cfg["league"],
+                            "name": name, "age": age, "position": pos,
+                        })
+        except Exception as e:
+            print(f"  [almanac] birthdays {team_key} failed: {e}")
+
+    # --- 3. Countdowns: next scheduled game per team, any distance --------
+    for team_key, cfg in TEAMS.items():
+        try:
+            url = (f"https://site.api.espn.com/apis/site/v2/sports/"
+                   f"{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}/schedule")
+            data = espn_fetch(url) or {}
+            best = None
+            for event in data.get("events", []):
+                comp = (event.get("competitions") or [{}])[0]
+                st = ((comp.get("status") or {}).get("type") or {}).get("name", "")
+                if st != "STATUS_SCHEDULED":
+                    continue
+                try:
+                    gdt = datetime.fromisoformat(event.get("date", "").replace("Z", "+00:00"))
+                except ValueError:
+                    continue
+                if gdt <= NOW:
+                    continue
+                if best is None or gdt < best[0]:
+                    opp, ha = "", "vs."
+                    for t in comp.get("competitors", []):
+                        is_us = t.get("id") == cfg["espn_team_id"] or t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]
+                        if is_us:
+                            if t.get("homeAway") == "away":
+                                ha = "at"
+                        else:
+                            opp = t.get("team", {}).get("shortDisplayName", "")
+                    best = (gdt, opp, ha)
+            if best:
+                days = (best[0].astimezone(EST).date() - today.date()).days
+                if 0 <= days <= 400 and best[1]:
+                    short = cfg["full_name"].split()[-1]
+                    alm["countdowns"].append({
+                        "team": team_key, "league": cfg["league"],
+                        "label": f"{short} {best[2]} {best[1]}",
+                        "days": days,
+                        "date": best[0].astimezone(EST).strftime("%a, %b %-d"),
+                    })
+        except Exception as e:
+            print(f"  [almanac] countdown {team_key} failed: {e}")
+
+    alm["countdowns"].sort(key=lambda c: c["days"])
+    print(f"  Almanac: {len(alm['on_this_day'])} history, "
+          f"{len(alm['birthdays'])} birthdays, {len(alm['countdowns'])} countdowns")
+    return alm
+
+
 def main():
     print(f"=== The Morning Skate Daily Update ===")
     print(f"Date: {TODAY_DISPLAY}")
