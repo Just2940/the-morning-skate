@@ -5237,7 +5237,8 @@ BRIEF_BANNED_RX = re.compile(
 BRIEF_BOILER_RX = re.compile(
     r"\bbuckle up\b|\bstay tuned\b|\bone thing is certain\b|"
     r"\bworld of sports\b|\bremains to be seen\b|\bonly time will tell\b|"
-    r"\bforward momentum\b|\bpast records\b|\ball four teams\b",
+    r"\bforward momentum\b|\bpast records\b|\ball four teams\b|"
+    r"\bthe focus now shifts\b|\ball eyes (on|now)\b",
     re.I)
 
 
@@ -5430,7 +5431,7 @@ def build_morning_brief(db, all_team_facts):
             lines = text.split("\n", 1)
             title = lines[0].strip().strip("#").strip().rstrip(".")
             body = lines[1].strip() if len(lines) > 1 else ""
-            if not body or not (3 <= len(title.split()) <= 9):
+            if not body or not (3 <= len(title.split()) <= 12):
                 # No parseable headline - treat whole text as body
                 title, body = "The Morning Skate Brief", text
             reason = _brief_article_gate(body)
@@ -5442,9 +5443,9 @@ def build_morning_brief(db, all_team_facts):
                     1 for n in ("leafs", "jays", "raptors", "commanders")
                     if n in low_t) >= 3:
                 title = today.strftime("%A") + "'s Skate"
-            paragraphs = [" ".join(p.split()) for p in body.split("\n\n") if p.strip()][:3]
+            paragraphs = [" ".join(p.split()) for p in body.split("\n\n") if p.strip()]
             if len(paragraphs) == 1 and "\n" in body:
-                paragraphs = [" ".join(p.split()) for p in body.split("\n") if p.strip()][:3]
+                paragraphs = [" ".join(p.split()) for p in body.split("\n") if p.strip()]
             if len(paragraphs) == 1 and len(paragraphs[0].split()) > 90:
                 # Wall of text: split at sentence boundaries near the thirds
                 sents = re.split(r"(?<=[.!?]) +", paragraphs[0])
@@ -5453,8 +5454,16 @@ def build_morning_brief(db, all_team_facts):
                     chunks = [" ".join(sents[:k]), " ".join(sents[k:2 * k]),
                               " ".join(sents[2 * k:])]
                     paragraphs = [c for c in chunks if c.strip()]
+            if len(paragraphs) > 3:
+                paragraphs = [paragraphs[0], paragraphs[1], " ".join(paragraphs[2:])]
             if not paragraphs:
                 print(f"  [brief] attempt {attempt + 1} rejected: no paragraphs")
+                continue
+            _last = paragraphs[-1].lower()
+            if (len(paragraphs) > 1 and len(_last.split()) < 30 and sum(
+                    1 for n in ("leafs", "jays", "raptors", "commanders")
+                    if n in _last) >= 3):
+                print(f"  [brief] attempt {attempt + 1} rejected: summary closer")
                 continue
             print(f"  Morning Brief: AI article, {len(body.split())} words, "
                   f"{len(paragraphs)} paragraph(s)")
