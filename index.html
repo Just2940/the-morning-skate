@@ -1285,6 +1285,20 @@ body::before {
 .ln-score { font-family: var(--sans); font-size: 19px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
 @media (max-width: 700px) { .ln-grid { grid-template-columns: 1fr 1fr; } .ln-team { font-size: 13px; } }
 
+/* === Morning Brief + Live cards === */
+.brief { max-width: 760px; margin: 12px auto 2px; padding: 10px 16px 12px;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.brief-text { font-family: var(--body-serif); font-size: 15.5px; line-height: 1.6;
+  color: var(--ink); }
+.brief-stamp { display: block; margin-top: 6px; font-family: var(--mono);
+  font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase;
+  letter-spacing: .08em; }
+.ln-pill.live { background: #B3392E; color: #fff;
+  animation: livepulse 1.6s ease-in-out infinite; }
+@keyframes livepulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+#live-now { margin: 22px 0 4px; }
+#live-now:empty { margin: 0; }
+
 /* === The Almanac: floating bubble + sheet === */
 #almanacFab { position: fixed; right: 16px; bottom: 18px; width: 56px; height: 56px;
   border-radius: 50%; background: var(--cream); border: 2px solid var(--ink);
@@ -1340,6 +1354,10 @@ body::before {
   <h1 class="masthead-title">The Morning Skate</h1>
   <p class="masthead-tagline">Your daily sports briefing &mdash; four teams, one page, every morning.</p>
 </header>
+<div class="brief" id="brief" style="display:none">
+  <div class="brief-text" id="briefText"></div>
+  <span class="brief-stamp" id="briefStamp"></span>
+</div>
 
 <nav class="team-nav" id="nav">
   <button class="nav-btn active" data-t="home" onclick="go('home')">
@@ -1374,7 +1392,8 @@ body::before {
   <div class="live-strip" id="ticker"></div>
 
   <!-- LAST NIGHT SCOREBOARD -->
-  <div id="last-night"></div>
+  <div id="live-now"></div>
+<div id="last-night"></div>
 
   <!-- FEATURED STORY -->
   <div id="featured"></div>
@@ -1765,6 +1784,58 @@ function closeAlmanac() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAlmanac(); });
+function renderBrief(b) {
+  if (!b || !b.text) return;
+  document.getElementById('briefText').textContent = b.text;
+  document.getElementById('briefStamp').textContent = b.updated ? 'Edition updated ' + b.updated : '';
+  document.getElementById('brief').style.display = 'block';
+}
+// --- Live games: the daily edition is built before dawn, so the page
+// itself checks ESPN (CORS-open) while you read. Cards appear only while
+// a game is actually live and vanish on their own. Failure is silence.
+const LIVE_TEAMS = [
+  { t: 'leafs', s: 'hockey', l: 'nhl', abbr: 'TOR', name: 'Leafs' },
+  { t: 'jays', s: 'baseball', l: 'mlb', abbr: 'TOR', name: 'Jays' },
+  { t: 'raptors', s: 'basketball', l: 'nba', abbr: 'TOR', name: 'Raptors' },
+  { t: 'commanders', s: 'football', l: 'nfl', abbr: 'WSH', name: 'Commanders' }
+];
+async function checkLive() {
+  const box = document.getElementById('live-now');
+  if (!box) return;
+  const cards = [];
+  for (const cfg of LIVE_TEAMS) {
+    try {
+      const r = await fetch('https://site.api.espn.com/apis/site/v2/sports/' + cfg.s + '/' + cfg.l + '/scoreboard');
+      if (!r.ok) continue;
+      const d = await r.json();
+      for (const ev of (d.events || [])) {
+        const comp = (ev.competitions || [])[0] || {};
+        const cs = comp.competitors || [];
+        const us = cs.find(c => (c.team || {}).abbreviation === cfg.abbr);
+        if (!us) continue;
+        const state = ((ev.status || {}).type || {}).state;
+        if (state !== 'in') continue;
+        const opp = cs.find(c => c !== us) || {};
+        cards.push({ cfg, us, opp, detail: ((ev.status || {}).type || {}).shortDetail || 'LIVE' });
+      }
+    } catch (e) { /* live is a bonus, never an error */ }
+  }
+  if (!cards.length) { box.innerHTML = ''; return; }
+  let html = '<div class="ln-grid">';
+  cards.forEach(c => {
+    const uA = ((c.us.team || {}).abbreviation || '').toLowerCase();
+    const oA = ((c.opp.team || {}).abbreviation || '').toLowerCase();
+    html += '<div class="ln-card" onclick="go(\'' + c.cfg.t + '\')" role="button" tabindex="0">' +
+      '<div class="ln-top"><span>' + esc(c.detail) + '</span><span class="ln-pill live">LIVE</span></div>' +
+      '<div class="ln-row"><img src="' + logoUrl(uA, c.cfg.l.toUpperCase()) + '" alt=""><span class="ln-team">' + esc(c.cfg.name) + '</span><span class="ln-score">' + esc(String(c.us.score || '0')) + '</span></div>' +
+      '<div class="ln-row"><img src="' + logoUrl(oA, c.cfg.l.toUpperCase()) + '" alt=""><span class="ln-team">' + esc((c.opp.team || {}).shortDisplayName || '') + '</span><span class="ln-score">' + esc(String(c.opp.score || '0')) + '</span></div>' +
+      '</div>';
+  });
+  box.innerHTML = html + '</div>';
+}
+setInterval(() => { if (document.visibilityState === 'visible') checkLive(); }, 60000);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkLive(); });
+checkLive();
 function renderAlmanac(a) {
   const fab = document.getElementById('almanacFab');
   if (!fab) return;
@@ -2210,6 +2281,7 @@ fetch('data.json?v=' + Date.now())
     // Homepage
     renderTicker(data.ticker);
     renderScoreboard(data.scoreboard);
+    renderBrief(data.morning_brief);
     renderAlmanac(data.almanac);
     renderFeatured(data.featured);
     renderTwoUp(data.two_up);

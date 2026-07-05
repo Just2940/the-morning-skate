@@ -4942,6 +4942,7 @@ def build_data():
                 _opp = _lm.group(1)
         db["scoreboard"].append({
             "team": team_key,
+            "game_date": g.get("game_date", ""),
             "name": cfg["full_name"].split()[-1],
             "league": cfg["league"],
             "logo": cfg["espn_abbr"].lower(),
@@ -5158,6 +5159,9 @@ def build_data():
 
     # === THE ALMANAC (floating bubble content) ===
     db["almanac"] = build_almanac()
+
+    # === MORNING BRIEF (the app's own voice) ===
+    db["morning_brief"] = build_morning_brief(db)
     print(f"  Week Ahead: {len(week_games)} entries" + (f" (note: {week_note})" if week_note else ""))
 
     # === CONTENT-LEVEL QA (Section 0.5 equivalent — cross-field / cross-section) ===
@@ -5356,6 +5360,59 @@ def build_almanac():
           f"{len(alm['ledger'])} ledger, "
           f"{sum(len(b['games']) for b in alm['around'])} league finals")
     return alm
+
+
+def build_morning_brief(db):
+    """Two-to-three deterministic sentences under the masthead. Composed
+    from facts already verified elsewhere in the pipeline. Parts with
+    nothing to say simply drop out; worst case is a graceful one-liner."""
+    try:
+        today = NOW.astimezone(EST)
+        parts = []
+
+        # Last night's finals (true yesterday/today only, not 3-day carryover)
+        yest = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+        tod = today.strftime("%Y-%m-%d")
+        finals = [g for g in db.get("scoreboard", []) if g.get("game_date") in (yest, tod)]
+        for g in finals[:2]:
+            verb = "beat" if g.get("result") == "W" else "fell to"
+            s1, s2 = g.get("team_score"), g.get("opp_score")
+            if g.get("result") == "L":
+                s1, s2 = s2, s1
+            parts.append(f"Last night the {g.get('name')} {verb} the {g.get('opp_name')} {s1}-{s2}.")
+
+        # Today's slate
+        todays = [r for r in db.get("today_slate", []) if not r.get("off")]
+        for r in todays[:2]:
+            m = r.get("matchup", "")
+            t = r.get("detail", "")
+            ch = r.get("channel", "")
+            line = f"Today: {m}" + (f", {t}" if t else "")
+            if ch:
+                line += f" on {ch}"
+            parts.append(line + ".")
+
+        # Nothing today: point at the nearest countdown instead
+        if not todays:
+            cds = (db.get("almanac") or {}).get("countdowns") or []
+            if cds:
+                c = cds[0]
+                d = c.get("days", 99)
+                when = "today" if d == 0 else ("tomorrow" if d == 1 else f"in {d} days")
+                parts.append(f"Next up: {c.get('label')}, {when}.")
+
+        if not parts:
+            parts.append("A quiet day across the four teams - the Almanac has the numbers.")
+
+        text = "Good morning. " + " ".join(parts[:3])
+        text = " ".join(text.split())
+        if len(text) > 340:
+            text = truncate_at_word(text, 340)
+        print(f"  Morning Brief: {len(text)} chars, {len(parts[:3])} part(s)")
+        return {"text": text, "updated": today.strftime("%-I:%M %p ET")}
+    except Exception as e:
+        print(f"  [brief] failed: {e}")
+        return {}
 
 
 def main():
