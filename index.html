@@ -1285,14 +1285,7 @@ body::before {
 .ln-score { font-family: var(--sans); font-size: 19px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
 @media (max-width: 700px) { .ln-grid { grid-template-columns: 1fr 1fr; } .ln-team { font-size: 13px; } }
 
-/* === Morning Brief + Live cards === */
-.brief { max-width: 760px; margin: 12px auto 2px; padding: 10px 16px 12px;
-  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.brief-text { font-family: var(--body-serif); font-size: 15.5px; line-height: 1.6;
-  color: var(--ink); }
-.brief-stamp { display: block; margin-top: 6px; font-family: var(--mono);
-  font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase;
-  letter-spacing: .08em; }
+/* === Live cards === */
 .ln-pill.live { background: #B3392E; color: #fff;
   animation: livepulse 1.6s ease-in-out infinite; }
 @keyframes livepulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
@@ -1354,10 +1347,6 @@ body::before {
   <h1 class="masthead-title">The Morning Skate</h1>
   <p class="masthead-tagline">Your daily sports briefing &mdash; four teams, one page, every morning.</p>
 </header>
-<div class="brief" id="brief" style="display:none">
-  <div class="brief-text" id="briefText"></div>
-  <span class="brief-stamp" id="briefStamp"></span>
-</div>
 
 <nav class="team-nav" id="nav">
   <button class="nav-btn active" data-t="home" onclick="go('home')">
@@ -1784,12 +1773,6 @@ function closeAlmanac() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAlmanac(); });
-function renderBrief(b) {
-  if (!b || !b.text) return;
-  document.getElementById('briefText').textContent = b.text;
-  document.getElementById('briefStamp').textContent = b.updated ? 'Edition updated ' + b.updated : '';
-  document.getElementById('brief').style.display = 'block';
-}
 // --- Live games: the daily edition is built before dawn, so the page
 // itself checks ESPN (CORS-open) while you read. Cards appear only while
 // a game is actually live and vanish on their own. Failure is silence.
@@ -1836,76 +1819,26 @@ async function checkLive() {
 setInterval(() => { if (document.visibilityState === 'visible') checkLive(); }, 60000);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkLive(); });
 checkLive();
-function renderAlmanac(a) {
+function renderMorningBrief(b) {
   const fab = document.getElementById('almanacFab');
   if (!fab) return;
-  const otd = (a && a.on_this_day) || [];
-  const bd = (a && a.birthdays) || [];
-  const cd = (a && a.countdowns) || [];
-  const lg = (a && a.ledger) || [];
-  const ar = (a && a.around) || [];
-  if (!otd.length && !bd.length && !cd.length && !lg.length && !ar.length) {
-    fab.style.display = 'none'; return;
-  }
+  const teams = (b && b.teams) || [];
+  const total = teams.reduce((n, t) => n + ((t.lines || []).length), 0);
+  if (!total) { fab.style.display = 'none'; return; }
   fab.style.display = 'flex';
   document.getElementById('almDate').textContent = new Date().toLocaleDateString('en-US',
     { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  const secHead = t => '<div class="sec"><span class="sec-label">' + t +
-                       '</span><span class="sec-line"></span></div>';
   let h = '';
-  if (otd.length) {
-    h += '<div class="alm-sec">' + secHead('On This Day');
-    otd.forEach(e => {
-      h += '<div class="alm-item"><span class="alm-year">' + esc(String(e.year)) + '</span>' +
-           '<span>' + esc(e.text) + '<span class="alm-chip">' + esc(e.league || '') + '</span></span></div>';
+  teams.forEach(t => {
+    if (!(t.lines || []).length) return;
+    h += '<div class="alm-sec"><div class="sec"><span class="sec-label">' +
+         esc(t.name) + ' &middot; ' + esc(t.league) +
+         '</span><span class="sec-line"></span></div>';
+    t.lines.forEach(l => {
+      h += '<div class="alm-item"><span>' + esc(l.text) + '</span></div>';
     });
     h += '</div>';
-  }
-  if (cd.length) {
-    h += '<div class="alm-sec">' + secHead('Countdowns');
-    cd.forEach(c => {
-      const d = c.days === 0 ? 'today' : (c.days === 1 ? 'tomorrow' : 'in ' + c.days + ' days');
-      h += '<div class="alm-count"><span>' + esc(c.label) +
-           (c.date ? '<br><span class="alm-date" style="margin-top:2px">' + esc(c.date) + '</span>' : '') +
-           '</span><span class="alm-days">' + d + '</span></div>';
-    });
-    h += '</div>';
-  }
-  if (ar.length) {
-    h += '<div class="alm-sec">' + secHead('Around the Leagues');
-    ar.forEach(b => {
-      h += '<div class="alm-lghead">' + esc(b.league) + ' - yesterday</div><div class="alm-scores">';
-      (b.games || []).forEach(g => {
-        const aw = esc(g.away) + ' ' + g.away_score;
-        const hm = esc(g.home) + ' ' + g.home_score;
-        h += '<div class="alm-score">' +
-             (g.away_score > g.home_score ? '<strong>' + aw + '</strong>' : aw) + ', ' +
-             (g.home_score > g.away_score ? '<strong>' + hm + '</strong>' : hm) + '</div>';
-      });
-      h += '</div>';
-    });
-    h += '</div>';
-  }
-  if (bd.length) {
-    h += '<div class="alm-sec">' + secHead('Birthdays');
-    bd.forEach(b => {
-      h += '<div class="alm-count"><span>' + esc(b.name) +
-           (b.position ? '<span class="alm-chip">' + esc(b.position) + '</span>' : '') +
-           '<span class="alm-chip">' + esc(b.league || '') + '</span></span>' +
-           '<span class="alm-days">turns ' + esc(String(b.age)) + '</span></div>';
-    });
-    h += '</div>';
-  }
-  if (lg.length) {
-    h += '<div class="alm-sec">' + secHead('The Ledger');
-    lg.forEach(x => {
-      h += '<div class="alm-count"><span>Days ' + esc(x.label) +
-           '<span class="alm-chip">' + esc(x.league || '') + '</span></span>' +
-           '<span class="alm-days">' + Number(x.days).toLocaleString('en-US') +
-           ' <small>days</small></span></div>';
-    });
-    h += '</div>';
-  }
+  });
   document.getElementById('almBody').innerHTML = h;
 }
 function renderScoreboard(items) {
@@ -2281,8 +2214,7 @@ fetch('data.json?v=' + Date.now())
     // Homepage
     renderTicker(data.ticker);
     renderScoreboard(data.scoreboard);
-    renderBrief(data.morning_brief);
-    renderAlmanac(data.almanac);
+    renderMorningBrief(data.morning_brief);
     renderFeatured(data.featured);
     renderTwoUp(data.two_up);
     renderExtraStory(data.extra_story);
@@ -2309,18 +2241,18 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(r => console.log('SW registered', r.scope)).catch(e => console.error('SW failed', e));
 }
 </script>
-<button id="almanacFab" aria-label="Open the Almanac" onclick="openAlmanac()">
+<button id="almanacFab" aria-label="Open the Morning Brief" onclick="openAlmanac()">
   <svg viewBox="0 0 32 32" aria-hidden="true">
     <path d="M8 19 a8 8 0 0 1 16 0" fill="none" stroke="#1C1917" stroke-width="2.5"/>
     <line x1="5" y1="19" x2="27" y2="19" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/>
     <line x1="9" y1="25" x2="23" y2="25" stroke="#1C1917" stroke-width="2" stroke-linecap="round" opacity=".5"/>
   </svg>
 </button>
-<div id="almanacSheet" role="dialog" aria-label="The Almanac">
+<div id="almanacSheet" role="dialog" aria-label="The Morning Brief">
   <div class="alm-inner">
   <div class="alm-head">
     <div>
-      <div class="alm-title">The Almanac</div>
+      <div class="alm-title">The Morning Brief</div>
       <div class="alm-date" id="almDate"></div>
     </div>
     <button class="alm-close" onclick="closeAlmanac()" aria-label="Close">&#10005;</button>

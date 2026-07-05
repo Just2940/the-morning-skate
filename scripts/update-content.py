@@ -5158,10 +5158,8 @@ def build_data():
     }
 
     # === THE ALMANAC (floating bubble content) ===
-    db["almanac"] = build_almanac()
-
-    # === MORNING BRIEF (the app's own voice) ===
-    db["morning_brief"] = build_morning_brief(db)
+    # === MORNING BRIEF (bubble content - touches all four teams) ===
+    db["morning_brief"] = build_morning_brief(db, all_team_facts)
     print(f"  Week Ahead: {len(week_games)} entries" + (f" (note: {week_note})" if week_note else ""))
 
     # === CONTENT-LEVEL QA (Section 0.5 equivalent — cross-field / cross-section) ===
@@ -5194,222 +5192,129 @@ def build_data():
 
 
 # === MAIN ===
-def build_almanac():
-    """The Almanac (floating bubble): On This Day + birthdays + countdowns.
-    Deterministic by design: curated local history DB plus the same ESPN
-    roster/schedule APIs the rest of the app trusts. Every sub-module
-    fails EMPTY - the almanac can never take down the daily build."""
-    alm = {"on_this_day": [], "birthdays": [], "countdowns": []}
-    today = NOW.astimezone(EST)
-    key = today.strftime("%m-%d")
-    alm["date_key"] = key
-
-    # --- 1. On This Day: curated database shipped with the repo ----------
+def _next_game_any(cfg, today):
+    """Long-range fallback: first scheduled game at any distance."""
     try:
-        hist_path = os.path.join(os.path.dirname(DATA_FILE), "almanac-history.json")
-        with open(hist_path, encoding="utf-8") as f:
-            hist = json.load(f)
-        for ev in hist.get(key, []):
-            team = ev.get("team", "")
-            year = ev.get("year", 0)
-            text = " ".join(str(ev.get("text", "")).split())
-            if team in TEAMS and isinstance(year, int) and 1900 <= year <= today.year and 20 <= len(text) <= 220:
-                alm["on_this_day"].append({
-                    "team": team, "year": year, "text": text,
-                    "league": TEAMS[team]["league"],
-                    "years_ago": today.year - year,
-                })
-    except Exception as e:
-        print(f"  [almanac] on_this_day failed: {e}")
-
-    # --- 2. Birthdays: ESPN rosters carry dateOfBirth ---------------------
-    for team_key, cfg in TEAMS.items():
-        try:
-            url = (f"https://site.api.espn.com/apis/site/v2/sports/"
-                   f"{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}/roster")
-            data = espn_fetch(url) or {}
-            flat = []
-            for g in data.get("athletes", []):
-                if isinstance(g, dict) and isinstance(g.get("items"), list):
-                    flat.extend(g["items"])
-                elif isinstance(g, dict):
-                    flat.append(g)
-            for a in flat:
-                dob = str(a.get("dateOfBirth", ""))[:10]
-                if len(dob) == 10 and dob[5:] == key:
-                    try:
-                        age = today.year - int(dob[:4])
-                    except ValueError:
-                        continue
-                    pos = ((a.get("position") or {}).get("abbreviation") or "")
-                    name = a.get("displayName", "")
-                    if name and 17 <= age <= 55:
-                        alm["birthdays"].append({
-                            "team": team_key, "league": cfg["league"],
-                            "name": name, "age": age, "position": pos,
-                        })
-        except Exception as e:
-            print(f"  [almanac] birthdays {team_key} failed: {e}")
-
-    # --- 3. Countdowns: next scheduled game per team, any distance --------
-    for team_key, cfg in TEAMS.items():
-        try:
-            url = (f"https://site.api.espn.com/apis/site/v2/sports/"
-                   f"{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}/schedule")
-            data = espn_fetch(url) or {}
-            best = None
-            for event in data.get("events", []):
-                comp = (event.get("competitions") or [{}])[0]
-                st = ((comp.get("status") or {}).get("type") or {}).get("name", "")
-                if st != "STATUS_SCHEDULED":
-                    continue
-                try:
-                    gdt = datetime.fromisoformat(event.get("date", "").replace("Z", "+00:00"))
-                except ValueError:
-                    continue
-                if gdt <= NOW:
-                    continue
-                if best is None or gdt < best[0]:
-                    opp, ha = "", "vs."
-                    for t in comp.get("competitors", []):
-                        is_us = t.get("id") == cfg["espn_team_id"] or t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]
-                        if is_us:
-                            if t.get("homeAway") == "away":
-                                ha = "at"
-                        else:
-                            opp = t.get("team", {}).get("shortDisplayName", "")
-                    best = (gdt, opp, ha)
-            if best:
-                days = (best[0].astimezone(EST).date() - today.date()).days
-                if 0 <= days <= 400 and best[1]:
-                    short = cfg["full_name"].split()[-1]
-                    alm["countdowns"].append({
-                        "team": team_key, "league": cfg["league"],
-                        "label": f"{short} {best[2]} {best[1]}",
-                        "days": days,
-                        "date": best[0].astimezone(EST).strftime("%a, %b %-d"),
-                    })
-        except Exception as e:
-            print(f"  [almanac] countdown {team_key} failed: {e}")
-
-    alm["countdowns"].sort(key=lambda c: c["days"])
-
-    # --- 4. The Ledger: days since each team's last championship ----------
-    # Pure date math - the one module that can never be empty, so the
-    # Almanac always has a page worth reading.
-    alm["ledger"] = []
-    try:
-        LEDGER = [
-            ("leafs", "NHL", "since the Leafs last won the Stanley Cup", datetime(1967, 5, 2)),
-            ("jays", "MLB", "since the Jays won their last World Series", datetime(1993, 10, 23)),
-            ("raptors", "NBA", "since the Raptors won it all", datetime(2019, 6, 13)),
-            ("commanders", "NFL", "since Washington last won the Super Bowl", datetime(1992, 1, 26)),
-        ]
-        for tk, lg, label, d0 in LEDGER:
-            days = (today.date() - d0.date()).days
-            if days > 0:
-                alm["ledger"].append({"team": tk, "league": lg, "label": label, "days": days})
-        alm["ledger"].sort(key=lambda x: -x["days"])
-    except Exception as e:
-        print(f"  [almanac] ledger failed: {e}")
-
-    # --- 5. Around the Leagues: yesterday's finals, league-wide -----------
-    alm["around"] = []
-    yest = (today - timedelta(days=1)).strftime("%Y%m%d")
-    seen_leagues = []
-    for cfg in TEAMS.values():
-        tup = (cfg["espn_sport"], cfg["espn_league"], cfg["league"])
-        if tup in seen_leagues:
-            continue
-        seen_leagues.append(tup)
-        sport, lg_path, lg_name = tup
-        try:
-            url = (f"https://site.api.espn.com/apis/site/v2/sports/"
-                   f"{sport}/{lg_path}/scoreboard?dates={yest}")
-            data = espn_fetch(url) or {}
-            rows = []
-            for event in data.get("events", []):
-                comp = (event.get("competitions") or [{}])[0]
-                st = ((comp.get("status") or {}).get("type") or {}).get("name", "")
-                if st != "STATUS_FINAL":
-                    continue
-                away = home = ""
-                ascore = hscore = 0
+        url = (f"https://site.api.espn.com/apis/site/v2/sports/"
+               f"{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}/schedule")
+        data = espn_fetch(url) or {}
+        best = None
+        for event in data.get("events", []):
+            comp = (event.get("competitions") or [{}])[0]
+            st = ((comp.get("status") or {}).get("type") or {}).get("name", "")
+            if st != "STATUS_SCHEDULED":
+                continue
+            try:
+                gdt = datetime.fromisoformat(event.get("date", "").replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if gdt <= NOW:
+                continue
+            if best is None or gdt < best[0]:
+                opp, ha = "", "vs."
                 for t in comp.get("competitors", []):
-                    abbr = t.get("team", {}).get("abbreviation", "")
-                    try:
-                        sc = int(t.get("score") or 0)
-                    except (TypeError, ValueError):
-                        sc = 0
-                    if t.get("homeAway") == "away":
-                        away, ascore = abbr, sc
+                    is_us = t.get("id") == cfg["espn_team_id"] or t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]
+                    if is_us:
+                        if t.get("homeAway") == "away":
+                            ha = "at"
                     else:
-                        home, hscore = abbr, sc
-                if away and home:
-                    rows.append({"away": away, "away_score": ascore,
-                                 "home": home, "home_score": hscore})
-                if len(rows) >= 16:
-                    break
-            if rows:
-                alm["around"].append({"league": lg_name, "games": rows})
-        except Exception as e:
-            print(f"  [almanac] around {lg_name} failed: {e}")
-
-    print(f"  Almanac: {len(alm['on_this_day'])} history, "
-          f"{len(alm['birthdays'])} birthdays, {len(alm['countdowns'])} countdowns, "
-          f"{len(alm['ledger'])} ledger, "
-          f"{sum(len(b['games']) for b in alm['around'])} league finals")
-    return alm
+                        opp = t.get("team", {}).get("shortDisplayName", "")
+                best = (gdt, opp, ha)
+        if best and best[1]:
+            days = (best[0].astimezone(EST).date() - today.date()).days
+            if days > 1:
+                dt = best[0].astimezone(EST).strftime("%a, %b %-d")
+                return f"Next: {best[2]} {best[1]} - {dt} (in {days} days)"
+    except Exception:
+        pass
+    return ""
 
 
-def build_morning_brief(db):
-    """Two-to-three deterministic sentences under the masthead. Composed
-    from facts already verified elsewhere in the pipeline. Parts with
-    nothing to say simply drop out; worst case is a graceful one-liner."""
+def build_morning_brief(db, all_team_facts):
+    """The bubble's content: a detailed brief touching all four teams.
+    Deterministic lines only; anything with nothing to say drops out."""
     try:
         today = NOW.astimezone(EST)
-        parts = []
-
-        # Last night's finals (true yesterday/today only, not 3-day carryover)
         yest = (today - timedelta(days=1)).strftime("%Y-%m-%d")
         tod = today.strftime("%Y-%m-%d")
-        finals = [g for g in db.get("scoreboard", []) if g.get("game_date") in (yest, tod)]
-        for g in finals[:2]:
-            verb = "beat" if g.get("result") == "W" else "fell to"
-            s1, s2 = g.get("team_score"), g.get("opp_score")
-            if g.get("result") == "L":
-                s1, s2 = s2, s1
-            parts.append(f"Last night the {g.get('name')} {verb} the {g.get('opp_name')} {s1}-{s2}.")
+        sb_by_team = {g.get("team"): g for g in db.get("scoreboard", [])}
+        slate_by_team = {}
+        for r in db.get("today_slate", []):
+            tk = r.get("team", "")
+            if tk and tk not in slate_by_team:
+                slate_by_team[tk] = r
+        TITLES = {
+            "leafs": ("the Cup", datetime(1967, 5, 2)),
+            "jays": ("a World Series", datetime(1993, 10, 23)),
+            "raptors": ("the title", datetime(2019, 6, 13)),
+            "commanders": ("a Super Bowl", datetime(1992, 1, 26)),
+        }
+        IN_SEASON = ("regular_season", "regular_season_late", "playoffs",
+                     "spring_training", "preseason")
+        teams_out = []
+        for tk, cfg in TEAMS.items():
+            name = cfg["full_name"].split()[-1]
+            facts = all_team_facts.get(tk, {})
+            info = facts.get("team_info", {})
+            phase = (facts.get("phase_info") or {}).get("phase", "")
+            upcoming = facts.get("upcoming", [])
+            lines = []
 
-        # Today's slate
-        todays = [r for r in db.get("today_slate", []) if not r.get("off")]
-        for r in todays[:2]:
-            m = r.get("matchup", "")
-            t = r.get("detail", "")
-            ch = r.get("channel", "")
-            line = f"Today: {m}" + (f", {t}" if t else "")
-            if ch:
-                line += f" on {ch}"
-            parts.append(line + ".")
+            g = sb_by_team.get(tk)
+            if g:
+                s1, s2 = g.get("team_score"), g.get("opp_score")
+                if g.get("result") == "L":
+                    s1, s2 = s2, s1
+                when = "Last night" if g.get("game_date") in (yest, tod) else str(g.get("date", ""))
+                verb = "beat" if g.get("result") == "W" else "fell to"
+                lines.append({"k": "score", "text": f"{when}: {verb} the {g.get('opp_name')} {s1}-{s2}"})
 
-        # Nothing today: point at the nearest countdown instead
-        if not todays:
-            cds = (db.get("almanac") or {}).get("countdowns") or []
-            if cds:
-                c = cds[0]
-                d = c.get("days", 99)
-                when = "today" if d == 0 else ("tomorrow" if d == 1 else f"in {d} days")
-                parts.append(f"Next up: {c.get('label')}, {when}.")
+            srow = slate_by_team.get(tk)
+            if srow and not srow.get("off"):
+                t = srow.get("detail", "")
+                ch = srow.get("channel", "")
+                txt = "Today: " + srow.get("matchup", "") + (f", {t}" if t else "")
+                if ch:
+                    txt += f" on {ch}"
+                lines.append({"k": "next", "text": txt})
+            else:
+                wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])
+                           if w.get("team") == tk), None)
+                if wk:
+                    txt = f"Next: {wk.get('opp')} - {wk.get('day')} {wk.get('time')}"
+                    if wk.get("tv"):
+                        txt += f" on {wk.get('tv')}"
+                    lines.append({"k": "next", "text": txt})
+                else:
+                    nx = _next_game_any(cfg, today)
+                    if nx:
+                        lines.append({"k": "next", "text": nx})
 
-        if not parts:
-            parts.append("A quiet day across the four teams - the Almanac has the numbers.")
+            in_season = phase in IN_SEASON or bool(upcoming)
+            record = info.get("record", "")
+            standing = info.get("standing_summary", "")
+            if in_season and record and standing:
+                lines.append({"k": "standing", "text": f"Record: {record}, {standing}"})
+            else:
+                lbl, d0 = TITLES.get(tk, ("", None))
+                if d0:
+                    nd = (today.date() - d0.date()).days
+                    lines.append({"k": "ledger", "text": f"Day {nd:,} of the wait for {lbl}"})
 
-        text = "Good morning. " + " ".join(parts[:3])
-        text = " ".join(text.split())
-        if len(text) > 340:
-            text = truncate_at_word(text, 340)
-        print(f"  Morning Brief: {len(text)} chars, {len(parts[:3])} part(s)")
-        return {"text": text, "updated": today.strftime("%-I:%M %p ET")}
+            tl = ((db.get("teams") or {}).get(tk) or {}).get("the_latest") or []
+            if tl:
+                h = tl[0].get("headline", "")
+                src = tl[0].get("source", "")
+                if h:
+                    txt = f"In the news: {h}"
+                    if src:
+                        txt += f" ({src})"
+                    lines.append({"k": "news", "text": txt})
+
+            teams_out.append({"team": tk, "league": cfg["league"], "name": name, "lines": lines})
+        n = sum(len(t["lines"]) for t in teams_out)
+        print(f"  Morning Brief: {n} lines across {len(teams_out)} teams")
+        return {"teams": teams_out}
     except Exception as e:
         print(f"  [brief] failed: {e}")
         return {}

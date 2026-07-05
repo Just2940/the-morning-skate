@@ -36,7 +36,7 @@ self.addEventListener('fetch', event => {
   if (isAppShell) {
     // Network-first: the site must never be stale after a deploy.
     event.respondWith(
-      fetch(req).then(response => {
+      fetch(req, { cache: 'no-cache' }).then(response => {
         if (response.ok) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
