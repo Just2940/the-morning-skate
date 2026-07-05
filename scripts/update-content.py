@@ -5253,6 +5253,34 @@ BRIEF_BOILER_RX = re.compile(
     re.I)
 
 
+BRIEF_TITLE_COMMON = set("""
+a an and as at back big builds camp closes cup day deal debut down eyes final
+finals first for free game games gets goes here his home hopes in into is it
+kicks lands last late leads lifts locks look looking looks loss makes more
+morning new next night no now of off on opens out over picks plans play plays
+ready returns rise road rolls run sets sign signs skate start starts stays
+still swap swaps take takes the their this three to top trades turn turns two
+up waits wear wears week while wide win wins with young your monday tuesday
+wednesday thursday friday saturday sunday leafs jays blue raptors commanders
+toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs
+""".split())
+
+
+def _brief_title_ok(title, facts_low):
+    """Every headline word must be common vocabulary or grounded in the
+    verified facts. Catches model garbles like 'Choves'."""
+    for w in re.findall(r"[A-Za-z']+", title):
+        lw = w.lower().strip("'")
+        if not lw or lw in BRIEF_TITLE_COMMON:
+            continue
+        if lw.rstrip("s") in BRIEF_TITLE_COMMON:
+            continue
+        if lw in facts_low:
+            continue
+        return False
+    return True
+
+
 def _brief_article_gate(text):
     """Return '' if publishable, else the reason it fails."""
     words = len(text.split())
@@ -5453,6 +5481,9 @@ def build_morning_brief(db, all_team_facts):
             if "update" in low_t or sum(
                     1 for n in ("leafs", "jays", "raptors", "commanders")
                     if n in low_t) >= 3:
+                title = today.strftime("%A") + "'s Skate"
+            elif not _brief_title_ok(title, facts_block.lower()):
+                print(f"  [brief] title replaced (unrecognized word): {title}")
                 title = today.strftime("%A") + "'s Skate"
             paragraphs = [" ".join(p.split()) for p in body.split("\n\n") if p.strip()]
             if len(paragraphs) == 1 and "\n" in body:
