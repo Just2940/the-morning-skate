@@ -5230,101 +5230,224 @@ def _next_game_any(cfg, today):
     return ""
 
 
-def build_morning_brief(db, all_team_facts):
-    """The bubble's content: a detailed brief touching all four teams.
-    Deterministic lines only; anything with nothing to say drops out."""
-    try:
-        today = NOW.astimezone(EST)
-        yest = (today - timedelta(days=1)).strftime("%Y-%m-%d")
-        tod = today.strftime("%Y-%m-%d")
-        sb_by_team = {g.get("team"): g for g in db.get("scoreboard", [])}
-        slate_by_team = {}
-        for r in db.get("today_slate", []):
-            tk = r.get("team", "")
-            if tk and tk not in slate_by_team:
-                slate_by_team[tk] = r
-        TITLES = {
-            "leafs": ("the Cup", datetime(1967, 5, 2)),
-            "jays": ("a World Series", datetime(1993, 10, 23)),
-            "raptors": ("the title", datetime(2019, 6, 13)),
-            "commanders": ("a Super Bowl", datetime(1992, 1, 26)),
-        }
-        IN_SEASON = ("regular_season", "regular_season_late", "playoffs",
-                     "spring_training", "preseason")
-        teams_out = []
-        for tk, cfg in TEAMS.items():
-            name = cfg["full_name"].split()[-1]
-            facts = all_team_facts.get(tk, {})
-            info = facts.get("team_info", {})
-            phase = (facts.get("phase_info") or {}).get("phase", "")
-            upcoming = facts.get("upcoming", [])
-            lines = []
+BRIEF_BANNED_RX = re.compile(
+    r"\bdrought\b|\bdays since\b|\bsince (1967|1992|1993)\b|"
+    r"\bhaven'?t won\b|\blast title\b|\blast championship\b",
+    re.I)
+BRIEF_BOILER_RX = re.compile(
+    r"\bbuckle up\b|\bstay tuned\b|\bone thing is certain\b|"
+    r"\bworld of sports\b|\bremains to be seen\b|\bonly time will tell\b",
+    re.I)
 
-            g = sb_by_team.get(tk)
-            if g:
-                s1, s2 = g.get("team_score"), g.get("opp_score")
-                if g.get("result") == "L":
-                    s1, s2 = s2, s1
-                when = "Last night" if g.get("game_date") in (yest, tod) else str(g.get("date", ""))
-                verb = "beat" if g.get("result") == "W" else "fell to"
-                lines.append({"k": "score", "text": f"{when}: {verb} the {g.get('opp_name')} {s1}-{s2}"})
 
-            srow = slate_by_team.get(tk)
-            if srow and not srow.get("off"):
-                t = srow.get("detail", "")
-                ch = srow.get("channel", "")
-                txt = "Today: " + srow.get("matchup", "") + (f", {t}" if t else "")
-                if ch:
-                    txt += f" on {ch}"
+def _brief_article_gate(text):
+    """Return '' if publishable, else the reason it fails."""
+    words = len(text.split())
+    if not (100 <= words <= 230):
+        return f"length {words}w"
+    low = text.lower()
+    for nick in ("leafs", "jays", "raptors", "commanders"):
+        if nick not in low:
+            return f"missing {nick}"
+    if BRIEF_BANNED_RX.search(text):
+        return "drought reference"
+    if BRIEF_BOILER_RX.search(text):
+        return "boilerplate"
+    return ""
+
+
+def _brief_facts_block(db, all_team_facts, today):
+    """Compact verified-facts block the article must be grounded in."""
+    yest = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+    tod = today.strftime("%Y-%m-%d")
+    sb_by_team = {g.get("team"): g for g in db.get("scoreboard", [])}
+    slate_by_team = {}
+    for r in db.get("today_slate", []):
+        tk = r.get("team", "")
+        if tk and tk not in slate_by_team:
+            slate_by_team[tk] = r
+    IN_SEASON = ("regular_season", "regular_season_late", "playoffs",
+                 "spring_training", "preseason")
+    out = [f"VERIFIED FACTS for {today.strftime('%A, %B %-d, %Y')}:"]
+    for tk, cfg in TEAMS.items():
+        facts = all_team_facts.get(tk, {})
+        info = facts.get("team_info", {})
+        pinfo = facts.get("phase_info") or {}
+        phase = pinfo.get("phase", "")
+        in_season = phase in IN_SEASON or bool(facts.get("upcoming"))
+        out.append(f"[{cfg['full_name']} - {cfg['league']} - {pinfo.get('label', 'Offseason')}]")
+        g = sb_by_team.get(tk)
+        if g and g.get("game_date") in (yest, tod):
+            s1, s2 = g.get("team_score"), g.get("opp_score")
+            if g.get("result") == "L":
+                s1, s2 = s2, s1
+            verb = "beat" if g.get("result") == "W" else "lost to"
+            out.append(f"- Last night: {verb} the {g.get('opp_name')} {s1}-{s2}")
+        srow = slate_by_team.get(tk)
+        if srow and not srow.get("off"):
+            line = f"- Today: {srow.get('matchup', '')}"
+            if srow.get("detail"):
+                line += f", {srow.get('detail')}"
+            if srow.get("channel"):
+                line += f" on {srow.get('channel')}"
+            out.append(line)
+        else:
+            wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])
+                       if w.get("team") == tk), None)
+            if wk:
+                out.append(f"- Next game: {wk.get('opp')} {wk.get('day')} {wk.get('time')}")
+            else:
+                nx = _next_game_any(cfg, today)
+                if nx:
+                    out.append(f"- {nx}")
+        if in_season and info.get("record") and info.get("standing_summary"):
+            out.append(f"- Record: {info.get('record')}, {info.get('standing_summary')}")
+        tl = ((db.get("teams") or {}).get(tk) or {}).get("the_latest") or []
+        _recap_rx = re.compile(r"\b(beat|fell to)\b.*\d+-\d+")
+        shown = 0
+        for art in tl[:4]:
+            h = art.get("headline", "")
+            if not h or _recap_rx.search(h):
+                continue
+            out.append(f"- Headline: {h} ({art.get('source', '')})")
+            shown += 1
+            if shown >= 2:
+                break
+    return "\n".join(out)
+
+
+def _build_brief_fallback(db, all_team_facts, today):
+    """Deterministic team-lines brief - the safety net. No ledger."""
+    yest = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+    tod = today.strftime("%Y-%m-%d")
+    sb_by_team = {g.get("team"): g for g in db.get("scoreboard", [])}
+    slate_by_team = {}
+    for r in db.get("today_slate", []):
+        tk = r.get("team", "")
+        if tk and tk not in slate_by_team:
+            slate_by_team[tk] = r
+    IN_SEASON = ("regular_season", "regular_season_late", "playoffs",
+                 "spring_training", "preseason")
+    teams_out = []
+    for tk, cfg in TEAMS.items():
+        name = cfg["full_name"].split()[-1]
+        facts = all_team_facts.get(tk, {})
+        info = facts.get("team_info", {})
+        phase = (facts.get("phase_info") or {}).get("phase", "")
+        lines = []
+        g = sb_by_team.get(tk)
+        if g:
+            s1, s2 = g.get("team_score"), g.get("opp_score")
+            if g.get("result") == "L":
+                s1, s2 = s2, s1
+            when = "Last night" if g.get("game_date") in (yest, tod) else str(g.get("date", ""))
+            verb = "beat" if g.get("result") == "W" else "fell to"
+            lines.append({"k": "score", "text": f"{when}: {verb} the {g.get('opp_name')} {s1}-{s2}"})
+        srow = slate_by_team.get(tk)
+        if srow and not srow.get("off"):
+            t = srow.get("detail", "")
+            ch = srow.get("channel", "")
+            txt = "Today: " + srow.get("matchup", "") + (f", {t}" if t else "")
+            if ch:
+                txt += f" on {ch}"
+            lines.append({"k": "next", "text": txt})
+        else:
+            wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])
+                       if w.get("team") == tk), None)
+            if wk:
+                txt = f"Next: {wk.get('opp')} - {wk.get('day')} {wk.get('time')}"
+                if wk.get("tv"):
+                    txt += f" on {wk.get('tv')}"
                 lines.append({"k": "next", "text": txt})
             else:
-                wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])
-                           if w.get("team") == tk), None)
-                if wk:
-                    txt = f"Next: {wk.get('opp')} - {wk.get('day')} {wk.get('time')}"
-                    if wk.get("tv"):
-                        txt += f" on {wk.get('tv')}"
-                    lines.append({"k": "next", "text": txt})
-                else:
-                    nx = _next_game_any(cfg, today)
-                    if nx:
-                        lines.append({"k": "next", "text": nx})
+                nx = _next_game_any(cfg, today)
+                if nx:
+                    lines.append({"k": "next", "text": nx})
+        in_season = phase in IN_SEASON or bool(facts.get("upcoming"))
+        if in_season and info.get("record") and info.get("standing_summary"):
+            lines.append({"k": "standing", "text": f"Record: {info.get('record')}, {info.get('standing_summary')}"})
+        tl = ((db.get("teams") or {}).get(tk) or {}).get("the_latest") or []
+        _recap_rx = re.compile(r"\b(beat|fell to)\b.*\d+-\d+")
+        pick = None
+        for art in tl[:3]:
+            if not _recap_rx.search(art.get("headline", "")):
+                pick = art
+                break
+        if pick and pick.get("headline"):
+            txt = f"In the news: {pick.get('headline')}"
+            if pick.get("source"):
+                txt += f" ({pick.get('source')})"
+            lines.append({"k": "news", "text": txt})
+        teams_out.append({"team": tk, "league": cfg["league"], "name": name, "lines": lines})
+    return {"teams": teams_out}
 
-            in_season = phase in IN_SEASON or bool(upcoming)
-            record = info.get("record", "")
-            standing = info.get("standing_summary", "")
-            if in_season and record and standing:
-                lines.append({"k": "standing", "text": f"Record: {record}, {standing}"})
-            else:
-                lbl, d0 = TITLES.get(tk, ("", None))
-                if d0:
-                    nd = (today.date() - d0.date()).days
-                    lines.append({"k": "ledger", "text": f"Day {nd:,} of the wait for {lbl}"})
 
-            tl = ((db.get("teams") or {}).get(tk) or {}).get("the_latest") or []
-            # Skip recap-style headlines - they duplicate the score line.
-            _recap_rx = re.compile(r"\b(beat|fell to)\b.*\d+-\d+")
-            pick = None
-            for art in tl[:3]:
-                if not _recap_rx.search(art.get("headline", "")):
-                    pick = art
-                    break
-            if pick:
-                h = pick.get("headline", "")
-                src = pick.get("source", "")
-                if h:
-                    txt = f"In the news: {h}"
-                    if src:
-                        txt += f" ({src})"
-                    lines.append({"k": "news", "text": txt})
-
-            teams_out.append({"team": tk, "league": cfg["league"], "name": name, "lines": lines})
-        n = sum(len(t["lines"]) for t in teams_out)
-        print(f"  Morning Brief: {n} lines across {len(teams_out)} teams")
-        return {"teams": teams_out}
-    except Exception as e:
-        print(f"  [brief] failed: {e}")
-        return {}
+def build_morning_brief(db, all_team_facts):
+    """A Perplexity-written mini article (fresh daily, all four teams),
+    grounded in verified facts and gated hard; falls back to the
+    deterministic team-lines brief if generation fails."""
+    today = NOW.astimezone(EST)
+    if PERPLEXITY_API_KEY:
+        facts_block = _brief_facts_block(db, all_team_facts, today)
+        system_prompt = (
+            "You are the editor of The Morning Skate, a personal daily briefing "
+            "for a lifelong Toronto sports fan (Maple Leafs, Blue Jays, Raptors) "
+            "who also follows the Washington Commanders. Write this morning's "
+            "mini article. RULES: "
+            "(1) 130 to 200 words total, in 2 or 3 short paragraphs separated by "
+            "blank lines. Do NOT exceed 210 words. "
+            "(2) The FIRST LINE must be a headline of at most seven words, then "
+            "a blank line, then the article. "
+            "(3) Mention ALL FOUR teams by name: Leafs, Jays (or Blue Jays), "
+            "Raptors, Commanders. "
+            "(4) Ground every score, record, date and broadcast detail ONLY in "
+            "the verified facts provided. You may add one timely, verifiable "
+            "development per team from reputable current coverage; if unsure, "
+            "stick to the provided facts. Never invent numbers. "
+            "(5) For teams in their offseason, look FORWARD (signings, draft "
+            "picks, camp dates). Do NOT recap last season's record, seed, "
+            "streaks or games-back. "
+            "(6) NEVER mention championship droughts, how long it has been "
+            "since a title, or the years of past championships. "
+            "(7) Plain ASCII punctuation only: no em dashes, curly quotes or "
+            "ellipses. No cliches such as 'buckle up', 'stay tuned', 'one thing "
+            "is certain', 'remains to be seen'. Warm, plainspoken, newspaper "
+            "voice - written for one reader with his morning coffee."
+        )
+        prompt = (
+            f"{facts_block}\n\n"
+            "Write this morning's mini article now, following every rule."
+        )
+        for attempt in range(3):
+            raw = perplexity_search(prompt, system_prompt=system_prompt)
+            if not raw:
+                print(f"  [brief] attempt {attempt + 1}: empty response")
+                continue
+            text = sanitize_ascii(raw.strip())
+            lines = text.split("\n", 1)
+            title = lines[0].strip().strip("#").strip().rstrip(".")
+            body = lines[1].strip() if len(lines) > 1 else ""
+            if not body or not (3 <= len(title.split()) <= 9):
+                # No parseable headline - treat whole text as body
+                title, body = "The Morning Skate Brief", text
+            reason = _brief_article_gate(body)
+            if reason:
+                print(f"  [brief] attempt {attempt + 1} rejected: {reason}")
+                continue
+            paragraphs = [" ".join(p.split()) for p in body.split("\n\n") if p.strip()][:3]
+            if not paragraphs:
+                print(f"  [brief] attempt {attempt + 1} rejected: no paragraphs")
+                continue
+            print(f"  Morning Brief: AI article, {len(body.split())} words, "
+                  f"{len(paragraphs)} paragraph(s)")
+            return {"article": {"title": title, "paragraphs": paragraphs}}
+        print("  [brief] all AI attempts failed - shipping deterministic fallback")
+    else:
+        print("  [brief] no PERPLEXITY_API_KEY - deterministic fallback")
+    fb = _build_brief_fallback(db, all_team_facts, today)
+    n = sum(len(t["lines"]) for t in fb.get("teams", []))
+    print(f"  Morning Brief: fallback, {n} lines across {len(fb.get('teams', []))} teams")
+    return fb
 
 
 def main():

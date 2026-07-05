@@ -1292,6 +1292,14 @@ body::before {
 #live-now { margin: 22px 0 4px; }
 #live-now:empty { margin: 0; }
 
+/* === Brief article === */
+.alm-art-title { font-family: var(--serif); font-size: 24px; font-weight: 700;
+  line-height: 1.2; margin: 22px 0 4px; color: var(--ink); }
+.alm-art-p { font-family: var(--body-serif); font-size: 15.5px; line-height: 1.65;
+  margin: 12px 0 0; color: var(--ink); }
+.alm-art-p:first-of-type::first-letter { font-family: var(--serif); font-weight: 900;
+  font-size: 40px; float: left; line-height: .85; padding: 3px 7px 0 0; }
+
 /* === The Almanac: floating bubble + sheet === */
 #almanacFab { position: fixed; right: 16px; bottom: 18px; width: 56px; height: 56px;
   border-radius: 50%; background: var(--cream); border: 2px solid var(--ink);
@@ -1822,23 +1830,31 @@ checkLive();
 function renderMorningBrief(b) {
   const fab = document.getElementById('almanacFab');
   if (!fab) return;
+  const art = b && b.article;
   const teams = (b && b.teams) || [];
   const total = teams.reduce((n, t) => n + ((t.lines || []).length), 0);
-  if (!total) { fab.style.display = 'none'; return; }
+  if ((!art || !(art.paragraphs || []).length) && !total) {
+    fab.style.display = 'none'; return;
+  }
   fab.style.display = 'flex';
   document.getElementById('almDate').textContent = new Date().toLocaleDateString('en-US',
     { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   let h = '';
-  teams.forEach(t => {
-    if (!(t.lines || []).length) return;
-    h += '<div class="alm-sec"><div class="sec"><span class="sec-label">' +
-         esc(t.name) + ' &middot; ' + esc(t.league) +
-         '</span><span class="sec-line"></span></div>';
-    t.lines.forEach(l => {
-      h += '<div class="alm-item"><span>' + esc(l.text) + '</span></div>';
+  if (art && (art.paragraphs || []).length) {
+    h += '<div class="alm-art-title">' + esc(art.title || 'The Morning Skate Brief') + '</div>';
+    art.paragraphs.forEach(p => { h += '<p class="alm-art-p">' + esc(p) + '</p>'; });
+  } else {
+    teams.forEach(t => {
+      if (!(t.lines || []).length) return;
+      h += '<div class="alm-sec"><div class="sec"><span class="sec-label">' +
+           esc(t.name) + ' &middot; ' + esc(t.league) +
+           '</span><span class="sec-line"></span></div>';
+      t.lines.forEach(l => {
+        h += '<div class="alm-item"><span>' + esc(l.text) + '</span></div>';
+      });
+      h += '</div>';
     });
-    h += '</div>';
-  });
+  }
   document.getElementById('almBody').innerHTML = h;
 }
 function renderScoreboard(items) {
