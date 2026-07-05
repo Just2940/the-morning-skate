@@ -969,7 +969,16 @@ def get_team_schedule(team_key):
 
     for event in data.get("events", []):
         game_date_str = event.get("date", "")
-        game_date = game_date_str[:10] if game_date_str else ""
+        # Date games by EASTERN time, not UTC - a 10 PM ET game is stamped
+        # with the next day in UTC, which mislabeled every late game and
+        # made Friday's final outrank Saturday's.
+        game_date = ""
+        if game_date_str:
+            try:
+                game_date = datetime.fromisoformat(
+                    game_date_str.replace("Z", "+00:00")).astimezone(EST).strftime("%Y-%m-%d")
+            except ValueError:
+                game_date = game_date_str[:10]
 
         comp = event.get("competitions", [{}])[0]
         status_type = comp.get("status", {}).get("type", {}).get("name", "")
@@ -1009,6 +1018,7 @@ def get_team_schedule(team_key):
                     "opp_logo": opp_abbr,
                     "league": cfg["espn_league"],
                     "game_date": game_date,
+                    "game_ts": game_date_str,
                     "game_id": event.get("id", ""),
                 })
 
@@ -1058,14 +1068,15 @@ def get_team_schedule(team_key):
                     "time": f"{time_str} ET" if time_str else "TBD",
                     "tv": broadcast or "",
                     "game_date": game_date,
+                    "game_ts": game_date_str,
                 })
 
     # Sort recent by date descending, take last 4
-    recent.sort(key=lambda x: x.get("game_date", ""), reverse=True)
+    recent.sort(key=lambda x: x.get("game_ts", x.get("game_date", "")), reverse=True)
     recent = recent[:4]
 
     # Sort upcoming by date ascending, take next 7 days
-    upcoming.sort(key=lambda x: x.get("game_date", ""))
+    upcoming.sort(key=lambda x: x.get("game_ts", x.get("game_date", "")))
     week_from_now = (NOW + timedelta(days=7)).strftime("%Y-%m-%d")
     upcoming = [g for g in upcoming if g.get("game_date", "") <= week_from_now]
 
