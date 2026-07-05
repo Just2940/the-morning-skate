@@ -5302,9 +5302,16 @@ def build_morning_brief(db, all_team_facts):
                     lines.append({"k": "ledger", "text": f"Day {nd:,} of the wait for {lbl}"})
 
             tl = ((db.get("teams") or {}).get(tk) or {}).get("the_latest") or []
-            if tl:
-                h = tl[0].get("headline", "")
-                src = tl[0].get("source", "")
+            # Skip recap-style headlines - they duplicate the score line.
+            _recap_rx = re.compile(r"\b(beat|fell to)\b.*\d+-\d+")
+            pick = None
+            for art in tl[:3]:
+                if not _recap_rx.search(art.get("headline", "")):
+                    pick = art
+                    break
+            if pick:
+                h = pick.get("headline", "")
+                src = pick.get("source", "")
                 if h:
                     txt = f"In the news: {h}"
                     if src:
