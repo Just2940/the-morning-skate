@@ -5262,7 +5262,7 @@ ready returns rise road rolls run sets sign signs skate start starts stays
 still swap swaps take takes the their this three to top trades turn turns two
 up waits wear wears week while wide win wins with young your monday tuesday
 wednesday thursday friday saturday sunday leafs jays blue raptors commanders
-toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs
+toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs claim claims earn earns grab grabs join joins ink inks nab nabs secure secures name names pick picked land lands roll rolled seek seeks aim aims begin begins arrive arrives await awaits
 """.split())
 
 
