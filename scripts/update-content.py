@@ -5236,7 +5236,8 @@ BRIEF_BANNED_RX = re.compile(
     re.I)
 BRIEF_BOILER_RX = re.compile(
     r"\bbuckle up\b|\bstay tuned\b|\bone thing is certain\b|"
-    r"\bworld of sports\b|\bremains to be seen\b|\bonly time will tell\b",
+    r"\bworld of sports\b|\bremains to be seen\b|\bonly time will tell\b|"
+    r"\bforward momentum\b|\bpast records\b|\ball four teams\b",
     re.I)
 
 
@@ -5396,8 +5397,9 @@ def build_morning_brief(db, all_team_facts):
             "mini article. RULES: "
             "(1) 130 to 200 words total, in 2 or 3 short paragraphs separated by "
             "blank lines. Do NOT exceed 210 words. "
-            "(2) The FIRST LINE must be a headline of at most seven words, then "
-            "a blank line, then the article. "
+            "(2) The FIRST LINE must be a real newspaper headline of at most "
+            "seven words - specific and concrete, never a list of team names "
+            "and never the word 'update'. Then a blank line, then the article. "
             "(3) Mention ALL FOUR teams by name: Leafs, Jays (or Blue Jays), "
             "Raptors, Commanders. "
             "(4) Ground every score, record, date and broadcast detail ONLY in "
@@ -5412,7 +5414,8 @@ def build_morning_brief(db, all_team_facts):
             "(7) Plain ASCII punctuation only: no em dashes, curly quotes or "
             "ellipses. No cliches such as 'buckle up', 'stay tuned', 'one thing "
             "is certain', 'remains to be seen'. Warm, plainspoken, newspaper "
-            "voice - written for one reader with his morning coffee."
+            "voice - written for one reader with his morning coffee. End on a "
+            "concrete detail, never a summary sentence about all the teams."
         )
         prompt = (
             f"{facts_block}\n\n"
@@ -5434,7 +5437,22 @@ def build_morning_brief(db, all_team_facts):
             if reason:
                 print(f"  [brief] attempt {attempt + 1} rejected: {reason}")
                 continue
+            low_t = title.lower()
+            if "update" in low_t or sum(
+                    1 for n in ("leafs", "jays", "raptors", "commanders")
+                    if n in low_t) >= 3:
+                title = today.strftime("%A") + "'s Skate"
             paragraphs = [" ".join(p.split()) for p in body.split("\n\n") if p.strip()][:3]
+            if len(paragraphs) == 1 and "\n" in body:
+                paragraphs = [" ".join(p.split()) for p in body.split("\n") if p.strip()][:3]
+            if len(paragraphs) == 1 and len(paragraphs[0].split()) > 90:
+                # Wall of text: split at sentence boundaries near the thirds
+                sents = re.split(r"(?<=[.!?]) +", paragraphs[0])
+                if len(sents) >= 3:
+                    k = max(1, len(sents) // 3)
+                    chunks = [" ".join(sents[:k]), " ".join(sents[k:2 * k]),
+                              " ".join(sents[2 * k:])]
+                    paragraphs = [c for c in chunks if c.strip()]
             if not paragraphs:
                 print(f"  [brief] attempt {attempt + 1} rejected: no paragraphs")
                 continue
