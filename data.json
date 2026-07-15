@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-07-14T06:41:29.772620-04:00",
-    "date_display": "July 14, 2026"
+    "updated": "2026-07-15T06:45:15.556253-04:00",
+    "date_display": "July 15, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Maple Leafs are staring at the offseason with 78 points and an 8th-place finish in the Atlantic, but the real story isn't the missed playoff cut - it's the young blood ready to reshape the roster. <strong>Easton Cowan, the 2025-26 positive surprise, is poised to thrive under new coach Jim Hiller</strong>, signaling a shift from veteran reliance to homegrown talent. Former prospect Dennis Hildeby has embraced a fresh start in Tampa Bay, clearing another cap slot for Toronto's front office to explore. With the season firmly over, the focus turns to draft strategy and free agency moves that could finally close the gap on the league's elite. <strong>What to watch: whether the Leafs use their cap flexibility to add a top-six forward or double down on defensive depth before the July 31 deadline</strong>.",
-        "updated": "Updated July 14, 2026"
+        "body": "The Leafs' offseason hums with quiet ambition even after finishing 8th in the Atlantic with 78 points, a final record that forced a hard reset rather than a hopeful roll. <strong>Gavin McKenna, the club's No. 1 draft pick, signed his entry-level contract July 3 and is already expected to play for Toronto</strong>, signaling a commitment to youth alongside the veteran flair they added earlier in free agency, including star goalie Sergei Bobrovsky. While chatter swirls about Patrick Kane and Elias Pettersson, GM Brad Treliving has taken a measured approach, letting preliminary talks cool before committing to big cap hits. Former assistant GM Brandon Pridham's departure to Pittsburgh underscores the front office's churn, yet Adam Copeland insists John Chayka has already silenced skeptics with these early moves. <strong>What to watch: whether McKenna cracks the 2026-27 roster out of camp, and if Treliving adds one more impact forward before the season opens</strong>.",
+        "updated": "Updated July 15, 2026"
       },
       "key_numbers": [
         {
@@ -42,26 +42,26 @@
       },
       "the_latest": [
         {
-          "source": "Daily Faceoff",
-          "source_class": "web",
-          "headline": "Former Maple Leafs prospect Dennis Hildeby embraces fresh start in Tampa Bay",
-          "dek": "Dennis Hildeby's move from the Maple Leafs' prospect pool to Tampa Bay marks a pivotal reset for a goaltender who never cracked Toronto's NHL roster despite high draft expectations. In a free-agency window where every roster spot is contested, his fresh start in the Lightning",
-          "date": "July 12, 2026",
-          "link": "https://www.dailyfaceoff.com/news/former-maple-leafs-prospect-dennis-hildeby-embraces-fresh-start-in-tampa-bay"
-        },
-        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Why matching Carlsson offer sheet was anything but easy decision for Ducks",
-          "dek": "The Ducks' decision to match Leo Carlsson's five-year, $90 million offer sheet reflected a high-stakes gamble on securing their franchise center before free agency fully opened. This move signals a shift in NHL strategy as teams increasingly use offer sheets to lock up young",
+          "dek": "The Anaheim Ducks matched Philadelphia's five-year, $90 million offer sheet for center Leo Carlsson, making him the NHL's highest-paid player with an $18 million average annual value. That decision forced the franchise to reevaluate its financial structure and consider shedding",
           "date": "July 9, 2026",
           "link": "https://www.sportsnet.ca/nhl/video/why-matching-carlsson-offer-sheet-was-anything-but-easy-decision-for-ducks/"
+        },
+        {
+          "source": "Daily Faceoff",
+          "source_class": "web",
+          "headline": "Ex-Leafs assistant Brandon Pridham joins Penguins' front office",
+          "dek": "Brandon Pridham's move to Pittsburgh underscores the Maple Leafs' continued talent drain to rival organizations during a critical free-agency window. This departure adds to the growing list of Toronto staffers now shaping Pittsburgh's roster, including the recent acquisition of",
+          "date": "July 14, 2026",
+          "link": "https://www.dailyfaceoff.com/news/toronto-maple-leafs-assistant-brandon-pridham-joins-pittsburgh-penguins-front-office-nhl-news"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Maple Leafs fire Hayley Wickenheiser amid front office purge",
-          "dek": "The Maple Leafs are executing a sweeping front office overhaul under GM John Chayka, removing AGM Hayley Wickenheiser as part of a broader purge. This move signals a sharp shift in leadership direction as the team prepares for the upcoming draft and free agency period.",
+          "dek": "The departure of Hayley Wickenheiser, a legendary figure in women's hockey, signals a sweeping reset of the Leafs' executive leadership as GM John Chayka purges the front office. This dramatic shakeup occurs during a critical free agency window, forcing the team to rebuild its",
           "date": "July 9, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49318286/maple-leafs-fire-hayley-wickenheiser-amid-front-office-purge"
         },
@@ -69,17 +69,17 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NHL free agency 2026: Grades, fits for all the big signings",
-          "dek": "The Leafs sit eighth in the Atlantic after a disappointing 78-point season that left them short on depth and defensive stability. These grades reveal which big-money signings actually address the gaps that prevented Toronto from climbing the standings last year.",
+          "dek": "Toronto lost Nick Robertson to Pittsburgh in a July 1 free agency swap, shedding a forward who could have bolstered their depth as they chase an Atlantic Division title. The team now faces pressure to fill roster holes and address defensive needs after sitting eighth in the",
           "date": "July 8, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49236055/nhl-free-agency-2026-grades-fits-all-big-signings"
         },
         {
           "source": "The Leafs Nation",
           "source_class": "web",
-          "headline": "Easton Cowan was the positive surprise for 2025-26 Maple Leafs, should thrive under Jim Hiller",
-          "dek": "Cowan exceeded tempered expectations by delivering tenacity and secondary scoring despite the Leafs' 30-point decline and organizational overhaul. His dominance in the Calder Cup Playoffs with eight goals and 18 points proves he can anchor a revamped roster built for immediate",
-          "date": "July 13, 2026",
-          "link": "https://theleafsnation.com/news/easton-cowan-positive-surprise-2025-26-toronto-maple-leafs-thrive-jim-hiller"
+          "headline": "Adam Copeland believes John Chayka has already quieted some critics: Leafs Morning Take",
+          "dek": "Adam Copeland says John Chayka has already silenced skeptics by executing swift front-office cuts that reset the Leafs' operational direction. The market now buzzes over whether those structural changes will translate into a blockbuster roster move before free agency fully cools.",
+          "date": "July 14, 2026",
+          "link": "https://theleafsnation.com/news/adam-copeland-believes-john-chayka-has-already-quieted-some-critics-leafs-morning-take"
         }
       ],
       "standings": {
@@ -227,8 +227,8 @@
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The clock is ticking loudly in Toronto, and the Blue Jays are drowning in a sea of mediocrity at 45-51, sitting a dismal 12 games back in the AL East. <strong>Falling to the Padres 5-4 on Saturday to cap a frustrating three-game split</strong> only deepens the two-game losing streak that has pushed them to the outside edge of the wild-card race. Dylan Cease, however, is the rare beacon of hope, delivering an All-Star start that suggests the franchise's long-term vision for him is finally taking shape [Headline]. While Bo Bichette has shown flashes with a.313 average over his last 30 games, the bullpen's inability to close out tight contests against San Diego exposes a glaring weakness. The team needs a reset immediately, starting with <strong>Friday's 7:15 PM ET matchup against the White Sox, a crucial opportunity to halt the slide and regain some ground</strong>.",
-        "updated": "Updated July 14, 2026"
+        "body": "The Toronto Blue Jays' summer slump has turned into a cold reality, with <strong>falling to the Padres 5-4 on Sunday to cap a split that left them 45-51 and 12 games behind in the AL East</strong> sealing a two-game losing streak that erases any hint of contender momentum. After stealing one from San Diego with a 5-3 victory on July 10, the offense again showed life before imploding in the ninth, exposing the same inconsistency that has plagued them since May. Kevin Gausman, now 4-8 with a 4.33 ERA, took the loss in the rubber match, while the bullpen - already a question mark - failed to hold a late lead. Dylan Cease, the Jays' All-Star starter, struck out three in a flawless first frame, a bright spot in a season that's otherwise drifting. <strong>Friday's 7:15 PM ET matchup against the White Sox offers a chance to reset, but the real test is whether this team can stop watching the division slip away.</strong>",
+        "updated": "Updated July 15, 2026"
       },
       "key_numbers": [
         {
@@ -316,41 +316,41 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Padres 5-4",
-          "dek": "The loss caps a frustrating first half that leaves the Blue Jays 2.5 games short of the third Wild Card spot with just a 20.4 percent playoff chance. They enter the All-Star break needing to convert missed opportunities before the second half begins.",
+          "dek": "The loss drops Toronto to 45-51 and leaves them fifth in the AL East just days before the All-Star break, cementing a precarious position in a tight division race. A controversial umpiring call in the final inning may have tipped the 5-4 outcome, fueling frustration as the club",
           "date": "Jul 12",
           "link": "https://www.espn.com/mlb/recap?gameId=401816140"
         },
         {
           "source": "Bluebird Banter",
           "source_class": "web",
-          "headline": "Happy Birthday Bill Caudill",
-          "dek": "Bill Caudill, the Blue Jays' dominant 1980s closer who preceded B.J. Ryan, turns 70 today and remains a defining figure in the franchise's early pitching history. His tenure helped establish the club's reputation for elite strikeout pitching long before the team reached its",
-          "date": "July 13, 2026",
-          "link": "https://www.bluebirdbanter.com/blue-jay-history/62786/happy-birthday-bill-caudill"
+          "headline": "All-Star Game Open Thread",
+          "dek": "Dylan Cease becomes the first Toronto Blue Jays pitcher to start an All-Star Game since Roy Halladay, striking out three batters in the opening frame to lead a 4-0 American League victory. Second baseman Ernie Clement earned the automatic AL start at second base as the top",
+          "date": "July 14, 2026",
+          "link": "https://www.bluebirdbanter.com/general/62811/all-star-game-open-thread"
         },
         {
           "source": "Jays Journal",
           "source_class": "web",
-          "headline": "Blue Jays' manager was never going to let Yankees pitcher Cam Schlittler start the All-Star game",
-          "dek": "Schneider prioritized Dylan Cease's long-term health and historical significance over yielding the start to a Yankees pitcher, ensuring the Blue Jays ace becomes the third pitcher in franchise history to open the Midsummer Classic. This decision underscores the manager's",
-          "date": "July 14, 2026",
-          "link": "https://jaysjournal.com/blue-jays-manager-was-never-going-to-let-yankees-pitcher-cam-schlittler-start-the-all-star-game?utm_source=RSS"
+          "headline": "Blue Jays' gamble on Ernie Clement looks even better after Yankees nearly landed the first-time All-Star",
+          "dek": "Toronto's decision to sign Ernie Clement over the Yankees has paid off dramatically now that he is the American League's first All-Star starter in 2026. The Blue Jays' second baseman received more votes than any other AL second baseman during Phase 1 of All-Star voting,",
+          "date": "July 15, 2026",
+          "link": "https://jaysjournal.com/blue-jays-gamble-on-ernie-clement-looks-even-better-after-yankees-nearly-landed-the-first-time-all-star?utm_source=RSS"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays fell to Padres 8-7",
-          "dek": "The narrow 8-7 loss to the Padres deepens the Jays' struggle in a disappointing 45-51 season that has left them fifth in the AL East. This one-point defeat underscores the team's inability to close out games, a critical flaw that threatens any hope of a late-season rebound.",
+          "dek": "The one-run loss to the Padres drops Toronto to 45-51 and leaves them fifth in the AL East just before the All-Star break. This defeat extends a troubling stretch for a club that needs to win consistently to have any hope of catching the division leaders in the second half.",
           "date": "Jul 11",
           "link": "https://www.espn.com/mlb/recap?gameId=401816125"
         },
         {
-          "source": "Bluebird Banter",
-          "source_class": "web",
-          "headline": "Favourite Blue Jays All-Star Memories: Dave Stieb, Damaso Garcia and Afredo Griffin?",
-          "dek": "As the Blue Jays miss the All-Star Game for the second straight year with a 45-51 record, this retrospective honors the franchise's lone era of multiple selections in 1984 featuring Stieb, Garcia and Griffin. Remembering those historic nods highlights the gap between the team's",
-          "date": "July 13, 2026",
-          "link": "https://www.bluebirdbanter.com/blue-jay-history/62781/favourite-blue-jays-all-star-memories-dave-stieb-damaso-garcia-and-afredo-griffin"
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Blue Jays at 2026 All-Star Game: Clement gets revenge on Pages",
+          "dek": "Ernie Clement starts at second base for the American League, marking his first All-Star appearance alongside Dylan Cease and Louis Varland after the Blue Jays won the 2025 AL pennant. His performance in Philadelphia offers a chance for redemption against rival Pages, capping a",
+          "date": "July 14, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-at-2026-all-star-game-clement-gets-revenge-on-pages/"
         }
       ],
       "standings": {
@@ -627,8 +627,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The summer in Toronto isn't about healing last season's wounds - it's about building a new spine. <strong>Seth Lundy's 22-point explosion, including six threes, lifted the Raptors to a 94-93 Summer League win over the Pacers</strong>, a gritty preview of the hustle this front office now demands. The club finished 46-36, third in the Atlantic, but that record is just a footnote to the real work: reshaping the roster with cap space and draft capital. Lundy, a rookie with fire in his legs, is the story right now - his energy and shooting could redefine the wing rotation. With Valanciunas off the table and Kawhi's status murky, the Raptors must decide whether to pivot young or chase veterans. <strong>What to watch: how aggressively they use their cap space to target a starting-caliber guard before camp opens</strong>.",
-        "updated": "Updated July 14, 2026"
+        "body": "The Kawhi Leonard saga has become the defining noise in Toronto, a yearlong waiting game that finally hit a wall of silence. <strong>The Clippers and Raptors are in trade discussions for All-NBA forward Kawhi Leonard</strong>, yet the deal stalled after both sides refused to live with the uncertainty of an ongoing NBA probe into Leonard's conduct. Commissioner Adam Silver insists the investigation must conclude before next season begins, leaving the Raptors with a 46-36 record from a finished campaign and a star player whose future hangs in limbo. While the front office weighs draft picks and free agency, the Leonard question dominates every roster construction talk. <strong>What to watch: whether the trade resumes once Silver's probe closes, or if Toronto pivots to a younger core built around the draft.</strong>",
+        "updated": "Updated July 15, 2026"
       },
       "key_numbers": [
         {
@@ -658,44 +658,44 @@
       },
       "the_latest": [
         {
-          "source": "Raptors HQ",
+          "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "Lundy splashes home six threes as Raptors beat Rockets",
-          "dek": "Seth Lundy's six threes in the Rockets victory signal a potential breakout for the Raptors' most promising summer league prospect, offering a tangible reason for optimism as the team transitions from a 46-win regular season to free agency. This first Summer League win provides",
-          "date": "July 12, 2026",
-          "link": "https://www.raptorshq.com/raptors-scores-results/50825/lundy-splashes-home-six-threes-as-raptors-beat-rockets"
+          "headline": "Is Nate Bittle what the Raptors have been searching years for?",
+          "dek": "Nate Bittle's emergence offers the 46-win Raptors a potential long-term solution after years of roster instability in the Atlantic Division. His performance during this draft and free agency window could define whether the team finally secures the foundational piece needed to",
+          "date": "July 14, 2026",
+          "link": "https://raptorsrepublic.com/2026/07/14/is-nate-bittle-what-the-raptors-have-been-searching-years-for/"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Chucky Hepburn could be good fit with Raptors facing cap challenges",
-          "dek": "A Kawhi Leonard trade would force the Raptors to prioritize cheap, young talent to fill roster spots under tight financial limits. Chucky Hepburn is leveraging Summer League to prove he can earn a standard contract and become that affordable solution.",
-          "date": "July 12, 2026",
-          "link": "https://www.sportsnet.ca/nba/article/chucky-hepburn-could-be-a-good-fit-with-raptors-facing-cap-challenges/"
+          "headline": "Kawhi Leonard waiting game continues for Raptors after Silver's press conference",
+          "dek": "Raptors fans learned that Adam Silver still expects the 11-month investigation into Kawhi Leonard's Aspiration sponsorship to conclude this summer, but no specific deadline exists. The league warned Toronto it would inherit any penalties if it acquired Leonard, forcing the team",
+          "date": "July 15, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/kawhi-leonard-waiting-game-continues-for-raptors-after-silvers-press-conference/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Toronto Raptors vs. Indiana Pacers: Game Highlights",
-          "dek": "Seth Lundy scored 22 points and blocked a shot in the final seconds to secure a 94-93 Summer League victory for the Raptors over the Pacers. This win improves Toronto's Las Vegas record to 2-1 while showcasing continued progression for young prospects as the team navigates draft",
-          "date": "July 13, 2026",
-          "link": "https://www.espn.com/video/clip/_/id/49353862/game-highlights"
+          "headline": "Silver: Kawhi Leonard probe must finish before season starts",
+          "dek": "A potential Kawhi Leonard return to Toronto remains stalled as the NBA's probe into alleged salary cap circumvention must conclude before the season begins. Commissioner Adam Silver confirmed the league did not block the trade, noting the parties chose not to proceed while the",
+          "date": "July 15, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/49364590/silver-kawhi-leonard-probe-finish-season-starts"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Houston Rockets vs. Toronto Raptors: Game Highlights",
-          "dek": "These highlights capture a Summer League matchup that doesn't reflect the Raptors' 46-win regular season or their third-place Atlantic Division standing. The game instead offers a rare glimpse at Seth Lundy's breakout performance, where he scored 22 points and sealed the win",
-          "date": "July 12, 2026",
-          "link": "https://www.espn.com/video/clip/_/id/49340227/game-highlights"
+          "headline": "Meet the summer league rookies who were once unranked in high school",
+          "dek": "These summer league rookies defy their high school rankings by outperforming first-round expectations in Las Vegas. For a Raptors roster that finished third in the Atlantic Division, their development signals whether the team can sustain its 46-win momentum without relying on",
+          "date": "July 14, 2026",
+          "link": "https://www.espn.com/mens-college-basketball/story/_/id/49345173/nba-draft-first-round-picks-unranked-sc-next-100-high-school-recruits-summer-league-rookies"
         },
         {
           "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "Graves' hustle helps Raptors eke out win over Pacers",
-          "dek": "Allen Graves' relentless energy in this Summer League victory signals a promising development for a Raptors roster that already secured Kawhi Leonard's return in a blockbuster free-agency deal. That win over the Pacers adds depth to a team sitting third in the Atlantic Division",
+          "headline": "Quick Reaction: Raptors 94, Pacers 93",
+          "dek": "A single defensive stop by Seth Lundy with 2.1 seconds left secured a precarious 94-93 summer league victory that signals the Raptors are building real clutch DNA for their upcoming 46-win season. This narrow win over the Pacers validates the young core's resilience and gives",
           "date": "July 13, 2026",
-          "link": "https://raptorsrepublic.com/2026/07/13/graves-hustle-helps-raptors-eke-out-win-over-pacers/"
+          "link": "https://raptorsrepublic.com/2026/07/13/quick-reaction-raptors-94-pacers-93/"
         }
       ],
       "standings": {
@@ -869,7 +869,7 @@
       "lotl": {
         "label": "What's Going On With the Commanders",
         "body": "<strong>This stretch of the calendar is where the Commanders' next season gets built</strong>, and the front office is doing the talking now. Training camp is the proving ground now, and the position battles underway will decide how this roster actually lines up when the games count. <strong>The next headline here comes from the front office, not the scoreboard.</strong> Across the NFL, the offseason program calendar is the primary focus - OTAs, minicamp, and the slow ramp toward training camp define the rhythm now. For the Washington Commanders, the puzzle is assembling the right combination of draft capital and veteran additions to take the next step in a competitive division.",
-        "updated": "Updated July 14, 2026"
+        "updated": "Updated July 15, 2026"
       },
       "key_numbers": [
         {
@@ -894,44 +894,44 @@
       },
       "the_latest": [
         {
-          "source": "Yahoo Sports",
-          "source_class": "web",
-          "headline": "Commanders favored on the road again in Week 13 vs Titans in Nashville - 5 O'Clock Club",
-          "dek": "The headline misfires because Week 13 of the 2026 NFL season occurs in late November, not during July training camp when the Commanders are currently preparing. This preview belongs to a future matchup rather than today's news, making the \"favored on the road\" claim irrelevant",
-          "date": "July 14, 2026",
-          "link": "https://sports.yahoo.com/articles/commanders-favored-road-again-week-090000305.html"
-        },
-        {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "6 wide receiver trades that could finally solve the Commanders' biggest flaw",
-          "dek": "The Commanders' wide receiver room remains a glaring weakness after Dyami Brown, Van Jefferson, Treylon Burks and Luke McCaffery each failed to reach 30 receptions or 400 yards last season. With rookie third-rounder Antonio Williams likely needed to contribute immediately and no",
+          "headline": "6 Commanders offseason additions who could look smart by September",
+          "dek": "Six offseason signings for the Washington Commanders face an immediate test as training camp opens with the team sitting third in the NFC East. New defensive additions like Leo Chenal and Sonny Styles aim to solidify a unit that must translate past success into a winning record",
+          "date": "July 15, 2026",
+          "link": "https://riggosrag.com/6-washington-commanders-offseason-additions-could-look-smart-september?utm_source=RSS"
+        },
+        {
+          "source": "Yahoo Sports",
+          "source_class": "web",
+          "headline": "Dallas Cowboys 2026 Opponent Preview: Washington Commanders",
+          "dek": "After a disappointing 5-12 finish in 2025, the Commanders face mounting pressure on coach Dan Quinn to stabilize a roster that struggled with injuries and inconsistency. Training camp will test whether new defensive additions like Leo Chenal and Sonny Styles can help a young",
           "date": "July 14, 2026",
-          "link": "https://riggosrag.com/6-wide-receiver-trades-that-could-finally-solve-commanders-biggest-flaw?utm_source=RSS"
+          "link": "https://sports.yahoo.com/articles/dallas-cowboys-2026-opponent-preview-190000781.html"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Execs, coaches rank top NFL off-ball linebackers for 2026",
-          "dek": "Training Camp has begun for the Washington Commanders, making this league-wide linebacker ranking a critical benchmark for their defensive identity in the NFC East. The list spotlights the talent gap Commanders coaches must address as they evaluate whether their current off-ball",
-          "date": "July 14, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49295327/ranking-nfl-top-10-linebackers-2026-execs-coaches-scouts"
+          "headline": "Why Frankie Luvu can be more effective in 2026",
+          "dek": "Frankie Luvu's ability to blitz more frequently addresses the Commanders' urgent need to disrupt opposing quarterbacks and generate turnovers this training camp. Increased pressure from Luvu could elevate the defense's overall effectiveness as the team prepares for a season",
+          "date": "July 15, 2026",
+          "link": "https://www.espn.com/video/clip/_/id/49364473/why-frankie-luvu-more-effective-2026"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Execs, coaches, scouts rank top NFL quarterbacks for 2026",
-          "dek": "With training camp underway, the Commanders face pressure to prove Caleb Williams can close the gap on Josh Allen, who just vaulted past Patrick Mahomes to become executives' top QB for 2026. Williams' debut appearance in the top 10 at No. 10 signals a shifting era, but",
+          "headline": "Who are the current NFL team owners?",
+          "dek": "With the Washington Commanders owned by Josh Harris's group since their $6.05 billion purchase in 2023, this list highlights how franchise valuations have skyrocketed to record levels like the $9.6 billion Seahawks sale. Understanding who controls each team reveals the shifting",
           "date": "July 14, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49315416/ranking-nfl-top-10-quarterbacks-2026-execs-coaches-scouts"
+          "link": "https://www.espn.com/nfl/story/_/id/39387572/who-current-nfl-team-owners"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Commanders GM for a day: Sign Stefon Diggs, trade Daron Payne, Chris Olave?",
-          "dek": "This fan-driven exercise highlights the urgency of Washington's roster decisions as training camp opens with the team sitting third in the NFC East. The hypothetical trades and signings underscore real debates about whether the Commanders should pivot from their defensive core",
-          "date": "July 13, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-analysis/424619/general-manager-adam-peters-stefon-diggs-daron-payne-chris-olave"
+          "headline": "Best Commanders decisions GM Adam Peters made during 2026 NFL offseason",
+          "dek": "Adam Peters' roster overhaul aims to reverse last season's 5-12 collapse and restore the NFC East contender status lost after the team's recent title-game appearance. These moves address critical unresolved questions as the Commanders open training camp with just weeks left",
+          "date": "July 14, 2026",
+          "link": "https://www.hogshaven.com/washington-commanders-analysis/424354/best-decisions-gm-adam-peters-2026-nfl-offseason-bobby-wagner-daronte-jones-laremy-tunsil"
         }
       ],
       "standings": {
@@ -1026,42 +1026,42 @@
     }
   },
   "featured": {
-    "team": "leafs",
-    "kicker": "Toronto Maple Leafs - Draft & Free Agency",
-    "headline": "8 non-Maple Leafs NHL free agency stories you may have missed",
-    "dek": "While the Leafs secured Darren Raddysh early, this roundup of overlooked free agency moves reveals how other clubs are quietly reshaping their rosters for the 2026-27 season. Ignoring these smaller signings could leave Toronto at a disadvantage as the Atlantic Division tightens",
-    "source": "The Leafs Nation",
-    "link": "https://theleafsnation.com/news/8-non-maple-leafs-nhl-free-agency-stories-you-may-have-missed",
-    "date": "July 14, 2026"
+    "team": "raptors",
+    "kicker": "Toronto Raptors - Draft & Free Agency",
+    "headline": "No ifs and buts; Kyle Lowry deserves a spot in the Basketball HOF",
+    "dek": "Kyle Lowry's retirement caps a defining Raptors era, and his Hall of Fame case rests on the legacy he built while elevating Toronto to an Atlantic Division title. The franchise's 46-36 season proves the culture Lowry instilled still thrives, making his HOF induction a necessary",
+    "source": "Raptors HQ",
+    "link": "https://www.raptorshq.com/nba-hall-of-fame/50780/no-ifs-and-buts-kyle-lowry-deserves-a-spot-in-the-basketball-hof",
+    "date": "July 15, 2026"
   },
   "two_up": [
     {
-      "team": "jays",
-      "kicker": "Toronto Blue Jays - Regular Season",
-      "headline": "Blue Jays' vision for Dylan Cease begins coming to life with all-star start",
-      "dek": "The Blue Jays' gamble on Dylan Cease last winter is paying dividends as the ace delivers an All-Star performance that validates their long-term pitch. Despite sitting fifth in the AL East at 45-51, Cease's emergence offers a bright spot and a potential catalyst to revive a",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/mlb/article/blue-jays-vision-for-dylan-cease-begins-coming-to-life-with-all-star-start/",
-      "date": "July 14, 2026"
+      "team": "leafs",
+      "kicker": "Toronto Maple Leafs - Draft & Free Agency",
+      "headline": "Report: Penguins to hire former Maple Leafs assistant general manager Brandon Pridham",
+      "dek": "Pridham's departure underscores the Leafs' continued difficulty retaining key front-office talent despite their push to solidify a playoff roster in the Atlantic Division. His move to Pittsburgh arrives just days after the Penguins acquired Leafs forward Nick Robertson,",
+      "source": "The Leafs Nation",
+      "link": "https://theleafsnation.com/news/report-penguins-hire-toronto-maple-leafs-assistant-general-manager-brandon-pridham",
+      "date": "July 15, 2026"
     },
     {
-      "team": "raptors",
-      "kicker": "Toronto Raptors - Draft & Free Agency",
-      "headline": "Quick Reaction: Raptors 94, Pacers 93",
-      "dek": "This one-point Summer League victory over the Pacers proves rookie Seth Lundy can close tight games, turning a sluggish second half into a promising NBA pathway. The win validates the Raptors' young development roster as they enter free agency with a 46-36 record and third-place",
-      "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/07/13/quick-reaction-raptors-94-pacers-93/",
-      "date": "July 14, 2026"
+      "team": "commanders",
+      "kicker": "Washington Commanders - Training Camp",
+      "headline": "What worries you about Jayden Daniels in 2026? - Commanders Survey",
+      "dek": "Daniels enters his second season with the Commanders facing unresolved roster questions just weeks before training camp opens. Fan concerns about his 2026 trajectory highlight the pressure on a young quarterback to elevate a team sitting third in the NFC East.",
+      "source": "Hogs Haven",
+      "link": "https://www.hogshaven.com/washington-commanders-discussion/424742/what-worries-you-about-jayden-daniels-in-2026-commanders-survey",
+      "date": "July 15, 2026"
     }
   ],
   "extra_story": {
-    "team": "commanders",
-    "kicker": "Washington Commanders - Training Camp",
-    "headline": "Commanders favored on the road again in Week 13 vs Titans in Nashville",
-    "dek": "No search results cover this specific 2026 NFL Week 13 matchup, as the game occurs months after the current training camp date in July. The headline projects a future scenario where the Commanders, currently sitting third in the NFC East, are expected to win away against the",
-    "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/the-5-oclock-club/422958/washington-commanders-favored-road-game-nfl-week-13-vs-tennessee-titans",
-    "date": "July 14, 2026"
+    "team": "jays",
+    "kicker": "Toronto Blue Jays - Regular Season",
+    "headline": "Gotta See It: Blue Jays' Cease racks up three strikeouts in All-Star debut",
+    "dek": "Dylan Cease became the first Toronto Blue Jays pitcher to start an All-Star Game since Roy Halladay in 2009 by striking out the side in the opening inning. This dominant debut offers a rare bright spot for the 45-51 Blue Jays, who sit fifth in the AL East and need big",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/mlb/video/gotta-see-it-blue-jays-cease-racks-up-three-strike-outs-in-all-star-debut/",
+    "date": "July 15, 2026"
   },
   "ticker": [
     {
@@ -1077,11 +1077,6 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays fell to Padres 5-4"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "mlb",
       "text": "Next: Jays vs. White Sox - Fri 7/17 7:15 PM ET"
     },
     {
@@ -1092,7 +1087,7 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays Draft Recap: Day 2"
+      "text": "Blue Jays All-Star Memories: The 1993 All-Star Game"
     },
     {
       "badge": "NBA",
@@ -1107,7 +1102,7 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "CB Rasul Douglas to sign 1-year deal with Commanders"
+      "text": "Dallas Cowboys 2026 Opponent Preview: Washington Commanders"
     }
   ],
   "scoreboard": [
@@ -1249,17 +1244,27 @@
         "time": "7:07 PM ET",
         "tv": "Sportsnet",
         "game_ts": "2026-07-21T23:07Z"
+      },
+      {
+        "day": "Wed 7/22",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "vs. Rays",
+        "time": "7:07 PM ET",
+        "tv": "Sportsnet",
+        "game_ts": "2026-07-22T23:07Z"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Tuesday's Skate",
+      "title": "Wednesday's Skate",
       "paragraphs": [
-        "The Leafs are watching former prospect Dennis Hildeby embrace a fresh start in Tampa Bay after missing the NHL free agency buzz. The Blue Jays, sitting 45-51 and fifth in the AL East, are building their vision for Dylan Cease as he delivers an All-Star start. The Raptors are in the draft and free agency window, with recent game wins against the Pacers and Rockets showing roster momentum. The Commanders enter training camp with their first game at the Eagles set for Sunday, September 13, 61 days away.",
-        "Forward-looking, the Leafs will monitor free agency stories and potential draft impacts, while the Jays focus on Cease's development before facing the White Sox on Friday, July 17 at 7:15 PM ET. The Raptors are evaluating draft options and free agency targets to strengthen their core after close wins. The Commanders are testing wide receiver trade ideas to solve their biggest flaw as they prepare for the season.",
-        "Cease's outing on Tuesday marks a key step before the White Sox game Friday."
+        "The Leafs are moving forward after assistant GM Brandon Pridham joined the Pittsburgh Penguins as a hockey operations consultant.",
+        "The Jays sit at 45-51 and face the White Sox on Friday at 7:15 PM ET, with Dylan Cease just making his All-Star debut by recording three strikeouts.",
+        "For the Raptors, the offseason focus is on evaluating Nate Bittle, a potential long-term fit, while the community continues to argue Kyle Lowry deserves a Hall of Fame spot. The Commanders are in training camp with their first game at the Eagles set for Sunday, September 13, and fans are weighing concerns about Jayden Daniels while reviewing six offseason additions who could impress by September."
       ]
     }
   }
