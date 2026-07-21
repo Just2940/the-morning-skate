@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-07-20T07:41:03.878088-04:00",
-    "date_display": "July 20, 2026"
+    "updated": "2026-07-21T07:04:08.404081-04:00",
+    "date_display": "July 21, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Toronto Maple Leafs' summer of reckoning has arrived, and the shock isn't coming from the draft table but from the exit door. <strong>Former goaltender Jack Campbell is walking away from hockey entirely</strong>, a quiet retirement that underscores how quickly the game's fleeting stars vanish once the spotlight fades. The Leafs finished 8th in the Atlantic with 78 points, a season that ended without a playoff berth, but the real story now is roster surgery. Sergei Bobrovsky, a veteran with a pedigree, has agreed to a three-year, $21 million pact, signaling a front-office bet on experience over youth. Meanwhile, the long-rumored departure of Morgan Rielly appears imminent, with insiders insisting he'll leave before the 2026-27 season opens. <strong>The front office must now decide whether to reload around Bobrovsky or pivot hard toward a younger core before free agency's final waves hit.</strong>",
-        "updated": "Updated July 20, 2026"
+        "body": "The quiet hum of the offseason in Toronto carries a different weight now, as the Maple Leafs - finished with a <strong>78-point, 8th-in-Atlantic</strong> campaign that ended too soon - pivot from regret to reconstruction. All eyes are on the top-six internal battle, where <strong>Easton Cowan, Gavin McKenna, and Jack Roslovic will fight for prime real estate</strong> alongside Auston Matthews. The rookie sensation, McKenna, the No. 1 pick in the 2026 Draft, has already signed his three-year entry-level deal and is tipped to match Matvei Michkov's debut-season impact, potentially filling Mitch Marner's void on the top line. Former netminder Jack Campbell's retirement adds a somber note to a roster reshaped by free agency, including the two-year, $4.25 million addition of Colton Sissons. The front office isn't dwelling on the past; it's building around youth and cap flexibility. <strong>What to watch: whether McKenna earns the top-line nod by camp's first puck drop.</strong>",
+        "updated": "Updated July 21, 2026"
       },
       "key_numbers": [
         {
@@ -42,36 +42,44 @@
       },
       "the_latest": [
         {
-          "source": "The Leafs Nation",
-          "source_class": "web",
-          "headline": "Former Maple Leafs goaltender Jack Campbell announces retirement",
-          "dek": "Campbell's departure ends a nine-year career marked by high promise and personal battles with mental health, leaving the Leafs without a goaltender who once carried Stanley Cup expectations. His pivot to performance coaching with Novus Global signals a shift from blocking shots",
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "'Just enjoy it, and keep working': Schaefer's advice to Gavin McKenna",
+          "dek": "As the Leafs' 2026 first overall pick, Gavin McKenna faces immediate pressure to fill Mitch Marner's role alongside Auston Matthews on the top line. Calder Trophy winner Matthew Schaefer, who beat him out for the top spot last year, urges McKenna to savor the moment with family",
           "date": "July 20, 2026",
-          "link": "https://theleafsnation.com/news/former-toronto-maple-leafs-goaltender-jack-campbell-announces-retirement"
+          "link": "https://www.sportsnet.ca/nhl/video/just-enjoy-it-and-keep-working-schaefers-advice-to-gavin-mckenna/"
         },
         {
           "source": "The Leafs Nation",
           "source_class": "web",
-          "headline": "Penguins' Nick Robertson reflects on Maple Leafs' tenure: 'You can't get complacent'",
-          "dek": "Robertson's reminder about avoiding complacency hits hard for a Leafs roster that finished eighth in the Atlantic Division and now faces a critical summer of draft and free agency decisions. His upcoming January return to Toronto with Pittsburgh adds a fresh layer of intrigue to",
-          "date": "July 19, 2026",
-          "link": "https://theleafsnation.com/news/penguins-nick-robertson-reflects-toronto-maple-leafs-tenure-you-cant-get-complacent"
+          "headline": "Around the NHL: Minnesota Wild prefer Larkin over Trocheck; Kane, Tarasenko, Laine remain top free agents without deals",
+          "dek": "Toronto's free agency drought mirrors a league-wide slowdown where top-tier veterans like Kane, Tarasenko, and Laine still lack contracts despite the salary cap rising. The Maple Leafs must pivot to inventive roster strategies now that traditional signings have stalled and",
+          "date": "July 20, 2026",
+          "link": "https://theleafsnation.com/news/around-nhl-minnesota-wild-prefer-larkin-trocheck-kane-tarasenko-laine"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Former Maple Leafs, Oilers goalie Jack Campbell 'walking away' from hockey",
+          "dek": "Campbell's retirement at 34 ends a nine-season NHL career that included his most successful years as Toronto's primary goalie during the 2020-22 window. The Leafs, currently navigating a thin free-agent market for goaltending, lose a former All-Star whose 2.76 GAA and 10",
+          "date": "July 20, 2026",
+          "link": "https://www.sportsnet.ca/nhl/article/former-maple-leafs-oilers-goalie-jack-campbell-walking-away-from-hockey/"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Behind the scenes at the NHL Broadcast Training Camp",
+          "dek": "As the Leafs navigate a summer of roster uncertainty with playoff odds hovering at 45%, this program highlights how former players can pivot to media roles that shape public perception of the team. The camp in New York offers current and former athletes a crash course in",
+          "date": "July 20, 2026",
+          "link": "https://www.espn.com/nhl/story/_/id/49405523/nhl-players-broadcast-training-camp-announcers-analysts-tv"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Maple Leafs fire Hayley Wickenheiser amid front office purge",
-          "dek": "The departure of Hall of Fame legend Hayley Wickenheiser signals a dramatic shift in the Maple Leafs' leadership as the team dismantles its front office during the draft and free agency period. This purge raises immediate questions about the club's direction as it sits eighth in",
+          "dek": "The departure of Hayley Wickenheiser, a legendary two-way force in women's hockey, signals a sweeping front office purge that includes four other senior executives as the Leafs restructure their player development and scouting departments. This dramatic overhaul aims to reset",
           "date": "July 9, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49318286/maple-leafs-fire-hayley-wickenheiser-amid-front-office-purge"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "NHL free agency 2026: Grades, fits for all the big signings",
-          "dek": "The Maple Leafs must navigate a cluttered free-agency market while managing the sudden retirement of former goaltender Jack Campbell, which reshapes their depth chart. Evaluating these grades reveals whether the team can finally address its defensive shortcomings after hiring",
-          "date": "July 8, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/49236055/nhl-free-agency-2026-grades-fits-all-big-signings"
         }
       ],
       "standings": {
@@ -215,26 +223,26 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "46-53",
+      "record": "46-54",
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Toronto Blue Jays' season is a study in frustrating whiplash, capped by a <strong>humiliating 3-0 shutout loss to the White Sox Sunday</strong> that exposed an offense unable to back rookie pitcher Jimmy Yesavage. At 46-53 and sitting 10½ games behind in the AL East, this team is a ghost of its early contender hopes, now clinging to a one-game losing streak after a bizarre three-game split in Chicago that included a 12-4 blowout and that lone 1-0 grit win. Yesavage looked sharp, but the bats went silent - again - as the Jays scored just one run across their last two games against a struggling White Sox rotation. The rotation is holding, but without run support, even brilliance evaporates. <strong>Tonight at 7:07 PM ET, they face the division-leading Rays (46-53) in a must-win to stop the slide and prove they're still alive in a collapsing race.</strong>",
-        "updated": "Updated July 20, 2026"
+        "body": "The Blue Jays have hit a new low, and the mounting urgency is impossible to ignore after another humiliating loss. <strong>Fell to the Rays 7-1</strong> on Monday, capping a three-game homestand where they scored just five runs total and lost two straight. Sitting at 46-54, fifth in the AL East, and 11.5 games behind the Rays, this team is in free fall - L2 streak, 4-6 over the last 10. Vladimir Guerrero Jr. is struggling, batting.262 with a.357 slugging mark, while George Springer's.219 average reflects a season that's spiraled from contender talk to last-place reality. The bullpen imploded again, and Dylan Cease took the loss, allowing five runs in six innings. <strong>Tonight at 7:07 PM ET, the Jays face the Rays again in a must-win to stop the bleed</strong> - but with the season series already 6-1 against them, the pressure is on to prove they're not just a ghost of 2025.",
+        "updated": "Updated July 21, 2026"
       },
       "key_numbers": [
         {
-          "number": "46-53",
+          "number": "46-54",
           "label": "Season Record",
           "note": "5th in AL East"
         },
         {
-          "number": "L1",
+          "number": "L2",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "10.5",
+          "number": "11.5",
           "label": "Games Back",
           "note": "5th in AL East"
         },
@@ -245,6 +253,18 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Jul 20",
+          "result": "L",
+          "team_score": 1,
+          "opp_name": "Rays",
+          "opp_score": 7,
+          "opp_logo": "tb",
+          "league": "mlb",
+          "game_date": "2026-07-20",
+          "game_ts": "2026-07-20T23:07Z",
+          "game_id": "401816191"
+        },
         {
           "date": "Jul 19",
           "result": "L",
@@ -280,69 +300,57 @@
           "game_date": "2026-07-17",
           "game_ts": "2026-07-17T23:15Z",
           "game_id": "401816141"
-        },
-        {
-          "date": "Jul 12",
-          "result": "L",
-          "team_score": 4,
-          "opp_name": "Padres",
-          "opp_score": 5,
-          "opp_logo": "sd",
-          "league": "mlb",
-          "game_date": "2026-07-12",
-          "game_ts": "2026-07-12T20:10Z",
-          "game_id": "401816140"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "White Sox vs. Jays - Full Highlights",
-        "subtitle": "MLB - Jul 19, 2026",
-        "result_badge": "L 0-3",
+        "title": "Rays vs. Jays - Full Highlights",
+        "subtitle": "MLB - Jul 20, 2026",
+        "result_badge": "L 1-7",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=Nx1DUBaUHfc",
-        "game_date": "2026-07-19"
+        "url": "https://www.youtube.com/watch?v=7H0SxgpwWf0",
+        "game_date": "2026-07-20"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
+          "headline": "Jays fell to Rays 7-1",
+          "dek": "The 7-1 loss to the AL East-leading Rays drops the Blue Jays to 46-54 and deepens pressure as the trade deadline looms just 13 games away. Toronto now trails Tampa Bay by 11 games in the division while failing to make a push for a playoff spot in a tightening race.",
+          "date": "Jul 20",
+          "link": "https://www.espn.com/mlb/recap?gameId=401816191"
+        },
+        {
+          "source": "Bluebird Banter",
+          "source_class": "web",
+          "headline": "Just A Terrible Effort, Jays Lose",
+          "dek": "At 46-54 and 11.5 games behind in the AL East, this 7-1 home loss to the Rays marks a new low that has slashed playoff odds to a season-low 12 percent. With the Aug. 3 trade deadline looming and a minus-51 run differential, the team faces mounting urgency to find its game before",
+          "date": "July 20, 2026",
+          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/62877/just-a-terrible-effort-jays-lose"
+        },
+        {
+          "source": "Jays Journal",
+          "source_class": "web",
+          "headline": "Blue Jays already moving up prospect acquired in Twins-Tommy Nance trade",
+          "dek": "The Blue Jays are accelerating Ryan Sprock's development by assigning him to High-A Vancouver just days after swapping reliever Tommy Nance for the catcher in a deadline deal. This immediate promotion signals the organization's urgency to boost its thin pitching depth while",
+          "date": "July 21, 2026",
+          "link": "https://jaysjournal.com/blue-jays-already-moving-up-prospect-acquired-in-twins-tommy-nance-trade?utm_source=RSS"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
           "headline": "Jays fell to White Sox 3-0",
-          "dek": "The 3-0 shutout drops the Blue Jays to 46-53 and leaves them four games behind the third wild-card spot with two weeks until the trade deadline. Their lineup scored only five runs across the three-game series against the White Sox, ranking 26th in the majors in OPS and 27th in",
+          "dek": "The 3-0 defeat to the White Sox drops the Blue Jays to 46-54, marking their first time eight games under.500 and pushing their playoff odds to a season-low 12 percent. With a minus-51 run differential and a five-game losing streak, this loss deepens the urgency for the team to",
           "date": "Jul 19",
           "link": "https://www.espn.com/mlb/recap?gameId=401816171"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Blue Jays offence fails to back Yesavage in loss to White Sox",
-          "dek": "Trey Yesavage delivered a strong six-inning performance with nine strikeouts, but the Blue Jays' lineup managed only four hits in a 3-0 shutout loss to the White Sox. This offensive collapse extends a disastrous trend where Toronto has won just seven of their last 21 games,",
-          "date": "July 19, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-offence-fails-to-back-yesavage-in-loss-to-white-sox/"
-        },
-        {
-          "source": "Jays Journal",
-          "source_class": "web",
-          "headline": "ESPN's latest rankings show Blue Jays' farm system already changing after draft",
-          "dek": "The Blue Jays' 46-53 record and fifth-place AL East standing make this prospect shuffle a critical pivot point for a franchise needing immediate roster upgrades. Young draftees Carlon and Brick are already reshaping the organization's long-term outlook, signaling that the team's",
+          "headline": "'You gotta pick yourself up': Schneider on Blue Jays bouncing back",
+          "dek": "With the Blue Jays sitting at 46-54 and fifth in the AL East, manager John Schneider demands immediate self-correction as top players continue performing well under expectations. The team must turn their season around in a hurry after opening a four-game series against the Rays",
           "date": "July 20, 2026",
-          "link": "https://jaysjournal.com/espn-s-latest-rankings-show-blue-jays-farm-system-already-changing-after-draft?utm_source=RSS"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Jays beat White Sox 1-0",
-          "dek": "This 1-0 victory breaks Toronto's seven-game shutout streak and provides a rare offensive spark after managing just five runs across the three-game series against Chicago. The win offers a modest boost for a 46-53 team sitting fifth in the AL East, though the Blue Jays still",
-          "date": "Jul 18",
-          "link": "https://www.espn.com/mlb/recap?gameId=401816156"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Clock keeps ticking on Blue Jays' wild card hopes after loss to White Sox",
-          "dek": "Toronto sits 4.5 games behind the final wild card spot with playoff odds now below 15 percent after falling to 46-53. The team must win every remaining series to catch the skidding Rays, but their current pace projects just 75 wins, leaving the trade deadline as the last chance",
-          "date": "July 19, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/clock-keeps-ticking-on-blue-jays-wild-card-hopes-after-loss-to-white-sox/"
+          "link": "https://www.sportsnet.ca/mlb/video/you-gotta-pick-yourself-up-schneider-on-blue-jays-bouncing-back/"
         }
       ],
       "standings": {
@@ -366,9 +374,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "56",
+                  "57",
                   "42",
-                  ".571",
+                  ".576",
                   "-"
                 ]
               },
@@ -378,9 +386,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "55",
+                  "56",
                   "44",
-                  ".556",
+                  ".560",
                   "1.5"
                 ]
               },
@@ -390,9 +398,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "50",
+                  "51",
                   "48",
-                  ".510",
+                  ".515",
                   "6"
                 ]
               },
@@ -403,9 +411,9 @@
                 "you": false,
                 "vals": [
                   "49",
-                  "51",
-                  ".490",
-                  "8"
+                  "52",
+                  ".485",
+                  "9"
                 ]
               },
               {
@@ -415,9 +423,9 @@
                 "you": true,
                 "vals": [
                   "46",
-                  "53",
-                  ".465",
-                  "10.5"
+                  "54",
+                  ".460",
+                  "11.5"
                 ]
               }
             ]
@@ -441,9 +449,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "52",
+                  "53",
                   "46",
-                  ".531",
+                  ".535",
                   "-"
                 ]
               },
@@ -455,22 +463,22 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "56",
+                  "57",
                   "42",
-                  ".571",
+                  ".576",
                   "-"
                 ]
               },
               {
-                "team": "Rangers",
-                "logo": "tex",
+                "team": "Mariners",
+                "logo": "sea",
                 "league": "mlb",
                 "you": false,
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
+                  "51",
                   "50",
-                  "49",
                   ".505",
                   "-"
                 ]
@@ -482,9 +490,9 @@
                 "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "55",
+                  "56",
                   "44",
-                  ".556",
+                  ".560",
                   "1.5"
                 ]
               },
@@ -495,9 +503,9 @@
                 "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "52",
+                  "53",
                   "48",
-                  ".520",
+                  ".525",
                   "1"
                 ]
               },
@@ -508,15 +516,15 @@
                 "you": false,
                 "seed": "WC3",
                 "vals": [
-                  "50",
+                  "51",
                   "48",
-                  ".510",
+                  ".515",
                   "6"
                 ]
               },
               {
-                "team": "Mariners",
-                "logo": "sea",
+                "team": "Rangers",
+                "logo": "tex",
                 "league": "mlb",
                 "you": false,
                 "seed": "",
@@ -537,9 +545,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "49",
-                  "51",
-                  ".490",
-                  "8"
+                  "52",
+                  ".485",
+                  "9"
                 ]
               },
               {
@@ -551,9 +559,37 @@
                 "seed_style": "faint",
                 "vals": [
                   "49",
-                  "51",
-                  ".490",
-                  "4"
+                  "52",
+                  ".485",
+                  "5"
+                ]
+              },
+              {
+                "team": "Astros",
+                "logo": "hou",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "48",
+                  "54",
+                  ".471",
+                  "3.5"
+                ]
+              },
+              {
+                "team": "Tigers",
+                "logo": "det",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "47",
+                  "53",
+                  ".470",
+                  "6.5"
                 ]
               },
               {
@@ -565,23 +601,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "46",
-                  "53",
-                  ".465",
-                  "10.5"
-                ]
-              },
-              {
-                "team": "Tigers",
-                "logo": "det",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "46",
-                  "53",
-                  ".465",
-                  "6.5"
+                  "54",
+                  ".460",
+                  "11.5"
                 ]
               }
             ]
@@ -619,8 +641,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors' Las Vegas camp ended not with a roar, but with a quiet 96-89 Summer League finale loss to the Nuggets, a final audition where young talent gave one last push for an NBA pathway. That summer-league stumble, however, is overshadowed by the real story: Allen Graves has changed minds, convincing skeptics that he belongs in Toronto's future. Graves' summer surge, paired with Nimari Burnett's 10.6-point average and nine-rebound performance in the finale, signals a roster reshaped by undrafted grit and draft-day calculation. The team, finished at 46-36 and third in the Atlantic, now pivots entirely to free agency and cap-space maneuvering, with camp battles looming for every rotation spot. <strong>Graves' summer breakthrough is the offseason's first real spark</strong>, setting the stage for <strong>what training camp reveals about Toronto's next core</strong>.",
-        "updated": "Updated July 20, 2026"
+        "body": "Summer League dust has settled in Toronto, and the Raptors' next move is already whispering through the roster. <strong>Seth London was sat from the final game</strong>, a clear signal that the front office is pivoting away from him as they reshuffle the backcourt for the 2026-27 season. The team finished 46-36, third in the Atlantic Division, but that record is now just a backdrop for bigger decisions in free agency and draft capital allocation. Young guards who flashed in Vegas - especially those who improved their stock against Denver - are now the focus of internal debates. The Raptors aren't tinkering; they're rebuilding with intent. <strong>What to watch: whether London gets traded before camp opens, and which Summer League standout earns a two-way contract</strong>.",
+        "updated": "Updated July 21, 2026"
       },
       "key_numbers": [
         {
@@ -650,26 +672,26 @@
       },
       "the_latest": [
         {
+          "source": "Raptors HQ",
+          "source_class": "web",
+          "headline": "Which Raptors improved their stock ahead of matchup against Nuggets",
+          "dek": "Summer League consolation game results against Denver revealed which Raptors players earned the coaching staff's trust ahead of free agency. Tyreke Key's 21-minute start and Seth London's deliberate absence signaled the team's likely next roster moves despite missing the",
+          "date": "July 19, 2026",
+          "link": "https://www.raptorshq.com/raptors-schedule/50898/which-raptors-improved-their-stock-ahead-of-matchup-against-nuggets"
+        },
+        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Raptors conclude Summer League with loss vs. Nuggets",
-          "dek": "The Raptors' 89-96 Summer League finale loss to the Nuggets ends a Las Vegas run where young prospects like Jahmi'us Ramsey failed to secure a decisive win in their final audition. With the team sitting third in the Atlantic after a 46-36 regular season, this consolation matchup",
+          "dek": "The loss to Denver caps a Summer League where the Raptors missed the playoffs by five points but still identified three key standouts for their future. Front office decisions to sit Nate Bittle and Seth London in the finale signal concrete roster moves as the team pivots from",
           "date": "July 19, 2026",
           "link": "https://www.sportsnet.ca/nba/article/raptors-conclude-summer-league-with-loss-vs-nuggets/"
-        },
-        {
-          "source": "Raptors HQ",
-          "source_class": "web",
-          "headline": "Raptors fans say Allen Graves changed minds with his play this summer",
-          "dek": "Allen Graves silenced draft-day skepticism by averaging 16.8 points and shooting 50 percent from the perimeter in four Summer League games. His complementary style now proves he can elevate stars like Kawhi Leonard and Scottie Barnes, turning initial fan confusion into genuine",
-          "date": "July 18, 2026",
-          "link": "https://www.raptorshq.com/nba-reacts/50893/raptors-fans-say-allen-graves-changed-minds-with-his-play-this-summer"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Denver Nuggets vs. Toronto Raptors: Game Highlights",
-          "dek": "This matchup marks the Summer League finale where both squads audition young talent to solidify their NBA pathways before the upcoming Draft and Free Agency period. The Nuggets secured a 96-89 victory over the Raptors, with Jahmi'us Ramsey scoring 20 points on a flawless 9-for-9",
+          "dek": "This headline appears to be mislabeled because the Toronto Raptors and Denver Nuggets did not play an NBA game on July 21, 2026, as the season is in the Draft and Free Agency phase. The Raptors are actually showcasing their future through a 3-2 Summer League record in Las Vegas",
           "date": "July 20, 2026",
           "link": "https://www.espn.com/video/clip/_/id/49406167/game-highlights"
         },
@@ -677,17 +699,17 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Toronto Raptors vs. Miami Heat: Game Highlights",
-          "dek": "This headline recaps a regular-season matchup that helped the Raptors secure a 46-36 record and a third-place finish in the Atlantic Division. The game now serves as a reference point for evaluating roster moves as the team pursues a reunion with DeMar DeRozan during free agency.",
+          "dek": "These highlights capture the Raptors' final Summer League matchup against Miami, where young prospect Graves delivered 23 points in his last showing before the main roster evaluates talent for the upcoming draft. The game serves as a critical evaluation point for Toronto's front",
           "date": "July 17, 2026",
           "link": "https://www.espn.com/video/clip/_/id/49381344/game-highlights"
         },
         {
           "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "Gameday: Raptors @ Denver, July 19th",
-          "dek": "The Toronto Summer League team fell 96-89 to Denver in their final matchup, ending a 3-2 run without a championship berth. Jahmi'us Ramsey's perfect 9-for-9 shooting night capped an audition that leaves Raptor prospects with their last chance to impress before free agency",
-          "date": "July 19, 2026",
-          "link": "https://raptorsrepublic.com/2026/07/19/gameday-raptors-denver-july-19th/"
+          "headline": "Quick Reaction: Nuggets 96, Raptors 89",
+          "dek": "The loss to Denver caps a Summer League run where the Raptors missed the playoffs by just five points despite strong individual performances. This consolation game defeat ends the Las Vegas week without a championship, leaving the front office to evaluate their young core before",
+          "date": "July 20, 2026",
+          "link": "https://raptorsrepublic.com/2026/07/19/quick-reaction-nuggets-96-raptors-89/"
         }
       ],
       "standings": {
@@ -856,28 +878,23 @@
     "commanders": {
       "full_name": "Washington Commanders",
       "league": "NFL",
-      "record": "5-12",
-      "detail": "3rd in NFC East",
+      "record": "0-0",
+      "detail": "1st in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The burgundy and gold smell of uncertainty this morning, a familiar scent for a franchise that's never quite mastered the art of staying put. While the NFC East crown sits six games away with the Commanders clinging to third place, the real story isn't the record - it's the <strong>rookie quarterback Athan Kaliakmanis arriving Friday, a low-draft pick the team surprisingly invested in to back Jayden Daniels</strong>. Camp won't open fully until July 29, but the running back battle is already heating up: Jerome Ford versus Jeremy McNichols, with Kaytron Allen looking like the only lock. Stefon Diggs remains on the table, yet GM Adam Peters won't rush a trade before seeing what his current roster can do. <strong>By late August, the depth chart will crystallize - and if Diggs isn't here, the pass-catch dynamic could vanish without warning.</strong>",
-        "updated": "Updated July 20, 2026"
+        "body": "Ashburn's grass is still damp, but the Washington Commanders' training camp heat is already turning position battles into full-blown wars. <strong>Rookie Antonio Williams, a third-round pick from Clemson, is named a sleeper for a major award and could dominate the slot</strong> as the most-watched storyline in a crowded wide receiver group that also features healthy Terry McLaurin and a rejuvenated Dyami Brown. Williams vs. Luke McCaffrey for the slot job, and Van Jefferson fighting for the final WR spot, define the depth chart scramble for a team sitting 0-0 but already pegged 1st in the NFC East. Edge defender Dorance Armstrong, back from an ACL tear, adds pass-rush grit while second-year left tackle Aireontae Ersery is entrenched. <strong>What to watch: whether Williams can force coaches to start him inside before the preseason opener</strong>.",
+        "updated": "Updated July 21, 2026"
       },
       "key_numbers": [
         {
-          "number": "5-12",
+          "number": "0-0",
           "label": "Season Record",
-          "note": "3rd in NFC East"
+          "note": "1st in NFC East"
         },
         {
-          "number": "W1",
+          "number": "-",
           "label": "Final Streak",
           "note": "End of season"
-        },
-        {
-          "number": "6",
-          "label": "Final Games Behind",
-          "note": "3rd in NFC East"
         }
       ],
       "recent_results": [],
@@ -886,44 +903,44 @@
       },
       "the_latest": [
         {
-          "source": "Yahoo Sports",
-          "source_class": "web",
-          "headline": "Articles, podcasts & tweets about the burgundy & gold - Daily Slop",
-          "dek": "Rookies arrive Friday while veterans wait until next week, making the July 29 start date the moment Washington finally tests its depth and solves unanswered roster questions. With no veteran wide receiver added yet, general manager Adam Peters likely wants to evaluate his",
-          "date": "July 19, 2026",
-          "link": "https://sports.yahoo.com/articles/articles-podcasts-tweets-burgundy-gold-143000105.html"
-        },
-        {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Commanders' Stefon Diggs opportunity could vanish without warning",
-          "dek": "The Commanders face a ticking clock on adding Stefon Diggs because training camp begins next week and the window for a veteran wide receiver move is already closing. With rookies reporting at the end of this week, any delay risks losing Diggs, a 32-year-old free agent with",
-          "date": "July 20, 2026",
-          "link": "https://riggosrag.com/washington-commanders-stefon-diggs-opportunity-could-vanish-without-warning?utm_source=RSS"
+          "headline": "7 Commanders entering training camp with everything on the line",
+          "dek": "After collapsing to a 5-12 finish in 2025 following an NFC Championship run the year prior, these seven players face a brutal test to restore the franchise's credibility. The entire roster hinges on quarterback Jayden Daniels returning to full strength and rookie Antonio",
+          "date": "July 21, 2026",
+          "link": "https://riggosrag.com/7-washington-commanders-entering-training-camp-everything-line?utm_source=RSS"
+        },
+        {
+          "source": "Yahoo Sports",
+          "source_class": "web",
+          "headline": "Commanders-Vikings Wk 16; can Daronte Jones outdo his mentor Brian Flores? - 5 O'Clock Club",
+          "dek": "The 5 O'Clock Club frames a Week 16 showdown with the Vikings as a coaching duel between defensive backs coach Daronte Jones and his mentor, former head coach Brian Flores. This preview highlights how Jones must prove his independent tactical identity against the scheme he once",
+          "date": "July 21, 2026",
+          "link": "https://sports.yahoo.com/articles/commanders-vikings-wk-16-daronte-090000237.html"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NFL All-Backup Team: Could a roster of bench players contend?",
-          "dek": "With veterans set to arrive July 29 and rookies reporting Friday, the Commanders' depth chart remains unproven as training camp begins. This all-backup roster exercise highlights whether Washington's bench talent can realistically compete in an NFC East division where they",
+          "dek": "With Washington recovering from a 5-12 collapse marked by quarterback Jayden Daniels missing 10 games, the depth of this bench roster directly determines if the team can avoid another injury crisis. Training camp evaluations of these nonstarters will reveal whether the offseason",
           "date": "July 20, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/49391788/2026-nfl-season-all-backup-team-rosters-bench-players-barnwell"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "NFL players love wearing their 'slippers and slides, baby!'",
-          "dek": "As Washington Commanders players settle into training camp routines, the NFL's off-field comfort culture highlights how athletes prioritize recovery before the season kicks off. From Hulk slides to therapeutic mules, this footwear trend underscores the growing focus on foot",
-          "date": "July 19, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49248781/nfl-slippers-slides-therapeutic-kyle-pitts-brian-thomas-jr-devon-witherspoon"
+          "headline": "Why Frankie Luvu can be more effective in 2026",
+          "dek": "Frankie Luvu's shift toward more blitzing opportunities aligns with the Commanders' defensive overhaul as they enter training camp with eyes on NFC East dominance. His increased aggression could transform Washington's pass rush if he stays healthy and executes the new scheme",
+          "date": "July 20, 2026",
+          "link": "https://www.espn.com/video/clip/_/id/49364473/why-frankie-luvu-more-effective-2026"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Commanders News: Articles, podcasts & tweets about the burgundy & gold",
-          "dek": "Training camp intensity is rising for the Commanders as the team prepares to honor John Riggins with a jersey retirement, cementing a legendary legacy while the 2026 roster faces its own identity test. The defense has already undergone a massive overhaul by pushing out perennial",
-          "date": "July 19, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-news/424828/jayden-daniels-jordan-magee-deebo-samuel-falcons-preview"
+          "headline": "Commanders-Vikings Week 16; can Daronte Jones outdo his mentor Brian Flores?",
+          "dek": "Daronte Jones faces his mentor Brian Flores in a Week 16 defensive showdown that could define the NFC East title race. This training camp narrative highlights the growing tactical rivalry between two coaches who once worked side by side to build Minnesota's elite defense.",
+          "date": "July 21, 2026",
+          "link": "https://www.hogshaven.com/the-5-oclock-club/423706/commanders-vikings-week-16-daronte-jones-outdo-mentor-brian-flores"
         }
       ],
       "standings": {
@@ -941,39 +958,15 @@
             ],
             "rows": [
               {
-                "team": "Eagles",
-                "logo": "phi",
-                "league": "nfl",
-                "you": false,
-                "vals": [
-                  "11",
-                  "6",
-                  ".647",
-                  "3-3"
-                ]
-              },
-              {
                 "team": "Cowboys",
                 "logo": "dal",
                 "league": "nfl",
                 "you": false,
                 "vals": [
-                  "7",
-                  "9",
-                  ".441",
-                  "4-2"
-                ]
-              },
-              {
-                "team": "Commanders",
-                "logo": "wsh",
-                "league": "nfl",
-                "you": true,
-                "vals": [
-                  "5",
-                  "12",
-                  ".294",
-                  "3-3"
+                  "0",
+                  "0",
+                  ".000",
+                  "0-0"
                 ]
               },
               {
@@ -982,10 +975,34 @@
                 "league": "nfl",
                 "you": false,
                 "vals": [
-                  "4",
-                  "13",
-                  ".235",
-                  "2-4"
+                  "0",
+                  "0",
+                  ".000",
+                  "0-0"
+                ]
+              },
+              {
+                "team": "Eagles",
+                "logo": "phi",
+                "league": "nfl",
+                "you": false,
+                "vals": [
+                  "0",
+                  "0",
+                  ".000",
+                  "0-0"
+                ]
+              },
+              {
+                "team": "Commanders",
+                "logo": "wsh",
+                "league": "nfl",
+                "you": true,
+                "vals": [
+                  "0",
+                  "0",
+                  ".000",
+                  "0-0"
                 ]
               }
             ]
@@ -1020,47 +1037,42 @@
   "featured": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "Anemic Offense, Jays Lose",
-    "dek": "Toronto's offense has collapsed to just five runs over three games, leaving playoff odds below 15 percent as the team sits seven games under.500. Manager John Schneider's urgent wake-up call comes with the trade deadline looming and the Jays 4.5 games behind the final Wild Card",
-    "source": "Bluebird Banter",
-    "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/62860/anemic-offense-jays-lose",
-    "date": "July 20, 2026"
+    "headline": "Blue Jays hit new low, face mounting urgency after another loss",
+    "dek": "At 46-54 and 11.5 games behind in the AL East, the Blue Jays have fallen to the ninth wild-card spot with only 75 wins projected, leaving them 15 games short of the playoff threshold. Injuries and underperforming stars have driven this slump, forcing the club to weigh selling",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/mlb/article/blue-jays-hit-new-low-face-mounting-urgency-after-another-loss/",
+    "date": "July 21, 2026"
   },
   "two_up": [
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Draft & Free Agency",
-      "headline": "Former Maple Leafs, Oilers goalie Jack Campbell 'walking away' from hockey",
-      "dek": "Campbell's departure closes a turbulent chapter for Toronto's goaltending history, ending a 176-game NHL career marked by high expectations and personal struggles. His shift to life coaching underscores the growing focus on mental health in hockey, offering a new path for",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/article/former-maple-leafs-oilers-goalie-jack-campbell-walking-away-from-hockey/",
-      "date": "July 20, 2026"
+      "headline": "All eyes on Easton Cowan, Gavin McKenna, and Jack Roslovic for top-six internal competition",
+      "dek": "With the Leafs sitting eighth in the Atlantic and facing a 45% playoff odds projection, head coach Jim Hiller must urgently determine if these three young forwards can finally fill the top-six void left by recent departures. The outcome of this internal battle will define the",
+      "source": "The Leafs Nation",
+      "link": "https://theleafsnation.com/news/all-eyes-easton-cowan-gavin-mckenna-jack-roslovic-top-six-competition",
+      "date": "July 21, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Draft & Free Agency",
-      "headline": "Quick Reaction: Nuggets 96, Raptors 89",
-      "dek": "The Raptors' 89-96 Summer League finale loss to Denver caps a Las Vegas run where Jahmi'us Ramsey posted a perfect 9-for-9 shooting night for the Nuggets. This closing defeat leaves Toronto's young roster with a final audition result that could influence their upcoming free",
+      "headline": "Three Standouts from the Raptors' 2026 Summer League performance",
+      "dek": "First-round pick Allen Graves, sharpshooter Seth Lundy and big man Nate Bittle delivered the most promising early signs for a Raptors roster aiming to build beyond its third-place Atlantic standing. Their Summer League success in Las Vegas offers tangible hope that the team's",
       "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/07/19/quick-reaction-nuggets-96-raptors-89/",
-      "date": "July 20, 2026"
+      "link": "https://raptorsrepublic.com/2026/07/20/three-standouts-from-the-raptors-2026-summer-league-performance/",
+      "date": "July 21, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Training Camp",
-    "headline": "Why the Washington Commanders drafted QB Athan Kaliakmanis",
-    "dek": "The Commanders added Kaliakmanis to expand their quarterback depth chart as training camp begins with Jacoby Bridgett and the starter in place. His selection signals a focus on developing a reliable backup who can step in if the primary option falters during the season.",
+    "headline": "Washington Commanders hidden gems: 3 secret superstars for the 2026 roster",
+    "dek": "As training camp opens, the roster's deepest questions center on which undrafted or late-round players can fill the gaps left after the franchise's steep 5-12 drop from last season. Rookie third-round pick Antonio Williams is already drawing Rookie of the Year buzz and could be",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-roster/424134/why-washington-commanders-drafted-qb-athan-kaliakmanis-nfl-rookie",
-    "date": "July 20, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-analysis/424745/washington-commanders-hidden-gems-underrated-stars-2026-jeremy-reaves-klavon-chassion-antonio-williams",
+    "date": "July 21, 2026"
   },
   "ticker": [
-    {
-      "badge": "NHL",
-      "badge_style": "nhl",
-      "text": "Leafs sign Roslovic to 2-year deal, send Robertson to Pens"
-    },
     {
       "badge": "NHL",
       "badge_style": "nhl",
@@ -1069,22 +1081,22 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays fell to White Sox 3-0"
+      "text": "Jays fell to Rays 7-1"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays vs. Rays - Mon 7/20 7:07 PM ET"
+      "text": "Next: Jays vs. Rays - Tue 7/21 7:07 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (46-53) - 5th in AL East"
+      "text": "Jays (46-54) - 5th in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Anemic Offense, Jays Lose"
+      "text": "Just A Terrible Effort, Jays Lose"
     },
     {
       "badge": "NBA",
@@ -1099,23 +1111,23 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Why the Washington Commanders drafted QB Athan Kaliakmanis"
+      "text": "2026 NFL trade tiers: Players worth Round 1 picks by team"
     }
   ],
   "scoreboard": [
     {
       "team": "jays",
-      "game_date": "2026-07-19",
+      "game_date": "2026-07-20",
       "name": "Jays",
       "league": "MLB",
       "logo": "tor",
-      "opp_name": "White Sox",
-      "opp_logo": "chw",
-      "team_score": 0,
-      "opp_score": 3,
+      "opp_name": "Rays",
+      "opp_logo": "tb",
+      "team_score": 1,
+      "opp_score": 7,
       "result": "L",
-      "date": "Jul 19",
-      "link": "https://www.youtube.com/watch?v=Nx1DUBaUHfc"
+      "date": "Jul 20",
+      "link": "https://www.youtube.com/watch?v=7H0SxgpwWf0"
     }
   ],
   "at_a_glance": [
@@ -1132,10 +1144,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "46-53",
+      "record": "46-54",
       "status": "5th in AL East",
       "status_class": "red",
-      "stat": "Streak: L1"
+      "stat": "Streak: L2"
     },
     {
       "team": "raptors",
@@ -1150,8 +1162,8 @@
       "team": "commanders",
       "name": "Commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "record": "5-12",
-      "status": "3rd in NFC East",
+      "record": "0-0",
+      "status": "1st in NFC East",
       "status_class": "muted",
       "stat": ""
     }
@@ -1192,16 +1204,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Mon 7/20",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "vs. Rays",
-        "time": "7:07 PM ET",
-        "tv": "Sportsnet",
-        "game_ts": "2026-07-20T23:07Z"
-      },
       {
         "day": "Tue 7/21",
         "team": "jays",
@@ -1271,16 +1273,27 @@
         "time": "6:45 PM ET",
         "tv": "Sportsnet",
         "game_ts": "2026-07-27T22:45Z"
+      },
+      {
+        "day": "Tue 7/28",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Nationals",
+        "time": "6:45 PM ET",
+        "tv": "Sportsnet",
+        "game_ts": "2026-07-28T22:45Z"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Monday's Skate",
+      "title": "Leafs Open Season Against Canadiens",
       "paragraphs": [
-        "Jack Campbell, the former Leafs goaltender, has officially announced his retirement at 34 to become a performance coach with Novus Global. The Leafs are now looking toward the upcoming season, with their first game set against the Canadiens on Tuesday, September 29. Meanwhile, the Jays lost 3-0 to the White Sox last night as their offense failed to support starter Yesavage. Tonight, the Jays face the Rays at 7:07 PM ET on Sportsnet, aiming to improve their 46-53 record and 5th-place standing in the AL East.",
-        "The Raptors concluded their Summer League run with an 89-96 loss to the Nuggets. In the NFL, the Washington Commanders are in training camp and recently drafted QB Athan Kaliakmanis, a move explained by their need for quarterback depth. Stefon Diggs' opportunity with the Commanders could vanish quickly if he does not perform, according to team insiders. The Commanders will next play at the Eagles on Sunday, September 13."
+        "Good morning: the Leafs are set to begin their 84-game schedule Tuesday, September 29, at home against the Canadiens, with Easton Cowan, Gavin McKenna, and Jack Roslovic competing for top-six spots.",
+        "The Blue Jays, currently 46-54 and fifth in the AL East, lost 7-1 to the Rays last night and face them again tonight at 7:07 PM ET on Sportsnet, facing mounting urgency after another poor effort.",
+        "In the NBA offseason, the Raptors' 2026 Summer League featured three standout performers who improved their stock ahead of an upcoming matchup against the Nuggets, signaling fresh hope for the roster. Meanwhile, the Washington Commanders enter training camp with seven players having everything on the line, as coaches look for hidden gems who could become secret superstars for the 2026 roster before their September 13 game at the Eagles."
       ]
     }
   }
