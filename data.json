@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-07-27T08:17:34.073915-04:00",
-    "date_display": "July 27, 2026"
+    "updated": "2026-07-28T07:13:24.645909-04:00",
+    "date_display": "July 28, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The offseason has already given this club a harder edge - less sentiment, more arithmetic. <strong>The loudest change is the departure of Mitch Marner, with his agent now saying he was \"never protected\" by the Maple Leafs, a flashpoint that explains why Toronto's summer has turned into a roster reset.</strong> The Leafs sit 8th in the Atlantic with 78 points, but that finished record is only the backdrop to a new front office logic: trim the fat, mine the draft, and stop pretending the old core was sacred. John Chayka's hand is all over a roster that now leans on veteran additions and a prospect pool that, for once, has real believers. The next pressure point is obvious - who stays, who gets moved, and whether the club can turn cap space into a sturdier spine. <strong>Watch the trade market, because Toronto's next move may matter more than the one it just made.</strong>",
-        "updated": "Updated July 27, 2026"
+        "body": "A new front office has the Leafs in a hard reset, and the noise is real - not the fake kind that fills July. <strong>Toronto made Gavin McKenna the No. 1 pick in the 2026 NHL Draft</strong>, a franchise-altering swing that gives Auston Matthews the kind of young talent Connor McDavid and Zach Hyman are already praising as a fitting apprentice. The Leafs sit 8th in the Atlantic at 78 points, but that number belongs to a finished season; what matters now is how John Chayka shapes the roster around the rookie and the cap. Mitch Marner's agent saying he was \"never protected\" only sharpens the edges of this summer, and the sign-and-trade for Darren Raddysh shows the churn has started. <strong>Watch whether the Leafs keep adding support pieces - or save their muscle for one more major move.</strong>",
+        "updated": "Updated July 28, 2026"
       },
       "key_numbers": [
         {
@@ -42,26 +42,26 @@
       },
       "the_latest": [
         {
+          "source": "The Leafs Nation",
+          "source_class": "web",
+          "headline": "3 interesting waiver candidates Maple Leafs should show interest in this season",
+          "dek": "The Maple Leafs enter camp with a reset roster, a new GM in John Chayka and fresh optimism around top pick Gavin McKenna and other offseason additions. Waiver pickups matter now because the team is trying to sharpen its depth and competition in a season where every roster spot",
+          "date": "July 27, 2026",
+          "link": "https://theleafsnation.com/news/3-interesting-waiver-candidates-toronto-maple-leafs-interest-season"
+        },
+        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Mitch Marner 'never protected' by Maple Leafs, agent says",
-          "dek": "Mitch Marner's exit keeps resurfacing because his camp is still revisiting what they see as unfinished business from his years in Toronto. That makes the Leafs' handling of a former cornerstone player part of the summer conversation, even now that the team is trying to reset",
+          "dek": "Mitch Marner's exit still hangs over Toronto because it speaks to how the Maple Leafs handled one of their most important homegrown stars during a period when roster choices and contract priorities remain under scrutiny. Darren Ferris reopening that dispute keeps attention on",
           "date": "July 23, 2026",
           "link": "https://www.sportsnet.ca/nhl/article/mitch-marner-never-protected-by-maple-leafs-agent-says/"
-        },
-        {
-          "source": "The Leafs Nation",
-          "source_class": "web",
-          "headline": "3 trade candidates as Maple Leafs' offseason continues",
-          "dek": "Toronto has already reshaped its roster and still appears willing to keep pushing, so these trade names signal how aggressive the front office plans to be before camp opens. With the Leafs stuck eighth in the Atlantic, any move now is about tightening the roster for an immediate",
-          "date": "July 26, 2026",
-          "link": "https://theleafsnation.com/news/3-trade-candidates-toronto-maple-leafs-offseason"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Grading preseason bold predictions for all 32 NHL teams",
-          "dek": "Toronto's summer has already started to reshape the roster, with the club adding Colton Sissons in free agency as it tries to move up from eighth in the Atlantic. That backdrop makes any preseason forecast for the Leafs more than a hindsight exercise, since the market has",
+          "dek": "Toronto's offseason has already reset expectations, with a new general manager in John Chayka and first-overall pick Gavin McKenna giving the franchise a very different look going into camp. That makes preseason predictions for the Maple Leafs more interesting than usual,",
           "date": "July 23, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49424745/nhl-predictions-playoffs-projections-stanley-cup-awards-stats-trades"
         },
@@ -69,7 +69,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Behind the scenes at the NHL Broadcast Training Camp",
-          "dek": "As the Maple Leafs work through draft and free agency, the next generation of hockey voices is being shaped long before it reaches a TV booth. This training camp offers a glimpse at how former players prepare to translate the game for fans, a skill that matters as teams and",
+          "dek": "With a new general manager in place and the first pick of the 2026 NHL Draft already in hand, Toronto's offseason has become a test of how quickly the franchise can reshape its future. A behind-the-scenes look at NHL broadcast training lands as the Maple Leafs try to stay",
           "date": "July 20, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49405523/nhl-players-broadcast-training-camp-announcers-analysts-tv"
         }
@@ -188,6 +188,82 @@
           }
         ]
       },
+      "draft_board": {
+        "team": "Toronto Maple Leafs",
+        "league": "NHL",
+        "projected_pick": "#1 overall",
+        "draft_date": "June 2026",
+        "prospects_watched": [
+          {
+            "name": "Gavin McKenna",
+            "position": "LW",
+            "team": "TBD",
+            "note": "The Maple Leafs are projected to target McKenna if they hold the top pick, as recent reporting already identifies him as their first-overall selection."
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "Recent public mock-draft and beat-report coverage in the provided results does not identify additional Maple Leafs targets with enough specificity to verify."
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          }
+        ],
+        "lottery": {
+          "odds": "TBD",
+          "outcome": "Won 1st overall"
+        },
+        "label": "NHL Draft Board",
+        "event_date": "June 2026",
+        "pick_position": "#1 overall",
+        "headers": [
+          "Rank",
+          "Prospect",
+          "College / Team",
+          "Fit"
+        ],
+        "rows": [
+          {
+            "pk": "1",
+            "team": "Gavin McKenna (LW)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "The Maple Leafs are projected to target McKenna if they hold the top pick, as recent reporting already identifies him as their first-overall selection."
+          },
+          {
+            "pk": "2",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "Recent public mock-draft and beat-report coverage in the provided results does not identify additional Maple Leafs targets with enough specificity to verify."
+          },
+          {
+            "pk": "3",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          },
+          {
+            "pk": "4",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          }
+        ],
+        "notes": "Outcome: Won 1st overall"
+      },
       "watch": [
         {
           "title": "Leafs Draft Coverage",
@@ -195,8 +271,8 @@
           "sub": "YouTube"
         },
         {
-          "title": "Leafs Offseason Plans",
-          "url": "https://www.youtube.com/results?search_query=Toronto+Maple+Leafs+offseason+plan+2026",
+          "title": "Prospect Watch: Gavin McKenna",
+          "url": "https://www.youtube.com/results?search_query=Gavin+McKenna+highlights",
           "sub": "YouTube"
         },
         {
@@ -215,26 +291,26 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "48-58",
+      "record": "49-58",
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Sunday's loss bled into Monday morning like a bad seam in the clubhouse door - Toronto had one clean win in the series, then watched Boston answer with a 6-1 pummeling that left the Blue Jays at 48-58, 5th in the AL East and 14.5 games back. <strong>That 6-1 thud from last night was the latest reminder this club can still flash - then disappear.</strong> Kevin Gausman's line in what may have been his final start for the Jays was decent enough, but the offense never supplied the Red Sox-style surge it needed, managing just one run after a 6-0 shutout Saturday. The broader picture is blunt: a one-game skid, a minus-5 run differential, and a roster that keeps asking too much of too few bats. <strong>Now comes Washington on Monday night, and Toronto needs a quick response, not another flat footed start.</strong>",
-        "updated": "Updated July 27, 2026"
+        "body": "A season that has spent too much time in the ditch got a small, necessary lift Monday night. <strong>The Blue Jays edged the Nationals 3-2</strong>, with Luis Urías supplying the punch and Myles Straw chipping in a double and an RBI single as Toronto moved to 49-58 and held fifth in the AL East. That is not contender territory - not with a minus-4.5 mark and 14 games back - but it is at least a club showing a pulse after dropping two of three to Boston. Max Scherzer's return to Washington was part of the night's theater, and Shane Bieber gets the ball Tuesday as Toronto tries to stack wins for once. <strong>Watch Bieber's start at 6:45 p.m. ET and see whether the Jays can turn one good night into an actual run.</strong>",
+        "updated": "Updated July 28, 2026"
       },
       "key_numbers": [
         {
-          "number": "48-58",
+          "number": "49-58",
           "label": "Season Record",
           "note": "5th in AL East"
         },
         {
-          "number": "L1",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "14.5",
+          "number": "14",
           "label": "Games Back",
           "note": "5th in AL East"
         },
@@ -245,6 +321,18 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Jul 27",
+          "result": "W",
+          "team_score": 3,
+          "opp_name": "Nationals",
+          "opp_score": 2,
+          "opp_logo": "wsh",
+          "league": "mlb",
+          "game_date": "2026-07-27",
+          "game_ts": "2026-07-27T22:45Z",
+          "game_id": "401816285"
+        },
         {
           "date": "Jul 26",
           "result": "L",
@@ -280,69 +368,57 @@
           "game_date": "2026-07-24",
           "game_ts": "2026-07-24T23:15Z",
           "game_id": "401816243"
-        },
-        {
-          "date": "Jul 23",
-          "result": "W",
-          "team_score": 3,
-          "opp_name": "Rays",
-          "opp_score": 1,
-          "opp_logo": "tb",
-          "league": "mlb",
-          "game_date": "2026-07-23",
-          "game_ts": "2026-07-23T19:07Z",
-          "game_id": "401816234"
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Red Sox vs. Jays - Full Highlights",
-        "subtitle": "MLB - Jul 26, 2026",
-        "result_badge": "L 1-6",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=JyVgXQjdCqY",
-        "game_date": "2026-07-26"
+        "title": "Nationals vs. Jays - Full Highlights",
+        "subtitle": "MLB - Jul 27, 2026",
+        "result_badge": "W 3-2",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=WoCw183XmKw",
+        "game_date": "2026-07-27"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays fell to Red Sox 6-1",
-          "dek": "Toronto's offense managed just one run after being shut out the day before, a reminder that the lineup still lacks consistency as the standings slip further out of reach. The loss also handed Boston the series and left the Blue Jays needing a quick response to avoid getting",
-          "date": "Jul 26",
-          "link": "https://www.espn.com/mlb/recap?gameId=401816273"
+          "headline": "Jays beat Nationals 3-2",
+          "dek": "A win in Washington gives Toronto a small lift in a lost season, especially with the club still five games under.500 and trying to build any momentum on the road. Luis Urías and Myles Straw supplied the offense, while six relievers held the line after Max Scherzer's return to",
+          "date": "Jul 27",
+          "link": "https://www.espn.com/mlb/recap?gameId=401816285"
         },
         {
           "source": "Bluebird Banter",
           "source_class": "web",
-          "headline": "Jays Lose To Red Sox",
-          "dek": "Toronto's offense went quiet again, wasting Kevin Gausman's solid outing and leaving a team fighting to stay in the race with too little support behind it. Boston, meanwhile, used the win to keep rolling in a season where every game now matters for its playoff push.",
-          "date": "July 26, 2026",
-          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/62957/jays-lose-to-red-sox"
+          "headline": "Okamoto Stole A Base! Oh, And Jays Win",
+          "dek": "Kazuma Okamoto's first career steal is the kind of oddball moment that can make a routine win feel memorable, especially for a Blue Jays club trying to find something to build on. Toronto's 3-2 victory over Washington also kept them from slipping further in the AL East, where",
+          "date": "July 27, 2026",
+          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/62973/okamoto-stole-a-base-oh-and-jays-win"
         },
         {
           "source": "Jays Journal",
           "source_class": "web",
-          "headline": "Blue Jays' Top-30 prospect rankings get a shakeup, but the top four remain untouched",
-          "dek": "Toronto's farm system got a fresh MLB Pipeline reset, and the movement matters because the organization is still leaning on prospect depth while trying to climb out of a 48-58 hole. The top four stay stable, but several notable risers and fallers suggest the next wave could",
-          "date": "July 27, 2026",
-          "link": "https://jaysjournal.com/blue-jays-top-30-prospect-rankings-get-a-shakeup-but-the-top-four-remain-untouched?utm_source=RSS"
+          "headline": "4 players Blue Jays would be foolish to include in trade deadline fire sale",
+          "dek": "With Toronto buried in fifth place and well off the pace in the AL East, the deadline is shifting from wishful thinking to asset management. This piece narrows the focus to the players the Blue Jays cannot afford to sacrifice if they want any realistic path back to contention",
+          "date": "July 28, 2026",
+          "link": "https://jaysjournal.com/4-players-blue-jays-would-be-foolish-to-include-in-trade-deadline-fire-sale?utm_source=RSS"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays beat Red Sox 6-0",
-          "dek": "Toronto's shutout win gives a struggling team a rare clean result and a chance to show some life after sinking to 48-58 and fifth in the AL East. Beating a division rival on the road also matters because it snaps the mood of a series that had been tilted toward Boston's hot",
-          "date": "Jul 25",
-          "link": "https://www.espn.com/mlb/recap?gameId=401816258"
+          "headline": "Jays fell to Red Sox 6-1",
+          "dek": "Toronto is still buried in the AL East race, so every loss now chips away at any realistic path back into contention. A quiet offense in a 6-1 defeat also raises the pressure on a club trying to stop the slide and salvage momentum in the second half.",
+          "date": "Jul 26",
+          "link": "https://www.espn.com/mlb/recap?gameId=401816273"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "'I hope I don't go anywhere': Blue Jays' Gausman on trade deadline",
-          "dek": "Kevin Gausman's remarks land as Toronto slides toward deadline seller status, with the club 10 games under.500 and his next outing possibly coming just before Aug. 3. The veteran right-hander's future now hangs over every start, especially after a quality effort against Boston",
-          "date": "July 26, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/i-hope-i-dont-go-anywhere-blue-jays-gausman-on-trade-deadline/"
+          "headline": "Latest on MLB trade deadline: What busy weekend means for Blue Jays",
+          "dek": "A busy weekend pushed Toronto closer to the reality that deadline day may be about subtraction, not a late push. With the team well under.500, the focus now shifts to which veterans can bring back the most value before August 3.\n\nThat makes Ben Nicholson-Smith's roundup relevant",
+          "date": "July 27, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/latest-on-mlb-trade-deadline-what-busy-weekend-means-for-blue-jays/"
         }
       ],
       "standings": {
@@ -378,10 +454,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "59",
+                  "60",
                   "46",
-                  ".562",
-                  "3"
+                  ".566",
+                  "2.5"
                 ]
               },
               {
@@ -390,10 +466,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "54",
+                  "55",
                   "50",
-                  ".519",
-                  "7.5"
+                  ".524",
+                  "7"
                 ]
               },
               {
@@ -402,10 +478,10 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "51",
+                  "52",
                   "55",
-                  ".481",
-                  "11.5"
+                  ".486",
+                  "11"
                 ]
               },
               {
@@ -414,10 +490,10 @@
                 "league": "mlb",
                 "you": true,
                 "vals": [
-                  "48",
+                  "49",
                   "58",
-                  ".453",
-                  "14.5"
+                  ".458",
+                  "14"
                 ]
               }
             ]
@@ -442,8 +518,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "55",
-                  "49",
-                  ".529",
+                  "50",
+                  ".524",
                   "-"
                 ]
               },
@@ -469,9 +545,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "53",
+                  "54",
                   "52",
-                  ".505",
+                  ".509",
                   "-"
                 ]
               },
@@ -482,10 +558,10 @@
                 "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "59",
+                  "60",
                   "46",
-                  ".562",
-                  "3"
+                  ".566",
+                  "2.5"
                 ]
               },
               {
@@ -495,10 +571,10 @@
                 "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "54",
+                  "55",
                   "50",
-                  ".519",
-                  "7.5"
+                  ".524",
+                  "7"
                 ]
               },
               {
@@ -511,7 +587,7 @@
                   "54",
                   "53",
                   ".505",
-                  "2.5"
+                  "2"
                 ]
               },
               {
@@ -525,21 +601,7 @@
                   "53",
                   "54",
                   ".495",
-                  "3.5"
-                ]
-              },
-              {
-                "team": "Mariners",
-                "logo": "sea",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "52",
-                  "54",
-                  ".491",
-                  "1.5"
+                  "3"
                 ]
               },
               {
@@ -550,9 +612,9 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "52",
+                  "53",
                   "55",
-                  ".486",
+                  ".491",
                   "2"
                 ]
               },
@@ -564,10 +626,24 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "51",
+                  "52",
                   "55",
-                  ".481",
-                  "11.5"
+                  ".486",
+                  "11"
+                ]
+              },
+              {
+                "team": "Mariners",
+                "logo": "sea",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "52",
+                  "55",
+                  ".486",
+                  "2.5"
                 ]
               },
               {
@@ -579,8 +655,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "50",
-                  "56",
-                  ".472",
+                  "57",
+                  ".467",
                   "6"
                 ]
               },
@@ -592,10 +668,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "48",
+                  "49",
                   "58",
-                  ".453",
-                  "14.5"
+                  ".458",
+                  "14"
                 ]
               }
             ]
@@ -633,8 +709,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The offseason has the Raptors picking at the edges of a roster that still feels one move short of finished. <strong>Kyle Anderson's one-year, $3.9 million deal</strong> gives Toronto a steady hand on the wing, while the club's decision to keep Trace Jackson-Davis on a $2.4 million team option says the front office still wants inexpensive, flexible depth rather than a flashy splash. Toronto sits 3rd in the Atlantic Division, but that number is old wallpaper now; the real work is in cap management and the final roster spots. DeMar DeRozan chatter lingers as a sentimental tug, yet this team needs fit more than nostalgia. The bigger question is whether the Raptors add one more veteran or leave the last chair open for camp competition - <strong>that call will tell you how ambitious this summer really is</strong>.",
-        "updated": "Updated July 27, 2026"
+        "body": "A summer that should have been about quiet pruning has turned into a circus of old names and big swings. <strong>The Kawhi Leonard trade is on hold as the NBA investigates the Clippers' reported cap circumvention</strong>, and that delay hangs over everything Toronto does next. The Raptors sit at 3rd in the Atlantic Division, with the finished 46-36 record only a backdrop now; the real question is how much ceiling they can buy with the rest of the roster. Scottie Barnes remains the hinge, but the louder story is whether Toronto keeps chasing veteran firepower - DeMar DeRozan is suddenly back in the conversation, and Stephen Curry whispers only sharpen the intrigue. The Kyle Lowry trade tree keeps paying dividends in memory if not in certainty. <strong>What matters now is whether Toronto turns cap room and its final roster spots into one more real difference-maker.</strong>",
+        "updated": "Updated July 28, 2026"
       },
       "key_numbers": [
         {
@@ -664,44 +740,44 @@
       },
       "the_latest": [
         {
+          "source": "Raptors Republic",
+          "source_class": "web",
+          "headline": "The Kyle Lowry Trade Tree: What did the Raptors get back for their greatest player ever?",
+          "dek": "Kyle Lowry's July 2026 retirement ceremony revived the legacy of the franchise icon and put his 2018 title run, plus the trade that brought him to Toronto, back in the spotlight. This piece matters because it traces how the Raptors turned one player into a chain of assets and",
+          "date": "July 27, 2026",
+          "link": "https://raptorsrepublic.com/2026/07/27/the-kyle-lowry-trade-tree/"
+        },
+        {
           "source": "Raptors HQ",
           "source_class": "web",
           "headline": "Raptors success be damned, I just want DeMar DeRozan back",
-          "dek": "The Raptors' offseason has already been shaped by nostalgia, with Kyle Lowry's retirement and Kawhi Leonard's unresolved status dominating the conversation. That makes the case for DeMar DeRozan more than sentimental, because he still represents a proven scoring boost and a",
+          "dek": "DeRozan remains the emotional fit for a fan base that has spent all summer talking about nostalgia and unfinished business, even as the Raptors try to build around a more practical free agency plan. If Toronto can turn mutual interest into a deal, it would give the team a proven",
           "date": "July 25, 2026",
           "link": "https://www.raptorshq.com/nba-trade-rumors/50939/raptors-success-be-damned-i-just-want-demar-derozan-back"
         },
         {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Could Raptors renegotiate the trade return if Kawhi receives punishment?",
-          "dek": "The Raptors' leverage hinges on whether the league hands down a punishment that changes the value of the deal already on the table. That makes this a high-stakes front office question, because any ruling could reshape Toronto's draft-pick haul before free agency moves elsewhere.",
-          "date": "July 21, 2026",
-          "link": "https://www.sportsnet.ca/nba/video/could-raptors-renegotiate-the-trade-return-if-kawhi-receives-punishment/"
+          "source": "Raptors HQ",
+          "source_class": "web",
+          "headline": "How does LeBron change a potential Raptors and 76ers playoff series",
+          "dek": "LeBron's arrival gives Philadelphia a new half-court engine and another late-game creator, which raises the ceiling of any series with Toronto. For the Raptors, the issue is no longer just surviving the East's depth, but figuring out how to match the Sixers' star power if a",
+          "date": "July 24, 2026",
+          "link": "https://www.raptorshq.com/nba-free-agency/50941/how-does-lebron-change-a-potential-raptors-and-76ers-playoff-series"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2027 NBA championship odds: Sixers sign LeBron, surge to +900 to take NBA crown",
-          "dek": "LeBron's move has pushed Philadelphia into the league's top tier of title threats, but the Raptors remain in the mix as an upper-half East team with a far longer path to the trophy. With the Spurs and Thunder still setting the pace at the top of the board, Toronto's place in the",
-          "date": "July 24, 2026",
-          "link": "https://www.espn.com/espn/betting/story/_/id/49062262/2027-nba-finals-odds-mvp-2026-27-championship-betting"
+          "headline": "Team USA Olympic stock watch: Which NBA players are rising, falling?",
+          "dek": "Team USA's Olympic picture matters for Toronto because the Raptors' recent surge gives their players a better platform to force their way into the national conversation. With the team already showing major year-over-year improvement, this stock watch doubles as a snapshot of",
+          "date": "July 28, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/49463790/nba-team-usa-baketball-stock-watch-rising-falling-lebron-james-kon-knueppel"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NBA Power Rankings: Where all 30 teams stack up in 2026 offseason",
-          "dek": "Toronto's place in the offseason rankings will hinge on whether the reported Leonard deal actually survives the Clippers investigation and reshapes the roster. With free agency still moving pieces around the East, the Raptors' standing could shift quickly if Toronto lands a star",
-          "date": "July 24, 2026",
+          "dek": "Toronto's offseason turns on whether the Kawhi Leonard deal is ultimately approved, a move that would reshape how serious the Raptors are in the East this year. Their recent addition of Alijah Martin is a smaller step, but it underscores a roster still being built around bigger",
+          "date": "July 27, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49359567/free-agency-nba-power-rankings-2026-offseason-all-30-teams"
-        },
-        {
-          "source": "Raptors Republic",
-          "source_class": "web",
-          "headline": "Report: Kawhi Leonard's investigations nearing the end",
-          "dek": "The league's probe is reportedly in its final stage, which matters because any ruling could finally determine whether Leonard's path back to Toronto can move forward. For a Raptors team still shaping its draft and free agency plans, the outcome could affect both roster",
-          "date": "July 25, 2026",
-          "link": "https://raptorsrepublic.com/2026/07/25/report-kawhi-leonards-investigations-have-concluded/"
         }
       ],
       "standings": {
@@ -874,8 +950,8 @@
       "detail": "1st in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The first real test of this camp is not a game - it's whether Washington can sort its own depth chart before August steals the spotlight. <strong>The most telling development is the rash of early camp health questions, with three players headed to PUP and Tim Settle back after foot surgery</strong>, a reminder that even in July, availability still writes the script. The Commanders sit 0-0 and first in the NFC East, but that sterile ledger only matters if the roster behind Jayden Daniels hardens fast enough. Sonny Styles brings thump and upside to a linebacker room with real juice, while late-round buzz around a rising rookie is the kind of noise that can turn into a job. <strong>Watch the pre-September pecking order at linebacker, along the line, and in the receiver room - that is where this camp will be won</strong>.",
-        "updated": "Updated July 27, 2026"
+        "body": "The first real crackle of camp has arrived in Ashburn, and it isn't subtle - the roster is already being pulled apart and reassembled in public. <strong>Wes Welker appears set to become Washington's new tight ends coach</strong> after the Commanders moved on from Ben Steele on Monday, a jolt that lands just as the veterans report and the battles start for real. Washington sits at 0-0, first in the NFC East, which is notation more than achievement in late July. The sharper intrigue is at left guard, where Chris Paul and Brandon Coleman are again fighting for the job, and at receiver, where Antonio Williams is pushing to carve out a role behind Terry McLaurin. <strong>What matters next is whether the line settles and Williams forces his way into the first preseason look</strong>.",
+        "updated": "Updated July 28, 2026"
       },
       "key_numbers": [
         {
@@ -895,44 +971,44 @@
       },
       "the_latest": [
         {
-          "source": "Yahoo Sports",
-          "source_class": "web",
-          "headline": "Film session: Breaking down Sonny Styles, Commanders' high-upside linebacker corps",
-          "dek": "Sonny Styles gives Washington a rare young centerpiece at linebacker, and his arrival is a key reason the defense looks built to be faster and more versatile this camp. Pairing him with Leo Chenal and Frankie Luvu could turn a position group that was a weakness into one of the",
-          "date": "July 27, 2026",
-          "link": "https://sports.yahoo.com/articles/film-session-breaking-down-sonny-110000480.html"
-        },
-        {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Commanders' late-round revelation is threatening to become much more",
-          "dek": "Washington's camp opens with real stakes on offense, because even a contending roster still has jobs and roles unsettled before the first preseason snap. Croskey-Merritt's emergence adds one more reason to watch, since a late-round success story can quickly become a bigger part",
-          "date": "July 27, 2026",
-          "link": "https://riggosrag.com/commanders-late-round-revelation-threatening-become-much-more?utm_source=RSS"
+          "headline": "Commanders are already confronting the nightmare they cannot afford",
+          "dek": "A rough start to camp is forcing Washington to answer questions before the first padded practice, with a coaching change and health concerns already testing the team's depth. If the Commanders want to defend first place in the NFC East, they cannot afford early distractions that",
+          "date": "July 28, 2026",
+          "link": "https://riggosrag.com/washington-commanders-already-confronting-nightmare-they-cannot-afford?utm_source=RSS"
         },
         {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Betting on the Commanders in 2026: Double-digit wins too much to ask?",
-          "dek": "Washington enters camp with enough talent to justify optimism, but a brutal NFC East and a tough schedule will test whether that upside can translate into wins. With Jayden Daniels, Terry McLaurin and several new starters in place, the question is whether the Commanders are a",
-          "date": "July 27, 2026",
-          "link": "https://www.espn.com/espn/betting/story/_/id/49355406/washington-commanders-betting-outlook-2026"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Big stories of the NFL 2026 offseason, from Garrett to Kelce",
-          "dek": "Washington's offseason overhaul put real pressure on Adam Peters to turn last year's 5-12 team into a contender while Jayden Daniels is still on his rookie deal. Training camp now becomes the first real test of whether the new additions can solve the holes that kept the",
-          "date": "July 27, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49447669/2026-nfl-offseason-catchup-myles-garrett-aj-brown-travis-kelce-wedding-highlight"
-        },
-        {
-          "source": "Hogs Haven",
+          "source": "Pro Football Talk",
           "source_class": "web",
-          "headline": "Commanders News: 3 players to PUP; Tim Settle ready after foot surgery",
-          "dek": "Three roster spots are already in flux, which could open the door for fringe players as Washington sorts out camp depth. Tim Settle's return from foot surgery adds another important test for a defensive line that needs healthy bodies before the preseason games begin.",
-          "date": "July 26, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-news/426209/tim-settle-ready-after-foot-surgery-antonio-williams-luke-mccaffrey-jaylin-lane"
+          "headline": "Commanders put LB Nick Bellore on reserve/retired list",
+          "dek": "The move clears a roster spot after Washington officially added Rasul Douglas, but it also strips out a trusted special teams veteran just as camp opens. Bellore's retirement gives younger linebackers a chance to grab snaps early, making this a small transaction with real",
+          "date": "July 27, 2026",
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/commanders-put-lb-nick-bellore-on-reserve-retired-list"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Commanders fire tight ends coach Ben Steele just days before training camp",
+          "dek": "The Commanders are heading into camp with an unexpected coaching change just days before practices begin, forcing a quick reset at a key position group. The move also adds scrutiny to a team trying to turn the page after placing Ben Steele on leave following his June arrest on",
+          "date": "July 27, 2026",
+          "link": "https://www.cbssports.com/nfl/news/commanders-fire-ben-steele-dwi-arrest/"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "2026 NFL offseason: Top impact signings, trades, draft picks",
+          "dek": "Washington enters camp with a chance to turn a strong offseason into a fast start, and this ranking frames which new additions can matter immediately rather than eventually. For a first-place NFC East team, identifying the highest-impact signings, trades and draft picks helps",
+          "date": "July 28, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/49425098/2026-nfl-offseason-newcomers-impact-ranking-draft-trades-signings"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "How has Jayden Daniels grown in the off-season?",
+          "dek": "Jayden Daniels enters camp with a far clearer sense of what Washington needs from him after an injury-hit sophomore season cut short the momentum of his rookie breakout. Terry McLaurin's read on his offseason growth matters because the Commanders are again counting on Daniels to",
+          "date": "July 27, 2026",
+          "link": "https://www.espn.com/video/clip/_/id/49463672/how-jayden-daniels-grown-season"
         }
       ],
       "standings": {
@@ -1027,73 +1103,78 @@
     }
   },
   "featured": {
-    "team": "jays",
-    "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "In possible final Gausman start, Blue Jays can't muster Red Sox-like surge",
-    "dek": "Toronto's offense has to snap out of its post-Boston slump quickly, because a club sitting 48-58 cannot afford another flat week while trying to salvage credibility. The trip to Washington also carries added weight if this really is Kevin Gausman's last Blue Jays start, turning",
-    "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/mlb/article/in-possible-final-gausman-start-blue-jays-cant-muster-red-sox-like-surge/",
-    "date": "July 27, 2026"
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Draft & Free Agency",
+    "headline": "Connor McDavid, Zach Hyman believe Auston Matthews will be ideal mentor to Gavin McKenna",
+    "dek": "Connor McDavid and Zach Hyman are pointing to Auston Matthews as a stabilizing presence for Gavin McKenna, who is stepping into one of hockey's most scrutinized markets. The framing matters for Toronto because the Leafs are trying to turn a high-profile rookie arrival into a",
+    "source": "The Leafs Nation",
+    "link": "https://theleafsnation.com/news/connor-mcdavid-zach-hyman-believe-auston-matthews-ideal-mentor-gavin-mckenna",
+    "date": "July 28, 2026"
   },
   "two_up": [
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs - Draft & Free Agency",
-      "headline": "Around the NHL: Toews may sign 1-day contract with Blackhawks, Ducks' Klepov signs ELC",
-      "dek": "Toronto is not the focus here, but this is the kind of July NHL filler that can still matter for a Leafs watchlist because it tracks the moves shaping the league around them. Jonathan Toews' possible Blackhawks farewell underscores how teams are still closing one chapter while",
-      "source": "The Leafs Nation",
-      "link": "https://theleafsnation.com/news/around-the-nhl-toews-may-sign-1-day-contract-chicago-blackhawks-ducks-klepov-signs-elc",
-      "date": "July 27, 2026"
+      "team": "jays",
+      "kicker": "Toronto Blue Jays - Regular Season",
+      "headline": "Max Scherzer makes successful return on 42nd birthday, Blue Jays edge Nationals",
+      "dek": "Max Scherzer's return to Washington gave Toronto a needed lift, with the veteran right-hander working through 2 2/3 innings and helping the Blue Jays open the series with a 3-2 win. The result matters because Toronto is still fighting to steady a disappointing season, and",
+      "source": "Sportsnet",
+      "link": "https://www.sportsnet.ca/mlb/article/max-scherzer-makes-successful-return-on-42nd-birthday-blue-jays-edge-nationals/",
+      "date": "July 28, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Draft & Free Agency",
-      "headline": "What will the Raptors do with their final roster spots?",
-      "dek": "Toronto's final roster decisions could shape how much flexibility the front office keeps for the rest of free agency, especially with at least one young guard already set to return on a two-way deal. With the team still in the top tier of the Atlantic, these last spots matter as",
+      "headline": "Could Raptors be Stephen Curry's next stop?",
+      "dek": "The Raptors need more than upside in a crowded East, and even a long-shot Curry pursuit would signal a franchise willing to chase a final win-now swing. Golden State's uneven summer and Curry's stated desire for meaningful basketball keep the speculation alive, even if a move",
       "source": "Raptors Republic",
-      "link": "https://raptorsrepublic.com/2026/07/26/what-will-the-raptors-do-with-their-final-roster-spots/",
-      "date": "July 27, 2026"
+      "link": "https://raptorsrepublic.com/2026/07/27/could-raptors-be-stephen-currys-next-stop/",
+      "date": "July 28, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Training Camp",
-    "headline": "Breaking Down Sonny Styles, Commanders' high-upside linebacker corps",
-    "dek": "The Commanders enter camp trying to turn a defensive reset into a real strength after major front-seven changes and a draft headlined by No. 7 overall pick Sonny Styles. How quickly that linebacker group comes together could shape whether Washington's 2026 opener feels like a",
+    "headline": "Commanders News: Charles Omenihu & Jaden Bradley on camp must watch list",
+    "dek": "Charles Omenihu and Jaden Bradley are the kind of camp names that can shape the Commanders' depth chart before Week 1. With Washington trying to protect its spot atop the NFC East, every practice rep matters for players fighting to turn buzz into roles.\n\nTheir performances will",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-analysis/425907/training-camp-film-breakdown-sonny-styles-frankie-luvu-leo-chenal",
-    "date": "July 27, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-news/426502/charles-omenihu-jaden-bradley-training-camp-odafe-oweh-chig-okokwo-ben-steele-terry-mclaurin",
+    "date": "July 28, 2026"
   },
   "ticker": [
-    {
-      "badge": "NHL",
-      "badge_style": "nhl",
-      "text": "3 trade candidates as Maple Leafs' offseason continues"
-    },
     {
       "badge": "NHL",
       "badge_style": "nhl",
       "text": "Mitch Marner 'never protected' by Maple Leafs, agent says"
     },
     {
-      "badge": "MLB",
-      "badge_style": "mlb",
-      "text": "Jays fell to Red Sox 6-1"
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "Maple Leafs fire Hayley Wickenheiser amid front office purge"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays at Nationals - Mon 7/27 6:45 PM ET"
+      "text": "Jays beat Nationals 3-2"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (48-58) - 5th in AL East"
+      "text": "Next: Jays at Nationals - Tue 7/28 6:45 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays' Max Scherzer to start Monday vs. Nationals"
+      "text": "Jays (49-58) - 5th in AL East"
+    },
+    {
+      "badge": "MLB",
+      "badge_style": "mlb",
+      "text": "Okamoto Stole A Base! Oh, And Jays Win"
+    },
+    {
+      "badge": "NBA",
+      "badge_style": "nba",
+      "text": "Could Raptors be Stephen Curry's next stop?"
     },
     {
       "badge": "NBA",
@@ -1101,35 +1182,30 @@
       "text": "What will the Raptors do with their final roster spots?"
     },
     {
-      "badge": "NBA",
-      "badge_style": "nba",
-      "text": "Raptors success be damned, I just want DeMar DeRozan back"
+      "badge": "NFL",
+      "badge_style": "nfl",
+      "text": "Commanders put LB Nick Bellore on reserve/retired list"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders place two expected defensive starters on PUP list"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "nfl",
-      "text": "McLaurin confident in Commanders' WR room"
+      "text": "Commanders fire TE coach Ben Steele following DWI charge"
     }
   ],
   "scoreboard": [
     {
       "team": "jays",
-      "game_date": "2026-07-26",
+      "game_date": "2026-07-27",
       "name": "Jays",
       "league": "MLB",
       "logo": "tor",
-      "opp_name": "Red Sox",
-      "opp_logo": "bos",
-      "team_score": 1,
-      "opp_score": 6,
-      "result": "L",
-      "date": "Jul 26",
-      "link": "https://www.youtube.com/watch?v=JyVgXQjdCqY"
+      "opp_name": "Nationals",
+      "opp_logo": "wsh",
+      "team_score": 3,
+      "opp_score": 2,
+      "result": "W",
+      "date": "Jul 27",
+      "link": "https://www.youtube.com/watch?v=WoCw183XmKw"
     }
   ],
   "at_a_glance": [
@@ -1146,10 +1222,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "48-58",
+      "record": "49-58",
       "status": "5th in AL East",
-      "status_class": "red",
-      "stat": "Streak: L1"
+      "status_class": "green",
+      "stat": "Streak: W1"
     },
     {
       "team": "raptors",
@@ -1206,16 +1282,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Mon 7/27",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Nationals",
-        "time": "6:45 PM ET",
-        "tv": "Sportsnet",
-        "game_ts": "2026-07-27T22:45Z"
-      },
       {
         "day": "Tue 7/28",
         "team": "jays",
@@ -1275,16 +1341,26 @@
         "time": "8:10 PM ET",
         "tv": "Sportsnet",
         "game_ts": "2026-08-04T00:10Z"
+      },
+      {
+        "day": "Tue 8/4",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Astros",
+        "time": "8:10 PM ET",
+        "tv": "Sportsnet",
+        "game_ts": "2026-08-05T00:10Z"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Monday's Skate",
+      "title": "Tuesday's Skate",
       "paragraphs": [
-        "The Blue Jays open tonight at the Nationals at 6:45 PM ET on Sportsnet after a 6-1 loss to the Red Sox, and they sit at 48-58 in fifth place in the AL East. Toronto needs a sharper start in Washington, especially with the offense coming off a quiet night in Boston.",
-        "For the Leafs, the offseason talk is still centered on trade possibilities and the wider NHL market, with the next game not until Sept. 29 against the Canadiens. The Raptors are also in offseason mode, with questions about the final roster spots and even some chatter about a DeMar DeRozan reunion. The Commanders are in training camp with an opener at the Eagles on Sept. 13, while camp coverage is already focusing on the linebacker group and a late-round rookie making noise."
+        "The Blue Jays finally got a clean result last night, edging the Nationals 3-2 behind Max Scherzer's successful return on his 42nd birthday. They are back at Nationals Park tonight at 6:45 PM ET on Sportsnet, still sitting at 49-58 and fifth in the AL East.",
+        "For the Leafs, the calendar points to Sep. 29 and a visit from the Canadiens, while offseason chatter is centering on Auston Matthews as a possible mentor for Gavin McKenna. The Raptors are in the rumor mill too, with a fresh note wondering whether Stephen Curry could be their next stop, and the Commanders have camp eyes on Charles Omenihu and Jaden Bradley as they build toward a Sep. 13 trip to the Eagles."
       ]
     }
   }
