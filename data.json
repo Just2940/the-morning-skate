@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-07-29T07:21:56.475614-04:00",
-    "date_display": "July 29, 2026"
+    "updated": "2026-07-30T07:03:33.623049-04:00",
+    "date_display": "July 30, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Maple Leafs are tearing down the old frame and measuring the next one. <strong>Seven former Leafs are still unsigned after a month of free agency</strong> - a blunt reminder that this roster is being remade, not merely tweaked, and Toronto has already leaned into the draft with six selections, including No. 1 Gavin McKenna and the late-round swing on Russian defenseman Yaroslav Fedoseyev. The club sits 8th in the Atlantic at 78 points, but that's just the paperwork now; the real story is who fits around Auston Matthews and who doesn't. Matthews, as one headline put it, has the most to prove in 2026-27, because the Leafs need their stars to carry more than reputation. <strong>Watch the cap math and the unsigned holdovers - those two lines will tell you what kind of team Toronto is building next</strong>.",
-        "updated": "Updated July 29, 2026"
+        "body": "The summer has already redrawn Toronto's map - and it starts in the front office, where <strong>Dan Palango was hired as director of amateur scouting</strong>, with Rossen and Perpich joining the scouting staff too. That is not housekeeping; that is a signal. The Maple Leafs, who finished <strong>8th in the Atlantic Division with 78 points</strong>, are building for the next turn of the wheel, not polishing the last one. Their biggest swing remains Gavin McKenna, the No. 1 pick, a teenager with the kind of sheen that changes a room and forces a plan. Now the question is fit: who stays, who gets squeezed, and how much cap room can be turned into help before camp opens. <strong>The next item to watch is whether this new scouting group can convert July into October leverage.</strong>",
+        "updated": "Updated July 30, 2026"
       },
       "key_numbers": [
         {
@@ -42,36 +42,44 @@
       },
       "the_latest": [
         {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Mitch Marner 'never protected' by Maple Leafs, agent says",
-          "dek": "Marner's departure still shadows the Leafs because his playmaking and dressing-room presence are now being weighed against Toronto's stalled climb in the Atlantic. Darren Ferris's comments keep the focus on whether the organization mishandled a homegrown star at a time when the",
-          "date": "July 23, 2026",
-          "link": "https://www.sportsnet.ca/nhl/article/mitch-marner-never-protected-by-maple-leafs-agent-says/"
+          "source": "The Leafs Nation",
+          "source_class": "web",
+          "headline": "Gavin McKenna discusses heavy training summer with Sharks star Macklin Celebrini",
+          "dek": "Toronto's top pick is treating his first pro summer like a head start on training camp, spending long days on the ice with elite peers to prepare for an NHL debut that could arrive fast. His work with Macklin Celebrini underscores how much the Maple Leafs are betting on McKenna",
+          "date": "July 30, 2026",
+          "link": "https://theleafsnation.com/news/gavin-mckenna-discusses-heavy-training-summer-sharks-star-macklin-celebrini"
         },
         {
           "source": "The Leafs Nation",
           "source_class": "web",
-          "headline": "Why Auston Matthews has the most to prove in 2026-27: Leafs Morning Take",
-          "dek": "Auston Matthews enters a pivotal year because Toronto has rebuilt around him, added veteran help in free agency and is handing top prospect Gavin McKenna a spotlight that raises the pressure on the captain to lead by example. After a 32-36-14 season and an eighth-place finish in",
-          "date": "July 28, 2026",
-          "link": "https://theleafsnation.com/news/why-auston-matthews-has-the-most-to-prove-in-2026-27-leafs-morning-take"
+          "headline": "Maple Leafs hire Dan Palango as director of amateur scouting, add 2 more names to scouting team",
+          "dek": "Toronto is reshaping its scouting and analytics infrastructure at a key point in the offseason, with Dan Palango taking over a department that now sits closer to the center of roster building. The hires of Brad Rossen and JP Perpich signal a broader push to blend traditional",
+          "date": "July 29, 2026",
+          "link": "https://theleafsnation.com/news/toronto-maple-leafs-hire-dan-palango-director-scouting-2-more-names"
+        },
+        {
+          "source": "Daily Faceoff",
+          "source_class": "web",
+          "headline": "'Mac is crazy': Leafs' McKenna on summer training with Sharks' Celebrini",
+          "dek": "The Leafs are trying to fast-track Gavin McKenna into an NHL impact role, and his offseason work with fellow teenage star Macklin Celebrini offers a window into how seriously Toronto is preparing its first overall pick for the jump. The fact that McKenna says he was pushing",
+          "date": "July 29, 2026",
+          "link": "https://www.dailyfaceoff.com/news/crazy-toronto-maple-leafs-gavin-mckenna-summer-training-san-jose-sharks-macklin-celebrini-nhl"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "No. 1 2026 NHL draft pick Gavin McKenna sets rookie season goals",
+          "dek": "Gavin McKenna arrives as the kind of prospect Toronto hopes can accelerate its next push, with the Maple Leafs trying to climb out of an eighth-place Atlantic spot. His early goals at rookie camp offer the first glimpse of how the No. 1 pick plans to handle the pressure of",
+          "date": "July 29, 2026",
+          "link": "https://www.espn.com/nhl/story/_/id/49482822/no1-2026-nhl-draft-pick-gavin-mckenna-sets-rookie-season-goals"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Grading preseason bold predictions for all 32 NHL teams",
-          "dek": "Toronto enters a pivotal summer with a renovated roster and a franchise reset led by No. 1 pick Gavin McKenna, making preseason guesses about its ceiling especially meaningful. After last season's eighth-place Atlantic finish, the story tests whether bold predictions saw a quick",
+          "dek": "The Leafs are back in the spotlight after a summer of major change, with the Gavin McKenna pick and a reshuffled front office resetting expectations for a team that missed the playoffs. That makes preseason prediction grades especially relevant, because Toronto's future now",
           "date": "July 23, 2026",
           "link": "https://www.espn.com/nhl/story/_/id/49424745/nhl-predictions-playoffs-projections-stanley-cup-awards-stats-trades"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Behind the scenes at the NHL Broadcast Training Camp",
-          "dek": "With Toronto trying to reshape its roster after a busy draft and free agency, this feature lands at a moment when the organization is still defining who can help now and who is part of the long game. The broadcast training camp angle also fits a league where clubs are constantly",
-          "date": "July 20, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/49405523/nhl-players-broadcast-training-camp-announcers-analysts-tv"
         }
       ],
       "standings": {
@@ -188,82 +196,6 @@
           }
         ]
       },
-      "draft_board": {
-        "team": "Toronto Maple Leafs",
-        "league": "NHL",
-        "projected_pick": "#TBD overall",
-        "draft_date": "June 2026",
-        "prospects_watched": [
-          {
-            "name": "Gavin McKenna",
-            "position": "F",
-            "team": "TBD",
-            "note": "The Maple Leafs selected McKenna first overall in the 2026 NHL Draft, so he is no longer a draft-board target."
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "No reliable public mock-draft or beat-report sources were provided for post-draft Leafs targets, so the remaining target list cannot be verified from the available results."
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          }
-        ],
-        "lottery": {
-          "odds": "TBD",
-          "outcome": "Won 1st overall"
-        },
-        "label": "NHL Draft Board",
-        "event_date": "June 2026",
-        "pick_position": "#TBD overall",
-        "headers": [
-          "Rank",
-          "Prospect",
-          "College / Team",
-          "Fit"
-        ],
-        "rows": [
-          {
-            "pk": "1",
-            "team": "Gavin McKenna (F)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "The Maple Leafs selected McKenna first overall in the 2026 NHL Draft, so he is no longer a draft-board target."
-          },
-          {
-            "pk": "2",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "No reliable public mock-draft or beat-report sources were provided for post-draft Leafs targets, so the remaining target list cannot be verified from the available results."
-          },
-          {
-            "pk": "3",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          },
-          {
-            "pk": "4",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          }
-        ],
-        "notes": "Outcome: Won 1st overall"
-      },
       "watch": [
         {
           "title": "Leafs Draft Coverage",
@@ -271,8 +203,8 @@
           "sub": "YouTube"
         },
         {
-          "title": "Prospect Watch: Gavin McKenna",
-          "url": "https://www.youtube.com/results?search_query=Gavin+McKenna+highlights",
+          "title": "Leafs Offseason Plans",
+          "url": "https://www.youtube.com/results?search_query=Toronto+Maple+Leafs+offseason+plan+2026",
           "sub": "YouTube"
         },
         {
@@ -291,21 +223,21 @@
     "jays": {
       "full_name": "Toronto Blue Jays",
       "league": "MLB",
-      "record": "49-59",
+      "record": "50-59",
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "A four-run first inning can wreck a night - and it wrecked Toronto's. <strong>Shane Bieber got shelled in the opener and the Blue Jays fell 8-6 to Washington</strong>, a loss that left them at 49-59, fifth in the AL East, 14 games back and staring at a season that keeps sliding the wrong way. Kazuma Okamoto's 24th homer at least gave the lineup a pulse, but the bigger headline is Vladimir Guerrero Jr.'s injury scare, which hangs over a club already wobbling after losing 10 of 14. That's not a contender's track. That's a team bleeding ground while trying to find a spine. There was a brief bright spot in Saturday's 3-2 win, but it vanished fast in the next two nights. <strong>They go back to Washington today at 1:05 p.m. ET, and Toronto needs a clean start - and a healthier Guerrero - just to stop the skid.</strong>",
-        "updated": "Updated July 29, 2026"
+        "body": "A flat season keeps refusing to die, and Tuesday's wobble gave way to a cleaner Wednesday - <strong>the Blue Jays beat the Nationals 5-2</strong> behind Trey Yesavage's strongest outing yet, six and two-thirds innings of one-run ball. That's the kind of start a club drags around like a lifeboat when it sits at 50-59, fifth in the AL East, 14 games back and still chasing respect more than relevance. Kazuma Okamoto's three-hit, two-RBI night was a welcome jolt; that's a bat worth watching in a lineup that has too often gone quiet. Toronto has now won two of its last three after the 8-6 loss and the 3-2 win in Washington framed a 3-3 trip. <strong>Next comes St. Louis on Friday night at 7:07 p.m. ET, with Yesavage's rotation case and the club's faint momentum both on trial.</strong>",
+        "updated": "Updated July 30, 2026"
       },
       "key_numbers": [
         {
-          "number": "49-59",
+          "number": "50-59",
           "label": "Season Record",
           "note": "5th in AL East"
         },
         {
-          "number": "L1",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
@@ -321,6 +253,18 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Jul 29",
+          "result": "W",
+          "team_score": 5,
+          "opp_name": "Nationals",
+          "opp_score": 2,
+          "opp_logo": "wsh",
+          "league": "mlb",
+          "game_date": "2026-07-29",
+          "game_ts": "2026-07-29T17:05Z",
+          "game_id": "401816313"
+        },
         {
           "date": "Jul 28",
           "result": "L",
@@ -356,69 +300,57 @@
           "game_date": "2026-07-26",
           "game_ts": "2026-07-26T17:35Z",
           "game_id": "401816273"
-        },
-        {
-          "date": "Jul 25",
-          "result": "W",
-          "team_score": 6,
-          "opp_name": "Red Sox",
-          "opp_score": 0,
-          "opp_logo": "bos",
-          "league": "mlb",
-          "game_date": "2026-07-25",
-          "game_ts": "2026-07-25T20:10Z",
-          "game_id": "401816258"
         }
       ],
       "last_game_highlights": {
         "available": true,
         "title": "Nationals vs. Jays - Full Highlights",
-        "subtitle": "MLB - Jul 28, 2026",
-        "result_badge": "L 6-8",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=q4xtZDvCVVM",
-        "game_date": "2026-07-28"
+        "subtitle": "MLB - Jul 29, 2026",
+        "result_badge": "W 5-2",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=gCXCP6Q5K2k",
+        "game_date": "2026-07-29"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Jays fell to Nationals 8-6",
-          "dek": "Toronto's loss deepens the pressure on a club already 10 games under.500, with the Blue Jays trying to stop a slide that has muted any late-season momentum. The game also raised immediate concern when Vladimir Guerrero Jr. exited with hamstring tightness, while Shane Bieber's",
-          "date": "Jul 28",
-          "link": "https://www.espn.com/mlb/recap?gameId=401816298"
-        },
-        {
-          "source": "Bluebird Banter",
-          "source_class": "web",
-          "headline": "Draft Signing Deadline: Jays Sign All Expected Players",
-          "dek": "With the club sliding in the standings, getting every expected draft signee under contract at least gives Toronto a clean finish to one pipeline-building task. It also matters because the Blue Jays paid a real price to get there, having already surrendered two early picks in",
-          "date": "July 29, 2026",
-          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-prospects/62964/draft-signing-deadline-jays-sign-all-expected-players"
-        },
-        {
-          "source": "Jays Journal",
-          "source_class": "web",
-          "headline": "5 Blue Jays prospects that will be ready to compete for a big league spot next season",
-          "dek": "With Toronto sitting below.500 and chasing long-term answers, this story spotlights the next wave of internal help that could matter by Opening Day 2027.\n\nArjun Nimmala, Josh Kasevich and other near-ready prospects give the Blue Jays a chance to rebuild around cost-controlled",
-          "date": "July 29, 2026",
-          "link": "https://jaysjournal.com/5-blue-jays-prospects-that-will-be-ready-to-compete-for-a-big-league-spot-next-season?utm_source=RSS"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "Jays beat Nationals 3-2",
-          "dek": "Toronto's win gave the club a much-needed response after Tuesday's loss and kept the series alive after a rough stretch that has left it well under.500.\n\nThe result also mattered because the Blue Jays are trying to steady their season while waiting on the status of Vladimir",
-          "date": "Jul 27",
-          "link": "https://www.espn.com/mlb/recap?gameId=401816285"
+          "headline": "Jays beat Nationals 5-2",
+          "dek": "The Blue Jays snapped a recent stumble with timely hitting and a strong start from Trey Yesavage, a useful sign for a club still well under.500 and trying to build momentum. Kazuma Okamoto's three-hit night and Louis Varland's cleanup work also stood out as Toronto finished its",
+          "date": "Jul 29",
+          "link": "https://www.espn.com/mlb/recap?gameId=401816313"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Blue Jays' Vladimir Guerrero Jr. exits vs. Nationals with hamstring tightness",
-          "dek": "Vladimir Guerrero Jr.'s exit deepens the pressure on a Blue Jays team already stuck near the bottom of the AL East and trying to avoid losing more ground in a fading season. Any extended absence for their biggest bat would make Toronto's lineup thinner and further cloud its",
-          "date": "July 28, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-vladimir-guerrero-jr-exits-vs-nationals-with-hamstring-tightness/"
+          "headline": "Yesavage cements role in Blue Jays' rotation plans in win vs. Nationals",
+          "dek": "Trey Yesavage's latest strong outing gives Toronto a young arm it can trust as it weighs bigger pitching moves before the deadline. With the Blue Jays stuck under.500 and trying to steady a shaky season, his emergence matters as much for 2026 planning as for Wednesday's win.",
+          "date": "July 29, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/yesavage-cements-role-in-blue-jays-rotation-plans-in-win-vs-nationals/"
+        },
+        {
+          "source": "Jays Journal",
+          "source_class": "web",
+          "headline": "A healthy Ricky Tiedemann would do wonders for Blue Jays' 2027 rotation outlook",
+          "dek": "Ricky Tiedemann's return to the mound gives Toronto a chance to finally gauge whether its most gifted left-handed arm can still factor into the club's long-term plans. If he stays healthy, his progress could soften a rotation picture that has to start looking beyond this",
+          "date": "July 30, 2026",
+          "link": "https://jaysjournal.com/a-healthy-ricky-tiedemann-would-do-wonders-for-blue-jays-2027-rotation-outlook?utm_source=RSS"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Jays fell to Nationals 8-6",
+          "dek": "Toronto is trying to steady a season that has slipped to 50-59 and left it fifth in the AL East, so every game now carries extra weight in the standings. A loss to Washington would deepen the urgency around a club already playing out the clock on the regular season and searching",
+          "date": "Jul 28",
+          "link": "https://www.espn.com/mlb/recap?gameId=401816298"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Report: Kevin Gausman says Blue Jays 'not nearly as close-knit' as 2025",
+          "dek": "Kevin Gausman's comment lands at a low point for a Blue Jays team already drifting in fifth place and headed toward seller mode before the deadline. After last year's tight clubhouse helped fuel a stronger run, his blunt assessment suggests the 2026 collapse has gone beyond the",
+          "date": "July 29, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/report-kevin-gausman-says-blue-jays-not-nearly-as-close-knit-as-2025/"
         }
       ],
       "standings": {
@@ -442,9 +374,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "62",
+                  "63",
                   "44",
-                  ".585",
+                  ".589",
                   "-"
                 ]
               },
@@ -455,9 +387,9 @@
                 "you": false,
                 "vals": [
                   "61",
-                  "46",
-                  ".570",
-                  "1.5"
+                  "47",
+                  ".565",
+                  "2.5"
                 ]
               },
               {
@@ -466,9 +398,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "55",
+                  "56",
                   "51",
-                  ".519",
+                  ".523",
                   "7"
                 ]
               },
@@ -478,9 +410,9 @@
                 "league": "mlb",
                 "you": false,
                 "vals": [
-                  "52",
+                  "53",
                   "56",
-                  ".481",
+                  ".486",
                   "11"
                 ]
               },
@@ -490,9 +422,9 @@
                 "league": "mlb",
                 "you": true,
                 "vals": [
-                  "49",
+                  "50",
                   "59",
-                  ".454",
+                  ".459",
                   "14"
                 ]
               }
@@ -517,9 +449,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "55",
+                  "56",
                   "51",
-                  ".519",
+                  ".523",
                   "-"
                 ]
               },
@@ -531,9 +463,9 @@
                 "seed": "DIV",
                 "seed_style": "faint",
                 "vals": [
-                  "62",
+                  "63",
                   "44",
-                  ".585",
+                  ".589",
                   "-"
                 ]
               },
@@ -546,8 +478,8 @@
                 "seed_style": "faint",
                 "vals": [
                   "55",
-                  "52",
-                  ".514",
+                  "53",
+                  ".509",
                   "-"
                 ]
               },
@@ -559,9 +491,9 @@
                 "seed": "WC1",
                 "vals": [
                   "61",
-                  "46",
-                  ".570",
-                  "1.5"
+                  "47",
+                  ".565",
+                  "2.5"
                 ]
               },
               {
@@ -571,9 +503,9 @@
                 "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "55",
+                  "56",
                   "51",
-                  ".519",
+                  ".523",
                   "7"
                 ]
               },
@@ -584,10 +516,24 @@
                 "you": false,
                 "seed": "WC3",
                 "vals": [
-                  "55",
+                  "56",
                   "54",
-                  ".505",
+                  ".509",
                   "1.5"
+                ]
+              },
+              {
+                "team": "Astros",
+                "logo": "hou",
+                "league": "mlb",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "55",
+                  "55",
+                  ".500",
+                  "1"
                 ]
               },
               {
@@ -599,23 +545,23 @@
                 "seed_style": "faint",
                 "vals": [
                   "54",
-                  "54",
-                  ".500",
-                  "2"
+                  "55",
+                  ".495",
+                  "3"
                 ]
               },
               {
-                "team": "Astros",
-                "logo": "hou",
+                "team": "Orioles",
+                "logo": "bal",
                 "league": "mlb",
                 "you": false,
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "54",
-                  "55",
-                  ".495",
-                  "2"
+                  "53",
+                  "56",
+                  ".486",
+                  "11"
                 ]
               },
               {
@@ -627,23 +573,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "53",
-                  "55",
-                  ".491",
-                  "2.5"
-                ]
-              },
-              {
-                "team": "Orioles",
-                "logo": "bal",
-                "league": "mlb",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "52",
                   "56",
-                  ".481",
-                  "11"
+                  ".486",
+                  "2.5"
                 ]
               },
               {
@@ -655,9 +587,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "51",
-                  "57",
-                  ".472",
-                  "5"
+                  "58",
+                  ".468",
+                  "6"
                 ]
               },
               {
@@ -668,9 +600,9 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "49",
+                  "50",
                   "59",
-                  ".454",
+                  ".459",
                   "14"
                 ]
               }
@@ -709,8 +641,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The roster is being remade in real time - no soft edges, no sentimental hangover. <strong>A.J. Lawson is reportedly headed overseas for Spain after his Raptors stint</strong>, and that kind of departure matters because Toronto is hunting for clean fit, not just bodies. The Raptors sit 3rd in the Atlantic Division at 45-36, but that final mark is only the backdrop now; the real work is sorting out who belongs when the dust settles. The headlines point to the next question: what type of player should Toronto target next? Size, shooting, and two-way snap still read like the order of the day. <strong>Watch the front office's next move on the wings and in the backcourt - this is where the offseason turns from theory into roster math.</strong>",
-        "updated": "Updated July 29, 2026"
+        "body": "The reset is underway, and Toronto is making the summer look like a blueprint session. <strong>The Raptors have locked in their 2026 training camp in Quebec City and will stage a preseason game in Vancouver</strong>, a neat bit of geography that tells you this franchise wants to sell the next chapter before it has even finished assembling it. The roster math still matters more than the scenery: Toronto finished 3rd in the Atlantic Division, and the front office has to turn that old standing into a cleaner, taller, more coherent group. The Curry chatter has given the market a headline, but the real story is whether the Raptors can keep adding seasoned help without blocking their young core. <strong>What happens next in free agency will say whether this is a real push or just a fancy camp itinerary</strong>.",
+        "updated": "Updated July 30, 2026"
       },
       "key_numbers": [
         {
@@ -740,44 +672,44 @@
       },
       "the_latest": [
         {
-          "source": "Raptors HQ",
-          "source_class": "web",
-          "headline": "Three things the FIFA World Cup taught me about basketball",
-          "dek": "The World Cup's blend of tactics, spacing and data analysis has lessons for any basketball team, especially one like Toronto trying to sharpen its margins in the offseason. In a draft and free agency summer, those parallels matter because small schematic advantages can shape how",
-          "date": "July 28, 2026",
-          "link": "https://www.raptorshq.com/general/50964/three-things-the-fifa-world-cup-taught-me-about-basketball"
-        },
-        {
           "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "Raptors Weekly Wrap-Up: AJ Lawson headed overseas, more",
-          "dek": "Toronto's offseason is still being shaped by departures and short-term roster bets, with AJ Lawson's move overseas adding another wrinkle to a constantly changing bench picture.\n\nThat matters because the Raptors are trying to balance development and flexibility in a draft and",
-          "date": "July 28, 2026",
-          "link": "https://raptorsrepublic.com/2026/07/28/raptors-weekly-wrap-up-nba-news-aj-lawson-headed-overseas-more/"
+          "headline": "Raptors announce 2026 training camp and preseason schedule",
+          "dek": "Toronto's preseason begins in Quebec City, giving the Raptors an early chance to reset after free agency and start building chemistry on the road before they return home. The schedule also gives fans a rare international opener and an early look at how the roster is taking shape",
+          "date": "July 29, 2026",
+          "link": "https://raptorsrepublic.com/2026/07/29/raptors-announce-2026-training-camp-and-preseason-schedule/"
         },
         {
-          "source": "Raptors Republic",
-          "source_class": "web",
-          "headline": "A.J. Lawson reportedly leaving NBA for Spain after Raptors stint",
-          "dek": "Lawson's move underscores how quickly Toronto's roster depth can change in a summer when the Raptors are still sorting out their next look. For a Toronto native, the switch to Baskonia also turns a familiar name into a reminder that opportunities abroad can arrive when NBA",
-          "date": "July 28, 2026",
-          "link": "https://raptorsrepublic.com/2026/07/28/a-j-lawson-reportedly-leaving-nba-for-spain-after-raptors-stint/"
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Raptors to hold training camp in Quebec City, pre-season game in Vancouver",
+          "dek": "Toronto is using the preseason to connect with fans in two key Canadian markets while giving its roster an early cross-country test before camp breaks. The Quebec City stop also gives the Raptors a rare showcase in a market that has never hosted an NBA preseason game, adding",
+          "date": "July 29, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/raptors-to-hold-training-camp-in-quebec-city-pre-season-game-in-vancouver/"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Sources: NBA inquiry into Clippers, Kawhi Leonard could go into '27",
+          "dek": "The Kawhi Leonard investigation is no longer just a league office headache, it is directly shaping Toronto's roster, cap planning and trade timeline heading into the fall. If the case stretches into 2027, the Raptors may be forced to navigate another offseason with major pieces",
+          "date": "July 30, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/49482792/sources-nba-probe-clippers-kawhi-leonard-go-27"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Team USA Olympic stock watch: Which NBA players are rising, falling?",
-          "dek": "Scottie Barnes' strong playoff run and two-way production gave Toronto a real summer talking point as Team USA decisions come into focus. For the Raptors, his rise matters because it reinforces the value of their best player after a 46-36 season and first-round exit.",
+          "dek": "Canada's Olympic pipeline runs through this kind of stock report, where a strong postseason can push a player onto Team USA's radar and a flat finish can knock him down. For Toronto, it also frames how much any Raptors-linked star, including recent high-profile additions, could",
           "date": "July 28, 2026",
           "link": "https://www.espn.com/nba/story/_/id/49463790/nba-team-usa-baketball-stock-watch-rising-falling-lebron-james-kon-knueppel"
         },
         {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "NBA Power Rankings: Where all 30 teams stack up in 2026 offseason",
-          "dek": "Toronto's offseason has been defined by headline-grabbing swings, including the agreed Kawhi Leonard deal and the arrival of veteran help like Kyle Anderson, so a power-rankings read now reflects how ambitious the Raptors' reset has become.\n\nWith the roster still in flux and",
-          "date": "July 27, 2026",
-          "link": "https://www.espn.com/nba/story/_/id/49359567/free-agency-nba-power-rankings-2026-offseason-all-30-teams"
+          "source": "Raptors Republic",
+          "source_class": "web",
+          "headline": "Former Raptors big Christian Koloko agrees to one-year deal with Pels",
+          "dek": "Christian Koloko's move to New Orleans gives the Pelicans another low-cost look at a rim-protecting center with upside, while Toronto continues turning over the edges of its roster. For the Raptors, it is another reminder of how quickly their young depth chart has shifted since",
+          "date": "July 29, 2026",
+          "link": "https://raptorsrepublic.com/2026/07/29/former-raptors-big-christian-koloko-agrees-to-one-year-deal-with-pels/"
         }
       ],
       "standings": {
@@ -950,8 +882,8 @@
       "detail": "1st in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "Training camp has already turned the Commanders into a sorting table - and the first hard edge is health. <strong>Dan Quinn and Adam Peters opened camp by acknowledging Tress Way's pectoral issue and bringing in a punter for cover</strong>, a small move that says plenty about how little margin this roster wants to waste. Washington is listed at 0-0 and first in the NFC East, which is just the bookkeeping of a fresh season; the real work is happening in Ashburn, where center, left guard, the secondary and kicker are all up for grabs. Jayden Daniels remains the fulcrum, but the pressure is spreading to the men around him - especially the line and the kicking competition. <strong>Watch the first padded practices and preseason reps, because the depth chart is about to get ruthless</strong>.",
-        "updated": "Updated July 29, 2026"
+        "body": "Something is already clear in Ashburn: this camp is about sorting the useful from the merely familiar. <strong>Washington opened with Tress Way headed to NFI and Kain Medrano on the active PUP list</strong>, a reminder that the roster churn starts before the pads ever crack. The Commanders sit at 0-0 and, on paper, first in the NFC East - nothing earned yet, everything still to prove. Jayden Daniels and Terry McLaurin are back healthy, and the real intrigue is behind them: rookie Antonio Williams, Treylon Burks and the rest of a receiver room that has enough bodies but still lacks a settled pecking order. There is juice in this camp, and a little edge, too. <strong>Watch the next practice scrimmages, where the depth chart at wideout and linebacker starts to harden</strong>.",
+        "updated": "Updated July 30, 2026"
       },
       "key_numbers": [
         {
@@ -971,44 +903,44 @@
       },
       "the_latest": [
         {
-          "source": "Yahoo Sports",
-          "source_class": "web",
-          "headline": "Commanders Injury News: Punter signed for camp with Tress Way sidelined",
-          "dek": "The Commanders are managing early camp attrition before the first practice, with Tress Way's pectoral issue enough to require a veteran signing but not a long-term concern. It is an immediate reminder that roster depth and special teams stability matter even for a team entering",
-          "date": "July 29, 2026",
-          "link": "https://sports.yahoo.com/articles/commanders-injury-news-punter-signed-083000263.html"
-        },
-        {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Commanders' 53-man roster prediction before training camp turns ruthless",
-          "dek": "Training camp will sort Washington's 91-man roster into a 53-man group, and the toughest calls will likely come at the back end as Dan Quinn and Adam Peters weigh depth, special teams value and upside. \nWith the team sitting first in the NFC East before a snap is played, every",
-          "date": "July 29, 2026",
-          "link": "https://riggosrag.com/commanders-53-man-roster-prediction-before-training-camp-turns-ruthless?utm_source=RSS"
+          "headline": "5 supreme standouts from Commanders 2026 training camp Day 1",
+          "dek": "Washington got an encouraging first glimpse of camp with Jayden Daniels and Terry McLaurin healthy, setting the tone for a roster trying to defend its place atop the NFC East. Early buzz around Treylon Burks, Odafe Oweh and Mike Sainristil also suggests the competition for key",
+          "date": "July 30, 2026",
+          "link": "https://riggosrag.com/5-supreme-standouts-washington-commanders-2026-training-camp-day-1?utm_source=RSS"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Commanders fire tight ends coach Ben Steele just days before training camp",
+          "dek": "The move comes just as camp opens, signaling Dan Quinn is willing to act quickly on off-field issues while trying to keep a newly assembled staff on track. Wes Welker now steps into a key role before the Commanders even take the practice field, adding an unexpected coaching",
+          "date": "July 27, 2026",
+          "link": "https://www.cbssports.com/nfl/news/commanders-fire-ben-steele-dwi-arrest/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Terry McLaurin speaks on OC David Blough's offense",
-          "dek": "Terry McLaurin's comments matter because Washington is trying to prove its passing game can become more efficient under David Blough after years of uneven usage. If the new system really means more motion, play-action and touches for McLaurin, it could set the tone for Jayden",
-          "date": "July 29, 2026",
-          "link": "https://www.espn.com/video/clip/_/id/49475183/terry-mclaurin-speaks-oc-david-blough-offense"
+          "headline": "McLaurin leading by example",
+          "dek": "Terry McLaurin's presence at the start of camp matters because Washington needs its top receiver on the same page with Jayden Daniels after last year's lost time. His return also sets the tone for a roster still looking for more proven pass-catching help behind him.",
+          "date": "July 30, 2026",
+          "link": "https://www.espn.com/video/clip/_/id/49484506/mclaurin-leading-example"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 Washington Commanders training camp: Latest intel, updates",
-          "dek": "Training camp opens with Washington trying to turn offseason buzz into a real NFC East lead, and the quarterback room will set the tone for everything that follows. The first practices also offer the clearest read yet on injuries, roster battles and whether the Commanders still",
-          "date": "July 29, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/49448046/washington-commanders-training-camp-2026-intel-updates"
+          "headline": "2026 NFL training camp: Latest news, intel for all 32 teams",
+          "dek": "The Commanders opened camp with Jayden Daniels healthy and competition everywhere, so every practice now shapes a roster that is expected to contend in the NFC East. Early tweaks already hint at the pressure points, from receiver depth to special teams, as Dan Quinn pushes a",
+          "date": "July 30, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/49368181/training-camp-2026-latest-news-intel-updates-buzz-all-32-teams"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Commanders: Five things we learned from Dan Quinn, Adam Peters presser",
-          "dek": "The Commanders are using camp to test whether a deeper roster and a more competitive practice environment can keep Jayden Daniels on track after an injury-hit 2025. Dan Quinn and Adam Peters also signaled that receiver questions and other upgrades will be judged on performance,",
-          "date": "July 28, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-news/426678/training-camp-takeaways-dan-quinn-adam-peters-jayden-daniels-nick-allegretti-chig-okonkwo"
+          "headline": "Washington Commanders already have quality offensive weapons entering camp",
+          "dek": "Washington enters camp with Jayden Daniels and Terry McLaurin leading a deeper group that already has enough proven playmakers to keep defenses honest. The question now is not whether the Commanders need more help, but whether their current mix can turn offseason optimism into a",
+          "date": "July 29, 2026",
+          "link": "https://www.hogshaven.com/nfl-training-camp/426589/tylers-take-offensive-weapons-terry-mclaurin-chig-okonkwo-ben-sinnott-bill-croskey-merritt-rachaad-white"
         }
       ],
       "standings": {
@@ -1105,46 +1037,46 @@
   "featured": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Regular Season",
-    "headline": "Bieber's blowup, Guerrero's injury add to Blue Jays misery",
-    "dek": "Shane Bieber's collapse turned a routine midweek start into another sign of how far the Blue Jays have fallen in a season already slipping away. Vladimir Guerrero Jr.'s hamstring issue only deepens the concern, because Toronto can least afford to lose its lineup centerpiece",
-    "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/mlb/article/biebers-blowup-guerreros-injury-add-to-blue-jays-misery/",
-    "date": "July 29, 2026"
+    "headline": "Jays Beat Nationals",
+    "dek": "Toronto needed a clean, late-inning win to salvage its road trip, and Trey Yesavage delivered six strong innings to steady a club still sitting below.500. \n\nThe comeback over Washington also showed some lineup life from Kazuma Okamoto and George Springer, which matters as the",
+    "source": "Bluebird Banter",
+    "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/63005/jays-beat-nationals",
+    "date": "July 30, 2026"
   },
   "two_up": [
     {
       "team": "leafs",
       "kicker": "Toronto Maple Leafs - Draft & Free Agency",
-      "headline": "7 former Maple Leafs remain unsigned after a month of NHL free agency",
-      "dek": "A month into free agency, Toronto's offseason focus has shifted from adding talent to sorting out what remains of its old roster, with several familiar names still waiting for new contracts. The long list of unsigned ex-Leafs also underscores how quickly some once-prominent",
-      "source": "The Leafs Nation",
-      "link": "https://theleafsnation.com/news/3-former-toronto-maple-leafs-remain-unsigned-month-nhl-free-agency",
-      "date": "July 29, 2026"
+      "headline": "Maple Leafs hire Palango, Rossen and Perpich to front office",
+      "dek": "The Leafs are still overhauling their hockey operations, with new hires signaling that John Chayka is leaning hard into scouting and analytics after a wave of departures. That matters now because Toronto is trying to rebuild its draft and player-development pipeline while the",
+      "source": "Sportsnet",
+      "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-hire-palango-rossen-and-perpich-to-front-office/",
+      "date": "July 30, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Draft & Free Agency",
-      "headline": "Raptors Reacts: What type of player should Toronto target next?",
-      "dek": "Toronto's fan base is being asked to weigh in at a moment when roster gaps still shape the offseason agenda, especially in the frontcourt and on the bench. The answer matters because the next addition could determine whether the Raptors use their remaining flexibility on size,",
+      "headline": "Why Stephen Curry on the Raptors makes sense",
+      "dek": "Stephen Curry to Toronto only works if the Raptors are willing to pay a steep price in contracts, picks and future flexibility, which is exactly why the idea has traction in a draft-and-free-agency window. For a team already tied to a major swing for Kawhi Leonard, the pitch is",
       "source": "Raptors HQ",
-      "link": "https://www.raptorshq.com/nba-reacts/50974/raptors-reacts-what-type-of-player-should-toronto-target-next",
-      "date": "July 29, 2026"
+      "link": "https://www.raptorshq.com/nba-trade-rumors/50979/why-stephen-curry-on-the-raptors-makes-sense",
+      "date": "July 30, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Training Camp",
-    "headline": "Commanders Injury News: Punter signed for camp with Tress Way sidelined",
-    "dek": "The Commanders are already managing multiple camp injuries, and Tress Way's pectoral issue forced Washington to add veteran Matt Haack before the first full practices. How quickly Way returns matters because special teams can settle the back end of the roster and shape early",
+    "headline": "Commanders News: LB Kain Medrano put on active PUP list; Tress Way to NFI",
+    "dek": "Washington's camp opened with roster management immediately taking center stage, as the team sorts through early availability questions before the first full week of practice. The status of veteran specialists and young depth pieces matters now because every missed rep shapes",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/nfl-training-camp/426698/commanders-injury-news-punter-signed-camp-tress-way-sidelined",
-    "date": "July 29, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-news/426911/kain-medrano-on-pup-tress-way-to-nfi-nick-allegretti-left-practice-wednesday-daronte-jones-bill-croskey-merritt",
+    "date": "July 30, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Mitch Marner 'never protected' by Maple Leafs, agent says"
+      "text": "Maple Leafs hire Palango, Rossen and Perpich to front office"
     },
     {
       "badge": "NHL",
@@ -1154,58 +1086,58 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays fell to Nationals 8-6"
+      "text": "Jays beat Nationals 5-2"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Next: Jays at Nationals - Wed 7/29 1:05 PM ET"
+      "text": "Next: Jays vs. Cardinals - Fri 7/31 7:07 PM ET"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays (49-59) - 5th in AL East"
+      "text": "Jays (50-59) - 5th in AL East"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Draft Signing Deadline: Jays Sign All Expected Players"
+      "text": "Jays @ Nationals Game Thread"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors Weekly Wrap-Up: AJ Lawson headed overseas, more"
+      "text": "Why Stephen Curry on the Raptors makes sense"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Could Raptors be Stephen Curry's next stop?"
+      "text": "Raptors announce 2026 training camp and preseason schedule"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders tab ex-All-Pro WR Wes Welker to coach tight ends"
+      "text": "5 supreme standouts from Commanders 2026 training camp Day 1"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders fire TE coach Ben Steele following DWI charge"
+      "text": "Jayden Daniels on Commanders leadership: 'My team for sure'"
     }
   ],
   "scoreboard": [
     {
       "team": "jays",
-      "game_date": "2026-07-28",
+      "game_date": "2026-07-29",
       "name": "Jays",
       "league": "MLB",
       "logo": "tor",
       "opp_name": "Nationals",
       "opp_logo": "wsh",
-      "team_score": 6,
-      "opp_score": 8,
-      "result": "L",
-      "date": "Jul 28",
-      "link": "https://www.youtube.com/watch?v=q4xtZDvCVVM"
+      "team_score": 5,
+      "opp_score": 2,
+      "result": "W",
+      "date": "Jul 29",
+      "link": "https://www.youtube.com/watch?v=gCXCP6Q5K2k"
     }
   ],
   "at_a_glance": [
@@ -1222,10 +1154,10 @@
       "team": "jays",
       "name": "Jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "record": "49-59",
+      "record": "50-59",
       "status": "5th in AL East",
-      "status_class": "red",
-      "stat": "Streak: L1"
+      "status_class": "green",
+      "stat": "Streak: W1"
     },
     {
       "team": "raptors",
@@ -1258,10 +1190,10 @@
     {
       "team": "jays",
       "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-      "matchup": "Jays at Nationals",
-      "detail": "1:05 PM ET",
-      "channel": "Sportsnet",
-      "off": false
+      "matchup": "Jays",
+      "detail": "Next: Fri 7/31 vs. Cardinals 7:07 PM ET",
+      "channel": "",
+      "off": true
     },
     {
       "team": "raptors",
@@ -1282,16 +1214,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Wed 7/29",
-        "team": "jays",
-        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
-        "name": "Jays",
-        "opp": "at Nationals",
-        "time": "1:05 PM ET",
-        "tv": "Sportsnet",
-        "game_ts": "2026-07-29T17:05Z"
-      },
       {
         "day": "Fri 7/31",
         "team": "jays",
@@ -1351,17 +1273,26 @@
         "time": "2:10 PM ET",
         "tv": "Sportsnet",
         "game_ts": "2026-08-05T18:10Z"
+      },
+      {
+        "day": "Thu 8/6",
+        "team": "jays",
+        "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+        "name": "Jays",
+        "opp": "at Cubs",
+        "time": "2:20 PM ET",
+        "tv": "Sportsnet",
+        "game_ts": "2026-08-06T18:20Z"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Wednesday's Skate",
+      "title": "Thursday's Skate",
       "paragraphs": [
-        "The Blue Jays are back at Nationals Park this afternoon after last night's 8-6 loss, with Toronto at 49-59 and looking to steady things behind a 1:05 PM ET start on Sportsnet. The latest stumble came with more bad news in the coverage around Bieber's blowup and Vladimir Guerrero Jr.'s injury.",
-        "The Leafs are still in offseason mode, but the roster work has not stopped, with NHL.com listing a wave of signings and The Leafs Nation noting seven former Maple Leafs still unsigned after a month of free agency. In Washington, the Commanders are headed toward their Sept. 13 trip to Philadelphia, while camp chatter has centered on a punter signing after Tress Way was sidelined.",
-        "For the Raptors, the focus is still on what comes next, with Raptors HQ asking what kind of player Toronto should target and another piece on lessons basketball can take from the FIFA World Cup."
+        "The Blue Jays handled the Nationals 5-2 last night and now turn to the Cardinals on Friday at 7:07 PM ET, with Toronto sitting 50-59. The latest Jays note is Bowden Yesavage helping firm up the rotation picture, which fits a club still looking for reliable innings down the stretch.",
+        "For the Leafs, the focus is still on August and beyond: they are set to meet the Canadiens on Sep. 29, and Toronto has also added Palango, Rossen and Perpich to the front office. The Raptors have their training camp and preseason schedule set, with a preseason date against the Heat on Oct. 3, while Commanders camp has already surfaced some roster news, including LB Kain Medrano on the active PUP list and Tress Way to NFI. The next command for Washington is at Philadelphia on Sep. 13."
       ]
     }
   }
