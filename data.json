@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-08-05T07:16:30.047332-04:00",
-    "date_display": "August 5, 2026"
+    "updated": "2026-08-06T07:18:40.017401-04:00",
+    "date_display": "August 6, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "Quiet has a way of exposing the blueprint. <strong>Toronto's most consequential offseason move so far is off the ice - the hire of Andy O'Brien to run sport performance</strong> - a sign the Leafs are trying to squeeze more out of the same core without pretending this was a one-fix summer. The club also added Jack Roslovic in free agency, and he already calls Toronto the right fit, while the prospect board is getting its own polish with Landon Sim at No. 19 and Nick Moldenhauer at No. 20. That is the shape of August: no drama, just calibration. There is no scoreboard to hide behind, and the final record only underlines how much the next camp matters. <strong>Watch for the September health check, the fourth-line race, and whether the new performance staff can sharpen the edges before training camp opens.</strong>",
-        "updated": "Updated August 5, 2026"
+        "body": "The ice is quiet, and that's the point in Toronto right now - no games, no noise, just the hard work of sorting out what this roster really is. <strong>The biggest fresh note is the hire of Andy O'Brien to run sport performance</strong>, a telling move in a summer that has already brought major churn and a deeper bet on health, conditioning and recovery. The Maple Leafs sit in the deep offseason after a year that forced a reset, and the focus now is less on slogans than on fit. Auston Matthews' recovery remains the storyline that still bends the whole picture, while the prospect ladder gets a little more interesting with Juuso Ainasto at No. 18. <strong>What matters next is camp: who arrives ready, who sticks, and whether the new staff can turn all this reshuffling into a cleaner roster by September.</strong>",
+        "updated": "Updated August 6, 2026"
       },
       "key_numbers": [
         {
@@ -27,26 +27,26 @@
       },
       "the_latest": [
         {
+          "source": "The Leafs Nation",
+          "source_class": "web",
+          "headline": "There's no room for Semyon Der-Arguchintsev in Toronto: Leafs Morning Take",
+          "dek": "Semyon Der-Arguchintsev's push to return to North America is being weighed against a crowded Leafs forward group, which makes his path back to Toronto look thin for now. If the organization brings him back at all, the more realistic landing spot appears to be the Marlies rather",
+          "date": "August 5, 2026",
+          "link": "https://theleafsnation.com/news/theres-no-room-for-semyon-der-arguchintsev-in-toronto-leafs-morning-take"
+        },
+        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Maple Leafs hire Andy O'Brien to lead sport performance department",
-          "dek": "Toronto is treating player health and conditioning as a priority after another season that underscored how much depth and durability matter in a long playoff chase. Andy O'Brien's arrival gives the club a veteran performance voice with championship experience, signaling a",
+          "dek": "Toronto is making the kind of behind-the-scenes hire that can shape everything from injury rehab to training load, with Andy O'Brien now tasked with tightening the physical side of the organization.\n\nThe move fits a broader offseason overhaul in the Leafs' performance and hockey",
           "date": "August 3, 2026",
           "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-hire-andy-obrien-to-lead-sport-performance-department/"
-        },
-        {
-          "source": "The Leafs Nation",
-          "source_class": "web",
-          "headline": "2026 TLN Maple Leafs Prospect Rankings: #20 Nick Moldenhauer",
-          "dek": "Nick Moldenhauer's placement at No. 20 shows the Leafs are still sorting prospects by upside as much as proximity, which matters in a deep offseason when roster questions are mostly about future depth. With Toronto's big-league picture set for now, these rankings help frame",
-          "date": "August 4, 2026",
-          "link": "https://theleafsnation.com/news/2026-tln-maple-leafs-prospect-rankings-20-nick-moldenhauer"
         },
         {
           "source": "Daily Faceoff",
           "source_class": "web",
           "headline": "Leafs hire Andy O'Brien to lead sport performance department",
-          "dek": "The Maple Leafs are betting their offseason reset starts with the people behind the players, not just the roster itself. Andy O'Brien's track record with Pittsburgh and Florida gives Toronto an experienced hand to help manage health, conditioning, and durability through a long",
+          "dek": "Toronto is betting that a revamped performance staff can help turn preparation into a competitive edge after another playoff letdown. O'Brien arrives with championship experience from Pittsburgh and Florida, giving the Leafs a proven hand in injury prevention, conditioning and",
           "date": "August 3, 2026",
           "link": "https://www.dailyfaceoff.com/news/toronto-maple-leafs-andy-obrien-hired-sport-performance-department"
         },
@@ -54,7 +54,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Maple Leafs' McKenna 'grateful' to represent the Yukon in NHL",
-          "dek": "Gavin McKenna's rise gives the Maple Leafs a rare prospect story with national reach, and his Yukon roots make this more than a routine rookie profile. With the top pick carrying both on-ice expectations and hometown pride, the piece shows how Toronto's offseason buzz now",
+          "dek": "Gavin McKenna gives Toronto a rare offseason story that is bigger than roster fit, with the top pick bringing both elite upside and a clear Canadian market spotlight. His Whitehorse roots add a Yukon angle the Leafs can sell now, while also underscoring how much pressure comes",
           "date": "July 31, 2026",
           "link": "https://www.sportsnet.ca/nhl/video/maple-leafs-mckenna-grateful-to-represent-the-yukon-in-nhl/"
         }
@@ -173,95 +173,6 @@
           }
         ]
       },
-      "draft_board": {
-        "team": "Toronto Maple Leafs",
-        "league": "NHL",
-        "projected_pick": "TBD",
-        "draft_date": "June 2026 (exact dates TBD)",
-        "prospects_watched": [
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          },
-          {
-            "name": "TBD",
-            "position": "TBD",
-            "team": "TBD",
-            "note": "TBD"
-          }
-        ],
-        "lottery": {
-          "odds": "TBD",
-          "outcome": "TBD"
-        },
-        "label": "NHL Draft Board",
-        "event_date": "June 2026 (exact dates TBD)",
-        "pick_position": "TBD",
-        "headers": [
-          "Rank",
-          "Prospect",
-          "College / Team",
-          "Fit"
-        ],
-        "rows": [
-          {
-            "pk": "1",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          },
-          {
-            "pk": "2",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          },
-          {
-            "pk": "3",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          },
-          {
-            "pk": "4",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          },
-          {
-            "pk": "5",
-            "team": "TBD (TBD)",
-            "league": "NHL",
-            "pts": "TBD",
-            "odds": "TBD"
-          }
-        ],
-        "notes": "Outcome: TBD"
-      },
       "watch": [
         {
           "title": "Leafs Draft Coverage",
@@ -293,8 +204,8 @@
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The trade deadline left Toronto with a roster that looks remade on the fly - and the newest jolt is <strong>Trey Yesavage leaving early and heading for an MRI on his knee</strong>, a reminder that even the fresh blood comes with risk. The Blue Jays sit in the offseason after finishing 2026 at 97-65, and the front office has spent the last week trying to steady a rotation that suddenly feels in flux again. Deadline arrivals gave the club volume, but volume is not the same as certainty. Yesavage is the name fans will track first, because a healthy young arm can change the winter's mood; an injured one only sharpens the pressure on the next wave of pitching depth. <strong>What matters now is whether Toronto can turn deadline chaos into a coherent winter plan before camp opens</strong>.",
-        "updated": "Updated August 5, 2026"
+        "body": "The summer headline in Toronto is not a box score - it's a roster shakeup with teeth. <strong>The Blue Jays placed Trey Yesavage on the 15-day injured list</strong>, a move that immediately shadows the club's pitching depth and its plans for the next stretch of the offseason. Toronto is 0-0 in the current season phase, because the real work now is construction, not chasing games. The front office has already shown its hand, stocking the bullpen and shuffling the 40-man while the calendar turns toward camp. Yesavage's absence puts even more weight on the arms the Jays just added and the ones still fighting for innings. <strong>What matters next is whether Toronto keeps adding protection for a staff that suddenly looks thinner than it did yesterday.</strong>",
+        "updated": "Updated August 6, 2026"
       },
       "key_numbers": [
         {
@@ -309,44 +220,44 @@
       },
       "the_latest": [
         {
-          "source": "Bluebird Banter",
-          "source_class": "web",
-          "headline": "Jays Lose To Astros",
-          "dek": "The loss underscored how fragile Toronto's post-deadline push remains, with the club still trying to prove its roster upgrades can offset inconsistency in a crowded playoff race.\n\nTrey Yesavage leaving with knee discomfort adds a bigger concern than the scoreline, because his",
-          "date": "August 5, 2026",
-          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/63121/jays-lose-to-astros"
-        },
-        {
           "source": "Jays Journal",
           "source_class": "web",
-          "headline": "Deadline catcher market shows Blue Jays could have cashed in on Brandon Valenzuela",
-          "dek": "Toronto's deadline posture left them with a controllable catcher in Brandon Valenzuela, but the market move suggests rival clubs were willing to pay for backstop help. That makes him a useful reminder that even depth pieces can become trade assets when contenders get desperate",
+          "headline": "Blue Jays' Dylan Cease, Braves' Chris Sale award wins create brutal what-if moment for White Sox fans",
+          "dek": "Dylan Cease's surge in Toronto and Chris Sale's award nod in Atlanta put a sharp spotlight on how much talent the White Sox have shipped out in recent years. For Chicago fans, it is a painful reminder that two former rotation anchors are thriving elsewhere while the rebuild",
+          "date": "August 6, 2026",
+          "link": "https://jaysjournal.com/blue-jays-dylan-cease-braves-chris-sale-award-wins-create-brutal-what-if-moment-for-white-sox-fans?utm_source=RSS"
+        },
+        {
+          "source": "Bluebird Banter",
+          "source_class": "web",
+          "headline": "Jays Beat Astros 5-4",
+          "dek": "A win over Houston gives Toronto a rare jolt in a season that has drifted well below expectations and kept the club stuck in the middle of a crowded wildcard chase. Beating Hunter Brown also matters because the Blue Jays have spent much of 2026 struggling to score, so any night",
           "date": "August 5, 2026",
-          "link": "https://jaysjournal.com/deadline-catcher-market-shows-blue-jays-could-have-cashed-in-on-brandon-valenzuela?utm_source=RSS"
+          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/63134/jays-beat-astros-5-4"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Blue Jays' Trey Yesavage to have MRI on knee after leaving vs. Astros",
-          "dek": "Toronto's rotation depth is now under the microscope, with the rookie right-hander's status potentially shaping how cautiously the club handles the rest of the summer. An MRI can clarify whether this is a minor setback or another hit to a pitching staff that needs every healthy",
-          "date": "August 4, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-trey-yesavage-exits-vs-astros-with-apparent-leg-injury/"
+          "headline": "Blue Jays place Trey Yesavage on 15-day injured list",
+          "dek": "Trey Yesavage's setback removes one of Toronto's most important young arms just as the club tries to stabilize a rotation that has already been hit by injuries. The Blue Jays now have to absorb another absence while waiting on MRI results and hoping the knee issue is short term.",
+          "date": "August 5, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-place-trey-yesavage-on-15-day-injured-list/"
         },
         {
           "source": "Bluebird Banter",
           "source_class": "web",
-          "headline": "Blue Jays @ Astros Game Thread",
-          "dek": "Toronto's deadline reset made nights like this more about evaluation than standings, with new faces and holdovers trying to show they still fit the club's long-term plan. Trey Yesavage's solid recent outing gives the Jays a chance to steady a rotation that needs every competent",
-          "date": "August 4, 2026",
-          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-gamethreads/63118/blue-jays-astros-game-thread"
+          "headline": "Jays @ Astros Game Thread",
+          "dek": "Toronto's post-deadline roster shuffle is already shaping this series, with recent call-ups and bullpen moves forcing a few new looks before first pitch. Vladimir Guerrero Jr. getting the day off adds extra focus to a lineup that has to find offense without its usual anchor.",
+          "date": "August 5, 2026",
+          "link": "https://www.bluebirdbanter.com/news/63129/jays-astros-game-thread"
         },
         {
           "source": "Jays Journal",
           "source_class": "web",
-          "headline": "Why this newest player will have the biggest impact on the Blue Jays after the trade deadline",
-          "dek": "Toronto did not just add depth, it brought in a controllable starter who could stabilize the rotation well beyond this season. That makes José Soriano the kind of deadline move that can shape both the club's present push and its long-term plan.",
-          "date": "August 5, 2026",
-          "link": "https://jaysjournal.com/why-this-newest-player-will-have-the-biggest-impact-on-the-blue-jays-after-the-trade-deadline?utm_source=RSS"
+          "headline": "Blue Jays' latest waiver claim shows deadline pitching additions didn't end Toronto's search for arms",
+          "dek": "Toronto's trade-deadline overhaul brought in multiple arms, but the waiver claim is a reminder that the pitching staff still needs depth, stability and innings. For a club trying to fortify its rotation and bullpen at once, even a modest addition can signal the search is far",
+          "date": "August 6, 2026",
+          "link": "https://jaysjournal.com/blue-jays-latest-waiver-claim-shows-deadline-pitching-additions-didn-t-end-toronto-s-search-for-arms?utm_source=RSS"
         }
       ],
       "standings": {
@@ -458,8 +369,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "Quiet has settled over the Raptors' summer, but it's the useful kind - the kind that lets a front office finish the broom work and map out camp. <strong>Toronto used its final two-way slot on centre Trey Jemison</strong>, a plain-dealing move that deepens the frontcourt behind Jakob Poeltl and Trayce Jackson-Davis and gives the club a sturdy body for the grind ahead. The Raptors are still in the deep offseason, with no games to chase and no scoreboard to flatter them, so the real story is roster construction: one more big, one less hole. Jemison's arrival gives the organization a cleaner look at the 21-man offseason group and a little more competition for the 15-man cutdown. <strong>What matters next is training camp - and whether Jemison can turn a two-way into a real seat at the table.</strong>",
-        "updated": "Updated August 5, 2026"
+        "body": "Quiet is the sound of August in Toronto - but the silence has a little steel in it. <strong>The Raptors added two champions in Trey Jemison III and Andre Jackson Jr.</strong>, the kind of end-of-rotation moves that tell you the front office is still sanding the edges of the roster while bigger questions hang over the board. The club finished 46-36 and fifth in the East, and that record now reads like a prompt, not a verdict: how much of this core stays intact, and who is worth the next bet? Jakob Poeltl's $84 million deal looms over the Sabonis story, a blunt reminder that one contract can kill a swing. <strong>What comes next is camp competition - and whether Toronto keeps shopping for a cleaner fit or doubles down on continuity.</strong>",
+        "updated": "Updated August 6, 2026"
       },
       "key_numbers": [
         {
@@ -474,36 +385,44 @@
       },
       "the_latest": [
         {
-          "source": "Raptors Republic",
-          "source_class": "web",
-          "headline": "Trey Jemison signs two-way deal with Raptors",
-          "dek": "Trey Jemison gives Toronto a low-cost center option at a position where the Raptors are still sorting out their depth chart. Because the two-way slot is already the last one on the roster, this move also signals how the team wants to use training camp to evaluate its back-end",
-          "date": "August 4, 2026",
-          "link": "https://raptorsrepublic.com/2026/08/04/trey-jemison-signs-two-way-deal-with-raptors/"
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "'He's a magnet': Jeremy Lin says Kawhi Leonard could transform Raptors again",
+          "dek": "Jeremy Lin's endorsement adds a fresh voice to the Raptors' push to bring Kawhi Leonard back, giving the reunion buzz extra weight beyond the front office. It also underscores how much one proven star could change Toronto's ceiling while the trade still waits on the NBA",
+          "date": "August 5, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/hes-a-magnet-jeremy-lin-says-kawhi-leonard-could-transform-raptors-again/"
         },
         {
           "source": "Raptors Republic",
           "source_class": "web",
-          "headline": "31 days, 31 questions: How many games will Kawhi Leonard play?",
-          "dek": "Kawhi Leonard's availability is the difference between Toronto entering the season as a serious threat or as a team built around a star who cannot be counted on. His recent health history makes every projected game total a central measure of how high the Raptors can",
-          "date": "August 4, 2026",
-          "link": "https://raptorsrepublic.com/2026/08/04/31-days-31-questions-how-many-games-will-kawhi-leonard-play/"
+          "headline": "Jeremy Lin believes Kawhi Leonard could spark another Raptors run",
+          "dek": "Jeremy Lin is framing Kawhi Leonard less as a nostalgia play than a possible shortcut back to contention, which matters because Toronto's offseason goals hinge on whether one star can change its ceiling. The idea is complicated by the NBA's investigation into the proposed",
+          "date": "August 5, 2026",
+          "link": "https://raptorsrepublic.com/2026/08/05/nba-news-rumours-jeremy-lin-believes-kawhi-leonard-could-spark-another-raptors-run/"
+        },
+        {
+          "source": "Raptors Republic",
+          "source_class": "web",
+          "headline": "Jakob Poeltl contract reportedly doomed Raptors' Sabonis trade",
+          "dek": "The Raptors' pursuit of Domantas Sabonis shows how close Toronto came to a major roster reset before salary flexibility got in the way. Jakob Poeltl's contract now stands out as the key obstacle that kept a potential star upgrade from reaching the finish line.",
+          "date": "August 5, 2026",
+          "link": "https://raptorsrepublic.com/2026/08/05/nba-news-rumours-jakob-poeltl-contract-reportedly-doomed-raptors-sabonis-trade/"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Report: Raptors sign centre Trey Jemison to two-way contract",
-          "dek": "Toronto is using the offseason to patch its center depth with low-risk bets after already adding more size around Jakob Poeltl. Jemison's two-way deal gives the Raptors another developmental big who can shuttle between the NBA roster and the G League.",
-          "date": "August 4, 2026",
-          "link": "https://www.sportsnet.ca/nba/article/report-raptors-sign-centre-trey-jemison-to-two-way-contract/"
+          "headline": "Raptors sign wing Andre Jackson Jr.",
+          "dek": "The Raptors are adding a 6-foot-6 wing whose value has been built more on defense, size and energy than scoring, giving Toronto another low-cost swing on a roster spot. Andre Jackson Jr. arrives after a quiet year in Milwaukee, where his minutes and production dropped, so this",
+          "date": "August 5, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/raptors-sign-wing-andre-jackson-jr/"
         },
         {
           "source": "Raptors HQ",
           "source_class": "web",
-          "headline": "Raptors fans have specific roster need in mind for front-office",
-          "dek": "Raptors fans have zeroed in on the same roster flaw all summer: Toronto still needs a sturdier answer at center and in the frontcourt. The front office's recent moves suggest it is finally trying to patch that gap, but the pressure is on to prove the fix is real once the season",
-          "date": "August 2, 2026",
-          "link": "https://www.raptorshq.com/nba-reacts/51051/raptors-fans-have-specific-roster-need-in-mind-for-front-office"
+          "headline": "Raptors fill final two-way spot with centre Trey Jemison",
+          "dek": "The Raptors used their last two-way slot on a physical center, giving the team another option for protecting the rim and soaking up minutes in the frontcourt. For a club still sorting out its big-man depth, Trey Jemison also offers Toronto 905 insurance without forcing a",
+          "date": "August 4, 2026",
+          "link": "https://www.raptorshq.com/raptors-roster/51061/raptors-fill-final-two-way-spot-with-centre-trey-jemison"
         }
       ],
       "standings": {
@@ -676,8 +595,8 @@
       "detail": "1st in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The roster is still taking shape, and training camp is already separating the useful from the ornamental. <strong>Ahkello Witherspoon's retirement opened a fresh cornerback hole, and Washington answered by signing Fabian Moreau</strong> - a clean, practical move in a camp built on competition. Jayden Daniels' name keeps rising, too; league chatter has him in the 13th-overall quarterback tier, while the real camp story is his growing command of the offense and the receivers fighting to be trusted. Treylon Burks has flashed with the first unit, Jaden Bradley is pressing for a 53-man argument, and the depth chart at wideout is anything but settled. With Washington in the thick of camp and the preseason looming, <strong>watch the padded practices - those are where the final roster edges get carved</strong>.",
-        "updated": "Updated August 5, 2026"
+        "body": "The camp mood in Ashburn has changed in a hurry - less about merely sorting a roster, more about finding the right gear for Jayden Daniels. <strong>Stefon Diggs' arrival has jolted the receiver room and given Washington a true No. 2 behind Terry McLaurin</strong>, while the young pass-catchers now fight for scraps and roles alike. The Commanders are in training camp, and the depth chart is still being hammered into shape: Diggs, Luke McCaffrey, Jaylin Lane and Antonio Williams all have something to prove, while Dyami Brown's return and the punter shakeup after Tress Way's pectoral injury add to the churn. Trey Amos is on the physically unable to perform list as a precaution, but should be back soon. <strong>What matters next is simple: how quickly Diggs and Daniels build timing when the pads stay on and the preseason lights come up.</strong>",
+        "updated": "Updated August 6, 2026"
       },
       "key_numbers": [
         {
@@ -692,36 +611,44 @@
       },
       "the_latest": [
         {
-          "source": "Riggo's Rag",
-          "source_class": "web",
-          "headline": "5 supreme standouts from Commanders 2026 training camp Day 6",
-          "dek": "Day 6 arrives with the Commanders' camp narrative shifting from early hype to who is actually holding up once the pads come on. Jayden Daniels, K'Lavon Chaisson and the kicking battle have already given the staff and fans real evidence to sort through.\n\nWith competition",
-          "date": "August 5, 2026",
-          "link": "https://riggosrag.com/5-supreme-standouts-washington-commanders-2026-training-camp-day-6?utm_source=RSS"
-        },
-        {
           "source": "Yahoo Sports",
           "source_class": "web",
-          "headline": "Commanders Jayden Daniels ranked 2nd tier (13th overall) among NFL QBs - Daily Slop",
-          "dek": "Jayden Daniels' slide to 13th in The Athletic's quarterback tiers shows how quickly expectations can tighten around a young star entering his second full season. For Washington, the ranking adds pressure in camp, because Daniels is still the player most likely to determine",
+          "headline": "Tyler's Take: Washington Commanders Week 2 training camp observations, standouts (@Tiller56)",
+          "dek": "Washington's second week of camp is already shaping the roster picture, with emerging roles on defense and competition heating up at receiver after the Stefon Diggs addition. Tyler's notes matter because they point to which veterans and newcomers are building momentum before",
+          "date": "August 6, 2026",
+          "link": "https://sports.yahoo.com/articles/tyler-washington-commanders-week-2-110000634.html"
+        },
+        {
+          "source": "Riggo's Rag",
+          "source_class": "web",
+          "headline": "4 winners (and 3 losers) from Commanders' daring Stefon Diggs raid",
+          "dek": "Stefon Diggs gives Washington a proven second receiver for Jayden Daniels, which immediately raises the ceiling on an offense that had leaned heavily on Terry McLaurin. The move also sets up a real camp battle for targets and snaps, with younger wideouts now fighting to keep",
+          "date": "August 6, 2026",
+          "link": "https://riggosrag.com/4-winners-3-losers-washington-commanders-daring-stefon-diggs-raid?utm_source=RSS"
+        },
+        {
+          "source": "Pro Football Talk",
+          "source_class": "web",
+          "headline": "Bijan Robinson's congratulations included a text from Matthew McConaughey",
+          "dek": "Bijan Robinson's contract buzz turned into a celebrity shoutout, with Matthew McConaughey moving fast to congratulate the Texas alum. The note matters for Washington because it underscores how closely the Commanders-Longhorns connection still tracks through McConaughey, a",
           "date": "August 5, 2026",
-          "link": "https://sports.yahoo.com/articles/commanders-jayden-daniels-ranked-2nd-100000202.html"
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/bijan-robinsons-congratulations-included-a-text-from-matthew-mcconaughey"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Commanders News: Jayden Daniels ranked 2nd tier (13th overall) among QBs",
-          "dek": "Jayden Daniels is still being treated as a rising quarterback, but this ranking shows some evaluators want to see more before putting him among the league's elite. For Washington, that makes his second camp especially important, with expectations now tied to proving his rookie",
+          "headline": "State of Commanders receiver corps after Stefon Diggs acquisition",
+          "dek": "Stefon Diggs gives Washington a proven No. 2 option next to Terry McLaurin, something the offense lacked before training camp. His arrival also raises the stakes for the rest of the receiver room, where younger targets will now have to fight for fewer snaps and targets.\n\nThe",
           "date": "August 5, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-news/428824/jayden-daniels-ranked-josh-conerly-odafe-oweh-luke-mccaffrey-david-blough"
+          "link": "https://www.hogshaven.com/washington-commanders-analysis/429401/state-of-commanders-receivers-stefon-diggs-terry-mclaurin-treylon-burks-dyami-brown-antonio-williams"
         },
         {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "The NFL is about to learn the same Jayden Daniels lesson all over again",
-          "dek": "Jayden Daniels has already put an efficient command of Washington's offense on display in camp, giving the Commanders reason to believe last year's breakout was no fluke.\n\nIf he keeps stacking sharp practices, the league will have to plan for a healthier, more polished Daniels",
-          "date": "August 4, 2026",
-          "link": "https://riggosrag.com/nfl-about-learn-same-jayden-daniels-lesson-all-over-again?utm_source=RSS"
+          "headline": "Commanders just firmly shut the Brandon Aiyuk door that never truly opened",
+          "dek": "Stefon Diggs gives Washington the veteran receiver it was shopping for, which makes Brandon Aiyuk far less relevant to the Commanders' plans. The move also lets the team settle its wideout picture before camp heats up around Jayden Daniels and Terry McLaurin.",
+          "date": "August 5, 2026",
+          "link": "https://riggosrag.com/commanders-firmly-shut-brandon-aiyuk-door-that-never-truly-opened?utm_source=RSS"
         }
       ],
       "standings": {
@@ -816,78 +743,78 @@
     }
   },
   "featured": {
-    "team": "leafs",
-    "kicker": "Toronto Maple Leafs - Deep Offseason",
-    "headline": "2026 TLN Maple Leafs Prospect Rankings: #19 Landon Sim",
-    "dek": "Landon Sim's climb matters because he is a late-round pick trying to turn a longshot draft pedigree into real organizational value for Toronto. His ranking reflects a player still building his case after leaving the Blues without an entry-level deal, making this a test of how",
-    "source": "The Leafs Nation",
-    "link": "https://theleafsnation.com/news/2026-tln-maple-leafs-prospect-rankings-19-landon-sim",
-    "date": "August 5, 2026"
+    "team": "jays",
+    "kicker": "Toronto Blue Jays - Offseason",
+    "headline": "Blue Jays surge with win over Astros as Guerrero Jr. rests",
+    "dek": "Toronto's win over Houston mattered because it came without Vladimir Guerrero Jr., who was held out for a seventh game and now has a career-high absence total. With the Blue Jays still fighting to salvage pride and rhythm in a difficult season, every productive night from the",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/mlb/article/blue-jays-surge-with-win-over-astros-as-guerrero-jr-rests/",
+    "date": "August 6, 2026"
   },
   "two_up": [
     {
-      "team": "jays",
-      "kicker": "Toronto Blue Jays - Offseason",
-      "headline": "Yesavage exits Blue Jays loss early with revamped rotation in flux",
-      "dek": "Trey Yesavage's early exit adds another layer of uncertainty just as Toronto is trying to sort out a post deadline rotation built around new arms. With six starters in the mix, any injury scare could force the Blue Jays to rethink the plan quickly.",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/mlb/article/yesavage-exits-blue-jays-loss-early-with-revamped-rotation-in-flux/",
-      "date": "August 5, 2026"
+      "team": "leafs",
+      "kicker": "Toronto Maple Leafs - Deep Offseason",
+      "headline": "2026 TLN Maple Leafs Prospect Rankings: #18 Juuso Ainasto",
+      "dek": "Juuso Ainasto's placement at No. 18 underscores how thin the Maple Leafs' prospect pipeline still looks in a deep offseason. With Toronto's NHL roster already under the microscope, every name in the rankings matters more as the club searches for cheaper long-term help.",
+      "source": "The Leafs Nation",
+      "link": "https://theleafsnation.com/news/2026-tln-maple-leafs-prospect-rankings-18-juuso-ainasto",
+      "date": "August 6, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Deep Offseason",
-      "headline": "Raptors fill final two-way spot with centre Trey Jemison",
-      "dek": "The Raptors used their final two-way slot on a 26-year-old center with recent NBA championship experience, adding another body to a frontcourt that needed reinforcement. It is a low-cost move that could help Toronto and Raptors 905 absorb minutes behind Jakob Poeltl while giving",
+      "headline": "The Raptors add an NCAA champion in latest signing",
+      "dek": "Andre Jackson Jr. brings a championship pedigree and defensive upside to a Raptors roster still taking shape in August. The former UConn wing is fighting for a bigger NBA role after three uneven seasons in Milwaukee, making this a low-cost swing with upside for Toronto.",
       "source": "Raptors HQ",
-      "link": "https://www.raptorshq.com/raptors-roster/51061/raptors-fill-final-two-way-spot-with-centre-trey-jemison",
-      "date": "August 5, 2026"
+      "link": "https://www.raptorshq.com/raptors-roster/51079/the-raptors-add-an-ncaa-champion-in-latest-signing",
+      "date": "August 6, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Training Camp",
-    "headline": "Washington Commanders News: Sights and Sounds from Training Camp Day 6",
-    "dek": "The Commanders are moving into the part of camp where intensity and evaluation sharpen, with pads on and competition rising for roles on both sides of the ball. Day 6 also matters because Washington is still sorting out chemistry, depth, and who can sustain early momentum once",
+    "headline": "Washington Commanders Week 2 training camp observations, standouts",
+    "dek": "The Commanders' camp has shifted from routine to revealing, with hard-hitting padded practices, visible competition and a few flare-ups offering a better read on how Dan Quinn's roster is taking shape. \n\nStefon Diggs' arrival adds another layer to the offense, while Jayden",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-training-camp/429122/washington-commanders-news-sights-sounds-training-camp-day-6",
-    "date": "August 5, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-analysis/429150/washington-commanders-week-2-training-camp-observations-sonny-styles-luke-mccaffrey-standouts",
+    "date": "August 6, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "2026 TLN Maple Leafs Prospect Rankings: #19 Landon Sim"
+      "text": "2026 TLN Maple Leafs Prospect Rankings: #18 Juuso Ainasto"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "2026 TLN Maple Leafs Prospect Rankings: #20 Nick Moldenhauer"
+      "text": "Leafs hire Andy O'Brien to lead sport performance department"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays Lose To Astros"
+      "text": "Blue Jays surge with win over Astros as Guerrero Jr. rests"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays @ Astros Game Thread"
+      "text": "Blue Jays place Trey Yesavage on 15-day injured list"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Trey Jemison signs two-way deal with Raptors"
+      "text": "The Raptors add an NCAA champion in latest signing"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors sign centre Trey Jemison to two-way contract"
+      "text": "Raptors sign wing Andre Jackson Jr"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "5 supreme standouts from Commanders 2026 training camp Day 6"
+      "text": "Commanders: Training Camp"
     }
   ],
   "scoreboard": [],
@@ -969,10 +896,10 @@
   },
   "morning_brief": {
     "article": {
-      "title": "Wednesday's Skate",
+      "title": "Thursday's Skate",
       "paragraphs": [
-        "The Leafs are in deep offseason mode, with The Leafs Nation spotlighting prospect rankings at No. 19 Landon Sim and No. 20 Nick Moldenhauer, a sign the organization is still sorting through its young depth chart. The Blue Jays are still looking for stability, with Sportsnet reporting that Yesavage exited a loss early as the revamped rotation remains in flux.",
-        "For the Raptors, the final two-way spot went to center Trey Jemison, according to Raptors Republic and Raptors HQ, giving Toronto one more big body to evaluate before camp. In Washington, training camp Day 6 brought fresh notes and standouts for the Commanders, with local coverage focusing on the sights, sounds and top performers from practice."
+        "The Leafs are deep into an offseason rebuild, with reports pointing to a crowded forward picture and little room for Semyon Der-Arguchintsev, while prospect watch continues to center on Juuso Ainasto and the No. 1 pick Gavin McKenna from the broader summer overhaul.",
+        "The Blue Jays have a timely offensive note after a 5-4 win over the Astros, with Guerrero Jr. resting, and the Raptors are still shaping their roster after adding an NCAA champion in their latest signing. For the Commanders, camp notes from Week 2 have highlighted standouts and a bold Stefon Diggs addition has already produced winners and losers in early evaluations."
       ]
     }
   }
