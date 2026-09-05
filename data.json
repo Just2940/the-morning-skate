@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-09-04T09:06:11.898330-04:00",
-    "date_display": "September 4, 2026"
+    "updated": "2026-09-05T08:19:57.387948-04:00",
+    "date_display": "September 5, 2026"
   },
   "teams": {
     "leafs": {
@@ -11,8 +11,8 @@
       "detail": "8th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The noise is all outside the rink now - and that's usually when a hockey team's real shape starts to show. <strong>Prime Minister Mark Carney's jab at the Leafs' Cup drought</strong> was a cheap shot with a truth tucked inside it: this club still lives under a history that won't stop following it. Toronto enters the deep offseason with a clean slate and a sharp edge, and the interest in Troy Stecher - the sort of useful, low-drama defender every contender hoards - says as much. After finishing 2025-26 at 0, the Maple Leafs have less room for theater and more need for competence. One more sturdy blue-liner, one more honest forward, one more camp battle worth watching - that's the work. <strong>Training camp will tell us whether this roster is finally built to support its stars, or merely decorated around them.</strong>",
-        "updated": "Updated September 4, 2026"
+        "body": "Quiet is the right word for a club still being remade, and Toronto has earned that calm with a summer of nibbling around the edges rather than tearing at the seams. <strong>The most telling move came Friday, when the Maple Leafs signed Brendan Brisson to a one-year contract</strong> - a low-risk swing on a former first-round pick who can push for a depth role when camp opens later this month. That's the story now: not fireworks, but fit. Auston Matthews still sets the tone, and Jack Roslovic is the cleanest bet to add speed and a right-shot jolt to the middle six. Toronto has work left, but the board is clearer than it was a week ago. <strong>Training camp will tell whether Brisson is insurance or inventory, and whether Roslovic can become more than a useful piece.</strong>",
+        "updated": "Updated September 5, 2026"
       },
       "key_numbers": [
         {
@@ -27,36 +27,44 @@
       },
       "the_latest": [
         {
+          "source": "The Leafs Nation",
+          "source_class": "web",
+          "headline": "What does a successful 2026-27 season look like for Jack Roslovic?",
+          "dek": "Jack Roslovic's role matters now because Toronto is still shaping a roster built around more pace, and his fit could affect how the lineup is structured once camp opens. A strong 2026-27 season would mean he provides the speed and scoring punch the Maple Leafs are counting on to",
+          "date": "September 5, 2026",
+          "link": "https://theleafsnation.com/news/what-successful-2026-27-season-look-like-jack-roslovic"
+        },
+        {
           "source": "Daily Faceoff",
           "source_class": "web",
-          "headline": "Canadian PM Mark Carney pokes fun at Leafs",
-          "dek": "The joke landed because the Leafs remain part of the national conversation even in the quiet months, when hockey names still carry extra weight in Canadian public life. For Toronto, any public tease from the prime minister keeps the team in the spotlight and reminds fans how",
-          "date": "September 3, 2026",
-          "link": "https://www.dailyfaceoff.com/news/canadian-prime-minister-pm-mark-carney-pokes-fun-toronto-maple-leafs"
-        },
-        {
-          "source": "The Leafs Nation",
-          "source_class": "web",
-          "headline": "What does a successful 2026-27 season look like for Troy Stecher?",
-          "dek": "Stecher's role is a useful test case for Toronto's blue line depth, because the Maple Leafs need low-cost defenders who can handle real minutes without forcing the stars into tougher assignments. A solid season from him would stabilize the back end, give the coaching staff more",
+          "headline": "Leafs' Chris Tanev waiting on clearance heading into training camp",
+          "dek": "Chris Tanev's status matters because Toronto wants one of its most experienced defensemen healthy and available when camp opens, not easing back in after a slow rehab. He had March surgery to repair a core muscle injury, and the Leafs need clarity now with preseason preparation",
           "date": "September 4, 2026",
-          "link": "https://theleafsnation.com/news/what-does-successful-2026-27-season-look-like-troy-stecher"
-        },
-        {
-          "source": "The Leafs Nation",
-          "source_class": "web",
-          "headline": "Win, draw or loss: Grading all 20 Maple Leafs trades in the Brad Treliving era",
-          "dek": "With the Leafs still navigating the Brad Treliving era in the deep offseason, trade record has become a central measure of whether the front office has actually changed the roster's ceiling. This grading puts every deal under the microscope, helping frame which moves helped",
-          "date": "September 3, 2026",
-          "link": "https://theleafsnation.com/news/win-draw-loss-grading-all-20-toronto-maple-leafs-trades-treliving-era"
+          "link": "https://www.dailyfaceoff.com/news/toronto-maple-leafs-chris-tanev-waiting-clearance-training-camp-nhl"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Prime Minister Mark Carney takes shot at Maple Leafs' Stanley Cup drought",
-          "dek": "Carney's jab lands because Toronto's championship drought remains one of the city's defining sports storylines, and even offseason jokes keep that pressure in the public eye. For a franchise built on expectation, any comment from Canada's top political office turns a familiar",
+          "headline": "Maple Leafs sign forward Brendan Brisson to one-year contract",
+          "dek": "Toronto is betting on a low-risk depth add as training camp approaches, giving Brendan Brisson a chance to compete for a job after brief NHL looks with New York last season. The one-year deal also adds another former first-round pick to a forward group that can be reshaped",
           "date": "September 4, 2026",
-          "link": "https://www.sportsnet.ca/nhl/video/prime-minister-mark-carney-takes-shot-at-maple-leafs-stanley-cup-drought/"
+          "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-sign-forward-brendan-brisson-to-one-year-contract/"
+        },
+        {
+          "source": "The Leafs Nation",
+          "source_class": "web",
+          "headline": "Brisson as a Leaf, expansion in the works, and the American exit strategy: Leaflets",
+          "dek": "Brendan Brisson's arrival gives Toronto a low-risk chance to add skill depth while training camp still sits weeks away, which makes even modest roster moves worth watching this time of year. The mention of expansion and an American exit plan points to bigger organizational",
+          "date": "September 5, 2026",
+          "link": "https://theleafsnation.com/news/brisson-leafs-expansion-works-the-american-exit-strategy-leaflets"
+        },
+        {
+          "source": "Daily Faceoff",
+          "source_class": "web",
+          "headline": "Leafs sign Brendan Brisson to one-year contract",
+          "dek": "Toronto adds a low-cost skill bet to its depth chart as it keeps shaping the roster before camp opens. Brisson gets another NHL opportunity, and the league-minimum deal gives the club flexibility while it evaluates forward options.",
+          "date": "September 4, 2026",
+          "link": "https://www.dailyfaceoff.com/news/brendan-brisson-toronto-maple-leafs-one-year-contract-850000-free-agency"
         }
       ],
       "standings": {
@@ -173,6 +181,95 @@
           }
         ]
       },
+      "draft_board": {
+        "team": "Toronto Maple Leafs",
+        "league": "NHL",
+        "projected_pick": "TBD",
+        "draft_date": "June 2026",
+        "prospects_watched": [
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          },
+          {
+            "name": "TBD",
+            "position": "TBD",
+            "team": "TBD",
+            "note": "TBD"
+          }
+        ],
+        "lottery": {
+          "odds": "TBD",
+          "outcome": "TBD"
+        },
+        "label": "NHL Draft Board",
+        "event_date": "June 2026",
+        "pick_position": "TBD",
+        "headers": [
+          "Rank",
+          "Prospect",
+          "College / Team",
+          "Fit"
+        ],
+        "rows": [
+          {
+            "pk": "1",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          },
+          {
+            "pk": "2",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          },
+          {
+            "pk": "3",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          },
+          {
+            "pk": "4",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          },
+          {
+            "pk": "5",
+            "team": "TBD (TBD)",
+            "league": "NHL",
+            "pts": "TBD",
+            "odds": "TBD"
+          }
+        ],
+        "notes": "Outcome: TBD"
+      },
       "watch": [
         {
           "title": "Leafs Draft Coverage",
@@ -204,8 +301,8 @@
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Jays have grabbed the wheel again, and Vlad Guerrero Jr. is doing the talking with his bat and his voice. <strong>Guerrero's \"stay with me\" message to his teammates</strong> arrived after Toronto's 6-3 win over Cleveland, a tidy, hard-nosed result that nudged them to 70-71 and within a half-game of the final wild-card spot. That matters now because the front office can't look away from a core that still has teeth - Guerrero, Nathan Lukes, and a young cast that keeps flashing in bursts. But the season is over, and the real work starts with that awkward winter calculus: who stays, who heals, who gets paid. <strong>Watch Anthony Santander's rehab path and the club's next roster moves - that's where the story turns now.</strong>",
-        "updated": "Updated September 4, 2026"
+        "body": "The Blue Jays have finally stopped looking like a team stuck between identities - and that matters more than any old winter shopping list. <strong>Jameson Taillon left his return start with right elbow discomfort</strong>, a sour turn for a club trying to hold its new shape together after the deadline shakeup. Toronto sits at 70-71, and that record tells the story plainly: not dead, not dangerous, just stubbornly alive. Alejandro Kirk, Ernie Clement and George Springer drove in two runs apiece in the 9-2 win over Kansas City, and the noise around the club is all about belief, not panic. Vladimir Guerrero Jr.'s resurgence keeps the lineup from feeling ordinary, while the Taillon scare reminds everyone how thin the pitching margin remains. <strong>Watch the MRI, then watch how Ross Atkins handles the winter's pitching market</strong>.",
+        "updated": "Updated September 5, 2026"
       },
       "key_numbers": [
         {
@@ -220,44 +317,44 @@
       },
       "the_latest": [
         {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "'You're going to believe': Blue Jays claw back to.500 with win over Royals",
+          "dek": "Toronto's steady climb back to even signals a club that has survived the deadline noise and is finally turning close games into wins. With the season's stretch run taking shape, every step forward now changes the stakes for the Blue Jays' postseason push.",
+          "date": "September 4, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/youre-going-to-believe-blue-jays-claw-back-to-500-with-win-over-royals/"
+        },
+        {
           "source": "Jays Journal",
           "source_class": "web",
-          "headline": "These 5 players carried the Blue Jays to a winning month in August",
-          "dek": "August gave Toronto a needed reset, showing the club can string together winning baseball when key bats and arms are in sync. That surge matters because it offers a clearer blueprint for how the Blue Jays can build momentum heading into the stretch run.",
+          "headline": "Blue Jays face another rotation crisis after Jameson Taillon exits early",
+          "dek": "Toronto needs answers fast if Taillon is unavailable again, because an already thin staff cannot absorb another early exit without forcing overuse of relievers or a call-up from depth. The setback also puts added pressure on the front office to find stability for a rotation that",
+          "date": "September 5, 2026",
+          "link": "https://jaysjournal.com/blue-jays-face-another-rotation-crisis-after-jameson-taillon-exits-early?utm_source=RSS"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Blue Jays' Taillon likely headed back to IL after being pulled early in return",
+          "dek": "Jameson Taillon's quick exit raises fresh concern for a rotation that needs stability as the Blue Jays try to manage innings and protect arms down the stretch. Any setback for a starter returning from injury can ripple beyond one game, forcing Toronto to revisit both its",
           "date": "September 4, 2026",
-          "link": "https://jaysjournal.com/these-5-players-carried-the-blue-jays-to-a-winning-month-in-august?utm_source=RSS"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Blue Jays secure pivotal win to move 0.5 games back of wild-card spot",
-          "dek": "Toronto is suddenly within striking distance of the postseason race, and every game now carries direct impact on the wild-card picture. The surge has been fueled by timely offense and a crucial series result against a rival they are chasing, making this stretch feel decisive.",
-          "date": "September 3, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-secure-pivotal-win-to-move-0-5-games-back-of-wild-card-spot/"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "'Stay with me': Guerrero Jr. on message to team",
-          "dek": "Vladimir Guerrero Jr.'s comments matter because his voice carries real weight in a clubhouse that has leaned on him as a franchise centerpiece. His struggle to find form has become more than a personal issue, with the Blue Jays trying to keep their season steady while one of",
-          "date": "September 3, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/stay-with-me-guerrero-jr-on-message-to-team/"
+          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-pull-jameson-taillon-early-in-return-from-injured-list/"
         },
         {
           "source": "Bluebird Banter",
           "source_class": "web",
-          "headline": "Jays @ Guardians Game Thread",
-          "dek": "Toronto has an early start in Cleveland, which makes this one easier to catch live and harder to ignore in a day with no shortage of sports competition. A game thread matters because it tracks every turn in real time, from lineup impact to any momentum shift that could shape the",
-          "date": "September 3, 2026",
-          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-gamethreads/63593/jays-guardians-game-thread"
+          "headline": "Jays @ Royals Game Thread",
+          "dek": "Toronto's playoff chase still runs through every game, and tonight's matchup has added weight with Jameson Taillon back on the mound while Ricky Tiedemann has been sent to Buffalo. With Detroit also in the mix, Toronto needs to keep piling up wins and stop letting someone else's",
+          "date": "September 4, 2026",
+          "link": "https://www.bluebirdbanter.com/toronto-blue-jays-gamethreads/63614/jays-royals-game-thread"
         },
         {
           "source": "Jays Journal",
           "source_class": "web",
-          "headline": "Blue Jays Injury Updates: Shane Bieber's diligent rehab, plus a surprise end-of-season cameo",
-          "dek": "Toronto's rotation plans hinge on how quickly Shane Bieber's rehab translates into real game readiness, since his return would reshape the club's October-caliber depth chart. Anthony Santander's timeline matters too, with any late-season cameo offering a potential boost just as",
+          "headline": "Blue Jays' pitcher with up-and-down Toronto tenure lands with \"Rivalry Week\" opponent",
+          "dek": "Simeon Woods Richardson's move gives the Mariners a low-cost arm with plenty of familiarity, while Toronto loses another former pitching project to a contender in its own league. It also underscores how quickly roster churn can reshape depth charts before spring training even",
           "date": "September 4, 2026",
-          "link": "https://jaysjournal.com/blue-jays-injury-updates-shane-bieber-s-diligent-rehab-plus-a-surprise-end-of-season-cameo?utm_source=RSS"
+          "link": "https://jaysjournal.com/blue-jays-pitcher-with-up-and-down-toronto-tenure-lands-with-rivalry-week-opponent?utm_source=RSS"
         }
       ],
       "standings": {
@@ -369,8 +466,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "Quiet doesn't mean idle, not in Toronto, where the season's real drama is playing out in the conference room and the league office. <strong>The Kawhi Leonard saga has cracked back open</strong> after the NBA wrapped its investigation and left the Raptors with a live question, not a dead file. This is a club coming off a finished 0-0 season - sorry, no, a season already over and in the books - and now it must decide whether to press ahead on a move that could reshape the roster overnight. Leonard is the story, full stop. The rest is furniture. If Toronto takes the plunge, it's a swing for relevance; if it hesitates, it risks watching the moment pass. <strong>What to watch next: whether the Raptors and Clippers formally revive the deal and how quickly Toronto sets its fall camp board.</strong>",
-        "updated": "Updated September 4, 2026"
+        "body": "The quiet ended the moment Kawhi Leonard's return to Toronto stopped being rumor and started looking inevitable - and that is the entire offseason in one hard, glittering snapshot. <strong>The Raptors are being handed a star who can change the room, the pecking order and the temperature of the whole East</strong>; after a season that finished at 0-0 in the standings' sense of current relevance, the only thing that matters now is fit. Scottie Barnes remains the spine, but Leonard is the story, the blade and the warning label. The headlines about whether Toronto should revisit the price are real because this move is expensive in picks, money and patience. <strong>Watch the paperwork, the physical, and how the depth chart shakes out once camp opens.</strong>",
+        "updated": "Updated September 5, 2026"
       },
       "key_numbers": [
         {
@@ -385,10 +482,18 @@
       },
       "the_latest": [
         {
+          "source": "Raptors HQ",
+          "source_class": "web",
+          "headline": "6 reactions to the Kawhi Leonard news: Raptors HQ staff reacts",
+          "dek": "Kawhi Leonard's aftershocks still matter in Toronto because every fresh twist reopens questions about the title run, the breakup, and how the franchise is remembered. Staff reaction pieces give fans a quick read on where the debate stands now and why the old wound still pulls",
+          "date": "September 3, 2026",
+          "link": "https://www.raptorshq.com/raptors-game-previews/51399/6-reactions-to-the-kawhi-leonard-news-raptors-hq-staff-reacts"
+        },
+        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Why Kawhi Leonard investigation is a risky win for the Toronto Raptors",
-          "dek": "The NBA's findings around the Clippers' Kawhi Leonard dealings could reshape how teams weigh future star acquisitions and cap maneuvering. For Toronto, any gain from the probe comes with the danger of reopening painful questions about its own Leonard era and the cost of chasing",
+          "dek": "The Raptors are being pulled back into one of the NBA's most scrutinized sagas, where any finding could reshape how the franchise's 2019 title run is judged. Even if the league's punishment falls elsewhere, renewed attention on Toronto's role risks reopening old wounds and tying",
           "date": "September 3, 2026",
           "link": "https://www.sportsnet.ca/nba/article/why-kawhi-leonard-investigation-is-a-risky-win-for-the-toronto-raptors/"
         },
@@ -396,23 +501,15 @@
           "source": "Raptors Republic",
           "source_class": "web",
           "headline": "Should the Raptors revisit the price for Kawhi Leonard?",
-          "dek": "Toronto's 2019 championship still shapes every discussion of roster value, and this question taps into how much nostalgia should influence a team in the middle of a long offseason. If the price has shifted, the Raptors have to weigh the appeal of a proven star against the cost",
+          "dek": "Toronto's title run still hangs over every discussion of roster value, and any revisit to that transaction would force a fresh audit of how much a championship can justify. In a deep offseason, the question matters because it tests whether the franchise should keep treating that",
           "date": "September 3, 2026",
           "link": "https://raptorsrepublic.com/2026/09/03/should-the-raptors-revisit-the-price-for-kawhi-leonard/"
-        },
-        {
-          "source": "Raptors Republic",
-          "source_class": "web",
-          "headline": "Is Kawhi worth all this hullabaloo?",
-          "dek": "The question lands at a moment when the Raptors need clarity on whether the franchise's future still bends around Kawhi Leonard's legacy. For a team in the deep offseason, the debate matters because it speaks to how Toronto should value star power, title memories, and the cost",
-          "date": "September 3, 2026",
-          "link": "https://raptorsrepublic.com/2026/09/03/is-kawhi-worth-all-this-hullabaloo/"
         },
         {
           "source": "Raptors HQ",
           "source_class": "web",
           "headline": "Kawhi Leonard fined, not suspended, while Clippers lose five picks, NBA investigation concludes",
-          "dek": "The ruling closes the league's probe into a matter that could shape how front offices handle cap compliance and star-driven deals going forward. For Toronto readers, it also reopens an old Kawhi Leonard chapter, with the Raptors' 2019 title run now sitting beside a punishment",
+          "dek": "The league's ruling closes the book on one of the offseason's biggest scandals and signals how seriously it is treating salary cap and circumvention issues. For Toronto, the outcome also revives old Kawhi Leonard memories while shaping the broader competitive balance entering",
           "date": "September 2, 2026",
           "link": "https://www.raptorshq.com/raptors-news/51384/kawhi-leonard-fined-not-suspended-while-clippers-lose-5-picks-nba-investigation-concludes"
         },
@@ -420,7 +517,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "NBA ruling opens door for Kawhi Leonard's return to Raptors",
-          "dek": "The NBA's punishment of the Clippers cleared the path for the trade that would send Kawhi Leonard back to Toronto, where he already delivered the franchise's only championship. For the Raptors, the move could reshape the offseason and instantly change expectations around a",
+          "dek": "The NBA's ruling ends the uncertainty that had kept Leonard's Toronto move on hold and shifts the focus to what he can add to a team chasing immediate contention. It also raises the stakes for the Raptors' offseason plans, since the trade package and Leonard's contract situation",
           "date": "September 2, 2026",
           "link": "https://www.sportsnet.ca/nba/article/nba-hits-clippers-kawhi-leonard-with-punishments-for-salary-cap-circumvention/"
         }
@@ -595,8 +692,8 @@
       "detail": "1st in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The noise has shifted from survival to sorting - who fits, who flashes, and who gets squeezed out. <strong>Washington's seven-receiver roster has become the clearest sign of Adam Peters' offseason bet: keep the room deep, keep it fast, keep it competitive.</strong> Jayden Daniels sits at the center of it all, with the offense built to protect his health and sharpen his explosiveness, while the defense has been remade to feed the pass rush and give him shorter fields. Washington finished 2025 at 12-5, and that record now hangs over every personnel decision like a bright billboard: this isn't a rebuild, it's a refinement. <strong>What to watch next is whether the young receivers and undrafted holdovers turn camp into a meritocracy - or a mess.</strong>",
-        "updated": "Updated September 4, 2026"
+        "body": "The summer's verdict has already landed in Washington - and it isn't flattering. <strong>Six executives ranked the Commanders near the bottom of the NFC</strong>, a blunt reminder that the shine around this roster has worn thin, even after a busy offseason overhaul. The record is old news now; what matters is the work ahead, because a team that finished 5-12 cannot survive on reputation alone. Sonny Styles is the name to watch, the rookie linebacker carrying the promise of speed, range and a cleaner defensive identity. Zach Ertz's reunion talk adds a bittersweet wrinkle, but the real story is whether this front can turn all that personnel churn into something sturdier than paper depth. <strong>What to watch next: camp battles, health up front and whether Daniels gets a supporting cast worthy of the hype</strong>.",
+        "updated": "Updated September 5, 2026"
       },
       "key_numbers": [
         {
@@ -611,28 +708,44 @@
       },
       "the_latest": [
         {
+          "source": "Pro Football Talk",
+          "source_class": "web",
+          "headline": "Jayden Daniels: I can't live off what I did in 2024",
+          "dek": "Jayden Daniels is pushing back against being judged by one breakout rookie season, a stance that matters for a Commanders team hoping its quarterback keeps climbing instead of settling. With training camp and roster expectations turning up the heat, his message frames 2026",
+          "date": "September 4, 2026",
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jayden-daniels-i-cant-live-off-what-i-did-in-2024"
+        },
+        {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Chase Daniel sees Commanders' bold bet unlocking a different Jayden Daniels",
-          "dek": "Washington's quarterback room is drawing attention because the team is betting that a new voice can sharpen Jayden Daniels' next step in his development. For a franchise trying to build on its young quarterback's promise, that kind of offseason move could shape how quickly the",
+          "headline": "Zach Ertz could seal a storybook reunion with bitter Commanders twist",
+          "dek": "Zach Ertz's next move matters because a reunion with Philadelphia would instantly turn a familiar veteran into a meaningful NFC East subplot. For Washington, the twist is sharper because a former playmaker could end up helping the division rival that has spent years making life",
+          "date": "September 5, 2026",
+          "link": "https://riggosrag.com/zach-ertz-could-seal-storybook-reunion-with-bitter-commanders-twist?utm_source=RSS"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Predicting last-place finisher for each NFL division in 2026: Browns, Raiders, Commanders among possible duds",
+          "dek": "Washington enters the season with real pressure after injuries and a shaky offensive line undercut expectations around Jayden Daniels. If the protection issues linger, the Commanders could slip toward the bottom of the NFC East despite offseason defensive upgrades.",
           "date": "September 4, 2026",
-          "link": "https://riggosrag.com/chase-daniel-sees-commanders-bold-bet-unlocking-different-jayden-daniels?utm_source=RSS"
+          "link": "https://www.cbssports.com/nfl/news/predicting-last-place-finisher-for-each-nfl-division-in-2026/"
         },
         {
           "source": "Hogs Haven",
           "source_class": "web",
-          "headline": "Will Adam Peters UDFA success alter Washington Commanders trajectory?",
-          "dek": "Washington's roster-build under Adam Peters is being judged in real time, and the UDFA debate speaks directly to whether the front office can find hidden value after a 5-12 season. If those undrafted players keep making meaningful contributions, it strengthens the case that the",
-          "date": "September 3, 2026",
-          "link": "https://www.hogshaven.com/washington-commanders-analysis/437103/adam-peters-success-udfas-change-trajectory-washington-commanders"
+          "headline": "What to expect from Sonny Styles, Commanders draft class in 2026 season",
+          "dek": "Washington's rookie class now moves from offseason immersion to its first real on-field test, with Sonny Styles drawing attention as a player who could influence the team's depth and identity. How quickly the group adapts in 2026 will shape not just roster decisions, but",
+          "date": "September 4, 2026",
+          "link": "https://www.hogshaven.com/washington-commanders-analysis/437518/commanders-nfl-draft-class-season-preview-sonny-styles-antonio-williams"
         },
         {
           "source": "Riggo's Rag",
           "source_class": "web",
-          "headline": "Terry McLaurin has 97 million reasons to make his Commanders critics retreat",
-          "dek": "Terry McLaurin's new deal puts a premium on production, and Washington needs its top receiver to justify that investment right away. If he rebounds from last season's dip, it strengthens the offense and quiets the offseason doubts around the Commanders' passing game.",
-          "date": "September 4, 2026",
-          "link": "https://riggosrag.com/terry-mclaurin-97-million-reasons-make-commanders-critics-retreat?utm_source=RSS"
+          "headline": "Commanders 7-round 2027 mock draft as the college football chaos begins",
+          "dek": "College football's opening weekend quickly reshapes the 2027 draft picture, and Washington's front office is already tracking which prospects can help on a roster that still has holes to fill. Early projections matter now because one strong or weak season can move the",
+          "date": "September 5, 2026",
+          "link": "https://riggosrag.com/commanders-7-round-2027-mock-draft-college-football-chaos-begins?utm_source=RSS"
         }
       ],
       "standings": {
@@ -727,58 +840,68 @@
     }
   },
   "featured": {
-    "team": "jays",
-    "kicker": "Toronto Blue Jays - Offseason",
-    "headline": "Jays Beat Guardians",
-    "dek": "Toronto scored enough with the bats and the walks to beat Cleveland without needing a power display, a useful sign of lineup depth when October style games demand patience and traffic on the bases. The win also steadies a club in offseason context, where every result helps frame",
-    "source": "Bluebird Banter",
-    "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/63597/jays-beat-guardians",
-    "date": "September 4, 2026"
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Deep Offseason",
+    "headline": "Maple Leafs notebook: How Auston Matthews set the tone",
+    "dek": "Auston Matthews' 2019 choice still echoes far beyond Toronto, and this notebook shows how one captain's early career move shaped the paths of several of hockey's brightest young stars. For the Maple Leafs, it is a reminder that Matthews remains central to the franchise's",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-notebook-how-auston-matthews-set-the-tone/",
+    "date": "September 5, 2026"
   },
   "two_up": [
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs - Deep Offseason",
-      "headline": "Prime Minister Mark Carney roasts Maple Leafs' Cup drought in speech",
-      "dek": "A federal policy speech turned into a sports punchline, giving the Leafs an unplanned cameo in a national moment. The joke lands because Toronto's 1967 title drought remains the league's longest, a fact that still carries cultural weight whenever the team comes up.",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/video/prime-minister-mark-carney-roasts-maple-leafs-cup-drought-in-speech/",
-      "date": "September 4, 2026"
+      "team": "jays",
+      "kicker": "Toronto Blue Jays - Offseason",
+      "headline": "Jays Crush Royals",
+      "dek": "Toronto's offense backed up a needed win with production from Alejandro Kirk, Ernie Clement and George Springer, giving the club a lift as it tries to stabilize its season. The concern is Jameson Taillon leaving after two innings with right elbow discomfort, a worrying turn",
+      "source": "Bluebird Banter",
+      "link": "https://www.bluebirdbanter.com/toronto-blue-jays-scores/63618/jays-crush-royals",
+      "date": "September 5, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Deep Offseason",
-      "headline": "6 reactions to the Kawhi Leonard news: Raptors HQ staff reacts",
-      "dek": "The report keeps the franchise tied to the Kawhi Leonard chapter, a stretch that still shapes how Toronto fans judge the 2019 title and the choices that followed. With the team deep in the offseason, that retrospective matters because it turns a past triumph into a fresh debate",
-      "source": "Raptors HQ",
-      "link": "https://www.raptorshq.com/raptors-game-previews/51399/6-reactions-to-the-kawhi-leonard-news-raptors-hq-staff-reacts",
-      "date": "September 4, 2026"
+      "headline": "Three Raptors who could break out in 2026-27",
+      "dek": "Toronto's offseason focus now shifts to which young or overlooked pieces can push into real rotation roles when camp opens. Identifying the most likely leap candidates matters because the Raptors need internal growth to sharpen their depth chart before the 2026-27 season begins.",
+      "source": "Raptors Republic",
+      "link": "https://raptorsrepublic.com/2026/09/04/nba-news-three-raptors-who-could-break-out-in-2026-27/",
+      "date": "September 5, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Offseason",
-    "headline": "How Commanders could operate with seven receivers on 53-man roster",
-    "dek": "Keeping seven receivers signals Washington values depth, flexibility and special teams help as it settles the opening roster. The extra spot could shape weekly game plans, elevate competition for targets and reveal how much the offense wants to lean on speed and matchup options.",
+    "headline": "Announcing the winner of the 2026 Washington Commanders Roster Prediction Contest!",
+    "dek": "The contest caps months of speculation about how Washington's roster would take shape after a busy offseason of additions and departures. For readers, it offers a snapshot of which lineup assumptions held up as the Commanders moved toward the 2026 season.",
     "source": "Hogs Haven",
-    "link": "https://www.hogshaven.com/washington-commanders-roster/437353/commanders-53-man-roster-receivers-luke-mccaffrey-terry-mclaurin-stefon-diggs-antonio-williams",
-    "date": "September 4, 2026"
+    "link": "https://www.hogshaven.com/washington-commanders-undrafted-free-agents/437384/winner-2026-washington-commanders-roster-prediction-contest",
+    "date": "September 5, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Canadian PM Mark Carney pokes fun at Leafs"
+      "text": "Leafs sign Brendan Brisson to one-year contract"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "Maple Leafs notebook: How Auston Matthews set the tone"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays @ Guardians Game Thread"
+      "text": "Jays Crush Royals"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Thursday Jays Notes"
+      "text": "Jays @ Royals Game Thread"
+    },
+    {
+      "badge": "NBA",
+      "badge_style": "nba",
+      "text": "Three Raptors who could break out in 2026-27"
     },
     {
       "badge": "NBA",
@@ -786,14 +909,9 @@
       "text": "Should the Raptors revisit the price for Kawhi Leonard?"
     },
     {
-      "badge": "NBA",
-      "badge_style": "nba",
-      "text": "NBA ruling opens door for Kawhi Leonard's return to Raptors"
-    },
-    {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders: Offseason"
+      "text": "Jayden Daniels: I can't live off what I did in 2024"
     }
   ],
   "scoreboard": [],
@@ -874,51 +992,12 @@
     "note": ""
   },
   "morning_brief": {
-    "teams": [
-      {
-        "team": "leafs",
-        "league": "NHL",
-        "name": "Leafs",
-        "lines": [
-          {
-            "k": "news",
-            "text": "In the news: Prime Minister Mark Carney roasts Maple Leafs' Cup drought in speech (Sportsnet)"
-          }
-        ]
-      },
-      {
-        "team": "jays",
-        "league": "MLB",
-        "name": "Jays",
-        "lines": [
-          {
-            "k": "news",
-            "text": "In the news: Jays Beat Guardians (Bluebird Banter)"
-          }
-        ]
-      },
-      {
-        "team": "raptors",
-        "league": "NBA",
-        "name": "Raptors",
-        "lines": [
-          {
-            "k": "news",
-            "text": "In the news: 6 reactions to the Kawhi Leonard news: Raptors HQ staff reacts (Raptors HQ)"
-          }
-        ]
-      },
-      {
-        "team": "commanders",
-        "league": "NFL",
-        "name": "Commanders",
-        "lines": [
-          {
-            "k": "news",
-            "text": "In the news: How Commanders could operate with seven receivers on 53-man roster (Hogs Haven)"
-          }
-        ]
-      }
-    ]
+    "article": {
+      "title": "Saturday's Skate",
+      "paragraphs": [
+        "Auston Matthews set the tone in Leafs camp talk, and Jack Roslovic is already a name to watch as the Maple Leafs shape their 2026-27 forward group. The Blue Jays found a timely lift against the Royals, and the conversation around Toronto keeps circling whether that bat can travel into the next stretch.",
+        "For the Raptors, the offseason is still about upside, with breakout candidates for 2026-27 and fresh reaction to the Kawhi Leonard news keeping the spotlight on the roster. In Washington, the Commanders are still sorting the depth chart, while the Zach Ertz reunion angle adds one more camp storyline, and the roster prediction contest has already drawn a crowd."
+      ]
+    }
   }
 }
