@@ -3183,6 +3183,8 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             if not headline or len(headline) > TICKER_MAX:
                 continue  # ships whole or not at all - NEVER chopped
             hl = headline.lower()
+            if re.search(r"\b\d{1,2}-\d{1,2}\b", hl):
+                continue  # scores come from the structured score bite, never a stale headline
             if re.match(r"^(mon|tues|wednes|thurs|fri|satur|sun)day\b.*\b(notes|links|roundup)$", hl):
                 continue  # generic daily roundup titles say nothing on their own
             if any(sp in hl for sp in SKIP_PHRASES):
