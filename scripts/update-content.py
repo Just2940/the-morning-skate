@@ -25,7 +25,8 @@ import base64
 # Reputable-publisher allowlist, shared with the validator (rule 0.30).
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sources import reputable_publisher, reputable_provider, credits_fan_brand  # noqa: E402
-from game_details import stars_from_summary, preview_from_summary, goalies_from_dfo  # noqa: E402
+from game_details import (stars_from_summary, preview_from_summary, goalies_from_dfo,  # noqa: E402
+                          stars_text, preview_text)
 from factcheck import ungrounded_numbers  # noqa: E402
 
 # === LOGGING (kills "silent fallback" class of bugs) ===
@@ -1117,15 +1118,16 @@ def _dfo_goalie_games(date_str):
 
 
 def game_preview(team_key, game):
-    """Game-day notes for a team's game today: probables / goalies / injuries."""
+    """Structured game-day preview for a team's game today: a pitcher or
+    goalie duel plus the injury report (see game_details for the shape)."""
     cfg = TEAMS[team_key]
-    notes = []
+    preview = preview_from_summary(_espn_summary(cfg, game.get("game_id")),
+                                   cfg["league"], cfg["espn_abbr"]) or {}
     if cfg["league"] == "NHL":
-        gl = goalies_from_dfo(_dfo_goalie_games(game.get("game_date", "")), cfg["full_name"])
-        if gl:
-            notes.append(gl)
-    notes += preview_from_summary(_espn_summary(cfg, game.get("game_id")), cfg["league"], cfg["espn_abbr"])
-    return notes[:3]
+        duel = goalies_from_dfo(_dfo_goalie_games(game.get("game_date", "")), cfg["full_name"])
+        if duel:
+            preview["duel"] = duel
+    return preview
 
 
 _NHL_TV_CACHE = {}
@@ -5809,7 +5811,7 @@ def _brief_facts_block(db, all_team_facts, today):
             _pre = " (preseason game - does not count)" if g.get("preseason") else ""
             out.append(f"- Last night: {verb} the {g.get('opp_name')} {s1}-{s2}{_pre}")
             if g.get("stars"):
-                out.append(f"- Top performers: {'; '.join(g['stars'])}")
+                out.append(f"- Top performers: {'; '.join(stars_text(g['stars']))}")
         srow = slate_by_team.get(tk)
         if srow and not srow.get("off"):
             line = f"- Today: {srow.get('matchup', '')}"
@@ -5818,7 +5820,7 @@ def _brief_facts_block(db, all_team_facts, today):
             if srow.get("channel"):
                 line += f" on {srow.get('channel')}"
             out.append(line)
-            for note in srow.get("preview") or []:
+            for note in preview_text(srow.get("preview")):
                 out.append(f"- Game note: {note}")
         else:
             wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])

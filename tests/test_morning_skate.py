@@ -36,7 +36,8 @@ uc = _load("uc", "update-content.py")
 vc = _load("vc", "validate_content.py")
 from sources import reputable_publisher, reputable_provider, credits_fan_brand  # noqa: E402
 from factcheck import ungrounded_numbers  # noqa: E402
-from game_details import stars_from_summary, preview_from_summary, goalies_from_dfo, last_name  # noqa: E402
+from game_details import (stars_from_summary, preview_from_summary, goalies_from_dfo, last_name,  # noqa: E402
+                          stars_text, preview_text)
 
 FIXED_NOW = datetime(2026, 9, 27, 7, 0, tzinfo=uc.EST)
 
@@ -280,20 +281,52 @@ class GameDetailTests(unittest.TestCase):
                  {"labels": ["H-AB", "AB", "R", "H", "RBI", "HR"], "athletes": [
                      {"athlete": {"shortName": "A. Gimenez"}, "stats": ["1-3", "3", "0", "1", "1", "0"]},
                      {"athlete": {"shortName": "G. Springer"}, "stats": ["2-4", "4", "1", "2", "3", "1"]}]}]}]}}
-        self.assertEqual(stars_from_summary(s, "MLB", "TOR"), ["W: Lowder", "L: Yesavage", "Springer 2-for-4, HR, 3 RBI"])
+        stars = stars_from_summary(s, "MLB", "TOR")
+        self.assertEqual([(x["tag"], x["tone"], x["name"]) for x in stars],
+                         [("W", "win", "Lowder"), ("L", "loss", "Yesavage"), ("BAT", "", "Springer")])
+        self.assertEqual(stars[2]["stat"], "2-for-4, HR, 3 RBI")
+        self.assertEqual(stars_text(stars), ["W: Lowder", "L: Yesavage", "BAT: Springer (2-for-4, HR, 3 RBI)"])
 
     def test_nfl_stars(self):
         s = {"leaders": [{"team": {"abbreviation": "WSH"}, "leaders": [
             {"name": "passingYards", "leaders": [{"athlete": {"shortName": "M. Mariota"}, "displayValue": "11/16, 111 YDS, 1 TD"}]},
             {"name": "rushingYards", "leaders": [{"athlete": {"shortName": "J. Daniels"}, "displayValue": "7 CAR, 69 YDS"}]}]}]}
-        self.assertEqual(stars_from_summary(s, "NFL", "WSH"), ["Mariota 111 pass yds, 1 TD", "Daniels 69 rush yds"])
+        self.assertEqual(stars_text(stars_from_summary(s, "NFL", "WSH")),
+                         ["PASS: Mariota (111 yds, 1 TD)", "RUSH: Daniels (69 yds)"])
 
     def test_nhl_stars(self):
         s = {"boxscore": {"players": [{"team": {"abbreviation": "TOR"}, "statistics": [
             {"labels": ["G", "A"], "athletes": [{"athlete": {"shortName": "A. Matthews"}, "stats": ["2", "0"]},
                                                 {"athlete": {"shortName": "J. Tavares"}, "stats": ["1", "1"]}]},
             {"labels": ["GA", "SA", "SV"], "athletes": [{"athlete": {"shortName": "S. Bobrovsky"}, "stats": ["1", "30", "29"]}]}]}]}}
-        self.assertEqual(stars_from_summary(s, "NHL", "TOR"), ["Goals: Matthews (2), Tavares", "Bobrovsky 29 saves"])
+        self.assertEqual(stars_text(stars_from_summary(s, "NHL", "TOR")),
+                         ["GOAL: Matthews (2G)", "GOAL: Tavares (1G, 1A)", "SV: Bobrovsky (29 saves, .967)"])
+
+    def test_older_editions_still_render(self):
+        """Editions saved before the redesign stored plain strings."""
+        self.assertEqual(stars_text(["W: Lowder"]), ["W: Lowder"])
+        self.assertEqual(preview_text(["Out: Daniels (elbow)"]), ["Out: Daniels (elbow)"])
+        self.assertEqual(stars_text(None), [])
+        self.assertEqual(preview_text(None), [])
+
+    def test_email_renders_structured_details(self):
+        send_brief = _load("send_brief", "send_brief.py")
+        data = {"meta": {"date_display": "Sunday, September 27, 2026"},
+                "scoreboard": [{"team": "jays", "name": "Jays", "league": "MLB", "opp_name": "Reds", "result": "L",
+                                "team_score": 1, "opp_score": 5, "date": "Sep 26",
+                                "stars": [{"tag": "W", "tone": "win", "name": "Lowder", "stat": "6.0 IP, 0 ER, 2 K"}]}],
+                "today_slate": [{"team": "jays", "matchup": "Jays vs. Reds", "detail": "3:07 PM ET",
+                                 "preview": {"duel": {"label": "Probable starters", "status": None,
+                                                      "ours": {"name": "Scherzer", "sub": "3-9, 6.14 ERA"},
+                                                      "theirs": {"name": "Williamson", "sub": ""}}}},
+                                {"team": "commanders", "matchup": "Commanders vs. Seahawks", "detail": "1:00 PM ET",
+                                 "preview": ["Out: Daniels (elbow)"]}]}
+        _, body, text = send_brief.build(data)
+        self.assertIn("Lowder", body)
+        self.assertIn("Scherzer", body)
+        self.assertIn("W: Lowder (6.0 IP, 0 ER, 2 K)", text)
+        self.assertIn("Probable starters: Scherzer (3-9, 6.14 ERA) vs. Williamson", text)
+        self.assertIn("Out: Daniels (elbow)", text)
 
     def test_previews(self):
         mlb = {"header": {"competitions": [{"competitors": [
@@ -302,15 +335,23 @@ class GameDetailTests(unittest.TestCase):
                                                       {"abbreviation": "L", "displayValue": "9"},
                                                       {"abbreviation": "ERA", "displayValue": "6.14"}]}}}]},
             {"team": {"abbreviation": "CIN"}, "probables": [{"athlete": {"shortName": "B. Williamson"}}]}]}]}}
-        self.assertEqual(preview_from_summary(mlb, "MLB", "TOR"), ["Probables: Scherzer (3-9, 6.14 ERA) vs. Williamson"])
+        duel = preview_from_summary(mlb, "MLB", "TOR")["duel"]
+        self.assertEqual((duel["ours"]["name"], duel["ours"]["sub"], duel["theirs"]["name"]),
+                         ("Scherzer", "3-9, 6.14 ERA", "Williamson"))
+        self.assertEqual(preview_text({"duel": duel}), ["Probable starters: Scherzer (3-9, 6.14 ERA) vs. Williamson"])
         nfl = {"header": {"competitions": [{"competitors": [{"team": {"abbreviation": "WSH"}}]}]},
                "injuries": [{"team": {"abbreviation": "WSH"}, "injuries": [
                    {"status": "Out", "athlete": {"shortName": "J. Daniels"}, "details": {"type": "Elbow"}},
                    {"status": "Questionable", "athlete": {"shortName": "T. McLaurin"}, "details": {"type": "Ankle"}}]}]}
-        self.assertEqual(preview_from_summary(nfl, "NFL", "WSH"), ["Out: Daniels (elbow)", "Questionable: McLaurin (ankle)"])
+        inj = preview_from_summary(nfl, "NFL", "WSH")
+        self.assertEqual([(g["status"], g["tone"]) for g in inj["injuries"]],
+                         [("Out", "out"), ("Questionable", "questionable")])
+        self.assertEqual(preview_text(inj), ["Out: Daniels (elbow)", "Questionable: McLaurin (ankle)"])
         dfo = [{"homeTeamName": "Toronto Maple Leafs", "homeGoalieName": "Sergei Bobrovsky",
                 "awayTeamName": "Montreal Canadiens", "awayGoalieName": "Jakub Dobes", "homeNewsStrengthName": "Confirmed"}]
-        self.assertEqual(goalies_from_dfo(dfo, "Toronto Maple Leafs"), "Goalies: Bobrovsky vs. Dobes (confirmed)")
+        goalies = goalies_from_dfo(dfo, "Toronto Maple Leafs")
+        self.assertEqual(goalies["status"], "confirmed")
+        self.assertEqual(preview_text({"duel": goalies}), ["In goal: Bobrovsky vs. Dobes (confirmed)"])
 
 
 # --------------------------------------------------------------------- #
