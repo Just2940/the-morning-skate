@@ -1465,7 +1465,7 @@ body::before {
 
   <div id="leafs-highlights-wrap"></div>
 
-  <div class="sec"><span class="sec-label">The Latest</span><span class="sec-line"></span></div>
+  <div class="sec"><span class="sec-label" id="leafs-latest-label">The Latest</span><span class="sec-line"></span></div>
   <div class="news-stack" id="leafs-news"></div>
 
   <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
@@ -1531,7 +1531,7 @@ body::before {
 
   <div id="jays-highlights-wrap"></div>
 
-  <div class="sec"><span class="sec-label">The Latest</span><span class="sec-line"></span></div>
+  <div class="sec"><span class="sec-label" id="jays-latest-label">The Latest</span><span class="sec-line"></span></div>
   <div class="news-stack" id="jays-news"></div>
 
   <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
@@ -1595,7 +1595,7 @@ body::before {
 
   <div id="raptors-highlights-wrap"></div>
 
-  <div class="sec"><span class="sec-label">The Latest</span><span class="sec-line"></span></div>
+  <div class="sec"><span class="sec-label" id="raptors-latest-label">The Latest</span><span class="sec-line"></span></div>
   <div class="news-stack" id="raptors-news"></div>
 
   <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
@@ -1659,7 +1659,7 @@ body::before {
 
   <div id="commanders-highlights-wrap"></div>
 
-  <div class="sec"><span class="sec-label">Offseason Intel</span><span class="sec-line"></span></div>
+  <div class="sec"><span class="sec-label" id="commanders-latest-label">Offseason Intel</span><span class="sec-line"></span></div>
   <div class="news-stack" id="commanders-news"></div>
 
   <div class="sec"><span class="sec-label">Listen</span><span class="sec-line"></span></div>
@@ -1994,6 +1994,10 @@ function renderWeekAhead(wa) {
 // === TEAM PANEL RENDERER ===
 
 function renderTeam(key, t) {
+  // Section label follows the season (the static HTML froze the Commanders
+  // on "Offseason Intel" straight through their regular season).
+  const _ll = document.getElementById(key + '-latest-label');
+  if (_ll) _ll.textContent = t.the_latest_label || 'The Latest';
   if (t.watch && t.watch.length) {
     var _wg = document.getElementById('watch-' + key);
     if (_wg) {

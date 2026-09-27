@@ -3157,9 +3157,11 @@ def generate_ticker(all_team_facts, all_team_articles=None):
         # --- 2. Next game, tightest form that fits -----------------------
         if upcoming:
             ng = upcoming[0]
+            _lead = {"season opener": "Opener", "season finale": "Finale",
+                     "preseason": "Preseason", "playoffs": "Playoffs"}.get(ng.get("note", ""), "Next")
             for cand in (
-                f"Next: {team_name} {ng.get('opp', '')} - {ng.get('day', '')} {ng.get('time', '')}",
-                f"Next: {team_name} {ng.get('opp', '')} {ng.get('day', '')}",
+                f"{_lead}: {team_name} {ng.get('opp', '')} - {ng.get('day', '')} {ng.get('time', '')}",
+                f"{_lead}: {team_name} {ng.get('opp', '')} {ng.get('day', '')}",
                 f"{team_name} {ng.get('opp', '')} {ng.get('day', '')}",
             ):
                 if add(team_key, cand):
@@ -3181,6 +3183,8 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             if not headline or len(headline) > TICKER_MAX:
                 continue  # ships whole or not at all - NEVER chopped
             hl = headline.lower()
+            if re.match(r"^(mon|tues|wednes|thurs|fri|satur|sun)day\b.*\b(notes|links|roundup)$", hl):
+                continue  # generic daily roundup titles say nothing on their own
             if any(sp in hl for sp in SKIP_PHRASES):
                 continue
             _tn = team_name.lower()
@@ -5593,7 +5597,7 @@ ready returns rise road rolls run sets sign signs skate start starts stays
 still swap swaps take takes the their this three to top trades turn turns two
 up waits wear wears week while wide win wins with young your monday tuesday
 wednesday thursday friday saturday sunday leafs jays blue raptors commanders
-toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs claim claims earn earns grab grabs join joins ink inks nab nabs secure secures name names pick picked land lands roll rolled seek seeks aim aims begin begins arrive arrives await awaits
+toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs claim claims earn earns grab grabs join joins ink inks nab nabs secure secures name names pick picked land lands roll rolled seek seeks aim aims begin begins arrive arrives await awaits show shows support supports honor honors return returns heads head set sets hope hopes race bid stay stays streak skid snap snaps end ends rookie rookies star stars veteran veterans captain coach injury injuries deal deals trade traded look looks key test tests battle battles clash opener finale season camp preseason playoff playoffs fans family practice start starts starting finish finishes home road day night morning big bigger final quest turn turns step steps sharp sharper tough rough strong bright long short left right out up down on off
 """.split())
 
 
