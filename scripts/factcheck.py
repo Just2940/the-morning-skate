@@ -114,7 +114,8 @@ def ungrounded_numbers(text, corpus):
     two, three = _pairs(text)
     for p in sorted(two, key=lambda s: sorted(s)):
         if p not in two_ok:
-            problems.append("score/record " + "-".join(str(x) for x in sorted(p, reverse=True)))
+            nums = sorted(p, reverse=True)
+            problems.append("score/record " + "-".join(str(x) for x in (nums * 2 if len(nums) == 1 else nums)))
     for t in sorted(three):
         if t not in three_ok:
             problems.append("record " + "-".join(str(x) for x in t))
