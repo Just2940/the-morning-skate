@@ -5771,7 +5771,7 @@ def _brief_headline_options(facts_block, body):
         "milestone, an injury, a signing), with a strong verb and at least one "
         "team or player name. It must be literally accurate: the plain verb for "
         "what happened (visit, start, sign, beat, lose), never a more dramatic "
-        "one. Plain, concrete newspaper language: no puns or "
+        "one. One story per headline. Plain, concrete newspaper language: no puns or "
         "wordplay, no questions, no colons. Never use the words update, roundup, "
         "recap, skate or morning, and never list the teams. Only facts stated in "
         "the article.")
@@ -5981,7 +5981,8 @@ def build_morning_brief(db, all_team_facts):
             "with a strong verb and at least one team or player name. It must be "
             "literally accurate: use the plain verb for what happened (visit, "
             "start, sign, beat, lose), never a more dramatic one, so a reader who "
-            "sees only the headline is not misled. Plain, "
+            "sees only the headline is not misled. One story per headline: "
+            "don't bolt a second team's news onto it. Plain, "
             "concrete words: no puns or wordplay, no questions, no colons. Never "
             "a list of team names, never the words update, roundup, recap, skate "
             "or morning. The style, shown with other teams: 'Judge Homers Twice "
