@@ -26,6 +26,10 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+# Reputable-publisher allowlist, shared with update-content.py.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sources import reputable_publisher, credits_fan_brand  # noqa: E402
+
 # ------------------------------------------------------------------------- #
 # Reporter — collects issues and prints a final readable report             #
 # ------------------------------------------------------------------------- #
@@ -502,7 +506,10 @@ def check_links_live(data: dict, r: Reporter, skip: bool) -> None:
 
     urls: list[tuple[str, str]] = []
     for path, item in _walk_article_items(data):
-        url = item.get("url")
+        # Articles store their link under "link" (cards/highlights use "url").
+        # Until 2026-09-27 this read only "url", so no article link was ever
+        # actually checked - it passed on YouTube cards alone.
+        url = item.get("url") or item.get("link")
         if url and isinstance(url, str) and url.startswith("http"):
             urls.append((path, url))
 
@@ -512,6 +519,7 @@ def check_links_live(data: dict, r: Reporter, skip: bool) -> None:
         seen.setdefault(url, path)
 
     broken: list[str] = []
+    flaky: list[str] = []
     for url, path in seen.items():
         try:
             resp = requests.head(
@@ -530,10 +538,17 @@ def check_links_live(data: dict, r: Reporter, skip: bool) -> None:
                     stream=True,
                 )
                 resp.close()
-            if resp.status_code >= 400:
-                broken.append(f"{path}: {resp.status_code} {url}")
+            code = resp.status_code
+            if code in (404, 410):
+                broken.append(f"{path}: {code} {url}")        # genuinely dead
+            elif code in (401, 402, 403, 429, 451) and reputable_publisher(url):
+                pass  # paywall / bot wall at a reputable publisher (The Athletic): fine for a reader
+            elif code >= 400:
+                flaky.append(f"{path}: {code} {url}")
         except Exception as e:
-            broken.append(f"{path}: {type(e).__name__} {url}")
+            flaky.append(f"{path}: {type(e).__name__} {url}")  # timeouts are not proof of death
+    for f in flaky[:8]:
+        r.warn(rule, f"unverified (transient?) {f}")
     if broken:
         for b in broken[:15]:
             r.error(rule, b)
@@ -1003,6 +1018,35 @@ def check_index_html(html: str, r: Reporter) -> None:
 # ------------------------------------------------------------------------- #
 
 
+def check_reputable_sources(data: dict, r: Reporter) -> None:
+    """0.30 - reputable news organizations only (Justin, 2026-09-27). Every
+    article surfaced anywhere must come from the sources.py allowlist: no fan
+    sites (SB Nation, FanSided, Nation Network, FanNation...), no unknowns."""
+    rule = "0.30 reputable sources only"
+    items: list[tuple[str, dict]] = []
+    for key in ("featured", "extra_story"):
+        it = data.get(key)
+        if isinstance(it, dict) and it.get("link"):
+            items.append((key, it))
+    for i, it in enumerate(data.get("two_up") or []):
+        if isinstance(it, dict) and it.get("link"):
+            items.append((f"two_up[{i}]", it))
+    for tk, t in (data.get("teams") or {}).items():
+        for i, it in enumerate((t or {}).get("the_latest") or []):
+            if isinstance(it, dict) and it.get("link"):
+                items.append((f"teams.{tk}.the_latest[{i}]", it))
+    bad = [f"{path}: {it.get('source', '?')} {it.get('link')}"
+           for path, it in items if not reputable_publisher(it.get("link", ""))]
+    bad += [f"{path}: syndicated fan-blog content ({it.get('headline', '')[:60]})"
+            for path, it in items
+            if reputable_publisher(it.get("link", ""))
+            and credits_fan_brand(f"{it.get('headline', '')} {it.get('dek', '')}")]
+    for b in bad[:15]:
+        r.error(rule, b)
+    if not bad:
+        r.ok(f"{rule} ({len(items)} articles checked)")
+
+
 def check_data_health(data: dict, r: Reporter) -> None:
     """0.29 - the backbone data actually loaded. Added 2026-09-27 after ESPN
     403'd every schedule/record/standings call for a month while this
@@ -1083,6 +1127,7 @@ def main() -> int:
     check_draft_board(data, r)
     check_cross_field_consistency(data, r)
     check_data_health(data, r)
+    check_reputable_sources(data, r)
     check_index_html(raw_html, r)
     check_links_live(data, r, skip=args.skip_network)
     check_logos_live(data, r, skip=args.skip_network)

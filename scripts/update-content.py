@@ -22,6 +22,10 @@ from urllib.error import URLError, HTTPError
 from urllib.parse import quote_plus, urlparse, parse_qs
 import base64
 
+# Reputable-publisher allowlist, shared with the validator (rule 0.30).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sources import reputable_publisher, reputable_provider, credits_fan_brand  # noqa: E402
+
 # === LOGGING (kills "silent fallback" class of bugs) ===
 # Every except block that used to return empty/pass now routes through
 # log_error(). GH Actions log will show exactly which call failed.
@@ -709,22 +713,29 @@ def _phase(phase_id, league, cfg):
 
 
 def validate_url(url, timeout=10):
-    """Check if a URL returns HTTP 200. Returns True if valid, False otherwise."""
+    """Check that a URL is live. Only a 404/410 (or no answer at all) is dead.
+    Reputable publishers that refuse scripts - The Athletic answers 403 to
+    every automated request, paywalled or not - count as live: the link is
+    canonical from their own feed and works for a person in a browser."""
     if not url or not url.startswith("http"):
         return False
-    try:
-        req = Request(url, method="HEAD", headers={"User-Agent": "TheMorningSkate/1.0"})
-        with urlopen(req, timeout=timeout) as resp:
-            return resp.status == 200
-    except:
-        # Some servers block HEAD, try GET with minimal download
+    bot_block_ok = bool(reputable_publisher(url))
+    for method in ("HEAD", "GET"):
         try:
-            req = Request(url, headers={"User-Agent": "TheMorningSkate/1.0"})
+            req = Request(url, method=method, headers={"User-Agent": "TheMorningSkate/1.0"})
             with urlopen(req, timeout=timeout) as resp:
-                resp.read(1024)  # Only read first 1KB
+                if method == "GET":
+                    resp.read(1024)  # Only read first 1KB
                 return resp.status == 200
-        except:
-            return False
+        except HTTPError as e:
+            if e.code in (404, 410):
+                return False
+            if e.code in (401, 402, 403, 429, 451) and bot_block_ok:
+                return True
+            continue  # e.g. 405 on HEAD - retry with GET
+        except Exception:
+            continue
+    return False
 
 
 def is_perplexity_failure(text):
@@ -2012,14 +2023,8 @@ SOURCE_MAP = {
     "theglobeandmail.com": ("Globe and Mail", "web"),
     "washingtonpost.com": ("Washington Post", "web"),
     "nbcsports.com": ("NBC Sports", "web"),
-    "si.com": ("SI", "web"),
     "cbc.ca": ("CBC Sports", "web"),
-    "hogshaven.com": ("Hogs Haven", "web"),
     "commanders.com": ("Commanders.com", "web"),
-    "thehockeynews.com": ("The Hockey News", "web"),
-    "raptorsrepublic.com": ("Raptors Republic", "web"),
-    "bluejaysnation.com": ("Blue Jays Nation", "web"),
-    "mapleleafshotstove.com": ("Leafs Hot Stove", "web"),
     "yahoo.com": ("Yahoo Sports", "web"),
     "foxsports.com": ("Fox Sports", "web"),
     "reuters.com": ("Reuters", "web"),
@@ -2142,36 +2147,50 @@ TIER1_RSS_FEEDS = {
     # (url, source_name, source_class, team_specific)
     # team_specific=True: every item on the feed is about the team, so the
     # keyword relevance filter is skipped (team blogs rarely repeat the name).
-    # Rebuilt 2026-06-11: TSN discontinued RSS (404s), NFL.com feed 404s,
-    # CBC webfeed returns an empty channel, Commanders.com feed stale (2022),
-    # Hogs Haven moved to Atom at /rss/index.xml.
+    # Rebuilt 2026-09-27 (Justin): REPUTABLE NEWS ORGANIZATIONS ONLY - every
+    # fan site (The Leafs Nation, Bluebird Banter, Jays Journal, Raptors HQ,
+    # Raptors Republic, Hogs Haven, Riggo's Rag) removed. Every URL below was
+    # verified live; sources.py's allowlist is enforced on the final pool too.
+    # The Athletic's team feeds live at nytimes.com/athletic/rss/<lg>/<slug>/.
+    # Not available: TSN (no RSS), CBC (times out), Toronto Star (429s bots).
     "leafs": [
         ("https://www.sportsnet.ca/hockey/nhl/feed/", "Sportsnet", "sportsnet", False),
-        ("https://theleafsnation.com/feed", "The Leafs Nation", "web", True),
+        ("https://www.nytimes.com/athletic/rss/nhl/leafs/", "The Athletic", "athletic", False),
+        ("https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/sports/hockey/", "The Globe and Mail", "web", False),
+        ("https://torontosun.com/category/sports/hockey/nhl/toronto-maple-leafs/feed", "Toronto Sun", "web", False),
         ("https://www.dailyfaceoff.com/feed", "Daily Faceoff", "web", False),
+        ("https://www.cbssports.com/rss/headlines/nhl/", "CBS Sports", "web", False),
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "jays": [
         ("https://www.sportsnet.ca/baseball/mlb/feed/", "Sportsnet", "sportsnet", False),
-        ("https://www.bluebirdbanter.com/rss/index.xml", "Bluebird Banter", "web", True),
-        ("https://jaysjournal.com/feed", "Jays Journal", "web", True),
-        ("https://www.mlb.com/feeds/news/rss.xml", "MLB.com", "web", False),
+        ("https://www.nytimes.com/athletic/rss/mlb/jays/", "The Athletic", "athletic", False),
+        ("https://www.mlb.com/bluejays/feeds/news/rss.xml", "MLB.com", "web", True),
+        ("https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/sports/baseball/", "The Globe and Mail", "web", False),
+        ("https://torontosun.com/category/sports/baseball/mlb/toronto-blue-jays/feed", "Toronto Sun", "web", False),
+        ("https://www.cbssports.com/rss/headlines/mlb/", "CBS Sports", "web", False),
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "raptors": [
-        ("https://www.raptorshq.com/rss/index.xml", "Raptors HQ", "web", True),
-        ("https://www.espn.com/espn/rss/nba/news", "ESPN", "web", False),
-        ("https://www.raptorsrepublic.com/feed/", "Raptors Republic", "web", False),
         ("https://www.sportsnet.ca/basketball/nba/feed/", "Sportsnet", "sportsnet", False),
+        ("https://www.nytimes.com/athletic/rss/nba/raptors/", "The Athletic", "athletic", False),
+        ("https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/sports/basketball/", "The Globe and Mail", "web", False),
+        ("https://torontosun.com/category/sports/basketball/nba/toronto-raptors/feed", "Toronto Sun", "web", False),
+        ("https://www.espn.com/espn/rss/nba/news", "ESPN", "web", False),
+        ("https://www.cbssports.com/rss/headlines/nba/", "CBS Sports", "web", False),
         ("https://www.sportsnet.ca/feed/", "Sportsnet", "sportsnet", False),
     ],
     "commanders": [
-        ("https://www.hogshaven.com/rss/index.xml", "Hogs Haven", "web", True),
-        ("https://riggosrag.com/feed", "Riggo's Rag", "web", True),
+        ("https://www.nytimes.com/athletic/rss/nfl/commanders/", "The Athletic", "athletic", False),
+        # commanders.com/rss/news verified 2026-09-27: 20 items, zero fresh
+        # (the feed stopped updating years ago) - not included.
         ("https://www.espn.com/espn/rss/nfl/news", "ESPN", "web", False),
-        ("https://sports.yahoo.com/nfl/rss.xml", "Yahoo Sports", "web", False),
         ("https://www.nbcsports.com/profootballtalk.rss", "Pro Football Talk", "web", False),
         ("https://www.cbssports.com/rss/headlines/nfl/", "CBS Sports", "web", False),
+        ("https://www.sportingnews.com/us/rss/nfl", "The Sporting News", "web", False),
+        # Yahoo re-hosts SB Nation fan blogs: items pass only if the feed's
+        # named original publisher is reputable (see sources.reputable_provider).
+        ("https://sports.yahoo.com/nfl/rss.xml", "Yahoo Sports", "web", False),
     ],
 }
 
@@ -2188,6 +2207,9 @@ def _feed_items(root):
             "link": (it.findtext("link", "") or "").strip(),
             "desc": it.findtext("description", "") or "",
             "date_raw": it.findtext("pubDate", "") or "",
+            # Syndicated items name their original publisher (Yahoo: "SB Nation")
+            "provider": ((it.findtext("source", "") or "").strip()
+                         or (it.findtext("{http://purl.org/dc/elements/1.1/}publisher", "") or "").strip()),
         })
     if out:
         return out
@@ -2244,7 +2266,7 @@ TEAM_RELEVANCE_KEYWORDS = {
 }
 
 
-def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
+def fetch_tier1_rss_articles(team_key, limit=14, per_feed_cap=2):
     """Fetch articles from dedicated Tier 1 RSS/Atom feeds for source diversity.
 
     Prints one diagnostic line per feed so CI logs show exactly what each feed
@@ -2256,10 +2278,12 @@ def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
     ]
     negative_keywords = TIER1_NEGATIVE_KEYWORDS.get(team_key, ())
     articles = []
+    overflow = []  # per-feed lists of fresh, eligible items beyond per_feed_cap
     seen_links = set()
     for feed_url, source_name, source_class, team_specific in TIER1_RSS_FEEDS.get(team_key, []):
         if len(articles) >= limit:
             break
+        feed_overflow = []
         n_items = n_kw = n_fresh = n_kept = 0
         try:
             req = Request(feed_url, headers={
@@ -2286,6 +2310,12 @@ def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
                     continue
                 if low_link.rstrip("/") in seen_links:
                     continue
+                # Reputable outlets only - including the ORIGINAL publisher of
+                # syndicated items (Yahoo re-hosts SB Nation fan blogs).
+                if not reputable_provider(item.get("provider", "")):
+                    continue
+                if credits_fan_brand(title + " " + description):
+                    continue
                 if negative_keywords and any(nk in (title + " " + description).lower() for nk in negative_keywords):
                     continue
                 if not team_specific:
@@ -2307,7 +2337,7 @@ def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
                 n_fresh += 1
                 clean_desc = truncate_at_word(re.sub(r'<[^>]+>', '', description).strip(), 200)
                 seen_links.add(low_link.rstrip("/"))
-                articles.append({
+                cand = {
                     "source": source_name,
                     "source_class": source_class,
                     "headline": title,
@@ -2316,14 +2346,31 @@ def fetch_tier1_rss_articles(team_key, limit=8, per_feed_cap=3):
                     "link": link,
                     "days_old": days_old,
                     "type": "news",
-                })
-                n_kept += 1
-                feed_kept += 1
-                if feed_kept >= per_feed_cap or len(articles) >= limit:
+                }
+                if feed_kept < per_feed_cap and len(articles) < limit:
+                    articles.append(cand)
+                    n_kept += 1
+                    feed_kept += 1
+                elif len(feed_overflow) < 4:
+                    feed_overflow.append(cand)  # fresh extras for the fill pass
+                else:
                     break
+            if feed_overflow:
+                overflow.append(feed_overflow)
             print(f"      [tier1] {source_name} {feed_url}: items={n_items} kw={n_kw} fresh={n_fresh} kept={n_kept}")
         except Exception as e:
             print(f"    WARNING: {source_name} RSS failed: {e}")
+    # Fill pass: when some feeds come up empty (league-wide feeds that did
+    # not mention the team today), let the productive ones contribute more,
+    # alternating feeds so no single publisher floods the pool.
+    filled = 0
+    while len(articles) < limit and any(overflow):
+        for bucket in overflow:
+            if bucket and len(articles) < limit:
+                articles.append(bucket.pop(0))
+                filled += 1
+    if filled:
+        print(f"      [tier1] fill pass added {filled} more from productive feeds")
     return articles
 
 
@@ -2384,6 +2431,22 @@ def discover_articles_for_team(team_key, recent, phase_info):
     unique_articles = [a for a in unique_articles if not _junk.search(a.get("headline", "") or "")]
     if len(unique_articles) < _before:
         print(f"    Dropped {_before - len(unique_articles)} placeholder post(s) (game threads / how-to-watch)")
+
+    # Reputable news organizations ONLY (Justin, 2026-09-27): no fan sites,
+    # ever. Allowlist lives in sources.py (shared with validator rule 0.30);
+    # the publisher name comes from the URL, never from a feed's own label.
+    _kept = []
+    for a in unique_articles:
+        pub = reputable_publisher(a.get("link", ""))
+        if pub and credits_fan_brand(f"{a.get('headline', '')} {a.get('dek', '')}"):
+            print(f"    [FAN CONTENT] dropped syndicated fan-blog piece: {a.get('headline', '')[:70]}")
+            pub = ""
+        elif pub:
+            a["source"] = pub
+            _kept.append(a)
+        else:
+            print(f"    [NOT REPUTABLE] dropped {a.get('source', '?')}: {a.get('link', '')[:70]}")
+    unique_articles = _kept
 
     # Sort: game recaps first, then non-ESPN sources, then by recency
     def sort_key(a):
@@ -2899,22 +2962,27 @@ def build_watch_cards(team_key, phase_info, draft_board=None):
     def yt(q):
         return "https://www.youtube.com/results?search_query=" + quote_plus(q)
 
+    # Reputable outlets only (Justin, 2026-09-27): anchor every search to a
+    # news organization or the league's own channel - bare "analysis" and
+    # "rumors" searches surface fan YouTubers first.
+    outlet = "Sportsnet" if team_key in ("leafs", "jays", "raptors") else "ESPN"
+
     over = phase_id in ("season_ended", "eliminated", "offseason", "deep_offseason",
                         "postseason_offseason", "pre_draft", "post_draft",
                         "draft_free_agency", "combine_free_agency", "otas")
     if league == "NFL" and phase_id in ("otas", "post_draft", "training_camp"):
         cards = [
-            (f"{short} Minicamp & OTAs", yt(f"{name} minicamp OTAs {year}")),
-            (f"{short} Roster Battles", yt(f"{name} roster battles {year}")),
-            (f"{short} Rookie Watch", yt(f"{name} rookie highlights {year}")),
-            (f"{short} Camp Preview", yt(f"{name} training camp preview {year}")),
+            (f"{short} Minicamp & OTAs", yt(f"{league} {name} minicamp OTAs {year}")),
+            (f"{short} Roster Battles", yt(f"{outlet} {name} roster battles {year}")),
+            (f"{short} Rookie Watch", yt(f"{league} {name} rookie highlights {year}")),
+            (f"{short} Camp Preview", yt(f"{outlet} {name} training camp preview {year}")),
         ]
     elif over and league in ("NHL", "NBA"):
         cards = [
-            (f"{short} Draft Coverage", yt(f"{name} {league} draft {year}")),
-            (f"{short} Offseason Plans", yt(f"{name} offseason plan {year}")),
-            (f"{short} Trade & FA Rumors", yt(f"{name} trade rumors free agency {year}")),
-            (f"Latest {short} News", yt(f"{name} news this week")),
+            (f"{short} Draft Coverage", yt(f"{league} {name} draft {year}")),
+            (f"{short} Offseason Plans", yt(f"{outlet} {name} offseason {year}")),
+            (f"{short} Trade & FA Rumors", yt(f"{outlet} {name} free agency {year}")),
+            (f"Latest {short} News", yt(f"{outlet} {name} news")),
         ]
         top = ""
         if draft_board:
@@ -2926,16 +2994,16 @@ def build_watch_cards(team_key, phase_info, draft_board=None):
             cards[1] = (f"Prospect Watch: {top}", yt(f"{top} highlights"))
     elif over:
         cards = [
-            (f"{short} Offseason News", yt(f"{name} offseason {year}")),
-            (f"{short} Top Plays", yt(f"{name} top plays")),
-            (f"{short} Trade Rumors", yt(f"{name} trade rumors {year}")),
-            (f"Latest {short} News", yt(f"{name} news this week")),
+            (f"{short} Offseason News", yt(f"{outlet} {name} offseason {year}")),
+            (f"{short} Top Plays", yt(f"{league} {name} top plays")),
+            (f"{short} Trade Rumors", yt(f"{outlet} {name} trade news {year}")),
+            (f"Latest {short} News", yt(f"{outlet} {name} news")),
         ]
     else:
         cards = [
-            (f"Latest {short} Highlights", yt(f"{name} highlights")),
-            (f"{short} Game Recaps", yt(f"{name} game recap {year}")),
-            (f"{short} Analysis & Reaction", yt(f"{name} analysis this week")),
+            (f"Latest {short} Highlights", yt(f"{league} {name} highlights")),
+            (f"{short} Game Recaps", yt(f"{outlet} {name} game recap {year}")),
+            (f"{short} Analysis & Reaction", yt(f"{outlet} {name} analysis")),
             (f"Around the {league}", yt(f"{league} top plays this week")),
         ]
     return [{"title": t, "url": u, "sub": "YouTube"} for t, u in cards]
@@ -5075,7 +5143,9 @@ def build_data():
             "key_numbers": key_numbers if key_numbers else existing_team.get("key_numbers", []),
             "recent_results": recent if (recent and is_recent_enough(recent)) else [],
             "last_game_highlights": _resolve_highlights(highlights, existing_team, recent),
-            "the_latest": articles if articles else existing_team.get("the_latest", []),
+            "the_latest": articles if articles else [
+                a for a in existing_team.get("the_latest", [])
+                if reputable_publisher((a or {}).get("link", ""))],
             "standings": existing_team.get("standings", {}),
         }
 
