@@ -362,6 +362,43 @@ def detect_season_phase(team_key, recent, upcoming, standings=None):
               f"has_clinched={has_clinched}, is_eliminated={is_eliminated}, "
               f"has_playoff_seed={has_playoff_seed}")
 
+    # --- Schedule-first pass (2026-09-27) ---------------------------------
+    # The calendar heuristics below call any July-September NHL date without
+    # a game in the next week "Deep Offseason" - which is how the Leafs got
+    # that label two days before their season opener. ESPN's season types
+    # (1 pre / 2 regular / 3 post) settle the phase directly whenever the
+    # schedule has something to say; the heuristics remain the fallback
+    # (they still own between-round playoff gaps via the clincher flag).
+    ctx = SCHEDULE_CONTEXT.get(team_key) or {}
+    if ctx.get("ok"):
+        nt, dn = ctx.get("next_type"), ctx.get("days_to_next")
+        lt, la = ctx.get("last_type"), ctx.get("last_days_ago")
+        played_reg = ctx.get("played_regular", 0)
+        remaining_reg = ctx.get("remaining_regular", 0)
+        camp = "spring_training" if league == "MLB" else "training_camp"
+        pre = "spring_training" if league == "MLB" else "preseason"
+        if nt == 3 or (lt == 3 and la is not None and la <= 4):
+            return _phase("playoffs", league, cfg)
+        if nt == 2 and played_reg > 0 and dn is not None and dn <= 21:
+            late = {"MLB": 10, "NHL": 8, "NBA": 8, "NFL": 3}.get(league, 5)
+            if is_eliminated:
+                return _phase("playing_out", league, cfg)
+            if remaining_reg <= late:
+                return _phase("regular_season_late", league, cfg)
+            return _phase("regular_season", league, cfg)
+        if nt == 2 and played_reg == 0 and dn is not None and dn <= 14:
+            if lt == 1 and la is not None and la <= 10:
+                return _phase(pre, league, cfg)
+            return _phase(camp, league, cfg)
+        if nt == 1 and dn is not None and dn <= 10:
+            if (lt == 1 and la is not None and la <= 10) or dn <= 1:
+                return _phase(pre, league, cfg)
+            return _phase(camp, league, cfg)
+        if nt is None and lt == 2 and la is not None and la <= 10:
+            if has_clinched:
+                return _phase("playoffs", league, cfg)  # berth clinched, bracket not posted yet
+            return _phase("season_ended", league, cfg)
+
     if league == "NHL":
         if month >= 4 and month <= 6:
             # April-June: NHL playoff window.
@@ -502,6 +539,16 @@ def _phase(phase_id, league, cfg):
                 f"Focus on: last game result and series score, key player performances, "
                 f"what went right/wrong, and when the next game is. "
                 f"The tone should be electric ‚Äî this is what the whole season was building toward."
+            ),
+        },
+        "playing_out": {
+            "label": "Final Games",
+            "recency_days": 3,
+            "editorial_direction": (
+                f"The {team_name} have been eliminated from playoff contention but are "
+                f"finishing out the regular season. Report the latest result and the next "
+                f"game plainly, then look ahead: which young players are getting a look "
+                f"and what the offseason priorities are. No playoff-race framing."
             ),
         },
         # === OFFSEASON PHASES ===
@@ -801,25 +848,63 @@ def generate_espn_fallback_lotl(team_key, team_info, recent, upcoming, phase_inf
 
 # === ESPN API HELPERS ===
 
-def espn_fetch(url):
-    """Fetch from ESPN's public API with retry on transient failures.
+# ESPN serves the same public API from two hosts. In Aug 2026 its WAF began
+# returning 403 on site.api.espn.com for our branded User-Agent (and for
+# browser-spoofing UAs) while the stock library UA and the site.web mirror
+# kept working. Every schedule/record/standings call failed "gracefully" for
+# a month and the app shipped stale records and wrong phases. So:
+#   - no custom User-Agent (the stock urllib UA is what passes),
+#   - 401/403/404 are not transient: fail over to the mirror immediately,
+#   - the first host that works is promoted for the rest of the run,
+#   - every outcome is counted in ESPN_HEALTH, written to meta.data_health,
+#     and the validator hard-fails the build if core fetches failed.
+_ESPN_HOSTS = ["site.api.espn.com", "site.web.api.espn.com"]
+ESPN_HEALTH = {"ok": 0, "fail": 0, "mirror": 0, "failed_urls": []}
 
-    3 attempts with exponential backoff (2s, 4s). This prevents the daily build
-    from failing on a single ESPN API hiccup.
-    """
+
+def _espn_try(url, attempts):
     last_err = None
-    for attempt in range(3):
+    for attempt in range(attempts):
         try:
-            req = Request(url, headers={"User-Agent": "TheMorningSkate/1.0"})
+            req = Request(url, headers={"Accept": "application/json"})
             with urlopen(req, timeout=30) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except (URLError, HTTPError, json.JSONDecodeError, TimeoutError) as e:
+                return json.loads(resp.read().decode("utf-8")), None
+        except HTTPError as e:
             last_err = e
-            if attempt < 2:
-                backoff = 2 * (attempt + 1)
-                print(f"  ESPN fetch attempt {attempt+1} failed ({e}); retrying in {backoff}s: {url}")
-                time.sleep(backoff)
-    print(f"  WARNING: ESPN fetch failed for {url} after 3 attempts: {last_err}")
+            if e.code in (401, 403, 404):
+                break  # policy block or bad path - retrying the same host is futile
+        except (URLError, json.JSONDecodeError, TimeoutError, OSError, ValueError) as e:
+            last_err = e
+        if attempt < attempts - 1:
+            time.sleep(2 * (attempt + 1))
+    return None, last_err
+
+
+def espn_fetch(url):
+    """Fetch from ESPN's public API: host failover + retry on transient errors.
+    Returns parsed JSON or None (and records the failure in ESPN_HEALTH)."""
+    host = url.split("/")[2] if "://" in url else ""
+    if host in _ESPN_HOSTS:
+        cands = [url.replace("//" + host + "/", "//" + h + "/", 1) for h in _ESPN_HOSTS]
+    else:
+        cands = [url]
+    last_err = None
+    for i, u in enumerate(cands):
+        data, err = _espn_try(u, attempts=3 if i == 0 else 2)
+        if data is not None:
+            ESPN_HEALTH["ok"] += 1
+            if i > 0:
+                ESPN_HEALTH["mirror"] += 1
+                good = u.split("/")[2]
+                if good in _ESPN_HOSTS and _ESPN_HOSTS[0] != good:
+                    _ESPN_HOSTS.remove(good)
+                    _ESPN_HOSTS.insert(0, good)
+                    print(f"  ESPN: {host} refused ({last_err}); using {good} for the rest of this run")
+            return data
+        last_err = err
+    ESPN_HEALTH["fail"] += 1
+    ESPN_HEALTH["failed_urls"].append(url)
+    print(f"  WARNING: ESPN fetch failed on every host for {url}: {last_err}")
     return None
 
 
@@ -900,8 +985,11 @@ def _tv_rank(name):
     return 2
 
 
-def _extract_tv(comp):
-    """Best watchable channel from a competition dict, either ESPN schema."""
+def _extract_tv(comp, canadian=False):
+    """Best watchable channel from a competition dict, either ESPN schema.
+    canadian=True (Leafs/Jays/Raptors): only Canadian broadcasters qualify -
+    ESPN lists US regional feeds (MSGSN, NESN...) that Dad cannot watch;
+    blank beats a wrong channel."""
     cands = []
     for b in comp.get("broadcasts", []) or []:
         if isinstance(b, str):
@@ -930,6 +1018,8 @@ def _extract_tv(comp):
         if not name:
             continue
         r = _tv_rank(name)
+        if canadian and r != 0:
+            continue
         if r < best_rank:
             best, best_rank = name, r
     return best
@@ -938,7 +1028,7 @@ def _extract_tv(comp):
 _SCOREBOARD_TV_CACHE = {}
 
 
-def _scoreboard_tv(cfg, game_date):
+def _scoreboard_tv(cfg, game_date, canadian=False):
     """The scoreboard endpoint often carries broadcasts when the schedule
     endpoint omits them. One fetch per (league, date), cached for the run."""
     key = (cfg["espn_league"], game_date)
@@ -951,135 +1041,225 @@ def _scoreboard_tv(cfg, game_date):
         comp = (event.get("competitions") or [{}])[0]
         for t in comp.get("competitors", []):
             if t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]:
-                return _extract_tv(comp)
+                return _extract_tv(comp, canadian)
     return ""
 
 
+SCHEDULE_CONTEXT = {}
+
+
+def _game_date_et(game_date_str):
+    """Calendar date of a game in Eastern time (UTC slicing mislabels late games)."""
+    if not game_date_str:
+        return ""
+    try:
+        return datetime.fromisoformat(
+            game_date_str.replace("Z", "+00:00")).astimezone(EST).strftime("%Y-%m-%d")
+    except ValueError:
+        return game_date_str[:10]
+
+
+def _competitor_score(t):
+    sc = t.get("score", 0)
+    if isinstance(sc, dict):
+        sc = sc.get("value", sc.get("displayValue", 0))
+    try:
+        return int(float(sc))
+    except (TypeError, ValueError):
+        return 0
+
+
+_NHL_TV_CACHE = {}
+_NHL_NET_NAMES = {
+    "SN": "Sportsnet", "SN1": "Sportsnet", "SNO": "Sportsnet", "SNE": "Sportsnet",
+    "SNP": "Sportsnet", "SNW": "Sportsnet", "SN360": "Sportsnet", "SNNOW": "Sportsnet+",
+    "TSN": "TSN", "TSN1": "TSN", "TSN2": "TSN", "TSN3": "TSN", "TSN4": "TSN", "TSN5": "TSN",
+    "CBC": "CBC", "CITY": "Citytv", "PRIME": "Prime Video",
+}
+_NHL_NET_RANK = {"CBC": 0, "Sportsnet": 1, "TSN": 1, "Citytv": 2, "Prime Video": 3, "Sportsnet+": 4}
+
+
+def _nhl_canadian_tv(team_abbr):
+    """{YYYY-MM-DD (ET): channel} for a club's games from the NHL's own API.
+    ESPN lists only US broadcasters for Leafs games (MSGSN, SCRIPPS...). The
+    NHL API refuses Python's default User-Agent, so present as curl. English
+    Canadian networks only (TVA Sports / RDS skipped). Any failure returns {}
+    and the ESPN path takes over."""
+    if team_abbr in _NHL_TV_CACHE:
+        return _NHL_TV_CACHE[team_abbr]
+    y = NOW.year
+    season = f"{y}{y + 1}" if NOW.month >= 7 else f"{y - 1}{y}"
+    out = {}
+    try:
+        req = Request(f"https://api-web.nhle.com/v1/club-schedule-season/{team_abbr}/{season}",
+                      headers={"User-Agent": "curl/8.4.0", "Accept": "application/json"})
+        with urlopen(req, timeout=20) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        for g in data.get("games", []):
+            best, rank = "", 99
+            for b in g.get("tvBroadcasts", []) or []:
+                if b.get("countryCode") != "CA":
+                    continue
+                name = _NHL_NET_NAMES.get(str(b.get("network", "")).upper())
+                if name and _NHL_NET_RANK.get(name, 9) < rank:
+                    best, rank = name, _NHL_NET_RANK.get(name, 9)
+            if best:
+                d = _game_date_et(g.get("startTimeUTC", "")) or g.get("gameDate", "")
+                out[d] = best
+        print(f"  [tv] NHL API: Canadian listings for {len(out)} {team_abbr} games")
+    except Exception as e:
+        print(f"  [tv] NHL API unavailable ({e}); TV falls back to ESPN listings")
+    _NHL_TV_CACHE[team_abbr] = out
+    return out
+
+
 def get_team_schedule(team_key):
-    """Get recent and upcoming games from ESPN."""
+    """Get recent and upcoming games from ESPN.
+
+    ESPN's team-schedule endpoint lists only the league's CURRENT season type
+    (preseason in late September), so the old parser could not see a season
+    opener two days away and the phase engine called it "Deep Offseason".
+    We merge preseason (1), regular season (2) and postseason (3), tag every
+    game with its season type, and publish SCHEDULE_CONTEXT[team_key] (next
+    game at any distance, opener, games played/remaining) for phase detection.
+    Return contract unchanged: recent = last 4 finals (newest first),
+    upcoming = games in the next 7 days (TV looked up only for those)."""
     cfg = TEAMS[team_key]
-    url = f"https://site.api.espn.com/apis/site/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/teams/{cfg['espn_team_id']}/schedule"
-    data = espn_fetch(url)
+    base = (f"https://site.api.espn.com/apis/site/v2/sports/{cfg['espn_sport']}/"
+            f"{cfg['espn_league']}/teams/{cfg['espn_team_id']}/schedule")
+    data = espn_fetch(base)
     if not data:
+        SCHEDULE_CONTEXT[team_key] = {"ok": False}
         return [], []
 
-    recent = []
-    upcoming = []
-    today_str = NOW.strftime("%Y-%m-%dT")
+    events = list(data.get("events", []))
+    cur_type = (data.get("season") or {}).get("type")
+    for st in (1, 2, 3):
+        if st != cur_type:
+            extra = espn_fetch(f"{base}?seasontype={st}")
+            if extra:
+                events.extend(extra.get("events", []))
 
-    for event in data.get("events", []):
+    seen = set()
+    finals, scheduled = [], []
+    for event in events:
+        eid = event.get("id", "")
+        if eid:
+            if eid in seen:
+                continue
+            seen.add(eid)
+        comp = (event.get("competitions") or [{}])[0]
+        stype = (comp.get("status") or {}).get("type") or {}
+        state = stype.get("state", "")
+        status_name = stype.get("name", "")
+        season_type = (event.get("seasonType") or {}).get("type")
         game_date_str = event.get("date", "")
-        # Date games by EASTERN time, not UTC - a 10 PM ET game is stamped
-        # with the next day in UTC, which mislabeled every late game and
-        # made Friday's final outrank Saturday's.
-        game_date = ""
-        if game_date_str:
+        game_date = _game_date_et(game_date_str)
+
+        our_team = opp_team = None
+        for t in comp.get("competitors", []):
+            if t.get("id") == cfg["espn_team_id"] or t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]:
+                our_team = t
+            else:
+                opp_team = t
+        if not (our_team and opp_team):
+            continue
+        opp_info = opp_team.get("team", {})
+
+        if stype.get("completed") and state == "post":
+            our_score, opp_score = _competitor_score(our_team), _competitor_score(opp_team)
+            result = "W" if our_score > opp_score else ("L" if our_score < opp_score else "T")
             try:
-                game_date = datetime.fromisoformat(
-                    game_date_str.replace("Z", "+00:00")).astimezone(EST).strftime("%Y-%m-%d")
+                date_display = datetime.strptime(game_date, "%Y-%m-%d").strftime("%b %d").replace(" 0", " ")
             except ValueError:
-                game_date = game_date_str[:10]
-
-        comp = event.get("competitions", [{}])[0]
-        status_type = comp.get("status", {}).get("type", {}).get("name", "")
-
-        if status_type == "STATUS_FINAL":
-            # Parse completed game
-            teams_data = comp.get("competitors", [])
-            our_team = None
-            opp_team = None
-            for t in teams_data:
-                if t.get("id") == cfg["espn_team_id"] or t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]:
-                    our_team = t
-                else:
-                    opp_team = t
-
-            if our_team and opp_team:
-                our_score = int(our_team.get("score", {}).get("value", our_team.get("score", 0)))
-                opp_score = int(opp_team.get("score", {}).get("value", opp_team.get("score", 0)))
-                result = "W" if our_score > opp_score else "L"
-
-                opp_abbr = opp_team.get("team", {}).get("abbreviation", "???").lower()
-                opp_name = opp_team.get("team", {}).get("shortDisplayName", opp_team.get("team", {}).get("displayName", "???"))
-
-                # Format date as "Apr 13"
-                try:
-                    gd = datetime.strptime(game_date, "%Y-%m-%d")
-                    date_display = gd.strftime("%b %d").replace(" 0", " ")
-                except:
-                    date_display = game_date
-
-                recent.append({
-                    "date": date_display,
-                    "result": result,
-                    "team_score": our_score,
-                    "opp_name": opp_name,
-                    "opp_score": opp_score,
-                    "opp_logo": opp_abbr,
-                    "league": cfg["espn_league"],
-                    "game_date": game_date,
-                    "game_ts": game_date_str,
-                    "game_id": event.get("id", ""),
-                })
-
-        elif status_type in ("STATUS_SCHEDULED", "STATUS_IN_PROGRESS"):
-            # Parse upcoming game
-            teams_data = comp.get("competitors", [])
-            opp_team = None
-            home_away = "vs."
-            for t in teams_data:
-                is_us = t.get("id") == cfg["espn_team_id"] or t.get("team", {}).get("abbreviation") == cfg["espn_abbr"]
-                if is_us:
-                    if t.get("homeAway") == "away":
-                        home_away = "at"
-                else:
-                    opp_team = t
-
-            if opp_team:
-                opp_name = opp_team.get("team", {}).get("shortDisplayName", "???")
-                broadcast = _extract_tv(comp)
-                if not broadcast and game_date:
-                    broadcast = _scoreboard_tv(cfg, game_date)
-                if not broadcast:
-                    broadcast = cfg.get("default_tv", "")
-
-                # Parse game time
+                date_display = game_date
+            finals.append({
+                "date": date_display,
+                "result": result,
+                "team_score": our_score,
+                "opp_name": opp_info.get("shortDisplayName", opp_info.get("displayName", "???")),
+                "opp_score": opp_score,
+                "opp_logo": opp_info.get("abbreviation", "???").lower(),
+                "league": cfg["espn_league"],
+                "game_date": game_date,
+                "game_ts": game_date_str,
+                "game_id": eid,
+                "season_type": season_type,
+            })
+        elif state in ("pre", "in") and "POSTPONED" not in status_name and "CANCELED" not in status_name:
+            home_away = "at" if our_team.get("homeAway") == "away" else "vs."
+            time_str = ""
+            if event.get("timeValid", True):
                 try:
                     game_dt = datetime.fromisoformat(game_date_str.replace("Z", "+00:00")).astimezone(EST)
-                    time_str = game_dt.strftime("%-I:%M %p").replace("AM", "AM").replace("PM", "PM")
-                except:
+                    time_str = game_dt.strftime("%-I:%M %p")
+                except ValueError:
                     time_str = ""
+            try:
+                day_display = datetime.strptime(game_date, "%Y-%m-%d").strftime("%a %-m/%-d")
+            except ValueError:
+                day_display = game_date
+            scheduled.append({
+                "day": day_display,
+                "team": team_key,
+                "logo": cfg["logo"],
+                "name": cfg["full_name"].split()[-1],  # "Leafs", "Jays", etc.
+                "opp": f"{home_away} {opp_info.get('shortDisplayName', '???')}",
+                "time": f"{time_str} ET" if time_str else "TBD",
+                "tv": "",
+                "game_date": game_date,
+                "game_ts": game_date_str,
+                "season_type": season_type,
+                "_comp": comp,
+            })
 
-                # Day of week
-                try:
-                    gd = datetime.strptime(game_date, "%Y-%m-%d")
-                    dow = gd.strftime("%a")
-                    month_day = gd.strftime("%-m/%-d")
-                    day_display = f"{dow} {month_day}"
-                except:
-                    day_display = game_date
+    finals.sort(key=lambda x: x.get("game_ts", ""), reverse=True)
+    scheduled.sort(key=lambda x: x.get("game_ts", ""))
 
-                upcoming.append({
-                    "day": day_display,
-                    "team": team_key,
-                    "logo": cfg["logo"],
-                    "name": cfg["full_name"].split()[-1],  # "Leafs", "Jays", etc.
-                    "opp": f"{home_away} {opp_name}",
-                    "time": f"{time_str} ET" if time_str else "TBD",
-                    "tv": broadcast or "",
-                    "game_date": game_date,
-                    "game_ts": game_date_str,
-                })
+    today = NOW.astimezone(EST).date()
 
-    # Sort recent by date descending, take last 4
-    recent.sort(key=lambda x: x.get("game_ts", x.get("game_date", "")), reverse=True)
-    recent = recent[:4]
+    def _days(g):
+        try:
+            return (datetime.strptime(g.get("game_date", ""), "%Y-%m-%d").date() - today).days
+        except ValueError:
+            return None
 
-    # Sort upcoming by date ascending, take next 7 days
-    upcoming.sort(key=lambda x: x.get("game_ts", x.get("game_date", "")))
+    nxt = scheduled[0] if scheduled else None
+    nxt_reg = next((g for g in scheduled if g.get("season_type") == 2), None)
+    SCHEDULE_CONTEXT[team_key] = {
+        "ok": True,
+        "current_type": cur_type,
+        "next_type": nxt.get("season_type") if nxt else None,
+        "days_to_next": _days(nxt) if nxt else None,
+        "next_regular_days": _days(nxt_reg) if nxt_reg else None,
+        "next_regular": ({k: nxt_reg[k] for k in ("day", "opp", "time", "game_date")}
+                         if nxt_reg else None),
+        "remaining_regular": sum(1 for g in scheduled if g.get("season_type") == 2),
+        "played_regular": sum(1 for g in finals if g.get("season_type") == 2),
+        "last_type": finals[0].get("season_type") if finals else None,
+        "last_days_ago": (-_days(finals[0]) if finals and _days(finals[0]) is not None else None),
+    }
+
+    recent = finals[:4]
     week_from_now = (NOW + timedelta(days=7)).strftime("%Y-%m-%d")
-    upcoming = [g for g in upcoming if g.get("game_date", "") <= week_from_now]
+    upcoming = [g for g in scheduled if g.get("game_date", "") <= week_from_now]
+    canadian = team_key in ("leafs", "jays", "raptors")
+    league_tv = (_nhl_canadian_tv(cfg["espn_abbr"])
+                 if cfg["league"] == "NHL" and upcoming else {})
+    for g in upcoming:
+        tv = league_tv.get(g.get("game_date", ""), "")
+        if not tv:
+            tv = _extract_tv(g.get("_comp") or {}, canadian)
+        if not tv and g.get("game_date"):
+            tv = _scoreboard_tv(cfg, g["game_date"], canadian)
+        g["tv"] = tv or cfg.get("default_tv", "")
+    for g in scheduled:
+        g.pop("_comp", None)  # never let raw ESPN blobs leak into data.json
 
+    ctx = SCHEDULE_CONTEXT[team_key]
+    print(f"  [schedule] {team_key}: {len(finals)} finals, {len(scheduled)} scheduled "
+          f"(current type {cur_type}; next type {ctx['next_type']} in {ctx['days_to_next']}d; "
+          f"played {ctx['played_regular']} / remaining {ctx['remaining_regular']} regular)")
     if upcoming:
         _with_tv = sum(1 for g in upcoming if g.get("tv"))
         print(f"  [tv] {team_key}: {_with_tv}/{len(upcoming)} upcoming games have a TV channel")
@@ -2852,7 +3032,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
         "raptors": "nba",
         "commanders": "nfl",
     }
-    IN_SEASON_PHASES = ("regular_season", "regular_season_late", "playoffs",
+    IN_SEASON_PHASES = ("regular_season", "regular_season_late", "playing_out", "playoffs",
                         "spring_training", "preseason")
     TRANSACTION_WORDS = ("trade", "traded", "sign", "signs", "signed", "signing",
                          "deal", "extension", "extend", "acquire", "acquires",
@@ -4612,6 +4792,22 @@ def build_data():
         if upcoming:
             print(f"  Upcoming: {len(upcoming)} games")
 
+        # ESPN's team record follows the league's CURRENT season type, so in
+        # preseason it is exhibition noise ("2-1-1, 3rd in Atlantic Division").
+        # Until the regular season starts, publish no record rather than a fake one.
+        _sc = SCHEDULE_CONTEXT.get(team_key) or {}
+        if _sc.get("current_type") == 1 and not _sc.get("played_regular"):
+            if team_info.get("record") or team_info.get("standing_summary"):
+                print(f"  Preseason record withheld: {team_info.get('record')} / "
+                      f"{team_info.get('standing_summary')}")
+            team_info["record"] = ""
+            team_info["standing_summary"] = ""
+            team_info["record_stats"] = {}
+            team_info["record_withheld"] = True
+            _op = _sc.get("next_regular") or {}
+            team_info["opener"] = (f"Opener: {_op.get('day', '')} {_op.get('opp', '')}".strip()
+                                   if _op else "")
+
         # Detect season phase (pass standings for playoff seed detection)
         phase_info = detect_season_phase(team_key, recent, upcoming, standings)
         print(f"  Season phase: {phase_info['label']} (recency: {phase_info['recency_days']}d)")
@@ -4747,8 +4943,14 @@ def build_data():
         # teams in the offseason, which was silently dropping the Record card
         # and blanking the at-a-glance card.
         existing_team = existing.get("teams", {}).get(team_key, {})
-        record = team_info.get("record", "") or existing_team.get("record", "")
-        standing_summary = team_info.get("standing_summary", "") or existing_team.get("detail", "")
+        if team_info.get("record_withheld"):
+            # Preseason: never resurrect last season's record from yesterday's
+            # data - show the season opener in the header instead.
+            record = ""
+            standing_summary = team_info.get("opener", "")
+        else:
+            record = team_info.get("record", "") or existing_team.get("record", "")
+            standing_summary = team_info.get("standing_summary", "") or existing_team.get("detail", "")
         if record and not team_info.get("record"):
             team_info = dict(team_info)
             team_info["record"] = record
@@ -4963,6 +5165,7 @@ def build_data():
             "opp_score": g.get("opp_score", ""),
             "result": g.get("result", ""),
             "date": g.get("date", ""),
+            "preseason": g.get("season_type") == 1,
             "link": _hl.get("url", "") if _hl.get("available") else "",
         })
     print(f"  Scoreboard: {len(db['scoreboard'])} final(s) in 3-day window")
@@ -4980,7 +5183,7 @@ def build_data():
         # Determine if team is in-season using PHASE detection (fixes playoff gap issue)
         phase_info = facts.get("phase_info", {})
         phase_id = phase_info.get("phase", "")
-        team_in_season = phase_id in ("regular_season", "regular_season_late", "playoffs",
+        team_in_season = phase_id in ("regular_season", "regular_season_late", "playing_out", "playoffs",
                                        "preseason", "spring_training")
         if not team_in_season:
             team_in_season = bool(upcoming) or is_recent_enough(recent, max_days=30)
@@ -4988,6 +5191,18 @@ def build_data():
         # Build a smart status line
         status = standing or ""
         status_class = "muted"
+        if ti.get("record_withheld"):
+            # Preseason / camp: exhibition results and ranks are noise.
+            db["at_a_glance"].append({
+                "team": team_key,
+                "name": TEAMS[team_key]["full_name"].split()[-1],
+                "logo": TEAMS[team_key]["logo"],
+                "record": "",
+                "status": ti.get("opener") or phase_info.get("label", ""),
+                "status_class": "muted",
+                "stat": phase_info.get("label", ""),
+            })
+            continue
         if team_in_season and recent:
             g = recent[0]
             if g["result"] == "W":
@@ -5080,11 +5295,15 @@ def build_data():
 
     # Week Ahead ‚Äî combine all upcoming games for next 7 days + playoff context
     print(f"\n--- Building Week Ahead ---")
-    all_upcoming.sort(key=lambda x: x.get("game_date", ""))
-    week_games = [
-        {k: v for k, v in g.items() if k != "game_date"}
-        for g in all_upcoming
-    ]
+    # Sort by the real kickoff timestamp (date-only sorting put a 7 PM game
+    # ahead of a 1 PM game on the same day) and mark exhibition games.
+    all_upcoming.sort(key=lambda x: x.get("game_ts") or x.get("game_date", ""))
+    week_games = []
+    for g in all_upcoming:
+        wg = {k: v for k, v in g.items() if k not in ("game_date", "game_ts", "season_type")}
+        if g.get("season_type") == 1:
+            wg["opp"] = f"{wg.get('opp', '')} (preseason)"
+        week_games.append(wg)
     print(f"  Found {len(week_games)} scheduled games in next 7 days")
 
     # Add placeholder entries for playoff teams without specific game times
@@ -5199,6 +5418,20 @@ def build_data():
             _nl = _tl[0].get("source")
             print(f"  [variety] post-QA lead swapped off {_plead} -> {_nl} ({_tk})")
 
+    # === DATA HEALTH (2026-09-27) ===
+    # A month of ESPN 403s shipped stale records and wrong season phases
+    # behind a green build. Record what actually happened; validator rule
+    # 0.29 fails the build when the backbone data did not load.
+    db.setdefault("meta", {})["data_health"] = {
+        "espn_ok": ESPN_HEALTH["ok"],
+        "espn_failed": ESPN_HEALTH["fail"],
+        "espn_via_mirror": ESPN_HEALTH["mirror"],
+        "espn_failed_urls": ESPN_HEALTH["failed_urls"][:12],
+        "schedule_ok": {tk: bool((SCHEDULE_CONTEXT.get(tk) or {}).get("ok")) for tk in TEAMS},
+    }
+    print(f"  Data health: ESPN {ESPN_HEALTH['ok']} ok / {ESPN_HEALTH['fail']} failed "
+          f"({ESPN_HEALTH['mirror']} via mirror)")
+
     return db
 
 
@@ -5307,7 +5540,7 @@ def _brief_facts_block(db, all_team_facts, today):
         tk = r.get("team", "")
         if tk and tk not in slate_by_team:
             slate_by_team[tk] = r
-    IN_SEASON = ("regular_season", "regular_season_late", "playoffs",
+    IN_SEASON = ("regular_season", "regular_season_late", "playing_out", "playoffs",
                  "spring_training", "preseason")
     out = [f"VERIFIED FACTS for {today.strftime('%A, %B %-d, %Y')}:"]
     for tk, cfg in TEAMS.items():
@@ -5367,7 +5600,7 @@ def _build_brief_fallback(db, all_team_facts, today):
         tk = r.get("team", "")
         if tk and tk not in slate_by_team:
             slate_by_team[tk] = r
-    IN_SEASON = ("regular_season", "regular_season_late", "playoffs",
+    IN_SEASON = ("regular_season", "regular_season_late", "playing_out", "playoffs",
                  "spring_training", "preseason")
     teams_out = []
     for tk, cfg in TEAMS.items():

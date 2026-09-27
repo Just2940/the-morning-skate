@@ -1790,15 +1790,25 @@ const LIVE_TEAMS = [
   { t: 'raptors', s: 'basketball', l: 'nba', abbr: 'TOR', name: 'Raptors' },
   { t: 'commanders', s: 'football', l: 'nfl', abbr: 'WSH', name: 'Commanders' }
 ];
+// ESPN serves the same API from two hosts; the primary began refusing some
+// clients in Aug 2026, so try the mirror before giving up.
+async function espnJSON(path) {
+  for (const host of ['site.api.espn.com', 'site.web.api.espn.com']) {
+    try {
+      const r = await fetch('https://' + host + path);
+      if (r.ok) return await r.json();
+    } catch (e) { /* try the next host */ }
+  }
+  return null;
+}
 async function checkLive() {
   const box = document.getElementById('live-now');
   if (!box) return;
   const cards = [];
   for (const cfg of LIVE_TEAMS) {
     try {
-      const r = await fetch('https://site.api.espn.com/apis/site/v2/sports/' + cfg.s + '/' + cfg.l + '/scoreboard');
-      if (!r.ok) continue;
-      const d = await r.json();
+      const d = await espnJSON('/apis/site/v2/sports/' + cfg.s + '/' + cfg.l + '/scoreboard');
+      if (!d) continue;
       for (const ev of (d.events || [])) {
         const comp = (ev.competitions || [])[0] || {};
         const cs = comp.competitors || [];
@@ -1864,9 +1874,11 @@ function renderScoreboard(items) {
   let html = `<div class="ln-grid">`;
   items.forEach(g => {
     const won = g.result === 'W';
-    const pill = won ? `<span class="ln-pill w">W</span>` : `<span class="ln-pill l">L</span>`;
+    const pill = won ? `<span class="ln-pill w">W</span>`
+      : (g.result === 'T' ? `<span class="ln-pill">T</span>` : `<span class="ln-pill l">L</span>`);
+    const kind = g.preseason ? 'PRESEASON' : 'FINAL';
     html += `<div class="ln-card" onclick="go('${esc(g.team)}')" role="button" tabindex="0">` +
-      `<div class="ln-top"><span>${esc(g.league)} FINAL</span>${pill}</div>` +
+      `<div class="ln-top"><span>${esc(g.league)} ${kind}${g.date ? ' &middot; ' + esc(g.date) : ''}</span>${pill}</div>` +
       `<div class="ln-row${won ? ' ln-win' : ''}"><img src="${logoUrl(g.logo, g.league)}" alt=""><span class="ln-team">${esc(g.name)}</span><span class="ln-score">${esc(String(g.team_score))}</span></div>` +
       `<div class="ln-row${!won ? ' ln-win' : ''}"><img src="${logoUrl(g.opp_logo, g.league)}" alt=""><span class="ln-team">${esc(g.opp_name)}</span><span class="ln-score">${esc(String(g.opp_score))}</span></div>` +
       `</div>`;

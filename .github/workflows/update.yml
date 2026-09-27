@@ -2,8 +2,19 @@ name: Daily Morning Skate Update
 
 on:
   schedule:
-    - cron: "0 9 * * *"   # 9 AM UTC = 4 AM EST
+    # GitHub delays (and on busy days drops) scheduled runs queued at the top
+    # of the hour - through Aug/Sep 2026 the old "0 9" slot started 3-7 hours
+    # late and skipped some days entirely. Primary run off-peak at 08:17 UTC
+    # (4:17 AM EDT / 3:17 AM EST); the backup at 11:43 UTC only publishes if
+    # the primary never landed (see the guard step).
+    - cron: "17 8 * * *"
+    - cron: "43 11 * * *"
   workflow_dispatch: {}
+
+# Never let two runs race each other to push data.json.
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -13,33 +24,50 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Skip backup run if today's edition already shipped
+        id: guard
+        run: |
+          TODAY=$(TZ='America/New_York' date +%F)
+          LAST=$(python3 -c "import json;print(((json.load(open('data.json')).get('meta') or {}).get('updated') or '')[:10])" 2>/dev/null || echo "")
+          echo "Today (ET): $TODAY | last edition: ${LAST:-none}"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "43 11 * * *" ] && [ "$LAST" = "$TODAY" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Today's edition is already live - backup run has nothing to do."
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.skip != 'true'
         with:
           python-version: "3.11"
 
       - name: Install validator dependencies
+        if: steps.guard.outputs.skip != 'true'
         run: pip install requests
 
       - name: Run update script
+        if: steps.guard.outputs.skip != 'true'
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
         run: python scripts/update-content.py
 
       - name: Validate content (Section 0 rules)
+        if: steps.guard.outputs.skip != 'true'
         # Enforces every rule in SKILL.md Section 0. If ANY check fails, the
         # workflow fails here and the commit+push step below is skipped —
         # yesterday's data.json stays live. That's the whole point.
         run: python scripts/validate_content.py --data data.json --html index.html
 
       - name: Check for changes
+        if: steps.guard.outputs.skip != 'true'
         id: changes
         run: git diff --quiet data.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.guard.outputs.skip != 'true' && steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "Morning Skate Bot"
           git config user.email "morning-skate-bot@themorningskate.com"
           git add data.json
           git commit -m "Daily update: $(TZ='America/New_York' date +'%B %d, %Y') morning briefing"
+          git pull --rebase --autostash
           git push

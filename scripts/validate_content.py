@@ -1003,6 +1003,43 @@ def check_index_html(html: str, r: Reporter) -> None:
 # ------------------------------------------------------------------------- #
 
 
+def check_data_health(data: dict, r: Reporter) -> None:
+    """0.29 - the backbone data actually loaded. Added 2026-09-27 after ESPN
+    403'd every schedule/record/standings call for a month while this
+    validator stayed green and the site published stale records and wrong
+    season phases. Better yesterday's edition plus a failure email than a
+    confidently wrong one."""
+    rule = "0.29 ESPN data health"
+    h = (data.get("meta") or {}).get("data_health")
+    if not isinstance(h, dict):
+        r.error(rule, "meta.data_health missing - pipeline did not record ESPN fetch outcomes")
+        return
+    bad = [tk for tk, ok in (h.get("schedule_ok") or {}).items() if not ok]
+    if not h.get("schedule_ok"):
+        bad = ["(no teams recorded)"]
+    okc, failc = int(h.get("espn_ok") or 0), int(h.get("espn_failed") or 0)
+    total = okc + failc
+    failed_hint = (h.get("espn_failed_urls") or [])[:3]
+    hard = False
+    if bad:
+        hard = True
+        r.error(rule, f"ESPN schedule fetch failed for {', '.join(bad)} - scores, "
+                      f"season phases and Week Ahead would be wrong")
+    if total == 0:
+        hard = True
+        r.error(rule, "no ESPN calls recorded")
+    elif failc > max(2, total // 4):
+        hard = True
+        r.error(rule, f"{failc}/{total} ESPN calls failed, e.g. {failed_hint}")
+    elif failc:
+        r.warn(rule, f"{failc}/{total} ESPN calls failed (tolerated), e.g. {failed_hint}")
+    if h.get("espn_via_mirror"):
+        r.warn(rule, f"primary ESPN host refused requests; {h.get('espn_via_mirror')} "
+                     f"call(s) served by the site.web mirror")
+    if not hard:
+        r.ok(rule)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Validate Morning Skate content against Section 0")
     ap.add_argument("--data", default="data.json", help="Path to data.json")
@@ -1045,6 +1082,7 @@ def main() -> int:
     check_standings_counts(data, r)
     check_draft_board(data, r)
     check_cross_field_consistency(data, r)
+    check_data_health(data, r)
     check_index_html(raw_html, r)
     check_links_live(data, r, skip=args.skip_network)
     check_logos_live(data, r, skip=args.skip_network)
