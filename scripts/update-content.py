@@ -3106,7 +3106,7 @@ def generate_ticker(all_team_facts, all_team_articles=None):
                          "draft", "drafted", "agrees", "agreement", "claims",
                          "re-sign", "buyout", "contract")
     SKIP_PHRASES = ("game story", "scores/highlights", "box score",
-                    "full game recap", "game recap", "final score")
+                    "full game recap", "game recap", "final score", "game highlights", ": highlights")
 
     def add(team_key, text):
         text = " ".join((text or "").split())
@@ -5599,7 +5599,7 @@ ready returns rise road rolls run sets sign signs skate start starts stays
 still swap swaps take takes the their this three to top trades turn turns two
 up waits wear wears week while wide win wins with young your monday tuesday
 wednesday thursday friday saturday sunday leafs jays blue raptors commanders
-toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs claim claims earn earns grab grabs join joins ink inks nab nabs secure secures name names pick picked land lands roll rolled seek seeks aim aims begin begins arrive arrives await awaits show shows support supports honor honors return returns heads head set sets hope hopes race bid stay stays streak skid snap snaps end ends rookie rookies star stars veteran veterans captain coach injury injuries deal deals trade traded look looks key test tests battle battles clash opener finale season camp preseason playoff playoffs fans family practice start starts starting finish finishes home road day night morning big bigger final quest turn turns step steps sharp sharper tough rough strong bright long short left right out up down on off
+toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs claim claims earn earns grab grabs join joins ink inks nab nabs secure secures name names pick picked land lands roll rolled seek seeks aim aims begin begins arrive arrives await awaits show shows support supports honor honors return returns heads head set sets hope hopes race bid stay stays streak skid snap snaps end ends rookie rookies star stars veteran veterans captain coach injury injuries deal deals trade traded look looks key test tests battle battles clash opener finale season camp preseason playoff playoffs fans family practice start starts starting finish finishes home road day night morning big bigger final quest turn turns step steps sharp sharper tough rough strong bright long short left right out up down on off montreal ottawa boston buffalo detroit tampa florida york philadelphia pittsburgh carolina columbus chicago louis nashville dallas colorado minnesota winnipeg calgary edmonton vancouver seattle vegas angeles anaheim jose utah cincinnati baltimore cleveland kansas houston texas athletics atlanta miami milwaukee arizona denver phoenix portland sacramento memphis orleans oklahoma indiana orlando charlotte brooklyn green bay jacksonville tennessee indianapolis francisco diego tuesday wednesday thursday friday saturday sunday monday october november
 """.split())
 
 
