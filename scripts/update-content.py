@@ -1865,9 +1865,17 @@ def fetch_espn_game_recap_urls(team_key, recent):
     cfg = TEAMS[team_key]
     recaps = []
 
-    for game in recent[:3]:
+    for idx, game in enumerate(recent[:3]):
         game_id = game.get("game_id", "")
         if not game_id:
+            continue
+        # Only fresh recaps: games from the last 3 days, plus the latest game
+        # within 8 days (weekly NFL). A two-week-old recap is not news.
+        try:
+            _ago = (NOW.replace(tzinfo=None) - datetime.strptime(game.get("game_date", ""), "%Y-%m-%d")).days
+        except ValueError:
+            _ago = 999
+        if not (_ago <= 3 or (idx == 0 and _ago <= 8)):
             continue
 
         # ESPN recap URL pattern (verified)
@@ -2197,6 +2205,13 @@ TIER1_RSS_FEEDS = {
 _ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
 
+def _clean_feed_link(link):
+    """Some feeds wrap links in whitespace and leave a stray '>' on the end
+    (Sporting News, 2026-09-27) - which turned every one into a 404."""
+    link = (link or "").strip().strip("<>\"'").strip()
+    return link.split()[0] if link else ""
+
+
 def _feed_items(root):
     """Extract items from an RSS <item> or Atom <entry> document.
     Returns a list of dicts: {title, link, desc, date_raw}."""
@@ -2204,7 +2219,7 @@ def _feed_items(root):
     for it in root.findall(".//item"):
         out.append({
             "title": (it.findtext("title", "") or "").strip(),
-            "link": (it.findtext("link", "") or "").strip(),
+            "link": _clean_feed_link(it.findtext("link", "")),
             "desc": it.findtext("description", "") or "",
             "date_raw": it.findtext("pubDate", "") or "",
             # Syndicated items name their original publisher (Yahoo: "SB Nation")
@@ -2225,7 +2240,7 @@ def _feed_items(root):
                 link = ln0.get("href") or ""
         out.append({
             "title": (e.findtext(_ATOM_NS + "title", "") or "").strip(),
-            "link": (link or "").strip(),
+            "link": _clean_feed_link(link),
             "desc": e.findtext(_ATOM_NS + "summary", "") or e.findtext(_ATOM_NS + "content", "") or "",
             "date_raw": e.findtext(_ATOM_NS + "published", "") or e.findtext(_ATOM_NS + "updated", "") or "",
         })
