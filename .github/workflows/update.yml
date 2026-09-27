@@ -9,7 +9,12 @@ on:
     # the primary never landed (see the guard step).
     - cron: "17 8 * * *"
     - cron: "43 11 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: "Email the morning brief after this run"
+        type: boolean
+        default: false
 
 # Never let two runs race each other to push data.json.
 concurrency:
@@ -21,6 +26,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write        # plain-English failure alerts
+    defaults:
+      run:
+        shell: bash        # bash -eo pipefail: a failing step stays failed through `tee`
     steps:
       - uses: actions/checkout@v4
 
@@ -44,18 +53,22 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         run: pip install requests
 
+      - name: Regression tests (phases, schedule parser, sources, AI checks)
+        if: steps.guard.outputs.skip != 'true'
+        run: python -m unittest discover -s tests -v 2>&1 | tee tests.txt
+
       - name: Run update script
         if: steps.guard.outputs.skip != 'true'
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-        run: python scripts/update-content.py
+        run: python -u scripts/update-content.py 2>&1 | tee update.log
 
       - name: Validate content (Section 0 rules)
         if: steps.guard.outputs.skip != 'true'
         # Enforces every rule in SKILL.md Section 0. If ANY check fails, the
         # workflow fails here and the commit+push step below is skipped —
         # yesterday's data.json stays live. That's the whole point.
-        run: python scripts/validate_content.py --data data.json --html index.html
+        run: python scripts/validate_content.py --data data.json --html index.html 2>&1 | tee validation.txt
 
       - name: Check for changes
         if: steps.guard.outputs.skip != 'true'
@@ -71,3 +84,27 @@ jobs:
           git commit -m "Daily update: $(TZ='America/New_York' date +'%B %d, %Y') morning briefing"
           git pull --rebase --autostash
           git push
+
+      - name: Email the morning brief
+        if: steps.guard.outputs.skip != 'true' && (github.event_name == 'schedule' || inputs.send_email)
+        env:
+          BRIEF_SMTP_USER: ${{ secrets.BRIEF_SMTP_USER }}
+          BRIEF_SMTP_PASS: ${{ secrets.BRIEF_SMTP_PASS }}
+          BRIEF_TO: ${{ secrets.BRIEF_TO }}
+        run: python scripts/send_brief.py 2>&1 | tee email.txt
+
+      - name: Close any open failure alert
+        if: success() && steps.guard.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/alert.py resolve
+
+      - name: Plain-English failure alert
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          BRIEF_SMTP_USER: ${{ secrets.BRIEF_SMTP_USER }}
+          BRIEF_SMTP_PASS: ${{ secrets.BRIEF_SMTP_PASS }}
+          BRIEF_TO: ${{ secrets.BRIEF_TO }}
+        run: python3 scripts/alert.py open

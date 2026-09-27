@@ -1,0 +1,21 @@
+name: Email the Morning Brief (manual)
+
+# One-click test: emails the brief from the edition that is live right now,
+# without rebuilding anything. The daily update emails it automatically.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Send
+        env:
+          BRIEF_SMTP_USER: ${{ secrets.BRIEF_SMTP_USER }}
+          BRIEF_SMTP_PASS: ${{ secrets.BRIEF_SMTP_PASS }}
+          BRIEF_TO: ${{ secrets.BRIEF_TO }}
+        run: python scripts/send_brief.py

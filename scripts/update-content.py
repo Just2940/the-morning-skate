@@ -25,6 +25,8 @@ import base64
 # Reputable-publisher allowlist, shared with the validator (rule 0.30).
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sources import reputable_publisher, reputable_provider, credits_fan_brand  # noqa: E402
+from game_details import stars_from_summary, preview_from_summary, goalies_from_dfo  # noqa: E402
+from factcheck import ungrounded_numbers  # noqa: E402
 
 # === LOGGING (kills "silent fallback" class of bugs) ===
 # Every except block that used to return empty/pass now routes through
@@ -1080,6 +1082,52 @@ def _competitor_score(t):
         return 0
 
 
+def _espn_summary(cfg, game_id):
+    """ESPN game summary (box score, leaders, probables, injuries)."""
+    if not game_id:
+        return {}
+    url = (f"https://site.api.espn.com/apis/site/v2/sports/{cfg['espn_sport']}/"
+           f"{cfg['espn_league']}/summary?event={game_id}")
+    return espn_fetch(url) or {}
+
+
+_DFO_CACHE = {}
+
+
+def _dfo_goalie_games(date_str):
+    """Daily Faceoff's starting goalies for a date (YYYY-MM-DD) - the standard
+    source for confirmed NHL starters; ESPN has none before puck drop. The page
+    embeds its data as Next.js JSON. Any failure returns [] (line omitted)."""
+    if date_str in _DFO_CACHE:
+        return _DFO_CACHE[date_str]
+    games = []
+    try:
+        req = Request(f"https://www.dailyfaceoff.com/starting-goalies/{date_str}", headers={
+            "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                           "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")})
+        with urlopen(req, timeout=15) as resp:
+            page = resp.read().decode("utf-8", "replace")
+        m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', page, re.S)
+        if m:
+            games = ((json.loads(m.group(1)).get("props") or {}).get("pageProps") or {}).get("data") or []
+    except Exception as e:
+        print(f"  [preview] Daily Faceoff starting goalies unavailable ({e})")
+    _DFO_CACHE[date_str] = games
+    return games
+
+
+def game_preview(team_key, game):
+    """Game-day notes for a team's game today: probables / goalies / injuries."""
+    cfg = TEAMS[team_key]
+    notes = []
+    if cfg["league"] == "NHL":
+        gl = goalies_from_dfo(_dfo_goalie_games(game.get("game_date", "")), cfg["full_name"])
+        if gl:
+            notes.append(gl)
+    notes += preview_from_summary(_espn_summary(cfg, game.get("game_id")), cfg["league"], cfg["espn_abbr"])
+    return notes[:3]
+
+
 _NHL_TV_CACHE = {}
 _NHL_NET_NAMES = {
     "SN": "Sportsnet", "SN1": "Sportsnet", "SNO": "Sportsnet", "SNE": "Sportsnet",
@@ -1220,6 +1268,7 @@ def get_team_schedule(team_key):
                 "tv": "",
                 "game_date": game_date,
                 "game_ts": game_date_str,
+                "game_id": eid,
                 "season_type": season_type,
                 "_comp": comp,
             })
@@ -3763,6 +3812,12 @@ Write 110-150 words of polished sports column prose. Every sentence should earn 
             if re.search(r"games (behind|back)|(win|winning|losing|loss) streak|\b[WL]\d+\b|\b\d+[- ]game (deficit|hole|gap|cushion)\b|\blone (recent )?(win|loss)\b|\bdeficit\b", candidate, re.I):
                 print(f"  WARNING: {team_key} LOTL attempt {attempt+1} cites dead-season streak/GB; retrying")
                 continue
+        # Number check: scores, records, streaks, games/points back and
+        # standings positions must all come from the verified facts.
+        _ungrounded = ungrounded_numbers(candidate, verified_facts + "\n" + "\n".join(anchor_headlines or []))
+        if _ungrounded:
+            print(f"  WARNING: {team_key} LOTL attempt {attempt+1} has unverified numbers {_ungrounded[:3]}; retrying")
+            continue
         # Strip HTML tags for an accurate visible word count
         plain = re.sub(r'<[^>]+>', '', candidate)
         word_count = len(plain.split())
@@ -5333,6 +5388,10 @@ def build_data():
             "result": g.get("result", ""),
             "date": g.get("date", ""),
             "preseason": g.get("season_type") == 1,
+            # Who starred (W/L pitchers + top hitter, goal scorers + goalie,
+            # QB/rush/rec leaders, pts/reb/ast) - straight from the box score.
+            "stars": stars_from_summary(_espn_summary(cfg, g.get("game_id")),
+                                        cfg["league"], cfg["espn_abbr"]),
             "link": _hl.get("url", "") if _hl.get("available") else "",
         })
     print(f"  Scoreboard: {len(db['scoreboard'])} final(s) in 3-day window")
@@ -5420,6 +5479,8 @@ def build_data():
                 "detail": f"{g['time']}" + (f" - {g['note'].capitalize()}" if g.get("note") else ""),
                 "channel": g.get("tv", ""),
                 "off": False,
+                # Game-day notes: probable pitchers, starting goalies, injuries
+                "preview": game_preview(team_key, g),
             })
         else:
             # Off day ‚Äî find next game
@@ -5468,7 +5529,7 @@ def build_data():
     all_upcoming.sort(key=lambda x: x.get("game_ts") or x.get("game_date", ""))
     week_games = []
     for g in all_upcoming:
-        wg = {k: v for k, v in g.items() if k not in ("game_date", "game_ts", "season_type", "note")}
+        wg = {k: v for k, v in g.items() if k not in ("game_date", "game_ts", "season_type", "note", "game_id")}
         if g.get("note"):
             wg["opp"] = f"{wg.get('opp', '')} ({g['note']})"
         week_games.append(wg)
@@ -5747,6 +5808,8 @@ def _brief_facts_block(db, all_team_facts, today):
             verb = "beat" if g.get("result") == "W" else "lost to"
             _pre = " (preseason game - does not count)" if g.get("preseason") else ""
             out.append(f"- Last night: {verb} the {g.get('opp_name')} {s1}-{s2}{_pre}")
+            if g.get("stars"):
+                out.append(f"- Top performers: {'; '.join(g['stars'])}")
         srow = slate_by_team.get(tk)
         if srow and not srow.get("off"):
             line = f"- Today: {srow.get('matchup', '')}"
@@ -5755,6 +5818,8 @@ def _brief_facts_block(db, all_team_facts, today):
             if srow.get("channel"):
                 line += f" on {srow.get('channel')}"
             out.append(line)
+            for note in srow.get("preview") or []:
+                out.append(f"- Game note: {note}")
         else:
             wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])
                        if w.get("team") == tk), None)
@@ -5906,6 +5971,10 @@ def build_morning_brief(db, all_team_facts):
                 # No parseable headline - treat whole text as body
                 title, body = "The Morning Skate Brief", text
             reason = _brief_article_gate(body)
+            if not reason:
+                _bad_nums = ungrounded_numbers(body, facts_block)
+                if _bad_nums:
+                    reason = f"unverified numbers {_bad_nums[:3]}"
             if reason:
                 print(f"  [brief] attempt {attempt + 1} rejected: {reason}")
                 continue
