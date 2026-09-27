@@ -2068,7 +2068,8 @@ function renderTeam(key, t) {
       const tLogo = logoUrl(key === 'commanders' ? 'wsh' : 'tor', g.league);
       const oLogo = logoUrl(g.opp_logo, g.league);
       const tName = key === 'commanders' ? 'Washington' : 'Toronto';
-      html += `<div class="sb-game"><div class="sb-date">${esc(g.date || '')} <span class="sb-pill ${esc(wl)}">${esc(g.result || '')}</span></div>`;
+      const pre = g.season_type === 1 ? ' &middot; Pre' : '';
+      html += `<div class="sb-game"><div class="sb-date">${esc(g.date || '')}${pre} <span class="sb-pill ${esc(wl)}">${esc(g.result || '')}</span></div>`;
       html += `<div class="sb-row ${esc(wl)}"><img src="${escUrl(tLogo)}" alt=""><span class="sb-row-name">${esc(tName)}</span><span class="sb-row-score">${esc(g.team_score)}</span></div>`;
       html += `<div class="sb-divider"></div>`;
       html += `<div class="sb-row ${esc(wl === 'w' ? 'l' : 'w')}"><img src="${escUrl(oLogo)}" alt=""><span class="sb-row-name">${esc(g.opp_name || '')}</span><span class="sb-row-score">${esc(g.opp_score)}</span></div></div>`;

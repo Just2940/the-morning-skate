@@ -1216,6 +1216,30 @@ def get_team_schedule(team_key):
     finals.sort(key=lambda x: x.get("game_ts", ""), reverse=True)
     scheduled.sort(key=lambda x: x.get("game_ts", ""))
 
+    # Doubleheaders / split-squad days: two finals on one date read like a
+    # duplicated row ("Sep 23 L 2-4 Orioles" twice) - label them G1/G2.
+    _by_date = {}
+    for g in finals:
+        _by_date.setdefault(g["game_date"], []).append(g)
+    for _gs in _by_date.values():
+        if len(_gs) > 1:
+            for _i, _g in enumerate(sorted(_gs, key=lambda x: x.get("game_ts", "")), 1):
+                _g["date"] = f"{_g['date']} (G{_i})"
+
+    # Name the games that matter so every downstream writer (Week Ahead,
+    # slate, AI prompts) calls an opener an opener and a finale a finale.
+    _played_reg = sum(1 for g in finals if g.get("season_type") == 2)
+    _reg_sched = [g for g in scheduled if g.get("season_type") == 2]
+    for g in scheduled:
+        if g.get("season_type") == 1:
+            g["note"] = "preseason"
+        elif g.get("season_type") == 3:
+            g["note"] = "playoffs"
+        elif _reg_sched and g is _reg_sched[0] and _played_reg == 0:
+            g["note"] = "season opener"
+        elif _reg_sched and g is _reg_sched[-1]:
+            g["note"] = "season finale"
+
     today = NOW.astimezone(EST).date()
 
     def _days(g):
@@ -1229,6 +1253,7 @@ def get_team_schedule(team_key):
     SCHEDULE_CONTEXT[team_key] = {
         "ok": True,
         "current_type": cur_type,
+        "season_year": (data.get("season") or {}).get("year"),
         "next_type": nxt.get("season_type") if nxt else None,
         "days_to_next": _days(nxt) if nxt else None,
         "next_regular_days": _days(nxt_reg) if nxt_reg else None,
@@ -1240,7 +1265,10 @@ def get_team_schedule(team_key):
         "last_days_ago": (-_days(finals[0]) if finals and _days(finals[0]) is not None else None),
     }
 
-    recent = finals[:4]
+    # Once real games have been played, exhibition results are noise: they
+    # stretched the Commanders' 0-2 start into "four straight losses".
+    recent_pool = [g for g in finals if g.get("season_type") != 1] if _played_reg else finals
+    recent = recent_pool[:4]
     week_from_now = (NOW + timedelta(days=7)).strftime("%Y-%m-%d")
     upcoming = [g for g in scheduled if g.get("game_date", "") <= week_from_now]
     canadian = team_key in ("leafs", "jays", "raptors")
@@ -1330,6 +1358,16 @@ def build_full_standings(team_key):
     team_abbr = cfg["espn_abbr"]
 
     url = f"https://site.api.espn.com/apis/v2/sports/{cfg['espn_sport']}/{cfg['espn_league']}/standings?level=3"
+    # Until this team plays a regular-season game, ESPN's live standings are
+    # exhibition results (NHL preseason: "MTL 4-1-0") or an all-zero table
+    # (NBA rolls over early). Show last season's final standings instead,
+    # labeled with the season so nobody mistakes them for the new race.
+    prior_label = ""
+    _sc = SCHEDULE_CONTEXT.get(team_key) or {}
+    if _sc.get("ok") and not _sc.get("played_regular") and _sc.get("season_year"):
+        _prev = int(_sc["season_year"]) - 1
+        url += f"&season={_prev}&seasontype=2"
+        prior_label = f"{_prev - 1}-{str(_prev)[-2:]}" if league in ("NHL", "NBA") else str(_prev)
     data = espn_fetch(url)
     if not data:
         print(f"    WARNING: Could not fetch standings for {team_key}")
@@ -1450,7 +1488,10 @@ def build_full_standings(team_key):
                      "New Orleans Pelicans": "New Orleans", "Oklahoma City Thunder": "Oklahoma City",
                      "Portland Trail Blazers": "Portland", "Sacramento Kings": "Sacramento",
                      "Minnesota Timberwolves": "Minnesota", "Las Vegas Raiders": "Las Vegas",
-                     "New England Patriots": "New England", "Jacksonville Jaguars": "Jacksonville"}
+                     "New England Patriots": "New England", "Jacksonville Jaguars": "Jacksonville",
+                     # Two-word nicknames: last-word shortening gave "Sox", "Wings"...
+                     "Boston Red Sox": "Red Sox", "Detroit Red Wings": "Red Wings",
+                     "Columbus Blue Jackets": "Blue Jackets", "Vegas Golden Knights": "Golden Knights"}
         short_name = name_map.get(display, display.split()[-1] if len(display.split()) > 1 else display)
 
         row = {
@@ -1748,11 +1789,13 @@ def build_full_standings(team_key):
         return {
             "tabs": [tab1_name],
             "panes": [pane_div],
+            "prior_season": prior_label,
         }
 
     return {
         "tabs": [tab1_name, tab2_name],
         "panes": [pane_div, pane_wc],
+        "prior_season": prior_label,
     }
 
 
@@ -2303,11 +2346,10 @@ def discover_articles_for_team(team_key, recent, phase_info):
         print(f"    Found {len(recaps)} game recaps")
         all_articles.extend(recaps)
 
-    # Layer 3: League-specific APIs (NHL.com, MLB.com, etc.)
-    print(f"    Fetching league articles...")
-    league_articles = fetch_league_articles(team_key)
-    print(f"    Found {len(league_articles)} league articles")
-    all_articles.extend(league_articles)
+    # Layer 3 (league news APIs: NHL.com / MLB.com) retired 2026-09-27 - every
+    # endpoint has returned 403/404 daily since spring and only added noise
+    # (and false failures to the data-health count). fetch_league_articles is
+    # kept for reference; Tier 1 RSS covers those publishers.
 
     # Layer 4: Dedicated Tier 1 RSS feeds (TSN, Sportsnet, CBC ‚Äî guaranteed sources)
     print(f"    Fetching Tier 1 RSS articles...")
@@ -2332,6 +2374,16 @@ def discover_articles_for_team(team_key, recent, phase_info):
         if url_norm and url_norm not in seen_urls:
             seen_urls.add(url_norm)
             unique_articles.append(article)
+
+    # Placeholder posts are not stories. A blog's "Reds @ Jays Game Thread"
+    # became the homepage hero on 2026-09-27; "how to watch" listings repeat
+    # what Week Ahead already says.
+    _junk = re.compile(r"\bgame ?threads?\b|\bopen thread\b|\bgame ?day thread\b|"
+                       r"\bpost-?game thread\b|\bhow to watch\b|\blive chat\b", re.I)
+    _before = len(unique_articles)
+    unique_articles = [a for a in unique_articles if not _junk.search(a.get("headline", "") or "")]
+    if len(unique_articles) < _before:
+        print(f"    Dropped {_before - len(unique_articles)} placeholder post(s) (game threads / how-to-watch)")
 
     # Sort: game recaps first, then non-ESPN sources, then by recency
     def sort_key(a):
@@ -2731,14 +2783,16 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
         if last_game_days <= 14:
             facts.append(f"RECENT RESULTS (most recent first, last game was {last_game_days} day(s) ago):")
             for g in recent[:4]:
-                facts.append(f"  {g['date']}: {g['result']} {g['team_score']}-{g['opp_score']} vs {g['opp_name']}")
+                _pre = " (PRESEASON - exhibition, does not count)" if g.get("season_type") == 1 else ""
+                facts.append(f"  {g['date']}: {g['result']} {g['team_score']}-{g['opp_score']} vs {g['opp_name']}{_pre}")
 
-            # Calculate recent streak from results
-            if len(recent) >= 2:
+            # Calculate recent streak from results (never across an exhibition
+            # boundary - preseason form is not a streak)
+            if len(recent) >= 2 and recent[0].get("season_type") != 1:
                 streak_type = recent[0]["result"]
                 streak_count = 0
                 for g in recent:
-                    if g["result"] == streak_type:
+                    if g["result"] == streak_type and g.get("season_type") != 1:
                         streak_count += 1
                     else:
                         break
@@ -2750,7 +2804,19 @@ def build_verified_facts(team_key, team_info, standings, recent, upcoming, phase
     # Upcoming
     if upcoming:
         next_game = upcoming[0]
-        facts.append(f"NEXT GAME: {next_game['day']} {next_game['opp']} at {next_game['time']}")
+        _note = {
+            "season opener": " - THIS IS THE REGULAR-SEASON OPENER",
+            "season finale": " - THIS IS THE LAST REGULAR-SEASON GAME",
+            "preseason": " - PRESEASON GAME (exhibition, does not count)",
+            "playoffs": " - PLAYOFF GAME",
+        }.get(next_game.get("note", ""), "")
+        _tv = f" on {next_game['tv']}" if next_game.get("tv") else ""
+        facts.append(f"NEXT GAME: {next_game['day']} {next_game['opp']} at {next_game['time']}{_tv}{_note}")
+    _ctx = SCHEDULE_CONTEXT.get(team_key) or {}
+    if (_ctx.get("next_regular") and not _ctx.get("played_regular")
+            and (not upcoming or upcoming[0].get("note") != "season opener")):
+        _op = _ctx["next_regular"]
+        facts.append(f"REGULAR SEASON OPENS: {_op.get('day')} {_op.get('opp')} at {_op.get('time')}")
     elif phase_info and ("offseason" in phase_info["phase"] or "draft" in phase_info["phase"] or "ended" in phase_info["phase"]):
         facts.append(f"NO UPCOMING GAMES ‚Äî this team is in the {phase_info['label']} phase.")
 
@@ -4800,10 +4866,14 @@ def build_data():
             if team_info.get("record") or team_info.get("standing_summary"):
                 print(f"  Preseason record withheld: {team_info.get('record')} / "
                       f"{team_info.get('standing_summary')}")
+            team_info["preseason_record"] = team_info.get("record", "")
             team_info["record"] = ""
             team_info["standing_summary"] = ""
             team_info["record_stats"] = {}
             team_info["record_withheld"] = True
+            # Exhibition standings ("5 points back, W2") must never reach the
+            # AI writers or the streak cards.
+            standings = {}
             _op = _sc.get("next_regular") or {}
             team_info["opener"] = (f"Opener: {_op.get('day', '')} {_op.get('opp', '')}".strip()
                                    if _op else "")
@@ -4955,6 +5025,8 @@ def build_data():
             team_info = dict(team_info)
             team_info["record"] = record
         key_numbers = build_key_numbers(team_key, team_info, standings, recent, phase_info)
+        if team_info.get("record_withheld"):
+            key_numbers = _preseason_key_numbers(team_key, team_info)
 
         # Final guard: no banned boilerplate ships, no matter which path
         # (Perplexity, fallback, padding) produced the prose.
@@ -5052,6 +5124,9 @@ def build_data():
             "postseason_offseason", "pre_draft", "post_draft",
             "draft_free_agency", "combine_free_agency", "otas", "training_camp")
         _st = team_entry.get("standings") or {}
+        _prior = _st.pop("prior_season", "") if isinstance(_st, dict) else ""
+        if _prior:
+            _over_std = True  # last season's table, shown until the opener
         _tabs = _st.get("tabs") or []
         _panes = _st.get("panes") or []
         if _over_std and len(_tabs) == len(_panes) and len(_tabs) > 1:
@@ -5061,7 +5136,8 @@ def build_data():
                 _st["tabs"] = [_tabs[ix] for ix in _keep]
                 _st["panes"] = [_panes[ix] for ix in _keep]
         if _over_std and _st.get("tabs"):
-            _st["tabs"] = [tb if "final" in str(tb).lower() else f"{tb} - Final"
+            _sfx = f" - {_prior} Final" if _prior else " - Final"
+            _st["tabs"] = [tb if "final" in str(tb).lower() else f"{tb}{_sfx}"
                            for tb in _st["tabs"]]
 
         teams_data[team_key] = team_entry
@@ -5250,7 +5326,7 @@ def build_data():
                 "team": team_key,
                 "logo": cfg["logo"],
                 "matchup": g["opp"].replace("at ", f"{cfg['full_name'].split()[-1]} at ").replace("vs. ", f"{cfg['full_name'].split()[-1]} vs. "),
-                "detail": f"{g['time']}",
+                "detail": f"{g['time']}" + (f" - {g['note'].capitalize()}" if g.get("note") else ""),
                 "channel": g.get("tv", ""),
                 "off": False,
             })
@@ -5263,7 +5339,8 @@ def build_data():
                     "team": team_key,
                     "logo": cfg["logo"],
                     "matchup": cfg["full_name"].split()[-1],
-                    "detail": f"Next: {next_g['day']} {next_g['opp']} {next_g['time']}",
+                    "detail": f"Next: {next_g['day']} {next_g['opp']} {next_g['time']}"
+                              + (f" ({next_g['note']})" if next_g.get("note") else ""),
                     "channel": "",
                     "off": True,
                 })
@@ -5300,9 +5377,9 @@ def build_data():
     all_upcoming.sort(key=lambda x: x.get("game_ts") or x.get("game_date", ""))
     week_games = []
     for g in all_upcoming:
-        wg = {k: v for k, v in g.items() if k not in ("game_date", "game_ts", "season_type")}
-        if g.get("season_type") == 1:
-            wg["opp"] = f"{wg.get('opp', '')} (preseason)"
+        wg = {k: v for k, v in g.items() if k not in ("game_date", "game_ts", "season_type", "note")}
+        if g.get("note"):
+            wg["opp"] = f"{wg.get('opp', '')} ({g['note']})"
         week_games.append(wg)
     print(f"  Found {len(week_games)} scheduled games in next 7 days")
 
@@ -5436,6 +5513,27 @@ def build_data():
 
 
 # === MAIN ===
+def _preseason_key_numbers(team_key, team_info):
+    """Camp / preseason key-number cards: the opener and exhibition form,
+    each clearly labeled - never last season's streak or exhibition ranks."""
+    ctx = SCHEDULE_CONTEXT.get(team_key) or {}
+    cards = []
+    op = ctx.get("next_regular") or {}
+    if op:
+        d = ctx.get("next_regular_days")
+        when = "today" if d == 0 else ("tomorrow" if d == 1 else (f"in {d} days" if d else ""))
+        cards.append({"number": op.get("day", ""), "label": "Season Opener",
+                      "note": " ".join(x for x in (op.get("opp", ""), when) if x)})
+    pre = team_info.get("preseason_record", "")
+    if pre and pre not in ("0-0", "0-0-0"):
+        cards.append({"number": pre, "label": "Preseason", "note": "Exhibition record"})
+    if ctx.get("next_type") == 1 and ctx.get("days_to_next") is not None:
+        dn = ctx["days_to_next"]
+        cards.append({"number": "Today" if dn == 0 else f"{dn} day{'s' if dn != 1 else ''}",
+                      "label": "Next Preseason Game", "note": "Exhibition"})
+    return cards
+
+
 def _next_game_any(cfg, today):
     """Long-range fallback: first scheduled game at any distance."""
     try:
@@ -5556,7 +5654,8 @@ def _brief_facts_block(db, all_team_facts, today):
             if g.get("result") == "L":
                 s1, s2 = s2, s1
             verb = "beat" if g.get("result") == "W" else "lost to"
-            out.append(f"- Last night: {verb} the {g.get('opp_name')} {s1}-{s2}")
+            _pre = " (preseason game - does not count)" if g.get("preseason") else ""
+            out.append(f"- Last night: {verb} the {g.get('opp_name')} {s1}-{s2}{_pre}")
         srow = slate_by_team.get(tk)
         if srow and not srow.get("off"):
             line = f"- Today: {srow.get('matchup', '')}"
@@ -5569,11 +5668,16 @@ def _brief_facts_block(db, all_team_facts, today):
             wk = next((w for w in (db.get("week_ahead") or {}).get("games", [])
                        if w.get("team") == tk), None)
             if wk:
-                out.append(f"- Next game: {wk.get('opp')} {wk.get('day')} {wk.get('time')}")
+                _tv = f" on {wk.get('tv')}" if wk.get("tv") else ""
+                out.append(f"- Next game: {wk.get('opp')} {wk.get('day')} {wk.get('time')}{_tv}")
             else:
                 nx = _next_game_any(cfg, today)
                 if nx:
                     out.append(f"- {nx}")
+        _ctx = SCHEDULE_CONTEXT.get(tk) or {}
+        _op = _ctx.get("next_regular") or {}
+        if _op and not _ctx.get("played_regular") and _ctx.get("next_type") != 2:
+            out.append(f"- Regular season opens: {_op.get('opp')} {_op.get('day')} {_op.get('time')}")
         if in_season and info.get("record") and info.get("standing_summary"):
             out.append(f"- Record: {info.get('record')}, {info.get('standing_summary')}")
         tl = ((db.get("teams") or {}).get(tk) or {}).get("the_latest") or []
@@ -5684,6 +5788,10 @@ def build_morning_brief(db, all_team_facts):
             "streaks or games-back. "
             "(6) NEVER mention championship droughts, how long it has been "
             "since a title, or the years of past championships. "
+            "(6b) Game labels in the facts are authoritative: a game marked "
+            "(season opener) IS the regular-season opener, (season finale) IS the "
+            "last regular-season game, and (preseason) games do not count. Never "
+            "call a game an opener, finale or preseason game unless it is marked so. "
             "(7) Plain ASCII punctuation only: no em dashes, curly quotes or "
             "ellipses. No cliches such as 'buckle up', 'stay tuned', 'one thing "
             "is certain', 'remains to be seen'. Warm, plainspoken, newspaper "
