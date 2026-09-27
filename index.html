@@ -448,7 +448,8 @@ body::before {
 }
 .slate-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  /* two across on desktop: four teams sit 2x2 and previews get room to breathe */
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 12px;
 }
 .slate-card {
