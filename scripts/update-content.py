@@ -28,6 +28,7 @@ from sources import reputable_publisher, reputable_provider, credits_fan_brand  
 from game_details import (stars_from_summary, preview_from_summary, goalies_from_dfo,  # noqa: E402
                           stars_text, preview_text)
 from factcheck import ungrounded_numbers  # noqa: E402
+from headlines import headline_problem, headline_case, clean_headline, fact_headline  # noqa: E402
 
 # === LOGGING (kills "silent fallback" class of bugs) ===
 # Every except block that used to return empty/pass now routes through
@@ -5738,32 +5739,72 @@ BRIEF_BOILER_RX = re.compile(
     re.I)
 
 
-BRIEF_TITLE_COMMON = set("""
-a an and as at back big builds camp closes cup day deal debut down eyes final
-finals first for free game games gets goes here his home hopes in into is it
-kicks lands last late leads lifts locks look looking looks loss makes more
-morning new next night no now of off on opens out over picks plans play plays
-ready returns rise road rolls run sets sign signs skate start starts stays
-still swap swaps take takes the their this three to top trades turn turns two
-up waits wear wears week while wide win wins with young your monday tuesday
-wednesday thursday friday saturday sunday leafs jays blue raptors commanders
-toronto washington nhl mlb nba nfl number eye eyes wait waits past near ahead after before against face faces host hosts visit visits meet meets keep keeps add adds get gain gains chase chases push pushes hold holds open close draft series split sweep sweeps edge edges rally rallies shut shuts blank blanks drop drops fall falls rout routs claim claims earn earns grab grabs join joins ink inks nab nabs secure secures name names pick picked land lands roll rolled seek seeks aim aims begin begins arrive arrives await awaits show shows support supports honor honors return returns heads head set sets hope hopes race bid stay stays streak skid snap snaps end ends rookie rookies star stars veteran veterans captain coach injury injuries deal deals trade traded look looks key test tests battle battles clash opener finale season camp preseason playoff playoffs fans family practice start starts starting finish finishes home road day night morning big bigger final quest turn turns step steps sharp sharper tough rough strong bright long short left right out up down on off montreal ottawa boston buffalo detroit tampa florida york philadelphia pittsburgh carolina columbus chicago louis nashville dallas colorado minnesota winnipeg calgary edmonton vancouver seattle vegas angeles anaheim jose utah cincinnati baltimore cleveland kansas houston texas athletics atlanta miami milwaukee arizona denver phoenix portland sacramento memphis orleans oklahoma indiana orlando charlotte brooklyn green bay jacksonville tennessee indianapolis francisco diego tuesday wednesday thursday friday saturday sunday monday october november
-""".split())
+def _fact_headline(db, today):
+    """A true news headline built from the verified scoreboard, slate and
+    schedule - the last resort, so the brief never ships a label like
+    "Sunday's Skate"."""
+    nick = {tk: cfg["full_name"].split()[-1] for tk, cfg in TEAMS.items()}
+    openers = {}
+    for tk in TEAMS:
+        ctx = SCHEDULE_CONTEXT.get(tk) or {}
+        if (ctx.get("next_regular") and not ctx.get("played_regular")
+                and ctx.get("next_regular_days") in (1, 2, 3)):
+            openers[tk] = ctx["next_regular"]
+    recap_rx = re.compile(r"\b(beat|fell to)\b.*\d+-\d+")
+    news = {}
+    for tk in TEAMS:
+        for art in (((db.get("teams") or {}).get(tk) or {}).get("the_latest") or [])[:3]:
+            h = art.get("headline", "")
+            if h and not recap_rx.search(h):
+                news[tk] = h
+                break
+    return fact_headline(db.get("scoreboard"), db.get("today_slate"), nick, openers, news,
+                         today.strftime("%Y-%m-%d"), (today - timedelta(days=1)).strftime("%Y-%m-%d"))
 
 
-def _brief_title_ok(title, facts_low):
-    """Every headline word must be common vocabulary or grounded in the
-    verified facts. Catches model garbles like 'Choves'."""
-    for w in re.findall(r"[A-Za-z']+", title):
-        lw = w.lower().strip("'")
-        if not lw or lw in BRIEF_TITLE_COMMON:
-            continue
-        if lw.rstrip("s") in BRIEF_TITLE_COMMON:
-            continue
-        if lw in facts_low:
-            continue
-        return False
-    return True
+def _brief_headline_options(facts_block, body):
+    """Ask for three fresh headlines for an approved article."""
+    system_prompt = (
+        "You write front-page sports headlines for The Morning Skate, a morning "
+        "briefing for a Toronto sports fan. A headline is 4 to 8 words, built on "
+        "the single most newsworthy fact in the article (a result, a start, a "
+        "milestone, an injury, a signing), with a strong verb and at least one "
+        "team or player name. Plain, concrete newspaper language: no puns or "
+        "wordplay, no questions, no colons. Never use the words update, roundup, "
+        "recap, skate or morning, and never list the teams. Only facts stated in "
+        "the article.")
+    prompt = (f"{facts_block}\n\nARTICLE:\n{body}\n\n"
+              "Write three different headlines for this article, one per line, "
+              "numbered 1 to 3. Headlines only.")
+    raw = perplexity_search(prompt, system_prompt=system_prompt) or ""
+    out = []
+    for line in sanitize_ascii(raw).splitlines():
+        h = clean_headline(line)
+        if len(h.split()) >= 3:
+            out.append(h)
+    return out[:5]
+
+
+def _choose_brief_headline(first, facts_block, body, db, today):
+    """The article's own headline if it is a real one, else an AI rewrite,
+    else a headline built from the verified facts."""
+    def check(raw):
+        h = headline_case(clean_headline(raw))
+        return h, headline_problem(h, facts_block, body, BRIEF_BANNED_RX)
+    if first:
+        h, why = check(first)
+        if not why:
+            return h
+        print(f"  [brief] headline rejected ({why}): {first}")
+    for raw in _brief_headline_options(facts_block, body):
+        h, why = check(raw)
+        if not why:
+            print(f"  [brief] headline from rewrite: {h}")
+            return h
+        print(f"  [brief] rewrite rejected ({why}): {raw}")
+    h = _fact_headline(db, today)
+    print(f"  [brief] headline built from verified facts: {h}")
+    return h
 
 
 def _brief_article_gate(text):
@@ -5932,9 +5973,16 @@ def build_morning_brief(db, all_team_facts):
             "mini article. RULES: "
             "(1) 130 to 200 words total, in 2 or 3 short paragraphs separated by "
             "blank lines. Do NOT exceed 210 words. "
-            "(2) The FIRST LINE must be a real newspaper headline of at most "
-            "seven words - specific and concrete, never a list of team names "
-            "and never the word 'update'. Then a blank line, then the article. "
+            "(2) The FIRST LINE is the headline: a real front-page sports "
+            "headline of 4 to 8 words on the single most newsworthy fact of the "
+            "morning (a result, a start, a milestone, an injury, a signing), "
+            "with a strong verb and at least one team or player name. Plain, "
+            "concrete words: no puns or wordplay, no questions, no colons. Never "
+            "a list of team names, never the words update, roundup, recap, skate "
+            "or morning. The style, shown with other teams: 'Judge Homers Twice "
+            "as Yankees Rout Red Sox', 'Celtics Rally Past Knicks in Overtime'. "
+            "Then a blank line, then the article, which opens with the headline's "
+            "story. "
             "(3) Mention ALL FOUR teams by name: Leafs, Jays (or Blue Jays), "
             "Raptors, Commanders. "
             "(4) Ground every score, record, date and broadcast detail ONLY in "
@@ -5970,8 +6018,9 @@ def build_morning_brief(db, all_team_facts):
             title = lines[0].strip().strip("#").strip().rstrip(".")
             body = lines[1].strip() if len(lines) > 1 else ""
             if not body or not (3 <= len(title.split()) <= 12):
-                # No parseable headline - treat whole text as body
-                title, body = "The Morning Skate Brief", text
+                # No parseable headline - treat whole text as body; the
+                # headline step below writes one
+                title, body = "", text
             reason = _brief_article_gate(body)
             if not reason:
                 _bad_nums = ungrounded_numbers(body, facts_block)
@@ -5980,14 +6029,6 @@ def build_morning_brief(db, all_team_facts):
             if reason:
                 print(f"  [brief] attempt {attempt + 1} rejected: {reason}")
                 continue
-            low_t = title.lower()
-            if "update" in low_t or sum(
-                    1 for n in ("leafs", "jays", "raptors", "commanders")
-                    if n in low_t) >= 3:
-                title = today.strftime("%A") + "'s Skate"
-            elif not _brief_title_ok(title, facts_block.lower()):
-                print(f"  [brief] title replaced (unrecognized word): {title}")
-                title = today.strftime("%A") + "'s Skate"
             paragraphs = [" ".join(p.split()) for p in body.split("\n\n") if p.strip()]
             if len(paragraphs) == 1 and "\n" in body:
                 paragraphs = [" ".join(p.split()) for p in body.split("\n") if p.strip()]
@@ -6010,13 +6051,17 @@ def build_morning_brief(db, all_team_facts):
                     if n in _last) >= 3):
                 print(f"  [brief] attempt {attempt + 1} rejected: summary closer")
                 continue
+            # Headline last, once the article is approved: the article's own
+            # if it's a real headline, else a rewrite, else one built from facts.
+            title = _choose_brief_headline(title, facts_block, body, db, today)
             print(f"  Morning Brief: AI article, {len(body.split())} words, "
-                  f"{len(paragraphs)} paragraph(s)")
+                  f"{len(paragraphs)} paragraph(s), headline: {title}")
             return {"article": {"title": title, "paragraphs": paragraphs}}
         print("  [brief] all AI attempts failed - shipping deterministic fallback")
     else:
         print("  [brief] no PERPLEXITY_API_KEY - deterministic fallback")
     fb = _build_brief_fallback(db, all_team_facts, today)
+    fb["title"] = _fact_headline(db, today)
     n = sum(len(t["lines"]) for t in fb.get("teams", []))
     print(f"  Morning Brief: fallback, {n} lines across {len(fb.get('teams', []))} teams")
     return fb

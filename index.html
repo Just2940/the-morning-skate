@@ -1918,9 +1918,10 @@ function renderMorningBrief(b) {
     { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   let h = '';
   if (art && (art.paragraphs || []).length) {
-    h += '<div class="alm-art-title">' + esc(art.title || 'The Morning Skate Brief') + '</div>';
+    if (art.title) h += '<div class="alm-art-title">' + esc(art.title) + '</div>';
     art.paragraphs.forEach(p => { h += '<p class="alm-art-p">' + esc(p) + '</p>'; });
   } else {
+    if (b.title) h += '<div class="alm-art-title">' + esc(b.title) + '</div>';
     teams.forEach(t => {
       if (!(t.lines || []).length) return;
       h += '<div class="alm-sec"><div class="sec"><span class="sec-label">' +

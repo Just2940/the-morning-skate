@@ -149,11 +149,12 @@ def build(data):
     rows, text = [], [f"THE MORNING SKATE - {date}", ""]
 
     # --- The brief -------------------------------------------------------
-    if art.get("paragraphs"):
-        title = art.get("title") or "The Morning Brief"
+    headline = (art.get("title") if art.get("paragraphs") else brief.get("title")) or ""
+    if headline:
         rows.append(f'<tr><td style="padding:22px 0 6px;font-family:{SERIF};font-size:24px;font-weight:700;'
-                    f'line-height:1.25;color:{INK};">{esc(title)}</td></tr>')
-        text += [title.upper(), ""]
+                    f'line-height:1.25;color:{INK};">{esc(headline)}</td></tr>')
+        text += [headline.upper(), ""]
+    if art.get("paragraphs"):
         for p in art["paragraphs"]:
             rows.append(f'<tr><td style="padding:8px 0;font-family:{SERIF};font-size:17px;line-height:1.6;'
                         f'color:{INK};">{esc(p)}</td></tr>')
@@ -243,7 +244,7 @@ def build(data):
             f'<div style="font-family:{SANS};font-size:11px;font-weight:700;letter-spacing:2px;'
             f'text-transform:uppercase;color:{MUTED};padding-top:6px;">{esc(date)}</div></td></tr>'
             + "".join(rows) + '</table></td></tr></table></body></html>')
-    subject = f"The Morning Skate: {art.get('title')}" if art.get("title") else f"The Morning Skate - {date}"
+    subject = f"The Morning Skate: {headline}" if headline else f"The Morning Skate - {date}"
     return subject, body, "\n".join(text)
 
 

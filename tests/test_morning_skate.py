@@ -36,6 +36,7 @@ uc = _load("uc", "update-content.py")
 vc = _load("vc", "validate_content.py")
 from sources import reputable_publisher, reputable_provider, credits_fan_brand  # noqa: E402
 from factcheck import ungrounded_numbers  # noqa: E402
+from headlines import headline_problem, headline_case, clean_headline, fact_headline  # noqa: E402
 from game_details import (stars_from_summary, preview_from_summary, goalies_from_dfo, last_name,  # noqa: E402
                           stars_text, preview_text)
 
@@ -260,8 +261,68 @@ class AiTextGuardTests(unittest.TestCase):
         self.assertIn("3rd in nfc", problems)
 
     def test_headline_gate(self):
-        self.assertFalse(uc._brief_title_ok("McKenna Choves Number 92", "mckenna"))
-        self.assertTrue(uc._brief_title_ok("Leafs Open With Montreal on Tuesday", ""))
+        self.assertIn("unrecognized word", headline_problem("McKenna Choves Number 92", "mckenna"))
+        self.assertEqual(headline_problem("Leafs Open With Montreal on Tuesday", ""), "")
+
+
+# --------------------------------------------------------------------- #
+# Morning Brief headlines                                                #
+# --------------------------------------------------------------------- #
+
+class HeadlineTests(unittest.TestCase):
+    FACTS = ("[Toronto Blue Jays - MLB - Regular Season]\n- Last night: lost to the Reds 5-1\n"
+             "- Today: Jays vs. Reds, 3:07 PM ET - Season finale on Sportsnet\n"
+             "- Game note: Probable starters: Scherzer (3-9, 6.14 ERA) vs. Williamson (5-4, 4.89 ERA)\n"
+             "[Washington Commanders - NFL - Regular Season]\n- Today: Commanders vs. Seahawks, 1:00 PM ET on FOX\n"
+             "- Game note: Out: Cosmi (concussion), Daniels (elbow)")
+    NICK = {"leafs": "Leafs", "jays": "Jays", "raptors": "Raptors", "commanders": "Commanders"}
+
+    def test_labels_are_not_headlines(self):
+        for t in ("Sunday's Skate", "The Morning Skate Brief", "Toronto Sports Update",
+                  "Leafs, Jays, Raptors and Commanders", "Can the Jays Finish Strong?", "A Big Day for Everyone"):
+            self.assertTrue(headline_problem(t, self.FACTS), t)
+
+    def test_real_headlines_pass(self):
+        for t in ("Scherzer Starts Jays' Season Finale", "Commanders Face Seahawks Without Daniels",
+                  "Jays Fall to Reds 5-1", "Leafs Open Season Tuesday Against Canadiens"):
+            self.assertEqual(headline_problem(t, self.FACTS), "", t)
+
+    def test_invented_numbers_and_words_rejected(self):
+        self.assertIn("unverified number", headline_problem("Jays Fall to Reds 7-2", self.FACTS))
+        self.assertIn("unrecognized word", headline_problem("Scherzer Blorps Jays Finale", self.FACTS))
+
+    def test_player_named_in_the_article_is_accepted(self):
+        body = "Addison Barger homered twice as the Jays won."
+        self.assertEqual(headline_problem("Barger Homers Twice in Jays Win", self.FACTS, body), "")
+
+    def test_cleanup_and_case(self):
+        self.assertEqual(clean_headline('1. "Jays fall to Reds 5-1."'), "Jays fall to Reds 5-1")
+        self.assertEqual(headline_case("scherzer starts jays' season finale"), "Scherzer Starts Jays' Season Finale")
+        self.assertEqual(headline_case("McLaurin out as Commanders host Seahawks"),
+                         "McLaurin Out as Commanders Host Seahawks")
+
+    def test_fact_headline_leads_with_the_biggest_story(self):
+        slate = [{"team": "leafs", "off": True, "matchup": "Leafs"},
+                 {"team": "jays", "off": False, "matchup": "Jays vs. Reds", "detail": "3:07 PM ET - Season finale",
+                  "preview": {"duel": {"label": "Probable starters", "ours": {"name": "Scherzer"},
+                                       "theirs": {"name": "Williamson"}}}},
+                 {"team": "commanders", "off": False, "matchup": "Commanders vs. Seahawks", "detail": "1:00 PM ET"}]
+        sb = [{"team": "jays", "result": "L", "team_score": 1, "opp_score": 5, "opp_name": "Reds",
+               "game_date": "2026-09-26"}]
+        days = {"today": "2026-09-27", "yest": "2026-09-26"}
+        h = fact_headline(sb, slate, self.NICK, **days)
+        self.assertEqual(h, "Scherzer Starts Jays' Season Finale")
+        self.assertEqual(headline_problem(h, self.FACTS), "")
+        slate[1]["detail"] = "3:07 PM ET"  # an ordinary game: last night's result leads
+        self.assertEqual(fact_headline(sb, slate, self.NICK, **days), "Jays Fall to Reds 5-1")
+
+    def test_fact_headline_on_quiet_days(self):
+        opener = {"leafs": {"day": "Tue 9/29", "opp": "vs. Canadiens"}}
+        self.assertEqual(fact_headline([], [], self.NICK, openers=opener),
+                         "Leafs Open Season Tuesday Against Canadiens")
+        self.assertEqual(fact_headline([], [], self.NICK, news={"raptors": "Raptors sign veteran guard"}),
+                         "Raptors sign veteran guard")
+        self.assertEqual(fact_headline([], [], self.NICK), "")
 
 
 # --------------------------------------------------------------------- #
@@ -377,6 +438,16 @@ class ValidatorTests(unittest.TestCase):
                 "teams": {"jays": {"the_latest": [{"link": "https://www.sportsnet.ca/x", "headline": "y"}]}}}
         r = self.run_rule(vc.check_reputable_sources, data)
         self.assertEqual(len(r.errors), 1)
+
+    def test_brief_headline_rule(self):
+        def brief(title):
+            return {"morning_brief": {"article": {"title": title, "paragraphs": ["x"]}}}
+        self.assertTrue(self.run_rule(vc.check_brief_headline, brief("Sunday's Skate")).errors)
+        self.assertTrue(self.run_rule(vc.check_brief_headline, brief("")).errors)
+        self.assertFalse(self.run_rule(vc.check_brief_headline,
+                                       brief("Scherzer Starts Jays' Season Finale")).errors)
+        fallback = {"morning_brief": {"title": "Jays Fall to Reds 5-1", "teams": [{"lines": [{"text": "x"}]}]}}
+        self.assertFalse(self.run_rule(vc.check_brief_headline, fallback).errors)
 
 
 if __name__ == "__main__":

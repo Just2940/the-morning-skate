@@ -29,6 +29,7 @@ from urllib.parse import urlparse
 # Reputable-publisher allowlist, shared with update-content.py.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sources import reputable_publisher, credits_fan_brand  # noqa: E402
+from headlines import GENERIC_RX  # noqa: E402
 
 # ------------------------------------------------------------------------- #
 # Reporter — collects issues and prints a final readable report             #
@@ -1047,6 +1048,27 @@ def check_reputable_sources(data: dict, r: Reporter) -> None:
         r.ok(f"{rule} ({len(items)} articles checked)")
 
 
+def check_brief_headline(data: dict, r: Reporter) -> None:
+    """0.31 - the Morning Brief carries a real news headline, never a label
+    like "Sunday's Skate" (Justin, 2026-09-27)."""
+    rule = "0.31 Morning Brief headline"
+    b = data.get("morning_brief") or {}
+    art = b.get("article") or {}
+    if not art.get("paragraphs") and not b.get("teams"):
+        r.ok(f"{rule} (no brief today)")
+        return
+    title = (art.get("title") if art.get("paragraphs") else b.get("title")) or ""
+    words = len(title.split())
+    if not title:
+        r.error(rule, "the brief has no headline")
+    elif GENERIC_RX.search(title) or re.fullmatch(r"\w+day'?s? \w+", title.strip()):
+        r.error(rule, f"generic label instead of a headline: {title!r}")
+    elif not 3 <= words <= 14:
+        r.error(rule, f"headline is {words} words: {title!r}")
+    else:
+        r.ok(f"{rule}: {title}")
+
+
 def check_data_health(data: dict, r: Reporter) -> None:
     """0.29 - the backbone data actually loaded. Added 2026-09-27 after ESPN
     403'd every schedule/record/standings call for a month while this
@@ -1128,6 +1150,7 @@ def main() -> int:
     check_cross_field_consistency(data, r)
     check_data_health(data, r)
     check_reputable_sources(data, r)
+    check_brief_headline(data, r)
     check_index_html(raw_html, r)
     check_links_live(data, r, skip=args.skip_network)
     check_logos_live(data, r, skip=args.skip_network)
