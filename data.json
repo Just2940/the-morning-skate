@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated": "2026-09-29T13:00:57.126261-04:00",
-    "date_display": "September 29, 2026",
+    "updated": "2026-09-30T10:57:54.493093-04:00",
+    "date_display": "September 30, 2026",
     "data_health": {
-      "espn_ok": 41,
+      "espn_ok": 42,
       "espn_failed": 0,
       "espn_via_mirror": 0,
       "espn_failed_urls": [],
@@ -19,137 +19,105 @@
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "0-0-0",
-      "detail": "1st in Atlantic Division",
+      "record": "0-1-0",
+      "detail": "4th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Maple Leafs woke up on the eve of the season with the sort of thump that changes a room - a blockbuster, a contract, and a new face expected to ride shotgun with Auston Matthews. <strong>Toronto landed Kirill Marchenko in the Matthew Knies deal and locked him up for six years at $75 million</strong>, a hard-handed bet from John Chayka that says the club wants more speed, more finish, and fewer long debates about the top six. The numbers still read 0-0-0, first in the Atlantic, but that's preseason bookkeeping now; the real ledger opens tonight against Montreal. Knies is gone, Marchenko is here, and the lineup projections already look different. <strong>What matters next is whether Marchenko can settle in fast and turn all this noise into a clean opening-night start</strong>.",
-        "updated": "Updated September 29, 2026"
+        "body": "The opening night jitters came with a price - and the Leafs paid it in a <strong>3-2 loss to the Canadiens</strong>, the kind of defeat that leaves a bruise before the calendar has even turned. Toronto is 0-1-0, fourth in the Atlantic, already two points back and carrying a L1 that feels heavier than one game should. William Nylander did his part with both goals, but the new-look roster still looks like a club trying to learn its own address. Kirill Marchenko's debut added one more storyline to a night already crowded with them, while Jake McCabe's exit only sharpened the concern around a blue line still sorting itself out. This is not panic time. It is, however, a reminder that talent alone does not iron out a messy start. <strong>Tonight's visit from the Islanders will tell us whether this was a stumble - or the first crack in the floor.</strong>",
+        "updated": "Updated September 30, 2026"
       },
       "key_numbers": [
         {
-          "number": "0-0-0",
+          "number": "0-1-0",
           "label": "Season Record",
-          "note": "1st in Atlantic Division"
+          "note": "4th in Atlantic Division"
         },
         {
           "number": "0",
           "label": "Points",
-          "note": "1st in Atlantic Division"
+          "note": "4th in Atlantic Division"
         },
         {
-          "number": "-",
+          "number": "L1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "2-2",
-          "label": "Last 4",
-          "note": "Recent form"
+          "number": "2",
+          "label": "Points Back",
+          "note": "4th in Atlantic Division"
         }
       ],
       "recent_results": [
         {
-          "date": "Sep 23 (G1)",
-          "result": "W",
-          "team_score": 6,
-          "opp_name": "Senators",
-          "opp_score": 1,
-          "opp_logo": "ott",
-          "league": "nhl",
-          "game_date": "2026-09-23",
-          "game_ts": "2026-09-23T23:00Z",
-          "game_id": "401886441",
-          "season_type": 1
-        },
-        {
-          "date": "Sep 23 (G2)",
-          "result": "W",
-          "team_score": 4,
-          "opp_name": "Senators",
-          "opp_score": 2,
-          "opp_logo": "ott",
-          "league": "nhl",
-          "game_date": "2026-09-23",
-          "game_ts": "2026-09-23T23:00Z",
-          "game_id": "401879650",
-          "season_type": 1
-        },
-        {
-          "date": "Sep 19 (G1)",
+          "date": "Sep 29",
           "result": "L",
-          "team_score": 1,
+          "team_score": 2,
           "opp_name": "Canadiens",
-          "opp_score": 4,
+          "opp_score": 3,
           "opp_logo": "mtl",
           "league": "nhl",
-          "game_date": "2026-09-19",
-          "game_ts": "2026-09-19T23:00Z",
-          "game_id": "401881922",
-          "season_type": 1
-        },
-        {
-          "date": "Sep 19 (G2)",
-          "result": "L",
-          "team_score": 3,
-          "opp_name": "Canadiens",
-          "opp_score": 4,
-          "opp_logo": "mtl",
-          "league": "nhl",
-          "game_date": "2026-09-19",
-          "game_ts": "2026-09-19T23:00Z",
-          "game_id": "401881923",
-          "season_type": 1
+          "game_date": "2026-09-29",
+          "game_ts": "2026-09-29T23:00Z",
+          "game_id": "401891827",
+          "season_type": 2
         }
       ],
       "last_game_highlights": {
-        "available": false
+        "available": true,
+        "title": "Canadiens vs. Leafs - Full Highlights",
+        "subtitle": "NHL - Sep 29, 2026",
+        "result_badge": "L 2-3",
+        "result_class": "l",
+        "url": "https://www.youtube.com/watch?v=qDHmnwRUN2Y",
+        "game_date": "2026-09-29"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Leafs beat Senators 6-1",
-          "dek": "Toronto's preseason win over Ottawa offered an early glimpse of how its new pieces are fitting together before the real test begins tonight against Montreal. A 6-1 result against a division rival can build momentum, but the opener will show whether that edge carries into games",
-          "date": "Sep 23 (G1)",
-          "link": "https://www.espn.com/nhl/recap?gameId=401886441"
+          "headline": "Leafs fell to Canadiens 3-2",
+          "dek": "Toronto's opening-night loss to Montreal is an early standings dent in a tight Atlantic race, leaving the Leafs at 0-1-0 and already trying to avoid chasing the division pack. It also raises immediate questions about how quickly a roster with new faces can settle in after a",
+          "date": "Sep 29",
+          "link": "https://www.espn.com/nhl/recap?gameId=401891827"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "Maple Leafs' John Chayka on Knies-Marchenko trade: A 'special opportunity' and an apology",
-          "dek": "John Chayka's explanation frames the trade as a win-now move, with Toronto betting that Kirill Marchenko can change games immediately while also locking him in long term. The apology to Matthew Knies matters because it underscores how abrupt the deal was, ending months of",
-          "date": "September 29, 2026",
-          "link": "https://www.nytimes.com/athletic/7642877/2026/09/29/maple-leafs-kirill-marchenko-matthew-knies-trade-john-chayka/"
+          "headline": "Inside the whirlwind of Kirill Marchenko's Maple Leafs debut",
+          "dek": "Toronto's new winger arrived with almost no runway, yet still drove offense in a season opener that doubled as a stress test for the club's remade lineup. With the Leafs already trying to steady themselves after an opening loss, his early impact offers a promising sign that the",
+          "date": "September 30, 2026",
+          "link": "https://www.nytimes.com/athletic/7645277/2026/09/30/kirill-marchenko-maple-leafs-debut-trade-matthews/"
         },
         {
           "source": "The Globe and Mail",
           "source_class": "web",
-          "headline": "Maple Leafs acquire Kirill Marchenko from Blue Jackets, sign winger to six-year extension",
-          "dek": "Toronto's preseason opener suddenly carries real stakes because the team has turned a top lineup piece into a major roster shake-up before the games count. Locking Kirill Marchenko in on a six-year extension signals the Leafs are betting on immediate scoring and long-term",
-          "date": "September 28, 2026",
-          "link": "https://www.theglobeandmail.com/sports/hockey/article-maple-leafs-kirill-marchenko-trade-contract/"
+          "headline": "After weeks of hype, the revamped Leafs fall short on opening night",
+          "dek": "Toronto's overhaul was supposed to change the tone immediately, with a flood of new faces debuting in a game that exposed how little time this group has had to settle in. The opening loss matters because it is the first real test of whether the Leafs can turn roster churn and",
+          "date": "September 30, 2026",
+          "link": "https://www.theglobeandmail.com/sports/article-after-weeks-of-hype-the-new-look-leafs-fall-short-on-opening-night/"
         },
         {
           "source": "Toronto Sun",
           "source_class": "web",
-          "headline": "What's different around Scotiabank Arena for the Maple Leafs 2026-27 home opener",
-          "dek": "Toronto's opener matters because the roster has been reshaped by a summer of major moves, and the new faces are being thrown straight into a rivalry game at home. The atmosphere around Scotiabank Arena also reflects a team trying to set a new tone immediately after a turbulent",
-          "date": "September 29, 2026",
-          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/whats-different-around-sba-for-the-maple-leafs-2026-27-home-opener"
+          "headline": "Opening loss shows Maple Leafs need more time to gel",
+          "dek": "Toronto's first game under Jim Hiller exposed how much chemistry this reworked lineup still needs after a roster-heavy offseason. Nylander's two-goal effort showed the finishing is there, but Montreal's road win and Toronto's 0-1 start already put pressure on the Leafs to clean",
+          "date": "September 30, 2026",
+          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/opening-loss-shows-maple-leafs-need-more-time-to-gel"
         },
         {
           "source": "Daily Faceoff",
           "source_class": "web",
-          "headline": "Kirill Marchenko will be an excellent fit for Leafs",
-          "dek": "Toronto made a bold preopening move by adding Marchenko and locking him up long term, signaling a win-now push around its core. With Matthew Knies and other pieces going the other way, the deal reshapes both the top six and the club's cap picture before puck drop.",
+          "headline": "Will Jim Hiller adjust his style with Leafs?",
+          "dek": "Toronto has already hinted at a stylistic shift under Jim Hiller, but opening-night turnovers showed how much work remains to make that approach fit the roster. With the Leafs at 0-1 and still settling into new roles, his adjustments could shape whether their high-end offense",
           "date": "September 29, 2026",
-          "link": "https://www.dailyfaceoff.com/news/kirill-marchenko-toronto-maple-leafs-trade-columbus-blue-jackets-matthew-knies-nhl-2027-season-preview"
+          "link": "https://www.dailyfaceoff.com/news/head-coach-jim-hiller-adjust-style-toronto-maple-leafs-nhl"
         }
       ],
       "standings": {
         "tabs": [
-          "Atlantic Division - 2025-26 Final"
+          "Atlantic Division",
+          "Eastern Wild Card"
         ],
         "panes": [
           {
@@ -162,27 +130,15 @@
             ],
             "rows": [
               {
-                "team": "Sabres",
-                "logo": "buf",
+                "team": "Bruins",
+                "logo": "bos",
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "50",
-                  "23",
-                  "9",
-                  "109"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "50",
-                  "26",
-                  "6",
-                  "106"
+                  "1",
+                  "0",
+                  "0",
+                  "2"
                 ]
               },
               {
@@ -191,46 +147,10 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "48",
-                  "24",
-                  "10",
-                  "106"
-                ]
-              },
-              {
-                "team": "Bruins",
-                "logo": "bos",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "45",
-                  "27",
-                  "10",
-                  "100"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "44",
-                  "27",
-                  "11",
-                  "99"
-                ]
-              },
-              {
-                "team": "Red Wings",
-                "logo": "det",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "41",
-                  "31",
-                  "10",
-                  "92"
+                  "1",
+                  "0",
+                  "0",
+                  "2"
                 ]
               },
               {
@@ -239,10 +159,58 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "40",
-                  "38",
-                  "4",
-                  "84"
+                  "1",
+                  "0",
+                  "0",
+                  "2"
+                ]
+              },
+              {
+                "team": "Red Wings",
+                "logo": "det",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Sabres",
+                "logo": "buf",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Tampa Bay",
+                "logo": "tb",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Senators",
+                "logo": "ott",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
                 ]
               },
               {
@@ -251,10 +219,239 @@
                 "league": "nhl",
                 "you": true,
                 "vals": [
-                  "32",
-                  "36",
-                  "14",
-                  "78"
+                  "0",
+                  "1",
+                  "0",
+                  "0"
+                ]
+              }
+            ]
+          },
+          {
+            "headers": [
+              "",
+              "Team",
+              "W",
+              "L",
+              "OTL",
+              "PTS"
+            ],
+            "has_seed_col": true,
+            "rows": [
+              {
+                "team": "Bruins",
+                "logo": "bos",
+                "league": "nhl",
+                "you": false,
+                "seed": "A1",
+                "vals": [
+                  "1",
+                  "0",
+                  "0",
+                  "2"
+                ]
+              },
+              {
+                "team": "Canadiens",
+                "logo": "mtl",
+                "league": "nhl",
+                "you": false,
+                "seed": "A2",
+                "vals": [
+                  "1",
+                  "0",
+                  "0",
+                  "2"
+                ]
+              },
+              {
+                "team": "Panthers",
+                "logo": "fla",
+                "league": "nhl",
+                "you": false,
+                "seed": "A3",
+                "vals": [
+                  "1",
+                  "0",
+                  "0",
+                  "2"
+                ]
+              },
+              {
+                "team": "Hurricanes",
+                "logo": "car",
+                "league": "nhl",
+                "you": false,
+                "seed": "M1",
+                "vals": [
+                  "0",
+                  "0",
+                  "1",
+                  "1"
+                ]
+              },
+              {
+                "team": "Capitals",
+                "logo": "wsh",
+                "league": "nhl",
+                "you": false,
+                "seed": "M2",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "NY Islanders",
+                "logo": "nyi",
+                "league": "nhl",
+                "you": false,
+                "seed": "M3",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Red Wings",
+                "logo": "det",
+                "league": "nhl",
+                "you": false,
+                "seed": "WC1",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Sabres",
+                "logo": "buf",
+                "league": "nhl",
+                "you": false,
+                "seed": "WC2",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Tampa Bay",
+                "logo": "tb",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Senators",
+                "logo": "ott",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "1",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Penguins",
+                "logo": "pit",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Devils",
+                "logo": "nj",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Flyers",
+                "logo": "phi",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "Blue Jackets",
+                "logo": "cbj",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "team": "NY Rangers",
+                "logo": "nyr",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "0",
+                  "1",
+                  "0",
+                  "0"
                 ]
               }
             ]
@@ -292,8 +489,8 @@
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The curtain has dropped, and now the Blue Jays must sort through the wreckage with a clear eye - not nostalgia. <strong>Shane Bieber and Myles Straw both hope to return as Toronto's market opens</strong>, and that is the first real offseason test for a club that finished 79-83 and fifth in the AL East. Bieber gives them rotation credibility; Straw, at least, gives them a glove worth debating against an $8 million decision that suddenly looks sharp-edged. The bigger issue is direction. A team built to contend never found enough punch, and the front office has to decide whether to keep patching or start reshaping. <strong>What matters now is whether Toronto turns that free-agent uncertainty into a cleaner roster before winter hardens the market</strong>.",
-        "updated": "Updated September 29, 2026"
+        "body": "The season ended with a thud, and now the only question that matters is whether Toronto has the nerve to turn disappointment into a cleaner roster and a sharper plan. <strong>Ross Atkins and Mark Shapiro are wrapping up the year today</strong> - the first real checkpoint after a 79-83 finish that left the Blue Jays fifth in the AL East and staring at hard decisions instead of easy excuses. Shane Bieber and Myles Straw are already hovering on the edge of the market, while Kevin Gausman's blunt surprise at being shipped to Chicago still hangs over the front office like a warning label. The club showed flashes, then lost the plot. That's the truth. <strong>What happens next - on Bieber, Straw, and the winter trade board - will tell you whether this is a reset or just another rerun.</strong>",
+        "updated": "Updated September 30, 2026"
       },
       "key_numbers": [
         {
@@ -385,7 +582,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays beat Reds 5-1",
-          "dek": "Toronto's season ended with a home win that softened the sting of a 79-83 finish and last place in the AL East. The result gives the Blue Jays at least one clean note to carry into an offseason already shaped by big questions about the roster's direction.",
+          "dek": "Toronto ended a disappointing 79-83 season with a win, a small lift after entering the year as a contender and falling short of the postseason. Max Scherzer's start and the final box score matter because they frame both a veteran milestone and the questions now facing the club's",
           "date": "Sep 27",
           "link": "https://www.espn.com/mlb/recap?gameId=401817105"
         },
@@ -393,23 +590,23 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Bieber, Straw hope for return to Blue Jays as market beckons",
-          "dek": "Toronto's disappointing 79-83 finish has shifted attention squarely to a roster reset, with the front office weighing whether to spend on pitching depth and outfield help or let the market set the price. Bieber and Straw sit at the center of that decision, because both could",
+          "dek": "Toronto's quiet exit from a 79-83 season shifts attention to the contracts and options that will shape its 2027 roster, with pitching depth and center field among the key questions. Bieber is weighing free agency after an injury-hit year, while Straw's club option gives the",
           "date": "September 29, 2026",
           "link": "https://www.sportsnet.ca/mlb/article/bieber-straw-hope-for-return-to-blue-jays-as-market-beckons/"
         },
         {
-          "source": "Toronto Sun",
+          "source": "MLB.com",
           "source_class": "web",
-          "headline": "Can Blue Jays fix Vladimir Guerrero Jr.? Solving the $500 million problem needs to start now",
-          "dek": "Toronto's season ended at 79-83, and the offense carried too little power for a team that was supposed to contend. Guerrero's dip at the plate turned the franchise's biggest investment into its biggest offseason test.",
-          "date": "September 29, 2026",
-          "link": "https://torontosun.com/sports/baseball/toronto-blue-jays/can-blue-jays-fix-vladimir-guerrero-jr"
+          "headline": "Make your picks for 2026 All-MLB Team",
+          "dek": "Blue Jays fans can still help decide the leaguewide honor, with voting open through Oct. 9 and Toronto placing three names on the ballot. The team's disappointing 79-83 finish makes those individual bids a rare chance to salvage some recognition after a season that fell short.",
+          "date": "September 28, 2026",
+          "link": "https://www.mlb.com/bluejays/news/all-mlb-team-nominees-2026"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Offence, team options, labour uncertainty: 3 big questions for the Jays this offseason",
-          "dek": "Toronto's offseason hinges on whether the lineup can rebound after a 79-83 finish and one of the league's weakest power outputs, making run production the clearest path back to contention. The team also faces decisions on key roster options and possible labour uncertainty, so",
+          "dek": "Toronto's offense sputtered badly enough to turn an expected rebound season into another winter of repair, with Vladimir Guerrero Jr.'s down year and the need for more impact bats now front and center. The looming CBA expiry on Dec. 1 also adds pressure, because any lockout talk",
           "date": "September 28, 2026",
           "link": "https://www.nytimes.com/athletic/7637892/2026/09/28/blue-jays-offseason-questions-offense-improvement/"
         },
@@ -417,7 +614,7 @@
           "source": "The Globe and Mail",
           "source_class": "web",
           "headline": "Blue Jays lose 5-1 to Reds, guaranteed last-place finish in AL East",
-          "dek": "Toronto's season ended in disappointment, and the final record confirmed a last-place finish in the AL East. That makes Max Scherzer's possible farewell start matter as one of the few emotional threads left from a lost year.",
+          "dek": "Toronto's finish locks in a brutal drop from contention to the division cellar, turning what was once a playoff-caliber club into an offseason reset case. Max Scherzer's looming start adds a rare emotional edge, with the veteran possibly making his final appearance while the",
           "date": "September 26, 2026",
           "link": "https://www.theglobeandmail.com/sports/baseball/article-blue-jays-lose-5-1-to-reds-guaranteed-last-place-finish-in-al-east/"
         }
@@ -531,17 +728,17 @@
       "detail": "Opener: Wed 10/21 vs. Bulls",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "Training camp has a pulse again in Toronto - and it's beating to Kawhi Leonard's old, familiar drum. <strong>Leonard's return to the Raptors</strong> gives this group a bona fide headliner, the sort of presence that changes every drill, every rotation chart, every conversation in the gym. The club arrives in Quebec City with a fresh start and a first preseason test against Miami on Saturday at 7 p.m. ET, before the real measuring stick lands Oct. 21 against Chicago. The Raptors are asking a lot of a roster built on length, youth and timing, and Leonard's health will steer everything; Darko Rajakovic knows it, the room knows it, and so does anyone who's watched this league long enough. <strong>What matters now is how quickly Leonard meshes with Scottie Barnes and the rest of the new-look group before the preseason opens.</strong>",
-        "updated": "Updated September 29, 2026"
+        "body": "Training camp has a way of turning contract talk into a shadow over every drill, and that's the cloud hanging over Toronto right now - not panic, just business with teeth. <strong>RJ Barrett has still not opened serious extension talks with the Raptors</strong>, even as he insists the basketball comes first and leaves the money to his agent. That matters because this is no side issue: Barrett is entering the final year of his deal, due $29.6 million, and he remains one of the swing pieces in how this roster settles. The Raptors are in camp, the preseason opener arrives Saturday against Miami, and the regular season follows on Oct. 21. <strong>What to watch next is whether Barrett's focus turns into an early-season surge - or a louder market for his future.</strong>",
+        "updated": "Updated September 30, 2026"
       },
       "key_numbers": [
         {
           "number": "Wed 10/21",
           "label": "Season Opener",
-          "note": "vs. Bulls in 22 days"
+          "note": "vs. Bulls in 21 days"
         },
         {
-          "number": "4 days",
+          "number": "3 days",
           "label": "Next Preseason Game",
           "note": "Exhibition"
         }
@@ -552,42 +749,42 @@
       },
       "the_latest": [
         {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Raptors' RJ Barrett won't let uncertain future with hometown team affect his play",
+          "dek": "Barrett says he wants to remain in Toronto, but contract uncertainty makes this a defining season for both his future and the Raptors' roster planning. His play in training camp will help shape whether the hometown fit becomes a long-term commitment or just a one-year stop.",
+          "date": "September 29, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/raptors-rj-barrett-wont-let-uncertain-future-with-hometown-team-affect-his-play/"
+        },
+        {
           "source": "Toronto Sun",
           "source_class": "web",
           "headline": "Why Kawhi Leonard says he has no regrets about leaving Raptors in 2019",
-          "dek": "Kawhi Leonard's return to Toronto comes with a reminder that the Raptors' title run and his 2019 exit are still linked in the franchise's identity. His comments matter now because they frame this season around basketball and chemistry, not revisiting the departure that shaped",
+          "dek": "Leonard's return to Toronto has reopened the question of what might have been if he had stayed after the title run, but he says family and life beyond basketball outweighed one more season. With camp underway, his comments frame this year's Raptors as a win-now team built around",
           "date": "September 29, 2026",
           "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/kawhi-leonard-no-regrets-leaving-2019"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "How do Raptors fit into revamped Eastern Conference with Kawhi?",
-          "dek": "Kawhi Leonard's return gives Toronto a proven playoff closer, but the real test is how quickly he meshes with Scottie Barnes and a deeper supporting cast. With several Eastern contenders reshuffled, this opening week is where the Raptors can show whether they belong in the",
-          "date": "September 28, 2026",
-          "link": "https://www.sportsnet.ca/nba/video/how-do-raptors-fit-into-revamped-eastern-conference-with-kawhi/"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Kawhi Leonard declines to answer questions about NBA investigation, punishment",
-          "dek": "Leonard's return to Toronto is still shadowed by the league's cap-circumvention case, which ended with major penalties for the Clippers and a fine for him. His decision to shut down those questions puts the focus on camp, where the Raptors need their star centered on basketball",
+          "dek": "Leonard's first comments back in Toronto signal a hard pivot from the league investigation to basketball, even as the fallout still hangs over his return. With training camp opening, the Raptors are trying to keep the focus on getting him ramped up and building chemistry around",
           "date": "September 28, 2026",
           "link": "https://www.nytimes.com/athletic/7640110/2026/09/28/kawhi-leonard-raptors-media-day-nba-investigation/"
         },
         {
-          "source": "CBS Sports",
-          "source_class": "web",
-          "headline": "Three big concerns about Kawhi Leonard's return to Raptors, including fit with Scottie Barnes",
-          "dek": "Kawhi Leonard's second Raptors stint raises immediate questions about how quickly he can mesh with Scottie Barnes and the rest of a young core after missing minicamp. The answers will shape Toronto's rotation, defensive identity and whether this reunion can push the team into",
-          "date": "September 23, 2026",
-          "link": "https://www.cbssports.com/nba/news/kawhi-leonard-raptors-concerns-scottie-barnes-rj-barrett/"
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "NBA preview 2026-27: What Bobby Marks is watching at 30 training camps",
+          "dek": "Toronto's camp opens with real expectations after last season's 46 win run, and the frontcourt fit around Kawhi Leonard is already a central test. If the shooting and spacing hold, this group has a chance to move from promising to dangerous by opening night.",
+          "date": "September 30, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/50061973/nba-preview-2026-27-bobby-marks-training-camp-guide-duren-pistons-lebron-76ers-30-teams"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NBA preseason: Answering big questions for all 30 teams",
-          "dek": "Toronto enters camp with a franchise-altering reunion, as Kawhi Leonard's return shifts the focus from development to immediate contention. With the first preseason games starting in Quebec City, the Raptors have to prove their defense-first lineup can make good on that pressure",
+          "dek": "Toronto's camp opened with Kawhi Leonard on a managed ramp-up, so every early practice rep matters for how quickly the roster can build chemistry. The bigger question is whether his return, paired with Scottie Barnes, can fix the spacing and shot-making issues that shaped the",
           "date": "September 29, 2026",
           "link": "https://www.espn.com/nba/story/_/id/50008454/nba-2026-2027-preseason-biggest-question-all-30-teams"
         }
@@ -762,8 +959,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The Commanders finally have a little wind at their backs - but it came with a price, as <strong>the 33-31 stunner over Seattle</strong> lifted them to 1-2 and third in the NFC East, one game back, while the defense spent the next morning counting bodies. Leo Chenal's season-ending neck surgery is the sort of blow that hangs over a locker room, and Jayden Daniels' return trip to London is the story that gives Washington oxygen. The kid is expected to travel and practice, which matters because Marcus Mariota steadied the ship, but this offense still belongs to Daniels when he's right. Austin Ekeler's arrival adds a veteran edge, another crease-finder for a team that needs every inch. <strong>Next comes Sunday in London against the Colts - and it will tell us whether this win was a rescue or a turning point.</strong>",
-        "updated": "Updated September 29, 2026"
+        "body": "The season has found its pulse again - just barely - and the heartbeat came from a 33-31 escape over Seattle that snapped the early gloom and reminded everybody Washington can still hit back. <strong>Marcus Mariota steadied a battered offense and the Commanders moved to 1-2, third in the NFC East, a game back in the chase.</strong> That said, the warning lights are still flashing. Jayden Daniels is only a limited participant in practice, and Sam Cosmi and Nick Cross are already ruled out for London, which is no small bite out of a roster that has been nicked and bruised all month. The defense can celebrate the win, but it also knows this thing needs cleaner edges and fewer emergency patches. <strong>Sunday morning in London against the Colts will tell whether this was a rescue act - or the start of a real turn.</strong>",
+        "updated": "Updated September 30, 2026"
       },
       "key_numbers": [
         {
@@ -842,25 +1039,41 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Commanders beat Seahawks 33-31",
-          "dek": "Washington used a backup quarterback and still produced enough explosive plays to stun the defending champion Seahawks, a result that can reset the mood around a 1-2 start. The win also hands the Commanders momentum before the schedule tightens and shows they can still compete",
+          "dek": "Washington's first win of 2026 does more than even its record at 1-2, giving a battered roster something to build on after two division losses to open the year. Beating a 2-0 Seattle team also keeps the Commanders from falling too far behind in the NFC East and shows they can",
           "date": "Sep 27",
           "link": "https://www.espn.com/nfl/recap?gameId=401872955"
         },
         {
-          "source": "The Athletic",
-          "source_class": "athletic",
-          "headline": "Commanders LB Leo Chenal has season-ending neck surgery after on-field collision",
-          "dek": "Washington's upset win over Seattle came with a serious cost, as Chenal's injury immediately shifted attention from the result to the health of a key offseason addition. With the Commanders sitting at 1-2 and trying to hold third in the NFC East, losing a starting linebacker",
-          "date": "September 28, 2026",
-          "link": "https://www.nytimes.com/athletic/7639933/2026/09/28/leo-chenal-injury-commanders-seahawks/"
+          "source": "NBC Sports",
+          "source_class": "web",
+          "headline": "Jayden Daniels will be a limited participant in practice",
+          "dek": "Jayden Daniels' return to practice gives Washington a real chance to stabilize the offense before a pivotal London trip against Indianapolis. His elbow status will shape whether the Commanders can escape an early hole in the NFC East or keep leaning on their backup plan.",
+          "date": "September 30, 2026",
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jayden-daniels-will-be-a-limited-participant-in-practice"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Commanders' Jayden Daniels opting against elbow surgery until after season, per report",
+          "dek": "Washington needs Daniels healthy enough to stabilize a 1-2 start, but the decision to postpone surgery shows the team views this season as worth pressing for now. His return timetable shapes both the offense's short-term hopes and the long-term concern around a repeat elbow",
+          "date": "September 29, 2026",
+          "link": "https://www.cbssports.com/nfl/news/commanders-jayden-daniels-elbow-surgery-later-date/"
+        },
+        {
+          "source": "Yahoo Sports",
+          "source_class": "web",
+          "headline": "Commanders QB Jayden Daniels to practice Wednesday after flying to London with team, still 'a chance' he plays vs. Colts in Week 4",
+          "dek": "Jayden Daniels traveling to London and getting on the practice field gives Washington a real chance to monitor his elbow before a pivotal Week 4 game. The Commanders are 1-2 and trying to stay afloat in the NFC East, so his status could swing both their game plan and their",
+          "date": "September 30, 2026",
+          "link": "https://sports.yahoo.com/nfl/breaking-news/article/commanders-qb-jayden-daniels-to-practice-wednesday-after-flying-to-london-with-team-still-a-chance-he-plays-vs-colts-in-week-4-142805619.html"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Mariota's impact goes beyond the stat sheet",
-          "dek": "Marcus Mariota's steady play gives Washington a proven fallback while Jayden Daniels recovers, and his command of the offense just helped the Commanders pull off a 33-31 upset of the Seahawks. That kind of veteran leadership matters in a 1-2 start, where every snap shapes",
-          "date": "September 29, 2026",
-          "link": "https://www.espn.com/video/clip/_/id/50059707/mariota-impact-goes-stat-sheet"
+          "headline": "How NFL players cope with CTE risks, fears and internal debates",
+          "dek": "The Commanders are 1-2 and already need to steady a season that has started unevenly in the NFC East. That makes this CTE piece timely because it connects the weekly collision of pro football to the long-term health questions players are weighing every snap.",
+          "date": "September 30, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/49940451/how-nfl-players-cope-cte-risks"
         }
       ],
       "standings": {
@@ -955,63 +1168,63 @@
     }
   },
   "featured": {
-    "team": "commanders",
-    "kicker": "Washington Commanders - Regular Season",
-    "headline": "Commanders QB Jayden Daniels expected to travel, practice in London",
-    "dek": "Daniels traveling to London and getting back on the practice field gives Washington a real chance to gauge its offense before Sunday's international game. His status will shape whether the Commanders can lean on their starter or have to keep preparing for a backup-led plan",
-    "source": "The Athletic",
-    "link": "https://www.nytimes.com/athletic/7640720/2026/09/28/jayden-daniels-commanders-week-4-london-colts/",
-    "date": "September 29, 2026"
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Regular Season",
+    "headline": "Maple Leafs 'look like a new team' in emotional opening loss",
+    "dek": "Toronto's retooled roster already faced a test of chemistry in an emotional opener, and the loss showed how quickly new faces must settle in. With the Islanders next on a back-to-back, the Leafs need a sharper response to avoid letting one rough night become a trend.",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-look-like-a-new-team-in-emotional-opening-loss/",
+    "date": "September 30, 2026"
   },
   "two_up": [
     {
-      "team": "jays",
-      "kicker": "Toronto Blue Jays - Season Over",
-      "headline": "Make your picks for 2026 All-MLB Team",
-      "dek": "Toronto's rough finish leaves a slim case for recognition, but the All-MLB ballot still gives its few standouts a national stage. Fan voting runs alongside expert input, so Blue Jays players can still turn strong individual seasons into postseason hardware.",
-      "source": "MLB.com",
-      "link": "https://www.mlb.com/bluejays/news/all-mlb-team-nominees-2026",
-      "date": "September 29, 2026"
+      "team": "commanders",
+      "kicker": "Washington Commanders - Regular Season",
+      "headline": "Commanders first 3 games revealed what's working, what still needs work",
+      "dek": "Washington has steadied itself with a defense that is limiting the run and a playbook that can still create chances even without smooth offensive nights. The next test in London against Indianapolis will show whether the Commanders can clean up the penalties and turn a promising",
+      "source": "The Athletic",
+      "link": "https://www.nytimes.com/athletic/7645213/2026/09/30/commanders-david-blough-offense-run-defense/",
+      "date": "September 30, 2026"
     },
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs - Preseason",
-      "headline": "'Vibes are high': Why these Maple Leafs should be fun - and better",
-      "dek": "Toronto's training camp has shifted from evaluation to expectation, with new faces, a new system and a healthier Auston Matthews all feeding a rare sense of optimism. With the opener against Montreal looming, this is the first real test of whether the Leafs can turn that buzz",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/article/vibes-are-high-why-these-maple-leafs-should-be-fun-and-better/",
-      "date": "September 29, 2026"
+      "team": "jays",
+      "kicker": "Toronto Blue Jays - Season Over",
+      "headline": "Why Kevin Gausman says he was surprised Blue Jays traded him to Chicago Cubs",
+      "dek": "Kevin Gausman's move to Chicago still resonates because it marked a clear shift from Toronto's win-now plans to a retooling path. The former Blue Jays ace's reaction also adds another layer to a trade that continues to shape both clubs, with Chicago leaning on him in October and",
+      "source": "Toronto Sun",
+      "link": "https://torontosun.com/sports/baseball/toronto-blue-jays/kevin-gausman-surprised-traded-chicago-cubs",
+      "date": "September 30, 2026"
     }
   ],
   "extra_story": {
     "team": "raptors",
     "kicker": "Toronto Raptors - Training Camp",
-    "headline": "Kawhi Leonard's return gives the Raptors a presence they haven't had since 2019",
-    "dek": "Kawhi Leonard's return instantly gives Toronto a star who can shape both ends of the floor and raise the ceiling of a roster trying to reestablish itself. With training camp opening, the Raptors can start turning a headline into actual chemistry, and that matters far more than",
+    "headline": "Barrett playing it cool on contract extension with Raptors",
+    "dek": "RJ Barrett's contract year is already a major early-camp subplot because his next deal could shape Toronto's payroll and long-term roster flexibility. His calm stance suggests the focus stays on basketball for now, but any delay in talks keeps a possible extension or free agency",
     "source": "The Globe and Mail",
-    "link": "https://www.theglobeandmail.com/sports/basketball/article-kawhi-leonard-raptors-return-webster-rajakovic/",
-    "date": "September 29, 2026"
+    "link": "https://www.theglobeandmail.com/sports/basketball/article-barrett-playing-it-cool-on-contract-extension-with-raptors/",
+    "date": "September 30, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Opener: Leafs vs. Canadiens - Tue 9/29 7:00 PM ET"
+      "text": "Leafs fell to Canadiens 3-2"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs (0-0-0) - 1st in Atlantic Division"
+      "text": "Next: Leafs vs. Islanders - Wed 9/30 7:30 PM ET"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Kirill Marchenko will be an excellent fit for Leafs"
+      "text": "Leafs (0-1-0) - 4th in Atlantic Division"
     },
     {
-      "badge": "MLB",
-      "badge_style": "mlb",
-      "text": "Jays beat Reds 5-1"
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "Maple Leafs 'look like a new team' in emotional opening loss"
     },
     {
       "badge": "MLB",
@@ -1021,7 +1234,7 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Biggest questions for the Blue Jays this off-season"
+      "text": "What are the Blue Jays' most important off-season needs?"
     },
     {
       "badge": "NBA",
@@ -1031,12 +1244,7 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors were always confident Leonard deal would go ahead"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "nfl",
-      "text": "Commanders beat Seahawks 33-31"
+      "text": "Barrett playing it cool on contract extension with Raptors"
     },
     {
       "badge": "NFL",
@@ -1055,6 +1263,35 @@
     }
   ],
   "scoreboard": [
+    {
+      "team": "leafs",
+      "game_date": "2026-09-29",
+      "name": "Leafs",
+      "league": "NHL",
+      "logo": "tor",
+      "opp_name": "Canadiens",
+      "opp_logo": "mtl",
+      "team_score": 2,
+      "opp_score": 3,
+      "result": "L",
+      "date": "Sep 29",
+      "preseason": false,
+      "stars": [
+        {
+          "tag": "GOAL",
+          "tone": "",
+          "name": "Nylander",
+          "stat": "2G"
+        },
+        {
+          "tag": "SV",
+          "tone": "save",
+          "name": "Bobrovsky",
+          "stat": "21 saves,.875"
+        }
+      ],
+      "link": "https://www.youtube.com/watch?v=qDHmnwRUN2Y"
+    },
     {
       "team": "jays",
       "game_date": "2026-09-27",
@@ -1131,10 +1368,10 @@
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "0-0-0",
-      "status": "1st in Atlantic Division",
-      "status_class": "green",
-      "stat": "Streak: -"
+      "record": "0-1-0",
+      "status": "4th in Atlantic Division",
+      "status_class": "red",
+      "stat": "Streak: L1"
     },
     {
       "team": "jays",
@@ -1168,33 +1405,20 @@
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs vs. Canadiens",
-      "detail": "7:00 PM ET - Season opener",
-      "channel": "Sportsnet",
+      "matchup": "Leafs vs. Islanders",
+      "detail": "7:30 PM ET",
+      "channel": "Prime Video",
       "off": false,
       "preview": {
-        "injuries": [
-          {
-            "status": "Day-to-day",
-            "tone": "dtd",
-            "players": [
-              {
-                "name": "Marchenko",
-                "note": "not injury related"
-              }
-            ],
-            "more": 0
-          }
-        ],
         "duel": {
           "label": "In goal",
-          "status": "likely",
+          "status": "projected",
           "ours": {
-            "name": "Bobrovsky",
+            "name": "Stolarz",
             "sub": ""
           },
           "theirs": {
-            "name": "Dobes",
+            "name": "Sorokin",
             "sub": ""
           }
         }
@@ -1227,15 +1451,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Tue 9/29",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "vs. Canadiens (season opener)",
-        "time": "7:00 PM ET",
-        "tv": "Sportsnet"
-      },
       {
         "day": "Wed 9/30",
         "team": "leafs",
@@ -1286,10 +1501,11 @@
   },
   "morning_brief": {
     "article": {
-      "title": "Leafs Open With Canadiens Visit",
+      "title": "Maple Leafs Host Islanders Tonight",
       "paragraphs": [
-        "The Maple Leafs open their season tonight against the Canadiens at 7 p.m. ET at Scotiabank Arena, with Sportsnet carrying the game and Bobrovsky likely starting in goal against Dobes. Toronto also lists Marchenko as day to day, though not for injury-related reasons.",
-        "It is a busy Toronto sports morning. The Blue Jays are in their offseason, with offseason chatter centering on Bieber and Straw as they hope for a return to the club. The Raptors are at training camp and will play their next preseason game against the Heat on Saturday at 7 p.m. ET, while their regular season starts Oct. 21 at home against the Bulls. For the Commanders, Jayden Daniels is expected to travel with the team to London and practice this week ahead of the Oct. 4 game against the Colts on NFL Net."
+        "The Maple Leafs are right back at it tonight against the Islanders, with puck drop set for 7:30 p.m. ET on Prime Video in Toronto. After opening with a 3-2 loss to the Canadiens, William Nylander enters the game off a two-goal night, and Anthony Stolarz is projected to start against Ilya Sorokin.",
+        "The Blue Jays are in their offseason now, with reports circling around possible returns for Shane Bieber and Myles Straw as the market opens. For the Raptors, training camp has turned the focus to RJ Barrett and his contract situation, while Toronto's preseason game against the Heat is set for Saturday at 7:00 p.m. ET.",
+        "The Commanders head to London this weekend to face the Colts on Sunday at 9:30 a.m. ET on NFL Net. Washington is 1-2, and Jayden Daniels is expected to be a limited participant in practice, with the next test coming at Tottenham Hotspur Stadium."
       ]
     }
   }
