@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-01T03:00:21.506998-04:00",
+    "updated": "2026-10-01T03:09:31.397508-04:00",
     "date_display": "October 1, 2026",
     "data_health": {
       "espn_ok": 39,
@@ -23,7 +23,7 @@
       "detail": "1st in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Leafs shook off the opening-night sting and answered with purpose - and that matters in October, when tone can become habit. <strong>Easton Cowan's goal-and-assist night helped power a 2-1 win over the Islanders</strong>, the kind of brisk, youthful jolt this club has been begging for while Anthony Stolarz stood tall in net and turned aside nearly everything in sight. At 1-1-0, with 2 points and first place in the Atlantic Division, Toronto has put itself back on level ground after the 3-2 loss to Montreal, but nobody in this room should mistake a single sharp rebound for proof of arrival. The story right now is energy - some young juice, as the locals say, and a goalie who looked steady enough to calm a rattled building. <strong>Next up is Saturday against Ottawa, and the Leafs need to turn this into a runway, not a relay.</strong>",
+        "body": "The Leafs stopped wobbling before the building could start buzzing with doubt - <strong>Anthony Stolarz stood tall in a 2-1 win over the Islanders</strong>, and that matters because Toronto is 1-1-0, first in the Atlantic Division, with a little air in its lungs again. After the flat 3-2 loss to Montreal, this was the kind of game that steadies a room: Easton Cowan brought the spark, the young legs, the bite on the forecheck, and Stolarz gave the club the backbone with a calm, veteran hand in net. One win does not erase the opening stumble, but it does change the mood. <strong>Next comes Ottawa on Saturday night, and the Leafs had better bring the same pace, because division position is earned, not inherited.</strong>",
         "updated": "Updated October 1, 2026"
       },
       "key_numbers": [
@@ -90,7 +90,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Leafs beat Islanders 2-1",
-          "dek": "Toronto's first win under Jim Hiller steadied an opening week that began with a loss, and Easton Cowan's two-point night gave the lineup a fresh spark. With the Leafs sitting 1-1 and already in the Atlantic race, this is the kind of result that can set the tone early.",
+          "dek": "Toronto's first win under Jim Hiller came with a glimpse of why the club can still control the division race, as young winger Easton Cowan drove the offense and the Leafs banked two points after an opening loss. With the Atlantic already clustered early, every result shapes the",
           "date": "Sep 30",
           "link": "https://www.espn.com/nhl/recap?gameId=401892431"
         },
@@ -98,7 +98,7 @@
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Inside the whirlwind of Kirill Marchenko's Maple Leafs debut",
-          "dek": "Kirill Marchenko's arrival gave Toronto an immediate jolt, even in a season opener loss, because he stepped into the top six with almost no prep time and still drove offense. His quick chemistry with Auston Matthews and early shot volume make him a live test of whether the Leafs",
+          "dek": "Marchenko's arrival gives Toronto an immediate jolt at a moment when the Maple Leafs are trying to settle a reshuffled lineup after opening the season 1-1-0. His debut mattered because he jumped straight into top-line minutes and still drove play, a sign the Leafs may have found",
           "date": "September 30, 2026",
           "link": "https://www.nytimes.com/athletic/7645277/2026/09/30/kirill-marchenko-maple-leafs-debut-trade-matthews/"
         },
@@ -106,7 +106,7 @@
           "source": "The Globe and Mail",
           "source_class": "web",
           "headline": "Cowan, Stolarz push Maple Leafs past Islanders 2-1",
-          "dek": "Toronto needed a response after dropping its opener, and this one arrived with a rookie spark from Easton Cowan and a steady night from Anthony Stolarz. The win gave Jim Hiller his first victory behind the bench and kept the Leafs on top of the Atlantic after a 1-1 start.",
+          "dek": "Toronto's first win under Jim Hiller steadies a team that opened 1-1-0 and needed a clean response after dropping the opener. Easton Cowan's early breakout and Anthony Stolarz's 26-save effort gave the Leafs a timely boost before a tougher stretch on the schedule.",
           "date": "October 1, 2026",
           "link": "https://www.theglobeandmail.com/sports/hockey/article-cowan-stolarz-push-maple-leafs-past-islanders-2-1/"
         },
@@ -114,7 +114,7 @@
           "source": "Toronto Sun",
           "source_class": "web",
           "headline": "Anthony Stolarz and foot soldiers hang on for Leafs win",
-          "dek": "Anthony Stolarz's 26-save effort gave Toronto its first win, a needed response after an uneven opening stretch. With Ottawa coming to town Saturday, the Leafs can use this result to steady their start and build early cushion in the Atlantic.",
+          "dek": "Anthony Stolarz steadied Toronto with a strong early-season performance, giving the Leafs a needed reset after opening night and a cleaner path to build momentum. With Ottawa coming to town Saturday, this win matters because it can turn a shaky start into a quick foothold in the",
           "date": "October 1, 2026",
           "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/anthony-stolarz-and-foot-soldiers-hang-on-for-leafs-win"
         },
@@ -122,7 +122,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Leafs fell to Canadiens 3-2",
-          "dek": "Toronto opened with a one-goal loss to Montreal, then answered with a win over the Islanders to move back to 1-1-0 and keep pace in the Atlantic. The quick bounce-back makes this result a test of whether the Leafs can turn an uneven start into early division momentum.",
+          "dek": "Montreal handed Toronto an early divisional setback and exposed how quickly the Atlantic race can tighten in October. The Leafs still sit near the top of the standings at 1-1-0, so this result matters as a first test of how they respond after a one-goal loss to a direct rival.",
           "date": "Sep 29",
           "link": "https://www.espn.com/nhl/recap?gameId=401891827"
         }
@@ -502,7 +502,7 @@
       "detail": "5th in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The season didn't just end - it exposed a front office now forced into hard choices. <strong>Mark Shapiro backed Vladimir Guerrero Jr. after the star's own apology tour</strong>, a telling show of faith after a brutal year, and it matters because Toronto finished 79-83, fifth in the AL East, with no October to soften the blow. Guerrero is still the franchise's gravity well, but the club's own year-end message was plain: assess everything, fix the offense, and decide whether the current core is sturdy enough or merely familiar. The Blue Jays are heading into an offseason where patience, payroll and pride will all be tested at once. <strong>The next move is simple to name and hard to make - reshape the lineup without tearing up the roster</strong>.",
+        "body": "The bill came due in Toronto, and the club is left staring at the same old problem - not enough offense, not enough margin, not enough wins. <strong>Mark Shapiro backed Vladimir Guerrero Jr. after his contract comments</strong>, a public show of faith that matters because the Blue Jays need their biggest star to become their most reliable bat again. The final line - 79-83, fifth in the AL East - tells the whole story without drama. This wasn't a club undone by one bad week; it was undone by ordinary nights that stayed ordinary too long. Guerrero remains the central question, and the front office's answer sounds simple: keep him, fix him, and add more thunder around him. <strong>Now comes the hard part - turning postmortems into power, and making the winter count.</strong>",
         "updated": "Updated October 1, 2026"
       },
       "key_numbers": [
@@ -595,7 +595,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Jays beat Reds 5-1",
-          "dek": "Toronto ends a disappointing 79-83 season in the division basement, so the win over Cincinnati is more of a closing note than a late surge. It also provides a small lift for a club that spent the week assessing what went wrong after falling from a World Series run to missing the",
+          "dek": "Toronto's season ended with a win, but the bigger story is the club's collapse from first place to last in the AL East and a 79-83 finish. Max Scherzer's vintage outing and the home run support offered a rare positive note as the Blue Jays head into a full offseason reset.",
           "date": "Sep 27",
           "link": "https://www.espn.com/mlb/recap?gameId=401817105"
         },
@@ -603,7 +603,7 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Blue Jays offer concessions for lost season but few firm plans",
-          "dek": "Toronto's front office has acknowledged the season was a failure, but the bigger question is whether that mea culpa leads to real changes after a 79-83 finish. With the offseason now underway, the Blue Jays need a clearer plan on offense, staffing and how they'll use their",
+          "dek": "Toronto's front office is taking the blame for a 79-83 finish, but the real test starts now: translating those admissions into upgrades before the offseason market opens. With no coaching changes or major budget shift announced, the next month will show whether the Blue Jays",
           "date": "September 30, 2026",
           "link": "https://www.sportsnet.ca/mlb/article/blue-jays-offer-concessions-for-lost-season-but-few-firm-plans/"
         },
@@ -611,7 +611,7 @@
           "source": "MLB.com",
           "source_class": "web",
           "headline": "Blue Jays GM Atkins, CEO Shapiro talk Guerrero, offseason needs",
-          "dek": "Toronto's front office is treating Vladimir Guerrero Jr.'s rebound as the offseason's central issue, because his slump and injuries helped define a disappointing 79-83 finish. The club also sounded open to targeted upgrades, signaling that run production and pitching depth will",
+          "dek": "Toronto's front office is using its season-ending reset to confront the offense's biggest issue, with Vladimir Guerrero Jr.'s rebound central to any turnaround. The club also enters the winter needing help in multiple areas, so these remarks frame how aggressive the Blue Jays",
           "date": "September 30, 2026",
           "link": "https://www.mlb.com/bluejays/news/ross-atkins-mark-shapiro-address-blue-jays-offseason"
         },
@@ -619,7 +619,7 @@
           "source": "The Globe and Mail",
           "source_class": "web",
           "headline": "'Everything needs to be assessed,' Blue Jays GM says after last-place AL East finish",
-          "dek": "Toronto's collapse from last year's World Series stage to a last-place division finish puts real pressure on the front office and roster construction. Atkins' review sets up an offseason defined by hard questions about offense, pitching depth and whether this group can rebound",
+          "dek": "Toronto's front office is bracing for a full postmortem after a 79-83 finish that sent the club from World Series hype to the bottom of the AL East. The offseason now turns on whether the Jays can fix an offense that faded badly and restore a contender built to chase bigger",
           "date": "September 30, 2026",
           "link": "https://www.theglobeandmail.com/sports/article-everything-needs-to-be-assessed-blue-jays-gm-says-after-last-place-al/"
         },
@@ -627,7 +627,7 @@
           "source": "Toronto Sun",
           "source_class": "web",
           "headline": "Blue Jays brass looks to make amends for disappointing 2026, but won't name scapegoats",
-          "dek": "Toronto's front office is facing an early autumn reckoning after a 79-83 finish and a last-place AL East result, with the offense again the clearest drag on a season that never found traction. The absence of finger-pointing signals a reset built around accountability and",
+          "dek": "Toronto's front office is trying to absorb a 79-83 collapse after coming within one win of the World Series a year ago, and the margin for error in the AL East has already shrunk to zero. With the offseason now underway, accountability without a public blame game signals a reset",
           "date": "September 30, 2026",
           "link": "https://torontosun.com/sports/baseball/toronto-blue-jays/brass-make-amends-disappointing-2026-scapegoats"
         }
@@ -741,7 +741,7 @@
       "detail": "Opener: Wed 10/21 vs. Bulls",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "Camp has a shape now, and it starts with a simple truth: Toronto's offense needs teeth. <strong>Kawhi Leonard's arrival is the league's biggest camp development, and the Raptors believe his pull-up shooting can drag their perimeter game out of the mud</strong> - a team that finished last season near the bottom from deep finally has a veteran who can bend a defense without begging for help. Scottie Barnes sounds eager to learn from a legend, and that matters; a young star's growth is often measured by the company he keeps. Toronto's next test comes Saturday against Miami in the first preseason tune-up, while the regular season opens Oct. 21 against Chicago. <strong>Watch Leonard's ramp-up, Barnes' fit, and whether Walter and Murray-Boyles keep turning heads.</strong>",
+        "body": "The first crackle of camp in Quebec City has come from the same place championship teams always do: the new star and the old cornerstone finding their footing together. <strong>Kawhi Leonard has already turned heads with his shooting touch and pace in camp, but he has not yet joined live scrimmages as Toronto eases him in</strong> - a caution that feels wise for a club with bigger plans than October vanity. Scottie Barnes, meanwhile, is carrying himself like a man ready to sharpen every edge of his game, and the talk around young guards Walter and Murray-Boyles says the depth chart is not settled yet. Toronto opens preseason Saturday against Miami, then the real measuring stick arrives October 21 against Chicago. <strong>For now, the watchword is fit: Leonard's ramp-up, Barnes' next leap, and which young legs force their way into the rotation.</strong>",
         "updated": "Updated October 1, 2026"
       },
       "key_numbers": [
@@ -762,26 +762,26 @@
       },
       "the_latest": [
         {
-          "source": "Toronto Sun",
-          "source_class": "web",
-          "headline": "Why young Raptors Walter, Murray-Boyles are turning heads",
-          "dek": "Toronto's camp buzz is not just about the veterans, because the club needs young contributors to seize rotation spots now. If Walter and Murray-Boyles keep showing real offseason gains, they could help shape both the opening-night mix and the team's long-term depth.",
-          "date": "September 30, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/why-young-raptors-walter-murray-boyles-are-turning-heads"
-        },
-        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Why Leonard should help Raptors improve three-point shooting",
-          "dek": "Training camp is giving Toronto its first real chance to see how Kawhi Leonard changes the spacing around a roster that struggled to generate clean looks from deep last season. If he brings his pull-up three-point threat into a defense that already fits his strengths, the",
+          "dek": "Toronto is using camp to build more spacing around Kawhi Leonard, whose pull-up shooting could punish defenses that collapse on him. If the Raptors lift both their three-point volume and accuracy, it can unlock a more efficient half-court offense right away.",
           "date": "September 30, 2026",
           "link": "https://www.sportsnet.ca/nba/article/why-leonard-should-help-raptors-improve-three-point-shooting/"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Why young Raptors Walter, Murray-Boyles are turning heads",
+          "dek": "Toronto's camp spotlight has shifted to two young players whose offseason work could help solve the team's biggest issue, shooting around its top creators. With rotation spots and option decisions looming, their progress matters now because the Raptors need cheap, ready",
+          "date": "September 30, 2026",
+          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/why-young-raptors-walter-murray-boyles-are-turning-heads"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Kawhi Leonard declines to answer questions about NBA investigation, punishment",
-          "dek": "Leonard's refusal to engage with the off-court fallout keeps the focus on how the Raptors manage his first days back in camp. The story matters because his availability, and how quickly he ramps up, could shape Toronto's opening-month rotation and expectations.",
+          "dek": "Leonard's silence keeps the focus on how his past with the Clippers still shadows his return to Toronto, even as camp begins. The league's punishment and the remaining questions around it matter because they shape how the Raptors handle his workload, availability and public",
           "date": "September 28, 2026",
           "link": "https://www.nytimes.com/athletic/7640110/2026/09/28/kawhi-leonard-raptors-media-day-nba-investigation/"
         },
@@ -789,7 +789,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NBA preview 2026-27: What Bobby Marks is watching at 30 training camps",
-          "dek": "Toronto enters camp with a different level of expectation, and the biggest question is whether Kawhi Leonard, Scottie Barnes and RJ Barrett can create enough spacing to make the offense work. The roster also has a contract subplot around Barrett, so these first practices matter",
+          "dek": "Toronto opens camp with real expectations attached after adding Kawhi Leonard and trying to turn playoff promise into a deeper run. The immediate question is whether the roster has enough shooting and healthy depth to keep defenses from crowding Leonard and Scottie Barnes.",
           "date": "September 30, 2026",
           "link": "https://www.espn.com/nba/story/_/id/50061973/nba-preview-2026-27-bobby-marks-training-camp-guide-duren-pistons-lebron-76ers-30-teams"
         },
@@ -797,7 +797,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NBA preseason: Answering big questions for all 30 teams",
-          "dek": "Toronto's camp is defined by Kawhi Leonard's return, which instantly changes the team's ceiling and raises the stakes around how quickly he is integrated. The bigger question today is whether the Raptors can turn that star addition into real early-season momentum before the",
+          "dek": "Toronto enters camp with the league watching Kawhi Leonard's return and how quickly he fits beside Scottie Barnes. The biggest question is whether the Raptors have enough shooting and health to turn a high-profile reunion into an early-season jump.",
           "date": "September 29, 2026",
           "link": "https://www.espn.com/nba/story/_/id/50008454/nba-2026-2027-preseason-biggest-question-all-30-teams"
         }
@@ -972,7 +972,7 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The Commanders finally shook off the early wobble - and did it with some bite. <strong>Marcus Mariota steered a 33-31 upset of the Seahawks</strong>, the kind of win that can steady a locker room and quiet a sour start. Washington sits 1-2, third in the NFC East, one game back, and that's not pretty - but it's alive. Jayden Daniels' elbow remains the headline; he returned to limited practice Wednesday, yet his status for London is still uncertain. For now, the Commanders are leaning on toughness and improvisation, the old NFL currencies. Mariota earned the day. <strong>Next comes the Colts on Sunday in London - and Daniels' availability may decide whether this first spark becomes a real run.</strong>",
+        "body": "The Commanders have life again, and it came the hard way - by surviving a 33-31 edge over Seattle and turning a week of doubt into a week of noise. <strong>Marcus Mariota's 183-yard, three-touchdown night powered the upset while Jayden Daniels returned to practice in limited fashion</strong>, a reminder that Washington's season is still very much under construction. At 1-2, third in the NFC East and a game back, they're not buried, but they've got work to do. Daniels remains the story - limited Wednesday, still uncertain for Sunday - and his elbow is the hinge this team swings on. <strong>Now comes the true test: Sunday in London against the Colts, with Daniels' status and Washington's 1-2 start hanging in the balance</strong>.",
         "updated": "Updated October 1, 2026"
       },
       "key_numbers": [
@@ -1052,7 +1052,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Commanders beat Seahawks 33-31",
-          "dek": "Washington finally got on the board by upsetting the defending champions, a result that can steady a 1-2 start and reshape the mood heading into a tough stretch. The win also showed the roster can survive injuries and still create plays on defense, a major sign for a team trying",
+          "dek": "The win gave Washington its first victory of the season and kept a narrow path open in a crowded NFC East race. It also showed the Commanders can survive injuries and still beat quality opponents when the defense creates chances and the offense finishes them.",
           "date": "Sep 27",
           "link": "https://www.espn.com/nfl/recap?gameId=401872955"
         },
@@ -1060,7 +1060,7 @@
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Jayden Daniels returns to practice, but status vs. Colts remains uncertain",
-          "dek": "Jayden Daniels' limited return gives Washington a potential lift at the league's most important position, but the team is still treating Friday as the real checkpoint before deciding if he can face Indianapolis. With the Commanders at 1-2 and trying to avoid falling further",
+          "dek": "Jayden Daniels' return to the field gives Washington a possible boost before a high-stakes Week 4 trip to London, where the Commanders need to stabilize after a 1-2 start. Even if he is not cleared to start, his practice status shapes the offense and could swing the matchup with",
           "date": "September 30, 2026",
           "link": "https://www.nytimes.com/athletic/7646904/2026/09/30/jayden-daniels-commanders-colts-week-4-limited-practice/"
         },
@@ -1068,7 +1068,7 @@
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "Commanders' Jayden Daniels opting against elbow surgery until after season, per report",
-          "dek": "Jayden Daniels' decision to postpone surgery keeps Washington's season tied to his ability to play through the injury, with the Commanders still fighting to stay in the NFC East race. The choice also raises the stakes for every start, since the team is balancing short-term gains",
+          "dek": "Jayden Daniels is pushing to play through the injury, keeping Washington's offense in limbo as the Commanders try to stay afloat at 1-2. Delaying surgery keeps the door open for a quick return, but it also raises the stakes for how the rest of the season unfolds.",
           "date": "September 29, 2026",
           "link": "https://www.cbssports.com/nfl/news/commanders-jayden-daniels-elbow-surgery-later-date/"
         },
@@ -1076,7 +1076,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "London game reminds Marcus Mariota of the connection between football and soccer",
-          "dek": "Marcus Mariota's London stop carries more weight than a novelty trip because Washington may need him to start again with Jayden Daniels still managing an elbow injury. The Tottenham setting also fits Mariota's background as a soccer kid, turning a possible must-win road test",
+          "dek": "Marcus Mariota's soccer roots fit naturally with Washington's London trip, where he could again start if Jayden Daniels is limited by injury. The Commanders also need the quarterbacking stability and momentum that helped them beat Seattle last week to carry into a game that",
           "date": "September 30, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/50071152/marcus-mariota-washington-commanders-london-game-soccer-tottenham-hotspur"
         },
@@ -1084,7 +1084,7 @@
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Commanders first 3 games revealed what's working, what still needs work",
-          "dek": "Washington has shown real progress against the run, but the passing defense and pre-snap discipline still threaten to undo the gains. With a 1-2 start and an early division hole, the next stretch will reveal whether last week's upset was a turning point or just a flash.",
+          "dek": "Washington's defense has been the early bright spot, stuffing the run and helping steady a 1-2 start after a shaky opening stretch. The larger question is whether cleaner execution and sharper offense can turn that into wins before the schedule tightens.",
           "date": "September 30, 2026",
           "link": "https://www.nytimes.com/athletic/7645213/2026/09/30/commanders-david-blough-offense-run-defense/"
         }
@@ -1181,29 +1181,29 @@
     }
   },
   "featured": {
-    "team": "commanders",
-    "kicker": "Washington Commanders - Regular Season",
-    "headline": "Jayden Daniels is one of 10 Commanders limited in Wednesday's practice",
-    "dek": "Jayden Daniels' return to practice keeps Washington's Week 4 plan in flux as the team prepares for a critical game in London. With the Commanders at 1-2 and already behind in the division, his elbow status could shape both Sunday's lineup and their early-season momentum.",
-    "source": "NBC Sports",
-    "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jayden-daniels-is-one-of-10-commanders-limited-in-wednesdays-practice",
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Regular Season",
+    "headline": "Steady Stolarz leads new-look Maple Leafs to first victory",
+    "dek": "Anthony Stolarz steadied Toronto with 26 saves as the club bounced back from its opener and got its first win under Jim Hiller. With a home date against Ottawa next, the Leafs can use this result to settle a roster still finding its identity after an early split.",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/steady-stolarz-leads-new-look-maple-leafs-to-first-victory/",
     "date": "October 1, 2026"
   },
   "two_up": [
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs - Regular Season",
-      "headline": "Steady Stolarz leads new-look Maple Leafs to first victory",
-      "dek": "Toronto's first win of the season came with a fresh cast around Anthony Stolarz, and his 26-save night showed the Leafs can lean on goaltending while the new pieces settle in. With a visit from the Senators next, this early bounce-back can set the tone for how fast a 1-1-0 team",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/article/steady-stolarz-leads-new-look-maple-leafs-to-first-victory/",
+      "team": "commanders",
+      "kicker": "Washington Commanders - Regular Season",
+      "headline": "Jayden Daniels is one of 10 Commanders limited in Wednesday's practice",
+      "dek": "Jayden Daniels' return to the practice field gives Washington a possible boost after he missed last week with a dislocated left elbow, but his workload remains controlled and his status for Sunday is still unsettled. With the Commanders already 1-2, every update on their",
+      "source": "NBC Sports",
+      "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jayden-daniels-is-one-of-10-commanders-limited-in-wednesdays-practice",
       "date": "October 1, 2026"
     },
     {
       "team": "jays",
       "kicker": "Toronto Blue Jays - Season Over",
       "headline": "Lockout impact, offseason plans and other takeaways from Blue Jays' news conferences",
-      "dek": "Toronto's offseason begins under the cloud of a possible work stoppage, which could compress the market and force the front office to plan for multiple spending scenarios. The discussions also put Vladimir Guerrero Jr.'s rebound at the center of the club's winter, making his",
+      "dek": "Toronto's front office is bracing for a winter shaped by a possible labor stoppage, which could compress free agency and complicate how the club attacks its biggest need: offense. The way it handles Vladimir Guerrero Jr.'s rebound plan will also set the tone for a roster that",
       "source": "The Athletic",
       "link": "https://www.nytimes.com/athletic/7647294/2026/09/30/blue-jays-offseason-takeaways/",
       "date": "October 1, 2026"
@@ -1213,7 +1213,7 @@
     "team": "raptors",
     "kicker": "Toronto Raptors - Training Camp",
     "headline": "Even after Leonard's return, Barnes says Raptors expectations haven't changed",
-    "dek": "Leonard's return has raised the ceiling in Toronto, but Barnes is saying the standard remains the same: win now, then prove it in the playoffs. The camp focus is on whether the Raptors can turn added talent and stronger defense into a real postseason breakthrough, with Barnes",
+    "dek": "Kawhi Leonard's return has raised the ceiling in Toronto, but Scottie Barnes is stressing that the team's standard has not shifted as camp opens. The bigger test is whether the Raptors can turn that buzz into the playoff breakthrough they missed last spring, with Barnes'",
     "source": "The Globe and Mail",
     "link": "https://www.theglobeandmail.com/sports/basketball/article-even-after-leonards-return-barnes-says-raptors-expectations-havent/",
     "date": "October 1, 2026"
@@ -1243,8 +1243,14 @@
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays reliever Joe Mantiply elects free agency",
-      "published": "2026-09-30T18:18:55+00:00"
+      "text": "Blue Jays offer concessions for lost season but few firm plans",
+      "published": "2026-09-30T23:29:11+00:00"
+    },
+    {
+      "badge": "MLB",
+      "badge_style": "mlb",
+      "text": "Atkins dismisses World Series fatigue as cause of Blue Jays' struggles",
+      "published": "2026-09-30T20:53:51+00:00"
     },
     {
       "badge": "NBA",
@@ -1270,8 +1276,8 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "How are the Commanders preparing for the game in London?",
-      "published": "2026-09-30T20:08:27+00:00"
+      "text": "Jayden Daniels is one of 10 Commanders limited in Wednesday's practice",
+      "published": "2026-09-30T20:20:00+00:00"
     }
   ],
   "scoreboard": [
@@ -1435,10 +1441,10 @@
   },
   "morning_brief": {
     "article": {
-      "title": "Maple Leafs Beat Islanders Behind Stolarz",
+      "title": "Stolarz Leads Leafs Past Islanders",
       "paragraphs": [
-        "Anthony Stolarz stopped 26 shots and the Maple Leafs beat the Islanders 2-1 on Wednesday night, with Easton Cowan scoring once and adding an assist and Colton Sissons also finding the net. Toronto is back at it Saturday against the Senators, while the Blue Jays are in offseason mode after a year with few firm plans and the Raptors keep building toward their Oct. 21 regular-season opener against the Bulls.",
-        "For Washington, Jayden Daniels returned to practice in limited fashion, but his status for Sunday's game against the Colts in London remains uncertain. The Commanders are 1-2, and the next checkpoint is their 9:30 a.m. ET kickoff on NFL Network."
+        "Anthony Stolarz made 26 saves and Easton Cowan had a goal and an assist as the Leafs beat the Islanders 2-1 last night. Colton Sissons also scored, and Toronto gets the Senators next Saturday at 7 p.m. on Sportsnet.",
+        "That gives the Leafs a 1-1-0 start, with a cleaner look in goal and some early pop from Cowan. The Blue Jays are still in offseason mode after a season full of hard questions, the Raptors open preseason against the Heat on Saturday before their regular-season opener against the Bulls on Oct. 21, and the Commanders face the Colts on Sunday morning while Jayden Daniels remains uncertain after returning to practice in limited fashion."
       ]
     }
   }
