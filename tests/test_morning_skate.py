@@ -17,7 +17,7 @@ import contextlib
 import os
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
@@ -328,6 +328,71 @@ class HeadlineTests(unittest.TestCase):
 # --------------------------------------------------------------------- #
 # Game details                                                           #
 # --------------------------------------------------------------------- #
+
+class TickerFreshnessTests(unittest.TestCase):
+    """The ticker refreshes daily (Justin, 2026-10-01): last night's score,
+    news from the last day only, nothing that already ran yesterday."""
+    NOW = datetime(2026, 10, 1, 4, 30, tzinfo=uc.EST)
+
+    def art(self, headline, hours_ago):
+        pub = (self.NOW - timedelta(hours=hours_ago)).astimezone(timezone.utc).isoformat()
+        return {"headline": headline, "published": pub, "link": "https://www.sportsnet.ca/x"}
+
+    def test_fresh_team_news_passes(self):
+        self.assertEqual(uc.ticker_news_ok(self.art("Blue Jays reliever Joe Mantiply elects free agency", 8),
+                                           "jays", self.NOW), (True, ""))
+
+    def test_old_and_off_topic_items_are_dropped(self):
+        ok, why = uc.ticker_news_ok(self.art("Commanders to sign veteran RB Austin Ekeler", 70), "commanders", self.NOW)
+        self.assertFalse(ok)
+        self.assertIn("old", why)
+        self.assertFalse(uc.ticker_news_ok(self.art("NBA preseason: big questions for all 30 teams", 3),
+                                           "raptors", self.NOW)[0])
+        self.assertFalse(uc.ticker_news_ok(self.art("Would NFL players take a test to diagnose CTE?", 3),
+                                           "commanders", self.NOW)[0])
+        self.assertFalse(uc.ticker_news_ok(self.art("Here is each club's Arizona Fall League sleeper prospect", 3),
+                                           "jays", self.NOW)[0])
+        self.assertFalse(uc.ticker_news_ok({"headline": "Raptors sign guard"}, "raptors", self.NOW)[0])
+
+    def test_player_news_without_the_team_name_passes(self):
+        self.assertTrue(uc.ticker_news_ok(self.art("Guard Sam Cosmi, safety Nick Cross out vs. Colts", 9),
+                                          "commanders", self.NOW)[0])
+
+    def test_previews_and_in_game_updates_are_dropped(self):
+        for h in ("Blue Jays and Reds meet in series rubber match",
+                  "Maple Leafs take on the Islanders following Nylander's 2-goal performance",
+                  "Maple Leafs' Cowan extends lead against Islanders",
+                  "Montreal Canadiens vs. Toronto Maple Leafs: Full Highlights"):
+            team = "jays" if "Jays" in h else "leafs"
+            self.assertFalse(uc.ticker_news_ok(self.art(h, 5), team, self.NOW)[0], h)
+
+    def test_yesterdays_bites_do_not_repeat(self):
+        ok, why = uc.ticker_news_ok(self.art("Raptors sign veteran guard", 10), "raptors", self.NOW,
+                                    ran_yesterday={"raptors sign veteran guard"})
+        self.assertEqual((ok, why), (False, "ran yesterday"))
+
+    def test_generate_ticker_end_to_end(self):
+        saved = uc.NOW
+        uc.NOW = self.NOW
+        try:
+            facts = {"jays": {"recent": [{"game_date": "2026-09-27", "result": "W", "team_score": 5,
+                                          "opp_score": 1, "opp_name": "Reds"}],
+                              "upcoming": [], "team_info": {}, "phase_info": {"phase": "offseason", "label": "Offseason"}},
+                     "leafs": {"recent": [{"game_date": "2026-09-30", "result": "W", "team_score": 2,
+                                           "opp_score": 1, "opp_name": "Islanders"}],
+                               "upcoming": [], "team_info": {}, "phase_info": {"phase": "regular_season"}}}
+            arts = {"jays": [self.art("Blue Jays and Reds meet in series rubber match", 72),
+                             self.art("Blue Jays reliever Joe Mantiply elects free agency", 6)],
+                    "leafs": [self.art("Maple Leafs' Cowan extends lead against Islanders", 7)]}
+            texts = [t["text"] for t in uc.generate_ticker(facts, arts)]
+        finally:
+            uc.NOW = saved
+        self.assertIn("Leafs beat Islanders 2-1", texts)            # last night's score
+        self.assertNotIn("Jays beat Reds 5-1", texts)               # four days old
+        self.assertIn("Blue Jays reliever Joe Mantiply elects free agency", texts)
+        self.assertNotIn("Blue Jays and Reds meet in series rubber match", texts)
+        self.assertNotIn("Maple Leafs' Cowan extends lead against Islanders", texts)
+
 
 class SanitizeTests(unittest.TestCase):
     def test_decimals_keep_their_space(self):

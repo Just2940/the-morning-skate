@@ -1890,12 +1890,14 @@ def fetch_espn_articles(team_key, limit=8):
         pub_date = item.get("published", "")
         date_display = ""
         days_old = 999
+        published = ""
         if pub_date:
             try:
                 # ESPN dates: "2026-04-15T23:45:00Z"
                 dt = datetime.fromisoformat(pub_date.replace("Z", "+00:00"))
                 date_display = dt.strftime("%B %d, %Y").replace(" 0", " ")
                 days_old = (NOW - dt.astimezone(EST)).days
+                published = dt.astimezone(timezone.utc).isoformat()
             except:
                 date_display = pub_date[:10]
 
@@ -1907,6 +1909,7 @@ def fetch_espn_articles(team_key, limit=8):
             "date": date_display,
             "link": link,
             "days_old": days_old,
+            "published": published,  # exact time, for the ticker's freshness rule
             "type": item.get("type", ""),
         })
 
@@ -2166,11 +2169,13 @@ def fetch_google_news_articles(team_key, limit=10):
             # Parse publication date
             date_display = ""
             days_old = 999
+            published = ""
             if pub_date:
                 try:
                     dt = parsedate_to_datetime(pub_date)
                     date_display = dt.strftime("%B %d, %Y").replace(" 0", " ")
                     days_old = max(0, (NOW - dt.astimezone(EST)).days)
+                    published = dt.astimezone(timezone.utc).isoformat()
                 except Exception:
                     pass
 
@@ -2186,6 +2191,7 @@ def fetch_google_news_articles(team_key, limit=10):
                 "date": date_display or TODAY_DISPLAY,
                 "link": link,
                 "days_old": days_old,
+                "published": published,
                 "type": "news",
             })
 
@@ -2394,11 +2400,13 @@ def fetch_tier1_rss_articles(team_key, limit=14, per_feed_cap=2):
                 n_kw += 1
                 days_old = 999
                 date_display = ""
+                published = ""
                 dt = _parse_feed_date(item["date_raw"])
                 if dt is not None:
                     try:
                         date_display = dt.strftime("%B %d, %Y").replace(" 0", " ")
                         days_old = max(0, (NOW - dt.astimezone(EST)).days)
+                        published = dt.astimezone(timezone.utc).isoformat()
                     except Exception:
                         pass
                 if days_old > 5:
@@ -2414,6 +2422,7 @@ def fetch_tier1_rss_articles(team_key, limit=14, per_feed_cap=2):
                     "date": date_display or TODAY_DISPLAY,
                     "link": link,
                     "days_old": days_old,
+                    "published": published,
                     "type": "news",
                 }
                 if feed_kept < per_feed_cap and len(articles) < limit:
@@ -3217,7 +3226,60 @@ def build_key_numbers(team_key, team_info, standings, recent, phase_info=None):
     return numbers[:4]
 
 
-def generate_ticker(all_team_facts, all_team_articles=None):
+# Ticker news must be today's news (Justin, 2026-10-01: a 3-day-old preview of
+# the Jays' season finale and a 3-day-old signing were still scrolling).
+TICKER_NEWS_MAX_HOURS = 26  # yesterday's news at a 4:30 AM build, with slack
+TICKER_TEAM_RX = {
+    "leafs": re.compile(r"\b(maple )?leafs?\b", re.I),
+    "jays": re.compile(r"\b(blue )?jays?\b", re.I),
+    "raptors": re.compile(r"\braptors?\b", re.I),
+    "commanders": re.compile(r"\bcommanders?\b", re.I),
+}
+TICKER_STALE_RX = re.compile(
+    # previews: by morning the game has been played (Next: covers what's ahead)
+    r"\btakes? on\b|\bmeet in\b|\bsquare off\b|\bset to (host|visit|face|play)\b|"
+    r"\blooks? to (extend|snap|end|bounce|rebound|win|continue|keep|stay|avoid|even|sweep)\b|"
+    # in-game updates that read wrong once the game is over
+    r"\b(extends?|takes?|grabs?|regains?|retakes?|builds?) (the |a |an )?(early )?lead\b|"
+    r"\bcuts? (into )?(the )?(deficit|lead)\b|\bties? (it|the game)\b|"
+    r"\bafter (one|two|three|1|2|3) (periods?|innings?|quarters?)\b|\bat the half\b|\bhalftime\b|"
+    r"\blive (updates|blog)\b|"
+    # video posts, betting, listings, listicles
+    r"\bhighlights\b|\bbetting\b|\bodds\b|\bpicks? and predictions?\b|\bprops?\b|"
+    r"\bwhat to watch\b|\bhow to watch\b|\bpower rankings\b|\bmock draft\b",
+    re.I)
+# A team's feeds also carry league-wide pieces ("Would NFL players take a test
+# to diagnose CTE?"). Those stay out unless they name the team; player stories
+# without the team name stay in - the badge (one team per league) says whose.
+TICKER_LEAGUE_RX = re.compile(
+    r"\b(NFL|NBA|NHL|MLB|league-wide|leaguewide|all (30|32) (teams|clubs)|(30|32) (teams|clubs)|"
+    r"every (team|club|NFL|NBA|NHL|MLB)|each (team|club)('s)?|around the (league|majors))\b|"
+    r"\bteams'? (finish|rankings)\b", re.I)
+
+
+def ticker_news_ok(article, team_key, now=None, ran_yesterday=()):
+    """(ok, reason) for one article as a ticker news bite: published in the
+    last TICKER_NEWS_MAX_HOURS, about the team (not a league-wide piece),
+    not a preview / in-game update / video / betting item, and not already
+    run yesterday."""
+    h = html.unescape(article.get("headline") or "").strip()
+    try:
+        pub = datetime.fromisoformat(article.get("published") or "")
+        age = ((now or NOW) - pub).total_seconds() / 3600
+    except (TypeError, ValueError):
+        return False, "no publish time"
+    if not -1 <= age <= TICKER_NEWS_MAX_HOURS:
+        return False, f"{age:.0f}h old"
+    if not TICKER_TEAM_RX[team_key].search(h) and TICKER_LEAGUE_RX.search(h):
+        return False, "league-wide story"
+    if TICKER_STALE_RX.search(h):
+        return False, "preview / in-game / video / betting"
+    if h.lower().rstrip(" .|-") in ran_yesterday:
+        return False, "ran yesterday"
+    return True, ""
+
+
+def generate_ticker(all_team_facts, all_team_articles=None, prev_ticker=None):
     """Ticker = bite-sized, timely, complete. Editorial contract (2026-07-02):
     - Scores from the last 48h and the next game while a season is live.
     - Records/standings IN SEASON ONLY - a July "46-36, 3rd in Atlantic"
@@ -3226,9 +3288,13 @@ def generate_ticker(all_team_facts, all_team_articles=None):
       signings, draft picks) - never a phase label pretending to be news.
     - A headline ships WHOLE or not at all. Never truncate mid-thought.
     - Phase-label filler is the absolute last resort so a quiet team still
-      has a presence in the ticker."""
+      has a presence in the ticker.
+    Refreshed daily (2026-10-01): last night's score only, and news bites
+    only from the last day (ticker_news_ok), never repeating yesterday's.
+    prev_ticker = the previous day's ticker texts."""
     TICKER_MAX = 60
     ticker_items = []
+    ran_yesterday = {(t or "").lower().rstrip(" .|-") for t in (prev_ticker or [])}
     BADGE_STYLES = {
         "leafs": "nhl",
         "jays": "mlb",
@@ -3245,15 +3311,18 @@ def generate_ticker(all_team_facts, all_team_articles=None):
     SKIP_PHRASES = ("game story", "scores/highlights", "box score",
                     "full game recap", "game recap", "final score", "game highlights", ": highlights")
 
-    def add(team_key, text):
+    def add(team_key, text, published=""):
         text = " ".join((text or "").split())
         if not text or len(text) > TICKER_MAX:
             return False
-        ticker_items.append({
+        item = {
             "badge": TEAMS[team_key]["league"],
             "badge_style": BADGE_STYLES.get(team_key, "muted"),
             "text": text,
-        })
+        }
+        if published:
+            item["published"] = published  # news bites carry their age (validator 0.32)
+        ticker_items.append(item)
         return True
 
     def clean_headline(raw):
@@ -3275,14 +3344,9 @@ def generate_ticker(all_team_facts, all_team_articles=None):
         in_season = phase_id in IN_SEASON_PHASES or bool(upcoming)
         n_added = 0
 
-        # --- 1. Fresh final score (48h): the most important bite ---------
+        # --- 1. Last night's final score: the most important bite --------
         if recent:
-            try:
-                days_since = (NOW.replace(tzinfo=None) - datetime.strptime(
-                    recent[0].get("game_date", ""), "%Y-%m-%d")).days
-            except Exception:
-                days_since = 999
-            if days_since <= 2:
+            if _is_last_night(recent[0].get("game_date", "")):
                 g = recent[0]
                 result_word = "beat" if g["result"] == "W" else "fell to"
                 _s1, _s2 = g["team_score"], g["opp_score"]
@@ -3310,11 +3374,12 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             if add(team_key, f"{team_name} ({record}) - {standing}"):
                 n_added += 1
 
-        # --- 4. News bites: whole headlines only, transactions first -----
+        # --- 4. News bites: today's news only, transactions first --------
         want = 1 if in_season else 2
         got = 0
         pool = (all_team_articles or {}).get(team_key, []) or []
         candidates = []
+        dropped = {}
         for article in pool:
             headline = clean_headline(article.get("headline", ""))
             if not headline or len(headline) > TICKER_MAX:
@@ -3329,23 +3394,28 @@ def generate_ticker(all_team_facts, all_team_articles=None):
             _tn = team_name.lower()
             if hl.startswith(_tn + " fell to") or hl.startswith(_tn + " beat"):
                 continue  # duplicates the score bite
-            is_txn = any(w in hl for w in TRANSACTION_WORDS)
-            is_team = _tn in hl
-            candidates.append((0 if is_team else 1, 0 if is_txn else 1, len(candidates), headline))
-        candidates.sort()
+            ok, why = ticker_news_ok(dict(article, headline=headline), team_key, ran_yesterday=ran_yesterday)
+            if not ok:
+                dropped[why] = dropped.get(why, 0) + 1
+                continue
+            is_txn = any(re.search(rf"\b{w}\b", hl) for w in TRANSACTION_WORDS)
+            # transactions first, statements before question-style features,
+            # then the newest
+            candidates.append((0 if is_txn else 1, 1 if headline.endswith("?") else 0,
+                               article.get("published", ""), headline))
+        candidates.sort(key=lambda c: (c[0], c[1], -datetime.fromisoformat(c[2]).timestamp()))
         _seen = set()
-        for _pteam, _ptxn, _, headline in candidates:
+        for _ptxn, _pq, published, headline in candidates:
             if got >= want:
                 break
             if headline.lower() in _seen:
                 continue
-            # Offseason: league-wide items (headline lacks the team name) are
-            # a last resort - never stacked on top of real team news.
-            if (not in_season) and _pteam == 1 and got >= 1:
-                continue
             _seen.add(headline.lower())
-            if add(team_key, headline):
+            if add(team_key, headline, published):
                 got += 1
+        if dropped:
+            print(f"  [ticker] {team_name}: {got} fresh news bite(s); skipped "
+                  + ", ".join(f"{n} {why}" for why, n in sorted(dropped.items())))
 
         # --- 5. Absolute last resort: keep a quiet team present ----------
         if n_added == 0 and got == 0:
@@ -5345,7 +5415,11 @@ def build_data():
 
     # Ticker ‚Äî generated from REAL ESPN data now, not stale fallback
     print("\n--- Generating ticker from ESPN data ---")
-    db["ticker"] = generate_ticker(all_team_facts, all_team_articles)
+    # Yesterday's news bites never run again (same-day re-runs keep theirs).
+    _prev_day = str((existing.get("meta") or {}).get("updated") or "")[:10]
+    _prev_ticker = ([t.get("text", "") for t in existing.get("ticker") or []]
+                    if _prev_day and _prev_day < NOW.strftime("%Y-%m-%d") else [])
+    db["ticker"] = generate_ticker(all_team_facts, all_team_articles, prev_ticker=_prev_ticker)
     print(f"  Generated {len(db['ticker'])} ticker items")
 
     # At a Glance ‚Äî build from REAL ESPN team data

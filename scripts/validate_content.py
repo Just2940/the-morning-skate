@@ -310,6 +310,37 @@ def check_ticker(data: dict, r: Reporter) -> None:
         r.ok(rule_req)
 
 
+def check_ticker_freshness(data: dict, r: Reporter) -> None:
+    """0.32 - ticker news bites are today's news (Justin, 2026-10-01). News
+    items carry their publish time; anything older than 30 hours at build
+    time is flagged. A warning, not a failure: a stale bite is not worth
+    holding back the whole edition."""
+    from datetime import datetime
+    rule = "0.32 ticker news is fresh"
+    try:
+        built = datetime.fromisoformat((data.get("meta") or {}).get("updated") or "")
+    except ValueError:
+        r.warn(rule, "meta.updated missing - can't date the ticker")
+        return
+    stale, n = [], 0
+    for item in data.get("ticker") or []:
+        pub = (item or {}).get("published")
+        if not pub:
+            continue  # scores, next game, standings: built fresh every run
+        n += 1
+        try:
+            hours = (built - datetime.fromisoformat(pub)).total_seconds() / 3600
+        except ValueError:
+            stale.append(f"unreadable publish time on {item.get('text')!r}")
+            continue
+        if hours > 30:
+            stale.append(f"{hours:.0f}h old: {item.get('text')!r}")
+    for s in stale[:6]:
+        r.warn(rule, s)
+    if not stale:
+        r.ok(f"{rule} ({n} news bite(s))")
+
+
 # ------------------------------------------------------------------------- #
 # 0.13 — Ticker badge_style must be in allowed CSS-modifier set             #
 # ------------------------------------------------------------------------- #
@@ -1143,6 +1174,7 @@ def main() -> int:
     check_mojibake(raw_html, "index.html", r)
     check_urls(data, r)
     check_ticker(data, r)
+    check_ticker_freshness(data, r)
     check_ticker_badge_styles(data, r)
     check_dek_specificity(data, r)
     check_standings_counts(data, r)
