@@ -1868,6 +1868,70 @@ async function espnJSON(path) {
   }
   return null;
 }
+// --- Results stay current on their own. The edition carries last night's
+// finals (with top performers), but the page never shows a final older than
+// yesterday (Eastern time), and it fills in finished games straight from
+// ESPN when the edition doesn't have them yet: a build that ran late, or a
+// game that ended after the edition went out.
+const ET_DAY = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' });
+const ET_SHORT = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' });
+function etDay(d) { return ET_DAY.format(d); }  // '2026-10-01'
+function etYesterday() {
+  const p = etDay(new Date()).split('-').map(Number);
+  return new Date(Date.UTC(p[0], p[1] - 1, p[2] - 1)).toISOString().slice(0, 10);
+}
+let EDITION_SCORES = [];
+const ESPN_FINALS = {};  // 'team|YYYY-MM-DD' -> card built from ESPN
+function espnFinal(cfg, ev) {
+  const comp = (ev.competitions || [])[0] || {};
+  const cs = comp.competitors || [];
+  const us = cs.find(c => (c.team || {}).abbreviation === cfg.abbr);
+  const opp = cs.find(c => c !== us);
+  const st = (ev.status || {}).type || {};
+  if (!us || !opp || st.state !== 'post' || !st.completed) return null;
+  const num = s => parseInt(s && typeof s === 'object' ? (s.displayValue != null ? s.displayValue : s.value) : s, 10);
+  const a = num(us.score), b = num(opp.score);
+  if (isNaN(a) || isNaN(b)) return null;
+  const when = new Date(ev.date || comp.date);
+  if (isNaN(when)) return null;
+  return {
+    team: cfg.t, game_date: etDay(when), date: ET_SHORT.format(when),
+    name: cfg.name, league: cfg.l.toUpperCase(), logo: cfg.abbr.toLowerCase(),
+    opp_name: (opp.team || {}).shortDisplayName || (opp.team || {}).name || '',
+    opp_logo: ((opp.team || {}).abbreviation || '').toLowerCase(),
+    team_score: a, opp_score: b,
+    result: us.winner ? 'W' : opp.winner ? 'L' : (a > b ? 'W' : a < b ? 'L' : 'T'),
+    preseason: (ev.season || {}).type === 1, stars: []
+  };
+}
+function addFinals(cfg, events) {
+  (events || []).forEach(ev => {
+    try { const g = espnFinal(cfg, ev); if (g) ESPN_FINALS[g.team + '|' + g.game_date] = g; } catch (e) { /* skip */ }
+  });
+}
+function renderResults() {
+  const today = etDay(new Date()), yest = etYesterday();
+  const fresh = g => g && (g.game_date === today || g.game_date === yest);
+  const best = {};
+  (EDITION_SCORES || []).filter(fresh).forEach(g => { best[g.team] = g; });
+  Object.values(ESPN_FINALS).filter(fresh).forEach(g => {
+    const cur = best[g.team];
+    if (!cur || g.game_date > cur.game_date) best[g.team] = g;  // newer than the edition knows
+  });
+  renderScoreboard(LIVE_TEAMS.map(c => best[c.t]).filter(Boolean));
+}
+async function backfillLastNight(editionUpdated) {
+  // An edition built today (Eastern) already has last night's finals.
+  if (String(editionUpdated || '').slice(0, 10) === etDay(new Date())) return;
+  const ymd = etYesterday().replace(/-/g, '');
+  await Promise.all(LIVE_TEAMS.map(async cfg => {
+    try {
+      const d = await espnJSON('/apis/site/v2/sports/' + cfg.s + '/' + cfg.l + '/scoreboard?dates=' + ymd);
+      if (d) addFinals(cfg, d.events);
+    } catch (e) { /* the edition's own scores still show */ }
+  }));
+  renderResults();
+}
 async function checkLive() {
   const box = document.getElementById('live-now');
   if (!box) return;
@@ -1876,6 +1940,7 @@ async function checkLive() {
     try {
       const d = await espnJSON('/apis/site/v2/sports/' + cfg.s + '/' + cfg.l + '/scoreboard');
       if (!d) continue;
+      addFinals(cfg, d.events);  // games that just ended join the results
       for (const ev of (d.events || [])) {
         const comp = (ev.competitions || [])[0] || {};
         const cs = comp.competitors || [];
@@ -1888,6 +1953,7 @@ async function checkLive() {
       }
     } catch (e) { /* live is a bonus, never an error */ }
   }
+  renderResults();
   if (!cards.length) { box.innerHTML = ''; return; }
   let html = '<div class="ln-grid">';
   cards.forEach(c => {
@@ -1976,7 +2042,7 @@ function previewPanel(p) {
 function renderScoreboard(items) {
   const el = document.getElementById('last-night');
   if (!el) return;
-  if (!items || !items.length) { el.innerHTML = ''; return; }
+  if (!items || !items.length) { el.innerHTML = ''; el._sb = ''; return; }
   let html = `<div class="ln-grid">`;
   items.forEach(g => {
     const won = g.result === 'W';
@@ -1990,7 +2056,10 @@ function renderScoreboard(items) {
       perfBlock(g.stars) +
       `</div>`;
   });
-  el.innerHTML = html + `</div>`;
+  html += `</div>`;
+  if (el._sb === html) return;  // re-checked every minute; skip identical redraws
+  el._sb = html;
+  el.innerHTML = html;
 }
 
 function renderTicker(items) {
@@ -2356,7 +2425,9 @@ fetch('data.json?v=' + Date.now())
     data = sanitizeData(data);
     // Homepage
     renderTicker(data.ticker);
-    renderScoreboard(data.scoreboard);
+    EDITION_SCORES = data.scoreboard || [];
+    renderResults();
+    backfillLastNight((data.meta || {}).updated);
     renderMorningBrief(data.morning_brief);
     renderFeatured(data.featured);
     renderTwoUp(data.two_up);

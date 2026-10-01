@@ -17,7 +17,7 @@ import contextlib
 import os
 import sys
 import unittest
-from datetime import datetime
+from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
@@ -328,6 +328,23 @@ class HeadlineTests(unittest.TestCase):
 # --------------------------------------------------------------------- #
 # Game details                                                           #
 # --------------------------------------------------------------------- #
+
+class ScoreboardWindowTests(unittest.TestCase):
+    """The homepage scoreboard shows last night's finals and nothing older
+    (Justin, 2026-10-01: Sept 27 finals were still up on Sept 30)."""
+
+    def test_morning_edition(self):
+        now = datetime(2026, 10, 1, 8, 30, tzinfo=timezone.utc)  # 4:30 AM EDT Oct 1
+        self.assertTrue(uc._is_last_night("2026-09-30", now))
+        self.assertFalse(uc._is_last_night("2026-09-29", now))
+        self.assertFalse(uc._is_last_night("2026-09-27", now))
+
+    def test_late_evening_run_uses_eastern_dates(self):
+        now = datetime(2026, 10, 2, 3, 0, tzinfo=timezone.utc)  # 11 PM EDT Oct 1
+        self.assertTrue(uc._is_last_night("2026-10-01", now))
+        self.assertTrue(uc._is_last_night("2026-09-30", now))
+        self.assertFalse(uc._is_last_night("2026-10-02", now))
+
 
 class GameDetailTests(unittest.TestCase):
     def test_names(self):

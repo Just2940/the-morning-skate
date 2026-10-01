@@ -1,0 +1,66 @@
+name: On-Time Morning Edition
+
+# GitHub starts scheduled runs hours late: in Sep 2026 the 08:17 UTC slot in
+# update.yml ran at 14:00-16:50 UTC (10 AM - 1 PM Eastern), so the "morning"
+# edition was really a lunchtime edition and Dad read yesterday's scores.
+#
+# This workflow is scheduled the evening before. Whenever GitHub gets around
+# to starting it, it waits on its own runner until 4:30 AM Eastern, then
+# triggers the daily update (and the brief email). If GitHub starts it after
+# 4:30, it triggers the update right away. The schedules in update.yml stay
+# as backups and skip once today's edition is out, so there is one run and
+# one email a day.
+on:
+  schedule:
+    - cron: "47 2 * * *"   # 10:47 PM EDT / 9:47 PM EST
+  workflow_dispatch:
+    inputs:
+      wait:
+        description: "Wait until 4:30 AM Eastern (untick to trigger today's edition now)"
+        type: boolean
+        default: true
+
+permissions:
+  actions: write      # trigger update.yml
+  contents: read
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - name: Wait for 4:30 AM Eastern
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.wait }}" = "false" ]; then
+            echo "Manual run - not waiting."
+            exit 0
+          fi
+          if [ "$(TZ=America/New_York date +%-H)" -ge 18 ]; then day=tomorrow; else day=today; fi
+          target=$(TZ=America/New_York date -d "$day 04:30" +%s)
+          wait=$(( target - $(date +%s) ))
+          # Stay inside GitHub's 6-hour job limit. In winter (EST) that means
+          # waking around 3:40 AM - still hours after the last game ends.
+          if [ "$wait" -gt 21000 ]; then wait=21000; fi
+          if [ "$wait" -gt 0 ]; then
+            echo "Started $(TZ=America/New_York date '+%a %-I:%M %p %Z'); waiting $(( wait / 60 )) minutes."
+            sleep "$wait"
+          else
+            echo "Started $(TZ=America/New_York date '+%a %-I:%M %p %Z'), after 4:30 AM - triggering now."
+          fi
+
+      - name: Trigger today's edition (unless it is already out)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          TODAY=$(TZ=America/New_York date +%F)
+          LAST=$(gh api -H "Accept: application/vnd.github.raw" "repos/$GH_REPO/contents/data.json" \
+                 | python3 -c "import json,sys;print(((json.load(sys.stdin).get('meta') or {}).get('updated') or '')[:10])" \
+                 || echo "")
+          echo "Today (ET): $TODAY | live edition: ${LAST:-unknown}"
+          if [ "$LAST" = "$TODAY" ]; then
+            echo "Today's edition is already live - nothing to do."
+            exit 0
+          fi
+          gh workflow run update.yml --ref main -f send_email=true
+          echo "Daily update triggered."

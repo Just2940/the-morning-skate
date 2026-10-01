@@ -2,11 +2,10 @@ name: Daily Morning Skate Update
 
 on:
   schedule:
-    # GitHub delays (and on busy days drops) scheduled runs queued at the top
-    # of the hour - through Aug/Sep 2026 the old "0 9" slot started 3-7 hours
-    # late and skipped some days entirely. Primary run off-peak at 08:17 UTC
-    # (4:17 AM EDT / 3:17 AM EST); the backup at 11:43 UTC only publishes if
-    # the primary never landed (see the guard step).
+    # GitHub starts scheduled runs hours late (these two slots landed at
+    # 10 AM - 2 PM Eastern in Sep 2026), so the on-time edition is triggered
+    # at 4:30 AM Eastern by wake-up.yml. These schedules are BACKUPS: each
+    # one skips if today's edition is already live (see the guard step).
     - cron: "17 8 * * *"
     - cron: "43 11 * * *"
   workflow_dispatch:
@@ -39,7 +38,7 @@ jobs:
           TODAY=$(TZ='America/New_York' date +%F)
           LAST=$(python3 -c "import json;print(((json.load(open('data.json')).get('meta') or {}).get('updated') or '')[:10])" 2>/dev/null || echo "")
           echo "Today (ET): $TODAY | last edition: ${LAST:-none}"
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "43 11 * * *" ] && [ "$LAST" = "$TODAY" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$LAST" = "$TODAY" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Today's edition is already live - backup run has nothing to do."
           fi
@@ -82,8 +81,14 @@ jobs:
           git config user.email "morning-skate-bot@themorningskate.com"
           git add data.json
           git commit -m "Daily update: $(TZ='America/New_York' date +'%B %d, %Y') morning briefing"
-          git pull --rebase --autostash
-          git push
+          # GitHub occasionally answers a push with a 500 (Sep 29 2026) - retry.
+          ok=""
+          for i in 1 2 3; do
+            if git pull --rebase --autostash && git push; then ok=1; break; fi
+            echo "Push attempt $i failed - retrying in 20 seconds"
+            sleep 20
+          done
+          [ -n "$ok" ]
 
       - name: Email the morning brief
         if: steps.guard.outputs.skip != 'true' && (github.event_name == 'schedule' || inputs.send_email)

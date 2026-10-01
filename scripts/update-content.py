@@ -5349,9 +5349,8 @@ def build_data():
     # At a Glance ‚Äî build from REAL ESPN team data
     # === LAST NIGHT SCOREBOARD (homepage) ===
     # The single most important reader job: did my teams win last night?
-    # One card per team with the most recent final within 3 days - an off
-    # night or travel day must not blank the latest score (the card shows
-    # the game date, so a 2-day-old final reads honestly). Empty = hidden.
+    # One card per team, last night's final only (see _is_last_night). The
+    # old 3-day window left Sept 27 finals up through Sept 30. Empty = hidden.
     db["scoreboard"] = []
     for team_key in ["leafs", "jays", "raptors", "commanders"]:
         facts = all_team_facts.get(team_key, {})
@@ -5359,12 +5358,7 @@ def build_data():
         if not recent:
             continue
         g = recent[0]
-        try:
-            _days = (NOW.replace(tzinfo=None) - datetime.strptime(
-                g.get("game_date", ""), "%Y-%m-%d")).days
-        except Exception:
-            _days = 999
-        if _days > 3:
+        if not _is_last_night(g.get("game_date", "")):
             continue
         cfg = TEAMS[team_key]
         _hl = (teams_data.get(team_key, {}) or {}).get("last_game_highlights") or {}
@@ -5397,7 +5391,7 @@ def build_data():
                                         cfg["league"], cfg["espn_abbr"]),
             "link": _hl.get("url", "") if _hl.get("available") else "",
         })
-    print(f"  Scoreboard: {len(db['scoreboard'])} final(s) in 3-day window")
+    print(f"  Scoreboard: {len(db['scoreboard'])} final(s) from last night")
 
     db["at_a_glance"] = []
     for team_key in ["leafs", "jays", "raptors", "commanders"]:
@@ -5737,6 +5731,14 @@ BRIEF_BOILER_RX = re.compile(
     r"\bforward momentum\b|\bpast records\b|\ball four teams\b|"
     r"\bthe focus now shifts\b|\ball eyes (on|now)\b",
     re.I)
+
+
+def _is_last_night(game_date, now=None):
+    """Homepage scoreboard rule: a final shows only if it was played
+    yesterday or today (Eastern), so every edition carries last night's
+    results and nothing older (Justin, 2026-10-01)."""
+    today = (now or NOW).astimezone(EST).date()
+    return game_date in (today.isoformat(), (today - timedelta(days=1)).isoformat())
 
 
 def _fact_headline(db, today):
