@@ -329,6 +329,16 @@ class HeadlineTests(unittest.TestCase):
 # Game details                                                           #
 # --------------------------------------------------------------------- #
 
+class SanitizeTests(unittest.TestCase):
+    def test_decimals_keep_their_space(self):
+        self.assertEqual(uc.sanitize_ascii("26 saves, .963"), "26 saves, .963")
+        self.assertEqual(uc.sanitize_ascii("a .500 team"), "a .500 team")
+
+    def test_citation_leftovers_still_tidied(self):
+        self.assertEqual(uc.sanitize_ascii("into the playoffs .[1]"), "into the playoffs.")
+        self.assertEqual(uc.sanitize_ascii("Leafs , Jays"), "Leafs, Jays")
+
+
 class ScoreboardWindowTests(unittest.TestCase):
     """The homepage scoreboard shows last night's finals and nothing older
     (Justin, 2026-10-01: Sept 27 finals were still up on Sept 30)."""

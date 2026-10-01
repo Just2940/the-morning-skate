@@ -295,8 +295,10 @@ def sanitize_ascii(text):
     # Collapse double/triple spaces introduced by dash/ellipsis/citation replacement.
     text = re.sub(r"  +", " ", text).strip()
     # Tidy spaces left before terminal punctuation by citation removal
-    # (e.g. "playoffs .[1]" -> "playoffs ." -> "playoffs.").
-    text = re.sub(r"\s+([.,;:!?])", r"\1", text)
+    # (e.g. "playoffs .[1]" -> "playoffs ." -> "playoffs."). A period that
+    # starts a decimal stays put: "26 saves, .963", "a .500 team" (the old
+    # rule printed "26 saves,.963" on the score cards).
+    text = re.sub(r"\s+([,;:!?]|\.(?!\d))", r"\1", text)
     return text
 
 
