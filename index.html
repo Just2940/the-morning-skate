@@ -2079,7 +2079,14 @@ function renderTicker(items) {
     });
   }
   html += '</div>';
-  document.getElementById('ticker').innerHTML = html;var dur=Math.max(30,items.length*5);document.getElementById('ticker').style.setProperty('--ticker-duration',dur+'s');
+  const tk = document.getElementById('ticker');
+  tk.innerHTML = html;
+  // Same reading speed however long the headlines run (~80 px/s, the old
+  // average): longer items mean a longer loop, not a faster one.
+  const track = tk.querySelector('.ls-track');
+  const half = track ? track.scrollWidth / 2 : 0;
+  const dur = half ? Math.max(30, Math.round(half / 80)) : Math.max(30, items.length * 5);
+  tk.style.setProperty('--ticker-duration', dur + 's');
 }
 
 function renderFeatured(f) {

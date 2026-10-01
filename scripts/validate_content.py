@@ -258,7 +258,7 @@ def check_mojibake(text: str, source: str, r: Reporter) -> None:
 
 
 def check_ticker(data: dict, r: Reporter) -> None:
-    rule_len = "0.4 ticker length ≤60"
+    rule_len = "0.4 ticker length ≤70"
     rule_tok = "0.4 ticker banned tokens"
     rule_ws = "0.4 ticker whitespace"
     rule_req = "0.4 ticker required fields"
@@ -277,7 +277,7 @@ def check_ticker(data: dict, r: Reporter) -> None:
 
     for i, item in enumerate(ticker):
         text = (item or {}).get("text", "")
-        if len(text) > 60:
+        if len(text) > 70:
             len_fails.append(f"[{i}] {len(text)} chars: {text!r}")
         for t in banned_tokens:
             if t in text:

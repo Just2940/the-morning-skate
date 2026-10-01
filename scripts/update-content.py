@@ -3292,7 +3292,7 @@ def generate_ticker(all_team_facts, all_team_articles=None, prev_ticker=None):
     Refreshed daily (2026-10-01): last night's score only, and news bites
     only from the last day (ticker_news_ok), never repeating yesterday's.
     prev_ticker = the previous day's ticker texts."""
-    TICKER_MAX = 60
+    TICKER_MAX = 70  # raised from 60 (Justin, 2026-10-01): the best headlines ran 61-70
     ticker_items = []
     ran_yesterday = {(t or "").lower().rstrip(" .|-") for t in (prev_ticker or [])}
     BADGE_STYLES = {
