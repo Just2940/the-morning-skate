@@ -56,6 +56,12 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Phones must render text at the sizes set here. Without this, iPhone Safari
+   "autosizes" text in very wide blocks - the scrolling ticker is thousands
+   of pixels wide - so some ticker items came out bigger and bolder than
+   others (2026-10-03). */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
 body {
   font-family: var(--sans);
   background: var(--cream);
@@ -255,12 +261,20 @@ body::before {
     .ls-badge.playoff { background: var(--raptors); animation: livePulse 2.5s ease-in-out infinite; }
 .ls-badge.draft { background: var(--ink); }
 @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.65} }
+/* Every ticker item identical: all text properties pinned, no synthetic bold */
 .ls-text {
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 600;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--ink-soft);
   white-space: nowrap;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 .ls-dot {
   color: var(--rule-dark);
