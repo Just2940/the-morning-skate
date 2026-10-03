@@ -1369,13 +1369,52 @@ body::before {
 .alm-art-p:first-of-type::first-letter { font-family: var(--serif); font-weight: 900;
   font-size: 40px; float: left; line-height: .85; padding: 3px 7px 0 0; }
 
-/* === The Almanac: floating bubble + sheet === */
-#almanacFab { position: fixed; right: 16px; bottom: 18px; width: 56px; height: 56px;
-  border-radius: 50%; background: var(--cream); border: 2px solid var(--ink);
-  box-shadow: 0 4px 14px rgba(28,25,23,.20); cursor: pointer; z-index: 900;
-  display: none; align-items: center; justify-content: center; padding: 0; }
-#almanacFab svg { width: 30px; height: 30px; display: block; }
-#almanacFab:active { transform: scale(.94); }
+/* === The Morning Brief: floating button + sheet ===
+   An ink pill on the cream page (the old cream circle blended in), a gold
+   sunrise, a label, and - until today's brief is opened - a red dot and three
+   soft pulses. Desktop shows today's headline; phones shrink it to the icon
+   while you read. */
+#almanacFab { position: fixed; right: calc(18px + env(safe-area-inset-right));
+  bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 900;
+  display: none; align-items: center; gap: 10px; height: 56px; padding: 0 20px 0 15px;
+  border: 0; border-radius: 999px; background: var(--ink); color: var(--cream);
+  font-family: var(--sans); cursor: pointer; text-align: left;
+  box-shadow: 0 10px 28px rgba(28,25,23,.32), 0 2px 6px rgba(28,25,23,.18);
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: fabIn .55s cubic-bezier(.2,.8,.2,1) .3s backwards; }
+#almanacFab:hover { transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(28,25,23,.38), 0 3px 8px rgba(28,25,23,.2); }
+#almanacFab:active { transform: scale(.96); }
+#almanacFab:focus-visible { outline: 3px solid #F2B544; outline-offset: 3px; }
+.fab-icon { flex: none; display: block; }
+.fab-icon svg { width: 27px; height: 27px; display: block; }
+.fab-text { display: flex; flex-direction: column; min-width: 0; }
+.fab-kicker { font-size: 15px; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+.fab-head { display: none; }
+.fab-dot { position: absolute; top: 3px; right: 5px; width: 12px; height: 12px; border-radius: 50%;
+  background: #E5483B; border: 2px solid var(--cream); display: none; }
+#almanacFab.unread .fab-dot { display: block; }
+#almanacFab.unread::after { content: ""; position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; animation: fabPulse 1.8s ease-out 1s 3; }
+@keyframes fabIn { from { opacity: 0; transform: translateY(18px) scale(.94); } }
+@keyframes fabPulse { 0% { box-shadow: 0 0 0 0 rgba(28,25,23,.42); }
+  100% { box-shadow: 0 0 0 18px rgba(28,25,23,0); } }
+@media (min-width: 700px) {
+  #almanacFab { height: 66px; padding: 0 24px 0 17px; gap: 12px; }
+  .fab-icon svg { width: 30px; height: 30px; }
+  .fab-kicker { font-size: 10px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase;
+    color: #F2B544; }
+  .fab-head { display: block; font-family: var(--serif); font-size: 16.5px; font-weight: 700;
+    line-height: 1.2; margin-top: 3px; max-width: 320px; white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; }
+}
+@media (max-width: 699px) {
+  #almanacFab.mini { width: 56px; padding: 0; gap: 0; justify-content: center; }
+  #almanacFab.mini .fab-text { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #almanacFab, #almanacFab.unread::after { animation: none; }
+}
 #almanacSheet { position: fixed; inset: 0; background: var(--cream); z-index: 950;
   overflow-y: auto; display: none; padding: 20px 18px 60px; }
 #almanacSheet.open { display: block; }
@@ -1842,7 +1881,19 @@ function escUrl(u) {
 function openAlmanac() {
   document.getElementById('almanacSheet').classList.add('open');
   document.body.style.overflow = 'hidden';
+  const fab = document.getElementById('almanacFab');
+  fab.classList.remove('unread');  // today's brief has been seen
+  try { if (fab.dataset.day) localStorage.setItem('briefSeen', fab.dataset.day); } catch (e) { /* fine */ }
 }
+// Phones: the labelled button shrinks to its icon once you're reading the
+// page, and comes back near the top (thresholds apart, so it never flickers).
+window.addEventListener('scroll', () => {
+  const fab = document.getElementById('almanacFab');
+  if (!fab) return;
+  const y = window.scrollY;
+  if (y > 600) fab.classList.add('mini');
+  else if (y < 200) fab.classList.remove('mini');
+}, { passive: true });
 function closeAlmanac() {
   document.getElementById('almanacSheet').classList.remove('open');
   document.body.style.overflow = '';
@@ -1970,7 +2021,7 @@ async function checkLive() {
 setInterval(() => { if (document.visibilityState === 'visible') checkLive(); }, 60000);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkLive(); });
 checkLive();
-function renderMorningBrief(b) {
+function renderMorningBrief(b, editionUpdated) {
   const fab = document.getElementById('almanacFab');
   if (!fab) return;
   const art = b && b.article;
@@ -1979,6 +2030,15 @@ function renderMorningBrief(b) {
   if ((!art || !(art.paragraphs || []).length) && !total) {
     fab.style.display = 'none'; return;
   }
+  // Button: today's headline on desktop, and a "new" dot + pulses until
+  // today's brief has been opened on this device.
+  const headline = (art && (art.paragraphs || []).length ? art.title : b.title) || '';
+  document.getElementById('fabHead').textContent = headline;
+  fab.setAttribute('aria-label', 'Open the Morning Brief' + (headline ? ': ' + headline : ''));
+  fab.dataset.day = String(editionUpdated || '').slice(0, 10);
+  let seen = '';
+  try { seen = localStorage.getItem('briefSeen') || ''; } catch (e) { /* private mode */ }
+  fab.classList.toggle('unread', !!fab.dataset.day && seen !== fab.dataset.day);
   fab.style.display = 'flex';
   document.getElementById('almDate').textContent = new Date().toLocaleDateString('en-US',
     { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
@@ -2435,7 +2495,7 @@ fetch('data.json?v=' + Date.now())
     EDITION_SCORES = data.scoreboard || [];
     renderResults();
     backfillLastNight((data.meta || {}).updated);
-    renderMorningBrief(data.morning_brief);
+    renderMorningBrief(data.morning_brief, (data.meta || {}).updated);
     renderFeatured(data.featured);
     renderTwoUp(data.two_up);
     renderExtraStory(data.extra_story);
@@ -2463,11 +2523,23 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 <button id="almanacFab" aria-label="Open the Morning Brief" onclick="openAlmanac()">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M8 19 a8 8 0 0 1 16 0" fill="none" stroke="#1C1917" stroke-width="2.5"/>
-    <line x1="5" y1="19" x2="27" y2="19" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="9" y1="25" x2="23" y2="25" stroke="#1C1917" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-  </svg>
+  <span class="fab-icon" aria-hidden="true">
+    <svg viewBox="0 0 32 32">
+      <path d="M8.5 19a7.5 7.5 0 0 1 15 0z" fill="#F2B544"/>
+      <g stroke="#F2B544" stroke-width="2" stroke-linecap="round">
+        <line x1="16" y1="4.5" x2="16" y2="7.5"/>
+        <line x1="6.8" y1="8.8" x2="8.9" y2="10.9"/>
+        <line x1="25.2" y1="8.8" x2="23.1" y2="10.9"/>
+      </g>
+      <line x1="4" y1="19" x2="28" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <line x1="9" y1="24.5" x2="23" y2="24.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+    </svg>
+  </span>
+  <span class="fab-text">
+    <span class="fab-kicker">Morning Brief</span>
+    <span class="fab-head" id="fabHead"></span>
+  </span>
+  <span class="fab-dot" aria-hidden="true"></span>
 </button>
 <div id="almanacSheet" role="dialog" aria-label="The Morning Brief">
   <div class="alm-inner">
