@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated": "2026-10-19T04:30:10.933944-04:00",
-    "date_display": "October 19, 2026",
+    "updated": "2026-10-20T04:30:15.624055-04:00",
+    "date_display": "October 20, 2026",
     "data_health": {
-      "espn_ok": 44,
+      "espn_ok": 47,
       "espn_failed": 0,
       "espn_via_mirror": 0,
       "espn_failed_urls": [],
@@ -19,36 +19,49 @@
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "3-4",
-      "detail": "11th in Eastern Conference",
+      "record": "4-4",
+      "detail": "7th in Eastern Conference",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Leafs are not merely losing; they are losing their grip on the opening month. <strong>Saturday's 4-1 defeat to the Islanders extended Toronto's skid to three games</strong>, leaving the club 3-4, 11th in the Eastern Conference with eight points. The warning light is flashing. Auston Matthews has called for more urgency from the top players, and the injury to John Tavares has forced Toronto to recall Marlies forward Vinni Lettieri - hardly the sort of reinforcement a contender wants this early. There was one encouraging note: Gavin McKenna responded to his benching with a season-high 17:56 and four shots, a sign Jim Hiller may finally be trusting the rookie's speed and imagination. But promise is not production. <strong>Tonight's 7:30 p.m. meeting with San Jose is the next test: beat the Sharks, or let this slow start become the season's defining story.</strong>",
-        "updated": "Updated October 19, 2026"
+        "body": "<strong>The Leafs beat the Sharks 3-1</strong>, moving to 4-4 on the season. They sit 7th in eastern conference, and the standings race sharpens a little every night. Before that, the club lost to the Islanders 1-4. There is runway left in the schedule, and the work on rotations and matchups matters as much as the scoreboard. <strong>Next up: at Blue Jackets on Tue 10/20 at 7:00 PM ET.</strong> The NHL calendar has flipped to building season - draft prep, trade talks, and the roster surgery that shapes the next contending window. For the Toronto Maple Leafs, the work runs from the draft table to the trade market, and the choices made this summer will define the next window.",
+        "updated": "Updated October 20, 2026"
       },
       "key_numbers": [
         {
-          "number": "3-4",
+          "number": "4-4",
           "label": "Season Record",
-          "note": "11th in Eastern Conference"
+          "note": "7th in Eastern Conference"
         },
         {
-          "number": "8",
+          "number": "10",
           "label": "Points",
-          "note": "11th in Eastern Conference"
+          "note": "7th in Eastern Conference"
         },
         {
-          "number": "L3",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "6",
+          "number": "4",
           "label": "Points Back",
-          "note": "11th in Eastern Conference"
+          "note": "7th in Eastern Conference"
         }
       ],
       "recent_results": [
+        {
+          "date": "Oct 19",
+          "result": "W",
+          "team_score": 3,
+          "opp_name": "Sharks",
+          "opp_score": 1,
+          "opp_logo": "sj",
+          "league": "nhl",
+          "game_date": "2026-10-19",
+          "game_ts": "2026-10-19T23:30Z",
+          "game_id": "401892537",
+          "season_type": 2
+        },
         {
           "date": "Oct 17",
           "result": "L",
@@ -87,70 +100,57 @@
           "game_ts": "2026-10-14T01:00Z",
           "game_id": "401892500",
           "season_type": 2
-        },
-        {
-          "date": "Oct 10",
-          "result": "W",
-          "team_score": 6,
-          "opp_name": "Avalanche",
-          "opp_score": 3,
-          "opp_logo": "col",
-          "league": "nhl",
-          "game_date": "2026-10-10",
-          "game_ts": "2026-10-10T23:00Z",
-          "game_id": "401892478",
-          "season_type": 2
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Islanders vs. Leafs - Full Highlights",
-        "subtitle": "NHL - Oct 17, 2026",
-        "result_badge": "L 1-4",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=c5rA1mo86N0",
-        "game_date": "2026-10-17"
+        "title": "Sharks vs. Leafs - Full Highlights",
+        "subtitle": "NHL - Oct 19, 2026",
+        "result_badge": "W 3-1",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=OQ1KvteZyE8",
+        "game_date": "2026-10-19"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Leafs fell to Islanders 4-1",
-          "dek": "Toronto has lost three straight and four of its last five, with its top six forwards held off the scoresheet in Saturday's defeat. At 3-4, the Leafs sit 11th in the Eastern Conference and need a response quickly as a demanding week begins.",
-          "date": "Oct 17",
-          "link": "https://www.espn.com/nhl/recap?gameId=401892523"
+          "headline": "Leafs beat Sharks 3-1",
+          "dek": "The victory snapped a three-game losing streak and steadied Toronto after an uneven 4-4 start to the regular season. Gavin McKenna's third-period power-play goal and Auston Matthews' three-point night lifted the Leafs back into the Eastern Conference race.",
+          "date": "Oct 19",
+          "link": "https://www.espn.com/nhl/recap?gameId=401892537"
+        },
+        {
+          "source": "The Athletic",
+          "source_class": "athletic",
+          "headline": "Monday Morning Leafs Report: Sergei Bobrovsky's so-so start, Gavin McKenna's linemates",
+          "dek": "Toronto's 4-4 start leaves little room for uneven goaltending or mismatched scoring lines, even after Monday's win snapped a three-game skid. Bobrovsky's early form and the decision to surround McKenna with more productive linemates could shape whether the Leafs climb from",
+          "date": "October 19, 2026",
+          "link": "https://www.nytimes.com/athletic/7701613/2026/10/19/maple-leafs-news-sergei-bobrovsky-gavin-mckenna/"
         },
         {
           "source": "The Globe and Mail",
           "source_class": "web",
-          "headline": "Bobrovsky, Maple Leafs looking to find traction in slow start",
-          "dek": "Toronto enters Monday's home matchup 3-4 and 11th in the Eastern Conference, with three straight losses exposing defensive breakdowns and limited offensive support. Bobrovsky has allowed at least three goals in each of his six starts, making a stronger team effort essential as",
-          "date": "October 18, 2026",
-          "link": "https://www.theglobeandmail.com/sports/hockey/article-bobrovsky-maple-leafs-looking-to-find-traction-in-slow-start/"
+          "headline": "Maple Leafs snap three-game losing streak in win over Sharks",
+          "dek": "The victory halts Toronto's three-game slide and steadies a team hovering around the Eastern Conference playoff picture at 4-4. McKenna's first career game-winner, scored on a third-period power play, also gives the rookie momentum after 10 NHL games.",
+          "date": "October 20, 2026",
+          "link": "https://www.theglobeandmail.com/sports/hockey/article-maple-leafs-snap-three-game-losing-streak-in-win-over-sharks/"
         },
         {
           "source": "Toronto Sun",
           "source_class": "web",
-          "headline": "Struggling Maple Leafs put out call to Marlies forward Vinni Lettieri",
-          "dek": "With John Tavares sidelined week to week, Toronto needs immediate forward depth after opening 3-4 and losing three straight. Lettieri brings strong Marlies momentum, with three goals and six assists in five games, but must translate that production into his first Maple Leafs",
-          "date": "October 19, 2026",
-          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/struggling-maple-leafs-put-out-call-to-marlies-forward-vinni-lettieri"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Maple Leafs fall into last in Atlantic with loss to Islanders",
-          "dek": "Toronto's third straight loss exposed an offense that managed just one goal against New York and left its top six forwards off the scoresheet. With a 3-4 record and an early-season slide echoing last year's finish, the pressure now shifts to the team's core to respond quickly.",
-          "date": "October 18, 2026",
-          "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-fall-into-last-in-atlantic-with-loss-to-islanders/"
+          "headline": "Auston Matthews, Gavin McKenna score on power play as Maple Leafs end slump",
+          "dek": "Toronto snapped a three-game skid by converting twice on five power plays, with Auston Matthews tying the game late in the second period. Gavin McKenna then delivered the go-ahead goal in the third, lifting the 4-4 Leafs back toward the Eastern Conference playoff pack.",
+          "date": "October 20, 2026",
+          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/matthews-mckenna-help-leafs-end-slump"
         },
         {
           "source": "Daily Faceoff",
           "source_class": "web",
-          "headline": "Islanders' Calum Ritchie, Matias Maccelli leave game with injuries",
-          "dek": "New York won 4-1 despite losing two top-six forwards to lower-body injuries in the first period, leaving their availability uncertain ahead of the next game. For Toronto, the loss extended a three-game skid and underscored an offense already missing John Tavares.",
-          "date": "October 18, 2026",
-          "link": "https://www.dailyfaceoff.com/news/new-york-islanders-calum-ritchie-matias-maccelli-leave-game-injuries-nhl-news"
+          "headline": "Islanders' Maccelli, Ritchie to miss time with lower-body injuries",
+          "dek": "The Islanders' 4-1 win over Toronto came with a significant cost, as Maccelli is expected to miss 2-4 weeks and Ritchie 4-6 weeks. Their absences reshape New York's forward depth after Maccelli opened the season with six points in eight games.",
+          "date": "October 19, 2026",
+          "link": "https://www.dailyfaceoff.com/news/islanders-maccelli-ritchie-to-miss-time-with-lower-body-injuries"
         }
       ],
       "standings": {
@@ -229,6 +229,18 @@
                 ]
               },
               {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
+                "vals": [
+                  "4",
+                  "4",
+                  "2",
+                  "10"
+                ]
+              },
+              {
                 "team": "Canadiens",
                 "logo": "mtl",
                 "league": "nhl",
@@ -248,18 +260,6 @@
                 "vals": [
                   "3",
                   "3",
-                  "2",
-                  "8"
-                ]
-              },
-              {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "vals": [
-                  "3",
-                  "4",
                   "2",
                   "8"
                 ]
@@ -336,10 +336,10 @@
                 "you": false,
                 "seed": "M2",
                 "vals": [
-                  "6",
+                  "7",
                   "3",
                   "1",
-                  "13"
+                  "15"
                 ]
               },
               {
@@ -377,6 +377,20 @@
                 "vals": [
                   "4",
                   "3",
+                  "2",
+                  "10"
+                ]
+              },
+              {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "4",
+                  "4",
                   "2",
                   "10"
                 ]
@@ -424,20 +438,6 @@
                 ]
               },
               {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "3",
-                  "4",
-                  "2",
-                  "8"
-                ]
-              },
-              {
                 "team": "Devils",
                 "logo": "nj",
                 "league": "nhl",
@@ -460,8 +460,22 @@
                 "seed_style": "faint",
                 "vals": [
                   "3",
-                  "5",
+                  "6",
                   "1",
+                  "7"
+                ]
+              },
+              {
+                "team": "Flyers",
+                "logo": "phi",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "2",
+                  "6",
+                  "3",
                   "7"
                 ]
               },
@@ -477,20 +491,6 @@
                   "4",
                   "0",
                   "6"
-                ]
-              },
-              {
-                "team": "Flyers",
-                "logo": "phi",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "1",
-                  "6",
-                  "3",
-                  "5"
                 ]
               }
             ]
@@ -528,8 +528,8 @@
       "detail": "2nd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The season is over, and the Blue Jays now face the harder part: deciding which version of this roster deserves another chance. Toronto finished 79-83 and second in the AL East, but the real warning lies in how quickly last year's formula lost its bite. <strong>Alejandro Kirk's latest contribution came from the other side of the postseason fence, advising childhood friend Jonathan Aranda to relax and be himself as Tampa Bay's run continued.</strong> Kirk remains a keeper in more ways than one - a steady catcher, a trusted voice, and one of the few Toronto players whose value extends beyond the box score. The club's next answers may come from Arizona, where prospects are making their case for 2027, while Vladimir Guerrero Jr. and four teammates remain Gold Glove finalists. <strong>Watch the prospect evaluations and the first pitching moves: Toronto needs more than a familiar type next spring - it needs a roster built to survive October.</strong>",
-        "updated": "Updated October 19, 2026"
+        "body": "The season is over, and Toronto's offseason has already found its first fault line: whether to bet on damaged goods or start fresh. At 79-83 and second in the AL East, the Blue Jays need more than cosmetic work. <strong>Shane Bieber is again the pivotal question</strong> - a 31-year-old free agent who made only 11 starts, posted a 4.37 ERA, and now looks like a candidate for a short, incentive-heavy reunion rather than a blank cheque. That is sensible risk, not a solution. The larger concern is Vladimir Guerrero Jr., whose production cratered to a 95 wRC+ after years around 139, leaving Toronto's lineup without its expected engine. Alejandro Kirk, meanwhile, remains a stabilizing presence, even lending postseason counsel to Tampa Bay's Jonathan Aranda. <strong>Watch Toronto's next move: a cautious Bieber structure, a power bat, and whether its Arizona Fall League prospects force their way into the 2027 plan.</strong>",
+        "updated": "Updated October 20, 2026"
       },
       "key_numbers": [
         {
@@ -612,18 +612,18 @@
       },
       "the_latest": [
         {
-          "source": "MLB.com",
-          "source_class": "web",
-          "headline": "Watch Blue Jays prospects in Arizona Fall League action",
-          "dek": "With Toronto out of the postseason after a 79-83 finish, the Arizona Fall League offers an early glimpse at players who could help address the roster's offseason questions. Their performances may shape the organization's evaluation of its depth and its path back into contention",
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Rays' Aranda leaning on advice from Blue Jays' Kirk during post-season",
+          "dek": "Alejandro Kirk's advice helped childhood friend Jonathan Aranda relax after an 0-for-10 start, contributing to a Game 4 breakout that revived Tampa Bay's offense. For Toronto, the connection adds a personal Blue Jays angle to a postseason run now turning Kirk's influence into",
           "date": "October 18, 2026",
-          "link": "https://www.mlb.com/bluejays/news/watch-top-prospects-in-arizona-fall-league-winter-ball-2026"
+          "link": "https://www.sportsnet.ca/mlb/article/rays-aranda-leaning-on-advice-from-blue-jays-kirk-during-post-season/"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "The Blue Jays have a type. It's why they flourished in 2025 but failed in 2026",
-          "dek": "Toronto's contact-first identity powered a 2025 World Series run, but the same formula produced too little damage in a 79-83 follow-up that missed the playoffs. With the offseason underway, the central question is whether the Jays should reinforce their approach or add the power",
+          "dek": "Toronto's contact-first identity powered a productive 2025, but the formula unraveled in 2026 as the lineup finished with MLB's fewest runs and home runs. That gap leaves the front office weighing whether to reinforce the existing approach or add the power needed to prevent",
           "date": "October 15, 2026",
           "link": "https://www.nytimes.com/athletic/7689637/2026/10/15/blue-jays-contact-hitting-offence-model/"
         },
@@ -631,7 +631,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Robot umpires flip 54% of challenged calls as Reds lead way",
-          "dek": "Toronto's 79-83 finish keeps the automated strike-zone experiment relevant beyond the postseason, with the club weighing how framing and challenge strategy could shape its next roster. The Reds' league-leading results underscore a competitive edge for teams whose catchers",
+          "dek": "Toronto's 79-83 finish kept the club out of the postseason, making the new challenge system an offseason concern rather than an October storyline. With catchers winning challenges far more often than hitters, the Blue Jays may need to reassess framing, pitch selection and",
           "date": "October 2, 2026",
           "link": "https://www.espn.com/mlb/story/_/id/50084448/robot-umpires-flip-54-challenged-calls-reds-lead-way"
         },
@@ -639,17 +639,17 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Silver linings for MLB's 2026 non-playoff teams",
-          "dek": "Toronto's 79-83 finish missed October, but the season exposed a fixable roster rather than a total teardown, with injuries and lineup-wide struggles driving the collapse. Nolan Perry's breakout gives the front office a valuable young arm, while the offseason brings urgent",
+          "dek": "Toronto's 79-83 finish exposed an offense that scored the fewest runs and hit the fewest home runs in the majors, but the roster still has reasons for optimism. Vladimir Guerrero Jr.'s rebound, Alejandro Kirk's health and a healthier rotation could determine whether this becomes",
           "date": "September 28, 2026",
           "link": "https://www.espn.com/mlb/story/_/id/49974689/mlb-2026-playoffs-postseason-eliminated-teams-bright-side-optimism-silver-linings-2027"
         },
         {
           "source": "MLB.com",
           "source_class": "web",
-          "headline": "Which Blue Jays prospects showed out in '26, could make impact in '27?",
-          "dek": "After finishing 79-83 and missing the postseason, Toronto needs internal reinforcements to narrow the gap in the AL East. Nolan Perry's breakout and Eric Lauer's versatile 2026 performance give the front office two promising candidates to evaluate before shaping the 2027 roster.",
-          "date": "October 15, 2026",
-          "link": "https://www.mlb.com/bluejays/news/blue-jays-top-prospects-performed-well-2026"
+          "headline": "Watch Blue Jays prospects in Arizona Fall League action",
+          "dek": "With Toronto's season over at 79-83, Arizona offers an early glimpse at players who could influence the next roster. The spotlight also carries added intrigue after former first-round pick Arjun Nimmala, now with the Angels, won AFL Hitter of the Week honors.",
+          "date": "October 20, 2026",
+          "link": "https://www.mlb.com/bluejays/news/watch-top-prospects-in-arizona-fall-league-winter-ball-2026"
         }
       ],
       "standings": {
@@ -761,8 +761,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors have finished the dress rehearsal, and the margins are already visible. <strong>The 129-125 loss to Detroit on Oct. 16 closed a 2-3 preseason</strong> - a result that matters less than the lineup Toronto chose not to show, with Kawhi Leonard, Scottie Barnes and RJ Barrett among the regulars rested. Trayce Jackson-Davis supplied 23 points, but the real work came Saturday: Toronto waived five players and converted centre Nate Bittle to a two-way contract, trimming the camp clutter before the serious accounting begins. The Raptors sit third in the Atlantic Division, 2.5 games behind, though preseason standings are decorative at best. Leonard's integration remains the headline; his expected return should clarify how Barnes and Barrett fit around him. <strong>Wednesday's 7:30 p.m. opener against Chicago is the first meaningful look at Toronto's projected rotation - and the first test of whether this rebuilt hierarchy travels beyond exhibition speed.</strong>",
-        "updated": "Updated October 19, 2026"
+        "body": "The Raptors' preseason has ended with more questions than answers, but Wednesday will demand them. <strong>Toronto's 129-125 exhibition loss to Detroit</strong> exposed the second unit more than the projected starters, who sat while Cade Cunningham and Detroit's regulars tested the depth chart. Toronto enters the real season 2-3, third in the Atlantic Division, on a two-game losing streak - numbers that do not count in the standings but do sharpen the warning. The projected first five of Kawhi Leonard, Scottie Barnes, RJ Barrett, Immanuel Quickley and Jakob Poeltl looks settled; the back end is not. Rookie Allen Graves, willing to play anywhere, made nine points and eight rebounds against Detroit but shot 4-for-13. Leonard's integration remains the headline after only 39 preseason minutes. <strong>Now comes the test: Wednesday at 7:30 p.m. ET against Chicago, when Toronto's six newcomers and its Leonard-led formula finally face a game that counts.</strong>",
+        "updated": "Updated October 20, 2026"
       },
       "key_numbers": [
         {
@@ -854,41 +854,41 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors fell to Pistons 129-125",
-          "dek": "Toronto closed the exhibition schedule 2-3 after resting its primary rotation, including Kawhi Leonard and Scottie Barnes, against Detroit's regular group. Trayce Jackson-Davis led the Raptors with 23 points, while rookie Allen Graves gained valuable reps before Wednesday's",
+          "dek": "Toronto's 2-3 preseason record reflects a mixed tune-up, with consecutive road losses leaving the Raptors third in the Atlantic Division. The defeat also offered useful evaluation against Detroit's starters, as Toronto rested its top eight players while emerging big man Trayce",
           "date": "Oct 16",
           "link": "https://www.espn.com/nba/recap?gameId=401908946"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Raptors convert centre Nate Bittle to two-way contract, waive five",
-          "dek": "With roster deadlines arriving before the regular season, Toronto has trimmed its preseason group while preserving a development path for centre Nate Bittle. The moves leave the 2-3 Raptors, third in the Atlantic, with a clearer roster picture heading into the final stretch",
-          "date": "October 17, 2026",
-          "link": "https://www.sportsnet.ca/nba/article/raptors-convert-centre-nate-bittle-to-two-way-contract-waive-five/"
+          "headline": "What we know about Raptors as season opener looms",
+          "dek": "Toronto enters the regular season at 2-3 in preseason, with its revamped core still building chemistry before Wednesday's home opener against Chicago. The Bulls will be without center Nic Claxton, while Toronto's rotation and Kawhi Leonard's conditioning will face their first",
+          "date": "October 19, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/what-we-know-about-raptors-as-season-opener-looms/"
+        },
+        {
+          "source": "The Globe and Mail",
+          "source_class": "web",
+          "headline": "First-round pick Allen Graves willing to do anything the Raptors ask him",
+          "dek": "Toronto's 19th overall pick enters the regular season behind established frontcourt options and with limited preseason action after a groin injury. His rebounding and defensive activity could earn him minutes while his 5-for-20 shooting shows where the adjustment remains.",
+          "date": "October 20, 2026",
+          "link": "https://www.theglobeandmail.com/sports/basketball/article-first-round-pick-allen-graves-willing-to-do-anything-the-raptors-ask/"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Where the Raptors fit in the loaded Eastern Conference as the season approaches",
+          "dek": "Toronto enters the season as a credible contender, but the East offers little margin for error beyond its top tier. A 2-3 preseason and shaky defensive numbers make the opening stretch against lesser opponents essential for securing ground in a crowded playoff race.",
+          "date": "October 18, 2026",
+          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/where-the-raptors-fit-in-the-loaded-eastern-conference-as-the-season-approaches"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "NBA over/under predictions for every Eastern Conference team: Knicks, 76ers overvalued? Raptors ready to rise?",
-          "dek": "Toronto enters the regular season 2-3 in preseason, but the results came with key rotation players resting, leaving the new-look roster largely untested together. With Kawhi Leonard joining Scottie Barnes and a deeper Eastern Conference, the Raptors' projected rise hinges on",
+          "dek": "Toronto's 2-3 preseason record matters less than the ceiling created by Kawhi Leonard's return alongside Scottie Barnes. With the East strengthened by major star movement, the Raptors' projected rise depends on turning that talent into consistent offense and surviving a crowded",
           "date": "October 16, 2026",
           "link": "https://www.cbssports.com/nba/news/nba-eastern-conference-over-under-win-total-predictions/"
-        },
-        {
-          "source": "The Globe and Mail",
-          "source_class": "web",
-          "headline": "Raptors looking for more three-pointers this season",
-          "dek": "Toronto's 2-3 preseason exposed the urgency behind that shift, with the offense still searching for reliable perimeter volume before the regular season begins. The development of young shooters such as first-round pick Allen Graves will be central to turning more attempts into",
-          "date": "October 14, 2026",
-          "link": "https://www.theglobeandmail.com/sports/basketball/article-raptors-looking-for-more-three-pointers-this-season/"
-        },
-        {
-          "source": "The Athletic",
-          "source_class": "athletic",
-          "headline": "Kawhi Leonard displays 2-way prowess in preseason debut with Raptors",
-          "dek": "Leonard's debut offered an early glimpse of how his defense and playmaking can elevate Toronto's young core, even with limited scoring in a 22-minute outing. His impact arrives as the Raptors finish preseason 2-3 and prepare to open the regular season Wednesday against Chicago.",
-          "date": "October 14, 2026",
-          "link": "https://www.nytimes.com/athletic/7688130/2026/10/13/kawhi-leonard-raptors-preseason-nba/"
         }
       ],
       "standings": {
@@ -1057,28 +1057,28 @@
     "commanders": {
       "full_name": "Washington Commanders",
       "league": "NFL",
-      "record": "1-3-1",
-      "detail": "2nd in NFC East",
+      "record": "1-4-1",
+      "detail": "4th in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "A tie can reveal more than a loss, and Washington's 27-27 deadlock with the Giants exposed a team still learning how to finish. <strong>Jayden Daniels' admission that the botched final play was \"ultimately\" on him</strong> is the right starting point, even if the quarterback's decision to run in bounds with no timeouts erased a chance at a winning field goal. Daniels returned from his elbow injury with 302 total yards and two rushing touchdowns, but accountability matters more than numbers this morning. At 1-3-1, Washington sits second in the NFC East, 1.5 games back, carrying a one-game losing streak into a brutal test. Jacory Croskey-Merritt is out with a groin injury; Stefon Diggs remains questionable with a hamstring issue. <strong>Now comes Monday night at 8:15 p.m. ET in San Francisco, where Washington must turn Daniels' lesson into composed football against the unbeaten 49ers.</strong>",
-        "updated": "Updated October 19, 2026"
+        "body": "A late rally cannot hide the familiar rot: Washington dug a 20-point hole, then discovered urgency only after the damage was done. <strong>The Commanders fell 23-17 to San Francisco Monday night</strong>, dropping to 1-4-1 and fourth in the NFC East, two games behind. Jayden Daniels threw two second-half touchdown passes, but his earlier decision to throw away the ball on fourth down became the night's defining image - another game-management error for a young quarterback and a staff already under scrutiny. The injury bill worsened, too: Terry McLaurin left with a left-knee injury and defensive tackle Javon Kinlaw departed with a knee issue, while running back Jacory Croskey-Merritt is headed to injured reserve with a groin problem. Dan Quinn's \"I definitely knew it was fourth down\" defense will not quiet the noise. <strong>Next comes the test of whether Washington can stop bleeding before its season slips beyond repair.</strong>",
+        "updated": "Updated October 20, 2026"
       },
       "key_numbers": [
         {
-          "number": "1-3-1",
+          "number": "1-4-1",
           "label": "Season Record",
-          "note": "2nd in NFC East"
+          "note": "4th in NFC East"
         },
         {
-          "number": "-",
+          "number": "L1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
-          "number": "1.5",
+          "number": "2",
           "label": "Games Behind",
-          "note": "2nd in NFC East"
+          "note": "4th in NFC East"
         },
         {
           "number": "1-3",
@@ -1087,6 +1087,19 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Oct 19",
+          "result": "L",
+          "team_score": 17,
+          "opp_name": "49ers",
+          "opp_score": 23,
+          "opp_logo": "sf",
+          "league": "nfl",
+          "game_date": "2026-10-19",
+          "game_ts": "2026-10-20T00:15Z",
+          "game_id": "401873008",
+          "season_type": 2
+        },
         {
           "date": "Oct 11",
           "result": "T",
@@ -1125,62 +1138,57 @@
           "game_ts": "2026-09-27T17:00Z",
           "game_id": "401872955",
           "season_type": 2
-        },
-        {
-          "date": "Sep 20",
-          "result": "L",
-          "team_score": 20,
-          "opp_name": "Cowboys",
-          "opp_score": 37,
-          "opp_logo": "dal",
-          "league": "nfl",
-          "game_date": "2026-09-20",
-          "game_ts": "2026-09-20T20:25Z",
-          "game_id": "401872944",
-          "season_type": 2
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Giants vs. Commanders - Full Highlights",
-        "subtitle": "NFL - Oct 11, 2026",
-        "result_badge": "L 27-27",
+        "title": "49ers vs. Commanders - Full Highlights",
+        "subtitle": "NFL - Oct 19, 2026",
+        "result_badge": "L 17-23",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=ll5bG6TpPmw",
-        "game_date": "2026-10-11"
+        "url": "https://www.youtube.com/watch?v=AlGqTuvIynw",
+        "game_date": "2026-10-19"
       },
       "the_latest": [
         {
-          "source": "The Athletic",
-          "source_class": "athletic",
-          "headline": "NFL spread, straight-up picks: Rams, Chiefs, Colts top Week 6 confidence rankings",
-          "dek": "Washington enters Monday night at 1-3-1 after a costly tie with the Giants, facing an unbeaten San Francisco team favored by 7.5 points. The picks frame Washington as a major underdog in Santa Clara, where a surprise result could reshape the NFC East picture.",
-          "date": "October 18, 2026",
-          "link": "https://www.nytimes.com/athletic/7689979/2026/10/18/nfl-spread-straight-up-picks-confidence-rankings-week-6/"
-        },
-        {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Week 6 NFL highlights: Best plays, moments, touchdowns, more",
-          "dek": "Sunday's slate delivered dramatic comebacks, game-winning scores and statement performances across the league, with the NFC East standings still tightly contested. At 1-3-1, Washington enters the next stretch needing timely impact plays to turn flashes into wins and stay within",
-          "date": "October 19, 2026",
-          "link": "https://www.espn.com/nfl/story/_/id/50209856/week-6-nfl-highlights-best-plays-moments-touchdowns"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "3 reasons why Commanders remain upbeat about their season",
-          "dek": "At 1-3-1, Washington remains within reach of the NFC East lead but faces a steep test against unbeaten San Francisco on Monday night. The matchup will show whether the Commanders' optimism reflects a team capable of turning a narrow margin into a meaningful run.",
-          "date": "October 19, 2026",
-          "link": "https://www.espn.com/video/clip/_/id/50216072/3-reasons-why-commanders-remain-upbeat-their-season"
+          "headline": "Commanders fell to 49ers 23-17",
+          "dek": "Washington rallied from a 20-point deficit to make this a one-score game, but Jayden Daniels was sacked on the final play after an intentional-grounding penalty stalled the comeback. At 1-4-1 and fourth in the NFC East, the Commanders head into their next stretch with little",
+          "date": "Oct 19",
+          "link": "https://www.espn.com/nfl/recap?gameId=401873008"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "Fair or not, Jayden Daniels must own the Commanders' blunder - and learn from it",
-          "dek": "Washington squandered a 14-point fourth-quarter lead and a chance to win in overtime when Daniels was tackled in bounds with no timeouts, ending a 27-27 tie. With Washington at 1-3-1 and facing an undefeated San Francisco team tonight, his response will test whether the young",
-          "date": "October 18, 2026",
-          "link": "https://www.nytimes.com/athletic/7698297/2026/10/18/commanders-49ers-jayden-daniels-giants-blunder/"
+          "headline": "Battered 49ers hold off Commanders to stay unbeaten, but both teams exit with concerns",
+          "dek": "Washington's comeback fell short at 23-17, leaving a 1-4-1 team headed into its bye with more questions about its offense and Dan Quinn's future. Terry McLaurin's serious-looking knee injury makes the loss even more consequential, especially with Philadelphia waiting after the",
+          "date": "October 20, 2026",
+          "link": "https://www.nytimes.com/athletic/7706408/2026/10/19/49ers-commanders-score-results-takeaways-monday-night-football/"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Commanders' Terry McLaurin carted off after knee injury vs. 49ers: 'There's fear'",
+          "dek": "At 1-4-1 and last in the NFC East, Washington now faces uncertainty around its top receiver after a 23-17 loss to San Francisco. Dan Quinn said there is fear the knee injury could be significant, with scans scheduled Tuesday to determine whether McLaurin's absence extends beyond",
+          "date": "October 20, 2026",
+          "link": "https://www.cbssports.com/nfl/news/commanders-terry-mclaurin-knee-injury-monday-night-football/"
+        },
+        {
+          "source": "The Sporting News",
+          "source_class": "web",
+          "headline": "Why 49ers did not trade Brandon Aiyuk to Commanders despite abundance of rumors",
+          "dek": "The rumored fit never materialized, leaving Washington without a receiver who publicly wanted to join and a major addition as its season slid to 1-4-1. Aiyuk remains on San Francisco's reserve/left squad list, ensuring today's matchup carries intrigue without featuring the",
+          "date": "October 19, 2026",
+          "link": "https://www.sportingnews.com/us/nfl/san-francisco-49ers/news/why-49ers-not-trade-brandon-aiyuk-commanders-despite-rumors/52a2765d28bc7e96cbd11314"
+        },
+        {
+          "source": "Yahoo Sports",
+          "source_class": "web",
+          "headline": "Commanders star Terry McLaurin carted off after knee injury early in loss to 49ers",
+          "dek": "With Washington sitting at 1-4-1 and last in the NFC East, the potential loss of its top receiver compounds an already difficult season. Coach Dan Quinn said the knee injury could be significant, with scans scheduled Tuesday after McLaurin was ruled out of Monday's 23-17 defeat.",
+          "date": "October 20, 2026",
+          "link": "https://sports.yahoo.com/nfl/breaking-news/article/commanders-star-terry-mclaurin-carted-off-after-knee-injury-early-in-loss-to-49ers-032814610.html"
         }
       ],
       "standings": {
@@ -1240,8 +1248,8 @@
                 "you": true,
                 "vals": [
                   "1",
-                  "3",
-                  ".300",
+                  "4",
+                  ".250",
                   "0-2-1"
                 ]
               }
@@ -1277,69 +1285,68 @@
   "featured": {
     "team": "leafs",
     "kicker": "Toronto Maple Leafs - Regular Season",
-    "headline": "Jim Hiller, Gavin McKenna take step in right direction as losses mount for Maple Leafs",
-    "dek": "Toronto enters Monday's meeting with San Jose having lost three straight and four of its last five, leaving little margin for another flat start. Hiller's increased trust in McKenna, who matched his season high with four shots in a career-high 17:56 against the Islanders, offers",
-    "source": "The Athletic",
-    "link": "https://www.nytimes.com/athletic/7700022/2026/10/18/jim-hiller-gavin-mckenna-maple-leafs-islanders/",
-    "date": "October 19, 2026"
+    "headline": "'Big-time player' McKenna helps Maple Leafs snap skid",
+    "dek": "Gavin McKenna's first NHL game-winner ended Toronto's three-game skid and showed why the 18-year-old remains central to the club's season. The Maple Leafs now face Columbus less than 24 hours later, carrying momentum into a demanding back-to-back.",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/big-time-player-mckenna-helps-maple-leafs-snap-skid/",
+    "date": "October 20, 2026"
   },
   "two_up": [
     {
       "team": "commanders",
       "kicker": "Washington Commanders - Regular Season",
-      "headline": "Why Jayden Daniels wears a Japanese flag on his helmet during Commanders games",
-      "dek": "Daniels' helmet decal honors his Japanese great-grandmother, adding a personal layer to the quarterback's public identity as he leads a 1-3-1 team chasing the Eagles in the NFC East. He first added the flag in 2025, and it has since become a distinctive symbol of heritage amid a",
-      "source": "The Sporting News",
-      "link": "https://www.sportingnews.com/us/nfl/news/why-jayden-daniels-wears-japanese-flag-helmet-commanders/c3454459d397a32f10b689ed",
-      "date": "October 19, 2026"
+      "headline": "Dan Quinn on viral clip: \"I definitely knew it was fourth down\"",
+      "dek": "Quinn's explanation arrives after a 23-17 loss in which Washington's fourth-down decision and execution became a flashpoint. At 1-4-1 and last in the NFC East, the Commanders have little margin for sideline confusion or empty possessions.",
+      "source": "NBC Sports",
+      "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dan-quinn-on-viral-clip-i-definitely-knew-it-was-fourth-down",
+      "date": "October 20, 2026"
     },
     {
       "team": "jays",
       "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
-      "headline": "Rays' Aranda leaning on advice from Blue Jays' Kirk during post-season",
-      "dek": "Alejandro Kirk's postseason experience with Toronto gave childhood friend Jonathan Aranda a simple message: relax and be himself, advice that helped the Rays first baseman break out after an 0-for-10 ALCS start. The connection underscores how last year's Blue Jays playoff run",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/mlb/article/rays-aranda-leaning-on-advice-from-blue-jays-kirk-during-post-season/",
-      "date": "October 19, 2026"
+      "headline": "Is a reunion in store for Bieber and Blue Jays this offseason?",
+      "dek": "After an injury-shortened 2026, Shane Bieber enters free agency as Toronto's most prominent pending starter, having posted a 4.37 ERA across 11 starts. A reunion could give the 79-83 Blue Jays rotation stability without requiring a major commitment, with incentives or club and",
+      "source": "MLB.com",
+      "link": "https://www.mlb.com/bluejays/news/shane-bieber-blue-jays-free-agency-2026-2027-offseason",
+      "date": "October 20, 2026"
     }
   ],
   "extra_story": {
     "team": "raptors",
     "kicker": "Toronto Raptors - Preseason",
-    "headline": "Where the Raptors fit in the loaded Eastern Conference as the season approaches",
-    "dek": "Toronto's 2-3 preseason reflects an unfinished group entering a conference where last season's fifth seed added Kawhi Leonard and several challengers expect to improve. The regular-season opener against Chicago on Wednesday will offer an early test of whether the Raptors belong",
-    "source": "Toronto Sun",
-    "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/where-the-raptors-fit-in-the-loaded-eastern-conference-as-the-season-approaches",
-    "date": "October 19, 2026"
+    "headline": "Toronto Raptors 2026-27 TV guide: Channels to know for Kawhi Leonard's second stint",
+    "dek": "With a 2-3 preseason behind them, Toronto enters the regular season under heightened scrutiny as Kawhi Leonard begins his second chapter with the franchise. This guide maps the Canadian and U.S. broadcasts fans will need for a team aiming to turn renewed championship",
+    "source": "The Athletic",
+    "link": "https://www.nytimes.com/athletic/7696828/2026/10/19/toronto-raptors-kawhi-leonard-prime-how-to-watch/",
+    "date": "October 20, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Next: Leafs vs. Sharks - Mon 10/19 7:30 PM ET"
+      "text": "Leafs beat Sharks 3-1"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs (3-4) - 11th in Eastern Conference"
+      "text": "Next: Leafs at Blue Jackets - Tue 10/20 7:00 PM ET"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Struggling Maple Leafs put out call to Marlies forward Vinni Lettieri",
-      "published": "2026-10-19T00:05:42+00:00"
+      "text": "Leafs (4-4) - 7th in Eastern Conference"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "'Big-time player' McKenna helps Maple Leafs snap skid",
+      "published": "2026-10-20T04:29:41+00:00"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Rays' Aranda leaning on advice from Blue Jays' Kirk during post-season",
-      "published": "2026-10-18T19:24:05+00:00"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "mlb",
-      "text": "Watch Blue Jays prospects in Arizona Fall League action",
-      "published": "2026-10-18T19:09:00+00:00"
+      "text": "Is a reunion in store for Bieber and Blue Jays this offseason?",
+      "published": "2026-10-19T13:17:02+00:00"
     },
     {
       "badge": "NBA",
@@ -1352,32 +1359,115 @@
       "text": "Raptors (2-3) - 3rd in Atlantic Division"
     },
     {
-      "badge": "NFL",
-      "badge_style": "nfl",
-      "text": "Next: Commanders at 49ers - Mon 10/19 8:15 PM ET"
+      "badge": "NBA",
+      "badge_style": "nba",
+      "text": "Raptors start 2026-27 season at home against the Bulls",
+      "published": "2026-10-20T06:04:18+00:00"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Commanders (1-3-1) - 2nd in NFC East"
+      "text": "Commanders fell to 49ers 23-17"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "3 reasons why Commanders remain upbeat about their season",
-      "published": "2026-10-19T03:20:09+00:00"
+      "text": "Commanders (1-4-1) - 4th in NFC East"
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "nfl",
+      "text": "Dan Quinn on viral clip: \"I definitely knew it was fourth down\"",
+      "published": "2026-10-20T04:28:25+00:00"
     }
   ],
-  "scoreboard": [],
+  "scoreboard": [
+    {
+      "team": "leafs",
+      "game_date": "2026-10-19",
+      "name": "Leafs",
+      "league": "NHL",
+      "logo": "tor",
+      "opp_name": "Sharks",
+      "opp_logo": "sj",
+      "team_score": 3,
+      "opp_score": 1,
+      "result": "W",
+      "date": "Oct 19",
+      "preseason": false,
+      "stars": [
+        {
+          "tag": "GOAL",
+          "tone": "",
+          "name": "Matthews",
+          "stat": "1G, 2A"
+        },
+        {
+          "tag": "GOAL",
+          "tone": "",
+          "name": "McKenna",
+          "stat": "1G"
+        },
+        {
+          "tag": "GOAL",
+          "tone": "",
+          "name": "Paul",
+          "stat": "1G"
+        },
+        {
+          "tag": "SV",
+          "tone": "save",
+          "name": "Bobrovsky",
+          "stat": "30 saves, .968"
+        }
+      ],
+      "link": "https://www.youtube.com/watch?v=OQ1KvteZyE8"
+    },
+    {
+      "team": "commanders",
+      "game_date": "2026-10-19",
+      "name": "Commanders",
+      "league": "NFL",
+      "logo": "wsh",
+      "opp_name": "49ers",
+      "opp_logo": "sf",
+      "team_score": 17,
+      "opp_score": 23,
+      "result": "L",
+      "date": "Oct 19",
+      "preseason": false,
+      "stars": [
+        {
+          "tag": "PASS",
+          "tone": "",
+          "name": "Daniels",
+          "stat": "300 yds, 2 TD"
+        },
+        {
+          "tag": "RUSH",
+          "tone": "",
+          "name": "White",
+          "stat": "27 yds"
+        },
+        {
+          "tag": "REC",
+          "tone": "",
+          "name": "Okonkwo",
+          "stat": "69 yds"
+        }
+      ],
+      "link": "https://www.youtube.com/watch?v=AlGqTuvIynw"
+    }
+  ],
   "at_a_glance": [
     {
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "3-4",
-      "status": "11th in Eastern Conference",
-      "status_class": "red",
-      "stat": "Streak: L3"
+      "record": "4-4",
+      "status": "7th in Eastern Conference",
+      "status_class": "green",
+      "stat": "Streak: W1"
     },
     {
       "team": "jays",
@@ -1401,31 +1491,31 @@
       "team": "commanders",
       "name": "Commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "record": "1-3-1",
-      "status": "2nd in NFC East",
+      "record": "1-4-1",
+      "status": "4th in NFC East",
       "status_class": "red",
-      "stat": "Streak: -"
+      "stat": "Streak: L1"
     }
   ],
   "today_slate": [
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs vs. Sharks",
-      "detail": "7:30 PM ET",
-      "channel": "",
+      "matchup": "Leafs at Blue Jackets",
+      "detail": "7:00 PM ET",
+      "channel": "Sportsnet",
       "off": false,
       "preview": {
         "duel": {
           "label": "In goal",
-          "status": "projected",
+          "status": "confirmed",
           "ours": {
             "name": "Stolarz",
             "sub": "2-1-0, 3.31 GAA"
           },
           "theirs": {
-            "name": "Nedeljkovic",
-            "sub": "2-0-1, 2.2 GAA"
+            "name": "Greaves",
+            "sub": "2-2-0, 2.58 GAA"
           }
         }
       }
@@ -1449,66 +1539,14 @@
     {
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "matchup": "Commanders at 49ers",
-      "detail": "8:15 PM ET",
-      "channel": "ESPN",
-      "off": false,
-      "preview": {
-        "injuries": [
-          {
-            "status": "Out",
-            "tone": "out",
-            "players": [
-              {
-                "name": "Jean-Baptiste",
-                "note": "pectoral"
-              },
-              {
-                "name": "Omenihu",
-                "note": "groin"
-              }
-            ],
-            "more": 0
-          },
-          {
-            "status": "Questionable",
-            "tone": "questionable",
-            "players": [
-              {
-                "name": "Diggs",
-                "note": "hamstring"
-              },
-              {
-                "name": "Cross",
-                "note": "illness"
-              }
-            ],
-            "more": 0
-          }
-        ]
-      }
+      "matchup": "Commanders",
+      "detail": "Regular Season",
+      "channel": "",
+      "off": true
     }
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Mon 10/19",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "vs. Sharks",
-        "time": "7:30 PM ET",
-        "tv": ""
-      },
-      {
-        "day": "Mon 10/19",
-        "team": "commanders",
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-        "name": "Commanders",
-        "opp": "at 49ers",
-        "time": "8:15 PM ET",
-        "tv": "ESPN"
-      },
       {
         "day": "Tue 10/20",
         "team": "leafs",
@@ -1576,12 +1614,84 @@
     "note": ""
   },
   "morning_brief": {
-    "article": {
-      "title": "Leafs Host Sharks as Stolarz Starts",
-      "paragraphs": [
-        "The Leafs bring a 3-4 record into tonight's visit from the Sharks, with Anthony Stolarz projected to start against Alex Nedeljkovic at 7:30 PM ET. Toronto is 11th in the Eastern Conference, and the focus is on finding traction after a slow start. Jim Hiller and Gavin McKenna have taken steps forward, but the losses have mounted.",
-        "The Jays are represented in Arizona Fall League action, while catcher Alejandro Kirk is advising Tampa Bay's Jonathan Aranda during the postseason. The Raptors have converted centre Nate Bittle to a two-way contract and waived five players; they open the regular season against the Bulls on Wednesday at 7:30 PM ET. The Commanders visit the 49ers at 8:15 PM ET on ESPN, with Jean-Baptiste and Omenihu out, and Diggs and Cross questionable."
-      ]
-    }
+    "teams": [
+      {
+        "team": "leafs",
+        "league": "NHL",
+        "name": "Leafs",
+        "lines": [
+          {
+            "k": "score",
+            "text": "Last night: beat the Sharks 3-1"
+          },
+          {
+            "k": "next",
+            "text": "Today: Leafs at Blue Jackets, 7:00 PM ET on Sportsnet"
+          },
+          {
+            "k": "standing",
+            "text": "Record: 4-4, 7th in Eastern Conference"
+          },
+          {
+            "k": "news",
+            "text": "In the news: 'Big-time player' McKenna helps Maple Leafs snap skid (Sportsnet)"
+          }
+        ]
+      },
+      {
+        "team": "jays",
+        "league": "MLB",
+        "name": "Jays",
+        "lines": [
+          {
+            "k": "news",
+            "text": "In the news: Rays' Aranda leaning on advice from Blue Jays' Kirk during post-season (Sportsnet)"
+          }
+        ]
+      },
+      {
+        "team": "raptors",
+        "league": "NBA",
+        "name": "Raptors",
+        "lines": [
+          {
+            "k": "next",
+            "text": "Next: vs. Bulls (season opener) - Wed 10/21 7:30 PM ET"
+          },
+          {
+            "k": "standing",
+            "text": "Record: 2-3, 3rd in Atlantic Division"
+          },
+          {
+            "k": "news",
+            "text": "In the news: What we know about Raptors as season opener looms (Sportsnet)"
+          }
+        ]
+      },
+      {
+        "team": "commanders",
+        "league": "NFL",
+        "name": "Commanders",
+        "lines": [
+          {
+            "k": "score",
+            "text": "Last night: fell to the 49ers 23-17"
+          },
+          {
+            "k": "next",
+            "text": "Next: vs. Eagles - Sun, Nov 1 (in 12 days)"
+          },
+          {
+            "k": "standing",
+            "text": "Record: 1-4-1, 4th in NFC East"
+          },
+          {
+            "k": "news",
+            "text": "In the news: Battered 49ers hold off Commanders to stay unbeaten, but both teams exit with concerns (The Athletic)"
+          }
+        ]
+      }
+    ],
+    "title": "Leafs Beat Sharks 3-1"
   }
 }
