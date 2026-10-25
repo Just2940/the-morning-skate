@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-10-24T04:30:10.409508-04:00",
-    "date_display": "October 24, 2026",
+    "updated": "2026-10-25T04:30:10.603127-04:00",
+    "date_display": "October 25, 2026",
     "data_health": {
       "espn_ok": 44,
       "espn_failed": 0,
@@ -19,36 +19,49 @@
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "6-4",
-      "detail": "4th in Eastern Conference",
+      "record": "7-4",
+      "detail": "3rd in Eastern Conference",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The Leafs have stopped drifting and started pushing back. <strong>Thursday's 5-4 escape against the Rangers, sealed by Troy Stecher with 28 seconds left, made it three straight wins</strong> - a frantic victory, but a valuable one. Toronto is now 6-4, fourth in the Eastern Conference with 14 points, close enough to the leaders to matter and flawed enough to keep the alarm bell within reach. The cost is mounting: Chris Tanev, John Tavares, Nick Blankenburg and Marshall Rifai are all week-to-week, with Tavares staying home for the road trip. That leaves Toronto's blue line exposed just as Connor McDavid comes calling. Edmonton's Mattias Ekholm will miss the game with a concussion, but nobody should mistake that absence for relief. <strong>Tonight's visit to the Oilers at 7 p.m. ET is the measuring stick - can Toronto defend well enough to turn a hot streak into a credible climb?</strong>",
-        "updated": "Updated October 24, 2026"
+        "body": "The Leafs have stopped dabbling and started dictating. <strong>Saturday's 7-2 demolition of Edmonton</strong> was more than a road win over McDavid's Oilers; it was a full-team statement, built on 30 saves from Anthony Stolarz, committed work without the puck and a third period that buried the opposition. William Nylander supplied the signature moment, scoring twice to reach 300 NHL goals, while Auston Matthews, Jack Roslovic, Troy Stecher, Zack MacEwen and Vinni Lettieri joined the scoring parade. Toronto is now 7-4, third in the Eastern Conference, with 16 points and a four-game winning streak. The club has also beaten the Rangers 5-4, Columbus 6-2 and San Jose 3-1 during this run. <strong>Next comes Monday's 8:30 p.m. visit to Calgary</strong> - a chance to prove this surge travels, and that the Leafs' defensive backbone is becoming real rather than merely convenient.",
+        "updated": "Updated October 25, 2026"
       },
       "key_numbers": [
         {
-          "number": "6-4",
+          "number": "7-4",
           "label": "Season Record",
-          "note": "4th in Eastern Conference"
+          "note": "3rd in Eastern Conference"
         },
         {
-          "number": "14",
+          "number": "16",
           "label": "Points",
-          "note": "4th in Eastern Conference"
+          "note": "3rd in Eastern Conference"
         },
         {
-          "number": "W3",
+          "number": "W4",
           "label": "Streak",
           "note": "Current streak"
         },
         {
           "number": "3",
           "label": "Points Back",
-          "note": "4th in Eastern Conference"
+          "note": "3rd in Eastern Conference"
         }
       ],
       "recent_results": [
+        {
+          "date": "Oct 24",
+          "result": "W",
+          "team_score": 7,
+          "opp_name": "Oilers",
+          "opp_score": 2,
+          "opp_logo": "edm",
+          "league": "nhl",
+          "game_date": "2026-10-24",
+          "game_ts": "2026-10-24T23:00Z",
+          "game_id": "401892574",
+          "season_type": 2
+        },
         {
           "date": "Oct 22",
           "result": "W",
@@ -87,70 +100,57 @@
           "game_ts": "2026-10-19T23:30Z",
           "game_id": "401892537",
           "season_type": 2
-        },
-        {
-          "date": "Oct 17",
-          "result": "L",
-          "team_score": 1,
-          "opp_name": "Islanders",
-          "opp_score": 4,
-          "opp_logo": "nyi",
-          "league": "nhl",
-          "game_date": "2026-10-17",
-          "game_ts": "2026-10-17T23:00Z",
-          "game_id": "401892523",
-          "season_type": 2
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Rangers vs. Leafs - Full Highlights",
-        "subtitle": "NHL - Oct 22, 2026",
-        "result_badge": "W 5-4",
+        "title": "Oilers vs. Leafs - Full Highlights",
+        "subtitle": "NHL - Oct 24, 2026",
+        "result_badge": "W 7-2",
         "result_class": "w",
-        "url": "https://www.youtube.com/watch?v=GpxzvJ67Tek",
-        "game_date": "2026-10-22"
+        "url": "https://www.youtube.com/watch?v=SDfPSBXzRtQ",
+        "game_date": "2026-10-24"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Leafs beat Rangers 5-4",
-          "dek": "Toronto extended its winning streak to three games, improving to 6-4-2 while staying in the Eastern Conference race. Troy Stecher's goal with 26.3 seconds left capped a five-goal effort and gave the Leafs momentum heading into Saturday's matchup with Edmonton.",
-          "date": "Oct 22",
-          "link": "https://www.espn.com/nhl/recap?gameId=401892553"
+          "headline": "Leafs beat Oilers 7-2",
+          "dek": "William Nylander scored twice, reaching 300 career goals, while Anthony Stolarz made 30 saves as Toronto overwhelmed Edmonton. The fourth straight win strengthens the Leafs' grip on third in the East and gives them a statement result against a premier Western Conference opponent.",
+          "date": "Oct 24",
+          "link": "https://www.espn.com/nhl/recap?gameId=401892574"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "Gavin McKenna's ice time and the age-old question: How much should a No. 1 pick play?",
-          "dek": "McKenna's 10:44 against New York, including only two third-period shifts, sharpened the tension between developing the first overall pick and maximizing a 6-4 team's playoff push. Lafrenière's comparable rookie path with the Rangers shows how limited early minutes can precede a",
-          "date": "October 23, 2026",
-          "link": "https://www.nytimes.com/athletic/7715989/2026/10/23/maple-leafs-gavin-mckenna-ice-time-nhl/"
-        },
-        {
-          "source": "Toronto Sun",
-          "source_class": "web",
-          "headline": "Why the focus is on Oilers' Connor McDavid, Mike Babcock as Maple Leafs begin trip",
-          "dek": "Toronto carries a three-game winning streak into Edmonton, but the challenge is steep against an Oilers team sitting 8-1-1 after Connor McDavid's five-point performance Thursday. The matchup also marks Mike Babcock's first meeting with the organization that fired him in 2019,",
-          "date": "October 23, 2026",
-          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/oilers-connor-mcdavid-mike-babcock-focus-trip"
-        },
-        {
-          "source": "Daily Faceoff",
-          "source_class": "web",
-          "headline": "Leafs place Nick Blankenburg on injured reserve",
-          "dek": "Blankenburg's injury further thins a Toronto blue line already without Marshall Rifai and Chris Tanev, forcing the club to summon Cole McWard and Dakota Mermis from the AHL. The timing is especially challenging with a four-game road trip beginning Saturday in Edmonton.",
-          "date": "October 23, 2026",
-          "link": "https://www.dailyfaceoff.com/news/toronto-maple-leafs-nick-blankenburg-injured-reserve-marshall-rifai-cole-mcward-dakota-mermis-nhl-news"
+          "headline": "Maple Leafs bring great vibes, plenty of goals in rout of Oilers: Observations",
+          "dek": "Toronto's four-game winning streak has them firmly in the Eastern Conference race, and this was their most emphatic statement yet against an Edmonton team that entered with an 8-2-1 record. Anthony Stolarz stopped 30 shots for his fourth win of the season, while William",
+          "date": "October 25, 2026",
+          "link": "https://www.nytimes.com/athletic/7721578/2026/10/24/maple-leafs-oilers-stolarz-roslovic-stecher/"
         },
         {
           "source": "The Globe and Mail",
           "source_class": "web",
-          "headline": "Late Troy Stetcher goal lifts Maple Leafs over Rangers",
-          "dek": "Toronto's 5-4 win over New York extended its winning streak to three games, with Troy Stecher's first goal since February arriving with 26.3 seconds left. The victory moved the 6-4 Leafs into fourth place in the Eastern Conference and marked Sergei Bobrovsky's 459th",
-          "date": "October 23, 2026",
-          "link": "https://www.theglobeandmail.com/sports/hockey/article-late-troy-stetcher-goal-lifts-maple-leafs-over-rangers/"
+          "headline": "Nylander scores 300th career goal as Leafs beat Oilers",
+          "dek": "William Nylander's milestone capped a 7-2 rout in Edmonton, where Toronto also limited Connor McDavid and received 30 saves from Anthony Stolarz. The four-game winning streak strengthens the Leafs' position near the top of the East while underscoring the offense and goaltending",
+          "date": "October 25, 2026",
+          "link": "https://www.theglobeandmail.com/sports/hockey/article-william-nylander-connor-mcdavid-toronto-maple-leafs-vs-edmonton-oilers/"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Anthony Stolarz sizzles as Maple Leafs out-gun McDavid, Draisaitl and Oilers in rout",
+          "dek": "Anthony Stolarz stopped 30 shots as Toronto overwhelmed Edmonton 7-2, neutralizing an Oilers attack led by Connor McDavid and Leon Draisaitl. The victory extended the Maple Leafs' winning streak to four and moved them to 7-4-2, while William Nylander's two goals brought him to",
+          "date": "October 25, 2026",
+          "link": "https://torontosun.com/sports/anthony-stolarz-sizzles-as-maple-leafs-out-gun-mcdavid-draisaitl-and-oilers-in-rout"
+        },
+        {
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "Leafs beat Rangers 5-4",
+          "dek": "Toronto's narrow win over New York keeps the Maple Leafs moving in the upper tier of the Eastern Conference at 7-4. The result also showed their margin for error, as the Rangers rallied before Toronto secured the game-winner with 26.3 seconds remaining.",
+          "date": "Oct 22",
+          "link": "https://www.espn.com/nhl/recap?gameId=401892553"
         }
       ],
       "standings": {
@@ -174,10 +174,34 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "8",
+                  "9",
                   "2",
                   "1",
-                  "17"
+                  "19"
+                ]
+              },
+              {
+                "team": "Senators",
+                "logo": "ott",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "8",
+                  "4",
+                  "0",
+                  "16"
+                ]
+              },
+              {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
+                "vals": [
+                  "7",
+                  "4",
+                  "2",
+                  "16"
                 ]
               },
               {
@@ -188,32 +212,8 @@
                 "vals": [
                   "7",
                   "3",
-                  "0",
-                  "14"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "7",
-                  "4",
-                  "0",
-                  "14"
-                ]
-              },
-              {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "vals": [
-                  "6",
-                  "4",
-                  "2",
-                  "14"
+                  "1",
+                  "15"
                 ]
               },
               {
@@ -247,7 +247,7 @@
                 "you": false,
                 "vals": [
                   "4",
-                  "3",
+                  "4",
                   "3",
                   "11"
                 ]
@@ -260,8 +260,8 @@
                 "vals": [
                   "4",
                   "4",
-                  "2",
-                  "10"
+                  "3",
+                  "11"
                 ]
               }
             ]
@@ -284,23 +284,10 @@
                 "you": false,
                 "seed": "A1",
                 "vals": [
-                  "8",
+                  "9",
                   "2",
                   "1",
-                  "17"
-                ]
-              },
-              {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nhl",
-                "you": false,
-                "seed": "A2",
-                "vals": [
-                  "7",
-                  "3",
-                  "0",
-                  "14"
+                  "19"
                 ]
               },
               {
@@ -308,12 +295,25 @@
                 "logo": "ott",
                 "league": "nhl",
                 "you": false,
+                "seed": "A2",
+                "vals": [
+                  "8",
+                  "4",
+                  "0",
+                  "16"
+                ]
+              },
+              {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
                 "seed": "A3",
                 "vals": [
                   "7",
                   "4",
-                  "0",
-                  "14"
+                  "2",
+                  "16"
                 ]
               },
               {
@@ -323,10 +323,10 @@
                 "you": false,
                 "seed": "M1",
                 "vals": [
-                  "8",
+                  "9",
                   "2",
                   "2",
-                  "18"
+                  "20"
                 ]
               },
               {
@@ -337,35 +337,35 @@
                 "seed": "M2",
                 "vals": [
                   "7",
-                  "4",
+                  "5",
                   "1",
                   "15"
                 ]
               },
               {
-                "team": "NY Islanders",
-                "logo": "nyi",
+                "team": "Devils",
+                "logo": "nj",
                 "league": "nhl",
                 "you": false,
                 "seed": "M3",
                 "vals": [
-                  "5",
-                  "3",
-                  "2",
-                  "12"
+                  "7",
+                  "4",
+                  "0",
+                  "14"
                 ]
               },
               {
-                "team": "Leafs",
-                "logo": "tor",
+                "team": "Tampa Bay",
+                "logo": "tb",
                 "league": "nhl",
-                "you": true,
+                "you": false,
                 "seed": "WC1",
                 "vals": [
-                  "6",
-                  "4",
-                  "2",
-                  "14"
+                  "7",
+                  "3",
+                  "1",
+                  "15"
                 ]
               },
               {
@@ -396,8 +396,8 @@
                 ]
               },
               {
-                "team": "Devils",
-                "logo": "nj",
+                "team": "Capitals",
+                "logo": "wsh",
                 "league": "nhl",
                 "you": false,
                 "seed": "",
@@ -410,6 +410,20 @@
                 ]
               },
               {
+                "team": "NY Islanders",
+                "logo": "nyi",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "5",
+                  "3",
+                  "2",
+                  "12"
+                ]
+              },
+              {
                 "team": "Red Wings",
                 "logo": "det",
                 "league": "nhl",
@@ -418,7 +432,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "4",
-                  "3",
+                  "4",
                   "3",
                   "11"
                 ]
@@ -433,22 +447,8 @@
                 "vals": [
                   "4",
                   "4",
-                  "2",
-                  "10"
-                ]
-              },
-              {
-                "team": "Capitals",
-                "logo": "wsh",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "5",
-                  "4",
-                  "0",
-                  "10"
+                  "3",
+                  "11"
                 ]
               },
               {
@@ -459,10 +459,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "4",
+                  "5",
                   "6",
                   "1",
-                  "9"
+                  "11"
                 ]
               },
               {
@@ -474,7 +474,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "3",
-                  "6",
+                  "7",
                   "3",
                   "9"
                 ]
@@ -487,10 +487,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "3",
+                  "4",
                   "5",
                   "0",
-                  "6"
+                  "8"
                 ]
               }
             ]
@@ -528,8 +528,8 @@
       "detail": "2nd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays' offseason begins with an uncomfortable truth: a 79-83 team finishing second in the AL East still needs a serious overhaul. The season is over, and now the work moves from the field to the medical room and the front office. <strong>Ernie Clement serving as a World Series correspondent</strong> is a charming reminder of Toronto's place in the game, but the more consequential story is the return of injured players who could determine how aggressively the club shops for help. Vladimir Guerrero Jr.'s post-operative update only sharpens that concern. Toronto cannot simply wait for better health, nor can it assume the offense will revive on its own. Louis Varland's emergence gives the bullpen a foundation, but the lineup and rotation require harder answers. <strong>Watch Toronto's first major move: a bat, a starter, or a medical green light that changes both.</strong>",
-        "updated": "Updated October 24, 2026"
+        "body": "The season is over, and Toronto's winter has already supplied its first warning: a 79-83 club cannot afford sentimental roster math. <strong>The most encouraging current development is unfolding in Arizona, where eight Blue Jays prospects are getting meaningful Fall League work</strong> - Aaron Parker is learning left field while hitting .368 with a .500 on-base percentage, Jake Cook has swiped eight bases, and Jake Bloss owns a 2.70 ERA. Those are auditions, not answers. Andres Giménez remains the lineup's left-handed engine, but the need for another corner bat is plain, particularly with George Springer headed toward free agency. The rotation is more urgent still: José Berríos' Tommy John surgery makes 2027 a question mark, and Bowden Francis remains in recovery. Ernie Clement serving as a World Series correspondent is a charming October footnote. <strong>What matters next is whether Toronto buys reliable innings and middle-order force before camp turns prospects into necessities.</strong>",
+        "updated": "Updated October 25, 2026"
       },
       "key_numbers": [
         {
@@ -612,26 +612,26 @@
       },
       "the_latest": [
         {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "'A little lamb chops and some gravy': Brown addresses squabbles with Tatum",
+          "dek": "Jaylen Brown's comments keep his public back-and-forth with former Celtics teammate Jayson Tatum alive after Brown's offseason trade to Philadelphia. The playful warning adds another chapter to a dispute that has overshadowed discussion of what the All-Stars accomplished",
+          "date": "October 24, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/a-little-lamb-chops-and-some-gravy-brown-addresses-squabbles-with-tatum/"
+        },
+        {
           "source": "The Globe and Mail",
           "source_class": "web",
           "headline": "Former Blue Jays exec Gord Ash sets his sights on a World Series win with Brewers",
-          "dek": "Ash's long Milwaukee run gives this World Series appearance a Toronto connection, linking a former Blue Jays decision-maker to the Brewers' first championship opportunity. For a Blue Jays club that finished 79-83 and second in the AL East, his pursuit of a ring underscores how",
+          "dek": "With Milwaukee two wins from its first championship, Gord Ash is close to a career milestone after helping shape the organization for 25 years. For Toronto, the former executive's rooting interest offers a timely reminder of the Blue Jays' front-office ties across baseball, even",
           "date": "October 22, 2026",
           "link": "https://www.theglobeandmail.com/sports/baseball/article-former-blue-jays-exec-gord-ash-world-series-brewers/"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "NBA Highlights: Celtics 107, Knicks 103",
-          "dek": "Jayson Tatum's late-game scoring lifted Boston past New York in a tightly contested matchup, giving the Celtics their first win of the young NBA season. For Toronto, the result is a reminder that the baseball offseason shares the spotlight with a basketball calendar already",
-          "date": "October 23, 2026",
-          "link": "https://www.sportsnet.ca/nba/video/nba-highlights-celtics-107-knicks-103/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Ohio bettor banned for alleged threats toward Blue Jays manager",
-          "dek": "The ban brings renewed attention to the risks of abusive behavior directed at players and managers as sports betting becomes more embedded in the fan experience. For Toronto, the incident adds an unsettling postscript to a 79-83 season and keeps John Schneider in the spotlight",
+          "dek": "The ban puts a serious offseason spotlight on the abuse directed at John Schneider after Toronto's 2025 World Series defeat. It also underscores the pressure surrounding a manager who remains under contract as the Blue Jays regroup from a 79-83 season and second-place AL East",
           "date": "October 21, 2026",
           "link": "https://www.espn.com/mlb/story/_/id/50239056/world-series-blue-jays-john-schneider-threat-sports-bettor"
         },
@@ -639,17 +639,17 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Where 2026 ranks among best World Series matchups since 2000",
-          "dek": "With both Tampa Bay and Milwaukee chasing the first championship in franchise history, this Fall Classic carries unusual stakes beyond the matchup itself. Toronto's 79-83 season ended short of October, making the contrast sharper as the AL East runner-up watches a historic final",
+          "dek": "With Milwaukee leading Tampa Bay 2-0, the 2026 Fall Classic has already delivered two tight games and a historic stakes matchup between franchises still seeking their first title. That combination gives this series a compelling benchmark against the century's most memorable",
           "date": "October 20, 2026",
           "link": "https://www.espn.com/mlb/story/_/id/50223790/ranking-best-world-series-matchups-2000"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "NBA Roundup: Tatum scores 36 as Celtics fend off Knicks",
-          "dek": "Boston's comeback win gives the Celtics their first victory of the season, while the Knicks fell to 0-2 in their title defense. Tatum's late scoring surge decided a tense finish after New York erased most of a 12-point deficit.",
-          "date": "October 23, 2026",
-          "link": "https://www.sportsnet.ca/nba/article/jayson-tatum-scores-36-sizzles-down-the-stretch-as-celtics-fend-off-knicks/"
+          "headline": "Brown: 'No beef' with Tatum but 'might be a little lamb chops and some gravy'",
+          "dek": "The headline does not concern the Blue Jays, but a Philadelphia 76ers and Boston Celtics relationship storyline. Toronto's 79-83 season and second-place AL East finish are unrelated to Brown's comments.",
+          "date": "October 25, 2026",
+          "link": "https://www.sportsnet.ca/nba/video/brown-no-beef-with-tatum-but-might-be-a-little-lamb-chops-and-some-gravy/"
         }
       ],
       "standings": {
@@ -758,17 +758,17 @@
       "full_name": "Toronto Raptors",
       "league": "NBA",
       "record": "2-0",
-      "detail": "1st in Atlantic Division",
+      "detail": "2nd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors have opened the season by showing they can win ugly, and that matters more than a 43-point demolition of Chicago. <strong>Toronto's 112-102 victory over Washington on Friday</strong> made it 2-0, keeping the club atop the Atlantic Division and extending its winning streak to two. Scottie Barnes was the engine - 28 points and 14 rebounds - while RJ Barrett added 23 points and nine boards, and Kawhi Leonard chipped in 16. More telling: Toronto forced 23 turnovers and beat the Wizards with size, rebounding and second chances, the sort of grown-up basketball that travels. Nate Bittle is day-to-day with a foot issue, a small concern for a roster with only 14 players. <strong>Sunday's 7 p.m. visit to Minnesota is the first serious measuring stick: watch whether Barnes can impose this same physical edge against the Timberwolves.</strong>",
-        "updated": "Updated October 24, 2026"
+        "body": "The Raptors have begun the season by making a persuasive argument: size is useful, but force of will travels better. <strong>Friday's 112-102 victory over Washington pushed Toronto to 2-0</strong>, with Scottie Barnes driving the night with 28 points and 14 rebounds, while RJ Barrett added 23. Kawhi Leonard, back in the city where his championship legend was forged, supplied 16 points and nine rebounds - less a scoring eruption than a reminder that his fingerprints still appear on winning basketball. Toronto sits second in the Atlantic Division, only 0.5 games behind, and the two-game winning streak has genuine substance: the defense has forced 50 turnovers through two games. Nate Bittle is out with a foot injury, a small concern for a team about to face greater length. <strong>Tonight's 7 p.m. visit to Minnesota is the first real litmus test - watch whether Toronto's undersized aggression can survive the Timberwolves' towers.</strong>",
+        "updated": "Updated October 25, 2026"
       },
       "key_numbers": [
         {
           "number": "2-0",
           "label": "Season Record",
-          "note": "1st in Atlantic Division"
+          "note": "2nd in Atlantic Division"
         },
         {
           "number": "123.5",
@@ -781,9 +781,9 @@
           "note": "Current streak"
         },
         {
-          "number": "2-0",
-          "label": "Last 4",
-          "note": "Recent form"
+          "number": "0.5",
+          "label": "Games Back",
+          "note": "2nd in Atlantic Division"
         }
       ],
       "recent_results": [
@@ -820,7 +820,7 @@
         "subtitle": "NBA - Oct 23, 2026",
         "result_badge": "W 112-102",
         "result_class": "w",
-        "url": "https://www.youtube.com/watch?v=zgVeOOEXhJY",
+        "url": "https://www.youtube.com/watch?v=We0ce73tPUI",
         "game_date": "2026-10-23"
       },
       "the_latest": [
@@ -828,41 +828,41 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors beat Wizards 112-102",
-          "dek": "Scottie Barnes and RJ Barrett led the way, while Toronto's defense forced 23 turnovers to preserve a road win. At 2-0, the Raptors sit atop the Atlantic Division and have shown they can win through pressure as well as pace.",
+          "dek": "Toronto improved to 2-0 after surviving Washington's second-half push, preserving an unbeaten start despite letting a 17-point lead shrink to one. Scottie Barnes led the way with 28 points, while RJ Barrett added 23 as the Raptors head into Sunday tied atop the Atlantic.",
           "date": "Oct 23",
           "link": "https://www.espn.com/nba/recap?gameId=401909846"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Kawhi worry? Raptors unbeaten heading into litmus test vs. Timberwolves",
+          "dek": "Toronto's 2-0 start has come without trailing in either game, but Minnesota presents a far stronger test on the road. With both teams unbeaten, the matchup should show whether the Raptors' early control can hold against a disciplined Timberwolves defense and renewed scrutiny on",
+          "date": "October 24, 2026",
+          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/kawhi-raptors-unbeaten-litmus-test-timberwolves"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Raptors play bigger than their size to overcome towering Wizards",
-          "dek": "Toronto's 112-102 win over Washington kept the Raptors unbeaten at 2-0 and atop the Atlantic, while testing whether their defensive identity could neutralize a major size disadvantage. Scottie Barnes set the tone with 28 points and 14 rebounds, and RJ Barrett added 23 points in",
+          "dek": "Toronto's 2-0 start is built on defense and physicality, not a size advantage, after holding Washington to 102 points and controlling the glass behind Scottie Barnes' 28-point, 14-rebound effort. The win keeps the Raptors near the top of the Atlantic while showing their formula",
           "date": "October 24, 2026",
           "link": "https://www.sportsnet.ca/nba/article/raptors-play-bigger-than-their-size-to-overcome-towering-wizards/"
         },
         {
-          "source": "Toronto Sun",
+          "source": "The Globe and Mail",
           "source_class": "web",
-          "headline": "Raptors beat Washington Wizards, pass early-season test",
-          "dek": "Toronto moved to 2-0 by holding Washington to 102 points, extending a defensive identity that carried over from opening night. Scottie Barnes led the way with 28 points and 14 rebounds, giving the Raptors early momentum atop the Atlantic Division.",
+          "headline": "Barnes, Barrett pace Raptors to 112-102 road win over Wizards",
+          "dek": "Toronto is 2-0 after overcoming a competitive Washington stretch, with Scottie Barnes delivering 28 points and 14 rebounds alongside RJ Barrett's 23. The win keeps the Raptors near the top of the Atlantic and sets up a meeting with another unbeaten team in Minnesota.",
           "date": "October 24, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/raptors-beat-washington-wizards-pass-early-season-test"
-        },
-        {
-          "source": "The Athletic",
-          "source_class": "athletic",
-          "headline": "Kawhi Leonard wants to 'shock the world' but urges patience: 'You can't rush greatness'",
-          "dek": "Leonard's return has already lifted Toronto to a 2-0 start, but his uneven shooting and managed workload show the gap between early excitement and peak form. With the Raptors atop the Atlantic, patience will shape how quickly their biggest addition becomes a reliable",
-          "date": "October 22, 2026",
-          "link": "https://www.nytimes.com/athletic/7712905/2026/10/22/kawhi-leonard-raptors-return-greatness-patience/"
+          "link": "https://www.theglobeandmail.com/sports/basketball/article-barnes-barrett-pace-raptors-to-112-102-road-win-over-wizards/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Raptors beat Bulls 135-92",
-          "dek": "Toronto opened the season with a 43-point rout, led by 23 points each from Scottie Barnes, RJ Barrett and Immanuel Quickley. The 2-0 Raptors followed that statement win with another victory, putting them atop the Atlantic early.",
-          "date": "Oct 21",
-          "link": "https://www.espn.com/nba/recap?gameId=401909837"
+          "headline": "Minnesota takes on Toronto in non-conference action",
+          "dek": "Both teams enter Minneapolis unbeaten at 2-0, giving Toronto an early test against another fast-starting contender from the Western Conference. The Raptors can strengthen their position near the top of the Atlantic while proving their hot start travels beyond the Eastern",
+          "date": "October 24, 2026",
+          "link": "http://www.espn.com/nba/preview?gameId=401909864"
         }
       ],
       "standings": {
@@ -882,10 +882,10 @@
             "has_seed_col": true,
             "rows": [
               {
-                "team": "76ers",
-                "logo": "phi",
+                "team": "Raptors",
+                "logo": "tor",
                 "league": "nba",
-                "you": false,
+                "you": true,
                 "vals": [
                   "2",
                   "0",
@@ -894,12 +894,12 @@
                 "seed": "1"
               },
               {
-                "team": "Raptors",
-                "logo": "tor",
+                "team": "76ers",
+                "logo": "phi",
                 "league": "nba",
-                "you": true,
+                "you": false,
                 "vals": [
-                  "2",
+                  "3",
                   "0",
                   "1.000"
                 ],
@@ -924,10 +924,34 @@
                 "you": false,
                 "vals": [
                   "2",
-                  "0",
-                  "1.000"
+                  "1",
+                  ".667"
                 ],
                 "seed": "4"
+              },
+              {
+                "team": "Hornets",
+                "logo": "cha",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "2",
+                  "1",
+                  ".667"
+                ],
+                "seed": "5"
+              },
+              {
+                "team": "Wizards",
+                "logo": "wsh",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "2",
+                  "1",
+                  ".667"
+                ],
+                "seed": "6"
               },
               {
                 "team": "Celtics",
@@ -939,7 +963,7 @@
                   "1",
                   ".500"
                 ],
-                "seed": "5"
+                "seed": "7"
               },
               {
                 "team": "Pacers",
@@ -951,35 +975,11 @@
                   "1",
                   ".500"
                 ],
-                "seed": "6"
-              },
-              {
-                "team": "Bulls",
-                "logo": "chi",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "1",
-                  "1",
-                  ".500"
-                ],
-                "seed": "7"
-              },
-              {
-                "team": "Wizards",
-                "logo": "wsh",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "1",
-                  "1",
-                  ".500"
-                ],
                 "seed": "8"
               },
               {
-                "team": "Hornets",
-                "logo": "cha",
+                "team": "Cavaliers",
+                "logo": "cle",
                 "league": "nba",
                 "you": false,
                 "vals": [
@@ -990,14 +990,14 @@
                 "seed": "9"
               },
               {
-                "team": "New York",
-                "logo": "ny",
+                "team": "Bulls",
+                "logo": "chi",
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "0",
+                  "1",
                   "2",
-                  ".000"
+                  ".333"
                 ],
                 "seed": "10"
               }
@@ -1011,7 +1011,7 @@
             "bracket": true,
             "rows": [
               {
-                "matchup": "(1) 76ers vs. (2) Raptors",
+                "matchup": "(1) Raptors vs. (2) 76ers",
                 "series": "Sat Apr 18",
                 "you": true
               },
@@ -1021,12 +1021,12 @@
                 "you": false
               },
               {
-                "matchup": "(5) Celtics vs. (6) Pacers",
+                "matchup": "(5) Hornets vs. (6) Wizards",
                 "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "matchup": "(7) Bulls vs. (8) Wizards",
+                "matchup": "(7) Celtics vs. (8) Pacers",
                 "series": "Sat Apr 18",
                 "you": false
               }
@@ -1065,8 +1065,8 @@
       "detail": "4th in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The comeback offered a glimpse, but the loss exposed the larger fracture. <strong>Washington fell 23-17 to San Francisco and lost Terry McLaurin for the season to a torn patellar tendon</strong> - a cruel double blow in a game that demanded everything from Jayden Daniels. Daniels showed the Commanders what they have: fight, mobility and a quarterback capable of dragging a wounded offense back into a contest. He also showed what they lack. Washington remains 1-4-1, fourth in the NFC East and two games behind, with a one-game losing streak and precious little margin. The red zone has become the indictment: opponents have scored 18 touchdowns there, Washington nine. Now comes the bye, and then Philadelphia on November 1. <strong>That game will measure whether Daniels can build an offense without McLaurin - and whether Washington fixes the red-zone failures that keep turning winnable Sundays into losses.</strong>",
-        "updated": "Updated October 24, 2026"
+        "body": "The Commanders are losing ground and now have a league-office grievance to carry with them. At 1-4-1, Washington sits fourth in the NFC East, two games behind, with a one-game losing streak and precious little margin for error. <strong>The NFL's decision to fine Fred Warner $65,673 for two fourth-quarter hits on tight end Chig Okonkwo - including one involving helmet contact - gave the 23-17 loss to San Francisco a sharper aftertaste.</strong> Warner's punishment does not change the scoreboard, but it confirms Washington absorbed punishment that officials failed to police cleanly. Okonkwo is suddenly the player to watch, both for his availability and his response, while the offense must find more than the 17 points it managed against the 49ers. The Giants tie and Colts loss already exposed how narrow this team's margin is. <strong>Philadelphia comes to town Sunday, Nov. 1, at 8:20 p.m. ET on NBC - a division test Washington cannot afford to waste.</strong>",
+        "updated": "Updated October 25, 2026"
       },
       "key_numbers": [
         {
@@ -1158,25 +1158,41 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Commanders fell to 49ers 23-17",
-          "dek": "Washington nearly erased a 20-point deficit against the unbeaten 49ers, but the rally could not rescue a team stuck at 1-4-1 and last in the NFC East. The loss also raises fresh concerns about fourth-down execution and the offense's ability to turn takeaways into points.",
+          "dek": "The loss dropped Washington to 1-4-1 and left the Commanders fourth in the NFC East after six games. Jayden Daniels threw for 300 yards, but a late rally fell short, with attention now turning to discipline after Fred Warner was fined for two hits on Chig Okonkwo.",
           "date": "Oct 19",
           "link": "https://www.espn.com/nfl/recap?gameId=401873008"
         },
         {
+          "source": "Yahoo Sports",
+          "source_class": "web",
+          "headline": "49ers linebacker Fred Warner fined twice for hits in Week 6 win over Commanders, totaling $65,673",
+          "dek": "The NFL's postgame review adds scrutiny to a loss that left Washington at 1-4-1, with both penalties involving tight end Chig Okonkwo. The Commanders fell behind 23-3 before losing 23-17, making the missed opportunities and player-safety concerns part of a broader struggle to",
+          "date": "October 24, 2026",
+          "link": "https://sports.yahoo.com/nfl/article/49ers-linebacker-fred-warner-fined-twice-for-hits-in-week-6-win-over-commanders-totaling-65673-222853051.html"
+        },
+        {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "Commanders' WR Terry McLaurin out for season with torn patellar tendon",
-          "dek": "McLaurin's season-ending knee injury strips Washington of its top receiver as it tries to recover from a 1-4-1 start and climb out of last place in the NFC East. With the offense already losing receivers, the Commanders now face an urgent test of their depth when they return",
-          "date": "October 20, 2026",
-          "link": "https://www.nytimes.com/athletic/7707523/2026/10/20/terry-mclaurin-torn-patellar-tendon-injury-commanders/"
+          "headline": "Commanders mailbag: Submit your questions for beat reporter Nicki Jhabvala",
+          "dek": "The bye gives Washington a rare pause to address a 1-4-1 start before Philadelphia arrives for a pivotal Sunday night matchup. Fans' questions will likely center on quarterback play, Dan Quinn's job security and whether the roster needs changes before the Nov. 10 trade deadline.",
+          "date": "October 21, 2026",
+          "link": "https://www.nytimes.com/athletic/7710812/2026/10/21/commanders-mailbag-bye-week-questions/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "NFL Week 7 betting odds: Lines and totals for every game",
-          "dek": "Washington is on a Week 7 bye at 1-4-1, leaving the NFC East race to unfold without a chance to improve its position. The full betting board still frames the division's shifting landscape, with Washington two games behind the Giants and needing a stronger second half to stay",
-          "date": "October 23, 2026",
-          "link": "https://www.espn.com/espn/betting/story/_/id/50179373/2026-nfl-week-7-schedule-odds-point-spreads-totals"
+          "headline": "NFL Week 7 uniforms: Alternates galore as Texans go battle red, Lions all-black",
+          "dek": "Washington gets a Week 7 breather rather than a uniform spotlight, with its bye arriving at 1-4-1 and last in the NFC East. The pause gives Dan Quinn's team a chance to regroup before trying to turn a crowded alternate-uniform slate into a more meaningful second-half push.",
+          "date": "October 24, 2026",
+          "link": "https://www.espn.com/nfl/story/_/id/50240486/nfl-week-7-uniforms"
+        },
+        {
+          "source": "Yahoo Sports",
+          "source_class": "web",
+          "headline": "49ers star Fred Warner hit with hefty fine as suspension threat looms",
+          "dek": "Washington's 23-17 loss to San Francisco now carries added weight after both fined hits involved tight end Chig Okonkwo, including one play officials initially flagged before reversing course. Warner's discipline highlights the physical toll of a defeat that left the 1-4-1",
+          "date": "October 24, 2026",
+          "link": "https://sports.yahoo.com/articles/49ers-star-fred-warner-hit-220928250.html"
         }
       ],
       "standings": {
@@ -1271,69 +1287,70 @@
     }
   },
   "featured": {
-    "team": "leafs",
-    "kicker": "Toronto Maple Leafs - Regular Season",
-    "headline": "Maple Leafs prepare for stiff test against Connor McDavid, Oilers",
-    "dek": "Toronto's three-game winning streak faces its toughest test yet against an Edmonton team sitting 8-1-1 atop the Pacific Division. Connor McDavid has 31 points through 10 games, making defensive discipline essential as the Leafs try to build momentum in the Eastern Conference",
-    "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-prepare-for-stiff-test-against-connor-mcdavid-oilers/",
-    "date": "October 24, 2026"
+    "team": "raptors",
+    "kicker": "Toronto Raptors - Regular Season",
+    "headline": "Kawhi Leonard, back in Toronto, hopes to help these new Raptors get to where he's been",
+    "dek": "Leonard's return adds championship credibility to a revamped roster that has opened 2-0, raising the stakes for how quickly Toronto can turn early momentum into a legitimate Eastern Conference push. Sunday's visit to Minnesota offers the first test against another undefeated",
+    "source": "The Athletic",
+    "link": "https://www.nytimes.com/athletic/7718340/2026/10/24/kawhi-leonard-toronto-raptors-return/",
+    "date": "October 25, 2026"
   },
   "two_up": [
     {
-      "team": "raptors",
-      "kicker": "Toronto Raptors - Regular Season",
-      "headline": "Barnes, Barrett pace Raptors to 112-102 road win over Wizards",
-      "dek": "Scottie Barnes' 28-point, 14-rebound performance and RJ Barrett's 23 points powered Toronto to its second straight win, while the defense forced 23 turnovers. The unbeaten Raptors now carry first place in the Atlantic into Sunday's test at Minnesota.",
-      "source": "The Globe and Mail",
-      "link": "https://www.theglobeandmail.com/sports/basketball/article-barnes-barrett-pace-raptors-to-112-102-road-win-over-wizards/",
-      "date": "October 24, 2026"
+      "team": "leafs",
+      "kicker": "Toronto Maple Leafs - Regular Season",
+      "headline": "Maple Leafs get full team effort in blowout win over McDavid's Oilers",
+      "dek": "William Nylander reached 300 career goals, Anthony Stolarz stopped 30 shots and Toronto scored seven times to overwhelm Edmonton 7-2. The win made it four straight for the Leafs and strengthened their position near the top of the Eastern Conference before Monday's visit to",
+      "source": "Sportsnet",
+      "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-get-full-team-effort-in-blowout-win-over-mcdavids-oilers/",
+      "date": "October 25, 2026"
     },
     {
       "team": "jays",
       "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
-      "headline": "The return of these injured players could shape Toronto's offseason plans",
-      "dek": "Toronto's 79-83 finish leaves little margin for another season disrupted by injuries, making rehabilitation timelines central to every offseason decision. Addison Barger could be near spring-ready, while several pitchers face longer recoveries, forcing the club to balance",
+      "headline": "Watch Blue Jays prospects in Arizona Fall League action",
+      "dek": "Toronto has eight prospects in Arizona, using the Fall League to make up for lost development time, test new positions and refine mechanics. Jake Bloss is also building toward a possible 2027 pitching role, while the 79-83 Blue Jays assess which young players can help address",
       "source": "MLB.com",
-      "link": "https://www.mlb.com/bluejays/news/blue-jays-2026-offseason-agenda-injury-returns",
-      "date": "October 24, 2026"
+      "link": "https://www.mlb.com/bluejays/news/watch-top-prospects-in-arizona-fall-league-winter-ball-2026",
+      "date": "October 25, 2026"
     }
   ],
   "extra_story": {
     "team": "commanders",
     "kicker": "Washington Commanders - Regular Season",
-    "headline": "Commanders mailbag: Submit your questions for beat reporter Nicki Jhabvala",
-    "dek": "Washington's bye week comes after a 1-4-1 start, a last-place standing and a difficult loss to San Francisco that exposed unresolved issues. With Philadelphia next and Terry McLaurin reportedly out for the season, questions about the roster, quarterback and path forward carry",
-    "source": "The Athletic",
-    "link": "https://www.nytimes.com/athletic/7710812/2026/10/21/commanders-mailbag-bye-week-questions/",
-    "date": "October 24, 2026"
+    "headline": "NFL levies two fines to 49ers LB Fred Warner for hit on Commanders TE Chig Okonkwo",
+    "dek": "The NFL's $65,673 in fines validates Washington's frustration after two fourth-quarter hits on Chig Okonkwo, including one flagged and then waved off. In a 23-17 loss that left the Commanders 1-4-1 and last in the NFC East, the missed calls added another painful layer to a",
+    "source": "CBS Sports",
+    "link": "https://www.cbssports.com/nfl/news/nfl-levies-two-fines-to-49ers-lb-fred-warner/",
+    "date": "October 25, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Next: Leafs at Oilers - Sat 10/24 7:00 PM ET"
+      "text": "Leafs beat Oilers 7-2"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs (6-4) - 4th in Eastern Conference"
+      "text": "Next: Leafs at Flames - Mon 10/26 8:30 PM ET"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Maple Leafs prepare for stiff test against Connor McDavid, Oilers",
-      "published": "2026-10-23T19:49:50+00:00"
+      "text": "Leafs (7-4) - 3rd in Eastern Conference"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "Maple Leafs get full team effort in blowout win over McDavid's Oilers",
+      "published": "2026-10-25T03:40:06+00:00"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Jays: Postseason / Early Offseason"
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "nba",
-      "text": "Raptors beat Wizards 112-102"
+      "text": "Watch Blue Jays prospects in Arizona Fall League action",
+      "published": "2026-10-25T04:13:00+00:00"
     },
     {
       "badge": "NBA",
@@ -1343,55 +1360,66 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors (2-0) - 1st in Atlantic Division"
+      "text": "Raptors (2-0) - 2nd in Atlantic Division"
     },
     {
-      "badge": "NBA",
-      "badge_style": "nba",
-      "text": "Barnes, Barrett pace Raptors to 112-102 road win over Wizards",
-      "published": "2026-10-24T04:46:54+00:00"
+      "badge": "NFL",
+      "badge_style": "nfl",
+      "text": "Next: Commanders vs. Eagles - Sun 11/1 8:20 PM ET"
     },
     {
       "badge": "NFL",
       "badge_style": "nfl",
       "text": "Commanders (1-4-1) - 4th in NFC East"
+    },
+    {
+      "badge": "NFL",
+      "badge_style": "nfl",
+      "text": "49ers star Fred Warner hit with hefty fine as suspension threat looms",
+      "published": "2026-10-24T22:09:28+00:00"
     }
   ],
   "scoreboard": [
     {
-      "team": "raptors",
-      "game_date": "2026-10-23",
-      "name": "Raptors",
-      "league": "NBA",
+      "team": "leafs",
+      "game_date": "2026-10-24",
+      "name": "Leafs",
+      "league": "NHL",
       "logo": "tor",
-      "opp_name": "Wizards",
-      "opp_logo": "wsh",
-      "team_score": 112,
-      "opp_score": 102,
+      "opp_name": "Oilers",
+      "opp_logo": "edm",
+      "team_score": 7,
+      "opp_score": 2,
       "result": "W",
-      "date": "Oct 23",
+      "date": "Oct 24",
       "preseason": false,
       "stars": [
         {
-          "tag": "PTS",
+          "tag": "GOAL",
           "tone": "",
-          "name": "Barnes",
-          "stat": "28 pts"
+          "name": "Nylander",
+          "stat": "2G"
         },
         {
-          "tag": "REB",
+          "tag": "GOAL",
           "tone": "",
-          "name": "Barnes",
-          "stat": "14 reb"
+          "name": "Roslovic",
+          "stat": "1G, 1A"
         },
         {
-          "tag": "AST",
+          "tag": "GOAL",
           "tone": "",
-          "name": "Quickley",
-          "stat": "6 ast"
+          "name": "Lettieri",
+          "stat": "1G"
+        },
+        {
+          "tag": "SV",
+          "tone": "save",
+          "name": "Stolarz",
+          "stat": "30 saves, .938"
         }
       ],
-      "link": "https://www.youtube.com/watch?v=zgVeOOEXhJY"
+      "link": "https://www.youtube.com/watch?v=SDfPSBXzRtQ"
     }
   ],
   "at_a_glance": [
@@ -1399,10 +1427,10 @@
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "6-4",
-      "status": "4th in Eastern Conference",
+      "record": "7-4",
+      "status": "3rd in Eastern Conference",
       "status_class": "green",
-      "stat": "Streak: W3"
+      "stat": "Streak: W4"
     },
     {
       "team": "jays",
@@ -1418,7 +1446,7 @@
       "name": "Raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
       "record": "2-0",
-      "status": "1st in Atlantic Division",
+      "status": "2nd in Atlantic Division",
       "status_class": "green",
       "stat": "Streak: W2"
     },
@@ -1436,24 +1464,10 @@
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs at Oilers",
-      "detail": "7:00 PM ET",
-      "channel": "Sportsnet",
-      "off": false,
-      "preview": {
-        "duel": {
-          "label": "In goal",
-          "status": "projected",
-          "ours": {
-            "name": "Stolarz",
-            "sub": "3-1-0, 2.99 GAA"
-          },
-          "theirs": {
-            "name": "Jarry",
-            "sub": "2-0-1, 2.97 GAA"
-          }
-        }
-      }
+      "matchup": "Leafs",
+      "detail": "Next: Mon 10/26 at Flames 8:30 PM ET",
+      "channel": "",
+      "off": true
     },
     {
       "team": "jays",
@@ -1466,31 +1480,37 @@
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "matchup": "Raptors",
-      "detail": "Next: Sun 10/25 at Timberwolves 7:00 PM ET",
+      "matchup": "Raptors at Timberwolves",
+      "detail": "7:00 PM ET",
       "channel": "",
-      "off": true
+      "off": false,
+      "preview": {
+        "injuries": [
+          {
+            "status": "Out",
+            "tone": "out",
+            "players": [
+              {
+                "name": "Bittle",
+                "note": "foot"
+              }
+            ],
+            "more": 0
+          }
+        ]
+      }
     },
     {
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
       "matchup": "Commanders",
-      "detail": "Regular Season",
+      "detail": "Next: Sun 11/1 vs. Eagles 8:20 PM ET",
       "channel": "",
       "off": true
     }
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Sat 10/24",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "at Oilers",
-        "time": "7:00 PM ET",
-        "tv": "Sportsnet"
-      },
       {
         "day": "Sun 10/25",
         "team": "raptors",
@@ -1544,16 +1564,35 @@
         "opp": "at Canucks",
         "time": "7:00 PM ET",
         "tv": "Sportsnet"
+      },
+      {
+        "day": "Sun 11/1",
+        "team": "commanders",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+        "name": "Commanders",
+        "opp": "vs. Eagles",
+        "time": "8:20 PM ET",
+        "tv": "NBC"
+      },
+      {
+        "day": "Sun 11/1",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Lakers",
+        "time": "9:00 PM ET",
+        "tv": ""
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Maple Leafs Visit Oilers in McDavid Test",
+      "title": "Nylander Scores Twice as Leafs Beat Oilers",
       "paragraphs": [
-        "The Leafs head to Edmonton tonight for a 7:00 PM ET meeting with the Oilers on Sportsnet, carrying a 6-4 record and fourth place in the Eastern Conference. Anthony Stolarz is projected to start against Tristan Jarry, with Stolarz at 3-1-0 and a 2.99 goals-against average. The Blue Jays are looking ahead, with the return of injured players set to shape Toronto's offseason plans.",
-        "The Raptors are 2-0 after beating the Wizards 112-102, led by Scottie Barnes' 28 points and 14 rebounds. Immanuel Quickley added six assists, and Toronto visits the Timberwolves Sunday at 7:00 PM ET. The Commanders are 1-4-1 and face the Eagles on November 1; receiver Terry McLaurin is out for the season with a torn patellar tendon. The Leafs-Oilers game begins at 7:00 PM ET."
+        "William Nylander scored twice, including his 300th NHL goal, as the Leafs beat the Oilers 7-2 in Edmonton. Anthony Stolarz made 30 saves, while Jack Roslovic added a goal and an assist. Toronto is 7-4 and visits the Flames Monday at 8:30 p.m. ET.",
+        "The Raptors take a 2-0 record into tonight's 7 p.m. ET visit to Minnesota, though Bittle is out with a foot injury. Kawhi Leonard's return to Toronto has added another storyline around a young team that faces an early test against the Timberwolves. The Jays turn to Arizona Fall League action, where their prospects are being watched, while Brown addressed his squabbles with Tatum.",
+        "The Commanders are 1-4-1 and sit fourth in the NFC East. Their next game is against the Eagles on Sunday, November 1, at 8:20 p.m. ET on NBC. Fred Warner was fined twice for hits on Commanders tight end Chig Okonkwo, totaling $65,673."
       ]
     }
   }
