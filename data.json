@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated": "2026-10-31T04:54:34.218558-04:00",
-    "date_display": "October 31, 2026",
+    "updated": "2026-11-01T04:45:25.034256-05:00",
+    "date_display": "November 1, 2026",
     "data_health": {
-      "espn_ok": 43,
+      "espn_ok": 44,
       "espn_failed": 0,
       "espn_via_mirror": 0,
       "espn_failed_urls": [],
@@ -19,36 +19,49 @@
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "7-6",
-      "detail": "8th in Eastern Conference",
+      "record": "8-6",
+      "detail": "5th in Eastern Conference",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "A two-game skid has exposed the Leafs' familiar soft underbelly: too much talent, not enough control when the game turns frantic. The latest blow came Wednesday, a 5-4 loss to Seattle, leaving Toronto 7-6, eighth in the Eastern Conference with 16 points - three behind the teams above them. <strong>Chris Tanev's expected return Saturday is the meaningful development</strong>: the 36-year-old defenceman practiced beside Morgan Rielly in Vancouver and said all signs point to playing after missing time with an upper-body injury. Dakota Joshua is also set to rejoin the lineup after missing the season to date, giving Toronto some overdue bite. Tanev's return will not cure the late-game leaks by itself, but it can steady a defence that has surrendered 10 goals across its last two defeats. <strong>Now comes Saturday's 7 p.m. visit to Vancouver - a chance to stop the slide before it becomes the season's defining habit.</strong>",
-        "updated": "Updated October 31, 2026"
+        "body": "The Leafs needed a win, and they got one with enough steel to matter. <strong>Toronto beat Vancouver 4-2 on Saturday</strong>, restoring a one-game winning streak after consecutive losses and nudging the club to 8-6, fifth in the Eastern Conference with 18 points - three behind the teams ahead. Anthony Stolarz stopped 26 of 28, while Auston Matthews, William Nylander, Teddy Blueger and Zack MacEwen supplied the goals. More consequential still, Chris Tanev returned from an upper-body injury and delivered the sort of hard, unsentimental defending Toronto has missed. Then came the Kucherov thunderclap: the superstar would consider Toronto, though Tampa says it has no intention of moving him and the cap arithmetic looks brutal. For now, that is fantasy; the win is real. <strong>Next comes Tuesday's 7 p.m. ET meeting with the Mammoth on TSN - a chance to prove Vancouver was a turn, not a twitch.</strong>",
+        "updated": "Updated November 1, 2026"
       },
       "key_numbers": [
         {
-          "number": "7-6",
+          "number": "8-6",
           "label": "Season Record",
-          "note": "8th in Eastern Conference"
+          "note": "5th in Eastern Conference"
         },
         {
-          "number": "16",
+          "number": "18",
           "label": "Points",
-          "note": "8th in Eastern Conference"
+          "note": "5th in Eastern Conference"
         },
         {
-          "number": "L2",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
         {
           "number": "3",
           "label": "Points Back",
-          "note": "8th in Eastern Conference"
+          "note": "5th in Eastern Conference"
         }
       ],
       "recent_results": [
+        {
+          "date": "Oct 31",
+          "result": "W",
+          "team_score": 4,
+          "opp_name": "Canucks",
+          "opp_score": 2,
+          "opp_logo": "van",
+          "league": "nhl",
+          "game_date": "2026-10-31",
+          "game_ts": "2026-10-31T23:00Z",
+          "game_id": "401892621",
+          "season_type": 2
+        },
         {
           "date": "Oct 28",
           "result": "L",
@@ -87,70 +100,57 @@
           "game_ts": "2026-10-24T23:00Z",
           "game_id": "401892574",
           "season_type": 2
-        },
-        {
-          "date": "Oct 22",
-          "result": "W",
-          "team_score": 5,
-          "opp_name": "Rangers",
-          "opp_score": 4,
-          "opp_logo": "nyr",
-          "league": "nhl",
-          "game_date": "2026-10-22",
-          "game_ts": "2026-10-22T23:00Z",
-          "game_id": "401892553",
-          "season_type": 2
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Kraken vs. Leafs - Full Highlights",
-        "subtitle": "NHL - Oct 28, 2026",
-        "result_badge": "L 4-5",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=6XLZvHQHEYA",
-        "game_date": "2026-10-28"
+        "title": "Canucks vs. Leafs - Full Highlights",
+        "subtitle": "NHL - Oct 31, 2026",
+        "result_badge": "W 4-2",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=syrFqcNZgQY",
+        "game_date": "2026-10-31"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Leafs fell to Kraken 5-4",
-          "dek": "Toronto surrendered the winner with 34 seconds left, turning Auston Matthews' late equalizer into another damaging defeat. The two-game skid leaves the 7-6 Leafs needing a sharper finish as they fight to hold their place in the Eastern Conference race.",
-          "date": "Oct 28",
-          "link": "https://www.espn.com/nhl/recap?gameId=401892599"
-        },
-        {
-          "source": "The Globe and Mail",
-          "source_class": "web",
-          "headline": "Leafs' Tanev eyes return against Canucks",
-          "dek": "After missing nine games with an upper-body injury, Chris Tanev could return Saturday against his former club, restoring a key stabilizing presence to Toronto's defence. The 7-6 Leafs enter the matchup eighth in the Eastern Conference and still without John Tavares and Kirill",
-          "date": "October 31, 2026",
-          "link": "https://www.theglobeandmail.com/sports/hockey/article-leafs-tanev-eyes-return-against-canucks/"
-        },
-        {
-          "source": "Toronto Sun",
-          "source_class": "web",
-          "headline": "Why it's crucial that Chris Tanev is returning to Maple Leafs lineup",
-          "dek": "Toronto enters the day at 7-6 and eighth in the Eastern Conference, with its defense under added strain during Tanev's nine-game absence. His return restores a dependable shutdown presence and could stabilize a blue line that has forced Morgan Rielly and Jake McCabe into heavier",
-          "date": "October 30, 2026",
-          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/tanev-returning-to-maple-leafs-lineup"
+          "headline": "Leafs beat Canucks 4-2",
+          "dek": "Toronto snapped a two-game skid to finish its four-game road trip at 2-2, with Auston Matthews scoring his 11th goal and extending his road point streak to eight games. William Nylander and Teddy Blueger each added a goal and an assist as the Leafs improved to 8-6-2 and held off",
+          "date": "Oct 31",
+          "link": "https://www.espn.com/nhl/recap?gameId=401892621"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "The Maple Leafs gambled on Sergei Bobrovsky. The risks are showing",
-          "dek": "Bobrovsky's .885 save percentage and 3.29 goals-against average have turned Toronto's biggest offseason bet into an early-season liability. With the Leafs hovering around the Eastern Conference playoff line, his rebound matters immediately, especially after allowing three or",
-          "date": "October 29, 2026",
-          "link": "https://www.nytimes.com/athletic/7735721/2026/10/29/maple-leafs-sergei-bobrovsky-stats-results/"
+          "headline": "The airline lost my (hockey) bag: Inside an NHL player's delayed season debut",
+          "dek": "After missing Toronto's first 14 games with a core injury, Dakota Joshua finally had a path back into the lineup, only for his equipment to vanish en route to Seattle. The delay pushed his return back 72 hours, making his eventual season debut a test of patience before it became",
+          "date": "October 31, 2026",
+          "link": "https://www.nytimes.com/athletic/7740254/2026/10/31/dakota-joshua-maple-leafs-luggage-season-debut/"
         },
         {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "NHL Power Rankings: Updated poll, plus all 32 teams as horror movies",
-          "dek": "Toronto's 7-6-2 start has them eighth in the East, but a two-game skid and a season-low 22 shots in Seattle have exposed an offense missing John Tavares and Kirill Marchenko. The rankings land as the Leafs try to close their western road trip against Vancouver, with Easton Cowan",
-          "date": "October 30, 2026",
-          "link": "https://www.espn.com/nhl/story/_/id/50322131/nhl-2026-27-power-rankings-top-teams-players-stats-projections-standings-halloween"
+          "source": "The Globe and Mail",
+          "source_class": "web",
+          "headline": "Matthews scores 11th goal of season as Leafs beat Canucks 4-2",
+          "dek": "Toronto snapped a two-game skid to finish its four-game road trip at 2-2, keeping the Leafs in the Eastern Conference race at 8-6. Matthews' team-leading 11th goal set the tone, while Nylander, Blueger and MacEwen supplied the depth scoring Toronto needed.",
+          "date": "November 1, 2026",
+          "link": "https://www.theglobeandmail.com/sports/hockey/article-matthews-scores-11th-goal-of-season-as-leafs-beat-canucks-4-2/"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "MAPLE LEAFS TAKEAWAYS: On the win, Stolarz, Matthews, Tanev, Kucherov and more",
+          "dek": "Toronto snapped a two-game skid with a 4-2 win in Vancouver, powered by Auston Matthews' 11th goal and Anthony Stolarz's 26 saves. Chris Tanev returned after missing nine games, while Dakota Joshua made his season debut, giving Toronto's lineup a timely boost as it steadies a",
+          "date": "November 1, 2026",
+          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/win-trip-finale-beating-lowly-canucks"
+        },
+        {
+          "source": "Daily Faceoff",
+          "source_class": "web",
+          "headline": "Leafs activate Chris Tanev from injured reserve",
+          "dek": "Tanev's return restores a veteran shutdown presence to a blue line that went nine games without him, strengthening Toronto's defensive depth. The 36-year-old had one assist in six games before the upper-body injury and now rejoins a 8-6 team sitting fifth in the Eastern",
+          "date": "October 31, 2026",
+          "link": "https://www.dailyfaceoff.com/news/toronto-maple-leafs-activate-chris-tanev-ir-injured-reserve-nhl-return-vancouver-canucks"
         }
       ],
       "standings": {
@@ -174,15 +174,39 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "9",
+                  "10",
                   "4",
                   "1",
-                  "19"
+                  "21"
                 ]
               },
               {
                 "team": "Canadiens",
                 "logo": "mtl",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "9",
+                  "3",
+                  "2",
+                  "20"
+                ]
+              },
+              {
+                "team": "Senators",
+                "logo": "ott",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "9",
+                  "5",
+                  "1",
+                  "19"
+                ]
+              },
+              {
+                "team": "Tampa Bay",
+                "logo": "tb",
                 "league": "nhl",
                 "you": false,
                 "vals": [
@@ -205,39 +229,15 @@
                 ]
               },
               {
-                "team": "Tampa Bay",
-                "logo": "tb",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "3",
-                  "1",
-                  "17"
-                ]
-              },
-              {
-                "team": "Senators",
-                "logo": "ott",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "8",
-                  "5",
-                  "1",
-                  "17"
-                ]
-              },
-              {
                 "team": "Leafs",
                 "logo": "tor",
                 "league": "nhl",
                 "you": true,
                 "vals": [
-                  "7",
+                  "8",
                   "6",
                   "2",
-                  "16"
+                  "18"
                 ]
               },
               {
@@ -246,10 +246,10 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "6",
+                  "7",
                   "4",
                   "3",
-                  "15"
+                  "17"
                 ]
               },
               {
@@ -259,7 +259,7 @@
                 "you": false,
                 "vals": [
                   "6",
-                  "4",
+                  "5",
                   "3",
                   "15"
                 ]
@@ -284,10 +284,10 @@
                 "you": false,
                 "seed": "A1",
                 "vals": [
-                  "9",
+                  "10",
                   "4",
                   "1",
-                  "19"
+                  "21"
                 ]
               },
               {
@@ -297,23 +297,23 @@
                 "you": false,
                 "seed": "A2",
                 "vals": [
-                  "8",
+                  "9",
                   "3",
                   "2",
-                  "18"
+                  "20"
                 ]
               },
               {
-                "team": "Panthers",
-                "logo": "fla",
+                "team": "Senators",
+                "logo": "ott",
                 "league": "nhl",
                 "you": false,
                 "seed": "A3",
                 "vals": [
-                  "8",
-                  "4",
-                  "2",
-                  "18"
+                  "9",
+                  "5",
+                  "1",
+                  "19"
                 ]
               },
               {
@@ -364,21 +364,21 @@
                 "vals": [
                   "8",
                   "3",
-                  "1",
-                  "17"
+                  "2",
+                  "18"
                 ]
               },
               {
-                "team": "Senators",
-                "logo": "ott",
+                "team": "Panthers",
+                "logo": "fla",
                 "league": "nhl",
                 "you": false,
                 "seed": "WC2",
                 "vals": [
                   "8",
-                  "5",
-                  "1",
-                  "17"
+                  "4",
+                  "2",
+                  "18"
                 ]
               },
               {
@@ -389,10 +389,24 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "7",
+                  "8",
                   "6",
                   "2",
-                  "16"
+                  "18"
+                ]
+              },
+              {
+                "team": "Sabres",
+                "logo": "buf",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "7",
+                  "4",
+                  "3",
+                  "17"
                 ]
               },
               {
@@ -404,23 +418,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "7",
-                  "4",
+                  "5",
                   "2",
                   "16"
-                ]
-              },
-              {
-                "team": "Sabres",
-                "logo": "buf",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "6",
-                  "4",
-                  "3",
-                  "15"
                 ]
               },
               {
@@ -432,7 +432,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "6",
-                  "4",
+                  "5",
                   "3",
                   "15"
                 ]
@@ -460,7 +460,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "5",
-                  "6",
+                  "7",
                   "2",
                   "12"
                 ]
@@ -474,7 +474,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "5",
-                  "6",
+                  "7",
                   "0",
                   "10"
                 ]
@@ -528,8 +528,8 @@
       "detail": "2nd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "Toronto's offseason has begun with a small move that carries a larger message: roster space is now currency. <strong>Rudy Martin Jr. cleared waivers and was assigned to Triple-A Buffalo, opening a 40-man spot</strong> - a sensible, unsentimental decision for a club that finished 79-83, second in the AL East, and now needs more than cosmetic repair. The Jays must protect prospects before the Rule 5 deadline while seven players return from the 60-day injured list, making every slot matter. But the sharper issue is the lineup. Toronto needs power, and the proposed Marte trade deserves a serious hearing if it brings impact without gutting the farm system. Suzuki, meanwhile, belongs on the priority list only if the price matches the fit. <strong>Watch the next 40-man moves - and whether Ross Atkins turns cleared space into a genuine middle-of-the-order bat.</strong>",
-        "updated": "Updated October 31, 2026"
+        "body": "The season is over, and Toronto's winter has arrived with a blunt assignment: fix an offence that helped produce a 79-83 finish, even as the club landed second in the AL East. <strong>The freshest signal is the push to overhaul the lineup, with Josh Bell discussed as a complementary target and Seiya Suzuki floated as a possible fit.</strong> That is the right instinct. The Jays do not need another shiny name for the sake of headlines; they need dependable at-bats, better outfield balance and a roster that gives Vladimir Guerrero Jr. more protection. The Marte trade question deserves a hard look, too, provided Toronto does not mistake movement for progress. Meanwhile, five Gold Glove nominees offer evidence that the foundation is not rotten, while prospects in the Arizona Fall League provide the next wave. <strong>Watch the 40-man decisions and the first meaningful offensive addition - they will reveal whether Toronto is building intelligently or merely shopping loudly.</strong>",
+        "updated": "Updated November 1, 2026"
       },
       "key_numbers": [
         {
@@ -559,26 +559,34 @@
       },
       "the_latest": [
         {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Blue Jays outfielder Rudy Martin Jr. clears waivers",
-          "dek": "The 30-year-old outfielder cleared waivers and was assigned to Triple-A Buffalo, preserving organizational depth after making his major-league debut in September. The move also opens a spot on Toronto's 40-man roster as the 79-83 club begins shaping its offseason plans.",
-          "date": "October 30, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-outfielder-rudy-martin-jr-clears-waivers/"
-        },
-        {
           "source": "MLB.com",
           "source_class": "web",
-          "headline": "Watch Blue Jays prospects in Arizona Fall League action",
-          "dek": "With Toronto entering an offseason of roster decisions after a 79-83 finish, Arizona offers a timely gauge of which young players are pushing toward major-league consideration. Yondrei Rojas and Brandon Barriera are among the prospects using the Fall League to strengthen their",
-          "date": "October 31, 2026",
-          "link": "https://www.mlb.com/bluejays/news/watch-top-prospects-in-arizona-fall-league-winter-ball-2026"
+          "headline": "Blue Jays lead AL with 5 Gold Glove nominees",
+          "dek": "Five Toronto players are finalists ahead of Sunday night's awards, tying the Cubs for the most among all clubs. The recognition gives a strong defensive dimension to an 83-loss season, though the Jays also led the American League with 99 errors.",
+          "date": "November 1, 2026",
+          "link": "https://www.mlb.com/bluejays/news/2026-gold-glove-award-finalists"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Would it be smart for the Blue Jays to entertain a Marte trade?",
+          "dek": "After a disappointing 79-83 season, Toronto faces pressure to make meaningful changes without sacrificing its longer-term flexibility. Marte's talent could address a need in the lineup, but his age, contract commitment and trade cost make this a defining test of how aggressively",
+          "date": "October 30, 2026",
+          "link": "https://www.sportsnet.ca/mlb/video/would-it-be-smart-for-the-blue-jays-to-entertain-a-marte-trade/"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "How will Jays rank their off-season priorities, and is Suzuki good fit?",
+          "dek": "After a disappointing 79-83 finish, Toronto's offseason priorities begin with repairing an offense that ranked among the weakest in franchise history. Seiya Suzuki could address the outfield and add-needed slug, but the cost and roster fit will determine whether he is the right",
+          "date": "October 30, 2026",
+          "link": "https://www.sportsnet.ca/mlb/video/how-will-jays-rank-their-off-season-priorities-and-is-suzuki-good-fit/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "MLB free agency tracker: 2026-27 offseason trades, moves",
-          "dek": "With Toronto coming off a 79-83 season, the first days of the offseason will help clarify whether the Blue Jays reload or reshape their roster. The tracker follows a market that opened Thursday, with free agents emerging and trades setting the early direction before signings",
+          "dek": "After a disappointing 79-83 season, Toronto enters the winter needing meaningful roster changes to close the gap in the AL East. With free agency opening and major decisions arriving quickly, the tracker will show whether the Blue Jays pursue impact talent or reshape more",
           "date": "October 30, 2026",
           "link": "https://www.espn.com/mlb/story/_/id/50328768/free-agency-tracker-offseason-trades-moves-2026-2027"
         },
@@ -586,17 +594,9 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Who has won MLB World Series MVP? All-time winners list",
-          "dek": "With Toronto entering the early offseason after a 79-83 finish, the all-time World Series MVP roll call offers a useful measure of October greatness. William Contreras is the newest addition after leading Milwaukee past Tampa Bay in five games.",
+          "dek": "With Toronto coming off a heartbreaking 2025 World Series loss to the Dodgers, this retrospective puts the franchise's championship legacy in sharper focus. The Blue Jays have won two titles, but neither of their World Series triumphs produced a World Series MVP from Toronto.",
           "date": "October 30, 2026",
           "link": "https://www.espn.com/mlb/story/_/id/42060322/who-won-mlb-world-series-mvp-all-winners-list"
-        },
-        {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Would it be smart for the Blue Jays to entertain a Marte trade?",
-          "dek": "After a 79-83 season, Toronto enters the offseason needing meaningful upgrades rather than a splash for its own sake. Marte's potential availability raises a sharper question: would his bat and versatility justify the prospect cost, contract commitment and risk attached to",
-          "date": "October 30, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/would-it-be-smart-for-the-blue-jays-to-entertain-a-marte-trade/"
         }
       ],
       "standings": {
@@ -708,8 +708,8 @@
       "detail": "3rd in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors left Friday night with a loss, but also with proof that Scottie Barnes can seize a game by the collar. <strong>Barnes scored a career-high 41 points in Toronto's 121-114 defeat against Orlando</strong>, shooting 19-for-34 before fouling out. That is star-level production - and it still wasn't enough. Toronto fell to 3-2, slipped to third in the Atlantic Division and carries a one-game losing streak into November. The larger concern is Kawhi Leonard, who remains out with swelling in his left knee; the Raptors have now lost twice in three games without him. Barnes can fill a scoring vacuum, but he cannot alone patch every defensive crack or close every late-game gap. <strong>Sunday's 9 p.m. visit to the Lakers is the next measuring stick</strong> - particularly whether Toronto's young core can turn Barnes' brilliance into a road win.",
-        "updated": "Updated October 31, 2026"
+        "body": "A bright individual performance could not conceal a familiar team problem: Toronto can look imposing one night and porous the next. <strong>Scottie Barnes poured in a career-high 41 points, with five rebounds and five assists, yet the Raptors fell 121-114 to Orlando on Friday.</strong> The loss dropped Toronto to 3-2 and left it third in the Atlantic Division, with a one-game skid and two games behind. Barnes' eruption was the headline, but not the verdict; Orlando answered with 18 three-pointers, turning Toronto's defensive lapses into a scoreboard chase. The injury report adds weight to the challenge: Kawhi Leonard is out with left-knee swelling, while Nate Bittle remains sidelined and Chucky Hepburn is questionable with a hamstring issue. <strong>Next comes a 9 p.m. ET visit to the Lakers tonight, where Toronto must prove Barnes' brilliance can become winning basketball.</strong>",
+        "updated": "Updated November 1, 2026"
       },
       "key_numbers": [
         {
@@ -728,7 +728,7 @@
           "note": "Current streak"
         },
         {
-          "number": "1.5",
+          "number": "2",
           "label": "Games Back",
           "note": "3rd in Atlantic Division"
         }
@@ -793,7 +793,7 @@
         "subtitle": "NBA - Oct 30, 2026",
         "result_badge": "L 114-121",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=P1VYhnik9iY",
+        "url": "https://www.youtube.com/watch?v=5myJHfv2YjA",
         "game_date": "2026-10-30"
       },
       "the_latest": [
@@ -801,7 +801,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors fell to Magic 121-114",
-          "dek": "Scottie Barnes erupted for a career-high 41 points, but Toronto could not finish after Orlando erased an early deficit and pulled away late. The loss drops the Raptors to 3-2 and leaves them 0-1 in NBA Cup group play, despite a strong start to the regular season.",
+          "dek": "Scottie Barnes erupted for a career-high 41 points, but Toronto could not protect a fourth-quarter lead in its first NBA Cup game. The Raptors now carry a 3-2 record into Sunday's road matchup with the Lakers after splitting a two-game set against Orlando.",
           "date": "Oct 30",
           "link": "https://www.espn.com/nba/recap?gameId=401909281"
         },
@@ -809,31 +809,31 @@
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Barnes hits new heights on offence but Raptors fall to Magic",
-          "dek": "Scottie Barnes answered last week's offensive low with a career-high 41 points, but Toronto could not convert that breakthrough into a win. The 121-114 loss drops the 3-2 Raptors behind a chance to strengthen their early position in the Atlantic Division.",
+          "dek": "Barnes answered his worst offensive outing of the season with a career-high 41 points, but Toronto could not turn his scoring surge into a win against Orlando. The 121-114 defeat leaves the 3-2 Raptors seeking a response as they begin a four-game road trip.",
           "date": "October 31, 2026",
           "link": "https://www.sportsnet.ca/nba/article/barnes-hits-new-heights-on-offence-but-raptors-fall-to-magic/"
         },
         {
-          "source": "Toronto Sun",
+          "source": "The Globe and Mail",
           "source_class": "web",
-          "headline": "Raptors waste Scottie Barnes' career-high scoring night in loss to Orlando Magic",
-          "dek": "Scottie Barnes' 41 points marked his first 40-point game, but Toronto could not close out Orlando after leading early in the fourth quarter. The 121-114 NBA Cup loss leaves the 3-2 Raptors needing more balance around their emerging star.",
+          "headline": "Barnes has career-high 41 points but Raptors lose to Magic 121-114",
+          "dek": "Toronto fell to 3-2 after Orlando erased the impact of Barnes' career night, exposing how much more the Raptors need from the supporting cast. The loss also opened NBA Cup play with a setback before Toronto begins a four-game road trip against the Lakers.",
           "date": "October 31, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/raptors-waste-scottie-barnes-career-high-scoring-night-in-loss-to-orlando-magic"
+          "link": "https://www.theglobeandmail.com/sports/basketball/article-barnes-has-career-high-41-points-but-raptors-lose-to-magic-121-114/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Raptors beat Magic 129-99",
-          "dek": "Toronto's 30-point demolition of Orlando marked its second straight win and strengthened a fast start at 3-2, with the Raptors controlling every quarter and winning the rebounding battle. The result also gave them early leverage in the season series before the Magic returned two",
-          "date": "Oct 28",
-          "link": "https://www.espn.com/nba/recap?gameId=401909885"
+          "headline": "2026 NBA Cup: Schedule, format, groups, updates and more",
+          "dek": "Toronto opened NBA Cup play with a 121-114 loss to Orlando despite Scottie Barnes' career-high 41 points, leaving no margin for error in its four-game group schedule. The Raptors now turn to a Sunday matchup with the Lakers, with Cup results also counting toward the",
+          "date": "October 31, 2026",
+          "link": "https://www.espn.com/nba/story/_/id/49577473/2026-nba-season-tournament-cup-format-highlights-updates"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
           "headline": "Raptors' Barnes sets new career-high with 41 points vs. Magic",
-          "dek": "Barnes' 41-point eruption shattered his previous career high, but it could not prevent Toronto from falling 121-114 to Orlando in its NBA Cup opener. At 3-2 and third in the Atlantic, the Raptors leave the night with a milestone performance and a reminder that late-game",
+          "dek": "Barnes' career night could not prevent Toronto from falling 121-114 to Orlando, leaving the Raptors at 3-2 as they open a four-game road trip. The performance also raises the stakes for Sunday's visit to the Lakers, where Toronto needs more production around its star to avoid a",
           "date": "October 30, 2026",
           "link": "https://www.sportsnet.ca/nba/video/raptors-barnes-sets-new-career-high-with-41-points-vs-magic/"
         }
@@ -860,9 +860,9 @@
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "5",
+                  "6",
                   "1",
-                  ".833"
+                  ".857"
                 ],
                 "seed": "1"
               },
@@ -891,6 +891,18 @@
                 "seed": "3"
               },
               {
+                "team": "Cavaliers",
+                "logo": "cle",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "4",
+                  "2",
+                  ".667"
+                ],
+                "seed": "4"
+              },
+              {
                 "team": "Raptors",
                 "logo": "tor",
                 "league": "nba",
@@ -900,31 +912,7 @@
                   "2",
                   ".600"
                 ],
-                "seed": "4"
-              },
-              {
-                "team": "Cavaliers",
-                "logo": "cle",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "3",
-                  "2",
-                  ".600"
-                ],
                 "seed": "5"
-              },
-              {
-                "team": "Hawks",
-                "logo": "atl",
-                "league": "nba",
-                "you": false,
-                "vals": [
-                  "3",
-                  "3",
-                  ".500"
-                ],
-                "seed": "6"
               },
               {
                 "team": "Wizards",
@@ -936,6 +924,18 @@
                   "3",
                   ".500"
                 ],
+                "seed": "6"
+              },
+              {
+                "team": "Hawks",
+                "logo": "atl",
+                "league": "nba",
+                "you": false,
+                "vals": [
+                  "3",
+                  "4",
+                  ".429"
+                ],
                 "seed": "7"
               },
               {
@@ -945,8 +945,8 @@
                 "you": false,
                 "vals": [
                   "3",
-                  "3",
-                  ".500"
+                  "4",
+                  ".429"
                 ],
                 "seed": "8"
               },
@@ -989,17 +989,17 @@
                 "you": false
               },
               {
-                "matchup": "(3) Celtics vs. (4) Raptors",
-                "series": "Sat Apr 18",
-                "you": true
-              },
-              {
-                "matchup": "(5) Cavaliers vs. (6) Hawks",
+                "matchup": "(3) Celtics vs. (4) Cavaliers",
                 "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "matchup": "(7) Wizards vs. (8) Hornets",
+                "matchup": "(5) Raptors vs. (6) Wizards",
+                "series": "Sat Apr 18",
+                "you": true
+              },
+              {
+                "matchup": "(7) Hawks vs. (8) Hornets",
                 "series": "Sat Apr 18",
                 "you": false
               }
@@ -1038,8 +1038,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The season's thin margin just got thinner. <strong>Daron Payne's significant foot injury, suffered in Friday's practice, has knocked Washington's anchor out of Sunday night's meeting with Philadelphia and may send him to injured reserve.</strong> That is a brutal blow for a 1-4-1 club already third in the NFC East, 2.5 games behind, and riding a one-game losing streak after the 23-17 defeat to San Francisco on Oct. 19. Payne had started all six games and recorded 14 tackles and a sack; now both starting defensive tackles could be sidelined against the Eagles. The timing is especially cruel for first-year coordinators still searching for their answers, and for a defense that cannot afford another collapse. <strong>At 8:20 p.m. Sunday on NBC, Washington must contain Philadelphia without Payne - and prove its season still has a pulse.</strong>",
-        "updated": "Updated October 31, 2026"
+        "body": "The season has turned from uneasy to urgent, and Washington will have to face that truth under the Sunday-night lights. <strong>Daron Payne's season-ending Jones fracture, suffered in Friday's practice, not only guts the interior of a defense already missing Javon Kinlaw and Jer'Zhan Newton - it kills the trade possibility that had briefly surrounded the veteran tackle.</strong> At 1-4-1, third in the NFC East and 2.5 games out, the Commanders have lost one and gone 13 days since their 23-17 defeat to San Francisco; the 27-27 tie with the Giants now looks less like a turning point than a missed escape hatch. Payne had started all six games, and his absence puts immediate pressure on the remaining front to contain Philadelphia's ground attack. <strong>Tonight's 8:20 p.m. NBC meeting with the Eagles is the test: can Washington's battered defense keep its season from sliding into irrelevance?</strong>",
+        "updated": "Updated November 1, 2026"
       },
       "key_numbers": [
         {
@@ -1128,42 +1128,42 @@
       },
       "the_latest": [
         {
-          "source": "CBS Sports",
-          "source_class": "web",
-          "headline": "NFL Week 8 picks, best bets: Lions hand Vikings first loss, Commanders cruise past Eagles",
-          "dek": "At 1-4-1, Washington enters a pivotal NFC East matchup with a chance to climb from third place and keep its season viable before the trade deadline. The optimism around a home win comes with a major defensive concern, as Daron Payne is expected to miss the game after suffering a",
-          "date": "October 30, 2026",
-          "link": "https://www.cbssports.com/nfl/news/nfl-week-8-odds-picks-against-spread-predictions-2026/"
-        },
-        {
           "source": "NBC Sports",
           "source_class": "web",
-          "headline": "Report: Daron Payne has a significant foot injury",
-          "dek": "At 1-4-1, Washington was positioned to weigh moving its starting defensive tackle for draft capital before the Nov. 10 deadline. The injury could end those trade talks while also leaving the Commanders without a key interior defender for an extended stretch.",
-          "date": "October 30, 2026",
-          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/report-daron-payne-has-a-significant-foot-injury"
+          "headline": "Before Daron Payne suffered a season-ending injury, the Commanders were in trade talks",
+          "dek": "At 1-4-1, Washington had reason to consider converting an expiring veteran into draft capital before the November 10 deadline. Payne's foot fracture instead leaves the Commanders with his $16.4 million 2026 salary, a major defensive vacancy and fewer options to reshape a",
+          "date": "October 31, 2026",
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/before-daron-payne-suffered-a-season-ending-injury-the-commanders-were-in-trade-talks"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Commanders vs. Eagles: Struggling NFC East squads face off on 'Sunday Night Football'",
+          "dek": "At 1-4-1, Washington enters a pivotal NFC East matchup with little margin for error and a chance to change the division's momentum at home. Jayden Daniels faces a Philadelphia defense reeling from a 416-yard loss while the Commanders compensate for season-ending injuries to key",
+          "date": "October 31, 2026",
+          "link": "https://www.cbssports.com/nfl/news/commanders-vs-eagles-where-to-watch-prediction/"
         },
         {
           "source": "The Sporting News",
           "source_class": "web",
-          "headline": "Eagles get great Saquon Barkley news for Week 8 vs. Commanders amid injury issues",
-          "dek": "Philadelphia will have Saquon Barkley available Sunday night, even as he manages hamstring and back issues and the Eagles lose DeVonta Smith to injury. That puts added pressure on Washington's run defense in a divisional matchup against a 1-4-1 team trying to stay relevant in",
-          "date": "October 30, 2026",
-          "link": "https://www.sportingnews.com/us/nfl/philadelphia-eagles/news/eagles-great-saquon-barkley-news-week-8-commanders-injury/4db6f9b3fb3499836e9cc22c"
+          "headline": "Commanders get two kinds of awful news with Daron Payne season-ending injury",
+          "dek": "At 1-4-1, Washington loses a starting interior defender just before a pivotal Sunday night matchup with Philadelphia, further weakening a roster already battered by injuries. The fracture also eliminates a potential trade of Payne, leaving the team without defensive help, draft",
+          "date": "October 31, 2026",
+          "link": "https://www.sportingnews.com/us/nfl/washington-commanders/news/commanders-two-awful-news-daron-payne-season-ending-injury/7051ac818ad42d5d548100e6"
         },
         {
-          "source": "Yahoo Sports",
-          "source_class": "web",
-          "headline": "Commanders star Daron Payne likely heading to IR in crusher before trade deadline",
-          "dek": "At 1-4-1 and third in the NFC East, Washington loses a foundational interior defender just as Sunday's matchup with Philadelphia looms. Payne's likely IR stint also removes a potential trade-deadline asset, forcing the Commanders to prioritize short-term defensive stability over",
+          "source": "ESPN",
+          "source_class": "espn",
+          "headline": "How does loss of Daron Payne affect Commanders?",
+          "dek": "Payne's season-ending foot fracture removes Washington's top interior anchor just as it prepares to face Philadelphia, with Javon Kinlaw also sidelined. His absence strains an already depleted defensive front and ends any chance of moving him before the trade deadline.",
           "date": "October 31, 2026",
-          "link": "https://sports.yahoo.com/articles/commanders-star-daron-payne-likely-004429801.html"
+          "link": "https://www.espn.com/video/clip/_/id/50340664/how-does-loss-daron-payne-affect-commanders"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "NFL Week 8 uniforms: Jaguars, Lions become latest team to debut Rivalries look",
-          "dek": "Washington's Week 8 uniform choice takes a back seat to a pivotal Sunday night meeting with Philadelphia, as the 1-4-1 Commanders try to gain ground in the NFC East. Injuries heighten the stakes, with Daron Payne questionable and Terry McLaurin absent.",
+          "dek": "Washington enters Week 8 at 1-4-1, hosting Philadelphia in a Sunday night NFC East matchup with major implications for a team trying to climb from third place. The uniform spotlight on Jacksonville and Detroit offers leaguewide style news, while Washington's focus is on ending",
           "date": "October 31, 2026",
           "link": "https://www.espn.com/nfl/story/_/id/50302364/nfl-week-8-uniforms"
         }
@@ -1260,76 +1260,70 @@
     }
   },
   "featured": {
-    "team": "raptors",
-    "kicker": "Toronto Raptors - Regular Season",
-    "headline": "Barnes has career-high 41 points but Raptors lose to Magic 121-114",
-    "dek": "Scottie Barnes' breakout scoring night could not overcome Orlando's 18-for-34 shooting from three, leaving Toronto 3-2 after splitting its two-game set with the Magic. The Raptors now face a quick turnaround against the Lakers Sunday, with an early-season road test ahead.",
-    "source": "The Globe and Mail",
-    "link": "https://www.theglobeandmail.com/sports/basketball/article-barnes-has-career-high-41-points-but-raptors-lose-to-magic-121-114/",
-    "date": "October 31, 2026"
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Regular Season",
+    "headline": "Maple Leafs talk Kucherov trade possibility after win over Canucks",
+    "dek": "Kucherov would reportedly consider Toronto, but the Lightning say they have no intention of moving their franchise winger. For the 8-6 Leafs, making a deal would require clearing significant future salary and surrendering limited trade assets, making this more intriguing",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-talk-kucherov-trade-possibility-after-win-over-canucks/",
+    "date": "November 1, 2026"
   },
   "two_up": [
     {
-      "team": "commanders",
-      "kicker": "Washington Commanders - Regular Season",
-      "headline": "Commanders DT Daron Payne, potential trade deadline target, suffers significant injury: Source",
-      "dek": "Payne's foot injury removes a key interior defender ahead of Sunday night's pivotal NFC East matchup with Philadelphia and could sideline him for the foreseeable future. With Washington at 1-4-1 and the Nov. 10 trade deadline approaching, the injury may also end trade",
-      "source": "The Athletic",
-      "link": "https://www.nytimes.com/athletic/7740252/2026/10/30/daron-payne-commanders-eagles-injury-out/",
-      "date": "October 31, 2026"
+      "team": "raptors",
+      "kicker": "Toronto Raptors - Regular Season",
+      "headline": "Some things of note through five Raptors games",
+      "dek": "Toronto's 3-2 start has featured encouraging defense and a 41-point outburst from Scottie Barnes, but Friday's loss to Orlando exposed the margin for error without Kawhi Leonard. The challenge sharpens Sunday in Los Angeles, where Leonard remains out with left-knee swelling as",
+      "source": "Toronto Sun",
+      "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/some-things-of-note-through-five-raptors-games",
+      "date": "November 1, 2026"
     },
     {
-      "team": "jays",
-      "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
-      "headline": "Why Bo Bichette's decision to opt-in for another season with the Mets was an easy one",
-      "dek": "Bichette's decision keeps him in New York after an uneven debut and removes a prominent former Blue Jay from this winter's free-agent market. For Toronto, his $42 million guarantee underscores the cost of replacing a familiar star while the 79-83 club weighs its next steps.",
-      "source": "Toronto Sun",
-      "link": "https://torontosun.com/sports/baseball/toronto-blue-jays/bo-bichette-opt-in-season-mets-easy",
-      "date": "October 31, 2026"
+      "team": "commanders",
+      "kicker": "Washington Commanders - Regular Season",
+      "headline": "Commanders DT Daron Payne, potential trade deadline target, fractures foot: Source",
+      "dek": "At 1-4-1 and already missing Terry McLaurin, Washington loses its best run defender before Sunday night's pivotal Eagles matchup. The season-ending fracture also eliminates a potential source of draft capital before the Nov. 10 deadline, leaving the Commanders with less",
+      "source": "The Athletic",
+      "link": "https://www.nytimes.com/athletic/7740252/2026/10/31/daron-payne-commanders-eagles-injury-out/",
+      "date": "November 1, 2026"
     }
   ],
   "extra_story": {
-    "team": "leafs",
-    "kicker": "Toronto Maple Leafs - Regular Season",
-    "headline": "Tanev, Joshua set to boost Maple Leafs in Vancouver",
-    "dek": "Toronto enters the Vancouver finale of a four-game Pacific road trip on a two-game skid, making the reinforcements especially timely with the club sitting 8th in the Eastern Conference. Joshua is poised for his season debut, while Tanev could stabilize a blue line that has gone",
-    "source": "Sportsnet",
-    "link": "https://www.sportsnet.ca/nhl/article/tanev-joshua-set-to-boost-maple-leafs-in-vancouver/",
-    "date": "October 31, 2026"
+    "team": "jays",
+    "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
+    "headline": "Watch Blue Jays prospects in Arizona Fall League action",
+    "dek": "Toronto finished 79-83, making the development of its next wave especially relevant as the organization reshapes for 2027. Blue Jays No. 11 prospect Jake Bloss gave that pipeline a boost with three scoreless innings and four strikeouts for Mesa on Saturday.",
+    "source": "MLB.com",
+    "link": "https://www.mlb.com/bluejays/news/watch-top-prospects-in-arizona-fall-league-winter-ball-2026",
+    "date": "November 1, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Next: Leafs at Canucks - Sat 10/31 7:00 PM ET"
+      "text": "Leafs beat Canucks 4-2"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs (7-6) - 8th in Eastern Conference"
+      "text": "Next: Leafs vs. Mammoth - Tue 11/3 7:00 PM ET"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs' Tanev eyes return against Canucks",
-      "published": "2026-10-31T01:02:19+00:00"
+      "text": "Leafs (8-6) - 5th in Eastern Conference"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "Maple Leafs talk Kucherov trade possibility after win over Canucks",
+      "published": "2026-11-01T03:51:15+00:00"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Would it be smart for the Blue Jays to entertain a Marte trade?",
-      "published": "2026-10-30T19:47:45+00:00"
-    },
-    {
-      "badge": "MLB",
-      "badge_style": "mlb",
-      "text": "Watch Blue Jays prospects in Arizona Fall League action",
-      "published": "2026-10-31T02:23:00+00:00"
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "nba",
-      "text": "Raptors fell to Magic 121-114"
+      "text": "Blue Jays lead AL with 5 Gold Glove nominees",
+      "published": "2026-11-01T04:00:00+00:00"
     },
     {
       "badge": "NBA",
@@ -1344,8 +1338,8 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Barnes hits new heights on offence but Raptors fall to Magic",
-      "published": "2026-10-31T04:44:44+00:00"
+      "text": "Some things of note through five Raptors games",
+      "published": "2026-10-31T21:38:53+00:00"
     },
     {
       "badge": "NFL",
@@ -1360,45 +1354,51 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Daron Payne has a significant foot injury",
-      "published": "2026-10-31T02:39:58+00:00"
+      "text": "Commanders DT Daron Payne suffered season-ending foot injury",
+      "published": "2026-10-31T20:12:47+00:00"
     }
   ],
   "scoreboard": [
     {
-      "team": "raptors",
-      "game_date": "2026-10-30",
-      "name": "Raptors",
-      "league": "NBA",
+      "team": "leafs",
+      "game_date": "2026-10-31",
+      "name": "Leafs",
+      "league": "NHL",
       "logo": "tor",
-      "opp_name": "Magic",
-      "opp_logo": "orl",
-      "team_score": 114,
-      "opp_score": 121,
-      "result": "L",
-      "date": "Oct 30",
+      "opp_name": "Canucks",
+      "opp_logo": "van",
+      "team_score": 4,
+      "opp_score": 2,
+      "result": "W",
+      "date": "Oct 31",
       "preseason": false,
       "stars": [
         {
-          "tag": "PTS",
+          "tag": "GOAL",
           "tone": "",
-          "name": "Barnes",
-          "stat": "41 pts"
+          "name": "Blueger",
+          "stat": "1G, 1A"
         },
         {
-          "tag": "REB",
+          "tag": "GOAL",
           "tone": "",
-          "name": "Poeltl",
-          "stat": "11 reb"
+          "name": "Nylander",
+          "stat": "1G, 1A"
         },
         {
-          "tag": "AST",
+          "tag": "GOAL",
           "tone": "",
-          "name": "Quickley",
-          "stat": "8 ast"
+          "name": "MacEwen",
+          "stat": "1G"
+        },
+        {
+          "tag": "SV",
+          "tone": "save",
+          "name": "Stolarz",
+          "stat": "26 saves, .929"
         }
       ],
-      "link": "https://www.youtube.com/watch?v=P1VYhnik9iY"
+      "link": "https://www.youtube.com/watch?v=syrFqcNZgQY"
     }
   ],
   "at_a_glance": [
@@ -1406,10 +1406,10 @@
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "7-6",
-      "status": "8th in Eastern Conference",
-      "status_class": "red",
-      "stat": "Streak: L2"
+      "record": "8-6",
+      "status": "5th in Eastern Conference",
+      "status_class": "green",
+      "stat": "Streak: W1"
     },
     {
       "team": "jays",
@@ -1443,24 +1443,10 @@
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs at Canucks",
-      "detail": "7:00 PM ET",
-      "channel": "Sportsnet",
-      "off": false,
-      "preview": {
-        "duel": {
-          "label": "In goal",
-          "status": "confirmed",
-          "ours": {
-            "name": "Stolarz",
-            "sub": "4-1-0, 2.79 GAA"
-          },
-          "theirs": {
-            "name": "Merilainen",
-            "sub": "2-4-1, 3.41 GAA"
-          }
-        }
-      }
+      "matchup": "Leafs",
+      "detail": "Next: Tue 11/3 vs. Mammoth 7:00 PM ET",
+      "channel": "",
+      "off": true
     },
     {
       "team": "jays",
@@ -1473,31 +1459,75 @@
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "matchup": "Raptors",
-      "detail": "Next: Sun 11/1 at Lakers 9:00 PM ET",
+      "matchup": "Raptors at Lakers",
+      "detail": "9:00 PM ET",
       "channel": "",
-      "off": true
+      "off": false,
+      "preview": {
+        "injuries": [
+          {
+            "status": "Out",
+            "tone": "out",
+            "players": [
+              {
+                "name": "Leonard",
+                "note": "knee"
+              },
+              {
+                "name": "Bittle",
+                "note": "foot"
+              }
+            ],
+            "more": 0
+          }
+        ]
+      }
     },
     {
       "team": "commanders",
       "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-      "matchup": "Commanders",
-      "detail": "Next: Sun 11/1 vs. Eagles 8:20 PM ET",
-      "channel": "",
-      "off": true
+      "matchup": "Commanders vs. Eagles",
+      "detail": "8:20 PM ET",
+      "channel": "NBC",
+      "off": false,
+      "preview": {
+        "injuries": [
+          {
+            "status": "Out",
+            "tone": "out",
+            "players": [
+              {
+                "name": "Payne",
+                "note": "foot"
+              },
+              {
+                "name": "Kinlaw",
+                "note": "knee"
+              }
+            ],
+            "more": 0
+          },
+          {
+            "status": "Questionable",
+            "tone": "questionable",
+            "players": [
+              {
+                "name": "Bates",
+                "note": "shoulder"
+              },
+              {
+                "name": "Burks",
+                "note": "foot"
+              }
+            ],
+            "more": 0
+          }
+        ]
+      }
     }
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Sat 10/31",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "at Canucks",
-        "time": "7:00 PM ET",
-        "tv": "Sportsnet"
-      },
       {
         "day": "Sun 11/1",
         "team": "commanders",
@@ -1560,17 +1590,35 @@
         "opp": "vs. Canadiens",
         "time": "7:00 PM ET",
         "tv": "Sportsnet"
+      },
+      {
+        "day": "Sun 11/8",
+        "team": "commanders",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+        "name": "Commanders",
+        "opp": "vs. Rams",
+        "time": "1:00 PM ET",
+        "tv": "Fox"
+      },
+      {
+        "day": "Sun 11/8",
+        "team": "leafs",
+        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+        "name": "Leafs",
+        "opp": "vs. Devils",
+        "time": "7:00 PM ET",
+        "tv": "TSN"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Tanev, Joshua Return for Leafs Against Canucks",
+      "title": "Maple Leafs Beat Canucks 4-2",
       "paragraphs": [
-        "The Leafs head to Vancouver tonight with Chris Tanev and Dakota Joshua set to return. Tanev last played October 10, while Joshua has not appeared this season. Anthony Stolarz starts against Kevin Lankinen at 7:00 PM ET on Sportsnet, with Toronto at 7-6 and eighth in the Eastern Conference.",
-        "The Jays are looking ahead after outfielder Rudy Martin Jr. cleared waivers, while Bo Bichette has opted in for another season with the Mets. The Raptors regroup after Scottie Barnes scored a career-high 41 points in Friday's 121-114 loss to Orlando. Jakob Poeltl had 11 rebounds and Immanuel Quickley eight assists; Toronto visits the Lakers Sunday at 9:00 PM ET.",
-        "The Commanders face the Eagles Sunday at 8:20 PM ET on NBC, but Daron Payne is out after suffering a significant foot injury in practice and could land on injured reserve. Washington enters at 1-4-1, third in the NFC East."
+        "The Leafs finished their road trip with a 4-2 win over the Canucks, getting goals from Auston Matthews, William Nylander, Zack MacEwen and Teddy Blueger. Nylander and Blueger each added an assist, while Anthony Stolarz stopped 26 shots. Toronto is 8-6 and visits the Mammoth Tuesday at 7:00 PM ET on TSN. Trade talk involving Nikita Kucherov also surfaced after the win.",
+        "The Jays turn toward the offseason, with five players among the American League's Gold Glove nominees and prospects appearing in Arizona Fall League action. The Raptors take their 3-2 record to Los Angeles tonight at 9:00 PM ET against the Lakers; Kawhi Leonard and Jonathan Bittle are out with knee and foot injuries.",
+        "The Commanders host the Eagles at 8:20 PM ET on NBC. Washington is 1-4-1, and Daron Payne is out with a fractured foot, joining Javon Kinlaw on the sideline. John Bates and Treylon Burks are questionable."
       ]
     }
   }
