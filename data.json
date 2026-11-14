@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updated": "2026-11-13T05:00:35.134819-05:00",
-    "date_display": "November 13, 2026",
+    "updated": "2026-11-14T04:30:11.390657-05:00",
+    "date_display": "November 14, 2026",
     "data_health": {
-      "espn_ok": 46,
+      "espn_ok": 44,
       "espn_failed": 0,
       "espn_via_mirror": 0,
       "espn_failed_urls": [],
@@ -23,8 +23,8 @@
       "detail": "12th in Eastern Conference",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The floor keeps dropping out beneath Toronto - and Thursday's defeat made the basement visible. <strong>The Maple Leafs fell 5-2 to Minnesota</strong>, their fourth straight loss and fifth consecutive regulation defeat at home, leaving them 8-11, 12th in the Eastern Conference with 18 points and 10 games out. Auston Matthews finally scored his first goal of November, but even the captain admitted confidence has been shaken. Zack MacEwen supplied a goal and an assist, a useful spark from the fourth line, yet the larger problem remains on the blue line: Morgan Rielly is sidelined with a lower-body injury, while Chris Tanev was scratched for maintenance against the Wild. This is no longer a brief wobble; it is a team misplacing its identity in broad daylight. <strong>Edmonton arrives Saturday at 7 p.m. ET on Sportsnet - the Leafs need urgency, structure and a response before this slump hardens into their season.</strong>",
-        "updated": "Updated November 13, 2026"
+        "body": "The Leafs' season has reached the point where excuses start sounding like surrender. <strong>Thursday's 5-2 loss to Minnesota extended Toronto's skid to four games</strong>, leaving the club 8-11, 12th in the Eastern Conference, 10 games behind, with 18 points. This is not a slump to admire from a distance; it is a team leaking authority. Chris Tanev's absence has become the sharpest symbol. His planned maintenance may preserve him for the long haul, but sitting a stabilizing defender while the losses pile up is a wager Toronto can no longer make casually. The Rogers Centre routine shake-up only underscores the need for something sturdier than theatre. Mike Babcock's return adds spice, not substance. <strong>Tonight's 7 p.m. meeting with Edmonton is the test: Tanev is expected back, and Toronto must prove its defence can finally hold.</strong>",
+        "updated": "Updated November 14, 2026"
       },
       "key_numbers": [
         {
@@ -116,39 +116,39 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Leafs fell to Wild 5-2",
-          "dek": "The loss leaves Toronto at 8-11 and 12th in the Eastern Conference, adding urgency to a season already trending below expectations. Minnesota's Matt Boldy scored three times, while the Leafs absorbed their fifth consecutive regulation home defeat.",
+          "dek": "The loss extended Toronto's skid to five straight regulation defeats and left the Leafs 8-11-2, 12th in the Eastern Conference. With a five-game home losing streak and Edmonton next on Saturday, the pressure is mounting to stop the slide quickly.",
           "date": "Nov 12",
           "link": "https://www.espn.com/nhl/recap?gameId=401892697"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "John Chayka's big offseason bets aren't paying off (yet) for the Maple Leafs",
-          "dek": "At 8-11-2 and 12th in the Eastern Conference, Toronto has little margin for patience as its expensive offseason additions struggle to translate into wins. The defensive reinforcements remain the clearest concern, putting pressure on John Chayka's roster-building vision before",
-          "date": "November 12, 2026",
-          "link": "https://www.nytimes.com/athletic/7773888/2026/11/12/maple-leafs-john-chayka-offseason-bets/"
+          "headline": "Mike Babcock downplays Leafs legacy talk ahead of return: 'The Beatles broke up, remember?'",
+          "dek": "Toronto sits 8-11 and 12th in the East, making this reunion more than a nostalgic sideshow as the Leafs try to halt a shaky start. Babcock arrives with Edmonton at 14-3-3 and riding three straight wins, while his last Toronto game ended with his 2019 firing.",
+          "date": "November 13, 2026",
+          "link": "https://www.nytimes.com/athletic/7779380/2026/11/13/mike-babcock-toronto-maple-leafs-oilers-return/"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Why the Maple Leafs hope a day at the ballpark works in their favour",
+          "dek": "The change of scenery comes as Toronto tries to halt a five-game home losing streak, with the club outscored 22-9 during the slide. The reset arrives before a daunting visit from Edmonton, making Saturday's game a test of whether the ballpark outing improved the Leafs' focus and",
+          "date": "November 13, 2026",
+          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/why-hope-day-ballpark-works-favour"
         },
         {
           "source": "The Globe and Mail",
           "source_class": "web",
           "headline": "Boldy's hat trick sends Leafs to fifth consecutive loss",
-          "dek": "Toronto has dropped the first five games of its six-game homestand, falling to 8-11-2 and allowing its early-season slide to deepen. Edmonton visits Saturday with the Leafs needing an immediate response before a lost homestand becomes a defining setback.",
+          "dek": "Toronto has dropped five straight and been outscored 22-9 during a slide that has exposed costly defensive mistakes at home. With Edmonton arriving Saturday for the second game of a six-game homestand, the 8-11 Leafs face immediate pressure to reverse their momentum.",
           "date": "November 13, 2026",
           "link": "https://www.theglobeandmail.com/sports/hockey/article-boldys-hat-trick-sends-leafs-to-fifth-consecutive-loss/"
-        },
-        {
-          "source": "Toronto Sun",
-          "source_class": "web",
-          "headline": "Wild's Matt Boldy notches hat trick as Maple Leafs lose fifth straight at home",
-          "dek": "The 5-2 loss dropped Toronto to 8-11 and marked its fifth straight regulation defeat at Scotiabank Arena, sharpening pressure on a team already 12th in the Eastern Conference. The Maple Leafs now face Edmonton on Saturday with little margin for another uneven defensive",
-          "date": "November 13, 2026",
-          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/matt-boldy-hat-trick-extends-leafs-losing-streak"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
           "headline": "NHL Power Rankings: Maple Leafs continue to slide as Sergei Bobrovsky struggles",
-          "dek": "Toronto's 8-11 record has pushed the club to 12th in the Eastern Conference, turning an early-season slump into a standings problem. Bobrovsky's uneven start has magnified broader roster concerns, leaving little margin for error as the Leafs try to stop the slide.",
+          "dek": "Toronto's 8-11 start has pushed the season toward crisis territory, with the Leafs entering Saturday's home date against Edmonton on a five-game home losing streak. Bobrovsky's poor even-strength results have magnified defensive breakdowns, leaving little margin against one of",
           "date": "November 11, 2026",
           "link": "https://www.cbssports.com/nhl/news/nhl-power-rankings-maple-leafs-sergei-bobrovsky/"
         }
@@ -349,10 +349,10 @@
                 "you": false,
                 "seed": "M3",
                 "vals": [
-                  "11",
+                  "12",
                   "8",
                   "1",
-                  "23"
+                  "25"
                 ]
               },
               {
@@ -528,8 +528,8 @@
       "detail": "2nd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The Blue Jays left Las Vegas without a transaction, but not without a blueprint. <strong>Ross Atkins said Toronto held more than 100 conversations with agents and clubs and came away more confident about the market</strong> - a useful start, not a finished offseason. The needs are unmistakable: rotation depth after an injury-riddled year, bullpen flexibility, and a middle-of-the-order jolt. Kevin Gausman's possible return would bring credibility and innings; Jazz Chisholm Jr. would bring electricity, versatility and the sort of offensive pressure this roster needs. Spencer Miles' 95.2-inning rookie season also gives Toronto an intriguing internal lever, though Atkins wisely wants more workload with less role volatility. The final record was -2.0 points, but that number belongs in the rearview mirror. <strong>Now watch whether Toronto turns its GM-meeting confidence into an infield deal or a rotation commitment before camp opens March 25 at Yankee Stadium.</strong>",
-        "updated": "Updated November 13, 2026"
+        "body": "The Blue Jays' offseason has barely begun, and already the club is wrestling with a problem no lineup construction can solve. <strong>Anthony Santander's apology for anti-Muslim social-media posts</strong> was necessary, but it does not erase the damage; Toronto now has to decide what accountability looks like while protecting a clubhouse and a city built on inclusion. The baseball work remains just as urgent. With the season over and a final points total of -2.0, Ross Atkins must add impact rather than window dressing, particularly in a Japanese free-agent market where Toronto is suddenly viewed as a serious destination. Santander, 32, is the immediate human story, but the roster is the larger one: too much depends on old answers and not enough on fresh ones. <strong>Watch the winter meetings for a meaningful Japanese signing or trade - and whether the organization pairs ambition with unmistakable standards before camp opens March 25 at Yankee Stadium.</strong>",
+        "updated": "Updated November 14, 2026"
       },
       "key_numbers": [
         {
@@ -554,44 +554,44 @@
       },
       "the_latest": [
         {
-          "source": "Sportsnet",
-          "source_class": "sportsnet",
-          "headline": "Blue Jays' Atkins coming away confident from GM Meetings",
-          "dek": "Toronto held more than 100 conversations with agents and clubs in Las Vegas, sharpening its picture of potential free-agent and trade targets. Atkins' optimism signals an aggressive winter ahead as the Blue Jays look to improve their offense, rotation and bullpen.",
-          "date": "November 12, 2026",
-          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-atkins-coming-away-confident-from-gm-meetings/"
-        },
-        {
-          "source": "MLB.com",
-          "source_class": "web",
-          "headline": "Here's the latest from Atkins at the General Managers Meetings",
-          "dek": "Toronto's front office held more than 100 conversations with agents and clubs in Las Vegas, targeting upgrades across the roster after missing the playoffs. Ross Atkins left the meetings more confident in the Blue Jays' appeal, raising expectations for an active winter ahead.",
-          "date": "November 12, 2026",
-          "link": "https://www.mlb.com/bluejays/news/blue-jays-ross-atkins-general-managers-meetings"
-        },
-        {
           "source": "Toronto Sun",
           "source_class": "web",
-          "headline": "How Celtics' Jayson Tatum made an 87-year-old Toronto fan's dream come true",
-          "dek": "The heartwarming meeting came before Boston erased a 22-point deficit to beat Toronto 98-93, giving the 87-year-old fan a memorable night beyond her encounter with Tatum. It also underscored the personal connection sports can create, even during a difficult home result for the",
-          "date": "November 12, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/celtics-jayson-tatum-87-year-old-fan-dream"
+          "headline": "Anthony Santander apologizes for hurtful Islamophobic posts as heat on Blue Jays rises",
+          "dek": "Santander's apology follows a week of mounting pressure after the Blue Jays condemned his deleted posts and met with leaders from Toronto's Muslim community. The delayed response leaves the organization facing continued questions about accountability, fan trust and how it",
+          "date": "November 13, 2026",
+          "link": "https://torontosun.com/sports/baseball/toronto-blue-jays/anthony-santander-apologizes-for-hurtful-islamophobic-posts-as-heat-on-blue-jays-rises"
+        },
+        {
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Blue Jays' Anthony Santander apologizes for anti-Muslim posts",
+          "dek": "The apology follows the Blue Jays' public condemnation and outreach to Toronto's Muslim community after Santander shared the posts on Nov. 4 and deleted them the next morning. His statement addresses the immediate backlash, but potential team discipline and the club's handling",
+          "date": "November 13, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-anthony-santander-apologizes-for-anti-muslim-posts/"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
-          "headline": "MLB rumors: Phillies OF on the trading block, Blue Jays eye ex-Yankee, plus Mets, Mariners, Braves, Rays, more",
-          "dek": "Toronto is signaling that adding offense is the priority, with reported interest in Jazz Chisholm Jr., Seiya Suzuki, Brandon Lowe and other potential targets. The pursuit of former Yankees reliever Jonathan Loáisiga would address the bullpen, suggesting the Blue Jays are",
+          "headline": "Blue Jays' Anthony Santander issues statement after sharing anti-Muslim videos: 'This content caused hurt'",
+          "dek": "The apology follows swift condemnation from Toronto's leadership and meetings with members of the city's Muslim community after Santander deleted the posts. His statement now shifts attention to accountability, the responsibility of a public platform and how the Blue Jays",
+          "date": "November 13, 2026",
+          "link": "https://www.cbssports.com/mlb/news/blue-jays-anthony-santander-statement-anti-muslim-social-media-posts/"
+        },
+        {
+          "source": "The Athletic",
+          "source_class": "athletic",
+          "headline": "What I'm hearing about the Blue Jays: Rotation targets, a Kevin Gausman return, infield trades",
+          "dek": "Toronto is pursuing a meaningful rotation upgrade, with Tarik Skubal among the reported targets and Kevin Gausman a potential fallback after his midseason departure. The bigger roster reshuffle could come in the infield, where interest in names such as Ketel Marte, Brandon Lowe",
           "date": "November 12, 2026",
-          "link": "https://www.cbssports.com/mlb/news/mlb-rumors-mariners-ian-happ-mets-alec-bohm-twins-rays/"
+          "link": "https://www.nytimes.com/athletic/7776827/2026/11/12/what-im-hearing-blue-jays-rotation-kevin-gausman-infield-trades/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 MLB Awards: Results, analysis on MVP, Cy Young, more",
-          "dek": "Toronto's Dylan Cease finished second in American League Cy Young voting, giving the Blue Jays a major offseason talking point despite missing the top honor. The broader awards picture also featured unanimous MVP and Cy Young selections, raising the bar for the club's own 2026",
+          "headline": "Blue Jays' Anthony Santander apologizes for sharing anti-Muslim posts",
+          "dek": "The apology follows swift condemnation from Toronto, including a public rebuke from GM Ross Atkins and outreach by team officials to Muslim community leaders. With the offseason underway, the response now puts attention on accountability, the club's handling of the fallout and",
           "date": "November 13, 2026",
-          "link": "https://www.espn.com/mlb/story/_/id/50391276/2026-season-awards-mvp-cy-young-al-nl"
+          "link": "https://www.espn.com/mlb/story/_/id/50474604/blue-jays-anthony-santander-apologizes-anti-muslim-posts"
         }
       ],
       "standings": {
@@ -703,8 +703,8 @@
       "detail": "4th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "The Raptors are discovering how thin the margin becomes when the stars sit and the schedule turns cruel. <strong>Toronto fell 123-112 to Philadelphia on Thursday, its third straight loss</strong>, despite a spirited response from RJ Barrett and Immanuel Quickley. Barrett delivered 31 points and 14 rebounds; Quickley added 25, but the short-handed Raptors could not contain Tyrese Maxey and Joel Embiid. Scottie Barnes and Kawhi Leonard remained out, and their absences now define the club's problems more than any promising offensive burst. At 5-7, Toronto sits fourth in the Atlantic Division, five games behind, with a minus-1.0 points mark - respectable enough to stay within sight, but not sturdy enough to ignore the skid. The Celtics loss two nights earlier only sharpened the concern. <strong>Sunday's 6 p.m. ET meeting with the Knicks is the next test: Toronto must defend with purpose and prove Barrett and Quickley can carry more than a scoring burden.</strong>",
-        "updated": "Updated November 13, 2026"
+        "body": "The Raptors' slide has become less a slump than an examination of what remains when the stars are stripped away. <strong>Thursday's 123-112 loss to Philadelphia</strong> made it three straight defeats, following a 98-93 setback against Boston, and left Toronto 5-7, fourth in the Atlantic and five games behind. The hard truth is sitting in the injury report: Kawhi Leonard is out with a knee problem, while Scottie Barnes remains day-to-day with an adductor issue. Toronto has already used seven starting lineups in 12 games. That is not continuity; it is improvisation under fire. RJ Barrett and Immanuel Quickley improved against the 76ers, but without the club's two premier forwards, improvement has not become victories. The next test is immediate and unforgiving - <strong>the Knicks visit Sunday at 6 p.m. ET, with Toronto needing health, resistance and an end to this three-game skid</strong>.",
+        "updated": "Updated November 14, 2026"
       },
       "key_numbers": [
         {
@@ -788,7 +788,7 @@
         "subtitle": "NBA - Nov 12, 2026",
         "result_badge": "L 112-123",
         "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=uaRHac5O9UA",
+        "url": "https://www.youtube.com/watch?v=VH9MaXXfG1A",
         "game_date": "2026-11-12"
       },
       "the_latest": [
@@ -796,41 +796,41 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors fell to 76ers 123-112",
-          "dek": "Toronto's 17-point first-quarter lead disappeared as Philadelphia seized control with a 22-point edge across the third quarter. The Raptors slipped to 5-7, with RJ Barrett's 31-point, 14-rebound performance unable to prevent another loss in the Atlantic Division race.",
+          "dek": "Toronto dropped to 5-7 and has now lost three straight, leaving little room for slippage in the Atlantic Division race. Tyrese Maxey's 27 points and Philadelphia's decisive third-quarter push exposed the margin separating the Raptors from a 10-3 contender.",
           "date": "Nov 12",
           "link": "https://www.espn.com/nba/recap?gameId=401909976"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Barrett, Quickley bounce back but Raptors fall short vs. 76ers",
-          "dek": "Barrett's 31 points and 14 rebounds, paired with Quickley's 26 points and six assists, offered a needed offensive reset. It still could not prevent Toronto's third straight loss, leaving a 5-7 team searching for more reliable contributions beyond its two primary creators.",
-          "date": "November 12, 2026",
-          "link": "https://www.sportsnet.ca/rj-barrett/article/barrett-quickley-bounce-back-but-raptors-fall-short-vs-76ers/"
+          "headline": "'Be myself': Canada's Noah Lewis brings personal edge as Raptors 905 coach",
+          "dek": "Lewis's promotion marks a significant development path within Toronto's organization, after he joined in 2021 and spent the past three seasons learning under Darko Rajakovic. His first head-coaching role arrives as the Raptors sit 5-7, giving the Canadian coach a chance to shape",
+          "date": "November 13, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/be-myself-canadas-noah-lewis-brings-personal-edge-as-raptors-905-coach/"
         },
         {
           "source": "Toronto Sun",
           "source_class": "web",
-          "headline": "Another moral victory for Raptors, but still a loss to Sixers",
-          "dek": "Toronto squandered a 17-point lead and let Philadelphia pull away with a 16-2 run, dropping to 5-7 despite another competitive showing. The Raptors now face the Eastern Conference's 10-3 Sixers standard again, with consecutive games against the Knicks offering little room for a",
+          "headline": "Impossible to know what these Raptors are without Kawhi, Barnes",
+          "dek": "Toronto has blown 22-point and 17-point leads in consecutive games, falling to 5-7 while Kawhi Leonard and Scottie Barnes remain sidelined. Until both return, losses expose the roster's limits without clarifying whether this team can contend in the Atlantic or merely compete for",
+          "date": "November 14, 2026",
+          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/impossible-to-know-what-these-raptors-are-without-kawhi-barnes"
+        },
+        {
+          "source": "The Globe and Mail",
+          "source_class": "web",
+          "headline": "Maxey, Embiid lead 76ers past Raptors without James",
+          "dek": "Toronto fell to 5-7 after a 123-112 loss in Philadelphia, its fourth defeat in five games. With Scottie Barnes and Kawhi Leonard sidelined, the Raptors remain fourth in the Atlantic and short on firepower against elite competition.",
           "date": "November 13, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/another-moral-victory-for-raptors-but-still-a-loss-to-sixers"
+          "link": "https://www.theglobeandmail.com/sports/basketball/article-maxey-embiid-lead-76ers-past-raptors-without-james/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Raptors fell to Celtics 98-93",
-          "dek": "Toronto surrendered a 22-point lead as Boston rallied to win a pivotal Atlantic Division matchup, exposing an offense that faded after a strong start. The loss dropped the Raptors to 5-7 and raised the stakes for their immediate push to stay in the division race.",
+          "dek": "Toronto squandered a 22-point lead against Boston, extending a troubling stretch in which promising starts have not translated into wins. At 5-7 and fourth in the Atlantic, the Raptors now face added pressure to stabilize their season while key contributors remain sidelined.",
           "date": "Nov 11",
           "link": "https://www.espn.com/nba/recap?gameId=401909968"
-        },
-        {
-          "source": "The Globe and Mail",
-          "source_class": "web",
-          "headline": "LeBron James won't play in Raptors' visit to 76ers for low back management",
-          "dek": "LeBron James' absence removes a major scoring and playmaking threat, but Toronto remains shorthanded with Kawhi Leonard and Scottie Barnes sidelined. At 5-7 and riding a three-game losing streak, the Raptors need to capitalize against a Philadelphia team still positioned near",
-          "date": "November 12, 2026",
-          "link": "https://www.theglobeandmail.com/sports/basketball/article-lebron-james-76ers-vs-raptors-low-back-management/"
         }
       ],
       "standings": {
@@ -892,8 +892,8 @@
                 "you": false,
                 "vals": [
                   "7",
-                  "5",
-                  ".583"
+                  "6",
+                  ".538"
                 ],
                 "seed": "4"
               },
@@ -904,14 +904,14 @@
                 "you": false,
                 "vals": [
                   "6",
-                  "5",
-                  ".545"
+                  "6",
+                  ".500"
                 ],
                 "seed": "5"
               },
               {
-                "team": "Cavaliers",
-                "logo": "cle",
+                "team": "Heat",
+                "logo": "mia",
                 "league": "nba",
                 "you": false,
                 "vals": [
@@ -922,14 +922,14 @@
                 "seed": "6"
               },
               {
-                "team": "Heat",
-                "logo": "mia",
+                "team": "Cavaliers",
+                "logo": "cle",
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "5",
                   "6",
-                  ".455"
+                  "7",
+                  ".462"
                 ],
                 "seed": "7"
               },
@@ -951,9 +951,9 @@
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "4",
+                  "5",
                   "7",
-                  ".364"
+                  ".417"
                 ],
                 "seed": "9"
               },
@@ -963,9 +963,9 @@
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "4",
+                  "5",
                   "8",
-                  ".333"
+                  ".385"
                 ],
                 "seed": "10"
               }
@@ -989,12 +989,12 @@
                 "you": false
               },
               {
-                "matchup": "(5) New York vs. (6) Cavaliers",
+                "matchup": "(5) New York vs. (6) Heat",
                 "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "matchup": "(7) Heat vs. (8) Raptors",
+                "matchup": "(7) Cavaliers vs. (8) Raptors",
                 "series": "Sat Apr 18",
                 "you": true
               }
@@ -1033,8 +1033,8 @@
       "detail": "3rd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "The season did not die Thursday night - it staggered off the canvas, bloodied but breathing. <strong>Stefon Diggs' 32-yard touchdown from Jayden Daniels with 57 seconds left lifted Washington over the Giants, 24-21</strong>, a rescue mission after Daniels threw two fourth-quarter interceptions. Diggs finished with six catches for 83 yards, while Daniels delivered three touchdown passes and enough nerve to survive his messiest stretch of the season. The Commanders are 3-5-1, third in the NFC East and two games behind New York, but this was more than a win - it was a tiebreaker and a pulse. Tight end Chig Okonkwo left with a back injury but returned after halftime, an encouraging sign in an otherwise costly night. <strong>Now comes the pause before Cincinnati visits Washington on Nov. 23 - the Bengals game will show whether this revival has legs.</strong>",
-        "updated": "Updated November 13, 2026"
+        "body": "The season keeps slipping toward the edge, but Washington keeps grabbing it by the collar. <strong>The Commanders rallied past the Giants 24-21 on Thursday night</strong>, a win that moved them to 3-5-1, kept them third in the NFC East and cut the deficit to two games. Jayden Daniels found Stefon Diggs for the decisive late touchdown, while Luke McCaffrey supplied the night's bit of football ingenuity - stepping out of bounds before touching a kickoff to give Washington possession at the 40. That is the sort of sharp, opportunistic play a 3-5-1 team needs, especially after the recent loss to Los Angeles. It is also not a cure-all: Washington remains inconsistent, and its margin for error is thin. <strong>Next comes the test of whether this one-game winning streak becomes a push up the division or merely another reprieve.</strong>",
+        "updated": "Updated November 14, 2026"
       },
       "key_numbers": [
         {
@@ -1114,53 +1114,53 @@
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Rams vs. Commanders - Full Highlights",
-        "subtitle": "NFL - Nov 8, 2026",
-        "result_badge": "L 13-20",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=hFAgsI_EiQs",
-        "game_date": "2026-11-08"
+        "title": "Giants vs. Commanders - Full Highlights",
+        "subtitle": "NFL - Nov 12, 2026",
+        "result_badge": "W 24-21",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=qsBmMKEevWY",
+        "game_date": "2026-11-12"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Commanders beat Giants 24-21",
-          "dek": "Stefon Diggs' 32-yard touchdown with 57 seconds left turned a potential collapse into a season-saving NFC East win. At 3-5-1, Washington remains third but moved within two games of New York and owns the tiebreaker after the comeback.",
+          "dek": "The comeback keeps Washington's season alive, trimming the NFC East gap to two games with eight remaining and securing the head-to-head tiebreaker over New York. Jayden Daniels overcame two interceptions to hit Stefon Diggs for the go-ahead touchdown with 57 seconds left, then",
           "date": "Nov 12",
           "link": "https://www.espn.com/nfl/recap?gameId=401873052"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
-          "headline": "Commanders stun Giants in final minute to save their season; what now in NFC East?",
-          "dek": "The 24-21 comeback keeps Washington within two games of the NFC East lead and gives it the tiebreaker over New York after their earlier tie. Now 3-5-1, the Commanders must turn Daniels' late resilience and Diggs' impact into consistency while chasing both the Giants and Cowboys.",
+          "headline": "How Luke McCaffrey used an out-of-bounds rule to help the Commanders win",
+          "dek": "McCaffrey's heads-up decision turned a tricky kickoff into possession at Washington's 40-yard line, a major field-position boost after New York had taken a 21-17 lead. The 24-21 comeback kept the 3-5-1 Commanders alive in the NFC East race, even as their margin for error remains",
           "date": "November 13, 2026",
-          "link": "https://www.nytimes.com/athletic/7777851/2026/11/12/commanders-ny-giants-score-results-thursday-night-football/"
+          "link": "https://www.nytimes.com/athletic/7779475/2026/11/13/luke-mccaffrey-commanders-giants/"
         },
         {
           "source": "CBS Sports",
           "source_class": "web",
-          "headline": "Best Kalshi promo code CBSSPORTS55: Secure $55 bonus for Commanders vs. Giants, Thursday Night Football picks",
-          "dek": "Washington entered Thursday night at 3-5-1 and third in the NFC East, making the rematch especially important after October's 27-27 tie. The $55 Kalshi promotion centers on a divisional matchup with playoff implications and a chance to evaluate picks against a familiar opponent.",
+          "headline": "Giants players blast controversial DPI penalty in loss to Commanders: 'This league is funny, bro'",
+          "dek": "Washington's 24-21 comeback delivered a badly needed third win, keeping the 3-5-1 Commanders within striking distance in the NFC East. The decisive 33-yard DPI call on Deonte Banks fueled Jayden Daniels' go-ahead drive, leaving New York furious and Washington with momentum",
           "date": "November 13, 2026",
-          "link": "https://www.cbssports.com/prediction/news/best-kalshi-promo-code-cbssports55-secure-55-bonus-commanders-vs-giants-thursday-night-football-picks/"
+          "link": "https://www.cbssports.com/nfl/news/giants-players-blast-controversial-dpi-penalty-loss-to-commanders/"
         },
         {
           "source": "The Sporting News",
           "source_class": "web",
-          "headline": "5 things we learned from Giants vs. Commanders that the highlights won't show you",
-          "dek": "Washington erased a 21-17 deficit with Jayden Daniels' 32-yard touchdown pass to Stefon Diggs with 57 seconds left, then sealed the win with a late interception. At 3-5-1, the divisional road victory keeps the Commanders within striking distance in the NFC East and gives them",
+          "headline": "Meet Sam Hartman, the NFL QB who is the next Bachelor",
+          "dek": "At 3-5-1 and third in the NFC East, Washington is navigating a pivotal stretch while its fifth-string quarterback draws an unexpected national spotlight. Hartman has yet to appear in a regular-season game, but his Bachelor debut arrives March 21, 2027, making this an unusual",
           "date": "November 13, 2026",
-          "link": "https://www.sportingnews.com/us/nfl/news/5-things-we-learned-giants-commanders/ee6373a4fab27c6f4c1eeafc"
+          "link": "https://www.sportingnews.com/us/nfl/news/meet-sam-hartman-nfl-qb-next-bachelor/34a7997dbcb5c120d8faa5f0"
         },
         {
           "source": "Yahoo Sports",
           "source_class": "web",
-          "headline": "Dominic Zvada still looking for consistency after another Giants blunder",
-          "dek": "Washington's 24-21 comeback at MetLife kept its playoff hopes alive while exposing how narrow the margin remains at 3-5-1. The Commanders capitalized on New York's missed 33-yard field goal and late special-teams error, then won on Jayden Daniels' final-minute touchdown pass.",
-          "date": "November 13, 2026",
-          "link": "https://sports.yahoo.com/articles/dominic-zvada-still-looking-consistency-052457351.html"
+          "headline": "John Harbaugh breaks down key - and controversial - moments from Giants loss",
+          "dek": "Washington escaped New York 24-21, turning a potential NFC East setback into a head-to-head tiebreaker and keeping the 3-5-1 club within reach of the division race. Harbaugh's explanations spotlight the late decisions and execution failures that nearly let the Giants recover",
+          "date": "November 14, 2026",
+          "link": "https://sports.yahoo.com/articles/john-harbaugh-breaks-down-key-000935152.html"
         }
       ],
       "standings": {
@@ -1255,49 +1255,44 @@
     }
   },
   "featured": {
-    "team": "commanders",
-    "kicker": "Washington Commanders - Regular Season",
-    "headline": "Dan Quinn: We needed that, we needed every bit of it",
-    "dek": "Washington escaped New York 24-21 after falling behind late, with Jayden Daniels answering two interceptions by leading the winning drive. The victory lifted the Commanders to 3-5-1, kept them within reach of the NFC East and eased immediate pressure on Dan Quinn.",
-    "source": "NBC Sports",
-    "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dan-quinn-we-needed-that-we-needed-every-bit-of-it",
-    "date": "November 13, 2026"
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Regular Season",
+    "headline": "Maple Leafs shake up routine at Rogers Centre as another tough test looms",
+    "dek": "Toronto's five-game home skid has exposed a team searching for answers, with the Leafs outscored 22-9 during the slide. The reset at Rogers Centre comes before a daunting matchup with Edmonton, a 14-3-3 powerhouse that can deepen Toronto's early-season hole.",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-shake-up-routine-at-rogers-centre-as-another-tough-test-looms/",
+    "date": "November 14, 2026"
   },
   "two_up": [
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs - Regular Season",
-      "headline": "Maple Leafs' confidence shaken as home slump continues",
-      "dek": "Toronto has dropped five straight at home in regulation and is 1-7-0 over its last eight, leaving an 8-11-2 team 12th in the Eastern Conference. Saturday's visit from Edmonton closes a disastrous homestand and gives the Leafs an immediate chance to stop the slide against a",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/article/maple-leafs-confidence-shaken-as-home-slump-continues/",
-      "date": "November 13, 2026"
+      "team": "commanders",
+      "kicker": "Washington Commanders - Regular Season",
+      "headline": "John Harbaugh: Cam Skattebo was not supposed to push on Jameis Winston sneak",
+      "dek": "The disputed third-and-1 came with New York leading 21-17 and needing to sustain a clock-draining drive, but Winston was stopped and the Giants eventually punted. Washington capitalized with the game-winning drive, a pivotal result as the 3-5-1 Commanders try to climb from third",
+      "source": "NBC Sports",
+      "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/john-harbaugh-cam-skattebo-was-not-supposed-to-push-on-jameis-winston-sneak",
+      "date": "November 14, 2026"
     },
     {
       "team": "raptors",
       "kicker": "Toronto Raptors - Regular Season",
-      "headline": "Maxey, Embiid lead 76ers past Raptors without James",
-      "dek": "Toronto's four losses in five games dropped the 5-7 Raptors further behind in the Atlantic race, with Philadelphia winning 123-112 despite sitting LeBron James. They have little time to reset before hosting the Knicks on Sunday, with injuries continuing to test their depth.",
-      "source": "The Globe and Mail",
-      "link": "https://www.theglobeandmail.com/sports/basketball/article-maxey-embiid-lead-76ers-past-raptors-without-james/",
-      "date": "November 13, 2026"
+      "headline": "Garrett Temple was headed to LSU Law. Then Dusty May and the Mavericks came calling",
+      "dek": "Temple's next chapter carries a Raptors connection, with his front-office experience helping draw him to Dallas after a 16-year playing career. Toronto enters Sunday's meeting with New York at 5-7 and a three-game home skid, making the former guard's transition a timely reminder",
+      "source": "The Athletic",
+      "link": "https://www.nytimes.com/athletic/7774062/2026/11/13/mavericks-garrett-temple-dusty-may-law-school/",
+      "date": "November 14, 2026"
     }
   ],
   "extra_story": {
     "team": "jays",
     "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
-    "headline": "What I'm hearing about the Blue Jays: Rotation targets, a Kevin Gausman return, infield trades",
-    "dek": "Toronto's offseason plan is taking shape around a major offensive upgrade, but the rotation could still require a playoff-caliber addition if Kevin Gausman does not return. Any infield move would also force a roster decision, with Ernie Clement, Josh Smith and Davis Schneider",
-    "source": "The Athletic",
-    "link": "https://www.nytimes.com/athletic/7776827/2026/11/12/what-im-hearing-blue-jays-rotation-kevin-gausman-infield-trades/",
-    "date": "November 13, 2026"
+    "headline": "Can practice at Rogers Centre stave off slump? Maple Leafs hoping so",
+    "dek": "Toronto's hockey team turned to a change of scenery after losing five straight home games and seven of its past eight overall. The test comes immediately Saturday against Edmonton, making this light workout less a novelty than an urgent attempt to reset the group's energy.",
+    "source": "MLB.com",
+    "link": "https://www.mlb.com/bluejays/news/toronto-maple-leafs-practice-at-rogers-centre",
+    "date": "November 14, 2026"
   },
   "ticker": [
-    {
-      "badge": "NHL",
-      "badge_style": "nhl",
-      "text": "Leafs fell to Wild 5-2"
-    },
     {
       "badge": "NHL",
       "badge_style": "nhl",
@@ -1311,25 +1306,20 @@
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Maple Leafs' confidence shaken as home slump continues",
-      "published": "2026-11-13T05:21:59+00:00"
+      "text": "Why the Maple Leafs hope a day at the ballpark works in their favour",
+      "published": "2026-11-13T21:10:55+00:00"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays' Atkins coming away confident from GM Meetings",
-      "published": "2026-11-12T22:36:11+00:00"
+      "text": "What can Blue Jays do to entice Tarik Skubal to sign in Toronto?",
+      "published": "2026-11-13T17:55:37+00:00"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "Blue Jays 'deeply sorry' for Santander's social media posts",
-      "published": "2026-11-12T21:44:21+00:00"
-    },
-    {
-      "badge": "NBA",
-      "badge_style": "nba",
-      "text": "Raptors fell to 76ers 123-112"
+      "text": "Top first-time candidates to win MVP, Cy Young in 2027",
+      "published": "2026-11-14T03:00:09+00:00"
     },
     {
       "badge": "NBA",
@@ -1344,13 +1334,8 @@
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Barrett, Quickley bounce back but Raptors fall short vs. 76ers",
-      "published": "2026-11-13T04:28:23+00:00"
-    },
-    {
-      "badge": "NFL",
-      "badge_style": "nfl",
-      "text": "Commanders beat Giants 24-21"
+      "text": "Impossible to know what these Raptors are without Kawhi, Barnes",
+      "published": "2026-11-14T00:24:26+00:00"
     },
     {
       "badge": "NFL",
@@ -1360,117 +1345,11 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Dan Quinn: We needed that, we needed every bit of it",
-      "published": "2026-11-13T09:30:39+00:00"
+      "text": "Sonny Styles setting up Washington's game-winning drive",
+      "published": "2026-11-13T17:24:17+00:00"
     }
   ],
-  "scoreboard": [
-    {
-      "team": "leafs",
-      "game_date": "2026-11-12",
-      "name": "Leafs",
-      "league": "NHL",
-      "logo": "tor",
-      "opp_name": "Wild",
-      "opp_logo": "min",
-      "team_score": 2,
-      "opp_score": 5,
-      "result": "L",
-      "date": "Nov 12",
-      "preseason": false,
-      "stars": [
-        {
-          "tag": "GOAL",
-          "tone": "",
-          "name": "MacEwen",
-          "stat": "1G, 1A"
-        },
-        {
-          "tag": "GOAL",
-          "tone": "",
-          "name": "Matthews",
-          "stat": "1G"
-        },
-        {
-          "tag": "SV",
-          "tone": "save",
-          "name": "Stolarz",
-          "stat": "21 saves, .840"
-        }
-      ],
-      "link": "https://www.youtube.com/watch?v=HnNU3wEaWmM"
-    },
-    {
-      "team": "raptors",
-      "game_date": "2026-11-12",
-      "name": "Raptors",
-      "league": "NBA",
-      "logo": "tor",
-      "opp_name": "76ers",
-      "opp_logo": "phi",
-      "team_score": 112,
-      "opp_score": 123,
-      "result": "L",
-      "date": "Nov 12",
-      "preseason": false,
-      "stars": [
-        {
-          "tag": "PTS",
-          "tone": "",
-          "name": "Barrett",
-          "stat": "31 pts"
-        },
-        {
-          "tag": "REB",
-          "tone": "",
-          "name": "Barrett",
-          "stat": "14 reb"
-        },
-        {
-          "tag": "AST",
-          "tone": "",
-          "name": "Quickley",
-          "stat": "6 ast"
-        }
-      ],
-      "link": "https://www.youtube.com/watch?v=uaRHac5O9UA"
-    },
-    {
-      "team": "commanders",
-      "game_date": "2026-11-12",
-      "name": "Commanders",
-      "league": "NFL",
-      "logo": "wsh",
-      "opp_name": "Giants",
-      "opp_logo": "nyg",
-      "team_score": 24,
-      "opp_score": 21,
-      "result": "W",
-      "date": "Nov 12",
-      "preseason": false,
-      "stars": [
-        {
-          "tag": "PASS",
-          "tone": "",
-          "name": "Daniels",
-          "stat": "249 yds, 3 TD"
-        },
-        {
-          "tag": "RUSH",
-          "tone": "",
-          "name": "White",
-          "stat": "47 yds"
-        },
-        {
-          "tag": "REC",
-          "tone": "",
-          "name": "Diggs",
-          "stat": "83 yds, 1 TD"
-        }
-      ],
-      "link": "https://www.youtube.com/watch?v=hFAgsI_EiQs"
-    }
-  ],
+  "scoreboard": [],
   "at_a_glance": [
     {
       "team": "leafs",
@@ -1513,10 +1392,37 @@
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs",
-      "detail": "Next: Sat 11/14 vs. Oilers 7:00 PM ET",
-      "channel": "",
-      "off": true
+      "matchup": "Leafs vs. Oilers",
+      "detail": "7:00 PM ET",
+      "channel": "Sportsnet",
+      "off": false,
+      "preview": {
+        "injuries": [
+          {
+            "status": "Day-to-day",
+            "tone": "dtd",
+            "players": [
+              {
+                "name": "Rielly",
+                "note": "lower body"
+              }
+            ],
+            "more": 0
+          }
+        ],
+        "duel": {
+          "label": "In goal",
+          "status": "projected",
+          "ours": {
+            "name": "Bobrovsky",
+            "sub": "3-8-2, 3.47 GAA"
+          },
+          "theirs": {
+            "name": "Levi",
+            "sub": "8-1-0, 2.75 GAA"
+          }
+        }
+      }
     },
     {
       "team": "jays",
@@ -1607,17 +1513,25 @@
         "opp": "at Pistons",
         "time": "7:30 PM ET",
         "tv": ""
+      },
+      {
+        "day": "Sat 11/21",
+        "team": "leafs",
+        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+        "name": "Leafs",
+        "opp": "vs. Blue Jackets",
+        "time": "7:00 PM ET",
+        "tv": "Sportsnet"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Commanders Beat Giants on Diggs Touchdown",
+      "title": "Maple Leafs Host Oilers in Toronto",
       "paragraphs": [
-        "The Washington Commanders found a late answer Thursday, beating the Giants 24-21 when Jayden Daniels hit Stefon Diggs for a 32-yard touchdown with 57 seconds left. Daniels finished with 249 passing yards and three touchdowns, while Diggs had 83 receiving yards and a score. Washington is 3-5-1 and hosts Cincinnati on Monday, November 23.",
-        "The Leafs had no such finish, losing 5-2 to Minnesota at home. Auston Matthews scored, Zack MacEwen had a goal and an assist, and Anthony Stolarz made 21 saves. Toronto is 8-11 and visits the Oilers Saturday at 7:00 p.m. ET on Sportsnet.",
-        "The Raptors fell 123-112 to Philadelphia despite RJ Barrett's 31 points and 14 rebounds; Immanuel Quickley added six assists. Toronto faces the Knicks Sunday at 6:00 p.m. The Jays are looking ahead to the Yankees, with the regular season opening March 25 at 1:35 p.m. ET in New York."
+        "The Leafs face the Oilers at 7:00 PM tonight on Sportsnet, with projected goaltenders Sergei Bobrovsky and Devon Levi. Toronto enters at 8-11 and 12th in the Eastern Conference, while Morgan Rielly is day-to-day with a lower-body issue. The Leafs have also shaken up their routine at Rogers Centre before another demanding test.",
+        "The Blue Jays are already looking toward March, opening their regular season at the Yankees on Thursday, March 25, at 1:35 PM ET. Anthony Santander apologized for anti-Muslim posts, a difficult off-field story for a club preparing for the next season. The Raptors host the Knicks Sunday at 6:00 PM ET, carrying a 5-7 record and fourth place in the Atlantic Division. Washington's Commanders, 3-5-1 and third in the NFC East, next host the Bengals on Monday, November 23. That game follows coverage of Luke McCaffrey's use of an out-of-bounds rule to help Washington win."
       ]
     }
   }
