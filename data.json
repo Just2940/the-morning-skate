@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-11-27T06:26:33.691637-05:00",
-    "date_display": "November 27, 2026",
+    "updated": "2026-11-28T05:54:37.692705-05:00",
+    "date_display": "November 28, 2026",
     "data_health": {
       "espn_ok": 45,
       "espn_failed": 0,
@@ -19,36 +19,49 @@
     "leafs": {
       "full_name": "Toronto Maple Leafs",
       "league": "NHL",
-      "record": "9-14",
-      "detail": "13th in Eastern Conference",
+      "record": "10-14",
+      "detail": "12th in Eastern Conference",
       "lotl": {
         "label": "What's Going On With the Leafs",
-        "body": "The 4-2 victory over the Islanders stopped the bleeding, but it did not erase the bruise. Toronto is 9-14, 13th in the Eastern Conference with 21 points - hardly the profile of a club entitled to comfort - and now carries only a one-game winning streak into Boston. The latest storm centers on William Nylander: <strong>he has been dropped to the second power-play unit, and openly said he didn't agree with the decision.</strong> Jim Hiller calls it balance, arguing Nylander can become the focal point of the second group; Nylander sees the move through the lens of his costly Columbus turnover. Either way, a scorer who has gone eight games without a goal has been handed a challenge, not a compliment. <strong>At 1 p.m. ET against the Bruins, watch whether Nylander answers with the puck - and whether this fragile Toronto revival can survive a real test.</strong>",
-        "updated": "Updated November 27, 2026"
+        "body": "The Leafs finally looked like a team tired of explaining itself. <strong>Friday's 3-1 win over Boston, powered by Morgan Rielly's two goals and his 100th NHL marker, restored some swagger</strong> - and gave Toronto consecutive victories after a four-game stumble. Anthony Stolarz stopped 27 shots, but the celebration came with a bill: Chris Tanev left early with a lower-body injury and did not return. That matters for a club sitting 12th in the Eastern Conference at 10-14, with 23 points and 14 games separating it from the summit. The road win was sturdy, not transformative. Still, belief is a useful accelerant, and Rielly's timing could not be better. Now comes Pittsburgh tonight at 7 p.m. - a quick test of whether the Bruins win was a spark or merely a flash. <strong>Watch the blue line, and watch whether Toronto can make this two-game streak mean something.</strong>",
+        "updated": "Updated November 28, 2026"
       },
       "key_numbers": [
         {
-          "number": "9-14",
+          "number": "10-14",
           "label": "Season Record",
-          "note": "13th in Eastern Conference"
+          "note": "12th in Eastern Conference"
         },
         {
-          "number": "21",
+          "number": "23",
           "label": "Points",
-          "note": "13th in Eastern Conference"
+          "note": "12th in Eastern Conference"
         },
         {
-          "number": "W1",
+          "number": "W2",
           "label": "Streak",
           "note": "Current streak"
         },
         {
           "number": "14",
           "label": "Points Back",
-          "note": "13th in Eastern Conference"
+          "note": "12th in Eastern Conference"
         }
       ],
       "recent_results": [
+        {
+          "date": "Nov 27",
+          "result": "W",
+          "team_score": 3,
+          "opp_name": "Bruins",
+          "opp_score": 1,
+          "opp_logo": "bos",
+          "league": "nhl",
+          "game_date": "2026-11-27",
+          "game_ts": "2026-11-27T18:00Z",
+          "game_id": "401892795",
+          "season_type": 2
+        },
         {
           "date": "Nov 23",
           "result": "W",
@@ -87,19 +100,6 @@
           "game_ts": "2026-11-20T00:00Z",
           "game_id": "401892742",
           "season_type": 2
-        },
-        {
-          "date": "Nov 17",
-          "result": "L",
-          "team_score": 3,
-          "opp_name": "Blackhawks",
-          "opp_score": 6,
-          "opp_logo": "chi",
-          "league": "nhl",
-          "game_date": "2026-11-17",
-          "game_ts": "2026-11-18T00:30Z",
-          "game_id": "401892733",
-          "season_type": 2
         }
       ],
       "last_game_highlights": {
@@ -115,42 +115,42 @@
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Leafs beat Islanders 4-2",
-          "dek": "The 4-2 road win over the Islanders snapped Toronto's nine-game losing streak, offering a needed jolt for a team sitting 13th in the Eastern Conference at 9-14. It also keeps the Leafs within reach of the playoff race, though they remain 10 points behind the postseason line.",
-          "date": "Nov 23",
-          "link": "https://www.espn.com/nhl/recap?gameId=401892776"
+          "headline": "Leafs beat Bruins 3-1",
+          "dek": "Morgan Rielly scored twice, including the 100th goal of his career, as Toronto erased an early deficit and secured its second straight win. The result offers a needed boost for a 10-14 team sitting 12th in the Eastern Conference, though the playoff climb remains steep.",
+          "date": "Nov 27",
+          "link": "https://www.espn.com/nhl/recap?gameId=401892795"
+        },
+        {
+          "source": "The Globe and Mail",
+          "source_class": "web",
+          "headline": "Morgan Rielly scores twice as Maple Leafs defeat Bruins",
+          "dek": "The road win marked Toronto's second straight victory after a nine-game losing streak, offering a needed jolt for a team sitting 12th in the Eastern Conference. Rielly also reached 100 career goals, giving the struggling Maple Leafs a milestone performance from an unexpected",
+          "date": "November 27, 2026",
+          "link": "https://www.theglobeandmail.com/sports/hockey/article-morgan-rielly-scores-twice-as-maple-leafs-defeat-bruins/"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Joe Bowen unplugged: Retired voice of the Maple Leafs talks hope, highlights and yelling at his TV",
+          "dek": "With Toronto sitting 12th in the Eastern Conference at 10-14, Bowen's optimism lands against a season that has offered more frustration than certainty. His memories and fan's-eye reactions add perspective to the pressure surrounding a team that has just won two straight.",
+          "date": "November 27, 2026",
+          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/joe-bowen-unplugged-talks-hope-highlights-yelling-tv"
+        },
+        {
+          "source": "Daily Faceoff",
+          "source_class": "web",
+          "headline": "Maple Leafs sign Alexander Bilecki to three-year, entry-level contract",
+          "dek": "At 10-14 and 12th in the Eastern Conference, Toronto is adding a promising defensive prospect while its NHL roster searches for greater stability. Bilecki, the 60th pick in June's draft, joins Kitchener of the OHL under contract but is not an immediate solution for the Leafs'",
+          "date": "November 27, 2026",
+          "link": "https://www.dailyfaceoff.com/news/alexander-bilecki-toronto-maple-leafs-nhl-three-year-entry-level-contract-signing-news-transactions"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "William Nylander unhappy with demotion to Maple Leafs' No. 2 power-play unit",
-          "dek": "The shake-up puts Toronto's struggling 9-14 season under sharper scrutiny, with Nylander's eight-game scoring drought adding tension to an already consequential special-teams adjustment. Kirill Marchenko's return gives the top unit a new option, while Nylander is tasked with",
+          "dek": "The change adds tension to a struggling Toronto team sitting 12th in the Eastern Conference after a 10-14 start, especially after a nine-game losing streak was recently snapped. Kirill Marchenko's return prompted the reshuffle, but Nylander's public disagreement puts added focus",
           "date": "November 26, 2026",
           "link": "https://www.nytimes.com/athletic/7814834/2026/11/26/william-nylander-maple-leafs-power-play-demotion/"
-        },
-        {
-          "source": "The Globe and Mail",
-          "source_class": "web",
-          "headline": "Former MLSE board member sues company over relocation of Leafs, Raptors VIP seats",
-          "dek": "The lawsuit puts MLSE's handling of long-standing VIP ticket arrangements under scrutiny after Rogers assumed control of the sports giant last month. Dale Lastman, a former board member and alternate governor, says the Leafs and Raptors seats he received for his service were",
-          "date": "November 26, 2026",
-          "link": "https://www.theglobeandmail.com/sports/hockey/article-former-mlse-board-member-sues-relocation-leafs-raptors-vip-seats/"
-        },
-        {
-          "source": "Toronto Sun",
-          "source_class": "web",
-          "headline": "Maple Leafs get reinforcements back ahead of crucial Bruins showdown",
-          "dek": "Toronto enters the matinee at 9-14 and 13th in the Eastern Conference, making every divisional point more urgent against a Boston team sitting at 15-8-1. Kirill Marchenko is expected back after 12 games out, while Colton Sissons could return from a seven-game absence to restore",
-          "date": "November 26, 2026",
-          "link": "https://torontosun.com/sports/hockey/nhl/toronto-maple-leafs/reinforcements-ahead-crucial-bruins-showdown"
-        },
-        {
-          "source": "Daily Faceoff",
-          "source_class": "web",
-          "headline": "'I told him I didn't agree with it, but that's OK': Leafs' Nylander on power-play demotion",
-          "dek": "The demotion comes as Nylander endures an eight-game goal drought during Toronto's one-win November, adding pressure to a struggling team sitting 13th in the Eastern Conference. With Kirill Marchenko returning after missing 12 games, Friday's matchup against Boston will test",
-          "date": "November 26, 2026",
-          "link": "https://www.dailyfaceoff.com/news/i-told-him-i-didnt-agree-with-it-but-thats-ok-toronto-maple-leafs-william-nylander-power-play-demotion-nhl"
         }
       ],
       "standings": {
@@ -174,10 +174,22 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "16",
+                  "17",
                   "7",
                   "3",
-                  "35"
+                  "37"
+                ]
+              },
+              {
+                "team": "Panthers",
+                "logo": "fla",
+                "league": "nhl",
+                "you": false,
+                "vals": [
+                  "15",
+                  "8",
+                  "3",
+                  "33"
                 ]
               },
               {
@@ -187,7 +199,7 @@
                 "you": false,
                 "vals": [
                   "15",
-                  "7",
+                  "8",
                   "2",
                   "32"
                 ]
@@ -211,20 +223,8 @@
                 "you": false,
                 "vals": [
                   "15",
-                  "8",
+                  "9",
                   "1",
-                  "31"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "fla",
-                "league": "nhl",
-                "you": false,
-                "vals": [
-                  "14",
-                  "8",
-                  "3",
                   "31"
                 ]
               },
@@ -235,7 +235,7 @@
                 "you": false,
                 "vals": [
                   "11",
-                  "10",
+                  "11",
                   "4",
                   "26"
                 ]
@@ -246,10 +246,10 @@
                 "league": "nhl",
                 "you": false,
                 "vals": [
-                  "9",
+                  "10",
                   "12",
                   "3",
-                  "21"
+                  "23"
                 ]
               },
               {
@@ -258,10 +258,10 @@
                 "league": "nhl",
                 "you": true,
                 "vals": [
-                  "9",
+                  "10",
                   "14",
                   "3",
-                  "21"
+                  "23"
                 ]
               }
             ]
@@ -284,10 +284,23 @@
                 "you": false,
                 "seed": "A1",
                 "vals": [
-                  "16",
+                  "17",
                   "7",
                   "3",
-                  "35"
+                  "37"
+                ]
+              },
+              {
+                "team": "Panthers",
+                "logo": "fla",
+                "league": "nhl",
+                "you": false,
+                "seed": "A2",
+                "vals": [
+                  "15",
+                  "8",
+                  "3",
+                  "33"
                 ]
               },
               {
@@ -295,24 +308,11 @@
                 "logo": "tb",
                 "league": "nhl",
                 "you": false,
-                "seed": "A2",
-                "vals": [
-                  "15",
-                  "7",
-                  "2",
-                  "32"
-                ]
-              },
-              {
-                "team": "Canadiens",
-                "logo": "mtl",
-                "league": "nhl",
-                "you": false,
                 "seed": "A3",
                 "vals": [
-                  "14",
+                  "15",
                   "8",
-                  "4",
+                  "2",
                   "32"
                 ]
               },
@@ -336,10 +336,10 @@
                 "you": false,
                 "seed": "M2",
                 "vals": [
-                  "17",
+                  "18",
                   "8",
                   "0",
-                  "34"
+                  "36"
                 ]
               },
               {
@@ -350,9 +350,22 @@
                 "seed": "M3",
                 "vals": [
                   "12",
-                  "7",
+                  "8",
                   "5",
                   "29"
+                ]
+              },
+              {
+                "team": "Canadiens",
+                "logo": "mtl",
+                "league": "nhl",
+                "you": false,
+                "seed": "WC1",
+                "vals": [
+                  "14",
+                  "8",
+                  "4",
+                  "32"
                 ]
               },
               {
@@ -360,24 +373,11 @@
                 "logo": "bos",
                 "league": "nhl",
                 "you": false,
-                "seed": "WC1",
-                "vals": [
-                  "15",
-                  "8",
-                  "1",
-                  "31"
-                ]
-              },
-              {
-                "team": "Panthers",
-                "logo": "fla",
-                "league": "nhl",
-                "you": false,
                 "seed": "WC2",
                 "vals": [
-                  "14",
-                  "8",
-                  "3",
+                  "15",
+                  "9",
+                  "1",
                   "31"
                 ]
               },
@@ -390,7 +390,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "13",
-                  "10",
+                  "11",
                   "1",
                   "27"
                 ]
@@ -404,7 +404,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "11",
-                  "10",
+                  "11",
                   "4",
                   "26"
                 ]
@@ -417,10 +417,38 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "9",
+                  "10",
                   "12",
                   "6",
-                  "24"
+                  "26"
+                ]
+              },
+              {
+                "team": "Red Wings",
+                "logo": "det",
+                "league": "nhl",
+                "you": false,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "10",
+                  "12",
+                  "3",
+                  "23"
+                ]
+              },
+              {
+                "team": "Leafs",
+                "logo": "tor",
+                "league": "nhl",
+                "you": true,
+                "seed": "",
+                "seed_style": "faint",
+                "vals": [
+                  "10",
+                  "14",
+                  "3",
+                  "23"
                 ]
               },
               {
@@ -432,37 +460,9 @@
                 "seed_style": "faint",
                 "vals": [
                   "11",
-                  "11",
+                  "12",
                   "0",
                   "22"
-                ]
-              },
-              {
-                "team": "Red Wings",
-                "logo": "det",
-                "league": "nhl",
-                "you": false,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "12",
-                  "3",
-                  "21"
-                ]
-              },
-              {
-                "team": "Leafs",
-                "logo": "tor",
-                "league": "nhl",
-                "you": true,
-                "seed": "",
-                "seed_style": "faint",
-                "vals": [
-                  "9",
-                  "14",
-                  "3",
-                  "21"
                 ]
               },
               {
@@ -474,7 +474,7 @@
                 "seed_style": "faint",
                 "vals": [
                   "9",
-                  "13",
+                  "14",
                   "1",
                   "19"
                 ]
@@ -487,10 +487,10 @@
                 "seed": "",
                 "seed_style": "faint",
                 "vals": [
-                  "7",
+                  "8",
                   "15",
                   "2",
-                  "16"
+                  "18"
                 ]
               }
             ]
@@ -528,8 +528,8 @@
       "detail": "2nd in AL East",
       "lotl": {
         "label": "What's Going On With the Jays",
-        "body": "The offseason has produced a decision, not a detour. <strong>Toronto signed Japanese right-hander Kaima Taira to a five-year, $80 million contract</strong>, filling a rotation need while making the next priority unmistakable: bats. The Blue Jays' finished season sits at -2.0 points, but that number belongs in the rearview mirror; the argument now is whether this roster can manufacture enough offense to matter when the games count again. Seiya Suzuki looms as the cleanest answer on a market short on risk-free choices, though competition and a price reportedly north of $120 million will test Toronto's conviction. Taira's six-pitch mix gives the club intriguing rotation depth, but pitching alone will not repair an attack that needs more authority in the outfield and middle order. <strong>Watch the next move: Toronto's pursuit of Suzuki - or its pivot to another impact bat - will define whether Taira becomes a foundation piece or merely an expensive patch.</strong>",
-        "updated": "Updated November 27, 2026"
+        "body": "The Blue Jays' winter has finally produced a jolt - and it comes from across the American League East. <strong>Toronto has agreed with Jazz Chisholm Jr. on a one-year deal guaranteeing $34.5 million, with a $16 million player option for 2028.</strong> That is not a cosmetic signing for a club whose season ended at -2.0 points; it is a bet on electricity, athleticism and an infielder capable of changing the temperature of a lineup. Chisholm brings star credentials, but also the volatility that makes this contract clever: Toronto gets immediate impact without surrendering long-term control. The player option can become a $40 million club option if he declines it, giving the Jays leverage while they rebuild an offence that plainly needs more life. Now comes the hard part - surround the new second baseman with dependable bats and pitching. <strong>Watch what Toronto does next before spring opens March 25 at Yankee Stadium.</strong>",
+        "updated": "Updated November 28, 2026"
       },
       "key_numbers": [
         {
@@ -554,44 +554,44 @@
       },
       "the_latest": [
         {
-          "source": "CBS Sports",
-          "source_class": "web",
-          "headline": "MLB rumors: Blue Jays narrow focus, Cardinals target pitching, plus more relievers off the board",
-          "dek": "After signing Kaima Taira to bolster the rotation, Toronto is expected to prioritize lineup help, with the club still monitoring the pitching market. The shift matters as the Blue Jays weigh offensive upgrades against a shrinking pool of available relievers and pursue a clearer",
-          "date": "November 26, 2026",
-          "link": "https://www.cbssports.com/mlb/news/mlb-rumors-blue-jays-offense-cardinals-starting-pitching-nationals-twins/"
-        },
-        {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Why Suzuki may be Blue Jays' only risk-free target on free agent market",
-          "dek": "Toronto's offense ranked among baseball's weakest in 2026, making an impact outfielder a priority as the club reshapes its roster. Suzuki's recent power, improving defense and offensive reliability make him a cleaner fit than most available alternatives, though competition from",
-          "date": "November 26, 2026",
-          "link": "https://www.sportsnet.ca/mlb/video/why-suzuki-may-be-blue-jays-only-risk-free-target-on-free-agent-market/"
+          "headline": "Blue Jays in agreement on deal with Jazz Chisholm Jr.",
+          "dek": "Toronto adds a high-upside, power-speed infielder on a short-term commitment that keeps flexibility for the rest of the offseason. The one-year agreement, reportedly worth $20 million with a 2028 player option, gives Chisholm a platform to rebuild his value while addressing an",
+          "date": "November 27, 2026",
+          "link": "https://www.sportsnet.ca/mlb/article/blue-jays-in-agreement-on-deal-with-jazz-chisholm-jr/"
         },
         {
-          "source": "The Athletic",
-          "source_class": "athletic",
-          "headline": "What Kaima Taira means for Blue Jays' pitching and offseason plans",
-          "dek": "Taira's reported five-year, $80 million deal gives Toronto another potential rotation anchor after his standout 2026 season in Japan. His arrival could shift the club's remaining priorities toward offense and left-handed relief while forcing decisions about younger starters and",
-          "date": "November 25, 2026",
-          "link": "https://www.nytimes.com/athletic/7811021/2026/11/25/kaima-taira-blue-jays-pitching-offseason-plans/"
+          "source": "MLB.com",
+          "source_class": "web",
+          "headline": "Jazz, Blue Jays agree to one-year deal with player option for '28 (source)",
+          "dek": "Toronto adds two-time All-Star Jazz Chisholm Jr. to an offseason already highlighted by Japanese right-hander Kaima Taira, signaling an aggressive push to reshape the roster. The deal guarantees $34.5 million and gives Chisholm a $16 million 2028 player option, with Toronto",
+          "date": "November 27, 2026",
+          "link": "https://www.mlb.com/bluejays/news/jazz-chisholm-blue-jays-contract"
+        },
+        {
+          "source": "Toronto Sun",
+          "source_class": "web",
+          "headline": "Blue Jays add all-star second baseman Jazz Chisholm Jr.. Here's why it makes sense",
+          "dek": "Chisholm gives Toronto a dynamic, two-time All-Star presence at second base while adding another high-upside bat to an already aggressive offseason. The one-year commitment limits long-term risk, and the 2028 option gives the Blue Jays flexibility if the move pays off.",
+          "date": "November 27, 2026",
+          "link": "https://torontosun.com/sports/baseball/toronto-blue-jays/sign-jazz-chisholm-jr-one-year-20-million-deal"
+        },
+        {
+          "source": "CBS Sports",
+          "source_class": "web",
+          "headline": "Jazz Chisholm Jr. signing with Blue Jays: Two-time All-Star staying in AL East on one-year deal, per reports",
+          "dek": "Chisholm brings Toronto a high-upside power-speed threat and a direct jolt to an AL East rivalry, with a reported $20 million commitment for 2027 and a player option for 2028. The move also gives him a reset after his production dipped sharply with the Yankees in 2026, making",
+          "date": "November 27, 2026",
+          "link": "https://www.cbssports.com/mlb/news/blue-jays-jazz-chisholm-free-agency-contract/"
         },
         {
           "source": "The Globe and Mail",
           "source_class": "web",
           "headline": "Blue Jays sign Japanese star pitcher Kaima Taira to five-year deal, source says",
-          "dek": "Taira gives Toronto a high-impact rotation addition after leading Japan's Pacific League with a 1.36 ERA and 141 strikeouts in 2026. The five-year commitment also raises questions about workload management, since the 27-year-old has never exceeded 150 innings in a season.",
+          "dek": "Taira gives Toronto a frontline addition after leading Japan's major league with a 1.36 ERA and 141 strikeouts over 146 innings for Seibu. The five-year, $80 million commitment signals an aggressive start to the offseason, while his post-2029 opt-out adds an important decision",
           "date": "November 24, 2026",
           "link": "https://www.theglobeandmail.com/sports/article-blue-jays-kaima-taira-japan-contract/"
-        },
-        {
-          "source": "ESPN",
-          "source_class": "espn",
-          "headline": "2026-27 MLB free agency, trade grades: Offseason analysis",
-          "dek": "Toronto has addressed a rotation need with Kaima Taira but still needs offensive upgrades in the outfield and at second base. These grades measure whether each signing or trade gives the Blue Jays enough firepower and roster flexibility to strengthen their 2027 contention case.",
-          "date": "November 26, 2026",
-          "link": "https://www.espn.com/mlb/story/_/id/50473334/2026-27-offseason-free-agency-trade-grades"
         }
       ],
       "standings": {
@@ -699,26 +699,26 @@
     "raptors": {
       "full_name": "Toronto Raptors",
       "league": "NBA",
-      "record": "6-11",
+      "record": "7-11",
       "detail": "4th in Atlantic Division",
       "lotl": {
         "label": "What's Going On With the Raptors",
-        "body": "A three-day breather did not erase the sting of a season that keeps asking Toronto to prove it belongs. <strong>The Raptors' 116-111 loss to Milwaukee on Monday</strong> left them 6-11, fourth in the Atlantic and 8 games behind, with a one-game skid hanging over a club still searching for steadiness under the weight of expectations. The injuries make that search harder: Kawhi Leonard remains out with left-knee swelling, R.J. Barrett is sidelined by a hamstring strain, and Nate Bittle is unavailable with a foot injury. Scottie Barnes now carries the visible burden, not as a savior but as the player who must organize a shorthanded attack and supply its edge. This is no routine November appointment - the NBA Cup creates genuine urgency. <strong>Friday's 7:30 p.m. meeting with Brooklyn is Toronto's chance to reset, stay alive in the Cup race and turn a rare break into something useful.</strong>",
-        "updated": "Updated November 27, 2026"
+        "body": "The Raptors finally looked like a team tired of being pushed around - then the NBA Cup slammed the door anyway. <strong>Toronto thumped Brooklyn 124-100 on Friday, but was eliminated from Cup contention after Atlanta beat Boston.</strong> Scottie Barnes supplied the thunder with 34 points, while Immanuel Quickley delivered the sort of all-purpose command this club needs: 24 points, 10 rebounds and 14 assists. That makes the victory more than a pleasant November detour for a 7-11 team sitting fourth in the Atlantic, eight games behind; it is a glimpse of the ceiling buried inside an uneven start. The bruise beneath the celebration is Ja'Kobe Walter's right quad contusion, suffered in the third quarter and now another test for Toronto's depth. The Raptors have won two of their last three and own a one-game streak. <strong>Denver arrives Sunday at 6 p.m. ET - the Nuggets will reveal whether this was a turning point or merely a loud night against Brooklyn.</strong>",
+        "updated": "Updated November 28, 2026"
       },
       "key_numbers": [
         {
-          "number": "6-11",
+          "number": "7-11",
           "label": "Season Record",
           "note": "4th in Atlantic Division"
         },
         {
-          "number": "111.5",
+          "number": "112.2",
           "label": "PPG",
           "note": "Points per game"
         },
         {
-          "number": "L1",
+          "number": "W1",
           "label": "Streak",
           "note": "Current streak"
         },
@@ -729,6 +729,19 @@
         }
       ],
       "recent_results": [
+        {
+          "date": "Nov 27",
+          "result": "W",
+          "team_score": 124,
+          "opp_name": "Nets",
+          "opp_score": 100,
+          "opp_logo": "bkn",
+          "league": "nba",
+          "game_date": "2026-11-27",
+          "game_ts": "2026-11-28T00:30Z",
+          "game_id": "401909329",
+          "season_type": 2
+        },
         {
           "date": "Nov 23",
           "result": "L",
@@ -767,70 +780,57 @@
           "game_ts": "2026-11-19T00:30Z",
           "game_id": "401910012",
           "season_type": 2
-        },
-        {
-          "date": "Nov 17",
-          "result": "L",
-          "team_score": 102,
-          "opp_name": "Knicks",
-          "opp_score": 111,
-          "opp_logo": "ny",
-          "league": "nba",
-          "game_date": "2026-11-17",
-          "game_ts": "2026-11-18T00:30Z",
-          "game_id": "401910002",
-          "season_type": 2
         }
       ],
       "last_game_highlights": {
         "available": true,
-        "title": "Bucks vs. Raptors - Full Highlights",
-        "subtitle": "NBA - Nov 23, 2026",
-        "result_badge": "L 111-116",
-        "result_class": "l",
-        "url": "https://www.youtube.com/watch?v=PLACEHOLDER",
-        "game_date": "2026-11-23"
+        "title": "Nets vs. Raptors - Full Highlights",
+        "subtitle": "NBA - Nov 27, 2026",
+        "result_badge": "W 124-100",
+        "result_class": "w",
+        "url": "https://www.youtube.com/watch?v=y1Y-9H-tVEk",
+        "game_date": "2026-11-27"
       },
       "the_latest": [
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "Raptors fell to Bucks 116-111",
-          "dek": "The loss dropped Toronto to 6-11 and extended a troubling stretch, with the Raptors losing eight of their past 10 games. They now face Brooklyn at home, with their NBA Cup group finale offering an immediate chance to regain momentum.",
-          "date": "Nov 23",
-          "link": "https://www.espn.com/nba/recap?gameId=401910039"
+          "headline": "Raptors beat Nets 124-100",
+          "dek": "Scottie Barnes scored 34 points and Immanuel Quickley posted a 24-point triple-double as Toronto controlled its final NBA Cup group-stage game. The win moves the Raptors to 7-11, but their 3-1 Cup record was not enough to secure the Eastern Conference wild-card berth.",
+          "date": "Nov 27",
+          "link": "https://www.espn.com/nba/recap?gameId=401909329"
         },
         {
           "source": "Sportsnet",
           "source_class": "sportsnet",
-          "headline": "Raptors aiming to remain steady through weight of expectations",
-          "dek": "Toronto's 6-11 start and two wins in its last 10 have exposed how much the team's ambitions depend on Kawhi Leonard's availability. With Leonard still sidelined and Brooklyn visiting Friday, the Raptors must show their standards can hold before the roster is whole.",
-          "date": "November 26, 2026",
-          "link": "https://www.sportsnet.ca/nba/article/raptors-aiming-to-remain-steady-through-weight-of-expectations/"
+          "headline": "Scottie Barnes shines in win, but Raptors eliminated from NBA Cup",
+          "dek": "Scottie Barnes' 34 points and Immanuel Quickley's 24-point triple-double powered Toronto to a 124-100 home win over Brooklyn, lifting the Raptors to 7-11. The 3-1 Cup record was not enough, as Atlanta's win over Boston ended Toronto's run despite a dominant closing performance.",
+          "date": "November 28, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/scottie-barnes-shines-in-win-but-raptors-eliminated-from-nba-cup/"
         },
         {
           "source": "Toronto Sun",
           "source_class": "web",
-          "headline": "Why Friday's NBA Cup game against Nets is a huge one for Raptors",
-          "dek": "Toronto enters the final NBA Cup group game 2-1, tied with Detroit and Orlando in the loss column, making a win over Brooklyn essential to keep its advancement hopes alive. The Raptors may also need a sizable margin because point differential could decide whether they win the",
-          "date": "November 27, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/why-fridays-nba-cup-game-against-nets-is-a-huge-one-for-raptors"
+          "headline": "Raptors get first home win in November but fail to advance at NBA Cup",
+          "dek": "Toronto's 124-100 win over Brooklyn ended a seven-game home skid and briefly put the Raptors in position for the East wild card. Atlanta's upset of Boston erased that opening, leaving Toronto at 7-11 and still fourth in the Atlantic despite a strong finish to Cup play.",
+          "date": "November 28, 2026",
+          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/raptors-get-first-home-win-in-november-but-fail-to-advance-at-nba-cup"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2026 NBA Cup: Schedule, scores group standings and updates",
-          "dek": "Toronto enters the final group-play day 2-1 in East Group A, tied with Detroit and behind Orlando, making Friday's slate pivotal for its knockout-round hopes. The Raptors' matchup with Brooklyn carries added weight because a win, paired with a Detroit loss, would strengthen",
-          "date": "November 26, 2026",
-          "link": "https://www.espn.com/nba/story/_/id/49577473/2026-nba-season-tournament-cup-format-highlights-updates"
+          "headline": "Denver plays Toronto, aims for 5th straight road win",
+          "dek": "Toronto enters Sunday's matchup at 7-11 and fourth in the Atlantic after a 124-100 win over Brooklyn, seeking momentum against one of the West's stronger teams. Denver brings an 11-6 record and a four-game road winning streak, putting pressure on the Raptors to protect home",
+          "date": "November 28, 2026",
+          "link": "http://www.espn.com/nba/preview?gameId=401910057"
         },
         {
-          "source": "Toronto Sun",
-          "source_class": "web",
-          "headline": "Will the Raptors address their November pain or go winless at home?",
-          "dek": "Toronto's 0-7 home November stretch has turned Friday's NBA Cup finale against Brooklyn into an urgent reset opportunity, with a loss extending the home skid to eight games. The Raptors then face Denver on Sunday, making a breakthrough against the Nets especially valuable before",
-          "date": "November 26, 2026",
-          "link": "https://torontosun.com/sports/basketball/nba/toronto-raptors/address-november-pain-winless-home"
+          "source": "Sportsnet",
+          "source_class": "sportsnet",
+          "headline": "Raptors' Ja'Kobe Walter exits vs. Nets with quad injury",
+          "dek": "Toronto secured a much-needed 124-100 win over Brooklyn, but Walter's third-quarter exit adds to a growing injury burden. He finished with three points, three rebounds and three assists in 24 minutes, making his availability worth watching as the 7-11 Raptors try to climb the",
+          "date": "November 27, 2026",
+          "link": "https://www.sportsnet.ca/nba/article/raptors-jakobe-walter-exits-vs-nets-with-quad-injury/"
         }
       ],
       "standings": {
@@ -855,15 +855,15 @@
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "15",
+                  "16",
                   "4",
-                  ".789"
+                  ".800"
                 ],
                 "seed": "1"
               },
               {
-                "team": "Celtics",
-                "logo": "bos",
+                "team": "Pistons",
+                "logo": "det",
                 "league": "nba",
                 "you": false,
                 "vals": [
@@ -874,8 +874,8 @@
                 "seed": "2"
               },
               {
-                "team": "New York",
-                "logo": "ny",
+                "team": "Hawks",
+                "logo": "atl",
                 "league": "nba",
                 "you": false,
                 "vals": [
@@ -886,26 +886,26 @@
                 "seed": "3"
               },
               {
-                "team": "Pistons",
-                "logo": "det",
+                "team": "Celtics",
+                "logo": "bos",
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "11",
-                  "6",
-                  ".647"
+                  "12",
+                  "7",
+                  ".632"
                 ],
                 "seed": "4"
               },
               {
-                "team": "Hawks",
-                "logo": "atl",
+                "team": "New York",
+                "logo": "ny",
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "11",
-                  "6",
-                  ".647"
+                  "12",
+                  "7",
+                  ".632"
                 ],
                 "seed": "5"
               },
@@ -915,9 +915,9 @@
                 "league": "nba",
                 "you": false,
                 "vals": [
-                  "10",
+                  "11",
                   "7",
-                  ".588"
+                  ".611"
                 ],
                 "seed": "6"
               },
@@ -946,6 +946,18 @@
                 "seed": "8"
               },
               {
+                "team": "Raptors",
+                "logo": "tor",
+                "league": "nba",
+                "you": true,
+                "vals": [
+                  "7",
+                  "11",
+                  ".389"
+                ],
+                "seed": "9"
+              },
+              {
                 "team": "Wizards",
                 "logo": "wsh",
                 "league": "nba",
@@ -954,18 +966,6 @@
                   "7",
                   "12",
                   ".368"
-                ],
-                "seed": "9"
-              },
-              {
-                "team": "Raptors",
-                "logo": "tor",
-                "league": "nba",
-                "you": true,
-                "vals": [
-                  "6",
-                  "11",
-                  ".353"
                 ],
                 "seed": "10"
               }
@@ -979,17 +979,17 @@
             "bracket": true,
             "rows": [
               {
-                "matchup": "(1) 76ers vs. (2) Celtics",
+                "matchup": "(1) 76ers vs. (2) Pistons",
                 "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "matchup": "(3) New York vs. (4) Pistons",
+                "matchup": "(3) Hawks vs. (4) Celtics",
                 "series": "Sat Apr 18",
                 "you": false
               },
               {
-                "matchup": "(5) Hawks vs. (6) Heat",
+                "matchup": "(5) New York vs. (6) Heat",
                 "series": "Sat Apr 18",
                 "you": false
               },
@@ -1033,8 +1033,8 @@
       "detail": "2nd in NFC East",
       "lotl": {
         "label": "What's Going On With the Commanders",
-        "body": "Two wins have steadied Washington's season, but they have not erased its margin for error. The Commanders are 4-5-1, sitting second in the NFC East and two games back, after edging Cincinnati 22-20 on Nov. 23. <strong>The freshest jolt is Brandon Aiyuk's arrival on the practice squad</strong> - a sensible swing on a proven receiver, though two years away from NFL action makes instant rescue fantasy. Washington needs its existing playmakers to keep carrying the load, not wait for a name to save the offense. The timing is favorable: Carson Beck has missed two straight Cardinals practices with back spasms, leaving Arizona preparing for Josh Johnson if Beck cannot go. Still, road games punish sloppy confidence. <strong>Sunday's 4:25 p.m. visit to Arizona is the next test: extend the winning streak, or prove these Commanders are merely treading water.</strong>",
-        "updated": "Updated November 27, 2026"
+        "body": "The Commanders have finally found a pulse, and now they must prove it travels. <strong>Washington's 22-20 victory over Cincinnati last Monday delivered a second straight win</strong> - a narrow escape, but a meaningful one for a club that has climbed to 4-5-1 and second place in the NFC East, two games behind the lead. The momentum is real; so is the margin for error. Brandon Aiyuk, newly added to the practice squad, will not make his Washington debut Sunday, delaying a potentially important boost for Jayden Daniels and the passing game. The defense faces its own test: cornerback Amik Robertson, still nursing an ankle injury, is out for a second consecutive game, forcing another reshuffle in the secondary. <strong>At Arizona on Sunday at 4:25 p.m. ET, the Commanders can make this winning streak a trend - or reveal it as a brief reprieve.</strong>",
+        "updated": "Updated November 28, 2026"
       },
       "key_numbers": [
         {
@@ -1120,7 +1120,7 @@
           "source": "ESPN",
           "source_class": "espn",
           "headline": "Commanders beat Bengals 22-20",
-          "dek": "The last-second win gives Washington consecutive victories and keeps the 4-5-1 Commanders within striking distance in the NFC East. A five-field-goal performance and a late defensive stand delivered a needed boost before Sunday's trip to Arizona.",
+          "dek": "The win gives Washington back-to-back victories and keeps the 4-5-1 Commanders firmly in the NFC East race. A late field goal capped a composed final drive, turning a narrow prime-time finish into a meaningful boost for a team that started 1-3.",
           "date": "Nov 23",
           "link": "https://www.espn.com/nfl/recap?gameId=401873078"
         },
@@ -1128,23 +1128,31 @@
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "NFL spread, straight-up picks: Jaguars, Commanders top Week 12 confidence rankings",
-          "dek": "Washington enters Week 12 at 4-5-1, second in the NFC East, with playoff hopes still alive after a 22-20 win over Cincinnati. The Commanders are favored by 6.5 points at Arizona, making this road matchup a test of whether their recent momentum can translate into a reliable pick.",
+          "dek": "At 4-5-1 and second in the NFC East, Washington enters Week 12 after consecutive wins and faces a 3-8 Arizona team as a sizable road favorite. The pick reflects a chance to strengthen its playoff position, though red-zone inefficiency remains a concern.",
           "date": "November 25, 2026",
           "link": "https://www.nytimes.com/athletic/7812052/2026/11/25/nfl-spread-straight-up-picks-confidence-jaguars-commanders-week-12/"
         },
         {
           "source": "ESPN",
           "source_class": "espn",
-          "headline": "2027 NFL draft order projections for Round 1, chances for top pick, more",
-          "dek": "At 4-5-1 and within striking distance of the NFC East lead, Washington remains in the playoff conversation rather than firmly in rebuild mode. These projections frame how the Commanders' remaining games could shift their draft position, from a potential top-10 selection to a",
+          "headline": "NFL Week 12 betting odds: Lines and totals for every game",
+          "dek": "Washington enters Week 12 at 4-5-1 and riding consecutive wins, with a chance to reach .500 and remain in the NFC East race. The market has installed the Commanders as roughly 6.5-point favorites at Arizona, with a 41.5-point total and little margin for a stumble.",
+          "date": "November 28, 2026",
+          "link": "https://www.espn.com/espn/betting/story/_/id/50570870/2026-nfl-week-12-schedule-odds-point-spreads-totals"
+        },
+        {
+          "source": "NBC Sports",
+          "source_class": "web",
+          "headline": "Commanders CB Amik Robertson to miss second straight game",
+          "dek": "Robertson's ankle injury keeps Washington's top corner out as the Commanders try to extend their momentum after a 22-20 win over Cincinnati. At 4-5-1 and second in the NFC East, Washington will again lean on its secondary depth Sunday against Arizona.",
           "date": "November 27, 2026",
-          "link": "https://www.espn.com/nfl/draft2027/story/_/id/49794361/2027-nfl-draft-order-projections-first-round-picks"
+          "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/commanders-cb-amik-robertson-to-miss-second-straight-game"
         },
         {
           "source": "The Athletic",
           "source_class": "athletic",
           "headline": "Commanders to sign Brandon Aiyuk to practice squad: 'You can never have enough good players'",
-          "dek": "At 4-5-1 and second in the NFC East, Washington is adding a high-upside option without immediately committing a roster spot to a receiver who has not played since 2024. Aiyuk's return begins with a practice-squad runway, but his prior production and connection with Jayden",
+          "dek": "At 4-5-1 and chasing Dallas in the NFC East, Washington is adding a proven receiver without disrupting a unit that has won three of its past four. Aiyuk will not play Sunday against Arizona, so the immediate story is his ramp-up after more than two years away and whether he can",
           "date": "November 25, 2026",
           "link": "https://www.nytimes.com/athletic/7806881/2026/11/25/commanders-brandon-aiyuk-signed-practice-squad/"
         }
@@ -1241,81 +1249,97 @@
     }
   },
   "featured": {
-    "team": "commanders",
-    "kicker": "Washington Commanders - Regular Season",
-    "headline": "Carson Beck remains out of Cardinals practice",
-    "dek": "Carson Beck's back injury could leave Washington facing veteran Josh Johnson for a second straight week, reshaping the matchup against Arizona's offense. For a Commanders team sitting 2nd in the NFC East at 4-5-1, Sunday's road game offers a chance to capitalize on a quarterback",
-    "source": "NBC Sports",
-    "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/carson-beck-remains-out-of-cardinals-practice",
-    "date": "November 27, 2026"
+    "team": "leafs",
+    "kicker": "Toronto Maple Leafs - Regular Season",
+    "headline": "'It's coming': Maple Leafs get swagger back in win over Bruins",
+    "dek": "After nine straight losses, Toronto has won consecutive games by tightening defensively, with Morgan Rielly scoring twice and Anthony Stolarz steady in a 3-1 victory over Boston. At 10-14, the Maple Leafs need that renewed bite to carry over immediately in Pittsburgh, where",
+    "source": "Sportsnet",
+    "link": "https://www.sportsnet.ca/nhl/article/its-coming-maple-leafs-get-swagger-back-in-win-over-bruins/",
+    "date": "November 28, 2026"
   },
   "two_up": [
     {
-      "team": "leafs",
-      "kicker": "Toronto Maple Leafs - Regular Season",
-      "headline": "Why Maple Leafs' William Nylander is getting a power-play demotion",
-      "dek": "Toronto's struggling power play has produced only three goals in November, adding urgency to Jim Hiller's decision to split the top talent across two units. Nylander has not scored in eight games, and his disagreement with Hiller's explanation makes the lineup change a notable",
-      "source": "Sportsnet",
-      "link": "https://www.sportsnet.ca/nhl/article/why-maple-leafs-william-nylander-is-getting-a-power-play-demotion/",
-      "date": "November 27, 2026"
+      "team": "raptors",
+      "kicker": "Toronto Raptors - Regular Season",
+      "headline": "Talk of a Rogers Curse in Toronto is a tad early, but give it time",
+      "dek": "Toronto's 7-11 start leaves little room for a prolonged slide, even with a 124-100 win over Brooklyn offering a needed jolt. Sunday's home matchup with Denver, an 11-6 team riding a four-game road winning streak, could make the Rogers Curse chatter feel less premature.",
+      "source": "The Globe and Mail",
+      "link": "https://www.theglobeandmail.com/sports/article-rogers-curse-maple-leafs-raptors-blue-jays/",
+      "date": "November 28, 2026"
     },
     {
-      "team": "jays",
-      "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
-      "headline": "The 16 most jaw-dropping Statcast feats of 2026",
-      "dek": "The Blue Jays' Brandon Valenzuela makes the roundup as a rookie defensive standout, recording the fastest pop time to second base on a caught stealing at 1.72 seconds. The honor offers an early glimpse at the athleticism Toronto can build around as the offseason takes shape.",
-      "source": "MLB.com",
-      "link": "https://www.mlb.com/bluejays/news/top-statcast-plays-of-2026",
-      "date": "November 27, 2026"
+      "team": "commanders",
+      "kicker": "Washington Commanders - Regular Season",
+      "headline": "Brandon Aiyuk will not play Sunday vs. Cardinals",
+      "dek": "Washington's newest offensive addition will have to wait for his first game in burgundy and gold after joining the practice squad this week. The Commanders enter Sunday's matchup at 4-5-1 and second in the NFC East, making every chance to strengthen the passing game increasingly",
+      "source": "NBC Sports",
+      "link": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brandon-aiyuk-will-not-play-sunday-vs-cardinals",
+      "date": "November 28, 2026"
     }
   ],
   "extra_story": {
-    "team": "raptors",
-    "kicker": "Toronto Raptors - Regular Season",
-    "headline": "Raptors try to take advantage of rare three-day break",
-    "dek": "At 6-11 and fourth in the Atlantic, Toronto enters Friday's home matchup with Brooklyn needing to turn extra preparation time into a response after a difficult start. Scottie Barnes' Thanksgiving dinner offered a team-building moment, but the reset matters most if it produces a",
-    "source": "The Globe and Mail",
-    "link": "https://www.theglobeandmail.com/sports/basketball/article-raptors-try-to-take-advantage-of-rare-three-day-break/",
-    "date": "November 27, 2026"
+    "team": "jays",
+    "kicker": "Toronto Blue Jays - Postseason / Early Offseason",
+    "headline": "Jazz Chisholm Jr., Blue Jays agree to 1-year deal: Source",
+    "dek": "The Blue Jays are betting $20 million on a rebound from Chisholm, who fell well short of his 50-homer, 50-steal goal in 2026. The one-year commitment, with a 2028 player option, gives Toronto a high-upside addition while limiting the risk of another uneven season.",
+    "source": "The Athletic",
+    "link": "https://www.nytimes.com/athletic/7731155/2026/11/27/jazz-chisholm-blue-jays/",
+    "date": "November 28, 2026"
   },
   "ticker": [
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Next: Leafs at Bruins - Fri 11/27 1:00 PM ET"
+      "text": "Leafs beat Bruins 3-1"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Leafs (9-14) - 13th in Eastern Conference"
+      "text": "Next: Leafs at Penguins - Sat 11/28 7:00 PM ET"
     },
     {
       "badge": "NHL",
       "badge_style": "nhl",
-      "text": "Maple Leafs get reinforcements back ahead of crucial Bruins showdown",
-      "published": "2026-11-26T20:51:17+00:00"
+      "text": "Leafs (10-14) - 12th in Eastern Conference"
+    },
+    {
+      "badge": "NHL",
+      "badge_style": "nhl",
+      "text": "Maple Leafs sign Alexander Bilecki to three-year, entry-level contract",
+      "published": "2026-11-27T22:13:32+00:00"
     },
     {
       "badge": "MLB",
       "badge_style": "mlb",
-      "text": "The 16 most jaw-dropping Statcast feats of 2026",
-      "published": "2026-11-27T01:56:06+00:00"
+      "text": "Blair & Barker: Breaking down Chisholm Jr.'s deal with Blue Jays",
+      "published": "2026-11-28T01:07:54+00:00"
+    },
+    {
+      "badge": "MLB",
+      "badge_style": "mlb",
+      "text": "Blue Jays, Jazz Chisholm Jr. reach agreement on 1-year deal",
+      "published": "2026-11-27T22:01:11+00:00"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Next: Raptors vs. Nets - Fri 11/27 7:30 PM ET"
+      "text": "Raptors beat Nets 124-100"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Raptors (6-11) - 4th in Atlantic Division"
+      "text": "Next: Raptors vs. Nuggets - Sun 11/29 6:00 PM ET"
     },
     {
       "badge": "NBA",
       "badge_style": "nba",
-      "text": "Why Friday's NBA Cup game against Nets is a huge one for Raptors",
-      "published": "2026-11-27T01:10:43+00:00"
+      "text": "Raptors (7-11) - 4th in Atlantic Division"
+    },
+    {
+      "badge": "NBA",
+      "badge_style": "nba",
+      "text": "Denver plays Toronto, aims for 5th straight road win",
+      "published": "2026-11-28T07:03:33+00:00"
     },
     {
       "badge": "NFL",
@@ -1330,20 +1354,91 @@
     {
       "badge": "NFL",
       "badge_style": "nfl",
-      "text": "Carson Beck remains out of Cardinals practice",
-      "published": "2026-11-26T20:50:36+00:00"
+      "text": "Brandon Aiyuk impressing at practice",
+      "published": "2026-11-28T01:30:27+00:00"
     }
   ],
-  "scoreboard": [],
+  "scoreboard": [
+    {
+      "team": "leafs",
+      "game_date": "2026-11-27",
+      "name": "Leafs",
+      "league": "NHL",
+      "logo": "tor",
+      "opp_name": "Bruins",
+      "opp_logo": "bos",
+      "team_score": 3,
+      "opp_score": 1,
+      "result": "W",
+      "date": "Nov 27",
+      "preseason": false,
+      "stars": [
+        {
+          "tag": "GOAL",
+          "tone": "",
+          "name": "Rielly",
+          "stat": "2G"
+        },
+        {
+          "tag": "GOAL",
+          "tone": "",
+          "name": "Sissons",
+          "stat": "1G, 1A"
+        },
+        {
+          "tag": "SV",
+          "tone": "save",
+          "name": "Stolarz",
+          "stat": "28 saves, .966"
+        }
+      ],
+      "link": "https://www.youtube.com/watch?v=t_chinm_mLI"
+    },
+    {
+      "team": "raptors",
+      "game_date": "2026-11-27",
+      "name": "Raptors",
+      "league": "NBA",
+      "logo": "tor",
+      "opp_name": "Nets",
+      "opp_logo": "bkn",
+      "team_score": 124,
+      "opp_score": 100,
+      "result": "W",
+      "date": "Nov 27",
+      "preseason": false,
+      "stars": [
+        {
+          "tag": "PTS",
+          "tone": "",
+          "name": "Barnes",
+          "stat": "34 pts"
+        },
+        {
+          "tag": "REB",
+          "tone": "",
+          "name": "Quickley",
+          "stat": "10 reb"
+        },
+        {
+          "tag": "AST",
+          "tone": "",
+          "name": "Quickley",
+          "stat": "14 ast"
+        }
+      ],
+      "link": "https://www.youtube.com/watch?v=y1Y-9H-tVEk"
+    }
+  ],
   "at_a_glance": [
     {
       "team": "leafs",
       "name": "Leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "record": "9-14",
-      "status": "13th in Eastern Conference",
+      "record": "10-14",
+      "status": "12th in Eastern Conference",
       "status_class": "green",
-      "stat": "Streak: W1"
+      "stat": "Streak: W2"
     },
     {
       "team": "jays",
@@ -1358,10 +1453,10 @@
       "team": "raptors",
       "name": "Raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "record": "6-11",
+      "record": "7-11",
       "status": "4th in Atlantic Division",
-      "status_class": "red",
-      "stat": "Streak: L1"
+      "status_class": "green",
+      "stat": "Streak: W1"
     },
     {
       "team": "commanders",
@@ -1377,9 +1472,9 @@
     {
       "team": "leafs",
       "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-      "matchup": "Leafs at Bruins",
-      "detail": "1:00 PM ET",
-      "channel": "TSN",
+      "matchup": "Leafs at Penguins",
+      "detail": "7:00 PM ET",
+      "channel": "Sportsnet",
       "off": false,
       "preview": {
         "injuries": [
@@ -1388,25 +1483,21 @@
             "tone": "out",
             "players": [
               {
+                "name": "Tanev",
+                "note": "lower body"
+              },
+              {
+                "name": "Joshua",
+                "note": "illness"
+              },
+              {
                 "name": "Roslovic",
                 "note": "upper body"
               }
             ],
             "more": 0
           }
-        ],
-        "duel": {
-          "label": "In goal",
-          "status": "confirmed",
-          "ours": {
-            "name": "Stolarz",
-            "sub": "6-5-1, 2.76 GAA"
-          },
-          "theirs": {
-            "name": "Swayman",
-            "sub": "11-6-1, 2.67 GAA"
-          }
-        }
+        ]
       }
     },
     {
@@ -1420,44 +1511,10 @@
     {
       "team": "raptors",
       "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-      "matchup": "Raptors vs. Nets",
-      "detail": "7:30 PM ET",
+      "matchup": "Raptors",
+      "detail": "Next: Sun 11/29 vs. Nuggets 6:00 PM ET",
       "channel": "",
-      "off": false,
-      "preview": {
-        "injuries": [
-          {
-            "status": "Out",
-            "tone": "out",
-            "players": [
-              {
-                "name": "Leonard",
-                "note": "knee"
-              },
-              {
-                "name": "Bittle",
-                "note": "foot"
-              },
-              {
-                "name": "Barrett",
-                "note": "hamstring"
-              }
-            ],
-            "more": 0
-          },
-          {
-            "status": "Day-to-day",
-            "tone": "dtd",
-            "players": [
-              {
-                "name": "Martin",
-                "note": "knee"
-              }
-            ],
-            "more": 0
-          }
-        ]
-      }
+      "off": true
     },
     {
       "team": "commanders",
@@ -1470,24 +1527,6 @@
   ],
   "week_ahead": {
     "games": [
-      {
-        "day": "Fri 11/27",
-        "team": "leafs",
-        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
-        "name": "Leafs",
-        "opp": "at Bruins",
-        "time": "1:00 PM ET",
-        "tv": "TSN"
-      },
-      {
-        "day": "Fri 11/27",
-        "team": "raptors",
-        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-        "name": "Raptors",
-        "opp": "vs. Nets",
-        "time": "7:30 PM ET",
-        "tv": ""
-      },
       {
         "day": "Sat 11/28",
         "team": "leafs",
@@ -1534,6 +1573,15 @@
         "tv": ""
       },
       {
+        "day": "Wed 12/2",
+        "team": "raptors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+        "name": "Raptors",
+        "opp": "at Spurs",
+        "time": "8:00 PM ET",
+        "tv": ""
+      },
+      {
         "day": "Thu 12/3",
         "team": "leafs",
         "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
@@ -1543,23 +1591,24 @@
         "tv": "TSN"
       },
       {
-        "day": "Thu 12/3",
-        "team": "raptors",
-        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-        "name": "Raptors",
-        "opp": "at Spurs",
-        "time": "8:00 PM ET",
-        "tv": ""
+        "day": "Sat 12/5",
+        "team": "leafs",
+        "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/tor.png",
+        "name": "Leafs",
+        "opp": "at Hurricanes",
+        "time": "7:00 PM ET",
+        "tv": "Sportsnet"
       }
     ],
     "note": ""
   },
   "morning_brief": {
     "article": {
-      "title": "Nylander Moves to Leafs Second Power Play",
+      "title": "Maple Leafs Beat Bruins Behind Rielly",
       "paragraphs": [
-        "The Leafs visit the Bruins at 1:00 PM ET on TSN, with Anthony Stolarz starting against Jeremy Swayman. William Nylander is moving to the second power-play unit, while Kirill Marchenko returns to the top group. Nylander said he did not agree with the decision, and Toronto will also be without injured forward Roslovic. The Leafs enter at 9-14, 13th in the Eastern Conference.",
-        "The Blue Jays are looking ahead to their regular-season opener at the Yankees on Thursday, March 25, at 1:35 PM ET. Toronto is narrowing its offseason focus as more relievers leave the market. The Raptors host the Nets at 7:30 PM ET, with Leonard, Bittle and Barrett out and Martin day-to-day. Toronto is 6-11. The Commanders visit the Cardinals on Sunday at 4:25 PM ET on Fox, carrying a 4-5-1 record and second place in the NFC East. Carson Beck remains out of Arizona practice."
+        "Morgan Rielly scored twice and the Maple Leafs beat the Bruins 3-1, with Colton Sissons adding a goal and an assist and Anthony Stolarz making 28 saves. Toronto visits the Penguins tonight at 7:00 p.m. ET on Sportsnet, with Tanev, Joshua and Roslovic out. The Leafs enter at 10-14, 12th in the Eastern Conference.",
+        "The Blue Jays are looking forward after agreeing to a one-year deal with Jazz Chisholm Jr. Their regular-season opener is at the Yankees on Thursday, March 25, at 1:35 p.m. ET. The Raptors beat the Nets 124-100 behind Scottie Barnes' 34 points and Immanuel Quickley's 10 rebounds and 14 assists. Toronto hosts Denver Sunday at 6:00 p.m. ET.",
+        "The Commanders visit the Cardinals Sunday at 4:25 p.m. ET on Fox. Washington is 4-5-1 and second in the NFC East, while Brandon Aiyuk will not play."
       ]
     }
   }
